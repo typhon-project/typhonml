@@ -1,0 +1,101 @@
+entity Order {
+	date : date
+	totalAmount : real
+	products -> Product."Product.orders" [*]
+	paidWith -> CreditCard
+	user -> User."User.orders"
+}
+
+entity User {
+	name : string
+	comments :-> Comment [*]
+	paymentDetails :-> CreditCard [*]
+	orders -> Order [*]
+}
+
+entity CreditCard {
+	number: string
+	expiryDate:date
+}
+
+entity Product {
+	name: string
+	description: string
+	photos -> Photo[*]
+	reviews :-> Review."Review.product" [*]
+	orders -> Order[*]
+}
+
+entity Comment {
+	content: natural_language
+	responses :-> Comment[*]
+	annos -> Annotation[*]
+}
+
+entity Annotation {
+	_from: int
+	_to: int
+	type: string
+	content : string
+}
+
+entity Photo {
+	_id : string
+	image : jpeg	
+}
+
+entity Review {
+	product -> Product
+}
+
+
+relationaldb Orders {
+	table {
+		OrderTB:Order 
+		index OrderIndex { "Order.date" }
+		id {"Order.date"}
+	}
+	
+	table {
+		User:User
+		index UserIndex { "User.name"} 
+		id {"User.name"}
+	}
+	
+	table {
+		CreditCard:CreditCard
+		id {"CreditCard.number"}
+	}
+	
+	table {
+		Product:Product
+		id {"Product.name"}
+	}
+}
+
+
+graphdb Products {
+	node ProductNode:Product{
+		name = "Product.name"
+	}
+	
+	edge Concordance {
+		from ProductNode
+		to ProductNode
+		label {
+			weight: int
+		}
+	}
+}
+
+
+keyvaluedb Photos {
+	_id -> Photo {
+	  jpeg
+	}
+}
+
+documentdb Reviews {
+	Review : Review
+	Comment: Comment 
+}

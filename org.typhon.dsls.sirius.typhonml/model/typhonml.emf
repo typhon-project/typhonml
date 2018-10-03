@@ -1,0 +1,139 @@
+@namespace(uri="org.typhon.dsls.typhonml.sirius", prefix="typhonml")
+package typhonml;
+
+class Model {
+	val Database[*] databases;
+	val DataType[*] dataTypes;
+}
+
+abstract class NamedElement {
+	attr String name;
+	attr String importedNamespace;	
+}
+
+abstract class Database extends NamedElement{ }
+
+
+//%%%%%%%%%%% DataType definition
+abstract class DataType extends NamedElement{ }
+
+class PrimitiveDataType extends DataType { }
+
+class CustomDataType extends DataType {
+	val DataTypeItem[*] elements;
+}
+
+class DataTypeItem extends NamedElement {
+	ref DataType type ;	
+}
+
+
+//%%%%%%%%%%% Conceptual elements definition
+
+class Entity extends DataType{
+	val Attribute[*] attributes;
+	val Relation[*] relations;
+}
+
+class Attribute extends NamedElement{
+	ref DataType type;	
+}
+
+class Relation extends NamedElement{
+	ref Entity type;
+	attr Cardinality cardinality;
+	ref Relation opposite;
+	attr Boolean isContainment;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RelationalDB Definition
+class RelationalDB extends Database { 
+	val Table[*] tables;	
+}
+
+class Table extends NamedElement {
+	ref Entity entity;
+  	val IndexSpec#table indexSpec;
+	val IdSpec#table idSpec;
+	ref Database db;
+}
+
+class IndexSpec extends NamedElement {
+	ref Attribute[*] attributes;
+	ref Relation[*] references;
+	ref Table[1]#indexSpec table;
+}
+
+class IdSpec {
+	ref Attribute[*] attributes;
+	ref Table[1]#idSpec table;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DocumentDB Definition
+class DocumentDB extends Database { 
+	val Collection[*] collections;
+}
+
+class Collection extends NamedElement{
+	ref Entity[1] entity;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% KeyValueDB Definition 
+class KeyValueDB extends Database { 
+	val KeyValueElement[*] elements;
+}
+
+class KeyValueElement {
+	attr String key;
+	ref Entity entity;
+	ref DataType[*] values;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GraphDB Definition 
+class GraphDB extends Database { 
+	val GraphNode[*] nodes;
+	val GraphEdge[*] edges; 
+}
+
+class GraphNode extends NamedElement{
+	ref Entity entity;
+	val GraphAttribute[*] attributes;
+}
+
+class GraphAttribute extends NamedElement {
+	ref Attribute value;
+}
+
+class GraphEdge extends NamedElement {
+	ref GraphNode from;
+	ref GraphNode to;
+	val GraphEdgeLabel[*] labels;
+}
+
+class GraphEdgeLabel extends NamedElement{
+	ref DataType type;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%% ColumndDB Definition
+class ColumnDB extends Database {
+	val Column[*] columns;
+}
+
+class Column extends NamedElement {
+	ref Attribute[*] attributes;
+}
+
+
+//%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+enum Cardinality {
+	zero_one;
+	one;
+	zero_many;
+	one_many;
+}
