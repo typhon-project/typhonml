@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[**
+ * The documentation of the module properties.
+ */]
+[module properties('http://org.typhon.dsls.typhonml.sirius')]
+
+
+[template public getBasePort(anOclAny : OclAny)]
+[getProperty('port')/]
+[/template]
+
+[template public getApigatewayServerPort(anOclAny : OclAny)]
+[getProperty('apigateway.server.port')/]
+[/template]
+
+[template public getRelationalDBServerPort(anOclAny : OclAny)]
+[getProperty('database.relational.port')/]
+[/template]
+
+[template public getDocumentDBServerPort(anOclAny : OclAny)]
+[getProperty('database.document.port')/]
+[/template]

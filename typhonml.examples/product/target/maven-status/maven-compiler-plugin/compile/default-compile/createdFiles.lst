@@ -1,0 +1,6 @@
+org/typhon/product/ProductApplication.class
+org/typhon/product/configuration/RepositoryConfiguration$1.class
+org/typhon/product/model/Product.class
+org/typhon/product/configuration/SwaggerConfig.class
+org/typhon/product/configuration/RepositoryConfiguration.class
+org/typhon/product/model/repository/ProductRepository.class

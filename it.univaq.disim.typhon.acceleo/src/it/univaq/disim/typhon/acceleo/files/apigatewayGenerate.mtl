@@ -1,0 +1,195 @@
+[comment encoding = UTF-8 /]
+[module apigatewayGenerate('http://org.typhon.dsls.typhonml.sirius')]
+
+[import it::univaq::disim::typhon::acceleo::common::utilityGenerator /]
+
+
+[template public generateApigateway(aModel : Model) 
+	{
+		basePort : Integer = getProperty('apigateway.base.port').toInteger();
+	}]
+
+
+[comment org.typhon.apigateway.ApigatewayApplication.java/]
+[file (getProperty('apigateway.name.folder')+'/src/main/java/org/typhon/apigateway/ApigatewayApplication.java', false, 'UTF-8')]
+package org.typhon.apigateway;
+	
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.gateway.route.RouteLocator;
+import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+	
+//import springfox.documentation.swagger2.annotations.EnableSwagger2;
+	
+@Configuration
+@SpringBootApplication
+//@EnableSwagger2
+public class ApigatewayApplication {
+
+	@Bean
+	RouteLocator gatewayArtifactServiceRouter(RouteLocatorBuilder builder){
+        return builder.routes()
+			[for (d : Database | aModel.databases->sortedBy(x | x.name))separator('\n')]
+				.route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/**").and().method("GET")
+                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
+                .route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").and().method("POST")
+                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
+                .route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/**").and().method("PUT")
+                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
+                .route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/**").and().method("DELETE")
+                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
+			[/for]
+				.build();
+    }
+		
+	public static void main(String[ '[' /][ ']' /] args) {
+		SpringApplication.run(ApigatewayApplication.class, args);
+	}
+}
+[/file]
+
+
+
+[comment org.typhon.apigateway.ApigatewayApplication.java/]
+[file (getProperty('apigateway.name.folder')+'/src/main/resources/application.properties', false, 'UTF-8')]
+server.port=[getProperty('apigateway.server.port')/]
+[/file]
+
+
+
+[comment TEST org.typhon.apigateway.ApigatewayApplication.java/]
+[file (getProperty('apigateway.name.folder')+'/src/test/java/org/typhon/apigateway/ApigatewayApplicationTests.java', false, 'UTF-8')]
+package org.typhon.apigateway;
+	
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+	
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class ApigatewayApplicationTests {
+	
+	@Test
+	public void contextLoads() {
+	}
+	
+}
+[/file]
+
+
+
+[comment POM.xml/]
+[file (getProperty('apigateway.name.folder')+'/pom.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.typhon</groupId>
+	<artifactId>apigateway</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>apigateway</name>
+	<description>Typhon</description>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.4.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- <dependency> -->
+		<!-- <groupId>org.springframework.boot</groupId> -->
+		<!-- <artifactId>spring-boot-starter-security</artifactId> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-gateway</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- Swagger -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>io.springfox</groupId> -->
+<!-- 			<artifactId>springfox-swagger2</artifactId> -->
+<!-- 			<version>2.9.2</version> -->
+<!-- 		</dependency> -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>io.springfox</groupId> -->
+<!-- 			<artifactId>springfox-swagger-ui</artifactId> -->
+<!-- 			<version>2.9.2</version> -->
+<!-- 		</dependency> -->
+	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+[/file]
+
+[/template]

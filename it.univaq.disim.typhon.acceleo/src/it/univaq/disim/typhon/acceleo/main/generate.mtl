@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module generate('http://org.typhon.dsls.typhonml.sirius')]
+
+[import it::univaq::disim::typhon::acceleo::files::apigatewayGenerate /]
+[import it::univaq::disim::typhon::acceleo::files::clientDemoGenerate /]
+[import it::univaq::disim::typhon::acceleo::files::databaseProjectGenerate /]
+
+
+[template public generateAll(aModel : Model)]
+[comment @main/]
+	
+[generateApigateway(aModel)/]
+[generateClientDemo(aModel)/]
+[generateDatabaseProjectsServices(aModel)/]
+
+[/template]

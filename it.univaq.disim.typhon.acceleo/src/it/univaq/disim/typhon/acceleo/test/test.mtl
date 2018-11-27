@@ -1,0 +1,149 @@
+[comment encoding = UTF-8 /]
+[module test('http://org.typhon.dsls.typhonml.sirius')]
+
+[import it::univaq::disim::typhon::acceleo::common::utilityGenerator /]
+[import it::univaq::disim::typhon::acceleo::properties::properties /]
+
+
+[template public generateAll(aModel : Model)]
+[comment @main/]
+	
+[let bascioSize : Integer = aModel.databases->size()]
+	[generateBascio2(bascioSize)/]
+	
+[/let]
+
+[/template]
+
+
+
+[template public testReferences(aModel : Model)]
+[comment @main/]
+
+
+
+[for (e : Entity | allModelEntities(aModel))]
+	[e.name/]
+	[if((e.relations->size() <= 0))]
+		No relations;
+	[elseif(e.relations->size() > 0)]
+		[for (r : Relation | e.relations)]
+		relation with [r.type.name/] through [r.name/];
+		[/for]
+	[/if]
+[/for]
+
+[/template]
+
+
+
+
+[template public generateBascio(aModel : Model)]
+[comment @main/]
+[file ('test/bascio1.txt', false, 'UTF-8')]
+	[getBasePort(aModel)/]
+	[getApigatewayServerPort().toInteger()/]
+
+
+	[testReferences(aModel)/]
+
+
+[for (d : Database | aModel.databases)]
+[d.name/]	
+[/for]
+
+[for (d : Database | aModel.databases->sortedBy(z | z.name))]
+[d.name/]	
+[/for]
+
+
+[for (entity : Entity | getAllModelEntitiesUtility(aModel))]
+[entity.name/]
+[for (rel : Relation | entity.relations)]
+		[rel.name/] - [rel.type.genericList.eContainer(Database).getTest()/]
+[/for]	
+	[/for]
+[/file]
+
+[/template]
+
+
+
+[template public generateBascio2(mySize : Integer)]
+[comment @main/]
+[file ('test/bascio2.txt', false, 'UTF-8')]
+	[mySize/]
+
+
+	[if ('id1'.strcmp('id') <> 0)]
+	Sono diversi
+	[/if] 	
+
+
+
+
+
+[/file]
+[/template]
+
+
+
+[template public generateBascio3(aModel : Model)]
+[comment @main/]
+[file ('test/bascio3.txt', false, 'UTF-8')]
+
+	Call internal Template Query:
+	[for (e : Entity | allModelEntities(aModel))]
+		[e.name/]
+	[/for]
+
+	Call OCL Directly:
+	[for (e : Entity | aModel.eAllContents()->filter(Entity))]
+		[e.name/]
+	[/for]
+
+	Call imported Utility Query:
+	[for (e : Entity | getAllModelEntitiesUtility(aModel))]
+		[e.name/]
+	[/for]
+
+
+[/file]
+[/template]
+
+
+
+[query public allModelEntities(aModel : Model) : Entity = aModel.eAllContents()->filter(Entity) /]
+
+
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM
+######################################################################################
+/]
+[template private getTest(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[template private getTest(database : RelationalDB) ]
+[database.tables.entity.name/] (Relational database)
+[/template]
+[template private getTest(database : DocumentDB) ]
+[database.collections.entity.name/] (Document database)
+[/template]
+[template private getTest(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[template private getTest(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[template private getTest(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM
+######################################################################################
+/]

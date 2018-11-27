@@ -1,0 +1,649 @@
+[comment encoding = UTF-8 /]
+[module databaseProjectGenerate('http://org.typhon.dsls.typhonml.sirius')]
+
+[import it::univaq::disim::typhon::acceleo::common::utilityGenerator /]
+[import it::univaq::disim::typhon::acceleo::properties::properties /]
+
+[template public generateDatabaseProjectsServices(aModel : Model) {
+		count : Integer = getProperty('apigateway.base.port').toInteger();
+	}]
+
+[for (d : Database | aModel.databases->sortedBy(x | x.name))]
+
+
+[comment orderdb/src/main/java/org/typhon/orderdb/model/repository/OrderRepository.java/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'Application.java', false, 'UTF-8')]
+package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/];
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Application {
+
+	public static void main(String['['/][']'/] args) {
+		SpringApplication.run([d.resolveEntityNameFromDatabase().toUpperFirst()/]Application.class, args);
+	}
+}
+[/file]
+
+
+
+[comment orderdb/src/main/java/org/typhon/orderdb/configuration/RepositoryConfiguration.java/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/configuration/RepositoryConfiguration.java', false, 'UTF-8')]
+package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
+import org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].model.[d.resolveEntityNameFromDatabase().toUpperFirst()/];
+
+@Configuration
+public class RepositoryConfiguration {
+	@Bean
+	public RepositoryRestConfigurer repositoryRestConfigurer() {
+		return new RepositoryRestConfigurerAdapter() {
+			@Override
+			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+				super.configureRepositoryRestConfiguration(config);
+				config.exposeIdsFor([d.resolveEntityNameFromDatabase().toUpperFirst()/].class);
+			}
+		};
+	}
+}
+[/file]
+
+
+[comment orderdb/src/main/java/org/typhon/orderdb/configuration/SwaggerConfig.java/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/configuration/SwaggerConfig.java', false, 'UTF-8')]
+package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].configuration;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.data.rest.configuration.SpringDataRestConfiguration;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+
+@Configuration
+@EnableSwagger2
+@Import(SpringDataRestConfiguration.class)
+public class SwaggerConfig {                                    
+    @Bean
+    public Docket api() { 
+        return new Docket(DocumentationType.SWAGGER_2)  
+          .select()                                  
+          .apis(RequestHandlerSelectors.any())              
+          .paths(PathSelectors.any())                          
+          .build();                                           
+    }
+}
+[/file]
+
+
+
+[comment orderdb/src/test/java/org/typhon/orderdb/tests/OrderTest.java/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/test/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/tests/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'Test.java', false, 'UTF-8')]
+package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].tests;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
+import org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].model.repository.[d.resolveEntityNameFromDatabase().toUpperFirst()/]Repository;
+
+import static org.hamcrest.Matchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc
+public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
+
+	@Autowired
+	private MockMvc mockMvc;
+
+	@Autowired
+	private [d.resolveEntityNameFromDatabase().toUpperFirst()/]Repository [d.resolveEntityNameFromDatabase().toLowerCase()/]Repository;
+
+	@Before
+	public void deleteAllBeforeTests() throws Exception {
+		[d.resolveEntityNameFromDatabase().toLowerCase()/]Repository.deleteAll();
+	}
+
+	@Test
+	public void shouldReturnRepositoryIndex() throws Exception {
+
+		mockMvc.perform(get("/")).andDo(print()).andExpect(status().isOk()).andExpect(
+				jsonPath("$._links.people").exists());
+	}
+
+	@Test
+	public void shouldCreateEntity() throws Exception {
+
+		mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isCreated()).andExpect(
+								header().string("Location", containsString("[d.resolveEntityNameFromDatabase().toLowerCase()/]/")));
+	}
+
+	@Test
+	public void shouldRetrieveEntity() throws Exception {
+
+		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isCreated()).andReturn();
+
+		String location = mvcResult.getResponse().getHeader("Location");
+		mockMvc.perform(get(location)).andExpect(status().isOk()).andExpect(
+				jsonPath("$.firstName").value("Frodo")).andExpect(
+						jsonPath("$.lastName").value("Baggins"));
+	}
+
+	@Test
+	public void shouldQueryEntity() throws Exception {
+
+		mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+				"{ \"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isCreated());
+
+		mockMvc.perform(
+				get("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/search/findByLastName?name={name}", "Baggins")).andExpect(
+						status().isOk()).andExpect(
+								jsonPath("$._embedded.people['['/]0[']'/].firstName").value(
+										"Frodo"));
+	}
+
+	@Test
+	public void shouldUpdateEntity() throws Exception {
+
+		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isCreated()).andReturn();
+
+		String location = mvcResult.getResponse().getHeader("Location");
+
+		mockMvc.perform(put(location).content(
+				"{\"firstName\": \"Bilbo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isNoContent());
+
+		mockMvc.perform(get(location)).andExpect(status().isOk()).andExpect(
+				jsonPath("$.firstName").value("Bilbo")).andExpect(
+						jsonPath("$.lastName").value("Baggins"));
+	}
+
+	@Test
+	public void shouldPartiallyUpdateEntity() throws Exception {
+
+		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isCreated()).andReturn();
+
+		String location = mvcResult.getResponse().getHeader("Location");
+
+		mockMvc.perform(
+				patch(location).content("{\"firstName\": \"Bilbo Jr.\"}")).andExpect(
+						status().isNoContent());
+
+		mockMvc.perform(get(location)).andExpect(status().isOk()).andExpect(
+				jsonPath("$.firstName").value("Bilbo Jr.")).andExpect(
+						jsonPath("$.lastName").value("Baggins"));
+	}
+
+	@Test
+	public void shouldDeleteEntity() throws Exception {
+
+		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+				"{ \"firstName\": \"Bilbo\", \"lastName\":\"Baggins\"}")).andExpect(
+						status().isCreated()).andReturn();
+
+		String location = mvcResult.getResponse().getHeader("Location");
+		mockMvc.perform(delete(location)).andExpect(status().isNoContent());
+
+		mockMvc.perform(get(location)).andExpect(status().isNotFound());
+	}
+}
+[/file]
+
+
+
+
+
+[comment POM.xml/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/pom.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.[d.resolveEntityNameFromDatabase().toLower()/]</groupId>
+	<artifactId>[d.resolveEntityNameFromDatabase() /]</artifactId>
+	<version>0.1.0</version>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.9.RELEASE</version>
+	</parent>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		
+		[d.getPOMInformation()/]
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-data-rest</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</pluginRepository>
+	</pluginRepositories>
+</project>
+	
+[/file]
+
+
+
+[comment orderdb/src/main/java/org/typhon/orderdb/model/Order.java/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/model/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'.java', false, 'UTF-8')]
+package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].model;
+
+import java.util.*;
+
+[d.getDatabaseBean()/]
+[/file]
+
+
+
+[comment orderdb/src/main/java/org/typhon/orderdb/model/repository/OrderRepository.java/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/model/repository/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'Repository.java', false, 'UTF-8')]
+[d.getDatabaseRepositoryInformation()/]
+[/file]
+
+
+
+[comment orderdb/src/main/resources/application.properties/]
+[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/resources/application.properties', false, 'UTF-8')]
+[d.getProperties(count + aModel.databases->sortedBy(x | x.name)->indexOf(d))/]
+[/file]
+
+
+[/for]
+[/template]
+
+
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR POM
+######################################################################################
+/]
+[template private getPOMInformation(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getPOMInformation(database : RelationalDB) ]
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+	</dependency>
+[/template]
+
+[template private getPOMInformation(database : DocumentDB) ]
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-data-mongodb</artifactId>
+	</dependency>
+[/template]
+
+[template private getPOMInformation(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getPOMInformation(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getPOMInformation(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR POM
+######################################################################################
+/]
+
+
+
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR DATABASE REPOSITORY
+######################################################################################
+/]
+[template private getDatabaseRepositoryInformation(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getDatabaseRepositoryInformation(database : RelationalDB) ]
+package org.typhon.[database.tables.entity.name.toLowerCase()/].model.repository;
+
+import org.typhon.[database.tables.entity.name.toLowerCase()/].model.[database.tables.entity.name.toUpperFirst()/];
+
+import java.util.List;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+@Api
+@RepositoryRestResource(collectionResourceRel = "[database.tables.entity.name.toLowerCase()/]", path = "[database.tables.entity.name.toLowerCase()/]")
+public interface [database.tables.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.tables.entity.name.toUpperFirst()/], Long> {
+	
+[for (attribute : Attribute | database.tables.entity.attributes)]
+	@ApiOperation("Get [database.tables.entity.name.toLower()/] by [attribute.name/]")
+	List<[database.tables.entity.name.toUpperFirst()/]> findBy[attribute.name.toUpperFirst()/](@Param("[attribute.name/]") 
+								@ApiParam(value="[attribute.name.toUpperFirst()/]")String [attribute.name/]);
+
+[/for]
+}
+[/template]
+
+[template private getDatabaseRepositoryInformation(database : DocumentDB) ]
+package org.typhon.[database.collections.entity.name.toLowerCase()/].model.repository;
+
+import org.typhon.[database.collections.entity.name.toLowerCase()/].model.[database.collections.entity.name.toUpperFirst()/];
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+@RepositoryRestResource(collectionResourceRel = "[database.collections.entity.name.toLowerCase()/]", path = "[database.collections.entity.name.toLowerCase()/]")
+public interface [database.collections.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.collections.entity.name.toUpperFirst()/], String> {
+
+}
+[/template]
+
+[template private getDatabaseRepositoryInformation(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getDatabaseRepositoryInformation(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getDatabaseRepositoryInformation(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR DATABASE REPOSITORY
+######################################################################################
+/]
+
+
+
+
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR DATABASE BEANS
+######################################################################################
+/]
+[template private getDatabaseBean(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getDatabaseBean(database : RelationalDB) ]
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+public class [database.tables.entity.name.toUpperFirst()/] {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+[for (attribute : Attribute | database.tables.entity.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	private [attribute.type.name/] [attribute.name/]; 
+	[/if]
+[/for]
+
+[for (relation : Relation | database.tables.entity.relations)]
+	@ElementCollection
+	private List<String> [relation.name/]; 
+[/for]
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+		
+[for (attribute : Attribute | database.tables.entity.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	public void set[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/]([if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [attribute.name/][elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/] [/if]){
+		this.[attribute.name/] = [attribute.name/];
+	}
+
+	public [if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/][/if]get[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/] (){
+		return [attribute.name/];
+	}
+	[/if]
+[/for]	
+
+[for (relation : Relation | database.tables.entity.relations)separator('\n')]
+	public void set[relation.name.toUpperFirst()/](List<String> [relation.name/]){
+		this.[relation.name/] = [relation.name/];
+	}
+
+	public List<String> get[relation.name.toUpperFirst()/](){
+		return [relation.name/];
+	}
+[/for]
+}
+
+[/template]
+
+[template private getDatabaseBean(database : DocumentDB) ]
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+
+@Document
+public class [database.collections.entity.name.toUpperFirst()/] {
+
+	@Id
+	private String id;
+
+[for (attribute : Attribute | database.collections.entity.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	private [attribute.type.name/] [attribute.name/];
+	[/if] 
+[/for]
+
+[for (relation : Relation | database.collections.entity.relations)]
+	private List<Integer> [relation.name/]; 
+[/for]
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+[for (attribute : Attribute | database.collections.entity.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	public void set[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/]([if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [attribute.name/][elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/] [/if]){
+		this.[attribute.name/] = [attribute.name/];
+	}
+
+	public [if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/][/if]get[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/](){
+		return [attribute.name/];
+	}
+	[/if]
+[/for]	
+
+[for (relation : Relation | database.collections.entity.relations)separator('\n')]
+	public void set[relation.name.toUpperFirst()/](List<Integer> [relation.name/]){
+		this.[relation.name/] = [relation.name/];
+	}
+
+	public List<Integer> get[relation.name.toUpperFirst()/](){
+		return [relation.name/];
+	}
+[/for]
+}
+[/template]
+
+[template private getDatabaseBean(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getDatabaseBean(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getDatabaseBean(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR DATABASE BEANS
+######################################################################################
+/]
+
+
+
+
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR application.properies
+######################################################################################
+/]
+[template private getProperties(database : Database, portNumber : Integer) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getProperties(database : RelationalDB, portNumber : Integer) ]
+server.port=[portNumber/]
+spring.jpa.hibernate.ddl-auto=create
+spring.datasource.url=jdbc:mysql://localhost:[getRelationalDBServerPort()/]/[database.name.toLowerCase()/]
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name:com.mysql.jdbc.Driver
+[/template]
+
+[template private getProperties(database : DocumentDB, portNumber : Integer) ]
+server.port=[portNumber/]
+spring.data.mongodb.host=localhost 
+spring.data.mongodb.port=[getDocumentDBServerPort()/]
+spring.data.mongodb.database=[database.name.toLowerCase()/]
+[/template]
+
+[template private getProperties(database : KeyValueDB, portNumber : Integer) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getProperties(database : GraphDB, portNumber : Integer) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getProperties(database : ColumnDB, portNumber : Integer) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR application.properies
+######################################################################################
+/]
+
+
+

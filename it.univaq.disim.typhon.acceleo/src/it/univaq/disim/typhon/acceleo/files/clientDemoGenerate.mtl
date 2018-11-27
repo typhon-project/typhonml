@@ -1,0 +1,610 @@
+[comment encoding = UTF-8 /]
+[module clientDemoGenerate('http://org.typhon.dsls.typhonml.sirius')]
+
+[import it::univaq::disim::typhon::acceleo::common::utilityGenerator /]
+
+[template public generateClientDemo(aModel : Model){
+		basePort : Integer = getProperty('apigateway.base.port').toInteger();
+	}]
+
+[for (e : Entity | getAllModelEntitiesUtility(aModel))]
+
+
+[comment client-demo/src/main/java/org/typhon/client/model/dto/OrderDTO.java/]
+[file (getProperty('client.name.folder')+'/src/main/java/org/typhon/client/model/dto/'+e.name.toUpperFirst()+'DTO.java', false, 'UTF-8')]
+package org.typhon.client.model.dto;
+
+import java.util.*;
+	
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+	
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class [e.name.toUpperFirst()/]DTO {
+
+[for (attribute : Attribute | e.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	private [attribute.type.name/] [attribute.name/];
+	[else]
+	private [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id;
+	[/if] 
+[/for]
+[for (relation : Relation | e.relations)]
+	private List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj; 
+[/for]
+		
+[for (attribute : Attribute | e.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	public void set[attribute.name.toUpperFirst()/] ([attribute.type.name/] [attribute.name/]){
+		this.[attribute.name/] = [attribute.name/];
+	}
+
+	public [attribute.type.name/] get[attribute.name.toUpperFirst()/](){
+		return [attribute.name/];
+	}
+	[else]
+	public void setId ([e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id){
+		this.id = id;
+	}
+	public [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] getId(){
+		return id;
+	}
+	[/if]
+
+[/for]
+[for (relation : Relation | e.relations)]
+	public List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> get[relation.name.toUpperFirst()/](){
+		return [relation.name/]Obj;
+	}
+	public void set[relation.name.toUpperFirst()/](List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj){
+		this.[relation.name/]Obj = [relation.name/]Obj;
+	}
+[/for]
+
+}
+[/file]
+
+
+[comment client-demo/src/main/java/org/typhon/client/model/Order.java/]
+[file (getProperty('client.name.folder')+'/src/main/java/org/typhon/client/model/'+e.name.toUpperFirst()+'.java', false, 'UTF-8')]
+package org.typhon.client.model;
+
+import java.util.*;
+	
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.typhon.client.service.*;
+
+	
+public class [e.name.toUpperFirst()/] {
+	
+private static final Logger logger = LoggerFactory.getLogger([e.name.toUpperFirst()/].class);
+
+[for (attribute : Attribute | e.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	private [attribute.type.name/] [attribute.name/];
+	[else]
+	private [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id;
+	[/if] 
+[/for]
+[for (relation : Relation | e.relations)]
+	private List<[relation.type.name/]> [relation.name/]Obj; 
+	private List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]; 
+
+[/for]
+		
+[for (attribute : Attribute | e.attributes)]
+	[if (attribute.name.strcmp('id') <> 0)]
+	public void set[attribute.name.toUpperFirst()/] ([attribute.type.name/] [attribute.name/]){
+		this.[attribute.name/] = [attribute.name/];
+	}
+
+	public [attribute.type.name/] get[attribute.name.toUpperFirst()/](){
+		return [attribute.name/];
+	}
+	[else]
+	public void setId ([e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id){
+		this.id = id;
+	}
+	public [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] getId(){
+		return id;
+	}
+	[/if]
+
+[/for]
+[for (relation : Relation | e.relations)]
+	public List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> get[relation.name.toUpperFirst()/](){
+		return [relation.name/];
+	}
+	public void set[relation.name.toUpperFirst()/](List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]){
+		this.[relation.name/] = [relation.name/];
+	}
+[/for]
+
+
+[for (relation : Relation | e.relations)]
+	public List<[relation.type.name.toUpperFirst()/]> get[relation.type.name.toUpperFirst()/]Obj() {
+		[relation.type.name.toUpperFirst()/]Service [relation.type.name.toLower()/]Service = new [relation.type.name.toUpperFirst()/]Service("http://localhost:[calculateEntityPortByRelation(aModel, relation)/]");
+		List<[relation.type.name.toUpperFirst()/]> result = new ArrayList<[relation.type.name.toUpperFirst()/]>();
+		for ([relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/] typeObj : [relation.name/]) {
+			try {
+				result.add([relation.type.name.toLower()/]Service.findById(typeObj));
+			}
+			catch (Exception e) {
+				logger.error(e.getMessage());
+			}
+		}
+		return result;
+	}
+
+	public void set[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/](List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> obj) {
+		this.[relation.name/] = obj;
+	}
+[/for]
+}
+
+[/file]
+
+
+
+[comment client-demo/src/main/java/org/typhon/client/service/OrderService.java/]
+[file (getProperty('client.name.folder')+'/src/main/java/org/typhon/client/service/'+e.name.toUpperFirst()+'Service.java', false, 'UTF-8')]
+package org.typhon.client.service;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.hateoas.Link;
+import org.springframework.hateoas.MediaTypes;
+import org.springframework.hateoas.PagedResources;
+import org.springframework.hateoas.hal.Jackson2HalModule;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+import org.typhon.client.model.[e.name.toUpperFirst()/];
+import org.typhon.client.model.dto.[e.name.toUpperFirst()/]DTO;
+
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class [e.name.toUpperFirst()/]Service {
+	private static final Logger logger = LoggerFactory.getLogger([e.name.toUpperFirst()/]Service.class);
+	private String baseUrl;
+	ModelMapper modelMapper;
+	private RestTemplate restTemplate;
+
+	public [e.name.toUpperFirst()/]Service(String baseUrl) {
+		this.baseUrl = baseUrl;
+		restTemplate = restTemplate();
+		modelMapper = new ModelMapper();
+	}
+
+	RestTemplate restTemplate() {
+		ObjectMapper objectMapper = new ObjectMapper();
+		objectMapper.registerModule(new Jackson2HalModule());
+		objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+		MappingJackson2HttpMessageConverter messageConverter = new MappingJackson2HttpMessageConverter();
+		messageConverter.setObjectMapper(objectMapper);
+		messageConverter.setSupportedMediaTypes(Arrays.asList(MediaTypes.HAL_JSON));
+		return new RestTemplate(Arrays.asList(messageConverter));
+	}
+
+	public [e.name.toUpperFirst()/] findById([e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id) {
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(baseUrl + "/[e.name.toLowerCase()/]/" + id);
+		String uriBuilder = builder.build().encode().toUriString();
+		[e.name.toUpperFirst()/]DTO [e.name.toLowerCase()/]DTO = restTemplate
+				.exchange(uriBuilder, HttpMethod.GET, null, new ParameterizedTypeReference<[e.name.toUpperFirst()/]DTO>() {
+				}).getBody();
+		[e.name.toUpperFirst()/] [e.name.toLowerCase()/] = modelMapper.map([e.name.toLowerCase()/]DTO, [e.name.toUpperFirst()/].class);
+		return [e.name.toLowerCase()/];
+	}
+	
+	public void delete([e.name.toUpperFirst()/] objToDelete) {
+		try {
+			UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(baseUrl + "/[e.name.toLowerCase()/]/" + objToDelete.getId());
+			String uriBuilder = builder.build().encode().toUriString();
+			restTemplate.delete(uriBuilder);
+		}
+		catch(HttpClientErrorException e) {
+			logger.error(e.getMessage());
+		}
+	}
+
+	public PagedResources<[e.name.toUpperFirst()/]> findAll(int page, int size, String order) {
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(baseUrl + "/[e.name.toLowerCase()/]").queryParam("page", page)
+				.queryParam("size", size).queryParam("order", order);
+		String uriBuilder = builder.build().encode().toUriString();
+		PagedResources<[e.name.toUpperFirst()/]DTO> queryResult = restTemplate.exchange(uriBuilder, HttpMethod.GET, null,
+				new ParameterizedTypeReference<PagedResources<[e.name.toUpperFirst()/]DTO>>() {
+				}).getBody();
+		List<[e.name.toUpperFirst()/]> objList = new ArrayList<[e.name.toUpperFirst()/]>();
+		queryResult.forEach(z -> objList.add(modelMapper.map(z, [e.name.toUpperFirst()/].class)));
+		PagedResources<[e.name.toUpperFirst()/]> result = new PagedResources<[e.name.toUpperFirst()/]>(objList, queryResult.getMetadata(),
+				new ArrayList<Link>());
+		return result;
+	}
+
+	public [e.name.toUpperFirst()/] create([e.name.toUpperFirst()/] objToCreate) {
+		[e.name.toUpperFirst()/]DTO p = modelMapper.map(objToCreate, [e.name.toUpperFirst()/]DTO.class);
+		HttpEntity<[e.name.toUpperFirst()/]DTO> request = new HttpEntity<>(p);
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(baseUrl + "/[e.name.toLowerCase()/]");
+		String uriBuilder = builder.build().encode().toUriString();
+		ResponseEntity<[e.name.toUpperFirst()/]DTO> response = restTemplate.exchange(uriBuilder, HttpMethod.POST, request, [e.name.toUpperFirst()/]DTO.class);
+		[e.name.toUpperFirst()/]DTO foo = response.getBody();
+		objToCreate = modelMapper.map(foo, [e.name.toUpperFirst()/].class);
+		return objToCreate;
+	}	
+	
+	public [e.name.toUpperFirst()/] update([e.name.toUpperFirst()/] objToUpdate) {
+		[e.name.toUpperFirst()/]DTO p = modelMapper.map(objToUpdate, [e.name.toUpperFirst()/]DTO.class);
+		HttpEntity<[e.name.toUpperFirst()/]DTO> request = new HttpEntity<>(p);
+		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(baseUrl + "/[e.name.toLowerCase()/]/" + objToUpdate.getId());
+		String uriBuilder = builder.build().encode().toUriString();
+		ResponseEntity<[e.name.toUpperFirst()/]DTO> response = restTemplate.exchange(uriBuilder, HttpMethod.PUT, request, [e.name.toUpperFirst()/]DTO.class);
+		[e.name.toUpperFirst()/]DTO foo = response.getBody();
+		objToUpdate = modelMapper.map(foo, [e.name.toUpperFirst()/].class);
+		return objToUpdate;
+	}
+}
+[/file]
+
+
+
+[comment client-demo/src/test/java/org/typhon/client/test/OrderServiceTest.java/]
+[file (getProperty('client.name.folder')+'/src/test/java/org/typhon/client/test/'+e.name.toUpperFirst()+'ServiceTest.java', false, 'UTF-8')]
+package org.typhon.client.test;
+
+import static org.junit.Assert.assertNotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.hateoas.PagedResources;
+import org.typhon.client.model.*;
+import org.typhon.client.service.*;
+
+public class [e.name.toUpperFirst()/]ServiceTest {
+	[e.name.toUpperFirst()/]Service [e.name.toLower()/]Service;
+	[for (relation : Relation | e.relations)]
+	[relation.type.name.toUpperFirst()/]Service [relation.type.name.toLower()/]Service;
+	[/for]
+
+	@Before
+	public void init() {
+		[e.name.toLower()/]Service = new [e.name.toUpperFirst()/]Service("http://localhost:8080");
+		[for (relation : Relation | e.relations)]
+		[relation.type.name.toLower()/]Service = new [relation.type.name.toUpperFirst()/]Service("http://localhost:8080");
+		[/for]
+	}
+
+	//Stub for object creation
+	@Test
+	public void testCreate[e.name.toUpperFirst()/]() {
+		[e.name.toUpperFirst()/] objToCreate = new [e.name.toUpperFirst()/]();
+		//TODO set the objToCreate attributes
+		
+		[e.name.toLower()/]Service.create(objToCreate);
+	}
+		
+	@Test
+	public void testFindAll() {
+		assertNotNull([e.name.toLower()/]Service.findAll(1,5,"ASC"));
+		PagedResources<[e.name.toUpperFirst()/]> v = [e.name.toLower()/]Service.findAll(1,5,"ASC");
+		v.getLinks();
+	}
+	
+}
+
+	
+[/file]
+
+
+[/for]
+
+
+
+[comment client-demo/src/test/java/org/typhon/client/test/RelationTest.java/]
+[file (getProperty('client.name.folder')+'/src/test/java/org/typhon/client/test/RelationTest.java', false, 'UTF-8')]
+	
+package org.typhon.client.test;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.typhon.client.model.*;
+import org.typhon.client.service.*;
+
+public class RelationTest {
+
+	[for (entityForRelation : Entity | getAllModelEntitiesUtility(aModel))]
+	[entityForRelation.name.toUpperFirst()/]Service [entityForRelation.name.toLower()/]Service;
+	[/for]	
+
+	@Before
+	public void init() {
+	[for (entityForRelation : Entity | getAllModelEntitiesUtility(aModel))]
+		[entityForRelation.name.toLower()/]Service  = new [entityForRelation.name.toUpperFirst()/]Service("http://localhost:[basePort + aModel.eAllContents()->filter(Entity)->sortedBy(x | x.name)->indexOf(entityForRelation)/]");
+	[/for]	
+	}
+	
+	[for (entityForRelation : Entity | getAllModelEntitiesUtility(aModel))]
+	@Test
+	public void testFind[entityForRelation.name.toUpperFirst()/]ById() {
+		[entityForRelation.name.toUpperFirst()/] p = [entityForRelation.name.toLower()/]Service.findById([entityForRelation.genericList.eContainer(Database).getTestValueBasedOnDatabaseType()/]);
+		[for (relation : Relation | entityForRelation.relations)]
+		List<[relation.type.name.toUpperFirst()/]> [relation.name/] = p.get[relation.type.name.toUpperFirst()/]Obj();
+		System.out.println(String.format("The [entityForRelation.name.toUpperFirst()/] is related with [relation.type.name.toUpperFirst()/]:"));
+		for ([relation.type.name.toUpperFirst()/] iter : [relation.name/]) {
+			[for (attribute : Attribute | relation.type.attributes)]
+				System.out.println("\t- " + iter.get[attribute.name.toUpperFirst()/]());
+			[/for]
+		}	
+		[/for]	
+	}
+	[/for]	
+}
+[/file]
+
+
+
+
+[comment client-demo/src/main/resources/application.properties/]
+[file (getProperty('client.name.folder')+'/src/main/resources/application.properties', false, 'UTF-8')]
+
+[/file]
+
+
+
+[comment POM.xml/]
+[file (getProperty('client.name.folder')+'/pom.xml', false, 'UTF-8')]
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.client-order</groupId>
+	<artifactId>client-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>client-demo</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.6.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.buile.sourceEncoding>UTF-8</project.buile.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.hateoas/spring-hateoas -->
+		<dependency>
+			<groupId>org.springframework.hateoas</groupId>
+			<artifactId>spring-hateoas</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>0.7.4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
+[/file]
+
+
+
+[/template]
+
+
+
+[template public generateTestFile(d : Database)]
+	package org.typhon.client.test;
+
+	import static org.junit.Assert.*;
+	
+	import java.util.ArrayList;
+	import java.util.List;
+	
+	import org.junit.Before;
+	import org.junit.Ignore;
+	import org.junit.Test;
+	import org.springframework.hateoas.PagedResources;
+	import org.typhon.client.model.*;
+	import org.typhon.client.service.*;
+	
+	public class [d.name.toUpperFirst()/]ServiceTest {
+		[d.name.toUpperFirst()/]Service personService;
+		@Before
+		public void init() {
+			personService = new [d.name.toUpperFirst()/]Service("http://localhost:8092");
+		}
+		@Test
+		public void testFingById() {
+			[d.name.toUpperFirst()/] p = personService.findById(1);
+			assertNotNull(p);
+			List<Order> orders = p.getOrdersObj();
+			for (Order order : orders) {
+				System.out.println(order.getDescription());
+			}
+			System.out.println(p.getId());
+			
+		}
+		@Test
+		public void testFindAll() {
+			assertNotNull(personService.findAll(1,5,"ASC"));
+			PagedResources<[d.name.toUpperFirst()/]> v = personService.findAll(1,5,"ASC");
+			v.getLinks();
+			
+		}
+		@Ignore
+		@Test
+		public void testCreatePerson() {
+			[d.name.toUpperFirst()/] p = new [d.name.toUpperFirst()/]();
+			p.setFirstName("juri");
+			p.setLastName("Di Rocco");
+			assertNotNull(personService.create(p));
+		}
+		@Test
+		public void testUpdatePerson() {
+			[d.name.toUpperFirst()/] p = new [d.name.toUpperFirst()/]();
+			p.setId(3);
+			p.setOrders(new ArrayList<String>());
+			p.getOrders().add("1");
+			p.getOrders().add("2");
+			p.setFirstName("Nicole");
+			p.setLastName("Di Rocco");
+			assertNotNull(personService.update(p));
+		}
+		@Test
+		public void testDeletePerson() {
+			Person p = new Person();
+			p.setFirstName("juri");
+			p.setLastName("Di Rocco");
+			p.setId(2);
+			personService.delete(p);
+		}
+	}
+[/template]
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR Variable Type Based On Database Type
+######################################################################################
+/]
+[template private getVariableTypeBasedOnDatabaseType(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getVariableTypeBasedOnDatabaseType(database : RelationalDB) ]
+Integer
+[/template]
+
+[template private getVariableTypeBasedOnDatabaseType(database : DocumentDB) ]
+String
+[/template]
+
+[template private getVariableTypeBasedOnDatabaseType(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getVariableTypeBasedOnDatabaseType(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getVariableTypeBasedOnDatabaseType(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR Variable Type Based On Database Type
+######################################################################################
+/]
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR Variable Type Based On Database Type
+######################################################################################
+/]
+[template private getTypeValueForDifferentDatabase(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTypeValueForDifferentDatabase(database : RelationalDB) ]
+int
+[/template]
+
+[template private getTypeValueForDifferentDatabase(database : DocumentDB) ]
+String
+[/template]
+
+[template private getTypeValueForDifferentDatabase(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTypeValueForDifferentDatabase(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTypeValueForDifferentDatabase(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR Variable Type Based On Database Type
+######################################################################################
+/]
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR Test Value Based On Database Type
+######################################################################################
+/]
+[template private getTestValueBasedOnDatabaseType(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTestValueBasedOnDatabaseType(database : RelationalDB) ]
+1
+[/template]
+
+[template private getTestValueBasedOnDatabaseType(database : DocumentDB) ]
+"1"
+[/template]
+
+[template private getTestValueBasedOnDatabaseType(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTestValueBasedOnDatabaseType(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTestValueBasedOnDatabaseType(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR Test Value Based On Database Type
+######################################################################################
+/]

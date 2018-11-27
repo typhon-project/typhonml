@@ -1,0 +1,50 @@
+[comment encoding = UTF-8 /]
+[module utilityGenerator('http://org.typhon.dsls.typhonml.sirius')]
+
+
+
+[query public getAllModelEntitiesUtility(aModel : Model) : Entity = aModel.dataTypes->filter(typhonml::Entity)->sortedBy(x | x.name) /]
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR resolving Entity name from Database
+######################################################################################
+/]
+[template public resolveEntityNameFromDatabase(database : Database) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[template public resolveEntityNameFromDatabase(database : RelationalDB) ]
+[database.tables.entity.name/]
+[/template]
+[template public resolveEntityNameFromDatabase(database : DocumentDB) ]
+[database.collections.entity.name/]
+[/template]
+[template public resolveEntityNameFromDatabase(database : KeyValueDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[template public resolveEntityNameFromDatabase(database : GraphDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[template public resolveEntityNameFromDatabase(database : ColumnDB) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR resolving Entity name from Database
+######################################################################################
+/]
+
+
+[template public calculateEntityPortByRelation(aModel : Model, relation : Relation){
+		basePort : Integer = getProperty('apigateway.base.port').toInteger();
+	}]
+[for (ent : Entity | getAllModelEntitiesUtility(aModel))][if(ent.name.strcmp(relation.type.name) = 0)][basePort + aModel.dataTypes->filter(typhonml::Entity)->sortedBy(x | x.name)->indexOf(ent)/][/if][/for]
+[/template]
+
+[template public calculateEntityPort(aModel : Model, entity : Entity){
+		basePort : Integer = getProperty('apigateway.base.port').toInteger();
+	}]
+[for (ent : Entity | getAllModelEntitiesUtility(aModel))][if(ent.name.strcmp(entity.name) = 0)][basePort + aModel.dataTypes->filter(typhonml::Entity)->sortedBy(x | x.name)->indexOf(ent)/][/if][/for]
+[/template]
