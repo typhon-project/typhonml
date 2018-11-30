@@ -34,7 +34,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" eType="#//Cardinality"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
+        eType="#//Cardinality"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContainment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>

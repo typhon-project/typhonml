@@ -62,7 +62,7 @@ public interface Relation extends NamedElement {
 	 * @see typhonml.Cardinality
 	 * @see #setCardinality(Cardinality)
 	 * @see typhonml.TyphonmlPackage#getRelation_Cardinality()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Cardinality getCardinality();
