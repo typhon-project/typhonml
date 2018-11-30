@@ -1,7 +1,0 @@
-datatype string
-datatype int
-datatype date
-datatype real
-datatype blob
-
-datatype natural_language

@@ -1,6 +1,0 @@
-custom-datatype jpeg {
-	date : date
-	thumbnail : blob
-}
-
-// Add also the possibility to add some NLP functions
