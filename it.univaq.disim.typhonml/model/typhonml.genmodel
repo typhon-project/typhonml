@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/it.univaq.disim.typhonml/src" modelPluginID="it.univaq.disim.typhonml"
+    modelName="Typhonml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>typhonml.ecore</foreignModel>
+  <genPackages prefix="Typhonml" disposableProviderFactory="true" ecorePackage="typhonml.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="typhonml.ecore#//Cardinality">
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/zero_one"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/one"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/zero_many"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/one_many"/>
+    </genEnums>
+    <genClasses ecoreClass="typhonml.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Model/databases"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Model/dataTypes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="typhonml.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NamedElement/importedNamespace"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="typhonml.ecore#//Database"/>
+    <genClasses image="false" ecoreClass="typhonml.ecore#//DataType"/>
+    <genClasses ecoreClass="typhonml.ecore#//PrimitiveDataType"/>
+    <genClasses ecoreClass="typhonml.ecore#//CustomDataType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//CustomDataType/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//DataTypeItem">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//DataTypeItem/type"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/relations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/genericList"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Attribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Attribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Relation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Relation/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//Relation/cardinality"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Relation/opposite"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//Relation/isContainment"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//RelationalDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//RelationalDB/tables"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Table">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Table/indexSpec"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Table/idSpec"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Table/db"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//IndexSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//IndexSpec/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//IndexSpec/references"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference typhonml.ecore#//IndexSpec/table"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//IdSpec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//IdSpec/attributes"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference typhonml.ecore#//IdSpec/table"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//DocumentDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//DocumentDB/collections"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Collection"/>
+    <genClasses ecoreClass="typhonml.ecore#//KeyValueDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//KeyValueDB/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//KeyValueElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//KeyValueElement/key"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//KeyValueElement/values"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//GraphDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphDB/nodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphDB/edges"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//GraphNode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphNode/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//GraphAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//GraphEdge">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphEdge/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphEdge/to"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphEdge/labels"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//GraphEdgeLabel">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//GraphEdgeLabel/type"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//ColumnDB">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//ColumnDB/columns"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Column">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Column/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//GenericList">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//GenericList/entity"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
