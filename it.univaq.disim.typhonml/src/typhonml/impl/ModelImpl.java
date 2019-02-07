@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import typhonml.ChangeOperator;
 import typhonml.DataType;
 import typhonml.Database;
 import typhonml.Model;
@@ -31,6 +32,7 @@ import typhonml.TyphonmlPackage;
  * <ul>
  *   <li>{@link typhonml.impl.ModelImpl#getDatabases <em>Databases</em>}</li>
  *   <li>{@link typhonml.impl.ModelImpl#getDataTypes <em>Data Types</em>}</li>
+ *   <li>{@link typhonml.impl.ModelImpl#getChangeOperators <em>Change Operators</em>}</li>
  * </ul>
  *
  * @generated
@@ -55,6 +57,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<DataType> dataTypes;
+
+	/**
+	 * The cached value of the '{@link #getChangeOperators() <em>Change Operators</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChangeOperators()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ChangeOperator> changeOperators;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,6 +116,18 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<ChangeOperator> getChangeOperators() {
+		if (changeOperators == null) {
+			changeOperators = new EObjectContainmentEList<ChangeOperator>(ChangeOperator.class, this, TyphonmlPackage.MODEL__CHANGE_OPERATORS);
+		}
+		return changeOperators;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -111,6 +135,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return ((InternalEList<?>)getDatabases()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.MODEL__DATA_TYPES:
 				return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
+			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
+				return ((InternalEList<?>)getChangeOperators()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -127,6 +153,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return getDatabases();
 			case TyphonmlPackage.MODEL__DATA_TYPES:
 				return getDataTypes();
+			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
+				return getChangeOperators();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +176,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				getDataTypes().clear();
 				getDataTypes().addAll((Collection<? extends DataType>)newValue);
 				return;
+			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
+				getChangeOperators().clear();
+				getChangeOperators().addAll((Collection<? extends ChangeOperator>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,6 +198,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			case TyphonmlPackage.MODEL__DATA_TYPES:
 				getDataTypes().clear();
 				return;
+			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
+				getChangeOperators().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -182,6 +217,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return databases != null && !databases.isEmpty();
 			case TyphonmlPackage.MODEL__DATA_TYPES:
 				return dataTypes != null && !dataTypes.isEmpty();
+			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
+				return changeOperators != null && !changeOperators.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

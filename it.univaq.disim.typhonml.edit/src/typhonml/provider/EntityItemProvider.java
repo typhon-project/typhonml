@@ -88,6 +88,7 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__RELATIONS);
+			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__IDENTIFER);
 		}
 		return childrenFeatures;
 	}
@@ -145,6 +146,7 @@ public class EntityItemProvider extends DataTypeItemProvider {
 		switch (notification.getFeatureID(Entity.class)) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 			case TyphonmlPackage.ENTITY__RELATIONS:
+			case TyphonmlPackage.ENTITY__IDENTIFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -169,8 +171,23 @@ public class EntityItemProvider extends DataTypeItemProvider {
 
 		newChildDescriptors.add
 			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createAddAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__RELATIONS,
 				 TyphonmlFactory.eINSTANCE.createRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__RELATIONS,
+				 TyphonmlFactory.eINSTANCE.createAddRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__IDENTIFER,
+				 TyphonmlFactory.eINSTANCE.createEntityIdentifier()));
 	}
 
 }

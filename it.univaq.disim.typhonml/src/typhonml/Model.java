@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link typhonml.Model#getDatabases <em>Databases</em>}</li>
  *   <li>{@link typhonml.Model#getDataTypes <em>Data Types</em>}</li>
+ *   <li>{@link typhonml.Model#getChangeOperators <em>Change Operators</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getModel()
@@ -55,5 +56,21 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<DataType> getDataTypes();
+
+	/**
+	 * Returns the value of the '<em><b>Change Operators</b></em>' containment reference list.
+	 * The list contents are of type {@link typhonml.ChangeOperator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Change Operators</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Change Operators</em>' containment reference list.
+	 * @see typhonml.TyphonmlPackage#getModel_ChangeOperators()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ChangeOperator> getChangeOperators();
 
 } // Model

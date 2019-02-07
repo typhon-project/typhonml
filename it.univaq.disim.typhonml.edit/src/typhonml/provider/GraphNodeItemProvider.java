@@ -164,6 +164,11 @@ public class GraphNodeItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(TyphonmlPackage.Literals.GRAPH_NODE__ATTRIBUTES,
 				 TyphonmlFactory.eINSTANCE.createGraphAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.GRAPH_NODE__ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createAddGraphAttribute()));
 	}
 
 }

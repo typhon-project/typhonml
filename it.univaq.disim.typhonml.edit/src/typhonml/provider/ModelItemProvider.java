@@ -79,6 +79,7 @@ public class ModelItemProvider
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__DATABASES);
 			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__DATA_TYPES);
+			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS);
 		}
 		return childrenFeatures;
 	}
@@ -133,6 +134,7 @@ public class ModelItemProvider
 		switch (notification.getFeatureID(Model.class)) {
 			case TyphonmlPackage.MODEL__DATABASES:
 			case TyphonmlPackage.MODEL__DATA_TYPES:
+			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -178,7 +180,22 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
+				 TyphonmlFactory.eINSTANCE.createEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
+				 TyphonmlFactory.eINSTANCE.createAddEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
 				 TyphonmlFactory.eINSTANCE.createPrimitiveDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
+				 TyphonmlFactory.eINSTANCE.createFreeText()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -187,8 +204,176 @@ public class ModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
-				 TyphonmlFactory.eINSTANCE.createEntity()));
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createSplitEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createMigrateEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createMergeEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenameRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createEnableRelationContainment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createDisableRelationContainment()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createEnableBidirectionalRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createDisableBidirectionalRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createChangeRelationCardinality()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createChangeAttributeType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenameAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenameTable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddIdentifier()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddAttributesToIdenfifier()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveIdentifier()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveAttributesToIdenfifier()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenameIdentifier()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddIndex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createDropIndex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddGraphAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveGraphAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddGraphEdge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveGraphEdge()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenabeGraphEdgeLabel()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == TyphonmlPackage.Literals.MODEL__DATA_TYPES ||
+			childFeature == TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**
