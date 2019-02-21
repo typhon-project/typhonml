@@ -17,7 +17,7 @@ import typhonml.TyphonmlPackage;
 public class Runner {
 
 	private static String modelFolder = "model/";
-	private static String outFolder = "output2/";
+	private static String outFolder = "output/";
 
 	public static void main(String[] args) {
 
