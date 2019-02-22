@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="it.univaq.disim.typhonml.design.Activator"
+               id="it.univaq.disim.typhonml.design"
+	       name="typhonml">
+    </component>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RemoveEntityAction"
+           id="RemoveEntity">
+     </javaActions>
+          <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RemoveRelationAction"
+           id="RemoveRelation">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RenameRelationAction"
+           id="RenameRelationAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RenameEntityAction"
+           id="RenameEntityAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.ChangeCardinalityRelationAction"
+           id="ChangeCardinalityRelationAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.ChangeRelationContainerAction"
+           id="ChangeRelationContainerAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RemoveAttributeAction"
+           id="RemoveAttributeAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RenameAttributeAction"
+           id="RenameAttributeAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.ChangeAttributeTypeAction"
+           id="ChangeAttributeTypeAction">
+     </javaActions>
+     <javaActions
+           actionClass="it.univaq.disim.typhonml.design.RemoveIdentifierAction"
+           id="RemoveIdentifierAction">
+     </javaActions>
+  </extension>
+</plugin>

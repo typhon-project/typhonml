@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:filter="http://www.eclipse.org/sirius/diagram/description/filter/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="typhonml" version="12.0.0.2017041100">
+  <ownedViewpoints name="FreeEditing">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="typhonML" initialisation="true" domainClass="typhonml::Model" enablePopupBars="true">
+      <metamodel href="../../it.univaq.disim.typhonml/model/typhonml.ecore#/"/>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Data types">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@nodeMappings[name='CustomDataType'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='DataTypeItem'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@nodeMappings[name='PrimitiveType']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide RelationalDB">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Conceptual">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Relation'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Relational DB IdSpec">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IdSpec']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide Relational DB IndexSpec">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IndexSpec']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide DocumentDB">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='DocumentDb']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide KeyValueDB">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='KeyValueDB']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide GraphDB">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide ColumnDB">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='ColumnDB']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide all DBs">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='ColumnDB'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='DocumentDb'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Entity2DocumentDB'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='KeyValueDB'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']"/>
+      </filters>
+      <filters xsi:type="filter:CompositeFilterDescription" name="Hide attribute">
+        <filters xsi:type="filter:MappingFilter" mappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']"/>
+      </filters>
+      <defaultLayer name="Default">
+        <nodeMappings name="PrimitiveType" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::PrimitiveDataType">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="CustomDataType" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::CustomDataType">
+          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetFinderExpression="feature:type" sourceFinderExpression="feature:eContainer" domainClass="typhonml::Relation" useDomainElement="true">
+          <style routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="9" showIcon="false" labelExpression="aql:self.name  + ' ' + self.cardinality + if self.isContainment then ' is containment' else '' endif">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DataTypeItem" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@nodeMappings[name='CustomDataType']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='DataTypeItem']" targetFinderExpression="feature:type" sourceFinderExpression="var:self.eContainer().eContainer()" domainClass="DataTypeItem" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EntityDBRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="idSpec2Attribute" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IdSpec']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']" targetFinderExpression="feature:attributes">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            <centerLabelStyleDescription labelExpression="aql:'involves'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="IndexSpec2Attribute" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IndexSpec']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']" targetFinderExpression="feature:attributes">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="IndexSpec2Relation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IndexSpec']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Relation']" targetFinderExpression="feature:references">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Entity2DocumentDB" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='DocumentDb']/@subNodeMappings[name='Collection']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Entity2KeyValueItem" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='KeyValueDB']/@subNodeMappings[name='KeyValueElement']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Entity2GraphNode" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']/@subNodeMappings[name='GraphNode']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GraphNode2Attribute" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']/@subNodeMappings[name='GraphNode']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']" targetFinderExpression="feature:value" sourceFinderExpression="aql:self.eContainer()" domainClass="typhonml::GraphAttribute" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GraphEdge" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']/@subNodeMappings[name='GraphNode']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']/@subNodeMappings[name='GraphNode']" targetFinderExpression="feature:to" sourceFinderExpression="feature:from" domainClass="typhonml::GraphEdge" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="feature:name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GraphLabel2DataType" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='GraphEdge']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@nodeMappings[name='CustomDataType'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@nodeMappings[name='PrimitiveType'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']" targetFinderExpression="feature:type" sourceFinderExpression="feature:eContainer" domainClass="typhonml::GraphEdgeLabel" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Column2Attrbutes" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='ColumnDB']/@subNodeMappings[name='Column']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']" targetFinderExpression="feature:attributes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EntityIdentifierRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='EntityIdentifier']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']" targetFinderExpression="feature:attributes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Entity" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::Entity">
+          <subNodeMappings name="Attribute" semanticCandidatesExpression="feature:attributes" domainClass="typhonml::Attribute">
+            <style xsi:type="style:SquareDescription" labelSize="9" showIcon="false" labelExpression="aql: self.name + ' : ' + self.type.name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="EntityIdentifier" semanticCandidatesExpression="feature:identifer" domainClass="typhonml::EntityIdentifier">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Identifier'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" borderSizeComputationExpression="2" labelSize="9" showIcon="false" labelExpression="aql:'     ' + self.name + ' : ' + self.eClass().name" labelAlignment="LEFT" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="RealtionalDB" semanticCandidatesExpression="feature:databases" domainClass="typhonml::RelationalDB">
+          <subContainerMappings name="Table" semanticCandidatesExpression="feature:tables" domainClass="Table">
+            <subNodeMappings name="IdSpec" semanticCandidatesExpression="feature:idSpec" domainClass="typhonml::IdSpec">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'idSpec'" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="IndexSpec" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::IndexSpec">
+              <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'IndexSpec'" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:'     ' + self.name" labelAlignment="LEFT" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_blue']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_blue']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DocumentDb" semanticCandidatesExpression="feature:databases" domainClass="typhonml::DocumentDB">
+          <subNodeMappings name="Collection" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::Collection">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:'     ' + self.name" labelAlignment="LEFT" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_green']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_green']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="KeyValueDB" semanticCandidatesExpression="feature:databases" domainClass="typhonml::KeyValueDB">
+          <subNodeMappings name="KeyValueElement" semanticCandidatesExpression="feature:elements" domainClass="typhonml::KeyValueElement">
+            <style xsi:type="style:SquareDescription" labelExpression="feature:key" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:'     ' + self.name" labelAlignment="LEFT" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_lite_purple']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_lite_purple']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="GraphDB" semanticCandidatesExpression="feature:databases" domainClass="typhonml::GraphDB">
+          <subNodeMappings name="GraphNode" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::GraphNode">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" showIcon="false" labelExpression="aql:'     ' + self.name" labelAlignment="LEFT" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_purple']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_purple']">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ColumnDB" semanticCandidatesExpression="feature:databases" domainClass="typhonml::ColumnDB">
+          <subNodeMappings name="Column" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::Column">
+            <style xsi:type="style:SquareDescription" labelExpression="aql:''" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" borderLineStyle="dot" showIcon="false" labelExpression="aql:'     ' + self.name" labelAlignment="LEFT" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Entity">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Entity" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Entity" referenceName="dataTypes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Attribute" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Attribute" referenceName="attributes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Relation" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Relation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container.relations">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Relation" referenceName="relations">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Identifier" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='EntityIdentifier']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::EntityIdentifier" referenceName="identifer"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Entity Identifier" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='EntityIdentifierRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="RelationDB">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="RelationalDB" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::RelationalDB" referenceName="databases"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Table2Entity" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='EntityDBRelation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Table" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Table" referenceName="tables"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="IdSpec" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IdSpec']" iconPath="/org.eclipse.sirius.common.ui/icons/LinkTomodel.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::IdSpec" referenceName="idSpec"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="idSpec2Attribute" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='idSpec2Attribute']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="IndexSpec" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='RealtionalDB']/@subContainerMappings[name='Table']/@subNodeMappings[name='IndexSpec']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::IndexSpec" referenceName="indexSpec"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="IndexSpec2Attribute" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='IndexSpec2Attribute']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:contect">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="IndexSpec2Relation" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='IndexSpec2Relation']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="references" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="DocumentDB">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="DocumentDbB" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='DocumentDb']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::DocumentDB" referenceName="databases"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Collection" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='DocumentDb']/@subNodeMappings[name='Collection']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Collection" referenceName="collections"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Collection2Entity" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Entity2DocumentDB']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="KeyValueDB">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="KeyvalueDB" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='KeyValueDB']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::KeyValueDB" referenceName="databases"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="KeyValueElement" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='KeyValueDB']/@subNodeMappings[name='KeyValueElement']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::KeyValueElement" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="KeyValueElements2Entity" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Entity2KeyValueItem']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="GraphDB">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="GraphDB" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::GraphDB" referenceName="databases"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="GraphNode" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='GraphDB']/@subNodeMappings[name='GraphNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::GraphNode" referenceName="nodes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Entity2GraphNode" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Entity2GraphNode']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="GraphEdge" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='GraphEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="feature:eContainer">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::GraphEdge" referenceName="edges">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="from" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="to" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Edge2DataType" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='GraphLabel2DataType']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::GraphEdgeLabel" referenceName="labels">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="ColumnDB">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ColumnDB" containerMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='ColumnDB']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::ColumnDB" referenceName="databases"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Column" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='ColumnDB']/@subNodeMappings[name='Column']" iconPath="/org.eclipse.sirius.common.ui/icons/LinkTomodel.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Column" referenceName="columns"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Column2Attribute" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='Column2Attrbutes']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="evolution mode" domainClass="typhonml::Model" enablePopupBars="true">
+      <metamodel href="../../it.univaq.disim.typhonml/model/typhonml.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="PrimitiveTypeEVO" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::PrimitiveDataType">
+          <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="CustomDataTypeEVO" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::CustomDataType">
+          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='chocolate']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RemoveEntity" domainClass="typhonml::RemoveEntity">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Remove entity - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RemoveRelation" domainClass="typhonml::RemoveRelation">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Remove relation - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RenameRelation" domainClass="typhonml::RenameRelation">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Rename relation with ' +  self.newRelationName +  ' - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RenameEntity" domainClass="typhonml::RenameEntity">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Rename entity with ' +  self.newEntityName + ' - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ChangeCardinalityRelation" domainClass="typhonml::ChangeRelationCardinality">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Change relation cardinality with ' +  self.newCardinality  +  ' - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ChangeRelationContainment" domainClass="typhonml::ChangeRelationContainement">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Change relation contaiment as ' +  self.newContainment  +  ' - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RemoveAttribute" domainClass="typhonml::RemoveAttribute">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Remove attribute - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ChangeAttributeType" domainClass="typhonml::ChangeAttributeType">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Change attribute type as' + self.newType.name + ' - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove attribute type" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RenameAttribute" domainClass="typhonml::RenameAttribute">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Rename attribute with ' +  self.newName +  ' - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="rename entity" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="RemoveEntityIdentifier" domainClass="typhonml::RemoveIdentifier">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Remove identifier - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity identifier" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="RelationEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:type" sourceFinderExpression="feature:eContainer" domainClass="typhonml::Relation" useDomainElement="true">
+          <style routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="9" showIcon="false" labelExpression="aql:self.name  + ' ' + self.cardinality + if self.isContainment then ' is containment' else '' endif">
+              <labelFormat>italic</labelFormat>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="DataTypeItemEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='CustomDataTypeEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='DataTypeItemEVO']" targetFinderExpression="feature:type" sourceFinderExpression="var:self.eContainer().eContainer()" domainClass="DataTypeItem" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EntityDBRelationEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='RealtionalDBEVO']/@subContainerMappings[name='TableEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="idSpec2AttributeEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='RealtionalDBEVO']/@subContainerMappings[name='TableEVO']/@subNodeMappings[name='IdSpecEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributes">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            <centerLabelStyleDescription labelExpression="aql:'involves'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="IndexSpec2AttributeEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='RealtionalDBEVO']/@subContainerMappings[name='TableEVO']/@subNodeMappings[name='IdSpecEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributes">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="IndexSpec2RelationEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='RealtionalDBEVO']/@subContainerMappings[name='TableEVO']/@subNodeMappings[name='IndexSpecEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='RelationEVO']" targetFinderExpression="feature:references">
+          <style lineStyle="dot" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Entity2DocumentDBEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='DocumentDbEVO']/@subNodeMappings[name='CollectionEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Entity2KeyValueItemEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='KeyValueDBEVO']/@subNodeMappings[name='KeyValueElementEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Entity2GraphNodeEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='GraphDBEVO']/@subNodeMappings[name='GraphNodeEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::GenericList" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GraphNode2AttributeEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='GraphDBEVO']/@subNodeMappings[name='GraphNodeEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:value" sourceFinderExpression="aql:self.eContainer()" domainClass="typhonml::GraphAttribute" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="feature:name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GraphEdgeEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='GraphDBEVO']/@subNodeMappings[name='GraphNodeEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='GraphDBEVO']/@subNodeMappings[name='GraphNodeEVO']" targetFinderExpression="feature:to" sourceFinderExpression="feature:from" domainClass="typhonml::GraphEdge" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelExpression="feature:name">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="GraphLabel2DataTypeEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='GraphEdgeEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='CustomDataTypeEVO'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='PrimitiveTypeEVO'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:type" sourceFinderExpression="feature:eContainer" domainClass="typhonml::GraphEdgeLabel" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Column2AttrbutesEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='ColumnDBEVO']/@subNodeMappings[name='ColumnEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RemoveEntityRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RemoveEntity']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:entityToRemove">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RemoveRelationRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RemoveRelation']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='RelationEVO']" targetFinderExpression="feature:relationToRemove">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RenameRelationRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RenameRelation']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='RelationEVO']" targetFinderExpression="feature:relationToRename">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RenameEntityRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RenameEntity']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:entityToRename">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ChangeRelationCardinalityRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='ChangeCardinalityRelation']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='RelationEVO']" targetFinderExpression="feature:relation">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ChangeRelationContaimentRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='ChangeRelationContainment']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@edgeMappings[name='RelationEVO']" targetFinderExpression="feature:relation">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RemoveAttributeRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RemoveAttribute']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributeToRemove">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ChangeAttributeName" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='ChangeAttributeType']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributeToChange">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RenameAttributeRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RenameAttribute']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributeToRename">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EntityIdentifier2AttributeRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='EntityIdentifierEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributes">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="RemoveEntityIdentifierRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RemoveEntityIdentifier']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='EntityIdentifierEVO']" targetFinderExpression="feature:entityIdentifier">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="EntityEVO" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::Entity">
+          <subNodeMappings name="AttributeEVO" semanticCandidatesExpression="feature:attributes" domainClass="typhonml::Attribute">
+            <style xsi:type="style:SquareDescription" labelSize="9" showIcon="false" labelExpression="aql: self.name + ' : ' + self.type.name" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="EntityIdentifierEVO" semanticCandidatesExpression="feature:identifer" domainClass="typhonml::EntityIdentifier">
+            <style xsi:type="style:SquareDescription" labelExpression="aql:'Identifier'" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="aql:'     ' + self.name + ' : ' + self.eClass().name" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="RealtionalDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::RelationalDB">
+          <subContainerMappings name="TableEVO" semanticCandidatesExpression="feature:tables" domainClass="Table">
+            <subNodeMappings name="IdSpecEVO" semanticCandidatesExpression="feature:idSpec" domainClass="typhonml::IdSpec">
+              <style xsi:type="style:SquareDescription" labelExpression="aql:'idSpec'" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+              </style>
+            </subNodeMappings>
+            <subNodeMappings name="IndexSpecEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::IndexSpec">
+              <style xsi:type="style:SquareDescription" labelExpression="aql:'IndexSpec'" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+              </style>
+            </subNodeMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DocumentDbEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::DocumentDB">
+          <subNodeMappings name="CollectionEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::Collection">
+            <style xsi:type="style:WorkspaceImageDescription" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/Collection.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="KeyValueDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::KeyValueDB">
+          <subNodeMappings name="KeyValueElementEVO" semanticCandidatesExpression="feature:elements" domainClass="typhonml::KeyValueElement">
+            <style xsi:type="style:SquareDescription" labelExpression="feature:key" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="GraphDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::GraphDB">
+          <subNodeMappings name="GraphNodeEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::GraphNode">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="ColumnDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::ColumnDB">
+          <subNodeMappings name="ColumnEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::Column">
+            <style xsi:type="style:SquareDescription" labelExpression="aql:''" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Entity change operators" precondition="aql:self.isEntity()">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete Entity">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="DeleteEntity" id="RemoveEntity"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Rename Entity">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Rename Entity">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.0/@ownedTools[name='Entity%20change%20operators']/@menuItemDescription.1/@initialOperation/@firstModelOperations/@groups.0"/>
+                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:TextDescription" name="New value" labelExpression="aql:'New Value'">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="RenameEntityAct" id="RenameEntityAction">
+                          <parameters name="value" value="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </groups>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Relation change operators" precondition="aql:self.isRelation()">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete Relation">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="DeleteRelation" id="RemoveRelation"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Rename Relation">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Rename Relation">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.0/@ownedTools[name='Relation%20change%20operators']/@menuItemDescription.1/@initialOperation/@firstModelOperations/@groups.0"/>
+                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:TextDescription" name="New value" labelExpression="aql:'New Value'">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="RenameRelationAct" id="RenameRelationAction">
+                          <parameters name="value" value="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </groups>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Change Cardinality Relation">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Change cardinality relation">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.0/@ownedTools[name='Relation%20change%20operators']/@menuItemDescription.2/@initialOperation/@firstModelOperations/@groups.0"/>
+                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:SelectDescription" labelExpression="aql:'Cardinality'" candidatesExpression="aql:typhonml::Cardinality.eLiterals" candidateDisplayExpression="aql:candidate.name">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="ChangeCardinalityRelationAct" id="ChangeCardinalityRelationAction">
+                          <parameters name="value" value="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </groups>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Change Containment Relation as true" precondition="aql:not self.isContainment">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="ChangeRelationContainerAct" id="ChangeRelationContainerAction"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Change Containment Relation as false" precondition="aql:self.isContainment">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="ChangeRelationContainerAct" id="ChangeRelationContainerAction"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Attribute change operators" precondition="aql:self.isAttribute()">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Delete Attribute">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="DeleteAttribute" id="RemoveAttributeAction"/>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Rename Attribute">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Rename Attribute">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.0/@ownedTools[name='Attribute%20change%20operators']/@menuItemDescription.1/@initialOperation/@firstModelOperations/@groups.0"/>
+                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:TextDescription" name="New value" labelExpression="aql:'New Value'">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="RenameRelationAct" id="RenameAttributeAction">
+                          <parameters name="value" value="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </groups>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="Change Attribute Type">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Set Type">
+                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                    <initialOperation/>
+                  </buttons>
+                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                    <initialOperation/>
+                  </buttons>
+                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.0/@ownedTools[name='Attribute%20change%20operators']/@menuItemDescription.2/@initialOperation/@firstModelOperations/@groups.0"/>
+                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                    <controls xsi:type="properties:SelectDescription" labelExpression="aql:'Data Type'" candidatesExpression="aql:self.eContainer().eContainer().dataTypes" candidateDisplayExpression="aql:candidate.name">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="ChangeAttributeTypeAct" id="ChangeAttributeTypeAction">
+                          <parameters name="value" value="var:newValue"/>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </controls>
+                  </groups>
+                </firstModelOperations>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:PopupMenu" name="Identifier operators" precondition="aql:self.oclIsTypeOf(typhonml::EntityIdentifier)">
+            <menuItemDescription xsi:type="tool_1:OperationAction" name="DeleteIdentifierAction">
+              <view name="views"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="DeleteIdentifierAct" id="RemoveIdentifierAction"/>
+              </initialOperation>
+            </menuItemDescription>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="it.univaq.disim.typhonml.design.Services"/>
+  </ownedViewpoints>
+  <userColorsPalettes name="TyphonPalette">
+    <entries xsi:type="description:UserFixedColor" red="12" green="123" blue="150" name="TestColor"/>
+    <entries xsi:type="description:UserFixedColor" red="245" green="249" blue="233" name="Custom_blue"/>
+    <entries xsi:type="description:UserFixedColor" red="191" green="226" blue="209" name="Custom_green"/>
+    <entries xsi:type="description:UserFixedColor" red="234" green="246" blue="243" name="Custom_purple"/>
+    <entries xsi:type="description:UserFixedColor" red="254" green="234" blue="230" name="Custom_lite_purple"/>
+    <entries xsi:type="description:UserFixedColor" red="217" green="224" blue="226" name="Custom_pink"/>
+    <entries xsi:type="description:UserFixedColor" red="255" green="249" blue="230" name="Custom_inner"/>
+  </userColorsPalettes>
+</description:Group>
