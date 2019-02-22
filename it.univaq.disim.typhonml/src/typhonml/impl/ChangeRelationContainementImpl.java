@@ -9,26 +9,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import typhonml.Cardinality;
-import typhonml.ChangeRelationCardinality;
+import typhonml.ChangeRelationContainement;
 import typhonml.Relation;
 import typhonml.TyphonmlPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Change Relation Cardinality</b></em>'.
+ * An implementation of the model object '<em><b>Change Relation Containement</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link typhonml.impl.ChangeRelationCardinalityImpl#getRelation <em>Relation</em>}</li>
- *   <li>{@link typhonml.impl.ChangeRelationCardinalityImpl#getNewCardinality <em>New Cardinality</em>}</li>
+ *   <li>{@link typhonml.impl.ChangeRelationContainementImpl#getRelation <em>Relation</em>}</li>
+ *   <li>{@link typhonml.impl.ChangeRelationContainementImpl#getNewContainment <em>New Containment</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements ChangeRelationCardinality {
+public class ChangeRelationContainementImpl extends ChangeOperatorImpl implements ChangeRelationContainement {
 	/**
 	 * The cached value of the '{@link #getRelation() <em>Relation</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -40,31 +39,31 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	protected Relation relation;
 
 	/**
-	 * The default value of the '{@link #getNewCardinality() <em>New Cardinality</em>}' attribute.
+	 * The default value of the '{@link #getNewContainment() <em>New Containment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewCardinality()
+	 * @see #getNewContainment()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Cardinality NEW_CARDINALITY_EDEFAULT = Cardinality.ZERO_ONE;
+	protected static final Boolean NEW_CONTAINMENT_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getNewCardinality() <em>New Cardinality</em>}' attribute.
+	 * The cached value of the '{@link #getNewContainment() <em>New Containment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewCardinality()
+	 * @see #getNewContainment()
 	 * @generated
 	 * @ordered
 	 */
-	protected Cardinality newCardinality = NEW_CARDINALITY_EDEFAULT;
+	protected Boolean newContainment = NEW_CONTAINMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ChangeRelationCardinalityImpl() {
+	protected ChangeRelationContainementImpl() {
 		super();
 	}
 
@@ -75,7 +74,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY;
+		return TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT;
 	}
 
 	/**
@@ -89,7 +88,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 			relation = (Relation)eResolveProxy(oldRelation);
 			if (relation != oldRelation) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.CHANGE_RELATION_CARDINALITY__RELATION, oldRelation, relation));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION, oldRelation, relation));
 			}
 		}
 		return relation;
@@ -113,7 +112,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 		Relation oldRelation = relation;
 		relation = newRelation;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_RELATION_CARDINALITY__RELATION, oldRelation, relation));
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION, oldRelation, relation));
 	}
 
 	/**
@@ -121,8 +120,8 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality getNewCardinality() {
-		return newCardinality;
+	public Boolean getNewContainment() {
+		return newContainment;
 	}
 
 	/**
@@ -130,11 +129,11 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setNewCardinality(Cardinality newNewCardinality) {
-		Cardinality oldNewCardinality = newCardinality;
-		newCardinality = newNewCardinality == null ? NEW_CARDINALITY_EDEFAULT : newNewCardinality;
+	public void setNewContainment(Boolean newNewContainment) {
+		Boolean oldNewContainment = newContainment;
+		newContainment = newNewContainment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY, oldNewCardinality, newCardinality));
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT, oldNewContainment, newContainment));
 	}
 
 	/**
@@ -145,11 +144,11 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__RELATION:
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION:
 				if (resolve) return getRelation();
 				return basicGetRelation();
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY:
-				return getNewCardinality();
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
+				return getNewContainment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,11 +161,11 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__RELATION:
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION:
 				setRelation((Relation)newValue);
 				return;
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY:
-				setNewCardinality((Cardinality)newValue);
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
+				setNewContainment((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -180,11 +179,11 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__RELATION:
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION:
 				setRelation((Relation)null);
 				return;
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY:
-				setNewCardinality(NEW_CARDINALITY_EDEFAULT);
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
+				setNewContainment(NEW_CONTAINMENT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,10 +197,10 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__RELATION:
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION:
 				return relation != null;
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY:
-				return newCardinality != NEW_CARDINALITY_EDEFAULT;
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
+				return NEW_CONTAINMENT_EDEFAULT == null ? newContainment != null : !NEW_CONTAINMENT_EDEFAULT.equals(newContainment);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -216,10 +215,10 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (newCardinality: ");
-		result.append(newCardinality);
+		result.append(" (newContainment: ");
+		result.append(newContainment);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ChangeRelationCardinalityImpl
+} //ChangeRelationContainementImpl

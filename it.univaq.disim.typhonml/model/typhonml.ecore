@@ -83,7 +83,7 @@
         eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RenameAttribute" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToRemove" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToRename" lowerBound="1"
         eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -104,8 +104,8 @@
         eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveIdentifier" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityIdentifier" lowerBound="1"
+        eType="#//EntityIdentifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveAttributesToIdenfifier" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
@@ -257,5 +257,15 @@
   <eClassifiers xsi:type="ecore:EClass" name="GenericList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
         eType="#//Entity" eOpposite="#//Entity/genericList"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RenameEntity" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRename" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newEntityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeRelationContainement" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
+        eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newContainment" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
 </ecore:EPackage>

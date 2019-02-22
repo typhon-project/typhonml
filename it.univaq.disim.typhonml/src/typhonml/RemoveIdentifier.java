@@ -12,7 +12,7 @@ package typhonml;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link typhonml.RemoveIdentifier#getEntity <em>Entity</em>}</li>
+ *   <li>{@link typhonml.RemoveIdentifier#getEntityIdentifier <em>Entity Identifier</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getRemoveIdentifier()
@@ -21,29 +21,29 @@ package typhonml;
  */
 public interface RemoveIdentifier extends ChangeOperator {
 	/**
-	 * Returns the value of the '<em><b>Entity</b></em>' reference.
+	 * Returns the value of the '<em><b>Entity Identifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Entity</em>' reference isn't clear,
+	 * If the meaning of the '<em>Entity Identifier</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Entity</em>' reference.
-	 * @see #setEntity(Entity)
-	 * @see typhonml.TyphonmlPackage#getRemoveIdentifier_Entity()
+	 * @return the value of the '<em>Entity Identifier</em>' reference.
+	 * @see #setEntityIdentifier(EntityIdentifier)
+	 * @see typhonml.TyphonmlPackage#getRemoveIdentifier_EntityIdentifier()
 	 * @model required="true"
 	 * @generated
 	 */
-	Entity getEntity();
+	EntityIdentifier getEntityIdentifier();
 
 	/**
-	 * Sets the value of the '{@link typhonml.RemoveIdentifier#getEntity <em>Entity</em>}' reference.
+	 * Sets the value of the '{@link typhonml.RemoveIdentifier#getEntityIdentifier <em>Entity Identifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Entity</em>' reference.
-	 * @see #getEntity()
+	 * @param value the new value of the '<em>Entity Identifier</em>' reference.
+	 * @see #getEntityIdentifier()
 	 * @generated
 	 */
-	void setEntity(Entity value);
+	void setEntityIdentifier(EntityIdentifier value);
 
 } // RemoveIdentifier

@@ -113,6 +113,8 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.COLUMN_DB: return createColumnDB();
 			case TyphonmlPackage.COLUMN: return createColumn();
 			case TyphonmlPackage.GENERIC_LIST: return createGenericList();
+			case TyphonmlPackage.RENAME_ENTITY: return createRenameEntity();
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT: return createChangeRelationContainement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -706,6 +708,26 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public GenericList createGenericList() {
 		GenericListImpl genericList = new GenericListImpl();
 		return genericList;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RenameEntity createRenameEntity() {
+		RenameEntityImpl renameEntity = new RenameEntityImpl();
+		return renameEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChangeRelationContainement createChangeRelationContainement() {
+		ChangeRelationContainementImpl changeRelationContainement = new ChangeRelationContainementImpl();
+		return changeRelationContainement;
 	}
 
 	/**

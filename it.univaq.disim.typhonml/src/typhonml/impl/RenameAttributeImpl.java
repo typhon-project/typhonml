@@ -21,7 +21,7 @@ import typhonml.TyphonmlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link typhonml.impl.RenameAttributeImpl#getAttributeToRemove <em>Attribute To Remove</em>}</li>
+ *   <li>{@link typhonml.impl.RenameAttributeImpl#getAttributeToRename <em>Attribute To Rename</em>}</li>
  *   <li>{@link typhonml.impl.RenameAttributeImpl#getNewName <em>New Name</em>}</li>
  * </ul>
  *
@@ -29,14 +29,14 @@ import typhonml.TyphonmlPackage;
  */
 public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAttribute {
 	/**
-	 * The cached value of the '{@link #getAttributeToRemove() <em>Attribute To Remove</em>}' reference.
+	 * The cached value of the '{@link #getAttributeToRename() <em>Attribute To Rename</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAttributeToRemove()
+	 * @see #getAttributeToRename()
 	 * @generated
 	 * @ordered
 	 */
-	protected Attribute attributeToRemove;
+	protected Attribute attributeToRename;
 
 	/**
 	 * The default value of the '{@link #getNewName() <em>New Name</em>}' attribute.
@@ -82,16 +82,16 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute getAttributeToRemove() {
-		if (attributeToRemove != null && attributeToRemove.eIsProxy()) {
-			InternalEObject oldAttributeToRemove = (InternalEObject)attributeToRemove;
-			attributeToRemove = (Attribute)eResolveProxy(oldAttributeToRemove);
-			if (attributeToRemove != oldAttributeToRemove) {
+	public Attribute getAttributeToRename() {
+		if (attributeToRename != null && attributeToRename.eIsProxy()) {
+			InternalEObject oldAttributeToRename = (InternalEObject)attributeToRename;
+			attributeToRename = (Attribute)eResolveProxy(oldAttributeToRename);
+			if (attributeToRename != oldAttributeToRename) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE, oldAttributeToRemove, attributeToRemove));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME, oldAttributeToRename, attributeToRename));
 			}
 		}
-		return attributeToRemove;
+		return attributeToRename;
 	}
 
 	/**
@@ -99,8 +99,8 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Attribute basicGetAttributeToRemove() {
-		return attributeToRemove;
+	public Attribute basicGetAttributeToRename() {
+		return attributeToRename;
 	}
 
 	/**
@@ -108,11 +108,11 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAttributeToRemove(Attribute newAttributeToRemove) {
-		Attribute oldAttributeToRemove = attributeToRemove;
-		attributeToRemove = newAttributeToRemove;
+	public void setAttributeToRename(Attribute newAttributeToRename) {
+		Attribute oldAttributeToRename = attributeToRename;
+		attributeToRename = newAttributeToRename;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE, oldAttributeToRemove, attributeToRemove));
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME, oldAttributeToRename, attributeToRename));
 	}
 
 	/**
@@ -144,9 +144,9 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE:
-				if (resolve) return getAttributeToRemove();
-				return basicGetAttributeToRemove();
+			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME:
+				if (resolve) return getAttributeToRename();
+				return basicGetAttributeToRename();
 			case TyphonmlPackage.RENAME_ATTRIBUTE__NEW_NAME:
 				return getNewName();
 		}
@@ -161,8 +161,8 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE:
-				setAttributeToRemove((Attribute)newValue);
+			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME:
+				setAttributeToRename((Attribute)newValue);
 				return;
 			case TyphonmlPackage.RENAME_ATTRIBUTE__NEW_NAME:
 				setNewName((String)newValue);
@@ -179,8 +179,8 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE:
-				setAttributeToRemove((Attribute)null);
+			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME:
+				setAttributeToRename((Attribute)null);
 				return;
 			case TyphonmlPackage.RENAME_ATTRIBUTE__NEW_NAME:
 				setNewName(NEW_NAME_EDEFAULT);
@@ -197,8 +197,8 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE:
-				return attributeToRemove != null;
+			case TyphonmlPackage.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME:
+				return attributeToRename != null;
 			case TyphonmlPackage.RENAME_ATTRIBUTE__NEW_NAME:
 				return NEW_NAME_EDEFAULT == null ? newName != null : !NEW_NAME_EDEFAULT.equals(newName);
 		}
@@ -214,7 +214,7 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (newName: ");
 		result.append(newName);
 		result.append(')');

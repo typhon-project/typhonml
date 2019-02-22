@@ -502,6 +502,20 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TyphonmlPackage.RENAME_ENTITY: {
+				RenameEntity renameEntity = (RenameEntity)theEObject;
+				T result = caseRenameEntity(renameEntity);
+				if (result == null) result = caseChangeOperator(renameEntity);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT: {
+				ChangeRelationContainement changeRelationContainement = (ChangeRelationContainement)theEObject;
+				T result = caseChangeRelationContainement(changeRelationContainement);
+				if (result == null) result = caseChangeOperator(changeRelationContainement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1403,6 +1417,36 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGenericList(GenericList object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rename Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rename Entity</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRenameEntity(RenameEntity object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Change Relation Containement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Change Relation Containement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseChangeRelationContainement(ChangeRelationContainement object) {
 		return null;
 	}
 

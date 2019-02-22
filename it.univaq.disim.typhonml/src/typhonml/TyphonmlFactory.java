@@ -526,6 +526,24 @@ public interface TyphonmlFactory extends EFactory {
 	GenericList createGenericList();
 
 	/**
+	 * Returns a new object of class '<em>Rename Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rename Entity</em>'.
+	 * @generated
+	 */
+	RenameEntity createRenameEntity();
+
+	/**
+	 * Returns a new object of class '<em>Change Relation Containement</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Relation Containement</em>'.
+	 * @generated
+	 */
+	ChangeRelationContainement createChangeRelationContainement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

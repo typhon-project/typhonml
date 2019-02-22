@@ -214,7 +214,7 @@ public class RenameTableImpl extends ChangeOperatorImpl implements RenameTable {
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (newName: ");
 		result.append(newName);
 		result.append(')');

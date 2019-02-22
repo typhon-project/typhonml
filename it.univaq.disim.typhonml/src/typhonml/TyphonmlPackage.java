@@ -1384,13 +1384,13 @@ public interface TyphonmlPackage extends EPackage {
 	int REMOVE_ATTRIBUTE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Attribute To Remove</b></em>' reference.
+	 * The feature id for the '<em><b>Attribute To Rename</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+	int RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME = CHANGE_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>New Name</b></em>' attribute.
@@ -1528,13 +1528,13 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_ATTRIBUTES_TO_IDENFIFIER_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * The feature id for the '<em><b>Entity Identifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REMOVE_IDENTIFIER__ENTITY = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+	int REMOVE_IDENTIFIER__ENTITY_IDENTIFIER = CHANGE_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Remove Identifier</em>' class.
@@ -3115,6 +3115,98 @@ public interface TyphonmlPackage extends EPackage {
 	int COLUMN_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.RenameEntityImpl <em>Rename Entity</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RenameEntityImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameEntity()
+	 * @generated
+	 */
+	int RENAME_ENTITY = 60;
+
+	/**
+	 * The feature id for the '<em><b>Entity To Rename</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_ENTITY__ENTITY_TO_RENAME = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Entity Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_ENTITY__NEW_ENTITY_NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rename Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_ENTITY_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Rename Entity</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_ENTITY_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.ChangeRelationContainementImpl <em>Change Relation Containement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.ChangeRelationContainementImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationContainement()
+	 * @generated
+	 */
+	int CHANGE_RELATION_CONTAINEMENT = 61;
+
+	/**
+	 * The feature id for the '<em><b>Relation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_RELATION_CONTAINEMENT__RELATION = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Containment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Change Relation Containement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_RELATION_CONTAINEMENT_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Change Relation Containement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_RELATION_CONTAINEMENT_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3122,7 +3214,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 60;
+	int CARDINALITY = 62;
 
 
 	/**
@@ -3612,15 +3704,15 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getRenameAttribute();
 
 	/**
-	 * Returns the meta object for the reference '{@link typhonml.RenameAttribute#getAttributeToRemove <em>Attribute To Remove</em>}'.
+	 * Returns the meta object for the reference '{@link typhonml.RenameAttribute#getAttributeToRename <em>Attribute To Rename</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Attribute To Remove</em>'.
-	 * @see typhonml.RenameAttribute#getAttributeToRemove()
+	 * @return the meta object for the reference '<em>Attribute To Rename</em>'.
+	 * @see typhonml.RenameAttribute#getAttributeToRename()
 	 * @see #getRenameAttribute()
 	 * @generated
 	 */
-	EReference getRenameAttribute_AttributeToRemove();
+	EReference getRenameAttribute_AttributeToRename();
 
 	/**
 	 * Returns the meta object for the attribute '{@link typhonml.RenameAttribute#getNewName <em>New Name</em>}'.
@@ -3740,15 +3832,15 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getRemoveIdentifier();
 
 	/**
-	 * Returns the meta object for the reference '{@link typhonml.RemoveIdentifier#getEntity <em>Entity</em>}'.
+	 * Returns the meta object for the reference '{@link typhonml.RemoveIdentifier#getEntityIdentifier <em>Entity Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity</em>'.
-	 * @see typhonml.RemoveIdentifier#getEntity()
+	 * @return the meta object for the reference '<em>Entity Identifier</em>'.
+	 * @see typhonml.RemoveIdentifier#getEntityIdentifier()
 	 * @see #getRemoveIdentifier()
 	 * @generated
 	 */
-	EReference getRemoveIdentifier_Entity();
+	EReference getRemoveIdentifier_EntityIdentifier();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.RemoveAttributesToIdenfifier <em>Remove Attributes To Idenfifier</em>}'.
@@ -4650,6 +4742,70 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getGenericList_Entity();
 
 	/**
+	 * Returns the meta object for class '{@link typhonml.RenameEntity <em>Rename Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rename Entity</em>'.
+	 * @see typhonml.RenameEntity
+	 * @generated
+	 */
+	EClass getRenameEntity();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.RenameEntity#getEntityToRename <em>Entity To Rename</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity To Rename</em>'.
+	 * @see typhonml.RenameEntity#getEntityToRename()
+	 * @see #getRenameEntity()
+	 * @generated
+	 */
+	EReference getRenameEntity_EntityToRename();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.RenameEntity#getNewEntityName <em>New Entity Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Entity Name</em>'.
+	 * @see typhonml.RenameEntity#getNewEntityName()
+	 * @see #getRenameEntity()
+	 * @generated
+	 */
+	EAttribute getRenameEntity_NewEntityName();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.ChangeRelationContainement <em>Change Relation Containement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Change Relation Containement</em>'.
+	 * @see typhonml.ChangeRelationContainement
+	 * @generated
+	 */
+	EClass getChangeRelationContainement();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.ChangeRelationContainement#getRelation <em>Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Relation</em>'.
+	 * @see typhonml.ChangeRelationContainement#getRelation()
+	 * @see #getChangeRelationContainement()
+	 * @generated
+	 */
+	EReference getChangeRelationContainement_Relation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.ChangeRelationContainement#getNewContainment <em>New Containment</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Containment</em>'.
+	 * @see typhonml.ChangeRelationContainement#getNewContainment()
+	 * @see #getChangeRelationContainement()
+	 * @generated
+	 */
+	EAttribute getChangeRelationContainement_NewContainment();
+
+	/**
 	 * Returns the meta object for enum '{@link typhonml.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5091,12 +5247,12 @@ public interface TyphonmlPackage extends EPackage {
 		EClass RENAME_ATTRIBUTE = eINSTANCE.getRenameAttribute();
 
 		/**
-		 * The meta object literal for the '<em><b>Attribute To Remove</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Attribute To Rename</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RENAME_ATTRIBUTE__ATTRIBUTE_TO_REMOVE = eINSTANCE.getRenameAttribute_AttributeToRemove();
+		EReference RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME = eINSTANCE.getRenameAttribute_AttributeToRename();
 
 		/**
 		 * The meta object literal for the '<em><b>New Name</b></em>' attribute feature.
@@ -5195,12 +5351,12 @@ public interface TyphonmlPackage extends EPackage {
 		EClass REMOVE_IDENTIFIER = eINSTANCE.getRemoveIdentifier();
 
 		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Entity Identifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REMOVE_IDENTIFIER__ENTITY = eINSTANCE.getRemoveIdentifier_Entity();
+		EReference REMOVE_IDENTIFIER__ENTITY_IDENTIFIER = eINSTANCE.getRemoveIdentifier_EntityIdentifier();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.RemoveAttributesToIdenfifierImpl <em>Remove Attributes To Idenfifier</em>}' class.
@@ -5953,6 +6109,58 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GENERIC_LIST__ENTITY = eINSTANCE.getGenericList_Entity();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.RenameEntityImpl <em>Rename Entity</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.RenameEntityImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getRenameEntity()
+		 * @generated
+		 */
+		EClass RENAME_ENTITY = eINSTANCE.getRenameEntity();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity To Rename</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RENAME_ENTITY__ENTITY_TO_RENAME = eINSTANCE.getRenameEntity_EntityToRename();
+
+		/**
+		 * The meta object literal for the '<em><b>New Entity Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RENAME_ENTITY__NEW_ENTITY_NAME = eINSTANCE.getRenameEntity_NewEntityName();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.ChangeRelationContainementImpl <em>Change Relation Containement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.ChangeRelationContainementImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationContainement()
+		 * @generated
+		 */
+		EClass CHANGE_RELATION_CONTAINEMENT = eINSTANCE.getChangeRelationContainement();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHANGE_RELATION_CONTAINEMENT__RELATION = eINSTANCE.getChangeRelationContainement_Relation();
+
+		/**
+		 * The meta object literal for the '<em><b>New Containment</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT = eINSTANCE.getChangeRelationContainement_NewContainment();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.

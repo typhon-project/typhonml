@@ -205,7 +205,7 @@ public abstract class NamedElementImpl extends MinimalEObjectImpl.Container impl
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
 		result.append(", importedNamespace: ");

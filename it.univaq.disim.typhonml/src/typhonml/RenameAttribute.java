@@ -12,7 +12,7 @@ package typhonml;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link typhonml.RenameAttribute#getAttributeToRemove <em>Attribute To Remove</em>}</li>
+ *   <li>{@link typhonml.RenameAttribute#getAttributeToRename <em>Attribute To Rename</em>}</li>
  *   <li>{@link typhonml.RenameAttribute#getNewName <em>New Name</em>}</li>
  * </ul>
  *
@@ -22,30 +22,30 @@ package typhonml;
  */
 public interface RenameAttribute extends ChangeOperator {
 	/**
-	 * Returns the value of the '<em><b>Attribute To Remove</b></em>' reference.
+	 * Returns the value of the '<em><b>Attribute To Rename</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Attribute To Remove</em>' reference isn't clear,
+	 * If the meaning of the '<em>Attribute To Rename</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Attribute To Remove</em>' reference.
-	 * @see #setAttributeToRemove(Attribute)
-	 * @see typhonml.TyphonmlPackage#getRenameAttribute_AttributeToRemove()
+	 * @return the value of the '<em>Attribute To Rename</em>' reference.
+	 * @see #setAttributeToRename(Attribute)
+	 * @see typhonml.TyphonmlPackage#getRenameAttribute_AttributeToRename()
 	 * @model required="true"
 	 * @generated
 	 */
-	Attribute getAttributeToRemove();
+	Attribute getAttributeToRename();
 
 	/**
-	 * Sets the value of the '{@link typhonml.RenameAttribute#getAttributeToRemove <em>Attribute To Remove</em>}' reference.
+	 * Sets the value of the '{@link typhonml.RenameAttribute#getAttributeToRename <em>Attribute To Rename</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Attribute To Remove</em>' reference.
-	 * @see #getAttributeToRemove()
+	 * @param value the new value of the '<em>Attribute To Rename</em>' reference.
+	 * @see #getAttributeToRename()
 	 * @generated
 	 */
-	void setAttributeToRemove(Attribute value);
+	void setAttributeToRename(Attribute value);
 
 	/**
 	 * Returns the value of the '<em><b>New Name</b></em>' attribute.

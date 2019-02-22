@@ -73,7 +73,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttribute/attributeToRemove"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RenameAttribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RenameAttribute/attributeToRemove"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RenameAttribute/attributeToRename"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//RenameAttribute/newName"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RenameTable">
@@ -89,7 +89,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttributesToIdenfifier/attributes"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RemoveIdentifier">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveIdentifier/entity"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveIdentifier/entityIdentifier"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RemoveAttributesToIdenfifier">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttributesToIdenfifier/identifier"/>
@@ -204,6 +204,14 @@
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//GenericList">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//GenericList/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//RenameEntity">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RenameEntity/entityToRename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//RenameEntity/newEntityName"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//ChangeRelationContainement">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeRelationContainement/relation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangeRelationContainement/newContainment"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

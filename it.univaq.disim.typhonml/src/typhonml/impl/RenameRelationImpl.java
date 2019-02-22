@@ -214,7 +214,7 @@ public class RenameRelationImpl extends ChangeOperatorImpl implements RenameRela
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (newRelationName: ");
 		result.append(newRelationName);
 		result.append(')');
