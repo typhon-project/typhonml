@@ -1,6 +1,23 @@
-custom-datatype jpeg {
-	date : date 
-	thumbnail : blob
+
+CustomDataType jpeg {
+	elements{
+		DataTypeItem date{
+			type date
+			implementation DataTypeImplementationPackage{
+				location 'it.univaq.disim.Date'
+			}
+		},
+		DataTypeItem thumbnail{
+			type blob
+			implementation DataTypeImplementationPackage{
+				location 'it.univaq.disim.Blob'
+			}
+		}
+	}
 }
 
+
+
+
 // Add also the possibility to add some NLP functions
+

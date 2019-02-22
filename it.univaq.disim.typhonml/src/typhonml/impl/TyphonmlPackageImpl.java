@@ -552,7 +552,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link TyphonmlPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -566,7 +566,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		if (isInited) return (TyphonmlPackage)EPackage.Registry.INSTANCE.getEPackage(TyphonmlPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TyphonmlPackageImpl theTyphonmlPackage = (TyphonmlPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TyphonmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TyphonmlPackageImpl());
+		Object registeredTyphonmlPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TyphonmlPackageImpl theTyphonmlPackage = registeredTyphonmlPackage instanceof TyphonmlPackageImpl ? (TyphonmlPackageImpl)registeredTyphonmlPackage : new TyphonmlPackageImpl();
 
 		isInited = true;
 
@@ -579,7 +580,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		// Mark meta-data to indicate it can't be changed
 		theTyphonmlPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TyphonmlPackage.eNS_URI, theTyphonmlPackage);
 		return theTyphonmlPackage;

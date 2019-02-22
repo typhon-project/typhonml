@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typhonml:Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius"
+    xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius typhonml.ecore">
+  <databases
+      xsi:type="typhonml:RelationalDB"
+      name="relationalDB">
+    <tables
+        name="OrderName"/>
+  </databases>
+  <dataTypes
+      xsi:type="typhonml:PrimitiveDataType"
+      name="date"/>
+  <dataTypes
+      xsi:type="typhonml:CustomDataType"
+      name="jpeg">
+    <elements
+        name=" date"
+        type="//@dataTypes.0"/>
+  </dataTypes>
+  <dataTypes
+      xsi:type="typhonml:Entity"
+      name="Order">
+    <attributes
+        name="id"
+        type="//@dataTypes.3"/>
+    <identifer
+        attributes="//@dataTypes.2/@attributes.0"/>
+  </dataTypes>
+  <dataTypes
+      xsi:type="typhonml:PrimitiveDataType"
+      name="string"/>
+</typhonml:Model>

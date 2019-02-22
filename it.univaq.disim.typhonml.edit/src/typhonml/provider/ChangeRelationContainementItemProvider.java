@@ -14,23 +14,23 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import typhonml.RenameAttribute;
+import typhonml.ChangeRelationContainement;
 import typhonml.TyphonmlPackage;
 
 /**
- * This is the item provider adapter for a {@link typhonml.RenameAttribute} object.
+ * This is the item provider adapter for a {@link typhonml.ChangeRelationContainement} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RenameAttributeItemProvider extends ChangeOperatorItemProvider {
+public class ChangeRelationContainementItemProvider extends ChangeOperatorItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RenameAttributeItemProvider(AdapterFactory adapterFactory) {
+	public ChangeRelationContainementItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,26 +45,26 @@ public class RenameAttributeItemProvider extends ChangeOperatorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAttributeToRenamePropertyDescriptor(object);
-			addNewNamePropertyDescriptor(object);
+			addRelationPropertyDescriptor(object);
+			addNewContainmentPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Attribute To Rename feature.
+	 * This adds a property descriptor for the Relation feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAttributeToRenamePropertyDescriptor(Object object) {
+	protected void addRelationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RenameAttribute_attributeToRename_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RenameAttribute_attributeToRename_feature", "_UI_RenameAttribute_type"),
-				 TyphonmlPackage.Literals.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME,
+				 getString("_UI_ChangeRelationContainement_relation_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangeRelationContainement_relation_feature", "_UI_ChangeRelationContainement_type"),
+				 TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION,
 				 true,
 				 false,
 				 true,
@@ -74,19 +74,19 @@ public class RenameAttributeItemProvider extends ChangeOperatorItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the New Name feature.
+	 * This adds a property descriptor for the New Containment feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNewNamePropertyDescriptor(Object object) {
+	protected void addNewContainmentPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RenameAttribute_newName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RenameAttribute_newName_feature", "_UI_RenameAttribute_type"),
-				 TyphonmlPackage.Literals.RENAME_ATTRIBUTE__NEW_NAME,
+				 getString("_UI_ChangeRelationContainement_newContainment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangeRelationContainement_newContainment_feature", "_UI_ChangeRelationContainement_type"),
+				 TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT,
 				 true,
 				 false,
 				 false,
@@ -96,14 +96,14 @@ public class RenameAttributeItemProvider extends ChangeOperatorItemProvider {
 	}
 
 	/**
-	 * This returns RenameAttribute.gif.
+	 * This returns ChangeRelationContainement.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RenameAttribute"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ChangeRelationContainement"));
 	}
 
 	/**
@@ -114,10 +114,11 @@ public class RenameAttributeItemProvider extends ChangeOperatorItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((RenameAttribute)object).getNewName();
+		Boolean labelValue = ((ChangeRelationContainement)object).getNewContainment();
+		String label = labelValue == null ? null : labelValue.toString();
 		return label == null || label.length() == 0 ?
-			getString("_UI_RenameAttribute_type") :
-			getString("_UI_RenameAttribute_type") + " " + label;
+			getString("_UI_ChangeRelationContainement_type") :
+			getString("_UI_ChangeRelationContainement_type") + " " + label;
 	}
 
 
@@ -132,8 +133,8 @@ public class RenameAttributeItemProvider extends ChangeOperatorItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(RenameAttribute.class)) {
-			case TyphonmlPackage.RENAME_ATTRIBUTE__NEW_NAME:
+		switch (notification.getFeatureID(ChangeRelationContainement.class)) {
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

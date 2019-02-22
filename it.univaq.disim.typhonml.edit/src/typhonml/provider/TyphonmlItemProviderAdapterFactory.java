@@ -1360,6 +1360,52 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenameEntity} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenameEntityItemProvider renameEntityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenameEntity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenameEntityAdapter() {
+		if (renameEntityItemProvider == null) {
+			renameEntityItemProvider = new RenameEntityItemProvider(this);
+		}
+
+		return renameEntityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.ChangeRelationContainement} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChangeRelationContainementItemProvider changeRelationContainementItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.ChangeRelationContainement}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChangeRelationContainementAdapter() {
+		if (changeRelationContainementItemProvider == null) {
+			changeRelationContainementItemProvider = new ChangeRelationContainementItemProvider(this);
+		}
+
+		return changeRelationContainementItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1514,6 +1560,8 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (columnDBItemProvider != null) columnDBItemProvider.dispose();
 		if (columnItemProvider != null) columnItemProvider.dispose();
 		if (genericListItemProvider != null) genericListItemProvider.dispose();
+		if (renameEntityItemProvider != null) renameEntityItemProvider.dispose();
+		if (changeRelationContainementItemProvider != null) changeRelationContainementItemProvider.dispose();
 	}
 
 }

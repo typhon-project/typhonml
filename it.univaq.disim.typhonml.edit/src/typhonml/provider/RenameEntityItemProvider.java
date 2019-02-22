@@ -11,23 +11,26 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import typhonml.RenameEntity;
 import typhonml.TyphonmlPackage;
 
 /**
- * This is the item provider adapter for a {@link typhonml.RemoveIdentifier} object.
+ * This is the item provider adapter for a {@link typhonml.RenameEntity} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class RemoveIdentifierItemProvider extends ChangeOperatorItemProvider {
+public class RenameEntityItemProvider extends ChangeOperatorItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public RemoveIdentifierItemProvider(AdapterFactory adapterFactory) {
+	public RenameEntityItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -42,25 +45,26 @@ public class RemoveIdentifierItemProvider extends ChangeOperatorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityIdentifierPropertyDescriptor(object);
+			addEntityToRenamePropertyDescriptor(object);
+			addNewEntityNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Entity Identifier feature.
+	 * This adds a property descriptor for the Entity To Rename feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addEntityIdentifierPropertyDescriptor(Object object) {
+	protected void addEntityToRenamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_RemoveIdentifier_entityIdentifier_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_RemoveIdentifier_entityIdentifier_feature", "_UI_RemoveIdentifier_type"),
-				 TyphonmlPackage.Literals.REMOVE_IDENTIFIER__ENTITY_IDENTIFIER,
+				 getString("_UI_RenameEntity_entityToRename_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RenameEntity_entityToRename_feature", "_UI_RenameEntity_type"),
+				 TyphonmlPackage.Literals.RENAME_ENTITY__ENTITY_TO_RENAME,
 				 true,
 				 false,
 				 true,
@@ -70,14 +74,36 @@ public class RemoveIdentifierItemProvider extends ChangeOperatorItemProvider {
 	}
 
 	/**
-	 * This returns RemoveIdentifier.gif.
+	 * This adds a property descriptor for the New Entity Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNewEntityNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_RenameEntity_newEntityName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_RenameEntity_newEntityName_feature", "_UI_RenameEntity_type"),
+				 TyphonmlPackage.Literals.RENAME_ENTITY__NEW_ENTITY_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns RenameEntity.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RemoveIdentifier"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/RenameEntity"));
 	}
 
 	/**
@@ -88,7 +114,10 @@ public class RemoveIdentifierItemProvider extends ChangeOperatorItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_RemoveIdentifier_type");
+		String label = ((RenameEntity)object).getNewEntityName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_RenameEntity_type") :
+			getString("_UI_RenameEntity_type") + " " + label;
 	}
 
 
@@ -102,6 +131,12 @@ public class RemoveIdentifierItemProvider extends ChangeOperatorItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(RenameEntity.class)) {
+			case TyphonmlPackage.RENAME_ENTITY__NEW_ENTITY_NAME:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

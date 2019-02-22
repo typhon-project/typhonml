@@ -1,101 +1,249 @@
-entity Order {
-	date : date
-	totalAmount : real
-	products -> Product."Product.orders" [*]
-	paidWith -> CreditCard
-	user -> User."User.orders"
-}
-
-entity User {
-	name : string
-	comments :-> Comment [*]
-	paymentDetails :-> CreditCard [*]
-	orders -> Order [*]
-}
-
-entity CreditCard {
-	number: string
-	expiryDate:date
-}
-
-entity Product {
-	name: string
-	description: string
-	photos -> Photo[*]
-	reviews :-> Review."Review.product" [*]
-	orders -> Order[*]
-}
-
-entity Comment {
-	content: natural_language
-	responses :-> Comment[*]
-//	annos -> Annotation[*]
-}
-/* 
-entity Annotation {
-	_from: int
-	_to: int
-	type: string
-	content : string 
-}
-*/
-entity Photo {
-	_id : string
-	image : jpeg	
-}
-
-entity Review {
-	product -> Product
-}
-
-
-relationaldb Orders {
-	table {
-		OrderTB:Order 
-		index OrderIndex { "Order.date" }
-		id {"Order.date"}
+Entity Photo{
+	genericList PhotoTB
+	attributes {
+		Attribute id{
+			type string
+		}
 	}
-	
-	table {
-		User:User
-		index UserIndex { "User.name"} 
-		id {"User.name"}
-	}
-	
-	table {
-		CreditCard:CreditCard
-		id {"CreditCard.number"}
-	}
-	
-	table {
-		Product:Product
-		id {"Product.name"}
+	identifer EntityIdentifier{
+		attributes(id)
 	}
 }
 
-/* 
-graphdb Products {
-	node ProductNode:Product{
-		name = "Product.name"
+
+
+Entity Review{
+	genericList ReviewDB
+	attributes {
+		Attribute id{
+			type string
+		}
 	}
-	
-	edge Concordance {
-		from ProductNode
-		to ProductNode
-		label {
-			weight: int
+	identifer EntityIdentifier{
+		attributes(id)
+	}
+}
+
+Entity Product{
+	genericList ProdutctDB
+	attributes {
+		Attribute name{
+			type string
+		},
+		Attribute description{
+			type string
+		}
+	}
+	relations{
+		Relation reviews{
+			cardinality zero_many
+			type Review
+		},
+		Relation photos{
+			cardinality one_many
+			type Photo
+		},
+		Relation orders{
+			cardinality zero_many
+			type Product
+		}
+	}
+	identifer EntityIdentifier{
+		attributes(name)
+	}
+}
+
+Entity Order{
+	genericList OrderDB
+	attributes {
+		Attribute id{
+			type string
+		},
+		Attribute date{
+			type date
+		},
+		Attribute totalAmount{
+			type int
+		}
+	}
+	relations{
+		Relation products{
+			cardinality zero_many
+			type Order
+		},
+		Relation user{
+			cardinality one
+			type User
+		},
+		Relation paidWith{
+			cardinality one
+			type CreditCard
+		}
+	}
+	identifer EntityIdentifier{
+		attributes(id)
+	}
+}
+
+Entity User{
+	genericList UserDB
+	attributes{
+		Attribute name{
+			type string
+		}
+	}
+	relations{
+		Relation comments{
+			cardinality zero_many
+			type Comment
+		},
+		Relation paymentsDetails{
+			cardinality zero_many
+			type CreditCard
+		},
+		Relation orders{
+			cardinality zero_many
+			type Order
+		}
+	}
+	identifer EntityIdentifier{
+		attributes(name)
+	}
+}
+
+Entity Comment{
+	genericList CommentDB
+	attributes{
+		Attribute id{
+			type string
+		},
+		Attribute content{
+			type natural_language
+		}
+	}
+	relations{
+		Relation responses{
+			cardinality zero_many
+			type Comment
+		}
+	}
+	identifer EntityIdentifier{
+		attributes(id)
+	}
+}
+
+Entity CreditCard{
+	genericList CreditCardDB
+	attributes{
+		Attribute id{
+			type string
+		},
+		Attribute number{
+			type string
+		},
+		Attribute expiryDate{
+			type date
+		}
+	}
+	identifer EntityIdentifier{
+		attributes(id)
+	}
+}
+
+KeyValueDB PhotoDB{
+	elements{
+		KeyValueElement {
+			key id
+			entity Photo
+			values(jpeg)
 		}
 	}
 }
-*/
 
-keyvaluedb Photos {
-	_id -> Photo {
-	  jpeg
+
+RelationalDB OrderDB{
+	tables{
+		Table OrderTB{
+			entity Order
+			indexSpec IndexSpec orderIndexSpec{
+				attributes ("Order.date")
+			}
+			idSpec IdSpec{
+				attributes ("Order.date")
+			}
+		},
+		Table UserTB{
+			entity User
+			indexSpec IndexSpec userIndexSpec{
+				attributes('User.name')
+			}
+			idSpec IdSpec {
+				attributes ('User.name')
+			}
+		},
+		Table ProductTB{
+			entity Product
+			indexSpec IndexSpec productIndexSpec{
+				attributes ('Product.name')
+			}
+			idSpec IdSpec {
+				attributes ('Product.name')
+			}
+		},
+		Table CreditCardTB{
+			entity CreditCard
+			indexSpec IndexSpec productIndexSpec{
+				attributes ("CreditCard.number")
+			}
+			idSpec IdSpec {
+				attributes ("CreditCard.number")
+			}
+		}
 	}
 }
 
-documentdb Reviews {
-	Review : Review
-	Comment: Comment 
+//RelationalDB CreditCardDB{
+//	tables{
+//		Table CreditCardTB{
+//			entity CreditCard
+//		}
+//	}
+//}
+
+
+
+//GraphDB ProductsDB{
+//	nodes{
+//		GraphNode productNode{
+//			entity Product
+//			attributes{
+//				GraphAttribute name{
+//					value "Product.name"
+//				}
+//			}
+//		}
+//	}
+//	edges{
+//		GraphEdge concordance{
+//			from productNode
+//			to productNode
+//			labels{
+//				GraphEdgeLabel weight{
+//					type int
+//				}
+//			}
+//		}
+//	}
+//}
+
+DocumentDB ReviewDB{
+	collections{
+		Collection reviews{
+			entity Review
+		},
+		Collection comments{
+			entity Comment
+		}
+	}
 }
+
