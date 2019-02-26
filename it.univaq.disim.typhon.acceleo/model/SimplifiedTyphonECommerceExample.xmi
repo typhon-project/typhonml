@@ -44,6 +44,8 @@
     <relations
         name="orders"
         type="//@dataTypes.1"/>
+    <identifer
+        attributes="//@dataTypes.0/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -62,6 +64,8 @@
         name="orderProducts"
         type="//@dataTypes.2"
         opposite="//@dataTypes.2/@relations.0"/>
+    <identifer
+        attributes="//@dataTypes.0/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -77,6 +81,8 @@
         name="productOrders"
         type="//@dataTypes.1"
         opposite="//@dataTypes.1/@relations.0"/>
+    <identifer
+        attributes="//@dataTypes.0/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:PrimitiveDataType"

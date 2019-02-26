@@ -8,57 +8,28 @@
 		count : Integer = getProperty('apigateway.base.port').toInteger();
 	}]
 
-[for (d : Database | aModel.databases->sortedBy(x | x.name))]
+[for (e : Entity | getAllModelEntitiesUtilityOrdered(aModel))]
 
 
 [comment orderdb/src/main/java/org/typhon/orderdb/model/repository/OrderRepository.java/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'Application.java', false, 'UTF-8')]
-package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/];
+[file (e.name.toLower()+'/src/main/java/org/typhon/'+e.name.toLower()+'/'+e.name.toUpperFirst()+'Application.java', false, 'UTF-8')]
+package org.typhon.[e.name.toLowerCase()/];
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Application {
+public class [e.name.toUpperFirst()/]Application {
 
 	public static void main(String['['/][']'/] args) {
-		SpringApplication.run([d.resolveEntityNameFromDatabase().toUpperFirst()/]Application.class, args);
+		SpringApplication.run([e.name.toUpperFirst()/]Application.class, args);
 	}
 }
 [/file]
-
-
-
-[comment orderdb/src/main/java/org/typhon/orderdb/configuration/RepositoryConfiguration.java/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/configuration/RepositoryConfiguration.java', false, 'UTF-8')]
-package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].configuration;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
-import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
-import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
-import org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].model.[d.resolveEntityNameFromDatabase().toUpperFirst()/];
-
-@Configuration
-public class RepositoryConfiguration {
-	@Bean
-	public RepositoryRestConfigurer repositoryRestConfigurer() {
-		return new RepositoryRestConfigurerAdapter() {
-			@Override
-			public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-				super.configureRepositoryRestConfiguration(config);
-				config.exposeIdsFor([d.resolveEntityNameFromDatabase().toUpperFirst()/].class);
-			}
-		};
-	}
-}
-[/file]
-
 
 [comment orderdb/src/main/java/org/typhon/orderdb/configuration/SwaggerConfig.java/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/configuration/SwaggerConfig.java', false, 'UTF-8')]
-package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].configuration;
+[file (e.name.toLower()+'/src/main/java/org/typhon/'+e.name.toLower()+'/configuration/SwaggerConfig.java', false, 'UTF-8')]
+package org.typhon.[e.name.toLowerCase()/].configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -87,11 +58,9 @@ public class SwaggerConfig {
 }
 [/file]
 
-
-
 [comment orderdb/src/test/java/org/typhon/orderdb/tests/OrderTest.java/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/test/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/tests/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'Test.java', false, 'UTF-8')]
-package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].tests;
+[file (e.name.toLower()+'/src/test/java/org/typhon/'+e.name.toLower()+'/tests/'+e.name.toUpperFirst()+'Test.java', false, 'UTF-8')]
+package org.typhon.[e.name.toLowerCase()/].tests;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -104,7 +73,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
-import org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].model.repository.[d.resolveEntityNameFromDatabase().toUpperFirst()/]Repository;
+import org.typhon.[e.name.toLowerCase()/].model.repository.[e.name.toUpperFirst()/]Repository;
 
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -114,17 +83,17 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
+public class [e.name.toUpperFirst()/]Test {
 
 	@Autowired
 	private MockMvc mockMvc;
 
 	@Autowired
-	private [d.resolveEntityNameFromDatabase().toUpperFirst()/]Repository [d.resolveEntityNameFromDatabase().toLowerCase()/]Repository;
+	private [e.name.toUpperFirst()/]Repository [e.name.toLowerCase()/]Repository;
 
 	@Before
 	public void deleteAllBeforeTests() throws Exception {
-		[d.resolveEntityNameFromDatabase().toLowerCase()/]Repository.deleteAll();
+		[e.name.toLowerCase()/]Repository.deleteAll();
 	}
 
 	@Test
@@ -137,16 +106,16 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 	@Test
 	public void shouldCreateEntity() throws Exception {
 
-		mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+		mockMvc.perform(post("/[e.name.toLowerCase()/]").content(
 				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
 						status().isCreated()).andExpect(
-								header().string("Location", containsString("[d.resolveEntityNameFromDatabase().toLowerCase()/]/")));
+								header().string("Location", containsString("[e.name.toLowerCase()/]/")));
 	}
 
 	@Test
 	public void shouldRetrieveEntity() throws Exception {
 
-		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+		MvcResult mvcResult = mockMvc.perform(post("/[e.name.toLowerCase()/]").content(
 				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
 						status().isCreated()).andReturn();
 
@@ -159,12 +128,12 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 	@Test
 	public void shouldQueryEntity() throws Exception {
 
-		mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+		mockMvc.perform(post("/[e.name.toLowerCase()/]").content(
 				"{ \"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
 						status().isCreated());
 
 		mockMvc.perform(
-				get("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/search/findByLastName?name={name}", "Baggins")).andExpect(
+				get("/[e.name.toLowerCase()/]/search/findByLastName?name={name}", "Baggins")).andExpect(
 						status().isOk()).andExpect(
 								jsonPath("$._embedded.people['['/]0[']'/].firstName").value(
 										"Frodo"));
@@ -173,7 +142,7 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 	@Test
 	public void shouldUpdateEntity() throws Exception {
 
-		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+		MvcResult mvcResult = mockMvc.perform(post("/[e.name.toLowerCase()/]").content(
 				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
 						status().isCreated()).andReturn();
 
@@ -191,7 +160,7 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 	@Test
 	public void shouldPartiallyUpdateEntity() throws Exception {
 
-		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+		MvcResult mvcResult = mockMvc.perform(post("/[e.name.toLowerCase()/]").content(
 				"{\"firstName\": \"Frodo\", \"lastName\":\"Baggins\"}")).andExpect(
 						status().isCreated()).andReturn();
 
@@ -209,7 +178,7 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 	@Test
 	public void shouldDeleteEntity() throws Exception {
 
-		MvcResult mvcResult = mockMvc.perform(post("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").content(
+		MvcResult mvcResult = mockMvc.perform(post("/[e.name.toLowerCase()/]").content(
 				"{ \"firstName\": \"Bilbo\", \"lastName\":\"Baggins\"}")).andExpect(
 						status().isCreated()).andReturn();
 
@@ -221,19 +190,15 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 }
 [/file]
 
-
-
-
-
 [comment POM.xml/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/pom.xml', false, 'UTF-8')]
+[file (e.name.toLower()+'/pom.xml', false, 'UTF-8')]
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>org.[d.resolveEntityNameFromDatabase().toLower()/]</groupId>
-	<artifactId>[d.resolveEntityNameFromDatabase() /]</artifactId>
+	<groupId>org.[e.name.toLower()/]</groupId>
+	<artifactId>[e.name/]</artifactId>
 	<version>0.1.0</version>
 
 	<parent>
@@ -253,7 +218,7 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 		
-		[d.getPOMInformation()/]
+		[e.genericList.getPOMInformation()/]
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -305,29 +270,27 @@ public class [d.resolveEntityNameFromDatabase().toUpperFirst()/]Test {
 	
 [/file]
 
-
-
 [comment orderdb/src/main/java/org/typhon/orderdb/model/Order.java/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/model/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'.java', false, 'UTF-8')]
-package org.typhon.[d.resolveEntityNameFromDatabase().toLowerCase()/].model;
+[file (e.name.toLower()+'/src/main/java/org/typhon/'+e.name.toLower()+'/model/'+e.name.toUpperFirst()+'.java', false, 'UTF-8')]
+package org.typhon.[e.name.toLowerCase()/].model;
 
 import java.util.*;
 
-[d.getDatabaseBean()/]
+[e.genericList.getDatabaseBean()/]
 [/file]
 
 
 
 [comment orderdb/src/main/java/org/typhon/orderdb/model/repository/OrderRepository.java/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/java/org/typhon/'+d.resolveEntityNameFromDatabase().toLower()+'/model/repository/'+d.resolveEntityNameFromDatabase().toUpperFirst()+'Repository.java', false, 'UTF-8')]
-[d.getDatabaseRepositoryInformation()/]
+[file (e.name.toLower()+'/src/main/java/org/typhon/'+e.name.toLower()+'/model/repository/'+e.name.toUpperFirst()+'Repository.java', false, 'UTF-8')]
+[e.genericList.getDatabaseRepositoryInformation()/]
 [/file]
 
 
 
 [comment orderdb/src/main/resources/application.properties/]
-[file (d.resolveEntityNameFromDatabase().toLower()+'/src/main/resources/application.properties', false, 'UTF-8')]
-[d.getProperties(count + aModel.databases->sortedBy(x | x.name)->indexOf(d))/]
+[file (e.name.toLower()+'/src/main/resources/application.properties', false, 'UTF-8')]
+[e.genericList.getProperties(count + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e))/]
 [/file]
 
 
@@ -338,16 +301,19 @@ import java.util.*;
 
 
 
+
+
+
 [comment  
 ######################################################################################
 ###### START - POLYMORFISM FOR POM
 ######################################################################################
 /]
-[template private getPOMInformation(database : Database) ]
+[template private getPOMInformation(database : GenericList) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getPOMInformation(database : RelationalDB) ]
+[template private getPOMInformation(database : Table) ]
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -358,22 +324,22 @@ import java.util.*;
 	</dependency>
 [/template]
 
-[template private getPOMInformation(database : DocumentDB) ]
+[template private getPOMInformation(database : Collection) ]
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-data-mongodb</artifactId>
 	</dependency>
 [/template]
 
-[template private getPOMInformation(database : KeyValueDB) ]
+[template private getPOMInformation(database : KeyValueElement) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getPOMInformation(database : GraphDB) ]
+[template private getPOMInformation(database : GraphNode) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getPOMInformation(database : ColumnDB) ]
+[template private getPOMInformation(database : Column) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 [comment  
@@ -386,20 +352,19 @@ import java.util.*;
 
 
 
-
 [comment  
 ######################################################################################
 ###### START - POLYMORFISM FOR DATABASE REPOSITORY
 ######################################################################################
 /]
-[template private getDatabaseRepositoryInformation(database : Database) ]
+[template private getDatabaseRepositoryInformation(database : GenericList) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getDatabaseRepositoryInformation(database : RelationalDB) ]
-package org.typhon.[database.tables.entity.name.toLowerCase()/].model.repository;
+[template private getDatabaseRepositoryInformation(database : Table) ]
+package org.typhon.[database.entity.name.toLowerCase()/].model.repository;
 
-import org.typhon.[database.tables.entity.name.toLowerCase()/].model.[database.tables.entity.name.toUpperFirst()/];
+import org.typhon.[database.entity.name.toLowerCase()/].model.[database.entity.name.toUpperFirst()/];
 
 import java.util.List;
 
@@ -412,41 +377,41 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @Api
-@RepositoryRestResource(collectionResourceRel = "[database.tables.entity.name.toLowerCase()/]", path = "[database.tables.entity.name.toLowerCase()/]")
-public interface [database.tables.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.tables.entity.name.toUpperFirst()/], Long> {
+@RepositoryRestResource(collectionResourceRel = "[database.entity.name.toLowerCase()/]", path = "[database.entity.name.toLowerCase()/]")
+public interface [database.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.entity.name.toUpperFirst()/], Long> {
 	
-[for (attribute : Attribute | database.tables.entity.attributes)]
-	@ApiOperation("Get [database.tables.entity.name.toLower()/] by [attribute.name/]")
-	List<[database.tables.entity.name.toUpperFirst()/]> findBy[attribute.name.toUpperFirst()/](@Param("[attribute.name/]") 
+[for (attribute : Attribute | database.entity.attributes)]
+	@ApiOperation("Get [database.entity.name.toLower()/] by [attribute.name/]")
+	List<[database.entity.name.toUpperFirst()/]> findBy[attribute.name.toUpperFirst()/](@Param("[attribute.name/]") 
 								@ApiParam(value="[attribute.name.toUpperFirst()/]")String [attribute.name/]);
 
 [/for]
 }
 [/template]
 
-[template private getDatabaseRepositoryInformation(database : DocumentDB) ]
-package org.typhon.[database.collections.entity.name.toLowerCase()/].model.repository;
+[template private getDatabaseRepositoryInformation(database : Collection) ]
+package org.typhon.[database.entity.name.toLowerCase()/].model.repository;
 
-import org.typhon.[database.collections.entity.name.toLowerCase()/].model.[database.collections.entity.name.toUpperFirst()/];
+import org.typhon.[database.entity.name.toLowerCase()/].model.[database.entity.name.toUpperFirst()/];
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "[database.collections.entity.name.toLowerCase()/]", path = "[database.collections.entity.name.toLowerCase()/]")
-public interface [database.collections.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.collections.entity.name.toUpperFirst()/], String> {
+@RepositoryRestResource(collectionResourceRel = "[database.entity.name.toLowerCase()/]", path = "[database.entity.name.toLowerCase()/]")
+public interface [database.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.entity.name.toUpperFirst()/], String> {
 
 }
 [/template]
 
-[template private getDatabaseRepositoryInformation(database : KeyValueDB) ]
+[template private getDatabaseRepositoryInformation(database : KeyValueElement) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getDatabaseRepositoryInformation(database : GraphDB) ]
+[template private getDatabaseRepositoryInformation(database : GraphNode) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getDatabaseRepositoryInformation(database : ColumnDB) ]
+[template private getDatabaseRepositoryInformation(database : Column) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 [comment  
@@ -461,16 +426,18 @@ public interface [database.collections.entity.name.toUpperFirst()/]Repository ex
 
 
 
+
+
 [comment  
 ######################################################################################
 ###### START - POLYMORFISM FOR DATABASE BEANS
 ######################################################################################
 /]
-[template private getDatabaseBean(database : Database) ]
+[template private getDatabaseBean(database : GenericList) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getDatabaseBean(database : RelationalDB) ]
+[template private getDatabaseBean(database : Table) ]
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -479,18 +446,18 @@ import javax.persistence.Id;
 
 
 @Entity
-public class [database.tables.entity.name.toUpperFirst()/] {
+public class [database.entity.name.toUpperFirst()/] {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-[for (attribute : Attribute | database.tables.entity.attributes)]
+[for (attribute : Attribute | database.entity.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/]; 
 	[/if]
 [/for]
 
-[for (relation : Relation | database.tables.entity.relations)]
+[for (relation : Relation | database.entity.relations)]
 	@ElementCollection
 	private List<String> [relation.name/]; 
 [/for]
@@ -502,7 +469,7 @@ public class [database.tables.entity.name.toUpperFirst()/] {
 		this.id = id;
 	}
 		
-[for (attribute : Attribute | database.tables.entity.attributes)]
+[for (attribute : Attribute | database.entity.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	public void set[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/]([if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [attribute.name/][elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/] [/if]){
 		this.[attribute.name/] = [attribute.name/];
@@ -514,7 +481,7 @@ public class [database.tables.entity.name.toUpperFirst()/] {
 	[/if]
 [/for]	
 
-[for (relation : Relation | database.tables.entity.relations)separator('\n')]
+[for (relation : Relation | database.entity.relations)separator('\n')]
 	public void set[relation.name.toUpperFirst()/](List<String> [relation.name/]){
 		this.[relation.name/] = [relation.name/];
 	}
@@ -527,24 +494,24 @@ public class [database.tables.entity.name.toUpperFirst()/] {
 
 [/template]
 
-[template private getDatabaseBean(database : DocumentDB) ]
+[template private getDatabaseBean(database : Collection) ]
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document
-public class [database.collections.entity.name.toUpperFirst()/] {
+public class [database.entity.name.toUpperFirst()/] {
 
 	@Id
 	private String id;
 
-[for (attribute : Attribute | database.collections.entity.attributes)]
+[for (attribute : Attribute | database.entity.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/];
 	[/if] 
 [/for]
 
-[for (relation : Relation | database.collections.entity.relations)]
+[for (relation : Relation | database.entity.relations)]
 	private List<Integer> [relation.name/]; 
 [/for]
 
@@ -556,7 +523,7 @@ public class [database.collections.entity.name.toUpperFirst()/] {
 		this.id = id;
 	}
 
-[for (attribute : Attribute | database.collections.entity.attributes)]
+[for (attribute : Attribute | database.entity.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	public void set[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/]([if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [attribute.name/][elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/] [/if]){
 		this.[attribute.name/] = [attribute.name/];
@@ -568,7 +535,7 @@ public class [database.collections.entity.name.toUpperFirst()/] {
 	[/if]
 [/for]	
 
-[for (relation : Relation | database.collections.entity.relations)separator('\n')]
+[for (relation : Relation | database.entity.relations)separator('\n')]
 	public void set[relation.name.toUpperFirst()/](List<Integer> [relation.name/]){
 		this.[relation.name/] = [relation.name/];
 	}
@@ -580,15 +547,15 @@ public class [database.collections.entity.name.toUpperFirst()/] {
 }
 [/template]
 
-[template private getDatabaseBean(database : KeyValueDB) ]
+[template private getDatabaseBean(database : KeyValueElement) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getDatabaseBean(database : GraphDB) ]
+[template private getDatabaseBean(database : GraphNode) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getDatabaseBean(database : ColumnDB) ]
+[template private getDatabaseBean(database : Column) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 [comment  
@@ -602,17 +569,16 @@ public class [database.collections.entity.name.toUpperFirst()/] {
 
 
 
-
 [comment  
 ######################################################################################
 ###### START - POLYMORFISM FOR application.properies
 ######################################################################################
 /]
-[template private getProperties(database : Database, portNumber : Integer) ]
+[template private getProperties(database : GenericList, portNumber : Integer) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getProperties(database : RelationalDB, portNumber : Integer) ]
+[template private getProperties(database : Table, portNumber : Integer) ]
 server.port=[portNumber/]
 spring.jpa.hibernate.ddl-auto=create
 spring.datasource.url=jdbc:mysql://localhost:[getRelationalDBServerPort()/]/[database.name.toLowerCase()/]
@@ -621,22 +587,22 @@ spring.datasource.password=root
 spring.datasource.driver-class-name:com.mysql.jdbc.Driver
 [/template]
 
-[template private getProperties(database : DocumentDB, portNumber : Integer) ]
+[template private getProperties(database : Collection, portNumber : Integer) ]
 server.port=[portNumber/]
 spring.data.mongodb.host=localhost 
 spring.data.mongodb.port=[getDocumentDBServerPort()/]
 spring.data.mongodb.database=[database.name.toLowerCase()/]
 [/template]
 
-[template private getProperties(database : KeyValueDB, portNumber : Integer) ]
+[template private getProperties(database : KeyValueElement, portNumber : Integer) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getProperties(database : GraphDB, portNumber : Integer) ]
+[template private getProperties(database : GraphNode, portNumber : Integer) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 
-[template private getProperties(database : ColumnDB, portNumber : Integer) ]
+[template private getProperties(database : Column, portNumber : Integer) ]
 	[comment TODO Auto-generated template stub/]
 [/template]
 [comment  

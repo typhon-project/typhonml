@@ -2815,13 +2815,31 @@ public interface TyphonmlPackage extends EPackage {
 	int KEY_VALUE_DB_OPERATION_COUNT = DATABASE_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_VALUE_ELEMENT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_VALUE_ELEMENT__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT__ENTITY = GENERIC_LIST__ENTITY;
+	int KEY_VALUE_ELEMENT__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -2830,7 +2848,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT__KEY = GENERIC_LIST_FEATURE_COUNT + 0;
+	int KEY_VALUE_ELEMENT__KEY = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' reference list.
@@ -2839,7 +2857,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT__VALUES = GENERIC_LIST_FEATURE_COUNT + 1;
+	int KEY_VALUE_ELEMENT__VALUES = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Key Value Element</em>' class.
@@ -2848,7 +2866,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT_FEATURE_COUNT = GENERIC_LIST_FEATURE_COUNT + 2;
+	int KEY_VALUE_ELEMENT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Key Value Element</em>' class.
@@ -2857,7 +2875,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT_OPERATION_COUNT = GENERIC_LIST_OPERATION_COUNT + 0;
+	int KEY_VALUE_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3088,13 +3106,40 @@ public interface TyphonmlPackage extends EPackage {
 	int COLUMN = 58;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN__ATTRIBUTES = 0;
+	int COLUMN__ATTRIBUTES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -3103,7 +3148,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN_FEATURE_COUNT = 1;
+	int COLUMN_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Column</em>' class.
@@ -3112,7 +3157,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN_OPERATION_COUNT = 0;
+	int COLUMN_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.RenameEntityImpl <em>Rename Entity</em>}' class.

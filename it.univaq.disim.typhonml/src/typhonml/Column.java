@@ -4,8 +4,6 @@ package typhonml;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Column</b></em>'.
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Column extends EObject {
+public interface Column extends NamedElement, GenericList {
 	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
 	 * The list contents are of type {@link typhonml.Attribute}.

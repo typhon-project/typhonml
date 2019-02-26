@@ -89,9 +89,9 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCollectionAccess().getGroup(), "rule__Collection__Group__0");
 			builder.put(grammarAccess.getCollectionAccess().getGroup_3(), "rule__Collection__Group_3__0");
 			builder.put(grammarAccess.getKeyValueElementAccess().getGroup(), "rule__KeyValueElement__Group__0");
-			builder.put(grammarAccess.getKeyValueElementAccess().getGroup_2(), "rule__KeyValueElement__Group_2__0");
-			builder.put(grammarAccess.getKeyValueElementAccess().getGroup_5(), "rule__KeyValueElement__Group_5__0");
-			builder.put(grammarAccess.getKeyValueElementAccess().getGroup_5_3(), "rule__KeyValueElement__Group_5_3__0");
+			builder.put(grammarAccess.getKeyValueElementAccess().getGroup_3(), "rule__KeyValueElement__Group_3__0");
+			builder.put(grammarAccess.getKeyValueElementAccess().getGroup_6(), "rule__KeyValueElement__Group_6__0");
+			builder.put(grammarAccess.getKeyValueElementAccess().getGroup_6_3(), "rule__KeyValueElement__Group_6_3__0");
 			builder.put(grammarAccess.getGraphNodeAccess().getGroup(), "rule__GraphNode__Group__0");
 			builder.put(grammarAccess.getGraphNodeAccess().getGroup_3(), "rule__GraphNode__Group_3__0");
 			builder.put(grammarAccess.getGraphNodeAccess().getGroup_6(), "rule__GraphNode__Group_6__0");
@@ -212,10 +212,11 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCollectionAccess().getNameAssignment_1(), "rule__Collection__NameAssignment_1");
 			builder.put(grammarAccess.getCollectionAccess().getImportedNamespaceAssignment_3_1(), "rule__Collection__ImportedNamespaceAssignment_3_1");
 			builder.put(grammarAccess.getCollectionAccess().getEntityAssignment_5(), "rule__Collection__EntityAssignment_5");
-			builder.put(grammarAccess.getKeyValueElementAccess().getKeyAssignment_2_1(), "rule__KeyValueElement__KeyAssignment_2_1");
-			builder.put(grammarAccess.getKeyValueElementAccess().getEntityAssignment_4(), "rule__KeyValueElement__EntityAssignment_4");
-			builder.put(grammarAccess.getKeyValueElementAccess().getValuesAssignment_5_2(), "rule__KeyValueElement__ValuesAssignment_5_2");
-			builder.put(grammarAccess.getKeyValueElementAccess().getValuesAssignment_5_3_1(), "rule__KeyValueElement__ValuesAssignment_5_3_1");
+			builder.put(grammarAccess.getKeyValueElementAccess().getNameAssignment_1(), "rule__KeyValueElement__NameAssignment_1");
+			builder.put(grammarAccess.getKeyValueElementAccess().getKeyAssignment_3_1(), "rule__KeyValueElement__KeyAssignment_3_1");
+			builder.put(grammarAccess.getKeyValueElementAccess().getEntityAssignment_5(), "rule__KeyValueElement__EntityAssignment_5");
+			builder.put(grammarAccess.getKeyValueElementAccess().getValuesAssignment_6_2(), "rule__KeyValueElement__ValuesAssignment_6_2");
+			builder.put(grammarAccess.getKeyValueElementAccess().getValuesAssignment_6_3_1(), "rule__KeyValueElement__ValuesAssignment_6_3_1");
 			builder.put(grammarAccess.getGraphNodeAccess().getNameAssignment_1(), "rule__GraphNode__NameAssignment_1");
 			builder.put(grammarAccess.getGraphNodeAccess().getImportedNamespaceAssignment_3_1(), "rule__GraphNode__ImportedNamespaceAssignment_3_1");
 			builder.put(grammarAccess.getGraphNodeAccess().getEntityAssignment_5(), "rule__GraphNode__EntityAssignment_5");

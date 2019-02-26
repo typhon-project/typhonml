@@ -281,6 +281,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     GenericList returns Column
 	 *     Column returns Column
 	 *
 	 * Constraint:
@@ -518,7 +519,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     KeyValueElement returns KeyValueElement
 	 *
 	 * Constraint:
-	 *     (key=EString? entity=[Entity|EString] (values+=[DataType|EString] values+=[DataType|EString]*)?)
+	 *     (name=EString key=EString? entity=[Entity|EString] (values+=[DataType|EString] values+=[DataType|EString]*)?)
 	 */
 	protected void sequence_KeyValueElement(ISerializationContext context, KeyValueElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

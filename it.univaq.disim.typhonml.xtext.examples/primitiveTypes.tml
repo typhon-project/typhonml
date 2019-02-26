@@ -1,7 +1,6 @@
-PrimitiveDataType date{}
-PrimitiveDataType string{}
+PrimitiveDataType Date{}
+PrimitiveDataType String{}
 PrimitiveDataType int{}
-PrimitiveDataType date{}
-PrimitiveDataType real{}
+PrimitiveDataType Real{}
 PrimitiveDataType blob{}
 PrimitiveDataType natural_language{}

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project default="generate" name="it.univaq.disim.typhon.acceleo">
+<project default="xtextModule" name="it.univaq.disim.typhon.acceleo">
     <property name="ECLIPSE_HOME" value="../../../../../../ECLIPSE/Eclipse Modeling - Photon/Eclipse.app/Contents/Eclipse"/>
     <property name="ECLIPSE_WORKSPACE" value="../../.."/>
 
@@ -50,8 +50,8 @@
     </path>
 
     <!-- The default task with the jars used by this project -->
-    <target name="generate">
-        <java classname="it.univaq.disim.typhon.acceleo.main.Generate" classpathref="it.univaq.disim.typhon.acceleo.classpath">
+    <target name="xtextModule">
+        <java classname="it.univaq.disim.typhon.acceleo.services.XtextModule" classpathref="it.univaq.disim.typhon.acceleo.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>
@@ -61,8 +61,8 @@
         In case of problem you can also try with all the jar available in your Eclipse
         Keep in mind that having two versions of the same jar can create problems
     -->
-    <target name="generate.alljars">
-        <java classname="it.univaq.disim.typhon.acceleo.main.Generate" classpathref="it.univaq.disim.typhon.acceleo.classpath">
+    <target name="xtextModule.alljars">
+        <java classname="it.univaq.disim.typhon.acceleo.services.XtextModule" classpathref="it.univaq.disim.typhon.acceleo.classpath">
             <arg value="${model}"/>
             <arg value="${target}"/>
         </java>

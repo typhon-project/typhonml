@@ -2,7 +2,7 @@
 CustomDataType jpeg {
 	elements{
 		DataTypeItem date{
-			type date
+			type Date
 			implementation DataTypeImplementationPackage{
 				location 'it.univaq.disim.Date'
 			}

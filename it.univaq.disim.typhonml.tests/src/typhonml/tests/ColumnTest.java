@@ -2,8 +2,6 @@
  */
 package typhonml.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import typhonml.Column;
@@ -15,15 +13,7 @@ import typhonml.TyphonmlFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ColumnTest extends TestCase {
-
-	/**
-	 * The fixture for this Column test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Column fixture = null;
+public class ColumnTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class ColumnTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Column test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Column fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Column test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Column getFixture() {
-		return fixture;
+		return (Column)fixture;
 	}
 
 	/**

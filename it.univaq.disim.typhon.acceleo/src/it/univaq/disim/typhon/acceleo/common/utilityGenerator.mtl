@@ -4,7 +4,7 @@
 
 
 [query public getAllModelEntitiesUtility(aModel : Model) : Entity = aModel.dataTypes->filter(typhonml::Entity)->sortedBy(x | x.name) /]
-
+[query public getAllModelEntitiesUtilityOrdered(aModel : Model) : OrderedSet(Entity) = aModel.dataTypes->filter(typhonml::Entity)->sortedBy(x | x.name) /]
 
 
 [comment  
@@ -22,10 +22,10 @@
 [database.collections.entity.name/]
 [/template]
 [template public resolveEntityNameFromDatabase(database : KeyValueDB) ]
-	[comment TODO Auto-generated template stub/]
+[database.elements.entity.name/]
 [/template]
 [template public resolveEntityNameFromDatabase(database : GraphDB) ]
-	[comment TODO Auto-generated template stub/]
+[database.nodes.entity.name/]
 [/template]
 [template public resolveEntityNameFromDatabase(database : ColumnDB) ]
 	[comment TODO Auto-generated template stub/]
@@ -35,6 +35,51 @@
 ###### END - POLYMORFISM FOR resolving Entity name from Database
 ######################################################################################
 /]
+
+
+
+
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR resolving Entity name from GenericList
+######################################################################################
+/]
+[template private resolveDatabaseNameFromGenericList(gl : GenericList) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private resolveDatabaseNameFromGenericList(gl : Table) ]
+[gl.name/]
+[/template]
+
+[template private resolveDatabaseNameFromGenericList(gl : Collection) ]
+[gl.name/]
+[/template]
+
+[template private resolveDatabaseNameFromGenericList(gl : KeyValueElement) ]
+[gl.name/]	
+[/template]
+
+[template private resolveDatabaseNameFromGenericList(gl : GraphNode) ]
+[gl.name/]	
+[/template]
+
+[template private resolveDatabaseNameFromGenericList(gl : Column) ]
+[gl.name/]	
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR resolving Entity name from GenericList
+######################################################################################
+/]
+
+
+
+
+
+
 
 
 [template public calculateEntityPortByRelation(aModel : Model, relation : Relation){

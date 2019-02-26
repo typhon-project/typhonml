@@ -2268,6 +2268,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		collectionEClass.getESuperTypes().add(this.getGenericList());
 		collectionEClass.getESuperTypes().add(this.getNamedElement());
 		keyValueDBEClass.getESuperTypes().add(this.getDatabase());
+		keyValueElementEClass.getESuperTypes().add(this.getNamedElement());
 		keyValueElementEClass.getESuperTypes().add(this.getGenericList());
 		graphDBEClass.getESuperTypes().add(this.getDatabase());
 		graphNodeEClass.getESuperTypes().add(this.getNamedElement());
@@ -2276,6 +2277,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		graphEdgeEClass.getESuperTypes().add(this.getNamedElement());
 		graphEdgeLabelEClass.getESuperTypes().add(this.getNamedElement());
 		columnDBEClass.getESuperTypes().add(this.getDatabase());
+		columnEClass.getESuperTypes().add(this.getNamedElement());
+		columnEClass.getESuperTypes().add(this.getGenericList());
 		renameEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		changeRelationContainementEClass.getESuperTypes().add(this.getChangeOperator());
 

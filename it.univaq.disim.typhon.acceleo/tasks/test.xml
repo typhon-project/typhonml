@@ -30,6 +30,9 @@
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen.ecore_2.14.0.v20180418-0836.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.codegen_2.13.0.v20180319-0813.jar"/>
         <pathelement location="${ECLIPSE_HOME}/plugins/com.google.guava_21.0.0.v20170206-1425.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.emf.mwe.utils_1.4.0.M2.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/com.google.inject_3.0.0.v201312141243.jar"/>
+        <pathelement location="${ECLIPSE_HOME}/plugins/org.eclipse.xtext_2.14.0.v20180522-1821.jar"/>
     </path>
 
     <path id="it.univaq.disim.typhon.acceleo.classpath">

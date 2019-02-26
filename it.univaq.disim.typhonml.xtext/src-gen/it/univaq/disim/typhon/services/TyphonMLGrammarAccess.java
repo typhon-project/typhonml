@@ -212,12 +212,13 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCollectionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cKeyValueElementParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cGraphNodeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cColumnParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
 		
 		//GenericList:
-		//	GenericList_Impl | Table | Collection | KeyValueElement | GraphNode;
+		//	GenericList_Impl | Table | Collection | KeyValueElement | GraphNode | Column;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//GenericList_Impl | Table | Collection | KeyValueElement | GraphNode
+		//GenericList_Impl | Table | Collection | KeyValueElement | GraphNode | Column
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//GenericList_Impl
@@ -234,6 +235,9 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//GraphNode
 		public RuleCall getGraphNodeParserRuleCall_4() { return cGraphNodeParserRuleCall_4; }
+		
+		//Column
+		public RuleCall getColumnParserRuleCall_5() { return cColumnParserRuleCall_5; }
 	}
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Entity");
@@ -1509,108 +1513,117 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.KeyValueElement");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cKeyValueElementKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cKeyKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cKeyAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cKeyEStringParserRuleCall_2_1_0 = (RuleCall)cKeyAssignment_2_1.eContents().get(0);
-		private final Keyword cEntityKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cEntityAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cEntityEntityCrossReference_4_0 = (CrossReference)cEntityAssignment_4.eContents().get(0);
-		private final RuleCall cEntityEntityEStringParserRuleCall_4_0_1 = (RuleCall)cEntityEntityCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cValuesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cValuesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final CrossReference cValuesDataTypeCrossReference_5_2_0 = (CrossReference)cValuesAssignment_5_2.eContents().get(0);
-		private final RuleCall cValuesDataTypeEStringParserRuleCall_5_2_0_1 = (RuleCall)cValuesDataTypeCrossReference_5_2_0.eContents().get(1);
-		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
-		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cValuesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final CrossReference cValuesDataTypeCrossReference_5_3_1_0 = (CrossReference)cValuesAssignment_5_3_1.eContents().get(0);
-		private final RuleCall cValuesDataTypeEStringParserRuleCall_5_3_1_0_1 = (RuleCall)cValuesDataTypeCrossReference_5_3_1_0.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cKeyKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cKeyAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cKeyEStringParserRuleCall_3_1_0 = (RuleCall)cKeyAssignment_3_1.eContents().get(0);
+		private final Keyword cEntityKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cEntityAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cEntityEntityCrossReference_5_0 = (CrossReference)cEntityAssignment_5.eContents().get(0);
+		private final RuleCall cEntityEntityEStringParserRuleCall_5_0_1 = (RuleCall)cEntityEntityCrossReference_5_0.eContents().get(1);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cValuesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Assignment cValuesAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final CrossReference cValuesDataTypeCrossReference_6_2_0 = (CrossReference)cValuesAssignment_6_2.eContents().get(0);
+		private final RuleCall cValuesDataTypeEStringParserRuleCall_6_2_0_1 = (RuleCall)cValuesDataTypeCrossReference_6_2_0.eContents().get(1);
+		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
+		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
+		private final Assignment cValuesAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
+		private final CrossReference cValuesDataTypeCrossReference_6_3_1_0 = (CrossReference)cValuesAssignment_6_3_1.eContents().get(0);
+		private final RuleCall cValuesDataTypeEStringParserRuleCall_6_3_1_0_1 = (RuleCall)cValuesDataTypeCrossReference_6_3_1_0.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//KeyValueElement:
 		//	'KeyValueElement'
+		//	name=EString
 		//	'{' ('key' key=EString)?
 		//	'entity' entity=[Entity|EString] ('values' '(' values+=[DataType|EString] ("," values+=[DataType|EString])* ')')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'KeyValueElement' '{' ('key' key=EString)? 'entity' entity=[Entity|EString] ('values' '(' values+=[DataType|EString]
-		//("," values+=[DataType|EString])* ')')? '}'
+		//'KeyValueElement' name=EString '{' ('key' key=EString)? 'entity' entity=[Entity|EString] ('values' '('
+		//values+=[DataType|EString] ("," values+=[DataType|EString])* ')')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'KeyValueElement'
 		public Keyword getKeyValueElementKeyword_0() { return cKeyValueElementKeyword_0; }
 		
+		//name=EString
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_1_0() { return cNameEStringParserRuleCall_1_0; }
+		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
 		//('key' key=EString)?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'key'
-		public Keyword getKeyKeyword_2_0() { return cKeyKeyword_2_0; }
+		public Keyword getKeyKeyword_3_0() { return cKeyKeyword_3_0; }
 		
 		//key=EString
-		public Assignment getKeyAssignment_2_1() { return cKeyAssignment_2_1; }
+		public Assignment getKeyAssignment_3_1() { return cKeyAssignment_3_1; }
 		
 		//EString
-		public RuleCall getKeyEStringParserRuleCall_2_1_0() { return cKeyEStringParserRuleCall_2_1_0; }
+		public RuleCall getKeyEStringParserRuleCall_3_1_0() { return cKeyEStringParserRuleCall_3_1_0; }
 		
 		//'entity'
-		public Keyword getEntityKeyword_3() { return cEntityKeyword_3; }
+		public Keyword getEntityKeyword_4() { return cEntityKeyword_4; }
 		
 		//entity=[Entity|EString]
-		public Assignment getEntityAssignment_4() { return cEntityAssignment_4; }
+		public Assignment getEntityAssignment_5() { return cEntityAssignment_5; }
 		
 		//[Entity|EString]
-		public CrossReference getEntityEntityCrossReference_4_0() { return cEntityEntityCrossReference_4_0; }
+		public CrossReference getEntityEntityCrossReference_5_0() { return cEntityEntityCrossReference_5_0; }
 		
 		//EString
-		public RuleCall getEntityEntityEStringParserRuleCall_4_0_1() { return cEntityEntityEStringParserRuleCall_4_0_1; }
+		public RuleCall getEntityEntityEStringParserRuleCall_5_0_1() { return cEntityEntityEStringParserRuleCall_5_0_1; }
 		
 		//('values' '(' values+=[DataType|EString] ("," values+=[DataType|EString])* ')')?
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_6() { return cGroup_6; }
 		
 		//'values'
-		public Keyword getValuesKeyword_5_0() { return cValuesKeyword_5_0; }
+		public Keyword getValuesKeyword_6_0() { return cValuesKeyword_6_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_5_1() { return cLeftParenthesisKeyword_5_1; }
+		public Keyword getLeftParenthesisKeyword_6_1() { return cLeftParenthesisKeyword_6_1; }
 		
 		//values+=[DataType|EString]
-		public Assignment getValuesAssignment_5_2() { return cValuesAssignment_5_2; }
+		public Assignment getValuesAssignment_6_2() { return cValuesAssignment_6_2; }
 		
 		//[DataType|EString]
-		public CrossReference getValuesDataTypeCrossReference_5_2_0() { return cValuesDataTypeCrossReference_5_2_0; }
+		public CrossReference getValuesDataTypeCrossReference_6_2_0() { return cValuesDataTypeCrossReference_6_2_0; }
 		
 		//EString
-		public RuleCall getValuesDataTypeEStringParserRuleCall_5_2_0_1() { return cValuesDataTypeEStringParserRuleCall_5_2_0_1; }
+		public RuleCall getValuesDataTypeEStringParserRuleCall_6_2_0_1() { return cValuesDataTypeEStringParserRuleCall_6_2_0_1; }
 		
 		//("," values+=[DataType|EString])*
-		public Group getGroup_5_3() { return cGroup_5_3; }
+		public Group getGroup_6_3() { return cGroup_6_3; }
 		
 		//","
-		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
+		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
 		
 		//values+=[DataType|EString]
-		public Assignment getValuesAssignment_5_3_1() { return cValuesAssignment_5_3_1; }
+		public Assignment getValuesAssignment_6_3_1() { return cValuesAssignment_6_3_1; }
 		
 		//[DataType|EString]
-		public CrossReference getValuesDataTypeCrossReference_5_3_1_0() { return cValuesDataTypeCrossReference_5_3_1_0; }
+		public CrossReference getValuesDataTypeCrossReference_6_3_1_0() { return cValuesDataTypeCrossReference_6_3_1_0; }
 		
 		//EString
-		public RuleCall getValuesDataTypeEStringParserRuleCall_5_3_1_0_1() { return cValuesDataTypeEStringParserRuleCall_5_3_1_0_1; }
+		public RuleCall getValuesDataTypeEStringParserRuleCall_6_3_1_0_1() { return cValuesDataTypeEStringParserRuleCall_6_3_1_0_1; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5_4() { return cRightParenthesisKeyword_5_4; }
+		public Keyword getRightParenthesisKeyword_6_4() { return cRightParenthesisKeyword_6_4; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class GraphNodeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.GraphNode");
@@ -3412,7 +3425,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//GenericList:
-	//	GenericList_Impl | Table | Collection | KeyValueElement | GraphNode;
+	//	GenericList_Impl | Table | Collection | KeyValueElement | GraphNode | Column;
 	public GenericListElements getGenericListAccess() {
 		return pGenericList;
 	}
@@ -3667,6 +3680,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//KeyValueElement:
 	//	'KeyValueElement'
+	//	name=EString
 	//	'{' ('key' key=EString)?
 	//	'entity' entity=[Entity|EString] ('values' '(' values+=[DataType|EString] ("," values+=[DataType|EString])* ')')?
 	//	'}';

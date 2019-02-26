@@ -7,7 +7,7 @@
 		basePort : Integer = getProperty('apigateway.base.port').toInteger();
 	}]
 
-[for (e : Entity | getAllModelEntitiesUtility(aModel))]
+[for (e : Entity | getAllModelEntitiesUtilityOrdered(aModel))]
 
 
 [comment client-demo/src/main/java/org/typhon/client/model/dto/OrderDTO.java/]
@@ -22,17 +22,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class [e.name.toUpperFirst()/]DTO {
 
 [for (attribute : Attribute | e.attributes)]
-	[if (attribute.name.strcmp('id') <> 0)]
+	[if (attribute.oclIsTypeOf(typhonml::Attribute))]
+		[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/];
-	[else]
+		[else]
 	private [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id;
-	[/if] 
+		[/if]
+ 	[/if]
 [/for]
 [for (relation : Relation | e.relations)]
 	private List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj; 
 [/for]
 		
 [for (attribute : Attribute | e.attributes)]
+	[if (attribute.oclIsTypeOf(typhonml::Attribute))]
 	[if (attribute.name.strcmp('id') <> 0)]
 	public void set[attribute.name.toUpperFirst()/] ([attribute.type.name/] [attribute.name/]){
 		this.[attribute.name/] = [attribute.name/];
@@ -48,6 +51,7 @@ public class [e.name.toUpperFirst()/]DTO {
 	public [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] getId(){
 		return id;
 	}
+	[/if]
 	[/if]
 
 [/for]
@@ -136,9 +140,7 @@ private static final Logger logger = LoggerFactory.getLogger([e.name.toUpperFirs
 		return result;
 	}
 
-	public void set[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/](List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> obj) {
-		this.[relation.name/] = obj;
-	}
+	
 [/for]
 }
 
@@ -276,14 +278,14 @@ import org.typhon.client.service.*;
 public class [e.name.toUpperFirst()/]ServiceTest {
 	[e.name.toUpperFirst()/]Service [e.name.toLower()/]Service;
 	[for (relation : Relation | e.relations)]
-	[relation.type.name.toUpperFirst()/]Service [relation.type.name.toLower()/]Service;
+	[relation.type.name.toUpperFirst()/]Service [relation.name.toLower()/]Service;
 	[/for]
 
 	@Before
 	public void init() {
 		[e.name.toLower()/]Service = new [e.name.toUpperFirst()/]Service("http://localhost:8080");
 		[for (relation : Relation | e.relations)]
-		[relation.type.name.toLower()/]Service = new [relation.type.name.toUpperFirst()/]Service("http://localhost:8080");
+		[relation.name.toLower()/]Service = new [relation.type.name.toUpperFirst()/]Service("http://localhost:8080");
 		[/for]
 	}
 
@@ -541,6 +543,8 @@ String
 ######################################################################################
 /]
 
+
+
 [comment  
 ######################################################################################
 ###### START - POLYMORFISM FOR Variable Type Based On Database Type
@@ -574,6 +578,46 @@ String
 ###### END - POLYMORFISM FOR Variable Type Based On Database Type
 ######################################################################################
 /]
+
+
+[comment  
+######################################################################################
+###### START - POLYMORFISM FOR Variable Type Based On Database Type
+######################################################################################
+/]
+[template private getTypeValueForDifferentDatabase2(database : GenericList) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTypeValueForDifferentDatabase2(database : Table) ]
+int
+[/template]
+
+[template private getTypeValueForDifferentDatabase2(database : Collection) ]
+String
+[/template]
+
+[template private getTypeValueForDifferentDatabase2(database : GraphNode) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTypeValueForDifferentDatabase2(database : KeyValueElement) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+
+[template private getTypeValueForDifferentDatabase2(database : Column) ]
+	[comment TODO Auto-generated template stub/]
+[/template]
+[comment  
+######################################################################################
+###### END - POLYMORFISM FOR Variable Type Based On Database Type
+######################################################################################
+/]
+
+
+
+
+
 
 [comment  
 ######################################################################################

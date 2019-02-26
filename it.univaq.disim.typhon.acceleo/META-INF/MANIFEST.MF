@@ -16,10 +16,14 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.profiler;bundle-version="3.3.0",
  org.eclipse.acceleo.engine;bundle-version="3.3.0",
  com.google.guava,
- it.univaq.disim.typhonml;bundle-version="0.1.1"
+ it.univaq.disim.typhonml;bundle-version="0.1.1",
+ it.univaq.disim.typhonml.xtext,
+ org.eclipse.emf.mwe.utils
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: it.univaq.disim.typhon.acceleo.main,
  it.univaq.disim.typhon.acceleo.test
+Import-Package: com.google.inject,
+ org.eclipse.xtext.resource
 

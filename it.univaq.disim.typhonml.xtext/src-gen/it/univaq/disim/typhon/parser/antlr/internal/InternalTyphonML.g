@@ -2144,21 +2144,40 @@ ruleKeyValueElement returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getKeyValueElementAccess().getKeyValueElementKeyword_0());
 		}
-		otherlv_1='{'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getKeyValueElementAccess().getNameEStringParserRuleCall_1_0());
+				}
+				lv_name_1_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getKeyValueElementRule());
+					}
+					set(
+						$current,
+						"name",
+						lv_name_1_0,
+						"it.univaq.disim.typhon.TyphonML.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='{'
 		{
-			newLeafNode(otherlv_1, grammarAccess.getKeyValueElementAccess().getLeftCurlyBracketKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getKeyValueElementAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
-			otherlv_2='key'
+			otherlv_3='key'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getKeyValueElementAccess().getKeyKeyword_2_0());
+				newLeafNode(otherlv_3, grammarAccess.getKeyValueElementAccess().getKeyKeyword_3_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getKeyValueElementAccess().getKeyEStringParserRuleCall_2_1_0());
+						newCompositeNode(grammarAccess.getKeyValueElementAccess().getKeyEStringParserRuleCall_3_1_0());
 					}
-					lv_key_3_0=ruleEString
+					lv_key_4_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getKeyValueElementRule());
@@ -2166,16 +2185,16 @@ ruleKeyValueElement returns [EObject current=null]
 						set(
 							$current,
 							"key",
-							lv_key_3_0,
+							lv_key_4_0,
 							"it.univaq.disim.typhon.TyphonML.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_4='entity'
+		otherlv_5='entity'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getKeyValueElementAccess().getEntityKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getKeyValueElementAccess().getEntityKeyword_4());
 		}
 		(
 			(
@@ -2185,7 +2204,7 @@ ruleKeyValueElement returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getKeyValueElementAccess().getEntityEntityCrossReference_4_0());
+					newCompositeNode(grammarAccess.getKeyValueElementAccess().getEntityEntityCrossReference_5_0());
 				}
 				ruleEString
 				{
@@ -2194,13 +2213,13 @@ ruleKeyValueElement returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_6='values'
+			otherlv_7='values'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getKeyValueElementAccess().getValuesKeyword_5_0());
+				newLeafNode(otherlv_7, grammarAccess.getKeyValueElementAccess().getValuesKeyword_6_0());
 			}
-			otherlv_7='('
+			otherlv_8='('
 			{
-				newLeafNode(otherlv_7, grammarAccess.getKeyValueElementAccess().getLeftParenthesisKeyword_5_1());
+				newLeafNode(otherlv_8, grammarAccess.getKeyValueElementAccess().getLeftParenthesisKeyword_6_1());
 			}
 			(
 				(
@@ -2210,7 +2229,7 @@ ruleKeyValueElement returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getKeyValueElementAccess().getValuesDataTypeCrossReference_5_2_0());
+						newCompositeNode(grammarAccess.getKeyValueElementAccess().getValuesDataTypeCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -2219,9 +2238,9 @@ ruleKeyValueElement returns [EObject current=null]
 				)
 			)
 			(
-				otherlv_9=','
+				otherlv_10=','
 				{
-					newLeafNode(otherlv_9, grammarAccess.getKeyValueElementAccess().getCommaKeyword_5_3_0());
+					newLeafNode(otherlv_10, grammarAccess.getKeyValueElementAccess().getCommaKeyword_6_3_0());
 				}
 				(
 					(
@@ -2231,7 +2250,7 @@ ruleKeyValueElement returns [EObject current=null]
 							}
 						}
 						{
-							newCompositeNode(grammarAccess.getKeyValueElementAccess().getValuesDataTypeCrossReference_5_3_1_0());
+							newCompositeNode(grammarAccess.getKeyValueElementAccess().getValuesDataTypeCrossReference_6_3_1_0());
 						}
 						ruleEString
 						{
@@ -2240,14 +2259,14 @@ ruleKeyValueElement returns [EObject current=null]
 					)
 				)
 			)*
-			otherlv_11=')'
+			otherlv_12=')'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getKeyValueElementAccess().getRightParenthesisKeyword_5_4());
+				newLeafNode(otherlv_12, grammarAccess.getKeyValueElementAccess().getRightParenthesisKeyword_6_4());
 			}
 		)?
-		otherlv_12='}'
+		otherlv_13='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getKeyValueElementAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_13, grammarAccess.getKeyValueElementAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

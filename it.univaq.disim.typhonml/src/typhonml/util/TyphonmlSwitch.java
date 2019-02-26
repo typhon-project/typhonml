@@ -441,6 +441,7 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.KEY_VALUE_ELEMENT: {
 				KeyValueElement keyValueElement = (KeyValueElement)theEObject;
 				T result = caseKeyValueElement(keyValueElement);
+				if (result == null) result = caseNamedElement(keyValueElement);
 				if (result == null) result = caseGenericList(keyValueElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -493,6 +494,8 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.COLUMN: {
 				Column column = (Column)theEObject;
 				T result = caseColumn(column);
+				if (result == null) result = caseNamedElement(column);
+				if (result == null) result = caseGenericList(column);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

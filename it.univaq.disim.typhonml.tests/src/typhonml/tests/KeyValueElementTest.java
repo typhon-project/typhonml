@@ -13,7 +13,7 @@ import typhonml.TyphonmlFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class KeyValueElementTest extends GenericListTest {
+public class KeyValueElementTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->

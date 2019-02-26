@@ -9,7 +9,9 @@
       xsi:type="typhonml:RelationalDB"
       name="relationalDB">
     <tables
-        name="OrderName"/>
+        name="OrderName">
+      <idSpec/>
+    </tables>
   </databases>
   <dataTypes
       xsi:type="typhonml:PrimitiveDataType"

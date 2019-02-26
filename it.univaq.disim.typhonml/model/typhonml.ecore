@@ -3,250 +3,269 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="typhonml" nsURI="http://org.typhon.dsls.typhonml.sirius" nsPrefix="typhonml">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
     <eStructuralFeatures xsi:type="ecore:EReference" name="databases" upperBound="-1"
-        eType="#//Database" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Database"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
-        eType="#//DataType" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="changeOperators" upperBound="-1"
-        eType="#//ChangeOperator" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeOperator" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AddEntity" eSuperTypes="#//Entity #//ChangeOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveEntity" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddEntity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Entity /it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveEntity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRemove" lowerBound="1"
-        eType="#//Entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SplitEntity" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="SplitEntity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityToBeSplit" lowerBound="1"
-        eType="#//Entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstNewEntity" lowerBound="1"
-        eType="#//Entity" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="secondNewEntity" lowerBound="1"
-        eType="#//Entity" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MigrateEntity" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="MigrateEntity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        eType="#//Entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="newDatabase" lowerBound="1"
-        eType="#//Database"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Database"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MergeEntity" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="MergeEntity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="firstEntityToMerge" lowerBound="1"
-        eType="#//Entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="secondEntityToMerge" lowerBound="1"
-        eType="#//Entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newEntityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="#//Relation #//ChangeOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveRelation" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Relation /it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveRelation" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationToRemove" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenameRelation" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RenameRelation" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationToRename" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newRelationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnableRelationContainment" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="EnableRelationContainment" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DisableRelationContainment" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="DisableRelationContainment" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnableBidirectionalRelation" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="EnableBidirectionalRelation" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DisableBidirectionalRelation" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="DisableBidirectionalRelation" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChangeRelationCardinality" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeRelationCardinality" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newCardinality" lowerBound="1"
-        eType="#//Cardinality"/>
+        eType="ecore:EEnum /it.univaq.disim.typhonml/model/typhonml.ecore#//Cardinality"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="#//Attribute #//ChangeOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute /it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToChange" lowerBound="1"
-        eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newType" eType="#//DataType"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newType" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveAttribute" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveAttribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToRemove" lowerBound="1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenameAttribute" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RenameAttribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToRename" lowerBound="1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenameTable" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RenameTable" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tableToRename" lowerBound="1"
-        eType="#//Table"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Table"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddIdentifier" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddIdentifier" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        eType="#//Entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttributesToIdenfifier" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttributesToIdenfifier" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//EntityIdentifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveIdentifier" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveIdentifier" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityIdentifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//EntityIdentifier"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveAttributesToIdenfifier" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveAttributesToIdenfifier" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//EntityIdentifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenameIdentifier" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="RenameIdentifier" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//EntityIdentifier"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddIndex" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddIndex" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DropIndex" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DropIndex" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Table"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddGraphAttribute" eSuperTypes="#//GraphAttribute #//ChangeOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphAttribute" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="1" eType="#//GraphNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddGraphAttribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//GraphAttribute /it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphAttribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="1" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphNode"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddGraphEdge" eSuperTypes="#//GraphEdge #//ChangeOperator"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphEdge" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddGraphEdge" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//GraphEdge /it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphEdge" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="graphEdgeToRemove" lowerBound="1"
-        eType="#//GraphEdge"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphEdge"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenabeGraphEdgeLabel" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" lowerBound="1" eType="#//GraphEdge"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RenabeGraphEdgeLabel" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" lowerBound="1" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphEdge"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//DataType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FreeText" eSuperTypes="#//PrimitiveDataType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CustomDataType" eSuperTypes="#//DataType">
+  <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FreeText" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDataType" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//DataTypeItem" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataTypeItem"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeItem" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTypeItem" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
-        eType="#//DataTypeImplementationPackage" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataTypeImplementationPackage"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeImplementationPackage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//DataType">
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
-        eType="#//Relation" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="identifer" lowerBound="1"
-        eType="#//EntityIdentifier" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//EntityIdentifier"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" lowerBound="1"
-        eType="#//GenericList" eOpposite="#//GenericList/entity"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList"
+        eOpposite="/it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList/entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
-        eType="#//Cardinality"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//Relation"/>
+        eType="ecore:EEnum /it.univaq.disim.typhonml/model/typhonml.ecore#//Cardinality"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContainment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationalDB" eSuperTypes="#//Database">
+  <eClassifiers xsi:type="ecore:EClass" name="RelationalDB" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
-        eType="#//Table" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Table"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//NamedElement #//GenericList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="indexSpec" eType="#//IndexSpec"
-        containment="true" eOpposite="#//IndexSpec/table"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="idSpec" eType="#//IdSpec"
-        containment="true" eOpposite="#//IdSpec/table"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="db" eType="#//Database"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement /it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indexSpec" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//IndexSpec"
+        containment="true" eOpposite="/it.univaq.disim.typhonml/model/typhonml.ecore#//IndexSpec/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="idSpec" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//IdSpec"
+        containment="true" eOpposite="/it.univaq.disim.typhonml/model/typhonml.ecore#//IdSpec/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="db" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Database"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IndexSpec" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="IndexSpec" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
-        eType="#//Relation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
-        eOpposite="#//Table/indexSpec"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Table"
+        eOpposite="/it.univaq.disim.typhonml/model/typhonml.ecore#//Table/indexSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IdSpec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
-        eOpposite="#//Table/idSpec"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Table"
+        eOpposite="/it.univaq.disim.typhonml/model/typhonml.ecore#//Table/idSpec"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DocumentDB" eSuperTypes="#//Database">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentDB" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="collections" upperBound="-1"
-        eType="#//Collection" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Collection"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//GenericList #//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyValueDB" eSuperTypes="#//Database">
+  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList /it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="KeyValueDB" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//KeyValueElement" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//KeyValueElement"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyValueElement" eSuperTypes="#//GenericList">
+  <eClassifiers xsi:type="ecore:EClass" name="KeyValueElement" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement /it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-        eType="#//DataType"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphDB" eSuperTypes="#//Database">
+  <eClassifiers xsi:type="ecore:EClass" name="GraphDB" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
-        eType="#//GraphNode" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphNode"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
-        eType="#//GraphEdge" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphEdge"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphNode" eSuperTypes="#//NamedElement #//GenericList">
+  <eClassifiers xsi:type="ecore:EClass" name="GraphNode" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement /it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//GraphAttribute" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphAttribute"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphAttribute" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Attribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphAttribute" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphEdge" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//GraphNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//GraphNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphEdge" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphNode"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
-        eType="#//GraphEdgeLabel" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//GraphEdgeLabel"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphEdgeLabel" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphEdgeLabel" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//DataType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ColumnDB" eSuperTypes="#//Database">
+  <eClassifiers xsi:type="ecore:EClass" name="ColumnDB" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
-        eType="#//Column" containment="true"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Column"
+        containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Column">
+  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//NamedElement /it.univaq.disim.typhonml/model/typhonml.ecore#//GenericList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">
     <eLiterals name="zero_one"/>
@@ -256,15 +275,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenericList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        eType="#//Entity" eOpposite="#//Entity/genericList"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"
+        eOpposite="/it.univaq.disim.typhonml/model/typhonml.ecore#//Entity/genericList"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenameEntity" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRename" eType="#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RenameEntity" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRename" eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newEntityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChangeRelationContainement" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeRelationContainement" eSuperTypes="/it.univaq.disim.typhonml/model/typhonml.ecore#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
-        eType="#//Relation"/>
+        eType="ecore:EClass /it.univaq.disim.typhonml/model/typhonml.ecore#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newContainment" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>

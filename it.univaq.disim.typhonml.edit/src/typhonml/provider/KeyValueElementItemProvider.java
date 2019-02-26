@@ -23,7 +23,7 @@ import typhonml.TyphonmlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class KeyValueElementItemProvider extends GenericListItemProvider {
+public class KeyValueElementItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -45,10 +45,33 @@ public class KeyValueElementItemProvider extends GenericListItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addEntityPropertyDescriptor(object);
 			addKeyPropertyDescriptor(object);
 			addValuesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GenericList_entity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GenericList_entity_feature", "_UI_GenericList_type"),
+				 TyphonmlPackage.Literals.GENERIC_LIST__ENTITY,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -114,7 +137,7 @@ public class KeyValueElementItemProvider extends GenericListItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((KeyValueElement)object).getKey();
+		String label = ((KeyValueElement)object).getName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_KeyValueElement_type") :
 			getString("_UI_KeyValueElement_type") + " " + label;

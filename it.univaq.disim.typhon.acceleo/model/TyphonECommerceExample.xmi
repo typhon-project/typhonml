@@ -54,8 +54,15 @@
         name="surname"
         type="//@dataTypes.5"/>
     <attributes
-        name="id"
+        name="userId"
         type="//@dataTypes.7"/>
+    <attributes
+        name="JURI"
+        type="//@dataTypes.5"/>
+    <attributes
+        xsi:type="typhonml:AddAttribute"
+        name="JURI2"
+        type="//@dataTypes.5"/>
     <relations
         name="orders"
         type="//@dataTypes.1"/>
@@ -65,6 +72,8 @@
     <relations
         name="reviews"
         type="//@dataTypes.2"/>
+    <identifer
+        attributes="//@dataTypes.0/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -77,12 +86,14 @@
         name="totalAmount"
         type="//@dataTypes.7"/>
     <attributes
-        name="id"
+        name="orderId"
         type="//@dataTypes.7"/>
     <relations
         name="orderProducts"
         type="//@dataTypes.4"
         opposite="//@dataTypes.4/@relations.0"/>
+    <identifer
+        attributes="//@dataTypes.1/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -95,7 +106,7 @@
         name="title"
         type="//@dataTypes.5"/>
     <attributes
-        name="id"
+        name="reviewId"
         type="//@dataTypes.7"/>
     <relations
         name="comment"
@@ -103,6 +114,8 @@
     <relations
         name="product"
         type="//@dataTypes.4"/>
+    <identifer
+        attributes="//@dataTypes.2/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -112,11 +125,13 @@
         name="content"
         type="//@dataTypes.5"/>
     <attributes
-        name="id"
+        name="commentId"
         type="//@dataTypes.7"/>
     <relations
         name="responses"
         type="//@dataTypes.3"/>
+    <identifer
+        attributes="//@dataTypes.3/@attributes.1"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -126,7 +141,7 @@
         name="description"
         type="//@dataTypes.5"/>
     <attributes
-        name="id"
+        name="productId"
         type="//@dataTypes.7"/>
     <relations
         name="productOrders"
@@ -135,6 +150,8 @@
     <relations
         name="reviews"
         type="//@dataTypes.2"/>
+    <identifer
+        attributes="//@dataTypes.4/@attributes.1"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:PrimitiveDataType"
