@@ -31,19 +31,19 @@ public class ApigatewayApplication {
 	@Bean
 	RouteLocator gatewayArtifactServiceRouter(RouteLocatorBuilder builder){
         return builder.routes()
-			[for (d : Database | aModel.databases->sortedBy(x | x.name))separator('\n')]
-				.route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/**").and().method("GET")
-                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
-                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
-                .route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]").and().method("POST")
-                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
-                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
-                .route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/**").and().method("PUT")
-                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
-                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
-                .route(r -> r.path("/[d.resolveEntityNameFromDatabase().toLowerCase()/]/**").and().method("DELETE")
-                        .filters(f-> f.rewritePath("/[d.resolveEntityNameFromDatabase().toLowerCase()/]","/[d.resolveEntityNameFromDatabase().toLowerCase()/]"))
-                        .uri("http://localhost:[basePort + aModel.databases->sortedBy(x | x.name)->indexOf(d)/]"))
+			[for (e : Entity | getAllModelEntitiesUtilityOrdered(aModel))separator('\n')]
+				.route(r -> r.path("/[e.name.toLowerCase()/]/**").and().method("GET")
+                        .filters(f-> f.rewritePath("/[e.name.toLowerCase()/]","/[e.name.toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e)/]"))
+                .route(r -> r.path("/[e.name.toLowerCase()/]").and().method("POST")
+                        .filters(f-> f.rewritePath("/[e.name.toLowerCase()/]","/[e.name.toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e)/]"))
+                .route(r -> r.path("/[e.name.toLowerCase()/]/**").and().method("PUT")
+                        .filters(f-> f.rewritePath("/[e.name.toLowerCase()/]","/[e.name.toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e)/]"))
+                .route(r -> r.path("/[e.name.toLowerCase()/]/**").and().method("DELETE")
+                        .filters(f-> f.rewritePath("/[e.name.toLowerCase()/]","/[e.name.toLowerCase()/]"))
+                        .uri("http://localhost:[basePort + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e)/]"))
 			[/for]
 				.build();
     }

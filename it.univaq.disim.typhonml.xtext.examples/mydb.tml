@@ -38,7 +38,7 @@ CustomDataType jpeg {
 
 
 Entity Review{
-	genericList "DocumentDatabase.Reviews"
+	genericList "DocumentDatabase.ReviewsDB"
 	attributes {
 		Attribute id{
 			type String
@@ -50,7 +50,7 @@ Entity Review{
 }
 
 Entity Product{
-	genericList "RelationalDatabase.ProductTB"
+	genericList "RelationalDatabase.ProductDB"
 	attributes {
 		Attribute id{
 			type String
@@ -82,7 +82,7 @@ Entity Product{
 }
 
 Entity Order{
-	genericList "RelationalDatabase.OrderTB"
+	genericList "RelationalDatabase.OrderDB"
 	attributes {
 		Attribute id{
 			type String
@@ -114,7 +114,7 @@ Entity Order{
 }
 
 Entity User{
-	genericList "RelationalDatabase.UserTB"
+	genericList "RelationalDatabase.UserDB"
 	attributes{
 		Attribute id{
 			type String
@@ -142,7 +142,7 @@ Entity User{
 }
 
 Entity Comment{
-	genericList "DocumentDatabase.Comments"
+	genericList "DocumentDatabase.CommentsDB"
 	attributes{
 		Attribute id{
 			type String
@@ -164,7 +164,7 @@ Entity Comment{
 }
 
 Entity CreditCard{
-	genericList "RelationalDatabase.CreditCardTB"
+	genericList "RelationalDatabase.CreditCardDB"
 	attributes{
 		Attribute id{
 			type String
@@ -194,7 +194,7 @@ Entity CreditCard{
 
 RelationalDB RelationalDatabase{
 	tables{
-		Table OrderTB{
+		Table OrderDB{
 			entity Order
 			indexSpec IndexSpec orderIndexSpec{
 				attributes ("Order.date")
@@ -203,7 +203,7 @@ RelationalDB RelationalDatabase{
 				attributes ("Order.date")
 			}
 		},
-		Table UserTB{
+		Table UserDB{
 			entity User
 			indexSpec IndexSpec userIndexSpec{
 				attributes('User.name')
@@ -212,7 +212,7 @@ RelationalDB RelationalDatabase{
 				attributes ('User.name')
 			}
 		},
-		Table ProductTB{
+		Table ProductDB{
 			entity Product
 			indexSpec IndexSpec productIndexSpec{
 				attributes ('Product.name')
@@ -221,7 +221,7 @@ RelationalDB RelationalDatabase{
 				attributes ('Product.name')
 			}
 		},
-		Table CreditCardTB{
+		Table CreditCardDB{
 			entity CreditCard
 			indexSpec IndexSpec productIndexSpec{
 				attributes ("CreditCard.number")
@@ -235,10 +235,10 @@ RelationalDB RelationalDatabase{
 
 DocumentDB DocumentDatabase{
 	collections{
-		Collection Reviews{
+		Collection ReviewsDB{
 			entity Review
 		},
-		Collection Comments{
+		Collection CommentsDB{
 			entity Comment
 		}
 	}
