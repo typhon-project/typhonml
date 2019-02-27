@@ -100,7 +100,7 @@ relationaldb RelationalDatabase{
 		}
 		table {
 			CreditCardDB : CreditCard
-			index productIndex{
+			index creditCardIndex{
 				attributes ("CreditCard.number")
 			}
 			idSpec ("CreditCard.number")
