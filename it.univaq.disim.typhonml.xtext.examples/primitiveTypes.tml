@@ -1,6 +1,6 @@
-PrimitiveDataType Date{}
-PrimitiveDataType String{}
-PrimitiveDataType int{}
-PrimitiveDataType Real{}
-PrimitiveDataType blob{}
-PrimitiveDataType natural_language{}
+datatype Date
+datatype String
+datatype int
+datatype Real
+datatype Blob
+datatype natural_language

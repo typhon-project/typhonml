@@ -17,7 +17,7 @@ customdatatype jpeg {
 entity Review{
 	genericList "DocumentDatabase.ReviewsDB"
 	id : String
-	
+	product -> Product[1]
 	identifer (id)
 }
 
@@ -27,7 +27,7 @@ entity Product{
 	name : String
 	description : String
 		
-	review -> Review[0..*]
+	review :-> Review."Review.product"[0..*]
 	orders -> Product[0..*]
 	identifer (name)
 }
@@ -38,8 +38,8 @@ entity Order{
 	date : Date
 	totalAmount : int
 	
-	products -> Product[0..*]
-	users -> User[1]
+	products -> Product.products[0..*]
+	users -> User."User.orders"[1]
 	paidWith -> CreditCard[1]
 	identifer (id)
 }
@@ -49,8 +49,8 @@ entity User{
 	id : String
 	name : String
 	
-	comments -> Comment[0..*]
-	paymentsDetails -> CreditCard[0..*]
+	comments :-> Comment[0..*]
+	paymentsDetails :-> CreditCard[0..*]
 	orders -> Order[0..*]
 	identifer (name)
 }
@@ -60,7 +60,7 @@ entity Comment{
 	id : String
 	content : String
 	
-	responses -> Comment[0..*]
+	responses :-> Comment[0..*]
 	identifer (id)
 }
 

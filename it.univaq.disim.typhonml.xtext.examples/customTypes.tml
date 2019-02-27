@@ -1,18 +1,7 @@
-
-CustomDataType jpeg {
+customdatatype jpeg {
 	elements{
-		DataTypeItem date{
-			type Date
-			implementation DataTypeImplementationPackage{
-				location 'it.univaq.disim.Date'
-			}
-		},
-		DataTypeItem thumbnail{
-			type blob
-			implementation DataTypeImplementationPackage{
-				location 'it.univaq.disim.Blob'
-			}
-		}
+		 	date : Date ['it.univaq.disim.Date'],
+		 	thumbnail : Blob ['it.univaq.disim.Blob']
 	}
 }
 
