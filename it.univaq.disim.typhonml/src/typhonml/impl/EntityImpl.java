@@ -36,6 +36,7 @@ import typhonml.TyphonmlPackage;
  *   <li>{@link typhonml.impl.EntityImpl#getRelations <em>Relations</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getIdentifer <em>Identifer</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getGenericList <em>Generic List</em>}</li>
+ *   <li>{@link typhonml.impl.EntityImpl#getId <em>Id</em>}</li>
  * </ul>
  *
  * @generated
@@ -80,6 +81,26 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @ordered
 	 */
 	protected GenericList genericList;
+
+	/**
+	 * The default value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ID_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getId()
+	 * @generated
+	 * @ordered
+	 */
+	protected String id = ID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -232,6 +253,27 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getId() {
+		return id;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setId(String newId) {
+		String oldId = id;
+		id = newId;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ENTITY__ID, oldId, id));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -280,6 +322,8 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				if (resolve) return getGenericList();
 				return basicGetGenericList();
+			case TyphonmlPackage.ENTITY__ID:
+				return getId();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -307,6 +351,9 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				setGenericList((GenericList)newValue);
 				return;
+			case TyphonmlPackage.ENTITY__ID:
+				setId((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -331,6 +378,9 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				setGenericList((GenericList)null);
 				return;
+			case TyphonmlPackage.ENTITY__ID:
+				setId(ID_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -351,8 +401,26 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return identifer != null;
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				return genericList != null;
+			case TyphonmlPackage.ENTITY__ID:
+				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (id: ");
+		result.append(id);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EntityImpl

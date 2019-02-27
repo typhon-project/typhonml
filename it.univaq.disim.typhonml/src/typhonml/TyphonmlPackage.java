@@ -367,13 +367,22 @@ public interface TyphonmlPackage extends EPackage {
 	int ENTITY__GENERIC_LIST = DATA_TYPE_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__ID = DATA_TYPE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -447,6 +456,15 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADD_ENTITY__GENERIC_LIST = ENTITY__GENERIC_LIST;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY__ID = ENTITY__ID;
 
 	/**
 	 * The number of structural features of the '<em>Add Entity</em>' class.
@@ -4267,6 +4285,17 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getEntity_GenericList();
 
 	/**
+	 * Returns the meta object for the attribute '{@link typhonml.Entity#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see typhonml.Entity#getId()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EAttribute getEntity_Id();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.EntityIdentifier <em>Entity Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5724,6 +5753,14 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY__GENERIC_LIST = eINSTANCE.getEntity_GenericList();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENTITY__ID = eINSTANCE.getEntity_Id();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.EntityIdentifierImpl <em>Entity Identifier</em>}' class.
