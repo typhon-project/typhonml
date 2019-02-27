@@ -162,11 +162,11 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     AddAttribute returns AddAttribute
 	 *     Attribute returns AddAttribute
+	 *     AddAttribute returns AddAttribute
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? type=[DataType|EString]?)
+	 *     (importedNamespace=EString? name=EString type=[DataType|EString])
 	 */
 	protected void sequence_AddAttribute(ISerializationContext context, AddAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -181,8 +181,8 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
 	 *         importedNamespace=EString? 
+	 *         name=EString 
 	 *         genericList=[GenericList|EString] 
 	 *         (attributes+=Attribute attributes+=Attribute*)? 
 	 *         (relations+=Relation relations+=Relation*)? 
@@ -200,7 +200,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddGraphAttribute returns AddGraphAttribute
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? value=[Attribute|EString]?)
+	 *     (importedNamespace=EString? name=EString value=[Attribute|EString]?)
 	 */
 	protected void sequence_AddGraphAttribute(ISerializationContext context, AddGraphAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -213,7 +213,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddGraphEdge returns AddGraphEdge
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
+	 *     (importedNamespace=EString? name=EString from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
 	 */
 	protected void sequence_AddGraphEdge(ISerializationContext context, AddGraphEdge semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -227,12 +227,12 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         isContainment?='isContainment'? 
-	 *         name=EString 
 	 *         importedNamespace=EString? 
-	 *         cardinality=Cardinality 
-	 *         type=[Entity|EString]? 
-	 *         opposite=[Relation|EString]?
+	 *         name=EString 
+	 *         isContainment?=':'? 
+	 *         type=[Entity|EString] 
+	 *         opposite=[Relation|EString]? 
+	 *         cardinality=Cardinality?
 	 *     )
 	 */
 	protected void sequence_AddRelation(ISerializationContext context, AddRelation semanticObject) {
@@ -246,7 +246,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Attribute_Impl returns Attribute
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? type=[DataType|EString]?)
+	 *     (importedNamespace=EString? name=EString type=[DataType|EString])
 	 */
 	protected void sequence_Attribute_Impl(ISerializationContext context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -259,7 +259,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Collection returns Collection
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? entity=[Entity|EString])
+	 *     (importedNamespace=EString? name=EString entity=[Entity|EString])
 	 */
 	protected void sequence_Collection(ISerializationContext context, Collection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -272,7 +272,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ColumnDB returns ColumnDB
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? (columns+=Column columns+=Column*)?)
+	 *     (importedNamespace=EString? name=EString (columns+=Column columns+=Column*)?)
 	 */
 	protected void sequence_ColumnDB(ISerializationContext context, ColumnDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -285,7 +285,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Column returns Column
 	 *
 	 * Constraint:
-	 *     (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)?
+	 *     (importedNamespace=EString? name=EString entity=[Entity|EString] (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)?)
 	 */
 	protected void sequence_Column(ISerializationContext context, Column semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -298,7 +298,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     CustomDataType returns CustomDataType
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? (elements+=DataTypeItem elements+=DataTypeItem*)?)
+	 *     (importedNamespace=EString? name=EString (elements+=DataTypeItem elements+=DataTypeItem*)?)
 	 */
 	protected void sequence_CustomDataType(ISerializationContext context, CustomDataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -310,10 +310,16 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     DataTypeImplementationPackage returns DataTypeImplementationPackage
 	 *
 	 * Constraint:
-	 *     location=EString?
+	 *     location=EString
 	 */
 	protected void sequence_DataTypeImplementationPackage(ISerializationContext context, DataTypeImplementationPackage semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDataTypeImplementationPackageAccess().getLocationEStringParserRuleCall_1_0(), semanticObject.getLocation());
+		feeder.finish();
 	}
 	
 	
@@ -322,7 +328,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     DataTypeItem returns DataTypeItem
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? type=[DataType|EString]? implementation=DataTypeImplementationPackage)
+	 *     (importedNamespace=EString? name=EString type=[DataType|EString] implementation=DataTypeImplementationPackage)
 	 */
 	protected void sequence_DataTypeItem(ISerializationContext context, DataTypeItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -335,7 +341,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     DocumentDB returns DocumentDB
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? (collections+=Collection collections+=Collection*)?)
+	 *     (importedNamespace=EString? name=EString (collections+=Collection collections+=Collection*)?)
 	 */
 	protected void sequence_DocumentDB(ISerializationContext context, DocumentDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -362,8 +368,8 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
 	 *         importedNamespace=EString? 
+	 *         name=EString 
 	 *         genericList=[GenericList|EString] 
 	 *         (attributes+=Attribute attributes+=Attribute*)? 
 	 *         (relations+=Relation relations+=Relation*)? 
@@ -381,7 +387,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     FreeText returns FreeText
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString?)
+	 *     (importedNamespace=EString? name=EString)
 	 */
 	protected void sequence_FreeText(ISerializationContext context, FreeText semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -413,7 +419,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphAttribute_Impl returns GraphAttribute
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? value=[Attribute|EString]?)
+	 *     (importedNamespace=EString? name=EString value=[Attribute|EString]?)
 	 */
 	protected void sequence_GraphAttribute_Impl(ISerializationContext context, GraphAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -426,7 +432,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphDB returns GraphDB
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? (nodes+=GraphNode nodes+=GraphNode*)? (edges+=GraphEdge edges+=GraphEdge*)?)
+	 *     (importedNamespace=EString? name=EString (nodes+=GraphNode nodes+=GraphNode*)? (edges+=GraphEdge edges+=GraphEdge*)?)
 	 */
 	protected void sequence_GraphDB(ISerializationContext context, GraphDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -438,7 +444,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphEdgeLabel returns GraphEdgeLabel
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? type=[DataType|EString]?)
+	 *     (importedNamespace=EString? name=EString type=[DataType|EString])
 	 */
 	protected void sequence_GraphEdgeLabel(ISerializationContext context, GraphEdgeLabel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -451,7 +457,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphEdge_Impl returns GraphEdge
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
+	 *     (importedNamespace=EString? name=EString from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
 	 */
 	protected void sequence_GraphEdge_Impl(ISerializationContext context, GraphEdge semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -464,7 +470,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphNode returns GraphNode
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? entity=[Entity|EString] (attributes+=GraphAttribute attributes+=GraphAttribute*)?)
+	 *     (importedNamespace=EString? name=EString entity=[Entity|EString] (attributes+=GraphAttribute attributes+=GraphAttribute*)?)
 	 */
 	protected void sequence_GraphNode(ISerializationContext context, GraphNode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -489,8 +495,8 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
 	 *         importedNamespace=EString? 
+	 *         name=EString 
 	 *         (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)? 
 	 *         (references+=[Relation|EString] references+=[Relation|EString]*)?
 	 *     )
@@ -506,7 +512,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     KeyValueDB returns KeyValueDB
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? (elements+=KeyValueElement elements+=KeyValueElement*)?)
+	 *     (importedNamespace=EString? name=EString (elements+=KeyValueElement elements+=KeyValueElement*)?)
 	 */
 	protected void sequence_KeyValueDB(ISerializationContext context, KeyValueDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -519,7 +525,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     KeyValueElement returns KeyValueElement
 	 *
 	 * Constraint:
-	 *     (name=EString key=EString? entity=[Entity|EString] (values+=[DataType|EString] values+=[DataType|EString]*)?)
+	 *     (importedNamespace=EString? key=EString entity=[Entity|EString] (values+=[DataType|EString] values+=[DataType|EString]*)?)
 	 */
 	protected void sequence_KeyValueElement(ISerializationContext context, KeyValueElement semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -544,7 +550,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     PrimitiveDataType_Impl returns PrimitiveDataType
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString?)
+	 *     (importedNamespace=EString? name=EString)
 	 */
 	protected void sequence_PrimitiveDataType_Impl(ISerializationContext context, PrimitiveDataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -558,12 +564,12 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         isContainment?='isContainment'? 
-	 *         name=EString 
 	 *         importedNamespace=EString? 
-	 *         cardinality=Cardinality 
-	 *         type=[Entity|EString]? 
-	 *         opposite=[Relation|EString]?
+	 *         name=EString 
+	 *         isContainment?=':'? 
+	 *         type=[Entity|EString] 
+	 *         opposite=[Relation|EString]? 
+	 *         cardinality=Cardinality?
 	 *     )
 	 */
 	protected void sequence_Relation_Impl(ISerializationContext context, Relation semanticObject) {
@@ -577,7 +583,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RelationalDB returns RelationalDB
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? (tables+=Table tables+=Table*)?)
+	 *     (importedNamespace=EString? name=EString (tables+=Table tables+=Table*)?)
 	 */
 	protected void sequence_RelationalDB(ISerializationContext context, RelationalDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -591,8 +597,8 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
-	 *         name=EString 
 	 *         importedNamespace=EString? 
+	 *         name=EString 
 	 *         entity=[Entity|EString] 
 	 *         db=[Database|EString]? 
 	 *         indexSpec=IndexSpec? 

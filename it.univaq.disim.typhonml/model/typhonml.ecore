@@ -164,7 +164,6 @@
         eType="#//EntityIdentifier" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" lowerBound="1"
         eType="#//GenericList" eOpposite="#//GenericList/entity"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"

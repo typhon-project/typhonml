@@ -1445,15 +1445,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEntity_Id() {
-		return (EAttribute)entityEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getEntityIdentifier() {
 		return entityIdentifierEClass;
 	}
@@ -2116,7 +2107,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(entityEClass, ENTITY__RELATIONS);
 		createEReference(entityEClass, ENTITY__IDENTIFER);
 		createEReference(entityEClass, ENTITY__GENERIC_LIST);
-		createEAttribute(entityEClass, ENTITY__ID);
 
 		entityIdentifierEClass = createEClass(ENTITY_IDENTIFIER);
 		createEReference(entityIdentifierEClass, ENTITY_IDENTIFIER__ATTRIBUTES);
@@ -2428,7 +2418,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Identifer(), this.getEntityIdentifier(), null, "identifer", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_GenericList(), this.getGenericList(), this.getGenericList_Entity(), "genericList", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEntity_Id(), ecorePackage.getEString(), "id", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityIdentifierEClass, EntityIdentifier.class, "EntityIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityIdentifier_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

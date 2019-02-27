@@ -46,15 +46,13 @@ PrimitiveDataType_Impl returns PrimitiveDataType:
 
 DataTypeItem returns DataTypeItem:
 	('importedNamespace' importedNamespace=EString)?
-	name=EString ':' type=[DataType|EString]?
-	'implementation' implementation=DataTypeImplementationPackage
+	name=EString ':' type=[DataType|EString] '[' implementation=DataTypeImplementationPackage ']'
 	;
 
 DataTypeImplementationPackage returns DataTypeImplementationPackage:
 	{DataTypeImplementationPackage}
-	'DataTypeImplementationPackage' '{'
-		('location' location=EString)?
-	'}';
+	location=EString
+	;
 
 FreeText returns FreeText:
 	{FreeText}
@@ -72,10 +70,9 @@ CustomDataType returns CustomDataType:
 Entity_Impl returns Entity:
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
-		'id' id=EString
 		'genericList' genericList=[GenericList|EString]
-		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
-		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
+		(attributes+=Attribute (attributes+=Attribute)*)?
+		(relations+=Relation (relations+=Relation)*)?
 		'identifer' identifer=EntityIdentifier
 	'}';
 
@@ -91,9 +88,8 @@ Relation_Impl returns Relation:
 
 EntityIdentifier returns EntityIdentifier:
 	{EntityIdentifier}
-	'EntityIdentifier' '{'
-		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
-	'}';
+	('(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	;
 
 GenericList_Impl returns GenericList:
 	'GenericList' '{'
@@ -108,8 +104,9 @@ EBooleanObject returns ecore::EBooleanObject:
 
 Table returns Table:
 	('importedNamespace' importedNamespace=EString)?
-	'table' name=EString '{'
-		 'entity' entity=[Entity|EString]
+	'table'
+	'{'
+		name=EString ':' entity=[Entity|EString]
 		('db' db=[Database|EString])?
 		(indexSpec=IndexSpec)?
 		(idSpec=IdSpec)?
@@ -117,7 +114,7 @@ Table returns Table:
 
 Collection returns Collection:
 	('importedNamespace' importedNamespace=EString)?
-	'collection' name=EString ':' entity=[Entity|EString]
+	name=EString ':' entity=[Entity|EString]
 	;
 
 KeyValueElement returns KeyValueElement:
@@ -151,22 +148,21 @@ IndexSpec returns IndexSpec:
 
 IdSpec returns IdSpec:
 	{IdSpec}
-	'id' '{'
-		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
-	'}';
+	'idSpec' ('(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	;
 
 RelationalDB returns RelationalDB:
 	{RelationalDB}
 	('importedNamespace' importedNamespace=EString)?
 	'relationaldb' name=EString '{'
-		('tables' '{' tables+=Table ( "," tables+=Table)* '}' )?
+		('tables' '{' tables+=Table (tables+=Table)* '}' )?
 	'}';
 
 DocumentDB returns DocumentDB:
 	{DocumentDB}
 	('importedNamespace' importedNamespace=EString)?
 	'documentdb' name=EString '{'
-		('collections' '{' collections+=Collection ( "," collections+=Collection)* '}' )?
+		('collections' '{' collections+=Collection ( collections+=Collection)* '}' )?
 	'}';
 
 KeyValueDB returns KeyValueDB:
@@ -242,7 +238,6 @@ AddEntity returns AddEntity:
 	'AddEntity'
 	name=EString
 	'{'
-		'id' id=EString
 		'genericList' genericList=[GenericList|EString]
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?

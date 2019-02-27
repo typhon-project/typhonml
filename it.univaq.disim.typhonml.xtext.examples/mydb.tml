@@ -1,283 +1,119 @@
-PrimitiveDataType Date{}
-PrimitiveDataType String{}
-PrimitiveDataType int{}
-PrimitiveDataType Real{}
-PrimitiveDataType blob{}
-PrimitiveDataType natural_language{}
+datatype Date
+datatype String
+datatype int
+datatype Real
+datatype Blob
+datatype natural_language
 
 
-CustomDataType jpeg {
+customdatatype jpeg {
 	elements{
-		DataTypeItem date{
-			type Date
-			implementation DataTypeImplementationPackage{
-				location 'it.univaq.disim.Date'
-			}
-		},
-		DataTypeItem thumbnail{
-			type blob
-			implementation DataTypeImplementationPackage{
-				location 'it.univaq.disim.Blob'
-			}
-		}
+		 	date : Date ['it.univaq.disim.Date'],
+		 	thumbnail : Blob ['it.univaq.disim.Blob']
 	}
 }
 
-//Entity Photo{
-//	genericList "KeyValueDatabase.PhotoDB"
-//	attributes {
-//		Attribute id{
-//			type String
-//		}
-//	}
-//	identifer EntityIdentifier{
-//		attributes(id)
-//	}
-//}
 
-
-
-Entity Review{
+entity Review{
 	genericList "DocumentDatabase.ReviewsDB"
-	attributes {
-		Attribute id{
-			type String
-		}
-	}
-	identifer EntityIdentifier{
-		attributes(id)
-	}
+	id : String
+	
+	identifer (id)
 }
 
-Entity Product{
+entity Product{
 	genericList "RelationalDatabase.ProductDB"
-	attributes {
-		Attribute id{
-			type String
-		},
-		Attribute name{
-			type String
-		},
-		Attribute description{
-			type String
-		}
-	}
-	relations{
-		Relation reviews{
-			cardinality zero_many
-			type Review
-		},
-//		Relation photos{
-//			cardinality one_many
-//			type Photo
-//		},
-		Relation orders{
-			cardinality zero_many
-			type Product
-		}
-	}
-	identifer EntityIdentifier{
-		attributes(name)
-	}
+	id : String
+	name : String
+	description : String
+		
+	review -> Review[0..*]
+	orders -> Product[0..*]
+	identifer (name)
 }
 
-Entity Order{
+entity Order{
 	genericList "RelationalDatabase.OrderDB"
-	attributes {
-		Attribute id{
-			type String
-		},
-		Attribute date{
-			type Date
-		},
-		Attribute totalAmount{
-			type int
-		}
-	}
-	relations{
-		Relation products{
-			cardinality zero_many
-			type Order
-		},
-		Relation user{
-			cardinality one
-			type User
-		},
-		Relation paidWith{
-			cardinality one
-			type CreditCard
-		}
-	}
-	identifer EntityIdentifier{
-		attributes(id)
-	}
+	id : String
+	date : Date
+	totalAmount : int
+	
+	products -> Product[0..*]
+	users -> User[1]
+	paidWith -> CreditCard[1]
+	identifer (id)
 }
 
-Entity User{
+entity User{
 	genericList "RelationalDatabase.UserDB"
-	attributes{
-		Attribute id{
-			type String
-		},Attribute name{
-			type String
-		}
-	}
-	relations{
-		Relation comments{
-			cardinality zero_many
-			type Comment
-		},
-		Relation paymentsDetails{
-			cardinality zero_many
-			type CreditCard
-		},
-		Relation orders{
-			cardinality zero_many
-			type Order
-		}
-	}
-	identifer EntityIdentifier{
-		attributes(name)
-	}
+	id : String
+	name : String
+	
+	comments -> Comment[0..*]
+	paymentsDetails -> CreditCard[0..*]
+	orders -> Order[0..*]
+	identifer (name)
 }
 
-Entity Comment{
+entity Comment{
 	genericList "DocumentDatabase.CommentsDB"
-	attributes{
-		Attribute id{
-			type String
-		},
-		Attribute content{
-			type String
-//			type natural_language
-		}
-	}
-	relations{
-		Relation responses{
-			cardinality zero_many
-			type Comment
-		}
-	}
-	identifer EntityIdentifier{
-		attributes(id)
-	}
+	id : String
+	content : String
+	
+	responses -> Comment[0..*]
+	identifer (id)
 }
 
-Entity CreditCard{
+entity CreditCard{
 	genericList "RelationalDatabase.CreditCardDB"
-	attributes{
-		Attribute id{
-			type String
-		},
-		Attribute number{
-			type String
-		},
-		Attribute expiryDate{
-			type Date
-		}
-	}
-	identifer EntityIdentifier{
-		attributes(id)
-	}
+	id : String
+	number : String
+	expiryDate : Date
+	identifer (id)
 }
 
-//KeyValueDB KeyValueDatabase{
-//	elements{
-//		KeyValueElement PhotoDB{
-//			key PhotoKey
-//			entity Photo
-//			values(jpeg)
-//		}
-//	}
-//}
 
 
-RelationalDB RelationalDatabase{
+relationaldb RelationalDatabase{
 	tables{
-		Table OrderDB{
-			entity Order
-			indexSpec IndexSpec orderIndexSpec{
+		table {
+			OrderDB : Order
+			index orderIndex {
 				attributes ("Order.date")
 			}
-			idSpec IdSpec{
-				attributes ("Order.date")
-			}
-		},
-		Table UserDB{
-			entity User
-			indexSpec IndexSpec userIndexSpec{
-				attributes('User.name')
-			}
-			idSpec IdSpec {
+			idSpec ("Order.date")
+		}
+		table {
+			UserDB : User
+			index  userIndex{
 				attributes ('User.name')
-			}
-		},
-		Table ProductDB{
-			entity Product
-			indexSpec IndexSpec productIndexSpec{
+//				references ("User.comments")
+				}
+			idSpec ('User.name')
+		}
+		table {
+			ProductDB : Product
+			index productIndex{
 				attributes ('Product.name')
 			}
-			idSpec IdSpec {
-				attributes ('Product.name')
-			}
-		},
-		Table CreditCardDB{
-			entity CreditCard
-			indexSpec IndexSpec productIndexSpec{
+			idSpec ('Product.name')
+		}
+		table {
+			CreditCardDB : CreditCard
+			index productIndex{
 				attributes ("CreditCard.number")
 			}
-			idSpec IdSpec {
-				attributes ("CreditCard.number")
-			}
+			idSpec ("CreditCard.number")
 		}
 	}
 }
 
-DocumentDB DocumentDatabase{
+documentdb DocumentDatabase{
 	collections{
-		Collection ReviewsDB{
-			entity Review
-		},
-		Collection CommentsDB{
-			entity Comment
-		}
+			ReviewsDB : Review
+			CommentsDB : Comment
 	}
 }
-
-//it misses the definition of datatypes!!!!!!!
-//RelationalDB CreditCardDB{
-//	tables{
-//		Table CreditCardTB{
-//			entity CreditCard
-//		}
-//	}
-//}
-
-
-
-//GraphDB ProductsDB{
-//	nodes{
-//		GraphNode productNode{
-//			entity Product
-//			attributes{
-//				GraphAttribute name{
-//					value "Product.name"
-//				}
-//			}
-//		}
-//	}
-//	edges{
-//		GraphEdge concordance{
-//			from productNode
-//			to productNode
-//			labels{
-//				GraphEdgeLabel weight{
-//					type int
-//				}
-//			}
-//		}
-//	}
-//}
 
 
 
