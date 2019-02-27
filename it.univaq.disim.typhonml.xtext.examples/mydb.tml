@@ -15,14 +15,12 @@ customdatatype jpeg {
 
 
 entity Review{
-	genericList "DocumentDatabase.ReviewsDB"
 	id : String
 	product -> Product[1]
 	identifer (id)
 }
 
 entity Product{
-	genericList "RelationalDatabase.ProductDB"
 	id : String
 	name : String
 	description : String
@@ -33,7 +31,6 @@ entity Product{
 }
 
 entity Order{
-	genericList "RelationalDatabase.OrderDB"
 	id : String
 	date : Date
 	totalAmount : int
@@ -45,7 +42,6 @@ entity Order{
 }
 
 entity User{
-	genericList "RelationalDatabase.UserDB"
 	id : String
 	name : String
 	
@@ -56,7 +52,6 @@ entity User{
 }
 
 entity Comment{
-	genericList "DocumentDatabase.CommentsDB"
 	id : String
 	content : String
 	
@@ -65,7 +60,6 @@ entity Comment{
 }
 
 entity CreditCard{
-	genericList "RelationalDatabase.CreditCardDB"
 	id : String
 	number : String
 	expiryDate : Date

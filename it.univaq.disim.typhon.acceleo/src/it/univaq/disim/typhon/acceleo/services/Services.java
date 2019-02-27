@@ -12,7 +12,12 @@ import org.eclipse.xtext.resource.XtextResourceSet;
 import com.google.inject.Injector;
 
 import it.univaq.disim.typhon.TyphonMLStandaloneSetup;
+import typhonml.Collection;
+import typhonml.Database;
+import typhonml.DocumentDB;
 import typhonml.Model;
+import typhonml.RelationalDB;
+import typhonml.Table;
 import typhonml.TyphonmlPackage;
 
 public class Services {
@@ -35,7 +40,24 @@ public class Services {
 //				System.out.println(eClass);
 //			}
 //		}
-		
+		for (Database db :model.getDatabases()) {
+			
+			if(db instanceof RelationalDB) {
+				RelationalDB v = (RelationalDB)db;
+				for (Table t : v.getTables()) {
+					t.getEntity().setGenericList(t);
+					
+				}
+			}
+			if(db instanceof DocumentDB) {
+				DocumentDB v = (DocumentDB)db;
+				for (Collection t : v.getCollections()) {
+					t.getEntity().setGenericList(t);
+					
+				}
+			}	
+			
+		}
 		return model;
 	}
 	

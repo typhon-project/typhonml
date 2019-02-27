@@ -20,8 +20,7 @@ Attribute returns Attribute:
 Relation returns Relation:
 	Relation_Impl | AddRelation;
 
-GenericList returns GenericList:
-	GenericList_Impl | Table | Collection | KeyValueElement | GraphNode | Column;
+
 
 Entity returns Entity:
 	Entity_Impl | AddEntity;
@@ -70,7 +69,7 @@ CustomDataType returns CustomDataType:
 Entity_Impl returns Entity:
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
-		'genericList' genericList=[GenericList|EString]
+		
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(relations+=Relation (relations+=Relation)*)?
 		'identifer' identifer=EntityIdentifier
@@ -91,10 +90,6 @@ EntityIdentifier returns EntityIdentifier:
 	('(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
 	;
 
-GenericList_Impl returns GenericList:
-	'GenericList' '{'
-		'entity' entity=[Entity|EString]
-	'}';
 
 enum Cardinality returns Cardinality:
 				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
@@ -238,7 +233,7 @@ AddEntity returns AddEntity:
 	'AddEntity'
 	name=EString
 	'{'
-		'genericList' genericList=[GenericList|EString]
+		
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
 		'identifer' identifer=EntityIdentifier
