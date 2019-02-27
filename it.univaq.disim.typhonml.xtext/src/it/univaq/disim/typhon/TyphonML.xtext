@@ -4,156 +4,101 @@ grammar it.univaq.disim.typhon.TyphonML with org.eclipse.xtext.common.Terminals
 import "platform:/resource/it.univaq.disim.typhonml/model/typhonml.ecore"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
+
 Model returns Model:
 	{Model}
 		(dataTypes+=DataType)*
 		(databases+=Database)*
 		;  
-		
-Database returns Database: 
-		RelationalDB | GraphDB | DocumentDB | KeyValueDB
-;
 
-KeyValueDB returns KeyValueDB:
-	{KeyValueDB}
-	'keyvaluedb' name=ID '{'
-		(elements+=KeyValueElement)*
-	'}'
-;
+DataType returns DataType:
+	AddEntity | PrimitiveDataType_Impl | FreeText | CustomDataType | Entity_Impl;
 
-KeyValueElement returns KeyValueElement:
-	{KeyValueElement}
-	key=ID '->' entity=[Entity] '{'
-		(values+=[DataType|EString])?	
-	'}'
-;
+Attribute returns Attribute:
+	Attribute_Impl | AddAttribute;
 
-DocumentDB returns DocumentDB:
-	{DocumentDB}
-	'documentdb' name=ID '{'
-		(collections+=DocumentDBCollection)*
-	'}'	
-;
+Relation returns Relation:
+	Relation_Impl | AddRelation;
 
-DocumentDBCollection returns Collection:
-	{Collection}
-	name=ID ':' entity=[Entity]
-;
+GenericList returns GenericList:
+	GenericList_Impl | Table | Collection | KeyValueElement | GraphNode | Column;
 
-RelationalDB returns RelationalDB:
-	{RelationalDB}
-	'relationaldb' name=ID '{'
-		(tables+=Table)*
-	'}';
+Entity returns Entity:
+	Entity_Impl | AddEntity;
 
-
-Table returns Table:
-	{Table}
-	'table' '{' 
-		name=ID ':' entity=[Entity]
-		(indexSpec=IndexSpec)?
-		(idSpec=IdSpec)?		
-	'}'  
-;
-
-IndexSpec returns IndexSpec:
-	{IndexSpec}
-	'index' name=ID '{' 	 
-		 (attributes+=[Attribute|STRING])*
-		// (references+=[Attribute|STRING])*
-	 '}'
-;
-
-IdSpec returns IdSpec:
-	{IdSpec}
-	'id' '{' 
-		(attributes+=[Attribute|STRING])* 
-	'}'
-;
-
-GraphDB returns GraphDB:
-	{GraphDB}
-	'graphdb' name=ID '{'
-		(nodes+=Node)*
-		(edges+=Edge)*
-	'}'
-;
-
-Node returns GraphNode:
-	{GraphNode}
-	'node' name=ID ':' entity=[Entity] '{'
-		(attributes+=GraphAttribute)*
-	'}'	
-;
+Database returns Database:
+	RelationalDB | DocumentDB | KeyValueDB | GraphDB | ColumnDB;
 
 GraphAttribute returns GraphAttribute:
-	{GraphAttribute}
-	name=EString '=' value=[Attribute|STRING]
-;
+	GraphAttribute_Impl | AddGraphAttribute;
 
-Edge returns GraphEdge:
-	{GraphEdge}
-	'edge' name=ID '{'
-		'from' from=[GraphNode]
-		'to' to=[GraphNode]
-		'label' '{'
-			(labels+=GraphEdgeLabel)*
-		'}'
-	'}'
-;
-
-GraphEdgeLabel returns GraphEdgeLabel:
-	{GraphEdgeLabel}
-	name=EString ':' (type=[DataType|EString])?
-;
-		
-		
-DataType returns DataType:
-	PrimitiveDataType | CustomDataType | Entity;
-
+GraphEdge returns GraphEdge:
+	GraphEdge_Impl | AddGraphEdge;
 
 EString returns ecore::EString:
 	STRING | ID;
 
-PrimitiveDataType returns PrimitiveDataType:
+PrimitiveDataType_Impl returns PrimitiveDataType:
 	{PrimitiveDataType}
-	'datatype'
-	name=EString;
+	('importedNamespace' importedNamespace=EString)?
+	'datatype' name=EString
+	;
+
+DataTypeItem returns DataTypeItem:
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' type=[DataType|EString]?
+	'implementation' implementation=DataTypeImplementationPackage
+	;
+
+DataTypeImplementationPackage returns DataTypeImplementationPackage:
+	{DataTypeImplementationPackage}
+	'DataTypeImplementationPackage' '{'
+		('location' location=EString)?
+	'}';
+
+FreeText returns FreeText:
+	{FreeText}
+	('importedNamespace' importedNamespace=EString)?
+	'FreeText' name=EString
+	;
 
 CustomDataType returns CustomDataType:
 	{CustomDataType}
-	'custom-datatype'
-	name=EString
-	'{'
-		(elements+=DataTypeItem)*
+	('importedNamespace' importedNamespace=EString)?
+	'customdatatype' name=EString '{'
+		('elements' '{' elements+=DataTypeItem ( "," elements+=DataTypeItem)* '}' )?
 	'}';
 
-Entity returns Entity:
-	'entity'
-	name=EString
-	'{'
-		 (attributes+=Attribute)*
-		 (relations+=Relation)*
+Entity_Impl returns Entity:
+	('importedNamespace' importedNamespace=EString)?
+	'entity' name=EString '{'
+		'id' id=EString
+		'genericList' genericList=[GenericList|EString]
+		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
+		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
+		'identifer' identifer=EntityIdentifier
 	'}';
 
-
-Attribute returns Attribute:
-	name=EString ':' (type=[DataType|EString])?
-;
-
-DataTypeItem returns DataTypeItem:
-	{DataTypeItem}
-	name=EString ':' type=[DataType|EString];
-
-Relation returns Relation:
-	{Relation}
+Relation_Impl returns Relation:
+	('importedNamespace' importedNamespace=EString)?
 	name=EString
 	(isContainment?=':')?
 	'->'
-	(type=[Entity|EString])
-	('.' opposite=[Relation|EString])?
-	('[' cardinality=Cardinality ']')?
+		(type=[Entity|EString])
+		('.' opposite=[Relation|EString])?
+		('[' cardinality=Cardinality ']')?
 	;
+
+EntityIdentifier returns EntityIdentifier:
+	{EntityIdentifier}
+	'EntityIdentifier' '{'
+		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	'}';
+
+GenericList_Impl returns GenericList:
+	'GenericList' '{'
+		'entity' entity=[Entity|EString]
+	'}';
 
 enum Cardinality returns Cardinality:
 				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
@@ -161,67 +106,143 @@ enum Cardinality returns Cardinality:
 EBooleanObject returns ecore::EBooleanObject:
 	'true' | 'false';
 
-
-	
- 
-
-AddAttribute returns AddAttribute:
-	{AddAttribute}
-	'AddAttribute'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('type' type=[DataType|EString])?
+Table returns Table:
+	('importedNamespace' importedNamespace=EString)?
+	'table' name=EString '{'
+		 'entity' entity=[Entity|EString]
+		('db' db=[Database|EString])?
+		(indexSpec=IndexSpec)?
+		(idSpec=IdSpec)?
 	'}';
 
+Collection returns Collection:
+	('importedNamespace' importedNamespace=EString)?
+	'collection' name=EString ':' entity=[Entity|EString]
+	;
 
+KeyValueElement returns KeyValueElement:
+	('importedNamespace' importedNamespace=EString)?
+	key=EString '->' '{'	
+		'entity' entity=[Entity|EString]
+		('values' '(' values+=[DataType|EString] ( "," values+=[DataType|EString])* ')' )?
+	'}';
 
+GraphNode returns GraphNode:
+	('importedNamespace' importedNamespace=EString)?
+	'node' name=EString '{'
+		'entity' entity=[Entity|EString]
+		('attributes' '{' attributes+=GraphAttribute ( "," attributes+=GraphAttribute)* '}' )?
+	'}';
 
+Column returns Column:
+	('importedNamespace' importedNamespace=EString)?
+	'column' name=EString '{'
+		'entity' entity=[Entity|EString]
+		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	'}';
 
+IndexSpec returns IndexSpec:
+	{IndexSpec}
+	('importedNamespace' importedNamespace=EString)?
+	'index' name=EString '{'
+		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+		('references' '(' references+=[Relation|EString] ( "," references+=[Relation|EString])* ')' )?
+	'}';
 
+IdSpec returns IdSpec:
+	{IdSpec}
+	'id' '{'
+		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	'}';
 
+RelationalDB returns RelationalDB:
+	{RelationalDB}
+	('importedNamespace' importedNamespace=EString)?
+	'relationaldb' name=EString '{'
+		('tables' '{' tables+=Table ( "," tables+=Table)* '}' )?
+	'}';
 
-GenericList returns GenericList:
-	GenericList_Impl | Table | Collection | KeyValueElement | Node | Column;
+DocumentDB returns DocumentDB:
+	{DocumentDB}
+	('importedNamespace' importedNamespace=EString)?
+	'documentdb' name=EString '{'
+		('collections' '{' collections+=Collection ( "," collections+=Collection)* '}' )?
+	'}';
 
+KeyValueDB returns KeyValueDB:
+	{KeyValueDB}
+	('importedNamespace' importedNamespace=EString)?
+	'keyvaluedb' name=EString '{'
+		('elements' '{' elements+=KeyValueElement ( "," elements+=KeyValueElement)* '}' )?
+	'}';
 
+GraphDB returns GraphDB:
+	{GraphDB}
+	('importedNamespace' importedNamespace=EString)?
+	'graphdb' name=EString '{'
+		('nodes' '{' nodes+=GraphNode ( "," nodes+=GraphNode)* '}' )?
+		('edges' '{' edges+=GraphEdge ( "," edges+=GraphEdge)* '}' )?
+	'}';
 
+ColumnDB returns ColumnDB:
+	{ColumnDB}
+	('importedNamespace' importedNamespace=EString)?
+	'columndb' name=EString '{'
+		('columns' '{' columns+=Column ( "," columns+=Column)* '}' )?
+	'}';
 
+GraphEdge_Impl returns GraphEdge:
+	{GraphEdge}
+	('importedNamespace' importedNamespace=EString)?
+	'edge' name=EString '{'
+		('from' from=[GraphNode|EString])?
+		('to' to=[GraphNode|EString])?
+		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+	'}';
 
+GraphEdgeLabel returns GraphEdgeLabel:
+	{GraphEdgeLabel}
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' type=[DataType|EString]
+	;
+	
+AddAttribute returns AddAttribute:
+	{AddAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	'AddAttribute'
+	name=EString ':' type=[DataType|EString]
+	;
 
+AddGraphEdge returns AddGraphEdge:
+	{AddGraphEdge}
+	('importedNamespace' importedNamespace=EString)?
+	'AddGraphEdge'
+	name=EString '{'
+		('from' from=[GraphNode|EString])?
+		('to' to=[GraphNode|EString])?
+		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+	'}';
 
+GraphAttribute_Impl returns GraphAttribute:
+	{GraphAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	name=EString '=' value=[Attribute|EString]?
+	;
 
-
-
+AddGraphAttribute returns AddGraphAttribute:
+	{AddGraphAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	'AddGraphAttribute'
+	name=EString '{'
+		('value' value=[Attribute|EString])?
+	'}';
 
 AddEntity returns AddEntity:
+	('importedNamespace' importedNamespace=EString)?
 	'AddEntity'
 	name=EString
 	'{'
-		('importedNamespace' importedNamespace=EString)?
-		'genericList' genericList=[GenericList|EString]
-		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
-		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
-		'identifer' identifer=EntityIdentifier
-	'}';
-
-
-
-FreeText returns FreeText:
-	{FreeText}
-	'FreeText'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-	'}';
-
-
-
-Entity_Impl returns Entity:
-	'Entity'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
+		'id' id=EString
 		'genericList' genericList=[GenericList|EString]
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
@@ -230,133 +251,17 @@ Entity_Impl returns Entity:
 
 Attribute_Impl returns Attribute:
 	{Attribute}
-	'Attribute'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('type' type=[DataType|EString])?
-	'}';
-
-Relation_Impl returns Relation:
-	(isContainment?='isContainment')?
-	'Relation'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		'cardinality' cardinality=Cardinality
-		('type' type=[Entity|EString])?
-		('opposite' opposite=[Relation|EString])?
-	'}';
-
-EntityIdentifier returns EntityIdentifier:
-	{EntityIdentifier}
-	'EntityIdentifier'
-	'{'
-		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
-	'}';
-
-GenericList_Impl returns GenericList:
-	'GenericList'
-	'{'
-		'entity' entity=[Entity|EString]
-	'}';
-
-
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' type=[DataType|EString]
+	;
 
 AddRelation returns AddRelation:
-	(isContainment?='isContainment')?
+	('importedNamespace' importedNamespace=EString)?
 	'AddRelation'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		'cardinality' cardinality=Cardinality
-		('type' type=[Entity|EString])?
-		('opposite' opposite=[Relation|EString])?
+	name=EString 
+	(isContainment?=':')?
+	'->'
+	(type=[Entity|EString])
+	('.' opposite=[Relation|EString])?
+	('[' cardinality=Cardinality ']')?		
 	'}';
-
-
-
-Collection returns Collection:
-	'Collection'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		'entity' entity=[Entity|EString]
-	'}';
-
-
-
-
-
-
-
-
-
-ColumnDB returns ColumnDB:
-	{ColumnDB}
-	'ColumnDB'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('columns' '{' columns+=Column ( "," columns+=Column)* '}' )?
-	'}';
-
-GraphEdge_Impl returns GraphEdge:
-	{GraphEdge}
-	'GraphEdge'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('from' from=[GraphNode|EString])?
-		('to' to=[GraphNode|EString])?
-		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
-	'}';
-
-
-
-AddGraphEdge returns AddGraphEdge:
-	{AddGraphEdge}
-	'AddGraphEdge'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('from' from=[GraphNode|EString])?
-		('to' to=[GraphNode|EString])?
-		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
-	'}';
-
-Column returns Column:
-	{Column}
-	'Column'
-	'{'
-		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
-	'}';
-
-GraphAttribute_Impl returns GraphAttribute:
-	{GraphAttribute}
-	'GraphAttribute'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('value' value=[Attribute|EString])?
-	'}';
-
-AddGraphAttribute returns AddGraphAttribute:
-	{AddGraphAttribute}
-	'AddGraphAttribute'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		('value' value=[Attribute|EString])?
-	'}';
-
-
-
-DataTypeImplementationPackage returns DataTypeImplementationPackage:
-	{DataTypeImplementationPackage}
-	'DataTypeImplementationPackage'
-	'{'
-		('location' location=EString)?
-	'}';
-
-	
