@@ -21,6 +21,8 @@ import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
 import typhonml.AddRelation;
 import typhonml.Attribute;
+import typhonml.ChangeRelationCardinality;
+import typhonml.ChangeRelationContainement;
 import typhonml.Collection;
 import typhonml.Column;
 import typhonml.ColumnDB;
@@ -44,6 +46,12 @@ import typhonml.Model;
 import typhonml.PrimitiveDataType;
 import typhonml.Relation;
 import typhonml.RelationalDB;
+import typhonml.RemoveAttribute;
+import typhonml.RemoveEntity;
+import typhonml.RemoveRelation;
+import typhonml.RenameAttribute;
+import typhonml.RenameEntity;
+import typhonml.RenameRelation;
 import typhonml.Table;
 import typhonml.TyphonmlPackage;
 
@@ -78,6 +86,12 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.ATTRIBUTE:
 				sequence_Attribute_Impl(context, (Attribute) semanticObject); 
+				return; 
+			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY:
+				sequence_ChangeRelationCardinality(context, (ChangeRelationCardinality) semanticObject); 
+				return; 
+			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT:
+				sequence_ChangeRelationContainement(context, (ChangeRelationContainement) semanticObject); 
 				return; 
 			case TyphonmlPackage.COLLECTION:
 				sequence_Collection(context, (Collection) semanticObject); 
@@ -148,6 +162,24 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.RELATIONAL_DB:
 				sequence_RelationalDB(context, (RelationalDB) semanticObject); 
 				return; 
+			case TyphonmlPackage.REMOVE_ATTRIBUTE:
+				sequence_RemoveAttribute(context, (RemoveAttribute) semanticObject); 
+				return; 
+			case TyphonmlPackage.REMOVE_ENTITY:
+				sequence_RemoveEntity(context, (RemoveEntity) semanticObject); 
+				return; 
+			case TyphonmlPackage.REMOVE_RELATION:
+				sequence_RemoveRelation(context, (RemoveRelation) semanticObject); 
+				return; 
+			case TyphonmlPackage.RENAME_ATTRIBUTE:
+				sequence_RenameAttribute(context, (RenameAttribute) semanticObject); 
+				return; 
+			case TyphonmlPackage.RENAME_ENTITY:
+				sequence_RenameEntity(context, (RenameEntity) semanticObject); 
+				return; 
+			case TyphonmlPackage.RENAME_RELATION:
+				sequence_RenameRelation(context, (RenameRelation) semanticObject); 
+				return; 
 			case TyphonmlPackage.TABLE:
 				sequence_Table(context, (Table) semanticObject); 
 				return; 
@@ -158,6 +190,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns AddAttribute
 	 *     Attribute returns AddAttribute
 	 *     AddAttribute returns AddAttribute
 	 *
@@ -171,7 +204,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     DataType returns AddEntity
+	 *     ChangeOperator returns AddEntity
 	 *     Entity returns AddEntity
 	 *     AddEntity returns AddEntity
 	 *
@@ -217,6 +250,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns AddRelation
 	 *     Relation returns AddRelation
 	 *     AddRelation returns AddRelation
 	 *
@@ -245,6 +279,48 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Attribute_Impl(ISerializationContext context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeRelationCardinality returns ChangeRelationCardinality
+	 *
+	 * Constraint:
+	 *     (relation=[Relation|ID] newCardinality=Cardinality)
+	 */
+	protected void sequence_ChangeRelationCardinality(ISerializationContext context, ChangeRelationCardinality semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_4_0(), semanticObject.getNewCardinality());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeRelationContainement returns ChangeRelationContainement
+	 *
+	 * Constraint:
+	 *     (relation=[Relation|ID] newContainment=EBooleanObject)
+	 */
+	protected void sequence_ChangeRelationContainement(ISerializationContext context, ChangeRelationContainement semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getRelationRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION, false));
+		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getNewContainmentEBooleanObjectParserRuleCall_4_0(), semanticObject.getNewContainment());
+		feeder.finish();
 	}
 	
 	
@@ -513,7 +589,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (dataTypes+=DataType* databases+=Database*)
+	 *     (dataTypes+=DataType* databases+=Database* changeOperators+=ChangeOperator*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -563,6 +639,129 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_RelationalDB(ISerializationContext context, RelationalDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RemoveAttribute
+	 *     RemoveAttribute returns RemoveAttribute
+	 *
+	 * Constraint:
+	 *     attributeToRemove=[Attribute|ID]
+	 */
+	protected void sequence_RemoveAttribute(ISerializationContext context, RemoveAttribute semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRemoveAttributeAccess().getAttributeToRemoveAttributeIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RemoveEntity
+	 *     RemoveEntity returns RemoveEntity
+	 *
+	 * Constraint:
+	 *     entityToRemove=[Entity|ID]
+	 */
+	protected void sequence_RemoveEntity(ISerializationContext context, RemoveEntity semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.REMOVE_ENTITY__ENTITY_TO_REMOVE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_ENTITY__ENTITY_TO_REMOVE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRemoveEntityAccess().getEntityToRemoveEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_ENTITY__ENTITY_TO_REMOVE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RemoveRelation
+	 *     RemoveRelation returns RemoveRelation
+	 *
+	 * Constraint:
+	 *     relationToRemove=[Relation|ID]
+	 */
+	protected void sequence_RemoveRelation(ISerializationContext context, RemoveRelation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRemoveRelationAccess().getRelationToRemoveRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RenameAttribute
+	 *     RenameAttribute returns RenameAttribute
+	 *
+	 * Constraint:
+	 *     (attributeToRename=[Attribute|ID] newName=EString)
+	 */
+	protected void sequence_RenameAttribute(ISerializationContext context, RenameAttribute semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_ATTRIBUTE__NEW_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_ATTRIBUTE__NEW_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRenameAttributeAccess().getAttributeToRenameAttributeIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameAttributeAccess().getNewNameEStringParserRuleCall_4_0(), semanticObject.getNewName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RenameEntity
+	 *     RenameEntity returns RenameEntity
+	 *
+	 * Constraint:
+	 *     (entityToRename=[Entity|ID] newEntityName=EString)
+	 */
+	protected void sequence_RenameEntity(ISerializationContext context, RenameEntity semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_ENTITY__ENTITY_TO_RENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_ENTITY__ENTITY_TO_RENAME));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_ENTITY__NEW_ENTITY_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_ENTITY__NEW_ENTITY_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRenameEntityAccess().getEntityToRenameEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_ENTITY__ENTITY_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameEntityAccess().getNewEntityNameEStringParserRuleCall_4_0(), semanticObject.getNewEntityName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RenameRelation
+	 *     RenameRelation returns RenameRelation
+	 *
+	 * Constraint:
+	 *     (relationToRename=[Relation|ID] newRelationName=EString)
+	 */
+	protected void sequence_RenameRelation(ISerializationContext context, RenameRelation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_RELATION__RELATION_TO_RENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_RELATION__RELATION_TO_RENAME));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_RELATION__NEW_RELATION_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_RELATION__NEW_RELATION_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRenameRelationAccess().getRelationToRenameRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_RELATION__RELATION_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameRelationAccess().getNewRelationNameEStringParserRuleCall_4_0(), semanticObject.getNewRelationName());
+		feeder.finish();
 	}
 	
 	

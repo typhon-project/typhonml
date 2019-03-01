@@ -9,10 +9,48 @@ Model returns Model:
 	{Model}
 		(dataTypes+=DataType)*
 		(databases+=Database)*
+		'changeOperators' '['(changeOperators+=ChangeOperator)*']'
 		;  
 
 DataType returns DataType:
-	AddEntity | PrimitiveDataType_Impl | FreeText | CustomDataType | Entity_Impl;
+	PrimitiveDataType_Impl | FreeText | CustomDataType | Entity_Impl;
+
+ChangeOperator returns ChangeOperator:
+	AddAttribute | AddEntity | AddRelation | RenameAttribute | RenameEntity |
+	RenameRelation | RemoveAttribute | RemoveEntity | RemoveRelation
+;
+
+RenameAttribute returns RenameAttribute :
+	'rename' 'attribute' attributeToRename=[Attribute] 'as' newName=EString  
+;
+
+RenameEntity returns RenameEntity :
+	'rename' 'Entity' entityToRename=[Entity] 'as' newEntityName=EString  
+;
+RenameRelation returns RenameRelation:
+	'rename' 'Relation' relationToRename=[Relation] 'as' newRelationName=EString
+;
+
+RemoveAttribute returns RemoveAttribute :
+	'remove' 'attribute' attributeToRemove=[Attribute]  
+;
+
+RemoveEntity returns RemoveEntity :
+	'remove' 'Entity' entityToRemove=[Entity]  
+;
+
+RemoveRelation returns RemoveRelation:
+	'remove' 'Relation' relationToRemove=[Relation]
+;
+
+ChangeRelationContainement returns ChangeRelationContainement :
+	'change' 'containment' relation=[Relation] 'as' newContainment=EBooleanObject 
+;
+
+ChangeRelationCardinality returns ChangeRelationCardinality:
+	'change' 'cardinality' relation=[Relation] 'as' newCardinality=Cardinality
+;
+
 
 Attribute returns Attribute:
 	Attribute_Impl | AddAttribute;

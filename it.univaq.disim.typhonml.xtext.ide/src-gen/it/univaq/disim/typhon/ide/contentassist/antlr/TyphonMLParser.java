@@ -32,6 +32,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, TyphonMLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
+			builder.put(grammarAccess.getChangeOperatorAccess().getAlternatives(), "rule__ChangeOperator__Alternatives");
 			builder.put(grammarAccess.getAttributeAccess().getAlternatives(), "rule__Attribute__Alternatives");
 			builder.put(grammarAccess.getRelationAccess().getAlternatives(), "rule__Relation__Alternatives");
 			builder.put(grammarAccess.getEntityAccess().getAlternatives(), "rule__Entity__Alternatives");
@@ -43,6 +44,14 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEBooleanObjectAccess().getAlternatives(), "rule__EBooleanObject__Alternatives");
 			builder.put(grammarAccess.getCardinalityAccess().getAlternatives(), "rule__Cardinality__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getRenameAttributeAccess().getGroup(), "rule__RenameAttribute__Group__0");
+			builder.put(grammarAccess.getRenameEntityAccess().getGroup(), "rule__RenameEntity__Group__0");
+			builder.put(grammarAccess.getRenameRelationAccess().getGroup(), "rule__RenameRelation__Group__0");
+			builder.put(grammarAccess.getRemoveAttributeAccess().getGroup(), "rule__RemoveAttribute__Group__0");
+			builder.put(grammarAccess.getRemoveEntityAccess().getGroup(), "rule__RemoveEntity__Group__0");
+			builder.put(grammarAccess.getRemoveRelationAccess().getGroup(), "rule__RemoveRelation__Group__0");
+			builder.put(grammarAccess.getChangeRelationContainementAccess().getGroup(), "rule__ChangeRelationContainement__Group__0");
+			builder.put(grammarAccess.getChangeRelationCardinalityAccess().getGroup(), "rule__ChangeRelationCardinality__Group__0");
 			builder.put(grammarAccess.getPrimitiveDataType_ImplAccess().getGroup(), "rule__PrimitiveDataType_Impl__Group__0");
 			builder.put(grammarAccess.getPrimitiveDataType_ImplAccess().getGroup_1(), "rule__PrimitiveDataType_Impl__Group_1__0");
 			builder.put(grammarAccess.getDataTypeItemAccess().getGroup(), "rule__DataTypeItem__Group__0");
@@ -148,6 +157,20 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAddRelationAccess().getGroup_7(), "rule__AddRelation__Group_7__0");
 			builder.put(grammarAccess.getModelAccess().getDataTypesAssignment_1(), "rule__Model__DataTypesAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getDatabasesAssignment_2(), "rule__Model__DatabasesAssignment_2");
+			builder.put(grammarAccess.getModelAccess().getChangeOperatorsAssignment_5(), "rule__Model__ChangeOperatorsAssignment_5");
+			builder.put(grammarAccess.getRenameAttributeAccess().getAttributeToRenameAssignment_2(), "rule__RenameAttribute__AttributeToRenameAssignment_2");
+			builder.put(grammarAccess.getRenameAttributeAccess().getNewNameAssignment_4(), "rule__RenameAttribute__NewNameAssignment_4");
+			builder.put(grammarAccess.getRenameEntityAccess().getEntityToRenameAssignment_2(), "rule__RenameEntity__EntityToRenameAssignment_2");
+			builder.put(grammarAccess.getRenameEntityAccess().getNewEntityNameAssignment_4(), "rule__RenameEntity__NewEntityNameAssignment_4");
+			builder.put(grammarAccess.getRenameRelationAccess().getRelationToRenameAssignment_2(), "rule__RenameRelation__RelationToRenameAssignment_2");
+			builder.put(grammarAccess.getRenameRelationAccess().getNewRelationNameAssignment_4(), "rule__RenameRelation__NewRelationNameAssignment_4");
+			builder.put(grammarAccess.getRemoveAttributeAccess().getAttributeToRemoveAssignment_2(), "rule__RemoveAttribute__AttributeToRemoveAssignment_2");
+			builder.put(grammarAccess.getRemoveEntityAccess().getEntityToRemoveAssignment_2(), "rule__RemoveEntity__EntityToRemoveAssignment_2");
+			builder.put(grammarAccess.getRemoveRelationAccess().getRelationToRemoveAssignment_2(), "rule__RemoveRelation__RelationToRemoveAssignment_2");
+			builder.put(grammarAccess.getChangeRelationContainementAccess().getRelationAssignment_2(), "rule__ChangeRelationContainement__RelationAssignment_2");
+			builder.put(grammarAccess.getChangeRelationContainementAccess().getNewContainmentAssignment_4(), "rule__ChangeRelationContainement__NewContainmentAssignment_4");
+			builder.put(grammarAccess.getChangeRelationCardinalityAccess().getRelationAssignment_2(), "rule__ChangeRelationCardinality__RelationAssignment_2");
+			builder.put(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityAssignment_4(), "rule__ChangeRelationCardinality__NewCardinalityAssignment_4");
 			builder.put(grammarAccess.getPrimitiveDataType_ImplAccess().getImportedNamespaceAssignment_1_1(), "rule__PrimitiveDataType_Impl__ImportedNamespaceAssignment_1_1");
 			builder.put(grammarAccess.getPrimitiveDataType_ImplAccess().getNameAssignment_3(), "rule__PrimitiveDataType_Impl__NameAssignment_3");
 			builder.put(grammarAccess.getDataTypeItemAccess().getImportedNamespaceAssignment_0_1(), "rule__DataTypeItem__ImportedNamespaceAssignment_0_1");
