@@ -36,7 +36,8 @@
         <pathelement location="${PLUGINS}/org.eclipse.emf.codegen_2.13.0.v20180319-0813.jar"/>
         <pathelement location="${PLUGINS}/com.google.guava_21.0.0.v20170206-1425.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.acceleo.parser-3.5.1.201409021433.jar"/>
-    	
+        <pathelement location="${PLUGINS}/org.eclipse.xtext_2.16.0.v20181203-0514.jar"/>
+
         <pathelement location="../it.univaq.disim.typhonml/bin"/>
         <pathelement location="bin"/>
     </path>
