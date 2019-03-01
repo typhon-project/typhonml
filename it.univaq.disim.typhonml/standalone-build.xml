@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="compile" name="it.univaq.disim.typhon.typhonml">
+    
+    <property name="PLUGINS" value="C:\DEV\Typhon\typhon-ci\plugins"/>
+
+    <property name="SOURCE_FOLDER" value="${basedir}/src/"/>    
+    <property name="OUTPUT_FOLDER" value="${basedir}/bin/"/>
+
+    <path id="it.univaq.disim.typhon.typhonml.classpath">
+        <path refid="it.univaq.disim.typhon.typhonml.libraryclasspath" />
+    </path>
+
+    <path id="it.univaq.disim.typhon.typhonml.libraryclasspath">
+        <pathelement location="${PLUGINS}/org.eclipse.core.runtime_3.14.0.v20180417-0825.jar"/>
+        <pathelement location="${PLUGINS}/javax.inject_1.0.0.v20091030.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.osgi_3.13.0.v20180409-1500.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.osgi.compatibility.state_1.1.100.v20180331-1743.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.equinox.common_3.10.0.v20180412-1130.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.core.jobs_3.10.0.v20180427-1454.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.equinox.registry_3.8.0.v20180426-1327.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.equinox.preferences_3.7.100.v20180510-1129.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.core.contenttype_3.7.0.v20180426-1644.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.equinox.app_1.3.500.v20171221-2204.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.emf.ecore_2.14.0.v20180529-1144.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.emf.common_2.14.0.v20180527-1134.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+
+    <target name="compile" description="Compiles Project">
+        <mkdir dir="bin"/>
+        <javac
+            srcdir="${SOURCE_FOLDER}"
+            destdir="${OUTPUT_FOLDER}"
+            classpathref="it.univaq.disim.typhon.typhonml.libraryclasspath"
+            executable="javac"
+            fork="true"
+            includeantruntime="false"
+            failonerror="false"
+        />
+    </target>
+
+    <target name="all" depends="clean,compile">
+        <echo message="Success!" />
+    </target>
+
+</project>
