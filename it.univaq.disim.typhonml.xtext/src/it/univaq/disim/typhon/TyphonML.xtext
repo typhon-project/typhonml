@@ -72,8 +72,11 @@ Entity_Impl returns Entity:
 		
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(relations+=Relation (relations+=Relation)*)?
-		'identifer' identifer=EntityIdentifier
+		('identifer' identifer=EntityIdentifier)?
+		('genericList' '{' genericList=[GenericList|EString] '}')?
 	'}';
+GenericList returns GenericList: 
+	Table|Collection|Column|KeyValueElement|GraphNode;
 
 Relation_Impl returns Relation:
 	('importedNamespace' importedNamespace=EString)?

@@ -23,6 +23,8 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
 Export-Package: it.univaq.disim.typhon.acceleo.main,
+ it.univaq.disim.typhon.acceleo.runner,
+ it.univaq.disim.typhon.acceleo.services,
  it.univaq.disim.typhon.acceleo.test
 Import-Package: com.google.inject,
  org.eclipse.xtext.resource

@@ -160,10 +160,10 @@
         eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//Relation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifer" lowerBound="1"
-        eType="#//EntityIdentifier" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" lowerBound="1"
-        eType="#//GenericList" eOpposite="#//GenericList/entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifer" eType="#//EntityIdentifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" eType="#//GenericList"
+        eOpposite="#//GenericList/entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -255,8 +255,8 @@
     <eLiterals name="one_many" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenericList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        eType="#//Entity" eOpposite="#//Entity/genericList"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
+        eOpposite="#//Entity/genericList"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RenameEntity" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRename" eType="#//Entity"/>

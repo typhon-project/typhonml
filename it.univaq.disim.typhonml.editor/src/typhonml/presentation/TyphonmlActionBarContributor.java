@@ -163,7 +163,6 @@ public class TyphonmlActionBarContributor
 	 */
 	@Override
 	public void contributeToToolBar(IToolBarManager toolBarManager) {
-		super.contributeToToolBar(toolBarManager);
 		toolBarManager.add(new Separator("typhonml-settings"));
 		toolBarManager.add(new Separator("typhonml-additions"));
 	}

@@ -1,6 +1,0 @@
-org/typhon/order/configuration/SwaggerConfig.class
-org/typhon/order/OrderApplication.class
-org/typhon/order/configuration/RepositoryConfiguration.class
-org/typhon/order/model/repository/OrderRepository.class
-org/typhon/order/configuration/RepositoryConfiguration$1.class
-org/typhon/order/model/Order.class

@@ -1,6 +1,0 @@
-org/typhon/user/configuration/RepositoryConfiguration.class
-org/typhon/user/model/repository/UserRepository.class
-org/typhon/user/UserApplication.class
-org/typhon/user/model/User.class
-org/typhon/user/configuration/RepositoryConfiguration$1.class
-org/typhon/user/configuration/SwaggerConfig.class

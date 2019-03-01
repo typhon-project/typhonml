@@ -215,7 +215,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (newCardinality: ");
 		result.append(newCardinality);
 		result.append(')');

@@ -552,7 +552,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 *
+	 * 
 	 * <p>This method is used to initialize {@link TyphonmlPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -566,8 +566,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		if (isInited) return (TyphonmlPackage)EPackage.Registry.INSTANCE.getEPackage(TyphonmlPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredTyphonmlPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		TyphonmlPackageImpl theTyphonmlPackage = registeredTyphonmlPackage instanceof TyphonmlPackageImpl ? (TyphonmlPackageImpl)registeredTyphonmlPackage : new TyphonmlPackageImpl();
+		TyphonmlPackageImpl theTyphonmlPackage = (TyphonmlPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TyphonmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TyphonmlPackageImpl());
 
 		isInited = true;
 
@@ -580,6 +579,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		// Mark meta-data to indicate it can't be changed
 		theTyphonmlPackage.freeze();
 
+  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TyphonmlPackage.eNS_URI, theTyphonmlPackage);
 		return theTyphonmlPackage;
@@ -2416,8 +2416,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Identifer(), this.getEntityIdentifier(), null, "identifer", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_GenericList(), this.getGenericList(), this.getGenericList_Entity(), "genericList", null, 1, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Identifer(), this.getEntityIdentifier(), null, "identifer", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_GenericList(), this.getGenericList(), this.getGenericList_Entity(), "genericList", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(entityIdentifierEClass, EntityIdentifier.class, "EntityIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntityIdentifier_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2485,7 +2485,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getColumn_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(genericListEClass, GenericList.class, "GenericList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenericList_Entity(), this.getEntity(), this.getEntity_GenericList(), "entity", null, 1, 1, GenericList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGenericList_Entity(), this.getEntity(), this.getEntity_GenericList(), "entity", null, 0, 1, GenericList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(renameEntityEClass, RenameEntity.class, "RenameEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRenameEntity_EntityToRename(), this.getEntity(), null, "entityToRename", null, 0, 1, RenameEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

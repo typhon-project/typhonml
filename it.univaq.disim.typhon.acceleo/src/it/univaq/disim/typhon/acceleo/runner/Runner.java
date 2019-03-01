@@ -23,6 +23,7 @@ public class Runner {
 			// for each input model in the modelFolder
 			for (File file : baseFolderFile.listFiles()) {
 				run(file.getAbsolutePath(), file);
+				break;
 			}
 			System.out.println("The generation has finished successfully!");
 			System.out.println();
@@ -32,9 +33,9 @@ public class Runner {
 		
 		/*
 		 * XTEXT RUNNER
-		 */
-		String pathToXTextModel = "platform:/resource/it.univaq.disim.typhonml.xtext.examples/mydb.tml";
-		runXtext(pathToXTextModel);
+//		 */
+//		String pathToXTextModel = "platform:/resource/it.univaq.disim.typhonml.xtext.examples/mydb.tml";
+//		runXtext(pathToXTextModel);
 		
 	}
 
@@ -63,7 +64,7 @@ public class Runner {
 		}
 	}
 	
-public static void runXtext(String modelUri) {
+	public static void runXtext(String modelUri) {
 		
 		String fileNameWithOutExt = Services.getNameForOutputProjects(modelUri);
 		System.out.println(fileNameWithOutExt + " model generation:");

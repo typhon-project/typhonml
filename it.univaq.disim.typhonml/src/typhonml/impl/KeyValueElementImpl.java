@@ -342,7 +342,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuilder result = new StringBuilder(super.toString());
+		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (key: ");
 		result.append(key);
 		result.append(')');

@@ -67,7 +67,7 @@ public interface Entity extends DataType {
 	 * @return the value of the '<em>Identifer</em>' containment reference.
 	 * @see #setIdentifer(EntityIdentifier)
 	 * @see typhonml.TyphonmlPackage#getEntity_Identifer()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EntityIdentifier getIdentifer();
@@ -95,7 +95,7 @@ public interface Entity extends DataType {
 	 * @see #setGenericList(GenericList)
 	 * @see typhonml.TyphonmlPackage#getEntity_GenericList()
 	 * @see typhonml.GenericList#getEntity
-	 * @model opposite="entity" required="true"
+	 * @model opposite="entity"
 	 * @generated
 	 */
 	GenericList getGenericList();

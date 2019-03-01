@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="add.item"
+         point="org.eclipse.ui.menus">
+        
+     <menuContribution
+     		allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+           <menu
+                 label="Typhon">
+           
+	        <command
+	                  commandId="ModelInjectorHandler"
+	                  label="Inject to model"
+	                  style="push"
+	                  tooltip="Inject">
+	        </command>
+	        <command
+	                  commandId="TMLGeneratorHandler"
+	                  label="Generate microservices architecture"
+	                  style="push"
+	                  tooltip="Generate">
+	        </command>
+	        <visibleWhen
+               checkEnabled="false">
+                  <with variable="activeMenuSelection">
+				      <iterate
+				           ifEmpty="false">
+				         <adapt type="org.eclipse.core.resources.IResource">
+				              <test property="org.eclipse.core.resources.extension" value="tml" />
+				         </adapt>
+				      </iterate>
+				   </with>
+	        </visibleWhen>
+        </menu>
+      </menuContribution>
+      <menuContribution
+     		allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
+           <menu
+                 label="Typhon">
+	        <command
+	                  commandId="XMIGeneratorHandler"
+	                  label="Generate microservices architecture"
+	                  style="push"
+	                  tooltip="Generate">
+	        </command>
+	        <visibleWhen
+               checkEnabled="false">
+                  <with variable="activeMenuSelection">
+				      <iterate
+				           ifEmpty="false">
+				         <adapt type="org.eclipse.core.resources.IResource">
+				              <test property="org.eclipse.core.resources.extension" value="xmi" />
+				         </adapt>
+				      </iterate>
+				   </with>
+	        </visibleWhen>
+        </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="it.univaq.disim.typhonml.ui.handlers.ModelInjectorHandler"
+            commandId="ModelInjectorHandler">
+      </handler>
+      <handler
+            class="it.univaq.disim.typhonml.ui.handlers.TMLGeneratorHandler"
+            commandId="TMLGeneratorHandler">
+      </handler>
+            <handler
+            class="it.univaq.disim.typhonml.ui.handlers.XMIGeneratorHandler"
+            commandId="XMIGeneratorHandler">
+      </handler>
+   </extension>
+
+</plugin>

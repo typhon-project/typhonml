@@ -34,7 +34,7 @@ public interface GenericList extends EObject {
 	 * @see #setEntity(Entity)
 	 * @see typhonml.TyphonmlPackage#getGenericList_Entity()
 	 * @see typhonml.Entity#getGenericList
-	 * @model opposite="genericList" required="true"
+	 * @model opposite="genericList"
 	 * @generated
 	 */
 	Entity getEntity();
