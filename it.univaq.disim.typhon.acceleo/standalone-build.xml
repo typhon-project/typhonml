@@ -37,15 +37,19 @@
         <pathelement location="${PLUGINS}/com.google.guava_21.0.0.v20170206-1425.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.acceleo.parser-3.5.1.201409021433.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.xtext_2.16.0.v20181203-0514.jar"/>
+        <pathelement location="${PLUGINS}/com.google.inject_3.0.0.v201312141243.jar"/>
+        <pathelement location="${PLUGINS}/com.google.inject.multibindings_3.0.0.v201402270930.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.emf.mwe.utils_1.4.0.jar"/>
 
         <pathelement location="../it.univaq.disim.typhonml/bin"/>
+        <pathelement location="../it.univaq.disim.typhonml.xtext/target/classes"/>
         <pathelement location="bin"/>
     </path>
 
     
     <taskdef id="acceleoCompiler" name="acceleoCompiler" 
-    	classname="org.eclipse.acceleo.parser.compiler.AcceleoCompiler" 
-    	classpathref="it.univaq.disim.typhon.acceleo.libraryclasspath" >
+        classname="org.eclipse.acceleo.parser.compiler.AcceleoCompiler" 
+        classpathref="it.univaq.disim.typhon.acceleo.libraryclasspath" >
     </taskdef>
 
     <target name="clean">
