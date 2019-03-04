@@ -122,37 +122,39 @@ ruleModel returns [EObject current=null]
 				}
 			)
 		)*
-		otherlv_3='changeOperators'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getModelAccess().getChangeOperatorsKeyword_3());
-		}
-		otherlv_4='['
-		{
-			newLeafNode(otherlv_4, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_4());
-		}
 		(
+			otherlv_3='changeOperators'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getModelAccess().getChangeOperatorsKeyword_3_0());
+			}
+			otherlv_4='['
+			{
+				newLeafNode(otherlv_4, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_3_1());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getModelAccess().getChangeOperatorsChangeOperatorParserRuleCall_5_0());
-				}
-				lv_changeOperators_5_0=ruleChangeOperator
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getModelRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getModelAccess().getChangeOperatorsChangeOperatorParserRuleCall_3_2_0());
 					}
-					add(
-						$current,
-						"changeOperators",
-						lv_changeOperators_5_0,
-						"it.univaq.disim.typhon.TyphonML.ChangeOperator");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_6=']'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getModelAccess().getRightSquareBracketKeyword_6());
-		}
+					lv_changeOperators_5_0=ruleChangeOperator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getModelRule());
+						}
+						add(
+							$current,
+							"changeOperators",
+							lv_changeOperators_5_0,
+							"it.univaq.disim.typhon.TyphonML.ChangeOperator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_6=']'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getModelAccess().getRightSquareBracketKeyword_3_3());
+			}
+		)?
 	)
 ;
 
@@ -340,9 +342,12 @@ ruleRenameAttribute returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRenameAttributeRule());
 					}
 				}
-				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRenameAttributeAccess().getAttributeToRenameAttributeCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRenameAttributeAccess().getAttributeToRenameAttributeCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -403,9 +408,12 @@ ruleRenameEntity returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRenameEntityRule());
 					}
 				}
-				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRenameEntityAccess().getEntityToRenameEntityCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRenameEntityAccess().getEntityToRenameEntityCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -466,9 +474,12 @@ ruleRenameRelation returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRenameRelationRule());
 					}
 				}
-				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRenameRelationAccess().getRelationToRenameRelationCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRenameRelationAccess().getRelationToRenameRelationCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -529,9 +540,12 @@ ruleRemoveAttribute returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRemoveAttributeRule());
 					}
 				}
-				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRemoveAttributeAccess().getAttributeToRemoveAttributeCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRemoveAttributeAccess().getAttributeToRemoveAttributeCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -569,9 +583,12 @@ ruleRemoveEntity returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRemoveEntityRule());
 					}
 				}
-				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRemoveEntityAccess().getEntityToRemoveEntityCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRemoveEntityAccess().getEntityToRemoveEntityCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
@@ -609,9 +626,12 @@ ruleRemoveRelation returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getRemoveRelationRule());
 					}
 				}
-				otherlv_2=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getRemoveRelationAccess().getRelationToRemoveRelationCrossReference_2_0());
+					newCompositeNode(grammarAccess.getRemoveRelationAccess().getRelationToRemoveRelationCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)

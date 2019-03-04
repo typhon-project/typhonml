@@ -21,34 +21,34 @@ ChangeOperator returns ChangeOperator:
 ;
 
 RenameAttribute returns RenameAttribute :
-	'rename' 'attribute' attributeToRename=[Attribute] 'as' newName=EString  
+	'rename' 'attribute' attributeToRename=[Attribute|EString] 'as' newName=EString  
 ;
 
 RenameEntity returns RenameEntity :
-	'rename' 'Entity' entityToRename=[Entity] 'as' newEntityName=EString  
+	'rename' 'Entity' entityToRename=[Entity|EString] 'as' newEntityName=EString  
 ;
 RenameRelation returns RenameRelation:
-	'rename' 'Relation' relationToRename=[Relation] 'as' newRelationName=EString
+	'rename' 'Relation' relationToRename=[Relation|EString] 'as' newRelationName=EString
 ;
 
 RemoveAttribute returns RemoveAttribute :
-	'remove' 'attribute' attributeToRemove=[Attribute]  
+	'remove' 'attribute' attributeToRemove=[Attribute|EString]  
 ;
 
 RemoveEntity returns RemoveEntity :
-	'remove' 'Entity' entityToRemove=[Entity]  
+	'remove' 'Entity' entityToRemove=[Entity|EString]  
 ;
 
 RemoveRelation returns RemoveRelation:
-	'remove' 'Relation' relationToRemove=[Relation]
+	'remove' 'Relation' relationToRemove=[Relation|EString]
 ;
 
 ChangeRelationContainement returns ChangeRelationContainement :
-	'change' 'containment' relation=[Relation] 'as' newContainment=EBooleanObject 
+	'change' 'containment' relation=[Relation|EString] 'as' newContainment=EBooleanObject 
 ;
 
 ChangeRelationCardinality returns ChangeRelationCardinality:
-	'change' 'cardinality' relation=[Relation] 'as' newCardinality=Cardinality
+	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality
 ;
 
 

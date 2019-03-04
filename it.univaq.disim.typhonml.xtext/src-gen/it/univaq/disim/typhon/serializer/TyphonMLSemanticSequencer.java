@@ -287,7 +287,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ChangeRelationCardinality returns ChangeRelationCardinality
 	 *
 	 * Constraint:
-	 *     (relation=[Relation|ID] newCardinality=Cardinality)
+	 *     (relation=[Relation|EString] newCardinality=Cardinality)
 	 */
 	protected void sequence_ChangeRelationCardinality(ISerializationContext context, ChangeRelationCardinality semanticObject) {
 		if (errorAcceptor != null) {
@@ -297,7 +297,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
 		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_4_0(), semanticObject.getNewCardinality());
 		feeder.finish();
 	}
@@ -308,7 +308,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ChangeRelationContainement returns ChangeRelationContainement
 	 *
 	 * Constraint:
-	 *     (relation=[Relation|ID] newContainment=EBooleanObject)
+	 *     (relation=[Relation|EString] newContainment=EBooleanObject)
 	 */
 	protected void sequence_ChangeRelationContainement(ISerializationContext context, ChangeRelationContainement semanticObject) {
 		if (errorAcceptor != null) {
@@ -318,7 +318,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getRelationRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION, false));
+		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getRelationRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION, false));
 		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getNewContainmentEBooleanObjectParserRuleCall_4_0(), semanticObject.getNewContainment());
 		feeder.finish();
 	}
@@ -648,7 +648,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RemoveAttribute returns RemoveAttribute
 	 *
 	 * Constraint:
-	 *     attributeToRemove=[Attribute|ID]
+	 *     attributeToRemove=[Attribute|EString]
 	 */
 	protected void sequence_RemoveAttribute(ISerializationContext context, RemoveAttribute semanticObject) {
 		if (errorAcceptor != null) {
@@ -656,7 +656,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRemoveAttributeAccess().getAttributeToRemoveAttributeIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE, false));
+		feeder.accept(grammarAccess.getRemoveAttributeAccess().getAttributeToRemoveAttributeEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE, false));
 		feeder.finish();
 	}
 	
@@ -667,7 +667,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RemoveEntity returns RemoveEntity
 	 *
 	 * Constraint:
-	 *     entityToRemove=[Entity|ID]
+	 *     entityToRemove=[Entity|EString]
 	 */
 	protected void sequence_RemoveEntity(ISerializationContext context, RemoveEntity semanticObject) {
 		if (errorAcceptor != null) {
@@ -675,7 +675,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_ENTITY__ENTITY_TO_REMOVE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRemoveEntityAccess().getEntityToRemoveEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_ENTITY__ENTITY_TO_REMOVE, false));
+		feeder.accept(grammarAccess.getRemoveEntityAccess().getEntityToRemoveEntityEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_ENTITY__ENTITY_TO_REMOVE, false));
 		feeder.finish();
 	}
 	
@@ -686,7 +686,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RemoveRelation returns RemoveRelation
 	 *
 	 * Constraint:
-	 *     relationToRemove=[Relation|ID]
+	 *     relationToRemove=[Relation|EString]
 	 */
 	protected void sequence_RemoveRelation(ISerializationContext context, RemoveRelation semanticObject) {
 		if (errorAcceptor != null) {
@@ -694,7 +694,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRemoveRelationAccess().getRelationToRemoveRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE, false));
+		feeder.accept(grammarAccess.getRemoveRelationAccess().getRelationToRemoveRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE, false));
 		feeder.finish();
 	}
 	
@@ -705,7 +705,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RenameAttribute returns RenameAttribute
 	 *
 	 * Constraint:
-	 *     (attributeToRename=[Attribute|ID] newName=EString)
+	 *     (attributeToRename=[Attribute|EString] newName=EString)
 	 */
 	protected void sequence_RenameAttribute(ISerializationContext context, RenameAttribute semanticObject) {
 		if (errorAcceptor != null) {
@@ -715,7 +715,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_ATTRIBUTE__NEW_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRenameAttributeAccess().getAttributeToRenameAttributeIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameAttributeAccess().getAttributeToRenameAttributeEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME, false));
 		feeder.accept(grammarAccess.getRenameAttributeAccess().getNewNameEStringParserRuleCall_4_0(), semanticObject.getNewName());
 		feeder.finish();
 	}
@@ -727,7 +727,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RenameEntity returns RenameEntity
 	 *
 	 * Constraint:
-	 *     (entityToRename=[Entity|ID] newEntityName=EString)
+	 *     (entityToRename=[Entity|EString] newEntityName=EString)
 	 */
 	protected void sequence_RenameEntity(ISerializationContext context, RenameEntity semanticObject) {
 		if (errorAcceptor != null) {
@@ -737,7 +737,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_ENTITY__NEW_ENTITY_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRenameEntityAccess().getEntityToRenameEntityIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_ENTITY__ENTITY_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameEntityAccess().getEntityToRenameEntityEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_ENTITY__ENTITY_TO_RENAME, false));
 		feeder.accept(grammarAccess.getRenameEntityAccess().getNewEntityNameEStringParserRuleCall_4_0(), semanticObject.getNewEntityName());
 		feeder.finish();
 	}
@@ -749,7 +749,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     RenameRelation returns RenameRelation
 	 *
 	 * Constraint:
-	 *     (relationToRename=[Relation|ID] newRelationName=EString)
+	 *     (relationToRename=[Relation|EString] newRelationName=EString)
 	 */
 	protected void sequence_RenameRelation(ISerializationContext context, RenameRelation semanticObject) {
 		if (errorAcceptor != null) {
@@ -759,7 +759,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_RELATION__NEW_RELATION_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRenameRelationAccess().getRelationToRenameRelationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_RELATION__RELATION_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameRelationAccess().getRelationToRenameRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_RELATION__RELATION_TO_RENAME, false));
 		feeder.accept(grammarAccess.getRenameRelationAccess().getNewRelationNameEStringParserRuleCall_4_0(), semanticObject.getNewRelationName());
 		feeder.finish();
 	}
