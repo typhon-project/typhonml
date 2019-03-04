@@ -852,17 +852,15 @@
         <containerMappings name="RealtionalDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::RelationalDB">
           <subContainerMappings name="TableEVO" semanticCandidatesExpression="feature:tables" domainClass="Table">
             <subNodeMappings name="IdSpecEVO" semanticCandidatesExpression="feature:idSpec" domainClass="typhonml::IdSpec">
-              <style xsi:type="style:SquareDescription" labelExpression="aql:'idSpec'" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelExpression="aql:'idSpec'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
               </style>
             </subNodeMappings>
             <subNodeMappings name="IndexSpecEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::IndexSpec">
-              <style xsi:type="style:SquareDescription" labelExpression="aql:'IndexSpec'" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelExpression="aql:'IndexSpec'" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
               </style>
             </subNodeMappings>
             <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
@@ -872,74 +870,61 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_blue']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_blue']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_orange']"/>
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
         <containerMappings name="DocumentDbEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::DocumentDB">
           <subNodeMappings name="CollectionEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::Collection">
-            <style xsi:type="style:WorkspaceImageDescription" labelAlignment="LEFT" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/Collection.png">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_green']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_green']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
         <containerMappings name="KeyValueDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::KeyValueDB">
           <subNodeMappings name="KeyValueElementEVO" semanticCandidatesExpression="feature:elements" domainClass="typhonml::KeyValueElement">
-            <style xsi:type="style:SquareDescription" labelExpression="feature:key" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelExpression="feature:key" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_purple']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_purple']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
         <containerMappings name="GraphDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::GraphDB">
           <subNodeMappings name="GraphNodeEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::GraphNode">
-            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_lite_purple']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_lite_purple']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_chocolate']"/>
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
         <containerMappings name="ColumnDBEVO" semanticCandidatesExpression="feature:databases" domainClass="typhonml::ColumnDB">
           <subNodeMappings name="ColumnEVO" semanticCandidatesExpression="feature:eAllContents" domainClass="typhonml::Column">
-            <style xsi:type="style:SquareDescription" labelExpression="aql:''" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelExpression="aql:''" labelPosition="node" resizeKind="NSEW" color="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_inner']">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             </style>
           </subNodeMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" roundedCorner="true" backgroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_pink']" foregroundColor="//@userColorsPalettes[name='TyphonPalette']/@entries[name='Custom_pink']">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
             <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
           </style>
         </containerMappings>
