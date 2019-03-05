@@ -17,7 +17,7 @@ DataType returns DataType:
 
 ChangeOperator returns ChangeOperator:
 	AddAttribute | AddEntity | AddRelation | RenameAttribute | RenameEntity |
-	RenameRelation | RemoveAttribute | RemoveEntity | RemoveRelation
+	RenameRelation | RemoveAttribute | RemoveEntity | RemoveRelation | ChangeRelationCardinality
 ;
 
 RenameAttribute returns RenameAttribute :
@@ -48,7 +48,7 @@ ChangeRelationContainement returns ChangeRelationContainement :
 ;
 
 ChangeRelationCardinality returns ChangeRelationCardinality:
-	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality
+	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality|EString
 ;
 
 

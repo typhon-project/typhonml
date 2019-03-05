@@ -122,14 +122,15 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRemoveAttributeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		private final RuleCall cRemoveEntityParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		private final RuleCall cRemoveRelationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cChangeRelationCardinalityParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
 		
 		//ChangeOperator:
 		//	AddAttribute | AddEntity | AddRelation | RenameAttribute | RenameEntity | RenameRelation | RemoveAttribute |
-		//	RemoveEntity | RemoveRelation;
+		//	RemoveEntity | RemoveRelation | ChangeRelationCardinality;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//AddAttribute | AddEntity | AddRelation | RenameAttribute | RenameEntity | RenameRelation | RemoveAttribute |
-		//RemoveEntity | RemoveRelation
+		//RemoveEntity | RemoveRelation | ChangeRelationCardinality
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//AddAttribute
@@ -158,6 +159,9 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//RemoveRelation
 		public RuleCall getRemoveRelationParserRuleCall_8() { return cRemoveRelationParserRuleCall_8; }
+		
+		//ChangeRelationCardinality
+		public RuleCall getChangeRelationCardinalityParserRuleCall_9() { return cChangeRelationCardinalityParserRuleCall_9; }
 	}
 	public class RenameAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.RenameAttribute");
@@ -426,46 +430,54 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ChangeRelationCardinalityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ChangeRelationCardinality");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cChangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cCardinalityKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cRelationAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cRelationRelationCrossReference_2_0 = (CrossReference)cRelationAssignment_2.eContents().get(0);
-		private final RuleCall cRelationRelationEStringParserRuleCall_2_0_1 = (RuleCall)cRelationRelationCrossReference_2_0.eContents().get(1);
-		private final Keyword cAsKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cNewCardinalityAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cNewCardinalityCardinalityEnumRuleCall_4_0 = (RuleCall)cNewCardinalityAssignment_4.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cChangeKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cCardinalityKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cRelationAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final CrossReference cRelationRelationCrossReference_0_2_0 = (CrossReference)cRelationAssignment_0_2.eContents().get(0);
+		private final RuleCall cRelationRelationEStringParserRuleCall_0_2_0_1 = (RuleCall)cRelationRelationCrossReference_0_2_0.eContents().get(1);
+		private final Keyword cAsKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Assignment cNewCardinalityAssignment_0_4 = (Assignment)cGroup_0.eContents().get(4);
+		private final RuleCall cNewCardinalityCardinalityEnumRuleCall_0_4_0 = (RuleCall)cNewCardinalityAssignment_0_4.eContents().get(0);
+		private final RuleCall cEStringParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ChangeRelationCardinality:
-		//	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality;
+		//	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality | EString;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality | EString
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
 		//'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality
-		public Group getGroup() { return cGroup; }
+		public Group getGroup_0() { return cGroup_0; }
 		
 		//'change'
-		public Keyword getChangeKeyword_0() { return cChangeKeyword_0; }
+		public Keyword getChangeKeyword_0_0() { return cChangeKeyword_0_0; }
 		
 		//'cardinality'
-		public Keyword getCardinalityKeyword_1() { return cCardinalityKeyword_1; }
+		public Keyword getCardinalityKeyword_0_1() { return cCardinalityKeyword_0_1; }
 		
 		//relation=[Relation|EString]
-		public Assignment getRelationAssignment_2() { return cRelationAssignment_2; }
+		public Assignment getRelationAssignment_0_2() { return cRelationAssignment_0_2; }
 		
 		//[Relation|EString]
-		public CrossReference getRelationRelationCrossReference_2_0() { return cRelationRelationCrossReference_2_0; }
+		public CrossReference getRelationRelationCrossReference_0_2_0() { return cRelationRelationCrossReference_0_2_0; }
 		
 		//EString
-		public RuleCall getRelationRelationEStringParserRuleCall_2_0_1() { return cRelationRelationEStringParserRuleCall_2_0_1; }
+		public RuleCall getRelationRelationEStringParserRuleCall_0_2_0_1() { return cRelationRelationEStringParserRuleCall_0_2_0_1; }
 		
 		//'as'
-		public Keyword getAsKeyword_3() { return cAsKeyword_3; }
+		public Keyword getAsKeyword_0_3() { return cAsKeyword_0_3; }
 		
 		//newCardinality=Cardinality
-		public Assignment getNewCardinalityAssignment_4() { return cNewCardinalityAssignment_4; }
+		public Assignment getNewCardinalityAssignment_0_4() { return cNewCardinalityAssignment_0_4; }
 		
 		//Cardinality
-		public RuleCall getNewCardinalityCardinalityEnumRuleCall_4_0() { return cNewCardinalityCardinalityEnumRuleCall_4_0; }
+		public RuleCall getNewCardinalityCardinalityEnumRuleCall_0_4_0() { return cNewCardinalityCardinalityEnumRuleCall_0_4_0; }
+		
+		//EString
+		public RuleCall getEStringParserRuleCall_1() { return cEStringParserRuleCall_1; }
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Attribute");
@@ -3486,7 +3498,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ChangeOperator:
 	//	AddAttribute | AddEntity | AddRelation | RenameAttribute | RenameEntity | RenameRelation | RemoveAttribute |
-	//	RemoveEntity | RemoveRelation;
+	//	RemoveEntity | RemoveRelation | ChangeRelationCardinality;
 	public ChangeOperatorElements getChangeOperatorAccess() {
 		return pChangeOperator;
 	}
@@ -3566,7 +3578,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ChangeRelationCardinality:
-	//	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality;
+	//	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality | EString;
 	public ChangeRelationCardinalityElements getChangeRelationCardinalityAccess() {
 		return pChangeRelationCardinality;
 	}

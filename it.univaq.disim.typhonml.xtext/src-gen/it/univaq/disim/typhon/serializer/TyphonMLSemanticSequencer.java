@@ -284,6 +284,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns ChangeRelationCardinality
 	 *     ChangeRelationCardinality returns ChangeRelationCardinality
 	 *
 	 * Constraint:
@@ -297,8 +298,8 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
-		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_4_0(), semanticObject.getNewCardinality());
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationEStringParserRuleCall_0_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_0_4_0(), semanticObject.getNewCardinality());
 		feeder.finish();
 	}
 	

@@ -308,6 +308,15 @@ ruleChangeOperator returns [EObject current=null]
 			$current = $this_RemoveRelation_8.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationCardinalityParserRuleCall_9());
+		}
+		this_ChangeRelationCardinality_9=ruleChangeRelationCardinality
+		{
+			$current = $this_ChangeRelationCardinality_9.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -635,6 +644,82 @@ ruleRemoveRelation returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleChangeRelationCardinality
+entryRuleChangeRelationCardinality returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getChangeRelationCardinalityRule()); }
+	iv_ruleChangeRelationCardinality=ruleChangeRelationCardinality
+	{ $current=$iv_ruleChangeRelationCardinality.current; }
+	EOF;
+
+// Rule ChangeRelationCardinality
+ruleChangeRelationCardinality returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='change'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getChangeRelationCardinalityAccess().getChangeKeyword_0_0());
+			}
+			otherlv_1='cardinality'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getChangeRelationCardinalityAccess().getCardinalityKeyword_0_1());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getChangeRelationCardinalityRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationCrossReference_0_2_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_3='as'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getChangeRelationCardinalityAccess().getAsKeyword_0_3());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_0_4_0());
+					}
+					lv_newCardinality_4_0=ruleCardinality
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getChangeRelationCardinalityRule());
+						}
+						set(
+							$current,
+							"newCardinality",
+							lv_newCardinality_4_0,
+							"it.univaq.disim.typhon.TyphonML.Cardinality");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getEStringParserRuleCall_1());
+		}
+		ruleEString
+		{
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
