@@ -58,6 +58,25 @@ public class SwaggerConfig {
 }
 [/file]
 
+[comment orderdb/src/main/java/org/typhon/orderdb/configuration/RepositoryConfig.java/]
+[file (e.name.toLower()+'/src/main/java/org/typhon/'+e.name.toLower()+'/configuration/RepositoryConfig.java', false, 'UTF-8')]
+package org.typhon.[e.name.toLowerCase()/].configuration;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
+import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;
+
+import org.typhon.[e.name.toLowerCase()/].model.[e.name.toUpperFirst()/];
+
+@Configuration
+public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
+    @Override
+    public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
+        config.exposeIdsFor([e.name.toUpperFirst()/].class);
+    }
+}
+[/file]
+
 [comment orderdb/src/test/java/org/typhon/orderdb/tests/OrderTest.java/]
 [file (e.name.toLower()+'/src/test/java/org/typhon/'+e.name.toLower()+'/tests/'+e.name.toUpperFirst()+'Test.java', false, 'UTF-8')]
 package org.typhon.[e.name.toLowerCase()/].tests;
