@@ -24,5 +24,7 @@
   <dataTypes xsi:type="typhonml:Entity" name="CreditCard">
     <attributes name="number" type="//@dataTypes.4"/>
     <attributes name="expiryDate" type="//@dataTypes.4"/>
+    <attributes xsi:type="typhonml:AddAttribute" name="New Attribute for CreditCard entity" type="//@dataTypes.4"/>
   </dataTypes>
+  <changeOperators xsi:type="typhonml:RenameEntity" entityToRename="//@dataTypes.4" newEntityName="newCreditCardName"/>
 </typhonml:Model>

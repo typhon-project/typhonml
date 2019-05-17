@@ -5,5 +5,6 @@ Bundle-SymbolicName: it.univaq.disim.typhonml.usage_example
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: it.univaq.disim.typhonml.usage_example
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: it.univaq.disim.typhonml;bundle-version="0.1.1"
+Require-Bundle: it.univaq.disim.typhonml;bundle-version="0.1.1",
+ org.eclipse.emf.ecore
 Import-Package: org.eclipse.emf.ecore.xmi.impl
