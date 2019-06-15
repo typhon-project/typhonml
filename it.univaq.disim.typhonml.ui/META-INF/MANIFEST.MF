@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ui
+Bundle-SymbolicName: it.univaq.disim.typhonml.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: it.univaq.disim.typhonml.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.ui,
+ it.univaq.disim.typhon.acceleo;bundle-version="1.0.0",
+ org.eclipse.core.runtime;bundle-version="3.13.0",
+ org.eclipse.emf.ecore;bundle-version="2.13.0",
+ org.eclipse.core.resources
+Import-Package: org.eclipse.core.resources,
+ typhonml
