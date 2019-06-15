@@ -118,7 +118,7 @@ public class CollectionItemProvider extends GenericListItemProvider {
 			getString("_UI_Collection_type") :
 			getString("_UI_Collection_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

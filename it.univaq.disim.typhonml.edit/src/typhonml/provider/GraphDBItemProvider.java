@@ -105,7 +105,7 @@ public class GraphDBItemProvider extends DatabaseItemProvider {
 			getString("_UI_GraphDB_type") :
 			getString("_UI_GraphDB_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

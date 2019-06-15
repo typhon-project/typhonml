@@ -104,7 +104,7 @@ public class DocumentDBItemProvider extends DatabaseItemProvider {
 			getString("_UI_DocumentDB_type") :
 			getString("_UI_DocumentDB_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

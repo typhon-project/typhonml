@@ -13,11 +13,9 @@ customdatatype jpeg {
 	}
 }
 
-
 entity Review{
 	id : String
 	product -> Product[1]
-	identifer (id)
 }
 
 entity Product{
@@ -26,8 +24,7 @@ entity Product{
 	description : String
 		
 	review :-> Review."Review.product"[0..*]
-	orders -> Product[0..*]
-	identifer (name)
+	orders -> Order[0..*]
 }
 
 entity Order{
@@ -35,11 +32,11 @@ entity Order{
 	date : Date
 	totalAmount : int
 	
-	products -> Product.products[0..*]
+	products -> Product."Product.orders"[0..*]
 	users -> User."User.orders"[1]
 	paidWith -> CreditCard[1]
-	identifer (id)
 }
+
 
 entity User{
 	id : String
@@ -48,7 +45,6 @@ entity User{
 	comments :-> Comment[0..*]
 	paymentsDetails :-> CreditCard[0..*]
 	orders -> Order[0..*]
-	identifer (name)
 }
 
 entity Comment{
@@ -56,14 +52,12 @@ entity Comment{
 	content : String
 	
 	responses :-> Comment[0..*]
-	identifer (id)
 }
 
 entity CreditCard{
 	id : String
 	number : String
 	expiryDate : Date
-	identifer (id)
 }
 
 
@@ -108,6 +102,3 @@ documentdb DocumentDatabase{
 			CommentsDB : Comment
 	}
 }
-
-
-

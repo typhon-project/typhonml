@@ -94,7 +94,7 @@ public class GraphEdgeLabelItemProvider extends NamedElementItemProvider {
 			getString("_UI_GraphEdgeLabel_type") :
 			getString("_UI_GraphEdgeLabel_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

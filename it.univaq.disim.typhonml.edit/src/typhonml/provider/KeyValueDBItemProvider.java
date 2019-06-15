@@ -104,7 +104,7 @@ public class KeyValueDBItemProvider extends DatabaseItemProvider {
 			getString("_UI_KeyValueDB_type") :
 			getString("_UI_KeyValueDB_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -11,11 +11,9 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import typhonml.AddAttribute;
-import typhonml.AddAttributesToIdenfifier;
 import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
-import typhonml.AddIdentifier;
 import typhonml.AddIndex;
 import typhonml.AddRelation;
 import typhonml.Attribute;
@@ -39,7 +37,6 @@ import typhonml.DropIndex;
 import typhonml.EnableBidirectionalRelation;
 import typhonml.EnableRelationContainment;
 import typhonml.Entity;
-import typhonml.EntityIdentifier;
 import typhonml.FreeText;
 import typhonml.GenericList;
 import typhonml.GraphAttribute;
@@ -59,16 +56,13 @@ import typhonml.PrimitiveDataType;
 import typhonml.Relation;
 import typhonml.RelationalDB;
 import typhonml.RemoveAttribute;
-import typhonml.RemoveAttributesToIdenfifier;
 import typhonml.RemoveEntity;
 import typhonml.RemoveGraphAttribute;
 import typhonml.RemoveGraphEdge;
-import typhonml.RemoveIdentifier;
 import typhonml.RemoveRelation;
 import typhonml.RenabeGraphEdgeLabel;
 import typhonml.RenameAttribute;
 import typhonml.RenameEntity;
-import typhonml.RenameIdentifier;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
 import typhonml.SplitEntity;
@@ -235,41 +229,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass addIdentifierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addAttributesToIdenfifierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeIdentifierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeAttributesToIdenfifierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass renameIdentifierEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass addIndexEClass = null;
 
 	/**
@@ -369,13 +328,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass entityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass entityIdentifierEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -552,7 +504,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link TyphonmlPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -566,7 +518,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		if (isInited) return (TyphonmlPackage)EPackage.Registry.INSTANCE.getEPackage(TyphonmlPackage.eNS_URI);
 
 		// Obtain or create and register package
-		TyphonmlPackageImpl theTyphonmlPackage = (TyphonmlPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof TyphonmlPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new TyphonmlPackageImpl());
+		Object registeredTyphonmlPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		TyphonmlPackageImpl theTyphonmlPackage = registeredTyphonmlPackage instanceof TyphonmlPackageImpl ? (TyphonmlPackageImpl)registeredTyphonmlPackage : new TyphonmlPackageImpl();
 
 		isInited = true;
 
@@ -579,7 +532,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		// Mark meta-data to indicate it can't be changed
 		theTyphonmlPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(TyphonmlPackage.eNS_URI, theTyphonmlPackage);
 		return theTyphonmlPackage;
@@ -1049,132 +1001,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAddIdentifier() {
-		return addIdentifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAddIdentifier_Entity() {
-		return (EReference)addIdentifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAddIdentifier_Name() {
-		return (EAttribute)addIdentifierEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAddAttributesToIdenfifier() {
-		return addAttributesToIdenfifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAddAttributesToIdenfifier_Identifier() {
-		return (EReference)addAttributesToIdenfifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAddAttributesToIdenfifier_Attributes() {
-		return (EReference)addAttributesToIdenfifierEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRemoveIdentifier() {
-		return removeIdentifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRemoveIdentifier_EntityIdentifier() {
-		return (EReference)removeIdentifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRemoveAttributesToIdenfifier() {
-		return removeAttributesToIdenfifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRemoveAttributesToIdenfifier_Identifier() {
-		return (EReference)removeAttributesToIdenfifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRemoveAttributesToIdenfifier_Attributes() {
-		return (EReference)removeAttributesToIdenfifierEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRenameIdentifier() {
-		return renameIdentifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRenameIdentifier_Identifier() {
-		return (EReference)renameIdentifierEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRenameIdentifier_NewName() {
-		return (EAttribute)renameIdentifierEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getAddIndex() {
 		return addIndexEClass;
 	}
@@ -1427,35 +1253,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEntity_Identifer() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getEntity_GenericList() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEntityIdentifier() {
-		return entityIdentifierEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEntityIdentifier_Attributes() {
-		return (EReference)entityIdentifierEClass.getEStructuralFeatures().get(0);
+		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2044,25 +1843,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(renameTableEClass, RENAME_TABLE__TABLE_TO_RENAME);
 		createEAttribute(renameTableEClass, RENAME_TABLE__NEW_NAME);
 
-		addIdentifierEClass = createEClass(ADD_IDENTIFIER);
-		createEReference(addIdentifierEClass, ADD_IDENTIFIER__ENTITY);
-		createEAttribute(addIdentifierEClass, ADD_IDENTIFIER__NAME);
-
-		addAttributesToIdenfifierEClass = createEClass(ADD_ATTRIBUTES_TO_IDENFIFIER);
-		createEReference(addAttributesToIdenfifierEClass, ADD_ATTRIBUTES_TO_IDENFIFIER__IDENTIFIER);
-		createEReference(addAttributesToIdenfifierEClass, ADD_ATTRIBUTES_TO_IDENFIFIER__ATTRIBUTES);
-
-		removeIdentifierEClass = createEClass(REMOVE_IDENTIFIER);
-		createEReference(removeIdentifierEClass, REMOVE_IDENTIFIER__ENTITY_IDENTIFIER);
-
-		removeAttributesToIdenfifierEClass = createEClass(REMOVE_ATTRIBUTES_TO_IDENFIFIER);
-		createEReference(removeAttributesToIdenfifierEClass, REMOVE_ATTRIBUTES_TO_IDENFIFIER__IDENTIFIER);
-		createEReference(removeAttributesToIdenfifierEClass, REMOVE_ATTRIBUTES_TO_IDENFIFIER__ATTRIBUTES);
-
-		renameIdentifierEClass = createEClass(RENAME_IDENTIFIER);
-		createEReference(renameIdentifierEClass, RENAME_IDENTIFIER__IDENTIFIER);
-		createEAttribute(renameIdentifierEClass, RENAME_IDENTIFIER__NEW_NAME);
-
 		addIndexEClass = createEClass(ADD_INDEX);
 		createEReference(addIndexEClass, ADD_INDEX__TABLE);
 		createEReference(addIndexEClass, ADD_INDEX__ATTRIBUTES);
@@ -2105,11 +1885,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__RELATIONS);
-		createEReference(entityEClass, ENTITY__IDENTIFER);
 		createEReference(entityEClass, ENTITY__GENERIC_LIST);
-
-		entityIdentifierEClass = createEClass(ENTITY_IDENTIFIER);
-		createEReference(entityIdentifierEClass, ENTITY_IDENTIFIER__ATTRIBUTES);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__TYPE);
@@ -2237,11 +2013,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		removeAttributeEClass.getESuperTypes().add(this.getChangeOperator());
 		renameAttributeEClass.getESuperTypes().add(this.getChangeOperator());
 		renameTableEClass.getESuperTypes().add(this.getChangeOperator());
-		addIdentifierEClass.getESuperTypes().add(this.getChangeOperator());
-		addAttributesToIdenfifierEClass.getESuperTypes().add(this.getChangeOperator());
-		removeIdentifierEClass.getESuperTypes().add(this.getChangeOperator());
-		removeAttributesToIdenfifierEClass.getESuperTypes().add(this.getChangeOperator());
-		renameIdentifierEClass.getESuperTypes().add(this.getChangeOperator());
 		addIndexEClass.getESuperTypes().add(this.getChangeOperator());
 		dropIndexEClass.getESuperTypes().add(this.getChangeOperator());
 		addGraphAttributeEClass.getESuperTypes().add(this.getGraphAttribute());
@@ -2355,25 +2126,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getRenameTable_TableToRename(), this.getTable(), null, "tableToRename", null, 1, 1, RenameTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRenameTable_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(addIdentifierEClass, AddIdentifier.class, "AddIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddIdentifier_Entity(), this.getEntity(), null, "entity", null, 1, 1, AddIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAddIdentifier_Name(), ecorePackage.getEString(), "name", null, 0, 1, AddIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addAttributesToIdenfifierEClass, AddAttributesToIdenfifier.class, "AddAttributesToIdenfifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddAttributesToIdenfifier_Identifier(), this.getEntityIdentifier(), null, "identifier", null, 1, 1, AddAttributesToIdenfifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAddAttributesToIdenfifier_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddAttributesToIdenfifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(removeIdentifierEClass, RemoveIdentifier.class, "RemoveIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveIdentifier_EntityIdentifier(), this.getEntityIdentifier(), null, "entityIdentifier", null, 1, 1, RemoveIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(removeAttributesToIdenfifierEClass, RemoveAttributesToIdenfifier.class, "RemoveAttributesToIdenfifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveAttributesToIdenfifier_Identifier(), this.getEntityIdentifier(), null, "identifier", null, 1, 1, RemoveAttributesToIdenfifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRemoveAttributesToIdenfifier_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, RemoveAttributesToIdenfifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(renameIdentifierEClass, RenameIdentifier.class, "RenameIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRenameIdentifier_Identifier(), this.getEntityIdentifier(), null, "identifier", null, 1, 1, RenameIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRenameIdentifier_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(addIndexEClass, AddIndex.class, "AddIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAddIndex_Table(), this.getTable(), null, "table", null, 1, 1, AddIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAddIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2416,11 +2168,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_Identifer(), this.getEntityIdentifier(), null, "identifer", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_GenericList(), this.getGenericList(), this.getGenericList_Entity(), "genericList", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(entityIdentifierEClass, EntityIdentifier.class, "EntityIdentifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntityIdentifier_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, EntityIdentifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

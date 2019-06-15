@@ -45,9 +45,5 @@
            actionClass="it.univaq.disim.typhonml.design.ChangeAttributeTypeAction"
            id="ChangeAttributeTypeAction">
      </javaActions>
-     <javaActions
-           actionClass="it.univaq.disim.typhonml.design.RemoveIdentifierAction"
-           id="RemoveIdentifierAction">
-     </javaActions>
   </extension>
 </plugin>

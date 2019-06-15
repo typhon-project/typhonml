@@ -88,7 +88,6 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__RELATIONS);
-			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__IDENTIFER);
 		}
 		return childrenFeatures;
 	}
@@ -130,7 +129,7 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			getString("_UI_Entity_type") :
 			getString("_UI_Entity_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -146,7 +145,6 @@ public class EntityItemProvider extends DataTypeItemProvider {
 		switch (notification.getFeatureID(Entity.class)) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 			case TyphonmlPackage.ENTITY__RELATIONS:
-			case TyphonmlPackage.ENTITY__IDENTIFER:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -183,11 +181,6 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__RELATIONS,
 				 TyphonmlFactory.eINSTANCE.createAddRelation()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.ENTITY__IDENTIFER,
-				 TyphonmlFactory.eINSTANCE.createEntityIdentifier()));
 	}
 
 }

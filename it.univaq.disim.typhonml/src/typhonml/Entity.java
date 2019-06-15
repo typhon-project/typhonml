@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link typhonml.Entity#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getRelations <em>Relations</em>}</li>
- *   <li>{@link typhonml.Entity#getIdentifer <em>Identifer</em>}</li>
  *   <li>{@link typhonml.Entity#getGenericList <em>Generic List</em>}</li>
  * </ul>
  *
@@ -55,32 +54,6 @@ public interface Entity extends DataType {
 	 * @generated
 	 */
 	EList<Relation> getRelations();
-
-	/**
-	 * Returns the value of the '<em><b>Identifer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Identifer</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Identifer</em>' containment reference.
-	 * @see #setIdentifer(EntityIdentifier)
-	 * @see typhonml.TyphonmlPackage#getEntity_Identifer()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EntityIdentifier getIdentifer();
-
-	/**
-	 * Sets the value of the '{@link typhonml.Entity#getIdentifer <em>Identifer</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Identifer</em>' containment reference.
-	 * @see #getIdentifer()
-	 * @generated
-	 */
-	void setIdentifer(EntityIdentifier value);
 
 	/**
 	 * Returns the value of the '<em><b>Generic List</b></em>' reference.

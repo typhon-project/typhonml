@@ -509,121 +509,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddIdentifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddIdentifierItemProvider addIdentifierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddIdentifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddIdentifierAdapter() {
-		if (addIdentifierItemProvider == null) {
-			addIdentifierItemProvider = new AddIdentifierItemProvider(this);
-		}
-
-		return addIdentifierItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddAttributesToIdenfifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddAttributesToIdenfifierItemProvider addAttributesToIdenfifierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddAttributesToIdenfifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddAttributesToIdenfifierAdapter() {
-		if (addAttributesToIdenfifierItemProvider == null) {
-			addAttributesToIdenfifierItemProvider = new AddAttributesToIdenfifierItemProvider(this);
-		}
-
-		return addAttributesToIdenfifierItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveIdentifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveIdentifierItemProvider removeIdentifierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveIdentifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveIdentifierAdapter() {
-		if (removeIdentifierItemProvider == null) {
-			removeIdentifierItemProvider = new RemoveIdentifierItemProvider(this);
-		}
-
-		return removeIdentifierItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveAttributesToIdenfifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveAttributesToIdenfifierItemProvider removeAttributesToIdenfifierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveAttributesToIdenfifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveAttributesToIdenfifierAdapter() {
-		if (removeAttributesToIdenfifierItemProvider == null) {
-			removeAttributesToIdenfifierItemProvider = new RemoveAttributesToIdenfifierItemProvider(this);
-		}
-
-		return removeAttributesToIdenfifierItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RenameIdentifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RenameIdentifierItemProvider renameIdentifierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RenameIdentifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRenameIdentifierAdapter() {
-		if (renameIdentifierItemProvider == null) {
-			renameIdentifierItemProvider = new RenameIdentifierItemProvider(this);
-		}
-
-		return renameIdentifierItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.AddIndex} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -920,29 +805,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		}
 
 		return entityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.EntityIdentifier} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EntityIdentifierItemProvider entityIdentifierItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.EntityIdentifier}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEntityIdentifierAdapter() {
-		if (entityIdentifierItemProvider == null) {
-			entityIdentifierItemProvider = new EntityIdentifierItemProvider(this);
-		}
-
-		return entityIdentifierItemProvider;
 	}
 
 	/**
@@ -1523,11 +1385,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (removeAttributeItemProvider != null) removeAttributeItemProvider.dispose();
 		if (renameAttributeItemProvider != null) renameAttributeItemProvider.dispose();
 		if (renameTableItemProvider != null) renameTableItemProvider.dispose();
-		if (addIdentifierItemProvider != null) addIdentifierItemProvider.dispose();
-		if (addAttributesToIdenfifierItemProvider != null) addAttributesToIdenfifierItemProvider.dispose();
-		if (removeIdentifierItemProvider != null) removeIdentifierItemProvider.dispose();
-		if (removeAttributesToIdenfifierItemProvider != null) removeAttributesToIdenfifierItemProvider.dispose();
-		if (renameIdentifierItemProvider != null) renameIdentifierItemProvider.dispose();
 		if (addIndexItemProvider != null) addIndexItemProvider.dispose();
 		if (dropIndexItemProvider != null) dropIndexItemProvider.dispose();
 		if (addGraphAttributeItemProvider != null) addGraphAttributeItemProvider.dispose();
@@ -1541,7 +1398,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (dataTypeItemItemProvider != null) dataTypeItemItemProvider.dispose();
 		if (dataTypeImplementationPackageItemProvider != null) dataTypeImplementationPackageItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
-		if (entityIdentifierItemProvider != null) entityIdentifierItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (relationItemProvider != null) relationItemProvider.dispose();
 		if (relationalDBItemProvider != null) relationalDBItemProvider.dispose();

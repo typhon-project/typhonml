@@ -1556,38 +1556,13 @@ ruleEntity_Impl returns [EObject current=null]
 			)*
 		)?
 		(
-			otherlv_9='identifer'
+			otherlv_9='genericList'
 			{
-				newLeafNode(otherlv_9, grammarAccess.getEntity_ImplAccess().getIdentiferKeyword_6_0());
+				newLeafNode(otherlv_9, grammarAccess.getEntity_ImplAccess().getGenericListKeyword_6_0());
 			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getIdentiferEntityIdentifierParserRuleCall_6_1_0());
-					}
-					lv_identifer_10_0=ruleEntityIdentifier
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
-						}
-						set(
-							$current,
-							"identifer",
-							lv_identifer_10_0,
-							"it.univaq.disim.typhon.TyphonML.EntityIdentifier");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-		)?
-		(
-			otherlv_11='genericList'
+			otherlv_10='{'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getGenericListKeyword_7_0());
-			}
-			otherlv_12='{'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_7_1());
+				newLeafNode(otherlv_10, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_6_1());
 			}
 			(
 				(
@@ -1597,7 +1572,7 @@ ruleEntity_Impl returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getGenericListGenericListCrossReference_7_2_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getGenericListGenericListCrossReference_6_2_0());
 					}
 					ruleEString
 					{
@@ -1605,14 +1580,14 @@ ruleEntity_Impl returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_14='}'
+			otherlv_12='}'
 			{
-				newLeafNode(otherlv_14, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_7_3());
+				newLeafNode(otherlv_12, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_6_3());
 			}
 		)?
-		otherlv_15='}'
+		otherlv_13='}'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_13, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;
@@ -1760,80 +1735,6 @@ ruleRelation_Impl returns [EObject current=null]
 			otherlv_10=']'
 			{
 				newLeafNode(otherlv_10, grammarAccess.getRelation_ImplAccess().getRightSquareBracketKeyword_6_2());
-			}
-		)?
-	)
-;
-
-// Entry rule entryRuleEntityIdentifier
-entryRuleEntityIdentifier returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getEntityIdentifierRule()); }
-	iv_ruleEntityIdentifier=ruleEntityIdentifier
-	{ $current=$iv_ruleEntityIdentifier.current; }
-	EOF;
-
-// Rule EntityIdentifier
-ruleEntityIdentifier returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getEntityIdentifierAccess().getEntityIdentifierAction_0(),
-					$current);
-			}
-		)
-		(
-			otherlv_1='('
-			{
-				newLeafNode(otherlv_1, grammarAccess.getEntityIdentifierAccess().getLeftParenthesisKeyword_1_0());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEntityIdentifierRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getEntityIdentifierAccess().getAttributesAttributeCrossReference_1_1_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				otherlv_3=','
-				{
-					newLeafNode(otherlv_3, grammarAccess.getEntityIdentifierAccess().getCommaKeyword_1_2_0());
-				}
-				(
-					(
-						{
-							if ($current==null) {
-								$current = createModelElement(grammarAccess.getEntityIdentifierRule());
-							}
-						}
-						{
-							newCompositeNode(grammarAccess.getEntityIdentifierAccess().getAttributesAttributeCrossReference_1_2_1_0());
-						}
-						ruleEString
-						{
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-			)*
-			otherlv_5=')'
-			{
-				newLeafNode(otherlv_5, grammarAccess.getEntityIdentifierAccess().getRightParenthesisKeyword_1_3());
 			}
 		)?
 	)
@@ -4494,32 +4395,9 @@ ruleAddEntity returns [EObject current=null]
 				newLeafNode(otherlv_16, grammarAccess.getAddEntityAccess().getRightCurlyBracketKeyword_5_4());
 			}
 		)?
-		otherlv_17='identifer'
+		otherlv_17='}'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getAddEntityAccess().getIdentiferKeyword_6());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAddEntityAccess().getIdentiferEntityIdentifierParserRuleCall_7_0());
-				}
-				lv_identifer_18_0=ruleEntityIdentifier
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAddEntityRule());
-					}
-					set(
-						$current,
-						"identifer",
-						lv_identifer_18_0,
-						"it.univaq.disim.typhon.TyphonML.EntityIdentifier");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_19='}'
-		{
-			newLeafNode(otherlv_19, grammarAccess.getAddEntityAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_17, grammarAccess.getAddEntityAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

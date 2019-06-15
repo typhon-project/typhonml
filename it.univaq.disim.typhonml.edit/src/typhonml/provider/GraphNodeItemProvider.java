@@ -128,7 +128,7 @@ public class GraphNodeItemProvider extends NamedElementItemProvider {
 			getString("_UI_GraphNode_type") :
 			getString("_UI_GraphNode_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

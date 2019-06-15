@@ -69,7 +69,7 @@ public class PrimitiveDataTypeItemProvider extends DataTypeItemProvider {
 			getString("_UI_PrimitiveDataType_type") :
 			getString("_UI_PrimitiveDataType_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

@@ -104,7 +104,7 @@ public class CustomDataTypeItemProvider extends DataTypeItemProvider {
 			getString("_UI_CustomDataType_type") :
 			getString("_UI_CustomDataType_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

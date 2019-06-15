@@ -76,11 +76,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.REMOVE_ATTRIBUTE: return createRemoveAttribute();
 			case TyphonmlPackage.RENAME_ATTRIBUTE: return createRenameAttribute();
 			case TyphonmlPackage.RENAME_TABLE: return createRenameTable();
-			case TyphonmlPackage.ADD_IDENTIFIER: return createAddIdentifier();
-			case TyphonmlPackage.ADD_ATTRIBUTES_TO_IDENFIFIER: return createAddAttributesToIdenfifier();
-			case TyphonmlPackage.REMOVE_IDENTIFIER: return createRemoveIdentifier();
-			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_IDENFIFIER: return createRemoveAttributesToIdenfifier();
-			case TyphonmlPackage.RENAME_IDENTIFIER: return createRenameIdentifier();
 			case TyphonmlPackage.ADD_INDEX: return createAddIndex();
 			case TyphonmlPackage.DROP_INDEX: return createDropIndex();
 			case TyphonmlPackage.ADD_GRAPH_ATTRIBUTE: return createAddGraphAttribute();
@@ -94,7 +89,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.DATA_TYPE_ITEM: return createDataTypeItem();
 			case TyphonmlPackage.DATA_TYPE_IMPLEMENTATION_PACKAGE: return createDataTypeImplementationPackage();
 			case TyphonmlPackage.ENTITY: return createEntity();
-			case TyphonmlPackage.ENTITY_IDENTIFIER: return createEntityIdentifier();
 			case TyphonmlPackage.ATTRIBUTE: return createAttribute();
 			case TyphonmlPackage.RELATION: return createRelation();
 			case TyphonmlPackage.RELATIONAL_DB: return createRelationalDB();
@@ -345,56 +339,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddIdentifier createAddIdentifier() {
-		AddIdentifierImpl addIdentifier = new AddIdentifierImpl();
-		return addIdentifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AddAttributesToIdenfifier createAddAttributesToIdenfifier() {
-		AddAttributesToIdenfifierImpl addAttributesToIdenfifier = new AddAttributesToIdenfifierImpl();
-		return addAttributesToIdenfifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RemoveIdentifier createRemoveIdentifier() {
-		RemoveIdentifierImpl removeIdentifier = new RemoveIdentifierImpl();
-		return removeIdentifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RemoveAttributesToIdenfifier createRemoveAttributesToIdenfifier() {
-		RemoveAttributesToIdenfifierImpl removeAttributesToIdenfifier = new RemoveAttributesToIdenfifierImpl();
-		return removeAttributesToIdenfifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public RenameIdentifier createRenameIdentifier() {
-		RenameIdentifierImpl renameIdentifier = new RenameIdentifierImpl();
-		return renameIdentifier;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public AddIndex createAddIndex() {
 		AddIndexImpl addIndex = new AddIndexImpl();
 		return addIndex;
@@ -518,16 +462,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityIdentifier createEntityIdentifier() {
-		EntityIdentifierImpl entityIdentifier = new EntityIdentifierImpl();
-		return entityIdentifier;
 	}
 
 	/**

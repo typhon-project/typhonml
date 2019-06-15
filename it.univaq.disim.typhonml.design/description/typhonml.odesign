@@ -156,27 +156,12 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="EntityIdentifierRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='EntityIdentifier']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']" targetFinderExpression="feature:attributes">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription showIcon="false">
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
         <containerMappings name="Entity" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::Entity">
           <subNodeMappings name="Attribute" semanticCandidatesExpression="feature:attributes" domainClass="typhonml::Attribute">
             <style xsi:type="style:SquareDescription" labelSize="9" showIcon="false" labelExpression="aql: self.name + ' : ' + self.type.name" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="EntityIdentifier" semanticCandidatesExpression="feature:identifer" domainClass="typhonml::EntityIdentifier">
-            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="aql:'Identifier'" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" borderSizeComputationExpression="2" labelSize="9" showIcon="false" labelExpression="aql:'     ' + self.name + ' : ' + self.eClass().name" labelAlignment="LEFT" roundedCorner="true" backgroundStyle="GradientTopToBottom">
@@ -297,26 +282,6 @@
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Relation" referenceName="relations">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="var:target"/>
                 </subModelOperations>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Identifier" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='EntityIdentifier']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::EntityIdentifier" referenceName="identifer"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Entity Identifier" edgeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@edgeMappings[name='EntityIdentifierRelation']">
-            <sourceVariable name="source"/>
-            <targetVariable name="target"/>
-            <sourceViewVariable name="sourceView"/>
-            <targetViewVariable name="targetView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:context">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -627,12 +592,6 @@
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
           </style>
         </nodeMappings>
-        <nodeMappings name="RemoveEntityIdentifier" domainClass="typhonml::RemoveIdentifier">
-          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="aql:'Remove identifier - Operation order: ' + self.eContainer().changeOperators->indexOf(self)" labelAlignment="LEFT" tooltipExpression="remove entity identifier" resizeKind="NSEW" workspacePath="/it.univaq.disim.typhonml.design/icons/refine.png">
-            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-          </style>
-        </nodeMappings>
         <edgeMappings name="RelationEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']" targetFinderExpression="feature:type" sourceFinderExpression="feature:eContainer" domainClass="typhonml::Relation" useDomainElement="true">
           <style routingStyle="manhattan">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
@@ -810,35 +769,12 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="EntityIdentifier2AttributeRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='EntityIdentifierEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='AttributeEVO']" targetFinderExpression="feature:attributes">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
-        <edgeMappings name="RemoveEntityIdentifierRelation" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@nodeMappings[name='RemoveEntityIdentifier']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO']/@subNodeMappings[name='EntityIdentifierEVO']" targetFinderExpression="feature:entityIdentifier">
-          <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
-            <centerLabelStyleDescription>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            </centerLabelStyleDescription>
-          </style>
-        </edgeMappings>
         <containerMappings name="EntityEVO" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::Entity">
           <subNodeMappings name="AttributeEVO" semanticCandidatesExpression="feature:attributes" domainClass="typhonml::Attribute">
             <style xsi:type="style:SquareDescription" labelSize="9" showIcon="false" labelExpression="aql: self.name + ' : ' + self.type.name" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            </style>
-          </subNodeMappings>
-          <subNodeMappings name="EntityIdentifierEVO" semanticCandidatesExpression="feature:identifer" domainClass="typhonml::EntityIdentifier">
-            <style xsi:type="style:SquareDescription" labelExpression="aql:'Identifier'" labelPosition="node" resizeKind="NSEW">
-              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </subNodeMappings>
           <style xsi:type="style:FlatContainerStyleDescription" arcWidth="5" borderSizeComputationExpression="1" labelSize="9" showIcon="false" labelExpression="aql:'     ' + self.name + ' : ' + self.eClass().name" roundedCorner="true">
@@ -1077,14 +1013,6 @@
                     </controls>
                   </groups>
                 </firstModelOperations>
-              </initialOperation>
-            </menuItemDescription>
-          </ownedTools>
-          <ownedTools xsi:type="tool_1:PopupMenu" name="Identifier operators" precondition="aql:self.oclIsTypeOf(typhonml::EntityIdentifier)">
-            <menuItemDescription xsi:type="tool_1:OperationAction" name="DeleteIdentifierAction">
-              <view name="views"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:ExternalJavaAction" name="DeleteIdentifierAct" id="RemoveIdentifierAction"/>
               </initialOperation>
             </menuItemDescription>
           </ownedTools>
