@@ -94,7 +94,7 @@ public class GraphAttributeItemProvider extends NamedElementItemProvider {
 			getString("_UI_GraphAttribute_type") :
 			getString("_UI_GraphAttribute_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

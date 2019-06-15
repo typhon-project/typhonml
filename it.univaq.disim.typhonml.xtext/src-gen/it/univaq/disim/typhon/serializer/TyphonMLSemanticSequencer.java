@@ -31,7 +31,6 @@ import typhonml.DataTypeImplementationPackage;
 import typhonml.DataTypeItem;
 import typhonml.DocumentDB;
 import typhonml.Entity;
-import typhonml.EntityIdentifier;
 import typhonml.FreeText;
 import typhonml.GraphAttribute;
 import typhonml.GraphDB;
@@ -116,9 +115,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.ENTITY:
 				sequence_Entity_Impl(context, (Entity) semanticObject); 
-				return; 
-			case TyphonmlPackage.ENTITY_IDENTIFIER:
-				sequence_EntityIdentifier(context, (EntityIdentifier) semanticObject); 
 				return; 
 			case TyphonmlPackage.FREE_TEXT:
 				sequence_FreeText(context, (FreeText) semanticObject); 
@@ -209,13 +205,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddEntity returns AddEntity
 	 *
 	 * Constraint:
-	 *     (
-	 *         importedNamespace=EString? 
-	 *         name=EString 
-	 *         (attributes+=Attribute attributes+=Attribute*)? 
-	 *         (relations+=Relation relations+=Relation*)? 
-	 *         identifer=EntityIdentifier
-	 *     )
+	 *     (importedNamespace=EString? name=EString (attributes+=Attribute attributes+=Attribute*)? (relations+=Relation relations+=Relation*)?)
 	 */
 	protected void sequence_AddEntity(ISerializationContext context, AddEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -422,18 +412,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     EntityIdentifier returns EntityIdentifier
-	 *
-	 * Constraint:
-	 *     (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)?
-	 */
-	protected void sequence_EntityIdentifier(ISerializationContext context, EntityIdentifier semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     DataType returns Entity
 	 *     Entity returns Entity
 	 *     Entity_Impl returns Entity
@@ -444,7 +422,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         name=EString 
 	 *         (attributes+=Attribute attributes+=Attribute*)? 
 	 *         (relations+=Relation relations+=Relation*)? 
-	 *         identifer=EntityIdentifier? 
 	 *         genericList=[GenericList|EString]?
 	 *     )
 	 */

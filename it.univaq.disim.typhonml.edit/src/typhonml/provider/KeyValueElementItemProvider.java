@@ -142,7 +142,7 @@ public class KeyValueElementItemProvider extends NamedElementItemProvider {
 			getString("_UI_KeyValueElement_type") :
 			getString("_UI_KeyValueElement_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

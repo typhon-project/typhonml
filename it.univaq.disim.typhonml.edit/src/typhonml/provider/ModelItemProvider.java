@@ -118,7 +118,7 @@ public class ModelItemProvider
 	public String getText(Object object) {
 		return getString("_UI_Model_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -291,31 +291,6 @@ public class ModelItemProvider
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createRenameTable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createAddIdentifier()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createAddAttributesToIdenfifier()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createRemoveIdentifier()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createRemoveAttributesToIdenfifier()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createRenameIdentifier()));
 
 		newChildDescriptors.add
 			(createChildParameter

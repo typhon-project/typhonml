@@ -152,26 +152,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createRenameTableAdapter();
 			}
 			@Override
-			public Adapter caseAddIdentifier(AddIdentifier object) {
-				return createAddIdentifierAdapter();
-			}
-			@Override
-			public Adapter caseAddAttributesToIdenfifier(AddAttributesToIdenfifier object) {
-				return createAddAttributesToIdenfifierAdapter();
-			}
-			@Override
-			public Adapter caseRemoveIdentifier(RemoveIdentifier object) {
-				return createRemoveIdentifierAdapter();
-			}
-			@Override
-			public Adapter caseRemoveAttributesToIdenfifier(RemoveAttributesToIdenfifier object) {
-				return createRemoveAttributesToIdenfifierAdapter();
-			}
-			@Override
-			public Adapter caseRenameIdentifier(RenameIdentifier object) {
-				return createRenameIdentifierAdapter();
-			}
-			@Override
 			public Adapter caseAddIndex(AddIndex object) {
 				return createAddIndexAdapter();
 			}
@@ -230,10 +210,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseEntity(Entity object) {
 				return createEntityAdapter();
-			}
-			@Override
-			public Adapter caseEntityIdentifier(EntityIdentifier object) {
-				return createEntityIdentifierAdapter();
 			}
 			@Override
 			public Adapter caseAttribute(Attribute object) {
@@ -630,76 +606,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.AddIdentifier <em>Add Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.AddIdentifier
-	 * @generated
-	 */
-	public Adapter createAddIdentifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.AddAttributesToIdenfifier <em>Add Attributes To Idenfifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.AddAttributesToIdenfifier
-	 * @generated
-	 */
-	public Adapter createAddAttributesToIdenfifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.RemoveIdentifier <em>Remove Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.RemoveIdentifier
-	 * @generated
-	 */
-	public Adapter createRemoveIdentifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.RemoveAttributesToIdenfifier <em>Remove Attributes To Idenfifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.RemoveAttributesToIdenfifier
-	 * @generated
-	 */
-	public Adapter createRemoveAttributesToIdenfifierAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.RenameIdentifier <em>Rename Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.RenameIdentifier
-	 * @generated
-	 */
-	public Adapter createRenameIdentifierAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link typhonml.AddIndex <em>Add Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -906,20 +812,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEntityAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.EntityIdentifier <em>Entity Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.EntityIdentifier
-	 * @generated
-	 */
-	public Adapter createEntityIdentifierAdapter() {
 		return null;
 	}
 

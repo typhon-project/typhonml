@@ -193,51 +193,6 @@ public interface TyphonmlFactory extends EFactory {
 	RenameTable createRenameTable();
 
 	/**
-	 * Returns a new object of class '<em>Add Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Identifier</em>'.
-	 * @generated
-	 */
-	AddIdentifier createAddIdentifier();
-
-	/**
-	 * Returns a new object of class '<em>Add Attributes To Idenfifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Attributes To Idenfifier</em>'.
-	 * @generated
-	 */
-	AddAttributesToIdenfifier createAddAttributesToIdenfifier();
-
-	/**
-	 * Returns a new object of class '<em>Remove Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Identifier</em>'.
-	 * @generated
-	 */
-	RemoveIdentifier createRemoveIdentifier();
-
-	/**
-	 * Returns a new object of class '<em>Remove Attributes To Idenfifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Attributes To Idenfifier</em>'.
-	 * @generated
-	 */
-	RemoveAttributesToIdenfifier createRemoveAttributesToIdenfifier();
-
-	/**
-	 * Returns a new object of class '<em>Rename Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rename Identifier</em>'.
-	 * @generated
-	 */
-	RenameIdentifier createRenameIdentifier();
-
-	/**
 	 * Returns a new object of class '<em>Add Index</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,15 +308,6 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	Entity createEntity();
-
-	/**
-	 * Returns a new object of class '<em>Entity Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Entity Identifier</em>'.
-	 * @generated
-	 */
-	EntityIdentifier createEntityIdentifier();
 
 	/**
 	 * Returns a new object of class '<em>Attribute</em>'.

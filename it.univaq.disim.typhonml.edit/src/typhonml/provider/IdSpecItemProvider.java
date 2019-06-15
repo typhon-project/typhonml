@@ -105,7 +105,7 @@ public class IdSpecItemProvider
 	public String getText(Object object) {
 		return getString("_UI_IdSpec_type");
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

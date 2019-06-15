@@ -58,7 +58,7 @@ public class DataTypeItemProvider extends NamedElementItemProvider {
 			getString("_UI_DataType_type") :
 			getString("_UI_DataType_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

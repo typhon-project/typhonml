@@ -187,16 +187,6 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_OPERATOR_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.DatabaseImpl <em>Database</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.DatabaseImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getDatabase()
-	 * @generated
-	 */
-	int DATABASE = 33;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.DataTypeImpl <em>Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -204,7 +194,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 34;
+	int DATA_TYPE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -243,66 +233,6 @@ public interface TyphonmlPackage extends EPackage {
 	int DATA_TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.PrimitiveDataTypeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getPrimitiveDataType()
-	 * @generated
-	 */
-	int PRIMITIVE_DATA_TYPE = 35;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.FreeTextImpl <em>Free Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.FreeTextImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
-	 * @generated
-	 */
-	int FREE_TEXT = 36;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeImpl <em>Custom Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.CustomDataTypeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataType()
-	 * @generated
-	 */
-	int CUSTOM_DATA_TYPE = 37;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.DataTypeItemImpl <em>Data Type Item</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.DataTypeItemImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getDataTypeItem()
-	 * @generated
-	 */
-	int DATA_TYPE_ITEM = 38;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.DataTypeImplementationPackageImpl <em>Data Type Implementation Package</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.DataTypeImplementationPackageImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getDataTypeImplementationPackage()
-	 * @generated
-	 */
-	int DATA_TYPE_IMPLEMENTATION_PACKAGE = 39;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.EntityIdentifierImpl <em>Entity Identifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.EntityIdentifierImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getEntityIdentifier()
-	 * @generated
-	 */
-	int ENTITY_IDENTIFIER = 41;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.EntityImpl <em>Entity</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -310,7 +240,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 40;
+	int ENTITY = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,22 +279,13 @@ public interface TyphonmlPackage extends EPackage {
 	int ENTITY__RELATIONS = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Identifer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__IDENTIFER = DATA_TYPE_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Generic List</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY__GENERIC_LIST = DATA_TYPE_FEATURE_COUNT + 3;
+	int ENTITY__GENERIC_LIST = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
@@ -373,7 +294,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -429,15 +350,6 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADD_ENTITY__RELATIONS = ENTITY__RELATIONS;
-
-	/**
-	 * The feature id for the '<em><b>Identifer</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ENTITY__IDENTIFER = ENTITY__IDENTIFER;
 
 	/**
 	 * The feature id for the '<em><b>Generic List</b></em>' reference.
@@ -660,136 +572,6 @@ public interface TyphonmlPackage extends EPackage {
 	int MERGE_ENTITY_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.AttributeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getAttribute()
-	 * @generated
-	 */
-	int ATTRIBUTE = 42;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.AddAttributeImpl <em>Add Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.AddAttributeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttribute()
-	 * @generated
-	 */
-	int ADD_ATTRIBUTE = 16;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.ChangeAttributeTypeImpl <em>Change Attribute Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.ChangeAttributeTypeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeAttributeType()
-	 * @generated
-	 */
-	int CHANGE_ATTRIBUTE_TYPE = 17;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.RemoveAttributeImpl <em>Remove Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RemoveAttributeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttribute()
-	 * @generated
-	 */
-	int REMOVE_ATTRIBUTE = 18;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.RenameAttributeImpl <em>Rename Attribute</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RenameAttributeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameAttribute()
-	 * @generated
-	 */
-	int RENAME_ATTRIBUTE = 19;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.RenameTableImpl <em>Rename Table</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RenameTableImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameTable()
-	 * @generated
-	 */
-	int RENAME_TABLE = 20;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.AddIdentifierImpl <em>Add Identifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.AddIdentifierImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getAddIdentifier()
-	 * @generated
-	 */
-	int ADD_IDENTIFIER = 21;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.AddAttributesToIdenfifierImpl <em>Add Attributes To Idenfifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.AddAttributesToIdenfifierImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttributesToIdenfifier()
-	 * @generated
-	 */
-	int ADD_ATTRIBUTES_TO_IDENFIFIER = 22;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.RemoveIdentifierImpl <em>Remove Identifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RemoveIdentifierImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveIdentifier()
-	 * @generated
-	 */
-	int REMOVE_IDENTIFIER = 23;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.RemoveAttributesToIdenfifierImpl <em>Remove Attributes To Idenfifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RemoveAttributesToIdenfifierImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttributesToIdenfifier()
-	 * @generated
-	 */
-	int REMOVE_ATTRIBUTES_TO_IDENFIFIER = 24;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.RenameIdentifierImpl <em>Rename Identifier</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RenameIdentifierImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameIdentifier()
-	 * @generated
-	 */
-	int RENAME_IDENTIFIER = 25;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.AddIndexImpl <em>Add Index</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.AddIndexImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getAddIndex()
-	 * @generated
-	 */
-	int ADD_INDEX = 26;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.DropIndexImpl <em>Drop Index</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.DropIndexImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getDropIndex()
-	 * @generated
-	 */
-	int DROP_INDEX = 27;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.RelationImpl <em>Relation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -797,7 +579,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRelation()
 	 * @generated
 	 */
-	int RELATION = 43;
+	int RELATION = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1231,6 +1013,16 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_RELATION_CARDINALITY_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AttributeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAttribute()
+	 * @generated
+	 */
+	int ATTRIBUTE = 36;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1274,6 +1066,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.AddAttributeImpl <em>Add Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AddAttributeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttribute()
+	 * @generated
+	 */
+	int ADD_ATTRIBUTE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1321,6 +1123,16 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.ChangeAttributeTypeImpl <em>Change Attribute Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.ChangeAttributeTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeAttributeType()
+	 * @generated
+	 */
+	int CHANGE_ATTRIBUTE_TYPE = 17;
+
+	/**
 	 * The feature id for the '<em><b>Attribute To Change</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1357,6 +1169,16 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_ATTRIBUTE_TYPE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.RemoveAttributeImpl <em>Remove Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RemoveAttributeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttribute()
+	 * @generated
+	 */
+	int REMOVE_ATTRIBUTE = 18;
+
+	/**
 	 * The feature id for the '<em><b>Attribute To Remove</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1382,6 +1204,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int REMOVE_ATTRIBUTE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.RenameAttributeImpl <em>Rename Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RenameAttributeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameAttribute()
+	 * @generated
+	 */
+	int RENAME_ATTRIBUTE = 19;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Rename</b></em>' reference.
@@ -1420,6 +1252,16 @@ public interface TyphonmlPackage extends EPackage {
 	int RENAME_ATTRIBUTE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.RenameTableImpl <em>Rename Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RenameTableImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameTable()
+	 * @generated
+	 */
+	int RENAME_TABLE = 20;
+
+	/**
 	 * The feature id for the '<em><b>Table To Rename</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1456,175 +1298,14 @@ public interface TyphonmlPackage extends EPackage {
 	int RENAME_TABLE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * The meta object id for the '{@link typhonml.impl.AddIndexImpl <em>Add Index</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AddIndexImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAddIndex()
 	 * @generated
-	 * @ordered
 	 */
-	int ADD_IDENTIFIER__ENTITY = CHANGE_OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_IDENTIFIER__NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Add Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_IDENTIFIER_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Add Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_IDENTIFIER_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ATTRIBUTES_TO_IDENFIFIER__IDENTIFIER = CHANGE_OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ATTRIBUTES_TO_IDENFIFIER__ATTRIBUTES = CHANGE_OPERATOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Add Attributes To Idenfifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ATTRIBUTES_TO_IDENFIFIER_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Add Attributes To Idenfifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ATTRIBUTES_TO_IDENFIFIER_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Entity Identifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_IDENTIFIER__ENTITY_IDENTIFIER = CHANGE_OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Remove Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_IDENTIFIER_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Remove Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_IDENTIFIER_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_ATTRIBUTES_TO_IDENFIFIER__IDENTIFIER = CHANGE_OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_ATTRIBUTES_TO_IDENFIFIER__ATTRIBUTES = CHANGE_OPERATOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Remove Attributes To Idenfifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_ATTRIBUTES_TO_IDENFIFIER_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Remove Attributes To Idenfifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REMOVE_ATTRIBUTES_TO_IDENFIFIER_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Identifier</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RENAME_IDENTIFIER__IDENTIFIER = CHANGE_OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>New Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RENAME_IDENTIFIER__NEW_NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Rename Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RENAME_IDENTIFIER_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Rename Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RENAME_IDENTIFIER_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+	int ADD_INDEX = 21;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -1663,6 +1344,16 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.DropIndexImpl <em>Drop Index</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.DropIndexImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getDropIndex()
+	 * @generated
+	 */
+	int DROP_INDEX = 22;
+
+	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1690,116 +1381,6 @@ public interface TyphonmlPackage extends EPackage {
 	int DROP_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.RelationalDBImpl <em>Relational DB</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.RelationalDBImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getRelationalDB()
-	 * @generated
-	 */
-	int RELATIONAL_DB = 44;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.TableImpl <em>Table</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.TableImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getTable()
-	 * @generated
-	 */
-	int TABLE = 45;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.IndexSpecImpl <em>Index Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.IndexSpecImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getIndexSpec()
-	 * @generated
-	 */
-	int INDEX_SPEC = 46;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.IdSpecImpl <em>Id Spec</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.IdSpecImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getIdSpec()
-	 * @generated
-	 */
-	int ID_SPEC = 47;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.DocumentDBImpl <em>Document DB</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.DocumentDBImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getDocumentDB()
-	 * @generated
-	 */
-	int DOCUMENT_DB = 48;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.GenericListImpl <em>Generic List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.GenericListImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getGenericList()
-	 * @generated
-	 */
-	int GENERIC_LIST = 59;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.CollectionImpl <em>Collection</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.CollectionImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getCollection()
-	 * @generated
-	 */
-	int COLLECTION = 49;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.KeyValueDBImpl <em>Key Value DB</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.KeyValueDBImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueDB()
-	 * @generated
-	 */
-	int KEY_VALUE_DB = 50;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.KeyValueElementImpl <em>Key Value Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.KeyValueElementImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueElement()
-	 * @generated
-	 */
-	int KEY_VALUE_ELEMENT = 51;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.GraphDBImpl <em>Graph DB</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.GraphDBImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphDB()
-	 * @generated
-	 */
-	int GRAPH_DB = 52;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.GraphNodeImpl <em>Graph Node</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.GraphNodeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphNode()
-	 * @generated
-	 */
-	int GRAPH_NODE = 53;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.GraphAttributeImpl <em>Graph Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1807,7 +1388,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphAttribute()
 	 * @generated
 	 */
-	int GRAPH_ATTRIBUTE = 54;
+	int GRAPH_ATTRIBUTE = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1862,7 +1443,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddGraphAttribute()
 	 * @generated
 	 */
-	int ADD_GRAPH_ATTRIBUTE = 28;
+	int ADD_GRAPH_ATTRIBUTE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1917,7 +1498,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveGraphAttribute()
 	 * @generated
 	 */
-	int REMOVE_GRAPH_ATTRIBUTE = 29;
+	int REMOVE_GRAPH_ATTRIBUTE = 24;
 
 	/**
 	 * The feature id for the '<em><b>Node</b></em>' reference.
@@ -1954,7 +1535,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphEdge()
 	 * @generated
 	 */
-	int GRAPH_EDGE = 55;
+	int GRAPH_EDGE = 49;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2027,7 +1608,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddGraphEdge()
 	 * @generated
 	 */
-	int ADD_GRAPH_EDGE = 30;
+	int ADD_GRAPH_EDGE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2100,7 +1681,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveGraphEdge()
 	 * @generated
 	 */
-	int REMOVE_GRAPH_EDGE = 31;
+	int REMOVE_GRAPH_EDGE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Graph Edge To Remove</b></em>' reference.
@@ -2137,7 +1718,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenabeGraphEdgeLabel()
 	 * @generated
 	 */
-	int RENABE_GRAPH_EDGE_LABEL = 32;
+	int RENABE_GRAPH_EDGE_LABEL = 27;
 
 	/**
 	 * The feature id for the '<em><b>Edge</b></em>' reference.
@@ -2176,6 +1757,16 @@ public interface TyphonmlPackage extends EPackage {
 	int RENABE_GRAPH_EDGE_LABEL_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.DatabaseImpl <em>Database</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.DatabaseImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getDatabase()
+	 * @generated
+	 */
+	int DATABASE = 28;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2210,6 +1801,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int DATABASE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.PrimitiveDataTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getPrimitiveDataType()
+	 * @generated
+	 */
+	int PRIMITIVE_DATA_TYPE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2248,6 +1849,16 @@ public interface TyphonmlPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.FreeTextImpl <em>Free Text</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.FreeTextImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
+	 * @generated
+	 */
+	int FREE_TEXT = 31;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2282,6 +1893,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FREE_TEXT_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeImpl <em>Custom Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.CustomDataTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataType()
+	 * @generated
+	 */
+	int CUSTOM_DATA_TYPE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2327,6 +1948,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int CUSTOM_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.DataTypeItemImpl <em>Data Type Item</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.DataTypeItemImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getDataTypeItem()
+	 * @generated
+	 */
+	int DATA_TYPE_ITEM = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2383,6 +2014,16 @@ public interface TyphonmlPackage extends EPackage {
 	int DATA_TYPE_ITEM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.DataTypeImplementationPackageImpl <em>Data Type Implementation Package</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.DataTypeImplementationPackageImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getDataTypeImplementationPackage()
+	 * @generated
+	 */
+	int DATA_TYPE_IMPLEMENTATION_PACKAGE = 34;
+
+	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2410,31 +2051,14 @@ public interface TyphonmlPackage extends EPackage {
 	int DATA_TYPE_IMPLEMENTATION_PACKAGE_OPERATION_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * The meta object id for the '{@link typhonml.impl.RelationalDBImpl <em>Relational DB</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RelationalDBImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRelationalDB()
 	 * @generated
-	 * @ordered
 	 */
-	int ENTITY_IDENTIFIER__ATTRIBUTES = 0;
-
-	/**
-	 * The number of structural features of the '<em>Entity Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_IDENTIFIER_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Entity Identifier</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY_IDENTIFIER_OPERATION_COUNT = 0;
+	int RELATIONAL_DB = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2480,6 +2104,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int RELATIONAL_DB_OPERATION_COUNT = DATABASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.TableImpl <em>Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.TableImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getTable()
+	 * @generated
+	 */
+	int TABLE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2554,6 +2188,16 @@ public interface TyphonmlPackage extends EPackage {
 	int TABLE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.IndexSpecImpl <em>Index Spec</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.IndexSpecImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getIndexSpec()
+	 * @generated
+	 */
+	int INDEX_SPEC = 40;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2617,6 +2261,16 @@ public interface TyphonmlPackage extends EPackage {
 	int INDEX_SPEC_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.IdSpecImpl <em>Id Spec</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.IdSpecImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getIdSpec()
+	 * @generated
+	 */
+	int ID_SPEC = 41;
+
+	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2651,6 +2305,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ID_SPEC_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.DocumentDBImpl <em>Document DB</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.DocumentDBImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getDocumentDB()
+	 * @generated
+	 */
+	int DOCUMENT_DB = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2698,6 +2362,16 @@ public interface TyphonmlPackage extends EPackage {
 	int DOCUMENT_DB_OPERATION_COUNT = DATABASE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.GenericListImpl <em>Generic List</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.GenericListImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getGenericList()
+	 * @generated
+	 */
+	int GENERIC_LIST = 53;
+
+	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2723,6 +2397,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int GENERIC_LIST_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.CollectionImpl <em>Collection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.CollectionImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getCollection()
+	 * @generated
+	 */
+	int COLLECTION = 43;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
@@ -2770,6 +2454,16 @@ public interface TyphonmlPackage extends EPackage {
 	int COLLECTION_OPERATION_COUNT = GENERIC_LIST_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.KeyValueDBImpl <em>Key Value DB</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.KeyValueDBImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueDB()
+	 * @generated
+	 */
+	int KEY_VALUE_DB = 44;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2813,6 +2507,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int KEY_VALUE_DB_OPERATION_COUNT = DATABASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.KeyValueElementImpl <em>Key Value Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.KeyValueElementImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueElement()
+	 * @generated
+	 */
+	int KEY_VALUE_ELEMENT = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2878,6 +2582,16 @@ public interface TyphonmlPackage extends EPackage {
 	int KEY_VALUE_ELEMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.GraphDBImpl <em>Graph DB</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.GraphDBImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphDB()
+	 * @generated
+	 */
+	int GRAPH_DB = 46;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2930,6 +2644,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int GRAPH_DB_OPERATION_COUNT = DATABASE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.GraphNodeImpl <em>Graph Node</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.GraphNodeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphNode()
+	 * @generated
+	 */
+	int GRAPH_NODE = 47;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2993,7 +2717,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphEdgeLabel()
 	 * @generated
 	 */
-	int GRAPH_EDGE_LABEL = 56;
+	int GRAPH_EDGE_LABEL = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3048,7 +2772,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getColumnDB()
 	 * @generated
 	 */
-	int COLUMN_DB = 57;
+	int COLUMN_DB = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3103,7 +2827,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getColumn()
 	 * @generated
 	 */
-	int COLUMN = 58;
+	int COLUMN = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3167,7 +2891,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameEntity()
 	 * @generated
 	 */
-	int RENAME_ENTITY = 60;
+	int RENAME_ENTITY = 54;
 
 	/**
 	 * The feature id for the '<em><b>Entity To Rename</b></em>' reference.
@@ -3213,7 +2937,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationContainement()
 	 * @generated
 	 */
-	int CHANGE_RELATION_CONTAINEMENT = 61;
+	int CHANGE_RELATION_CONTAINEMENT = 55;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -3259,7 +2983,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 62;
+	int CARDINALITY = 56;
 
 
 	/**
@@ -3803,155 +3527,6 @@ public interface TyphonmlPackage extends EPackage {
 	EAttribute getRenameTable_NewName();
 
 	/**
-	 * Returns the meta object for class '{@link typhonml.AddIdentifier <em>Add Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Add Identifier</em>'.
-	 * @see typhonml.AddIdentifier
-	 * @generated
-	 */
-	EClass getAddIdentifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.AddIdentifier#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity</em>'.
-	 * @see typhonml.AddIdentifier#getEntity()
-	 * @see #getAddIdentifier()
-	 * @generated
-	 */
-	EReference getAddIdentifier_Entity();
-
-	/**
-	 * Returns the meta object for the attribute '{@link typhonml.AddIdentifier#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see typhonml.AddIdentifier#getName()
-	 * @see #getAddIdentifier()
-	 * @generated
-	 */
-	EAttribute getAddIdentifier_Name();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.AddAttributesToIdenfifier <em>Add Attributes To Idenfifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Add Attributes To Idenfifier</em>'.
-	 * @see typhonml.AddAttributesToIdenfifier
-	 * @generated
-	 */
-	EClass getAddAttributesToIdenfifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.AddAttributesToIdenfifier#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identifier</em>'.
-	 * @see typhonml.AddAttributesToIdenfifier#getIdentifier()
-	 * @see #getAddAttributesToIdenfifier()
-	 * @generated
-	 */
-	EReference getAddAttributesToIdenfifier_Identifier();
-
-	/**
-	 * Returns the meta object for the reference list '{@link typhonml.AddAttributesToIdenfifier#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see typhonml.AddAttributesToIdenfifier#getAttributes()
-	 * @see #getAddAttributesToIdenfifier()
-	 * @generated
-	 */
-	EReference getAddAttributesToIdenfifier_Attributes();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.RemoveIdentifier <em>Remove Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remove Identifier</em>'.
-	 * @see typhonml.RemoveIdentifier
-	 * @generated
-	 */
-	EClass getRemoveIdentifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.RemoveIdentifier#getEntityIdentifier <em>Entity Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Entity Identifier</em>'.
-	 * @see typhonml.RemoveIdentifier#getEntityIdentifier()
-	 * @see #getRemoveIdentifier()
-	 * @generated
-	 */
-	EReference getRemoveIdentifier_EntityIdentifier();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.RemoveAttributesToIdenfifier <em>Remove Attributes To Idenfifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Remove Attributes To Idenfifier</em>'.
-	 * @see typhonml.RemoveAttributesToIdenfifier
-	 * @generated
-	 */
-	EClass getRemoveAttributesToIdenfifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.RemoveAttributesToIdenfifier#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identifier</em>'.
-	 * @see typhonml.RemoveAttributesToIdenfifier#getIdentifier()
-	 * @see #getRemoveAttributesToIdenfifier()
-	 * @generated
-	 */
-	EReference getRemoveAttributesToIdenfifier_Identifier();
-
-	/**
-	 * Returns the meta object for the reference list '{@link typhonml.RemoveAttributesToIdenfifier#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see typhonml.RemoveAttributesToIdenfifier#getAttributes()
-	 * @see #getRemoveAttributesToIdenfifier()
-	 * @generated
-	 */
-	EReference getRemoveAttributesToIdenfifier_Attributes();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.RenameIdentifier <em>Rename Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Rename Identifier</em>'.
-	 * @see typhonml.RenameIdentifier
-	 * @generated
-	 */
-	EClass getRenameIdentifier();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.RenameIdentifier#getIdentifier <em>Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Identifier</em>'.
-	 * @see typhonml.RenameIdentifier#getIdentifier()
-	 * @see #getRenameIdentifier()
-	 * @generated
-	 */
-	EReference getRenameIdentifier_Identifier();
-
-	/**
-	 * Returns the meta object for the attribute '{@link typhonml.RenameIdentifier#getNewName <em>New Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>New Name</em>'.
-	 * @see typhonml.RenameIdentifier#getNewName()
-	 * @see #getRenameIdentifier()
-	 * @generated
-	 */
-	EAttribute getRenameIdentifier_NewName();
-
-	/**
 	 * Returns the meta object for class '{@link typhonml.AddIndex <em>Add Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4245,17 +3820,6 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getEntity_Relations();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link typhonml.Entity#getIdentifer <em>Identifer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Identifer</em>'.
-	 * @see typhonml.Entity#getIdentifer()
-	 * @see #getEntity()
-	 * @generated
-	 */
-	EReference getEntity_Identifer();
-
-	/**
 	 * Returns the meta object for the reference '{@link typhonml.Entity#getGenericList <em>Generic List</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4265,27 +3829,6 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEntity_GenericList();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.EntityIdentifier <em>Entity Identifier</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity Identifier</em>'.
-	 * @see typhonml.EntityIdentifier
-	 * @generated
-	 */
-	EClass getEntityIdentifier();
-
-	/**
-	 * Returns the meta object for the reference list '{@link typhonml.EntityIdentifier#getAttributes <em>Attributes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Attributes</em>'.
-	 * @see typhonml.EntityIdentifier#getAttributes()
-	 * @see #getEntityIdentifier()
-	 * @generated
-	 */
-	EReference getEntityIdentifier_Attributes();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.Attribute <em>Attribute</em>}'.
@@ -5334,128 +4877,6 @@ public interface TyphonmlPackage extends EPackage {
 		EAttribute RENAME_TABLE__NEW_NAME = eINSTANCE.getRenameTable_NewName();
 
 		/**
-		 * The meta object literal for the '{@link typhonml.impl.AddIdentifierImpl <em>Add Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.AddIdentifierImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getAddIdentifier()
-		 * @generated
-		 */
-		EClass ADD_IDENTIFIER = eINSTANCE.getAddIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ADD_IDENTIFIER__ENTITY = eINSTANCE.getAddIdentifier_Entity();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ADD_IDENTIFIER__NAME = eINSTANCE.getAddIdentifier_Name();
-
-		/**
-		 * The meta object literal for the '{@link typhonml.impl.AddAttributesToIdenfifierImpl <em>Add Attributes To Idenfifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.AddAttributesToIdenfifierImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttributesToIdenfifier()
-		 * @generated
-		 */
-		EClass ADD_ATTRIBUTES_TO_IDENFIFIER = eINSTANCE.getAddAttributesToIdenfifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Identifier</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ADD_ATTRIBUTES_TO_IDENFIFIER__IDENTIFIER = eINSTANCE.getAddAttributesToIdenfifier_Identifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ADD_ATTRIBUTES_TO_IDENFIFIER__ATTRIBUTES = eINSTANCE.getAddAttributesToIdenfifier_Attributes();
-
-		/**
-		 * The meta object literal for the '{@link typhonml.impl.RemoveIdentifierImpl <em>Remove Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.RemoveIdentifierImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveIdentifier()
-		 * @generated
-		 */
-		EClass REMOVE_IDENTIFIER = eINSTANCE.getRemoveIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Entity Identifier</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REMOVE_IDENTIFIER__ENTITY_IDENTIFIER = eINSTANCE.getRemoveIdentifier_EntityIdentifier();
-
-		/**
-		 * The meta object literal for the '{@link typhonml.impl.RemoveAttributesToIdenfifierImpl <em>Remove Attributes To Idenfifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.RemoveAttributesToIdenfifierImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttributesToIdenfifier()
-		 * @generated
-		 */
-		EClass REMOVE_ATTRIBUTES_TO_IDENFIFIER = eINSTANCE.getRemoveAttributesToIdenfifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Identifier</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REMOVE_ATTRIBUTES_TO_IDENFIFIER__IDENTIFIER = eINSTANCE.getRemoveAttributesToIdenfifier_Identifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REMOVE_ATTRIBUTES_TO_IDENFIFIER__ATTRIBUTES = eINSTANCE.getRemoveAttributesToIdenfifier_Attributes();
-
-		/**
-		 * The meta object literal for the '{@link typhonml.impl.RenameIdentifierImpl <em>Rename Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.RenameIdentifierImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getRenameIdentifier()
-		 * @generated
-		 */
-		EClass RENAME_IDENTIFIER = eINSTANCE.getRenameIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Identifier</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RENAME_IDENTIFIER__IDENTIFIER = eINSTANCE.getRenameIdentifier_Identifier();
-
-		/**
-		 * The meta object literal for the '<em><b>New Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RENAME_IDENTIFIER__NEW_NAME = eINSTANCE.getRenameIdentifier_NewName();
-
-		/**
 		 * The meta object literal for the '{@link typhonml.impl.AddIndexImpl <em>Add Index</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5710,38 +5131,12 @@ public interface TyphonmlPackage extends EPackage {
 		EReference ENTITY__RELATIONS = eINSTANCE.getEntity_Relations();
 
 		/**
-		 * The meta object literal for the '<em><b>Identifer</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY__IDENTIFER = eINSTANCE.getEntity_Identifer();
-
-		/**
 		 * The meta object literal for the '<em><b>Generic List</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ENTITY__GENERIC_LIST = eINSTANCE.getEntity_GenericList();
-
-		/**
-		 * The meta object literal for the '{@link typhonml.impl.EntityIdentifierImpl <em>Entity Identifier</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.EntityIdentifierImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getEntityIdentifier()
-		 * @generated
-		 */
-		EClass ENTITY_IDENTIFIER = eINSTANCE.getEntityIdentifier();
-
-		/**
-		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ENTITY_IDENTIFIER__ATTRIBUTES = eINSTANCE.getEntityIdentifier_Attributes();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.

@@ -217,41 +217,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.ADD_IDENTIFIER: {
-				AddIdentifier addIdentifier = (AddIdentifier)theEObject;
-				T result = caseAddIdentifier(addIdentifier);
-				if (result == null) result = caseChangeOperator(addIdentifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TyphonmlPackage.ADD_ATTRIBUTES_TO_IDENFIFIER: {
-				AddAttributesToIdenfifier addAttributesToIdenfifier = (AddAttributesToIdenfifier)theEObject;
-				T result = caseAddAttributesToIdenfifier(addAttributesToIdenfifier);
-				if (result == null) result = caseChangeOperator(addAttributesToIdenfifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TyphonmlPackage.REMOVE_IDENTIFIER: {
-				RemoveIdentifier removeIdentifier = (RemoveIdentifier)theEObject;
-				T result = caseRemoveIdentifier(removeIdentifier);
-				if (result == null) result = caseChangeOperator(removeIdentifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_IDENFIFIER: {
-				RemoveAttributesToIdenfifier removeAttributesToIdenfifier = (RemoveAttributesToIdenfifier)theEObject;
-				T result = caseRemoveAttributesToIdenfifier(removeAttributesToIdenfifier);
-				if (result == null) result = caseChangeOperator(removeAttributesToIdenfifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TyphonmlPackage.RENAME_IDENTIFIER: {
-				RenameIdentifier renameIdentifier = (RenameIdentifier)theEObject;
-				T result = caseRenameIdentifier(renameIdentifier);
-				if (result == null) result = caseChangeOperator(renameIdentifier);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TyphonmlPackage.ADD_INDEX: {
 				AddIndex addIndex = (AddIndex)theEObject;
 				T result = caseAddIndex(addIndex);
@@ -362,12 +327,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				T result = caseEntity(entity);
 				if (result == null) result = caseDataType(entity);
 				if (result == null) result = caseNamedElement(entity);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TyphonmlPackage.ENTITY_IDENTIFIER: {
-				EntityIdentifier entityIdentifier = (EntityIdentifier)theEObject;
-				T result = caseEntityIdentifier(entityIdentifier);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -839,81 +798,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Identifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAddIdentifier(AddIdentifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Add Attributes To Idenfifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Add Attributes To Idenfifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAddAttributesToIdenfifier(AddAttributesToIdenfifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Identifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRemoveIdentifier(RemoveIdentifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Remove Attributes To Idenfifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Remove Attributes To Idenfifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRemoveAttributesToIdenfifier(RemoveAttributesToIdenfifier object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Rename Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Rename Identifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRenameIdentifier(RenameIdentifier object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Add Index</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1135,21 +1019,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEntity(Entity object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity Identifier</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity Identifier</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEntityIdentifier(EntityIdentifier object) {
 		return null;
 	}
 

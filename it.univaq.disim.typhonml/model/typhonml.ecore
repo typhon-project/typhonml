@@ -92,32 +92,6 @@
         eType="#//Table"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddIdentifier" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        eType="#//Entity"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttributesToIdenfifier" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveIdentifier" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entityIdentifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RemoveAttributesToIdenfifier" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RenameIdentifier" eSuperTypes="#//ChangeOperator">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifier" lowerBound="1"
-        eType="#//EntityIdentifier"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AddIndex" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -160,14 +134,8 @@
         eType="#//Attribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//Relation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="identifer" eType="#//EntityIdentifier"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" eType="#//GenericList"
         eOpposite="#//GenericList/entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EntityIdentifier">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>

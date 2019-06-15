@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import typhonml.Attribute;
 import typhonml.Entity;
-import typhonml.EntityIdentifier;
 import typhonml.GenericList;
 import typhonml.Relation;
 import typhonml.TyphonmlPackage;
@@ -34,7 +33,6 @@ import typhonml.TyphonmlPackage;
  * <ul>
  *   <li>{@link typhonml.impl.EntityImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getRelations <em>Relations</em>}</li>
- *   <li>{@link typhonml.impl.EntityImpl#getIdentifer <em>Identifer</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getGenericList <em>Generic List</em>}</li>
  * </ul>
  *
@@ -60,16 +58,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @ordered
 	 */
 	protected EList<Relation> relations;
-
-	/**
-	 * The cached value of the '{@link #getIdentifer() <em>Identifer</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIdentifer()
-	 * @generated
-	 * @ordered
-	 */
-	protected EntityIdentifier identifer;
 
 	/**
 	 * The cached value of the '{@link #getGenericList() <em>Generic List</em>}' reference.
@@ -122,49 +110,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			relations = new EObjectContainmentEList<Relation>(Relation.class, this, TyphonmlPackage.ENTITY__RELATIONS);
 		}
 		return relations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EntityIdentifier getIdentifer() {
-		return identifer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIdentifer(EntityIdentifier newIdentifer, NotificationChain msgs) {
-		EntityIdentifier oldIdentifer = identifer;
-		identifer = newIdentifer;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ENTITY__IDENTIFER, oldIdentifer, newIdentifer);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIdentifer(EntityIdentifier newIdentifer) {
-		if (newIdentifer != identifer) {
-			NotificationChain msgs = null;
-			if (identifer != null)
-				msgs = ((InternalEObject)identifer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.ENTITY__IDENTIFER, null, msgs);
-			if (newIdentifer != null)
-				msgs = ((InternalEObject)newIdentifer).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.ENTITY__IDENTIFER, null, msgs);
-			msgs = basicSetIdentifer(newIdentifer, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ENTITY__IDENTIFER, newIdentifer, newIdentifer));
 	}
 
 	/**
@@ -232,7 +177,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -256,8 +200,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return ((InternalEList<?>)getRelations()).basicRemove(otherEnd, msgs);
-			case TyphonmlPackage.ENTITY__IDENTIFER:
-				return basicSetIdentifer(null, msgs);
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				return basicSetGenericList(null, msgs);
 		}
@@ -276,8 +218,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return getAttributes();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return getRelations();
-			case TyphonmlPackage.ENTITY__IDENTIFER:
-				return getIdentifer();
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				if (resolve) return getGenericList();
 				return basicGetGenericList();
@@ -302,9 +242,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				getRelations().clear();
 				getRelations().addAll((Collection<? extends Relation>)newValue);
 				return;
-			case TyphonmlPackage.ENTITY__IDENTIFER:
-				setIdentifer((EntityIdentifier)newValue);
-				return;
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				setGenericList((GenericList)newValue);
 				return;
@@ -326,9 +263,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();
 				return;
-			case TyphonmlPackage.ENTITY__IDENTIFER:
-				setIdentifer((EntityIdentifier)null);
-				return;
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				setGenericList((GenericList)null);
 				return;
@@ -348,8 +282,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return attributes != null && !attributes.isEmpty();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return relations != null && !relations.isEmpty();
-			case TyphonmlPackage.ENTITY__IDENTIFER:
-				return identifer != null;
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
 				return genericList != null;
 		}

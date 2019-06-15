@@ -110,7 +110,6 @@ Entity_Impl returns Entity:
 		
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(relations+=Relation (relations+=Relation)*)?
-		('identifer' identifer=EntityIdentifier)?
 		('genericList' '{' genericList=[GenericList|EString] '}')?
 	'}';
 GenericList returns GenericList: 
@@ -124,11 +123,6 @@ Relation_Impl returns Relation:
 		(type=[Entity|EString])
 		('.' opposite=[Relation|EString])?
 		('[' cardinality=Cardinality ']')?
-	;
-
-EntityIdentifier returns EntityIdentifier:
-	{EntityIdentifier}
-	('(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
 	;
 
 
@@ -277,7 +271,6 @@ AddEntity returns AddEntity:
 		
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
-		'identifer' identifer=EntityIdentifier
 	'}';
 
 Attribute_Impl returns Attribute:

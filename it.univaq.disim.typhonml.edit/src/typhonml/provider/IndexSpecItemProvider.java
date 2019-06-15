@@ -117,7 +117,7 @@ public class IndexSpecItemProvider extends NamedElementItemProvider {
 			getString("_UI_IndexSpec_type") :
 			getString("_UI_IndexSpec_type") + " " + label;
 	}
-	
+
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
