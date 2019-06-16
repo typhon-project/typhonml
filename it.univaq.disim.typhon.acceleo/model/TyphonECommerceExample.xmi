@@ -72,8 +72,6 @@
     <relations
         name="reviews"
         type="//@dataTypes.2"/>
-    <identifer
-        attributes="//@dataTypes.0/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -92,8 +90,6 @@
         name="orderProducts"
         type="//@dataTypes.4"
         opposite="//@dataTypes.4/@relations.0"/>
-    <identifer
-        attributes="//@dataTypes.1/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -114,8 +110,6 @@
     <relations
         name="product"
         type="//@dataTypes.4"/>
-    <identifer
-        attributes="//@dataTypes.2/@attributes.2"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -130,8 +124,6 @@
     <relations
         name="responses"
         type="//@dataTypes.3"/>
-    <identifer
-        attributes="//@dataTypes.3/@attributes.1"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
@@ -150,8 +142,6 @@
     <relations
         name="reviews"
         type="//@dataTypes.2"/>
-    <identifer
-        attributes="//@dataTypes.4/@attributes.1"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:PrimitiveDataType"

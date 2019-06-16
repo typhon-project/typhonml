@@ -23,7 +23,7 @@ public class Runner {
 			// for each input model in the modelFolder
 			for (File file : baseFolderFile.listFiles()) {
 				run(file.getAbsolutePath(), file);
-				break;
+//				break;
 			}
 			System.out.println("The generation has finished successfully!");
 			System.out.println();
