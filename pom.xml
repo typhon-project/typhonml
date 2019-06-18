@@ -8,6 +8,8 @@
 
 	<modules>
 		<module>it.univaq.disim.typhonml</module>
+		<module>it.univaq.disim.typhon.acceleo</module>
+		<module>it.univaq.disim.typhonml.ui</module>
 		<module>it.univaq.disim.typhonml.edit</module>
 		<module>it.univaq.disim.typhonml.editor</module>
 		<module>it.univaq.disim.typhonml.xtext</module>
