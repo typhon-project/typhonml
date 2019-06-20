@@ -1,0 +1,70 @@
+
+
+
+operation Entity hasCycle() : Boolean{
+	
+	var result = false;
+	for(rel in self.relations){
+		if(rel.type == self)
+			result = true;
+	}
+	return result;
+	
+	
+	
+	//("selef ->"+self.name).println();
+	
+	
+	
+	
+	
+	//self.getAllChildren();
+	//return false;
+	//return self.relations.recursion2(null, self);
+}
+
+
+operation OrderedSet<Relation> recursion2(entity : Entity, entityToCheck : Entity) : Boolean{
+	//(entity.name + '@@@').println();
+	
+	var entityTMP;
+	
+	for(rel in self){
+		if(rel.type.isTypeOf(Entity)){
+			entityTMP = rel.type;
+			if(rel.type.name == entityToCheck.name){
+				('###' + rel.type.name + ' TRUE').println();
+				return true;
+			}else{
+				("$$$$$$" + rel.type.name).println();
+				("------" +entityToCheck.name).println();
+				return rel.type.relations.recursion2(rel.type, entityToCheck);
+			}
+		}
+	}
+	return false;
+}
+
+
+
+operation Entity getAllChildren() :Boolean{
+	
+	for(rel in self.relations){
+		if(self.relations.matches(rel.type.relations)){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+}
+
+
+operation Entity removeCycle(){
+	"Cycle has been removed".println();
+	var newEntity : Entity = new Entity;
+	
+	newEntity.name = "newEntity";
+	
+	self.eContainer().dataTypes.add(newEntity);
+}
