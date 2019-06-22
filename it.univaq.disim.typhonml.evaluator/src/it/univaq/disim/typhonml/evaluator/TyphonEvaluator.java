@@ -3,7 +3,9 @@ package it.univaq.disim.typhonml.evaluator;
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -14,64 +16,81 @@ import org.eclipse.epsilon.eol.models.IRelativePathResolver;
 import org.eclipse.epsilon.evl.EvlModule;
 import org.eclipse.epsilon.evl.execute.UnsatisfiedConstraint;
 
+import it.univaq.disim.typhonml.evaluator.utility.Utility;
 import typhonml.TyphonmlPackage;
 
 
 public class TyphonEvaluator {
 	
+	private String RULES_FOLDER = "rules";
+	
 	public static void main(String[] args) {
 		
 		TyphonEvaluator tEvaluator = new TyphonEvaluator();
 		tEvaluator.evaluate("mydb.xmi");
+		
 	}
+	
 	
 		
 	public void evaluate(String modelToEvaluatePath) {
 		
 		TyphonEvaluator tEvaluator = new TyphonEvaluator();
 		
-		EvlModule module = new EvlModule();
-		
-		File ruleFile = tEvaluator.getFile("rules/entityCheck.evl");
-		
-		try {
-			module.parse(ruleFile);
-			// to register the emf models into models repository
-//			for (IModel model : models) {
-				// TODO there is an error here
-				// IEtlContext etlContext = ((EtlModule) module).getContext();
-				((EvlModule) module).getContext().getModelRepository().addModel(new TyphonEvaluator().createEmfModel(
-						"NameForRunConfiguration", 
-						modelToEvaluatePath, 
-						"typhonml.ecore", 
-						true, 
-						true));
-//			}
-			//For loading Native tools
-//			((EvlModule) module).getContext().getNativeTypeDelegates().add(new ExtensionPointToolNativeTypeDelegate());
+		final File rootFolder = tEvaluator.getFile(tEvaluator.RULES_FOLDER);
 
-			// showPopUp();
-			((EvlModule) module).execute();
-			((EvlModule) module).getContext().getModelRepository().dispose();
-			
-//			Collection<UnsatisfiedConstraint> unsatisfied = module.getContext().getUnsatisfiedConstraints();
-//			
-//			if (unsatisfied.size() > 0) {
-//				System.err.println(unsatisfied.size() + " constraint(s) have not been satisfied");
-//				for (UnsatisfiedConstraint uc : unsatisfied) {
-//					System.err.println(uc.getMessage());
-//				}
-//			}
-//			else {
-//				System.out.println("All constraints have been satisfied");
-//			}
-			
-			new TyphonEvaluator().checkUnsatifiedConstraint(module);
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+        List<File> allEVLFilesPath = new ArrayList<File>();
+        Utility.search(".*\\.evl", rootFolder, allEVLFilesPath);
+
+        //Foreach EVL file in resources/rules
+        for (File EVLFile : allEVLFilesPath) {
+        	EvlModule module = new EvlModule();
+    		
+    		try {
+    			module.parse(EVLFile);
+    			// to register the emf models into models repository
+//    			for (IModel model : models) {
+    				// TODO there is an error here
+    				// IEtlContext etlContext = ((EtlModule) module).getContext();
+    				((EvlModule) module).getContext().getModelRepository().addModel(new TyphonEvaluator().createEmfModel(
+    						"NameForRunConfiguration", 
+    						modelToEvaluatePath, 
+    						"typhonml.ecore", 
+    						true, 
+    						true));
+//    			}
+    			//For loading Native tools
+//    			((EvlModule) module).getContext().getNativeTypeDelegates().add(new ExtensionPointToolNativeTypeDelegate());
+
+    			// showPopUp();
+    			((EvlModule) module).execute();
+    			((EvlModule) module).getContext().getModelRepository().dispose();
+    			
+//    			Collection<UnsatisfiedConstraint> unsatisfied = module.getContext().getUnsatisfiedConstraints();
+//    			
+//    			if (unsatisfied.size() > 0) {
+//    				System.err.println(unsatisfied.size() + " constraint(s) have not been satisfied");
+//    				for (UnsatisfiedConstraint uc : unsatisfied) {
+//    					System.err.println(uc.getMessage());
+//    				}
+//    			}
+//    			else {
+//    				System.out.println("All constraints have been satisfied");
+//    			}
+    			
+    			new TyphonEvaluator().checkUnsatifiedConstraint(module);
+    			
+    		} catch (Exception e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+        }
+		
+		
+		
+		
+		
+		
 	}
 	
 	private void checkUnsatifiedConstraint(EvlModule module) {

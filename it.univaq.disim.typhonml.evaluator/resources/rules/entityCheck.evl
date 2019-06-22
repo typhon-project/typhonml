@@ -1,4 +1,4 @@
-import "guard.eol";
+import "entityGuard.eol";
 
 context Entity {
 	  critique hasContainmentInER{

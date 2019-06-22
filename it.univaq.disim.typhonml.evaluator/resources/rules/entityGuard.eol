@@ -16,13 +16,12 @@ operation Entity checkIsContainmentER() : Boolean{
 
 
 
+
+
 operation Entity changeDBFromRelationalToDocument(){
 	var newEntity : Entity = new Entity;
 	
 	newEntity.name = "newEntity";
-	
-	
-	
 	
 	self.eContainer().dataTypes.add(newEntity);
 	("Entity " + self.name + " moved from Relational to Document").println();
