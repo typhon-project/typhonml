@@ -195,11 +195,6 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
-				 TyphonmlFactory.eINSTANCE.createFreeText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
 				 TyphonmlFactory.eINSTANCE.createCustomDataType()));
 
 		newChildDescriptors.add

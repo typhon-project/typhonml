@@ -93,6 +93,7 @@ public class MergeEntityImpl extends ChangeOperatorImpl implements MergeEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getFirstEntityToMerge() {
 		if (firstEntityToMerge != null && firstEntityToMerge.eIsProxy()) {
 			InternalEObject oldFirstEntityToMerge = (InternalEObject)firstEntityToMerge;
@@ -119,6 +120,7 @@ public class MergeEntityImpl extends ChangeOperatorImpl implements MergeEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFirstEntityToMerge(Entity newFirstEntityToMerge) {
 		Entity oldFirstEntityToMerge = firstEntityToMerge;
 		firstEntityToMerge = newFirstEntityToMerge;
@@ -131,6 +133,7 @@ public class MergeEntityImpl extends ChangeOperatorImpl implements MergeEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getSecondEntityToMerge() {
 		if (secondEntityToMerge != null && secondEntityToMerge.eIsProxy()) {
 			InternalEObject oldSecondEntityToMerge = (InternalEObject)secondEntityToMerge;
@@ -157,6 +160,7 @@ public class MergeEntityImpl extends ChangeOperatorImpl implements MergeEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSecondEntityToMerge(Entity newSecondEntityToMerge) {
 		Entity oldSecondEntityToMerge = secondEntityToMerge;
 		secondEntityToMerge = newSecondEntityToMerge;
@@ -169,6 +173,7 @@ public class MergeEntityImpl extends ChangeOperatorImpl implements MergeEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNewEntityName() {
 		return newEntityName;
 	}
@@ -178,6 +183,7 @@ public class MergeEntityImpl extends ChangeOperatorImpl implements MergeEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewEntityName(String newNewEntityName) {
 		String oldNewEntityName = newEntityName;
 		newEntityName = newNewEntityName;

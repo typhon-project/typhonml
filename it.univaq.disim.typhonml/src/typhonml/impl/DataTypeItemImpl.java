@@ -74,6 +74,7 @@ public class DataTypeItemImpl extends NamedElementImpl implements DataTypeItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -100,6 +101,7 @@ public class DataTypeItemImpl extends NamedElementImpl implements DataTypeItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(DataType newType) {
 		DataType oldType = type;
 		type = newType;
@@ -112,6 +114,7 @@ public class DataTypeItemImpl extends NamedElementImpl implements DataTypeItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataTypeImplementationPackage getImplementation() {
 		return implementation;
 	}
@@ -136,6 +139,7 @@ public class DataTypeItemImpl extends NamedElementImpl implements DataTypeItem {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setImplementation(DataTypeImplementationPackage newImplementation) {
 		if (newImplementation != implementation) {
 			NotificationChain msgs = null;

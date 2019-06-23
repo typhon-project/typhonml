@@ -83,6 +83,7 @@ public class IndexSpecImpl extends NamedElementImpl implements IndexSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.INDEX_SPEC__ATTRIBUTES);
@@ -95,6 +96,7 @@ public class IndexSpecImpl extends NamedElementImpl implements IndexSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Relation> getReferences() {
 		if (references == null) {
 			references = new EObjectResolvingEList<Relation>(Relation.class, this, TyphonmlPackage.INDEX_SPEC__REFERENCES);
@@ -107,6 +109,7 @@ public class IndexSpecImpl extends NamedElementImpl implements IndexSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Table getTable() {
 		if (eContainerFeatureID() != TyphonmlPackage.INDEX_SPEC__TABLE) return null;
 		return (Table)eInternalContainer();
@@ -127,6 +130,7 @@ public class IndexSpecImpl extends NamedElementImpl implements IndexSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(Table newTable) {
 		if (newTable != eInternalContainer() || (eContainerFeatureID() != TyphonmlPackage.INDEX_SPEC__TABLE && newTable != null)) {
 			if (EcoreUtil.isAncestor(this, newTable))

@@ -13,11 +13,37 @@ Model returns Model:
 		;  
 
 DataType returns DataType:
-	PrimitiveDataType_Impl | FreeText | CustomDataType | Entity_Impl;
+	PrimitiveDataType_Impl | CustomDataType | Entity_Impl;
 
 ChangeOperator returns ChangeOperator:
-	AddAttribute | AddEntity | AddRelation | RenameAttribute | RenameEntity |
-	RenameRelation | RemoveAttribute | RemoveEntity | RemoveRelation | ChangeRelationCardinality
+	AddEntity | 
+	RemoveEntity | 
+	RenameEntity |
+	MigrateEntity |
+	SplitEntity |
+	MergeEntity |
+	AddAttribute |
+	AddRelation | 
+	RenameAttribute | 
+	RenameRelation | 
+	RemoveAttribute | 
+	RemoveRelation | 
+	ChangeRelationCardinality
+;
+
+MigrateEntity returns MigrateEntity:
+	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
+;
+
+SplitEntity returns SplitEntity:
+	'split' 'entity' entityToBeSplit=[Entity|EString] '{'
+		'left'  firstNewEntity=Entity_Impl
+		'right' secondNewEntity=Entity_Impl
+	'}'
+;
+
+MergeEntity returns MergeEntity:
+	'merge' 'entities' firstEntityToMerge=[Entity|EString] secondEntityToMerge=[Entity|EString] 'as' newEntityName=EString
 ;
 
 RenameAttribute returns RenameAttribute :
@@ -25,10 +51,10 @@ RenameAttribute returns RenameAttribute :
 ;
 
 RenameEntity returns RenameEntity :
-	'rename' 'Entity' entityToRename=[Entity|EString] 'as' newEntityName=EString  
+	'rename' 'entity' entityToRename=[Entity|EString] 'as' newEntityName=EString  
 ;
 RenameRelation returns RenameRelation:
-	'rename' 'Relation' relationToRename=[Relation|EString] 'as' newRelationName=EString
+	'rename' 'relation' relationToRename=[Relation|EString] 'as' newRelationName=EString
 ;
 
 RemoveAttribute returns RemoveAttribute :
@@ -36,11 +62,11 @@ RemoveAttribute returns RemoveAttribute :
 ;
 
 RemoveEntity returns RemoveEntity :
-	'remove' 'Entity' entityToRemove=[Entity|EString]  
+	'remove' 'entity' entityToRemove=[Entity|EString]  
 ;
 
 RemoveRelation returns RemoveRelation:
-	'remove' 'Relation' relationToRemove=[Relation|EString]
+	'remove' 'relation' relationToRemove=[Relation|EString]
 ;
 
 ChangeRelationContainement returns ChangeRelationContainement :
@@ -93,8 +119,11 @@ DataTypeImplementationPackage returns DataTypeImplementationPackage:
 
 FreeText returns FreeText:
 	{FreeText}
-	('importedNamespace' importedNamespace=EString)?
-	'FreeText' name=EString
+	'freetext' name=EString '[' (tasks+=NlpTask ( "," tasks+=NlpTask)* ']' )?
+	;
+
+NlpTask:
+	type=NlpTaskType
 	;
 
 CustomDataType returns CustomDataType:
@@ -109,9 +138,11 @@ Entity_Impl returns Entity:
 	'entity' name=EString '{'
 		
 		(attributes+=Attribute (attributes+=Attribute)*)?
+		(fretextAttributes+=FreeText (fretextAttributes+=FreeText)*)?
 		(relations+=Relation (relations+=Relation)*)?
 		('genericList' '{' genericList=[GenericList|EString] '}')?
 	'}';
+	
 GenericList returns GenericList: 
 	Table|Collection|Column|KeyValueElement|GraphNode;
 
@@ -128,6 +159,27 @@ Relation_Impl returns Relation:
 
 enum Cardinality returns Cardinality:
 				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
+				
+enum NlpTaskType returns NlpTaskType:
+		ParagraphSegmentation = 'ParagraphSegmentation' |
+		SentenceSegmentation = 'SentenceSegmentation' |
+		Tokenisation = 'Tokenisation' |
+		PhraseExtractor = 'PhraseExtractor' |
+		NGramExtractor = 'NGramExtractor' |
+		POSTagging = 'POSTagging' |
+		Lemmatisation = 'Lemmatisation' |
+		Stemming = 'Stemming' |
+		DependencyParsing = 'DependencyParsing' |
+		Chunking = 'Chunking' |
+		SentimentAnalysis = 'SentimentAnalysis' |
+		TextClassification = 'TextClassification' |
+		TopicModelling = 'TopicModelling' |
+		TermExtraction = 'TermExtraction' |
+		NamedEntityRecognition = 'NamedEntityRecognition' |
+		RelationExtraction = 'RelationExtraction' |
+		EventExtraction = 'EventExtraction' |
+		CoreferenceResolution = 'CoreferenceResolution'	
+;
 
 EBooleanObject returns ecore::EBooleanObject:
 	'true' | 'false';
@@ -149,16 +201,17 @@ Collection returns Collection:
 
 KeyValueElement returns KeyValueElement:
 	('importedNamespace' importedNamespace=EString)?
-	key=EString '->' '{'	
-		'entity' entity=[Entity|EString]
-		('values' '(' values+=[DataType|EString] ( "," values+=[DataType|EString])* ')' )?
+	name=EString '{' key=EString '->' '('	
+	( values+=[Attribute|EString]  ( "," values+=[Attribute|EString] )*)?
+	')'
+//		'entity' entity=[Entity|EString]
+//		('values' '(' values+=[DataType|EString] ( "," values+=[DataType|EString])* ')' )?
 	'}';
 
 GraphNode returns GraphNode:
 	('importedNamespace' importedNamespace=EString)?
-	'node' name=EString '{'
-		'entity' entity=[Entity|EString]
-		('attributes' '{' attributes+=GraphAttribute ( "," attributes+=GraphAttribute)* '}' )?
+	'node' name=EString '!' entity=[Entity|EString]
+		('{' attributes+=GraphAttribute ( "," attributes+=GraphAttribute)* '}' )?
 	'}';
 
 Column returns Column:
@@ -265,13 +318,15 @@ AddGraphAttribute returns AddGraphAttribute:
 
 AddEntity returns AddEntity:
 	('importedNamespace' importedNamespace=EString)?
-	'AddEntity'
+	'add' 'entity'
 	name=EString
 	'{'
 		
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
 	'}';
+
+
 
 Attribute_Impl returns Attribute:
 	{Attribute}

@@ -82,6 +82,7 @@ public class RenameRelationImpl extends ChangeOperatorImpl implements RenameRela
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Relation getRelationToRename() {
 		if (relationToRename != null && relationToRename.eIsProxy()) {
 			InternalEObject oldRelationToRename = (InternalEObject)relationToRename;
@@ -108,6 +109,7 @@ public class RenameRelationImpl extends ChangeOperatorImpl implements RenameRela
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelationToRename(Relation newRelationToRename) {
 		Relation oldRelationToRename = relationToRename;
 		relationToRename = newRelationToRename;
@@ -120,6 +122,7 @@ public class RenameRelationImpl extends ChangeOperatorImpl implements RenameRela
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNewRelationName() {
 		return newRelationName;
 	}
@@ -129,6 +132,7 @@ public class RenameRelationImpl extends ChangeOperatorImpl implements RenameRela
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewRelationName(String newNewRelationName) {
 		String oldNewRelationName = newRelationName;
 		newRelationName = newNewRelationName;

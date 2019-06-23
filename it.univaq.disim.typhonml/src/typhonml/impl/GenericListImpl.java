@@ -63,6 +63,7 @@ public class GenericListImpl extends MinimalEObjectImpl.Container implements Gen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -104,6 +105,7 @@ public class GenericListImpl extends MinimalEObjectImpl.Container implements Gen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		if (newEntity != entity) {
 			NotificationChain msgs = null;

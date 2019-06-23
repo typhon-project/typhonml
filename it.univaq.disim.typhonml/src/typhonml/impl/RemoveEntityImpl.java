@@ -61,6 +61,7 @@ public class RemoveEntityImpl extends ChangeOperatorImpl implements RemoveEntity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntityToRemove() {
 		if (entityToRemove != null && entityToRemove.eIsProxy()) {
 			InternalEObject oldEntityToRemove = (InternalEObject)entityToRemove;
@@ -87,6 +88,7 @@ public class RemoveEntityImpl extends ChangeOperatorImpl implements RemoveEntity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntityToRemove(Entity newEntityToRemove) {
 		Entity oldEntityToRemove = entityToRemove;
 		entityToRemove = newEntityToRemove;

@@ -81,6 +81,7 @@ public class ColumnImpl extends NamedElementImpl implements Column {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -122,6 +123,7 @@ public class ColumnImpl extends NamedElementImpl implements Column {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		if (newEntity != entity) {
 			NotificationChain msgs = null;
@@ -141,6 +143,7 @@ public class ColumnImpl extends NamedElementImpl implements Column {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.COLUMN__ATTRIBUTES);

@@ -84,6 +84,7 @@ public class SplitEntityImpl extends ChangeOperatorImpl implements SplitEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntityToBeSplit() {
 		if (entityToBeSplit != null && entityToBeSplit.eIsProxy()) {
 			InternalEObject oldEntityToBeSplit = (InternalEObject)entityToBeSplit;
@@ -110,6 +111,7 @@ public class SplitEntityImpl extends ChangeOperatorImpl implements SplitEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntityToBeSplit(Entity newEntityToBeSplit) {
 		Entity oldEntityToBeSplit = entityToBeSplit;
 		entityToBeSplit = newEntityToBeSplit;
@@ -122,6 +124,7 @@ public class SplitEntityImpl extends ChangeOperatorImpl implements SplitEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getFirstNewEntity() {
 		return firstNewEntity;
 	}
@@ -146,6 +149,7 @@ public class SplitEntityImpl extends ChangeOperatorImpl implements SplitEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setFirstNewEntity(Entity newFirstNewEntity) {
 		if (newFirstNewEntity != firstNewEntity) {
 			NotificationChain msgs = null;
@@ -165,6 +169,7 @@ public class SplitEntityImpl extends ChangeOperatorImpl implements SplitEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getSecondNewEntity() {
 		return secondNewEntity;
 	}
@@ -189,6 +194,7 @@ public class SplitEntityImpl extends ChangeOperatorImpl implements SplitEntity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setSecondNewEntity(Entity newSecondNewEntity) {
 		if (newSecondNewEntity != secondNewEntity) {
 			NotificationChain msgs = null;

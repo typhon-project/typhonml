@@ -1,0 +1,286 @@
+@namespace(uri="http://org.typhon.dsls.typhonml.sirius", prefix="typhonml")
+package typhonml;
+
+class Model {
+  val Database[*] databases;
+  val DataType[*] dataTypes;
+  val ChangeOperator[*] changeOperators;
+}
+
+abstract class NamedElement {
+  attr String[1] name;
+  attr String importedNamespace;
+}
+
+abstract class ChangeOperator {
+}
+
+
+
+class AddEntity extends Entity, ChangeOperator {
+}
+
+class RemoveEntity extends ChangeOperator {
+  ref Entity[1] entityToRemove;
+}
+
+class SplitEntity extends ChangeOperator {
+  ref Entity[1] entityToBeSplit;
+  val Entity[1] firstNewEntity;
+  val Entity[1] secondNewEntity;
+}
+
+class MigrateEntity extends ChangeOperator {
+  ref Entity[1] entity;
+  ref Database[1] newDatabase;
+}
+
+class MergeEntity extends ChangeOperator {
+  ref Entity[1] firstEntityToMerge;
+  ref Entity[1] secondEntityToMerge;
+  attr String newEntityName;
+}
+
+class AddRelation extends Relation, ChangeOperator {
+}
+
+class RemoveRelation extends ChangeOperator {
+  ref Relation[1] relationToRemove;
+}
+
+class RenameRelation extends ChangeOperator {
+  ref Relation[1] relationToRename;
+  attr String newRelationName;
+}
+
+class EnableRelationContainment extends ChangeOperator {
+  ref Relation[1] relation;
+}
+
+class DisableRelationContainment extends ChangeOperator {
+  ref Relation[1] relation;
+}
+
+class EnableBidirectionalRelation extends ChangeOperator {
+  ref Relation[1] relation;
+}
+
+class DisableBidirectionalRelation extends ChangeOperator {
+  ref Relation[1] relation;
+}
+
+class ChangeRelationCardinality extends ChangeOperator {
+  ref Relation[1] relation;
+  attr Cardinality[1] newCardinality;
+}
+
+class AddAttribute extends Attribute, ChangeOperator {
+}
+
+class ChangeAttributeType extends ChangeOperator {
+  ref Attribute[1] attributeToChange;
+  ref DataType newType;
+}
+
+class RemoveAttribute extends ChangeOperator {
+  ref Attribute[1] attributeToRemove;
+}
+
+class RenameAttribute extends ChangeOperator {
+  ref Attribute[1] attributeToRename;
+  attr String newName;
+}
+
+class RenameTable extends ChangeOperator {
+  ref Table[1] tableToRename;
+  attr String newName;
+}
+
+class AddIndex extends ChangeOperator {
+  ref Table[1] table;
+  ref Attribute[*] attributes;
+}
+
+class DropIndex extends ChangeOperator {
+  ref Table[1] table;
+}
+
+class AddGraphAttribute extends GraphAttribute, ChangeOperator {
+}
+
+class RemoveGraphAttribute extends ChangeOperator {
+  ref GraphNode[1] node;
+}
+
+class AddGraphEdge extends GraphEdge, ChangeOperator {
+}
+
+class RemoveGraphEdge extends ChangeOperator {
+  ref GraphEdge[1] graphEdgeToRemove;
+}
+
+class RenabeGraphEdgeLabel extends ChangeOperator {
+  ref GraphEdge[1] edge;
+  attr String newName;
+}
+
+abstract class Database extends NamedElement {
+}
+
+abstract class DataType extends NamedElement {
+}
+
+class PrimitiveDataType extends DataType {
+}
+
+
+class CustomDataType extends DataType {
+  val DataTypeItem[*] elements;
+}
+
+class DataTypeItem extends NamedElement {
+  ref DataType type;
+  val DataTypeImplementationPackage[1] implementation;
+}
+
+class FreeText extends NamedElement {
+	val NlpTask[*] tasks;
+} 
+
+class NlpTask {
+	attr NlpTaskType type;
+}
+
+class DataTypeImplementationPackage {
+  attr String location;
+}
+
+class Entity extends DataType {
+  val Attribute[*] attributes;
+  val FreeText[*] fretextAttributes;
+  val Relation[*] relations;
+  ref GenericList#entity genericList;
+}
+
+class Attribute extends NamedElement {
+  ref DataType type;
+}
+
+class Relation extends NamedElement {
+  ref Entity type;
+  attr Cardinality[1] cardinality;
+  ref Relation opposite;
+  attr Boolean isContainment;
+}
+
+class RelationalDB extends Database {
+  val Table[*] tables;
+}
+
+class Table extends NamedElement, GenericList {
+  val IndexSpec#table indexSpec;
+  val IdSpec#table idSpec;
+  ref Database db;
+}
+
+class IndexSpec extends NamedElement {
+  ref Attribute[*] attributes;
+  ref Relation[*] references;
+  ref Table[1]#indexSpec table;
+}
+
+class IdSpec {
+  ref Attribute[*] attributes;
+  ref Table[1]#idSpec table;
+}
+
+class DocumentDB extends Database {
+  val Collection[*] collections;
+}
+
+class Collection extends GenericList, NamedElement {
+}
+
+class KeyValueDB extends Database {
+  val KeyValueElement[*] elements;
+}
+
+class KeyValueElement extends NamedElement, GenericList {
+  attr String key;
+ // ref DataType[*] values;
+  ref Attribute[*] values;
+}
+
+class GraphDB extends Database {
+  val GraphNode[*] nodes;
+  val GraphEdge[*] edges;
+}
+
+class GraphNode extends NamedElement, GenericList {
+  val GraphAttribute[*] attributes;
+}
+
+class GraphAttribute extends NamedElement {
+  ref Attribute value;
+}
+
+class GraphEdge extends NamedElement {
+  ref GraphNode from;
+  ref GraphNode to;
+  val GraphEdgeLabel[*] labels;
+}
+
+class GraphEdgeLabel extends NamedElement {
+  ref DataType type;
+}
+
+class ColumnDB extends Database {
+  val Column[*] columns;
+}
+
+class Column extends NamedElement, GenericList {
+  ref Attribute[*] attributes;
+}
+
+enum Cardinality {
+  zero_one = 0;
+  one = 1;
+  zero_many = 2;
+  one_many = 3;
+}
+
+enum NlpTaskType {
+	ParagraphSegmentation = 0;
+	SentenceSegmentation = 1;
+	Tokenisation = 2;
+	PhraseExtractor = 3;
+	NGramExtractor = 4;
+	POSTagging = 5;
+	Lemmatisation = 6;
+	Stemming = 7;
+	DependencyParsing = 8;
+	Chunking = 9;
+	SentimentAnalysis = 10;
+	TextClassification = 11;
+	TopicModelling = 12;
+	TermExtraction = 13;
+	NamedEntityRecognition = 14;
+	RelationExtraction = 15;
+	EventExtraction = 16;
+	CoreferenceResolution = 17;	
+}
+
+class GenericList {
+  ref Entity#genericList entity;
+}
+
+class RenameEntity extends ChangeOperator {
+  ref Entity entityToRename;
+  attr String newEntityName;
+}
+
+class ChangeRelationContainement extends ChangeOperator {
+  ref Relation[1] relation;
+  attr Boolean[1] newContainment;
+}
+

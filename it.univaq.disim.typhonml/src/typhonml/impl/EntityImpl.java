@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import typhonml.Attribute;
 import typhonml.Entity;
+import typhonml.FreeText;
 import typhonml.GenericList;
 import typhonml.Relation;
 import typhonml.TyphonmlPackage;
@@ -32,6 +33,7 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.EntityImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link typhonml.impl.EntityImpl#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getRelations <em>Relations</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getGenericList <em>Generic List</em>}</li>
  * </ul>
@@ -48,6 +50,16 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @ordered
 	 */
 	protected EList<Attribute> attributes;
+
+	/**
+	 * The cached value of the '{@link #getFretextAttributes() <em>Fretext Attributes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFretextAttributes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FreeText> fretextAttributes;
 
 	/**
 	 * The cached value of the '{@link #getRelations() <em>Relations</em>}' containment reference list.
@@ -93,6 +105,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, TyphonmlPackage.ENTITY__ATTRIBUTES);
@@ -105,6 +118,20 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<FreeText> getFretextAttributes() {
+		if (fretextAttributes == null) {
+			fretextAttributes = new EObjectContainmentEList<FreeText>(FreeText.class, this, TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES);
+		}
+		return fretextAttributes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Relation> getRelations() {
 		if (relations == null) {
 			relations = new EObjectContainmentEList<Relation>(Relation.class, this, TyphonmlPackage.ENTITY__RELATIONS);
@@ -117,6 +144,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public GenericList getGenericList() {
 		if (genericList != null && genericList.eIsProxy()) {
 			InternalEObject oldGenericList = (InternalEObject)genericList;
@@ -158,6 +186,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setGenericList(GenericList newGenericList) {
 		if (newGenericList != genericList) {
 			NotificationChain msgs = null;
@@ -198,6 +227,8 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 		switch (featureID) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
+			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
+				return ((InternalEList<?>)getFretextAttributes()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return ((InternalEList<?>)getRelations()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
@@ -216,6 +247,8 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 		switch (featureID) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				return getAttributes();
+			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
+				return getFretextAttributes();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return getRelations();
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:
@@ -237,6 +270,10 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				getAttributes().clear();
 				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+				return;
+			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
+				getFretextAttributes().clear();
+				getFretextAttributes().addAll((Collection<? extends FreeText>)newValue);
 				return;
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();
@@ -260,6 +297,9 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				getAttributes().clear();
 				return;
+			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
+				getFretextAttributes().clear();
+				return;
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();
 				return;
@@ -280,6 +320,8 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 		switch (featureID) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				return attributes != null && !attributes.isEmpty();
+			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
+				return fretextAttributes != null && !fretextAttributes.isEmpty();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return relations != null && !relations.isEmpty();
 			case TyphonmlPackage.ENTITY__GENERIC_LIST:

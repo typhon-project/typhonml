@@ -292,15 +292,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.FREE_TEXT: {
-				FreeText freeText = (FreeText)theEObject;
-				T result = caseFreeText(freeText);
-				if (result == null) result = casePrimitiveDataType(freeText);
-				if (result == null) result = caseDataType(freeText);
-				if (result == null) result = caseNamedElement(freeText);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TyphonmlPackage.CUSTOM_DATA_TYPE: {
 				CustomDataType customDataType = (CustomDataType)theEObject;
 				T result = caseCustomDataType(customDataType);
@@ -313,6 +304,19 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				DataTypeItem dataTypeItem = (DataTypeItem)theEObject;
 				T result = caseDataTypeItem(dataTypeItem);
 				if (result == null) result = caseNamedElement(dataTypeItem);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.FREE_TEXT: {
+				FreeText freeText = (FreeText)theEObject;
+				T result = caseFreeText(freeText);
+				if (result == null) result = caseNamedElement(freeText);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.NLP_TASK: {
+				NlpTask nlpTask = (NlpTask)theEObject;
+				T result = caseNlpTask(nlpTask);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -959,6 +963,21 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseFreeText(FreeText object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Nlp Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Nlp Task</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNlpTask(NlpTask object) {
 		return null;
 	}
 

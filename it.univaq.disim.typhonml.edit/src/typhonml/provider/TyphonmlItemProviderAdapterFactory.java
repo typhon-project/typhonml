@@ -716,6 +716,29 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.NlpTask} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NlpTaskItemProvider nlpTaskItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.NlpTask}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNlpTaskAdapter() {
+		if (nlpTaskItemProvider == null) {
+			nlpTaskItemProvider = new NlpTaskItemProvider(this);
+		}
+
+		return nlpTaskItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1273,6 +1296,7 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -1283,6 +1307,7 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -1331,6 +1356,7 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -1341,6 +1367,7 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -1351,6 +1378,7 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -1365,6 +1393,7 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void dispose() {
 		if (modelItemProvider != null) modelItemProvider.dispose();
 		if (addEntityItemProvider != null) addEntityItemProvider.dispose();
@@ -1393,9 +1422,10 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (removeGraphEdgeItemProvider != null) removeGraphEdgeItemProvider.dispose();
 		if (renabeGraphEdgeLabelItemProvider != null) renabeGraphEdgeLabelItemProvider.dispose();
 		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
-		if (freeTextItemProvider != null) freeTextItemProvider.dispose();
 		if (customDataTypeItemProvider != null) customDataTypeItemProvider.dispose();
 		if (dataTypeItemItemProvider != null) dataTypeItemItemProvider.dispose();
+		if (freeTextItemProvider != null) freeTextItemProvider.dispose();
+		if (nlpTaskItemProvider != null) nlpTaskItemProvider.dispose();
 		if (dataTypeImplementationPackageItemProvider != null) dataTypeImplementationPackageItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();

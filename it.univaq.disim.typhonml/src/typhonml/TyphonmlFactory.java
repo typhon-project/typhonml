@@ -274,6 +274,15 @@ public interface TyphonmlFactory extends EFactory {
 	FreeText createFreeText();
 
 	/**
+	 * Returns a new object of class '<em>Nlp Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nlp Task</em>'.
+	 * @generated
+	 */
+	NlpTask createNlpTask();
+
+	/**
 	 * Returns a new object of class '<em>Custom Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -87,6 +87,7 @@ public class EntityItemProvider extends DataTypeItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES);
+			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__FRETEXT_ATTRIBUTES);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__RELATIONS);
 		}
 		return childrenFeatures;
@@ -144,6 +145,7 @@ public class EntityItemProvider extends DataTypeItemProvider {
 
 		switch (notification.getFeatureID(Entity.class)) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
+			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -171,6 +173,11 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
 				 TyphonmlFactory.eINSTANCE.createAddAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__FRETEXT_ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createFreeText()));
 
 		newChildDescriptors.add
 			(createChildParameter

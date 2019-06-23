@@ -192,16 +192,20 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createPrimitiveDataTypeAdapter();
 			}
 			@Override
-			public Adapter caseFreeText(FreeText object) {
-				return createFreeTextAdapter();
-			}
-			@Override
 			public Adapter caseCustomDataType(CustomDataType object) {
 				return createCustomDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseDataTypeItem(DataTypeItem object) {
 				return createDataTypeItemAdapter();
+			}
+			@Override
+			public Adapter caseFreeText(FreeText object) {
+				return createFreeTextAdapter();
+			}
+			@Override
+			public Adapter caseNlpTask(NlpTask object) {
+				return createNlpTaskAdapter();
 			}
 			@Override
 			public Adapter caseDataTypeImplementationPackage(DataTypeImplementationPackage object) {
@@ -756,6 +760,20 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFreeTextAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.NlpTask
+	 * @generated
+	 */
+	public Adapter createNlpTaskAdapter() {
 		return null;
 	}
 

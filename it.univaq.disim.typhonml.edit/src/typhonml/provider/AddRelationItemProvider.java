@@ -81,7 +81,6 @@ public class AddRelationItemProvider extends RelationItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

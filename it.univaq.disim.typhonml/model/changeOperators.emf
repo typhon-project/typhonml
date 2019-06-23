@@ -1,0 +1,328 @@
+@namespace(uri="http://it.univaq.disim.typhonmlchangeoperators", prefix="typhonmlchangeoperators")
+package typhonmlchangeoperators;
+
+class Model {
+  val Database[*] databases;
+  val DataType[*] dataTypes;
+  val ChangeOperator[*] changeOperators;
+}
+
+abstract class NamedElement {
+  attr String[1] name;
+  attr String importedNamespace;
+}
+
+
+//********** Change Operators *************//
+abstract class ChangeOperator { }
+
+class AddEntity extends Entity, ChangeOperator {
+}
+
+class RemoveEntity extends ChangeOperator {
+	ref Entity[1] entityToRemove;
+}
+
+class RenameEntity extends ChangeOperator {
+	ref Entity[1] entityToRename;
+	attr String newName;
+}
+
+class SplitEntity extends ChangeOperator {
+	attr SplitEntityType type;
+	ref Entity[1] entityToBeSplit;
+	val Entity[1] firstNewEntity;
+	val Entity[1] secondNewEntity;
+}
+
+class MigrateEntity extends ChangeOperator {
+	ref Entity[1] entity;
+	ref Database[1] newDatabase;
+}
+
+class MergeEntity extends ChangeOperator {
+	ref Entity[1] firstEntityToMerge;
+	ref Entity[1] secondEntityToMerge;
+	attr String newEntityName;
+}
+
+class AddRelation extends Relation, ChangeOperator { }
+
+class RemoveRelation extends ChangeOperator {
+	ref Relation[1] relationToRemove;
+}
+
+class RenameRelation extends ChangeOperator {
+	ref Relation[1] relationToRename;
+	attr String newRelationName;
+}
+
+class ChangeRelationContainment extends ChangeOperator {
+	ref Relation[1] relation;
+	attr Boolean isContainement;
+}
+
+class ChangeRelationBidirectionality extends ChangeOperator {
+	ref Relation[1] relation;
+	attr Boolean isBidirectional;
+	ref Relation[1] oppositeOf;
+}
+
+class ChangeRelationCardinality extends ChangeOperator {
+	ref Relation[1] relation;
+	attr Cardinality[1] newCardinality;
+}
+
+class AddAttribute extends Attribute, ChangeOperator { }
+
+// class ChangeCardinality // What does it mean?
+
+class ChangeAttributeType extends ChangeOperator {
+	ref Attribute[1] attributeToChange;
+	ref DataType newType;
+}
+
+class RemoveAttribute extends ChangeOperator {
+	ref Attribute [1] attributeToRemove;
+}
+
+class RenameAttribute extends ChangeOperator {
+	ref Attribute [1] attributeToRename;
+	attr String newName;
+}
+
+class RenameTable extends ChangeOperator {
+	ref Table[1] tableToRename;
+	attr String newName;
+}
+
+class AddIdentifier extends ChangeOperator {
+	ref Entity[1] entity;
+	attr String name;
+}
+
+class AddAttributesToIdenfifier extends ChangeOperator {
+	ref EntityIdentifier[1] identifier;
+	ref Attribute[*] attributes;	
+}
+
+class RemoveIdentifier extends ChangeOperator {
+	ref Entity[1] entity;
+}
+
+class RemoveAttributesToIdenfifier extends ChangeOperator {
+	ref EntityIdentifier[1] identifier;
+	ref Attribute[*] attributes;	
+}
+
+class RenameIdentifier extends ChangeOperator {
+	ref EntityIdentifier[1] identifier;
+	attr String newName;
+}
+
+class AddIndex extends ChangeOperator {
+	ref Table[1] table;
+	ref Attribute[*] attributes;
+}
+
+class DropIndex extends ChangeOperator {
+	ref Table[1] table;
+}
+
+class AddAttributesToIndex extends ChangeOperator {
+	ref Table[1] table;
+	ref Attribute[*] attributes;
+}
+
+class RemoveAttributesToIndex extends ChangeOperator {
+	ref Table[1] table;
+	ref Attribute[*] attribute;
+}
+
+class RenameCollection extends ChangeOperator {
+	ref Collection [1] collectionToRename;
+	attr String newName;
+}
+
+class AddCollectionIndex extends ChangeOperator {
+	ref Collection[1] collection;
+	ref Attribute[*] attributes;
+}
+
+class DropCollectionIndex extends ChangeOperator {
+	ref Collection[1] collection;
+}
+
+class AddGraphAttribute extends GraphAttribute, ChangeOperator { }
+
+class RemoveGraphAttribute extends ChangeOperator {
+	ref GraphNode[1] node;
+}
+
+class AddGraphEdgeLabel extends ChangeOperator { 
+	ref GraphEdge[1] graphEdgeToLabel;
+}
+
+class RemoveGraphEdgeLabel extends ChangeOperator {
+	ref GraphEdge[1] graphEdgeLabelToRemove;
+}
+
+class RenameGraphEdgeLabel extends ChangeOperator {
+	ref GraphEdge[1] edge;	
+	attr String newName;
+}
+
+//********** End Change Operators *************//
+
+
+abstract class Database extends NamedElement {
+}
+
+abstract class DataType extends NamedElement {
+}
+
+class PrimitiveDataType extends DataType {
+}
+
+class FreeText extends PrimitiveDataType {
+	val NlpTask[*] tasks;
+} 
+
+class NlpTask {
+	attr NlpTaskType type;
+}
+
+
+class CustomDataType extends DataType {
+  val DataTypeItem[*] elements;
+}
+
+class DataTypeItem extends NamedElement {
+  ref DataType type;
+  val DataTypeImplementationPackage[1] implementation;
+}
+
+class DataTypeImplementationPackage {
+	attr String location;
+}
+
+class Entity extends DataType {
+  val Attribute[*] attributes;
+  val Relation[*] relations;
+  val EntityIdentifier[1] identifer;
+  ref GenericList[1]#entity genericList;
+}
+
+class EntityIdentifier {
+	ref Attribute[*] attributes;
+}
+
+class Attribute extends NamedElement {
+  ref DataType type;
+}
+
+class Relation extends NamedElement {
+  ref Entity type;
+  attr Cardinality[1] cardinality;
+  ref Relation opposite;
+  attr Boolean isContainment;
+}
+
+class RelationalDB extends Database {
+  val Table[*] tables;
+}
+
+class Table extends NamedElement, GenericList {
+  val IndexSpec#table indexSpec;
+  val IdSpec#table idSpec;
+  ref Database db;
+}
+
+class IndexSpec extends NamedElement {
+  ref Attribute[*] attributes;
+  ref Relation[*] references;
+  ref Table[1]#indexSpec table;
+}
+
+class IdSpec {
+  ref Attribute[*] attributes;
+  ref Table[1]#idSpec table;
+}
+
+class DocumentDB extends Database {
+  val Collection[*] collections;
+}
+
+class Collection extends GenericList, NamedElement {
+}
+
+
+class GraphDB extends Database {
+  val GraphNode[*] nodes;
+  val GraphEdge[*] edges;
+}
+
+class GraphNode extends NamedElement, GenericList {
+  val GraphAttribute[*] attributes;
+}
+
+class GraphAttribute extends NamedElement {
+  ref Attribute value;
+  ref GraphNode#node attributes;
+}
+
+class GraphEdge extends NamedElement {
+  ref GraphNode from;
+  ref GraphNode to;
+  val GraphEdgeLabel[*] labels;
+}
+
+class GraphEdgeLabel extends NamedElement {
+  ref DataType type;
+}
+
+class ColumnDB extends Database {
+  val Column[*] columns;
+}
+
+class Column {
+	ref Attribute[*] attributes;
+}
+
+enum Cardinality {
+  zero_one = 0;
+  one = 1;
+  zero_many = 2;
+  one_many = 3;
+}
+
+enum SplitEntityType {
+	Vertical = 0;
+	Horizontal = 1;
+}
+
+enum NlpTaskType {
+	ParagraphSegmentation = 0;
+	SentenceSegmentation = 1;
+	Tokenisation = 2;
+	PhraseExtractor = 3;
+	NGramExtractor = 4;
+	POSTagging = 5;
+	Lemmatisation = 6;
+	Stemming = 7;
+	DependencyParsing = 8;
+	Chunking = 9;
+	SentimentAnalysis = 10;
+	TextClassification = 11;
+	TopicModelling = 12;
+	TermExtraction = 13;
+	NamedEntityRecognition = 14;
+	RelationExtraction = 15;
+	EventExtraction = 16;
+	CoreferenceResolution = 17;	
+}
+
+class GenericList {
+  ref Entity[1]#genericList entity;
+}
+

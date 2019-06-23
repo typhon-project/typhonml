@@ -1,0 +1,52 @@
+	
+	8080
+
+
+	
+	
+	
+		User
+			relation with Order through orders;
+			relation with Comment through comments;
+			relation with Review through reviews;
+		Order
+			relation with Product through orderProducts;
+		Review
+			relation with Comment through comment;
+			relation with Product through product;
+		Comment
+			relation with Comment through responses;
+		Product
+			relation with Order through productOrders;
+			relation with Review through reviews;
+	
+	
+
+
+userdb	
+orderdb	
+commentdb	
+productdb	
+reviewdb	
+
+commentdb	
+orderdb	
+productdb	
+reviewdb	
+userdb	
+
+
+Comment
+		responses - Comment (Relational database)
+Order
+		orderProducts - Product (Relational database)
+Product
+		productOrders - Order (Document database)
+		reviews - Review (Document database)
+Review
+		comment - Comment (Relational database)
+		product - Product (Relational database)
+User
+		orders - Order (Document database)
+		comments - Comment (Relational database)
+		reviews - Review (Document database)

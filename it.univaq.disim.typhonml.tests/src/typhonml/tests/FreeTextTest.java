@@ -13,7 +13,7 @@ import typhonml.TyphonmlFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FreeTextTest extends PrimitiveDataTypeTest {
+public class FreeTextTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
