@@ -1,0 +1,6 @@
+
+
+operation Database checkCycles() : Boolean{
+	return false;
+}
+

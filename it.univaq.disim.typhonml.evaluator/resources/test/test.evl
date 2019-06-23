@@ -1,0 +1,31 @@
+import "guard.eol";
+
+context Entity {
+	 critique hasCycles{
+	 	check:
+	 		not self.hasCycle()
+	 	message: "Cycle detected for Entity --> " + self.name
+	 	fix {
+	 		title: "Fix Cycle"
+	 		do {
+	 			"Refactoring".println();
+	 			self.removeCycle();
+	 		}
+	 	}
+	 } 
+	 
+	  critique hasCycles{
+	 	check:
+			 not self.checkIsContainmentER()
+		message: "Entity with containment detected in " + self.name
+	 	
+	 } 
+	 
+	 constraint Error{
+	 	check: 
+	 		true
+	 	message: "ERROR --> " + self.name
+	 	
+	 }
+}
+
