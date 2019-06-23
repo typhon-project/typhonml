@@ -40,7 +40,10 @@
         eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newEntityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="#//Relation #//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="#//Relation #//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
+        eType="#//Entity"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveRelation" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationToRemove" lowerBound="1"
         eType="#//Relation"/>
@@ -72,7 +75,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newCardinality" lowerBound="1"
         eType="#//Cardinality"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="#//Attribute #//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="#//Attribute #//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
+        eType="#//Entity"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToChange" lowerBound="1"
         eType="#//Attribute"/>

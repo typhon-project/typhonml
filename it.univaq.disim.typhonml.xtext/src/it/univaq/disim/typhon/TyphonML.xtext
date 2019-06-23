@@ -28,8 +28,13 @@ ChangeOperator returns ChangeOperator:
 	RenameRelation | 
 	RemoveAttribute | 
 	RemoveRelation | 
-	ChangeRelationCardinality
+	ChangeRelationContainement| 
+	ChangeRelationCardinality |
+	ChangeAttributeType
 ;
+
+ChangeAttributeType returns ChangeAttributeType:
+	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[DataType|EString];
 
 MigrateEntity returns MigrateEntity:
 	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
@@ -74,7 +79,7 @@ ChangeRelationContainement returns ChangeRelationContainement :
 ;
 
 ChangeRelationCardinality returns ChangeRelationCardinality:
-	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality|EString
+	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality
 ;
 
 
@@ -288,8 +293,8 @@ GraphEdgeLabel returns GraphEdgeLabel:
 AddAttribute returns AddAttribute:
 	{AddAttribute}
 	('importedNamespace' importedNamespace=EString)?
-	'AddAttribute'
-	name=EString ':' type=[DataType|EString]
+	'add' 'attribute'
+	name=EString ':' type=[DataType|EString] 'to' ownerEntity=[Entity|EString]
 	;
 
 AddGraphEdge returns AddGraphEdge:
@@ -336,11 +341,11 @@ Attribute_Impl returns Attribute:
 
 AddRelation returns AddRelation:
 	('importedNamespace' importedNamespace=EString)?
-	'AddRelation'
-	name=EString 
+	'add' 'relation' 
+	name=EString 'to' ownerEntity=[Entity|EString]
 	(isContainment?=':')?
 	'->'
 	(type=[Entity|EString])
 	('.' opposite=[Relation|EString])?
 	('[' cardinality=Cardinality ']')?		
-	'}';
+	;

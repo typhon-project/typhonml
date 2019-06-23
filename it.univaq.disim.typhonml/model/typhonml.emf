@@ -42,6 +42,7 @@ class MergeEntity extends ChangeOperator {
 }
 
 class AddRelation extends Relation, ChangeOperator {
+	ref Entity[1] ownerEntity;
 }
 
 class RemoveRelation extends ChangeOperator {
@@ -75,6 +76,7 @@ class ChangeRelationCardinality extends ChangeOperator {
 }
 
 class AddAttribute extends Attribute, ChangeOperator {
+	ref Entity[1] ownerEntity;
 }
 
 class ChangeAttributeType extends ChangeOperator {

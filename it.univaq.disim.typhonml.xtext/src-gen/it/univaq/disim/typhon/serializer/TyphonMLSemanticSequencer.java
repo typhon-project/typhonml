@@ -21,6 +21,7 @@ import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
 import typhonml.AddRelation;
 import typhonml.Attribute;
+import typhonml.ChangeAttributeType;
 import typhonml.ChangeRelationCardinality;
 import typhonml.ChangeRelationContainement;
 import typhonml.Collection;
@@ -89,6 +90,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.ATTRIBUTE:
 				sequence_Attribute_Impl(context, (Attribute) semanticObject); 
+				return; 
+			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE:
+				sequence_ChangeAttributeType(context, (ChangeAttributeType) semanticObject); 
 				return; 
 			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY:
 				sequence_ChangeRelationCardinality(context, (ChangeRelationCardinality) semanticObject); 
@@ -207,7 +211,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddAttribute returns AddAttribute
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString type=[DataType|EString])
+	 *     (importedNamespace=EString? name=EString type=[DataType|EString] ownerEntity=[Entity|EString])
 	 */
 	protected void sequence_AddAttribute(ISerializationContext context, AddAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -264,6 +268,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (
 	 *         importedNamespace=EString? 
 	 *         name=EString 
+	 *         ownerEntity=[Entity|EString] 
 	 *         isContainment?=':'? 
 	 *         type=[Entity|EString] 
 	 *         opposite=[Relation|EString]? 
@@ -290,6 +295,28 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns ChangeAttributeType
+	 *     ChangeAttributeType returns ChangeAttributeType
+	 *
+	 * Constraint:
+	 *     (attributeToChange=[Attribute|EString] newType=[DataType|EString])
+	 */
+	protected void sequence_ChangeAttributeType(ISerializationContext context, ChangeAttributeType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getChangeAttributeTypeAccess().getAttributeToChangeAttributeEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE, false));
+		feeder.accept(grammarAccess.getChangeAttributeTypeAccess().getNewTypeDataTypeEStringParserRuleCall_4_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ChangeOperator returns ChangeRelationCardinality
 	 *     ChangeRelationCardinality returns ChangeRelationCardinality
 	 *
@@ -304,14 +331,15 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationEStringParserRuleCall_0_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
-		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_0_4_0(), semanticObject.getNewCardinality());
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CARDINALITY__RELATION, false));
+		feeder.accept(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_4_0(), semanticObject.getNewCardinality());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns ChangeRelationContainement
 	 *     ChangeRelationContainement returns ChangeRelationContainement
 	 *
 	 * Constraint:

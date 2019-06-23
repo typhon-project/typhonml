@@ -328,13 +328,94 @@ ruleChangeOperator returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationCardinalityParserRuleCall_12());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationContainementParserRuleCall_12());
 		}
-		this_ChangeRelationCardinality_12=ruleChangeRelationCardinality
+		this_ChangeRelationContainement_12=ruleChangeRelationContainement
 		{
-			$current = $this_ChangeRelationCardinality_12.current;
+			$current = $this_ChangeRelationContainement_12.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationCardinalityParserRuleCall_13());
+		}
+		this_ChangeRelationCardinality_13=ruleChangeRelationCardinality
+		{
+			$current = $this_ChangeRelationCardinality_13.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeAttributeTypeParserRuleCall_14());
+		}
+		this_ChangeAttributeType_14=ruleChangeAttributeType
+		{
+			$current = $this_ChangeAttributeType_14.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleChangeAttributeType
+entryRuleChangeAttributeType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getChangeAttributeTypeRule()); }
+	iv_ruleChangeAttributeType=ruleChangeAttributeType
+	{ $current=$iv_ruleChangeAttributeType.current; }
+	EOF;
+
+// Rule ChangeAttributeType
+ruleChangeAttributeType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='change'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getChangeAttributeTypeAccess().getChangeKeyword_0());
+		}
+		otherlv_1='attribute'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getChangeAttributeTypeAccess().getAttributeKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getChangeAttributeTypeRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getChangeAttributeTypeAccess().getAttributeToChangeAttributeCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='type'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getChangeAttributeTypeAccess().getTypeKeyword_3());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getChangeAttributeTypeRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getChangeAttributeTypeAccess().getNewTypeDataTypeCrossReference_4_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -903,6 +984,72 @@ ruleRemoveRelation returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleChangeRelationContainement
+entryRuleChangeRelationContainement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getChangeRelationContainementRule()); }
+	iv_ruleChangeRelationContainement=ruleChangeRelationContainement
+	{ $current=$iv_ruleChangeRelationContainement.current; }
+	EOF;
+
+// Rule ChangeRelationContainement
+ruleChangeRelationContainement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='change'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getChangeRelationContainementAccess().getChangeKeyword_0());
+		}
+		otherlv_1='containment'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getChangeRelationContainementAccess().getContainmentKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getChangeRelationContainementRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getChangeRelationContainementAccess().getRelationRelationCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='as'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getChangeRelationContainementAccess().getAsKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getChangeRelationContainementAccess().getNewContainmentEBooleanObjectParserRuleCall_4_0());
+				}
+				lv_newContainment_4_0=ruleEBooleanObject
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getChangeRelationContainementRule());
+					}
+					set(
+						$current,
+						"newContainment",
+						lv_newContainment_4_0,
+						"it.univaq.disim.typhon.TyphonML.EBooleanObject");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
 // Entry rule entryRuleChangeRelationCardinality
 entryRuleChangeRelationCardinality returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getChangeRelationCardinalityRule()); }
@@ -919,63 +1066,53 @@ ruleChangeRelationCardinality returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='change'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getChangeRelationCardinalityAccess().getChangeKeyword_0());
+		}
+		otherlv_1='cardinality'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getChangeRelationCardinalityAccess().getCardinalityKeyword_1());
+		}
 		(
-			otherlv_0='change'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getChangeRelationCardinalityAccess().getChangeKeyword_0_0());
-			}
-			otherlv_1='cardinality'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getChangeRelationCardinalityAccess().getCardinalityKeyword_0_1());
-			}
 			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getChangeRelationCardinalityRule());
-						}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getChangeRelationCardinalityRule());
 					}
-					{
-						newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationCrossReference_0_2_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_3='as'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getChangeRelationCardinalityAccess().getAsKeyword_0_3());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_0_4_0());
-					}
-					lv_newCardinality_4_0=ruleCardinality
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getChangeRelationCardinalityRule());
-						}
-						set(
-							$current,
-							"newCardinality",
-							lv_newCardinality_4_0,
-							"it.univaq.disim.typhon.TyphonML.Cardinality");
-						afterParserOrEnumRuleCall();
-					}
-				)
+				}
+				{
+					newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getRelationRelationCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)
-		    |
+		otherlv_3='as'
 		{
-			newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getEStringParserRuleCall_1());
+			newLeafNode(otherlv_3, grammarAccess.getChangeRelationCardinalityAccess().getAsKeyword_3());
 		}
-		ruleEString
-		{
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getChangeRelationCardinalityAccess().getNewCardinalityCardinalityEnumRuleCall_4_0());
+				}
+				lv_newCardinality_4_0=ruleCardinality
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getChangeRelationCardinalityRule());
+					}
+					set(
+						$current,
+						"newCardinality",
+						lv_newCardinality_4_0,
+						"it.univaq.disim.typhon.TyphonML.Cardinality");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -4135,16 +4272,20 @@ ruleAddAttribute returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_3='AddAttribute'
+		otherlv_3='add'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAddAttributeAccess().getAddAttributeKeyword_2());
+			newLeafNode(otherlv_3, grammarAccess.getAddAttributeAccess().getAddKeyword_2());
+		}
+		otherlv_4='attribute'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getAddAttributeAccess().getAttributeKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAddAttributeAccess().getNameEStringParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getAddAttributeAccess().getNameEStringParserRuleCall_4_0());
 				}
-				lv_name_4_0=ruleEString
+				lv_name_5_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAddAttributeRule());
@@ -4152,15 +4293,15 @@ ruleAddAttribute returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_4_0,
+						lv_name_5_0,
 						"it.univaq.disim.typhon.TyphonML.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5=':'
+		otherlv_6=':'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAddAttributeAccess().getColonKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getAddAttributeAccess().getColonKeyword_5());
 		}
 		(
 			(
@@ -4170,7 +4311,27 @@ ruleAddAttribute returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getAddAttributeAccess().getTypeDataTypeCrossReference_5_0());
+					newCompositeNode(grammarAccess.getAddAttributeAccess().getTypeDataTypeCrossReference_6_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8='to'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getAddAttributeAccess().getToKeyword_7());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddAttributeRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAddAttributeAccess().getOwnerEntityEntityCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -4885,16 +5046,20 @@ ruleAddRelation returns [EObject current=null]
 				)
 			)
 		)?
-		otherlv_2='AddRelation'
+		otherlv_2='add'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getAddRelationAccess().getAddRelationKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getAddRelationAccess().getAddKeyword_1());
+		}
+		otherlv_3='relation'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAddRelationAccess().getRelationKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getAddRelationAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getAddRelationAccess().getNameEStringParserRuleCall_3_0());
 				}
-				lv_name_3_0=ruleEString
+				lv_name_4_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getAddRelationRule());
@@ -4902,17 +5067,37 @@ ruleAddRelation returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_3_0,
+						lv_name_4_0,
 						"it.univaq.disim.typhon.TyphonML.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5='to'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getAddRelationAccess().getToKeyword_4());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddRelationRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAddRelationAccess().getOwnerEntityEntityCrossReference_5_0());
+				}
+				ruleEString
+				{
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
 		(
 			(
-				lv_isContainment_4_0=':'
+				lv_isContainment_7_0=':'
 				{
-					newLeafNode(lv_isContainment_4_0, grammarAccess.getAddRelationAccess().getIsContainmentColonKeyword_3_0());
+					newLeafNode(lv_isContainment_7_0, grammarAccess.getAddRelationAccess().getIsContainmentColonKeyword_6_0());
 				}
 				{
 					if ($current==null) {
@@ -4922,9 +5107,9 @@ ruleAddRelation returns [EObject current=null]
 				}
 			)
 		)?
-		otherlv_5='->'
+		otherlv_8='->'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getAddRelationAccess().getHyphenMinusGreaterThanSignKeyword_4());
+			newLeafNode(otherlv_8, grammarAccess.getAddRelationAccess().getHyphenMinusGreaterThanSignKeyword_7());
 		}
 		(
 			(
@@ -4934,7 +5119,7 @@ ruleAddRelation returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getAddRelationAccess().getTypeEntityCrossReference_5_0());
+					newCompositeNode(grammarAccess.getAddRelationAccess().getTypeEntityCrossReference_8_0());
 				}
 				ruleEString
 				{
@@ -4943,9 +5128,9 @@ ruleAddRelation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_7='.'
+			otherlv_10='.'
 			{
-				newLeafNode(otherlv_7, grammarAccess.getAddRelationAccess().getFullStopKeyword_6_0());
+				newLeafNode(otherlv_10, grammarAccess.getAddRelationAccess().getFullStopKeyword_9_0());
 			}
 			(
 				(
@@ -4955,7 +5140,7 @@ ruleAddRelation returns [EObject current=null]
 						}
 					}
 					{
-						newCompositeNode(grammarAccess.getAddRelationAccess().getOppositeRelationCrossReference_6_1_0());
+						newCompositeNode(grammarAccess.getAddRelationAccess().getOppositeRelationCrossReference_9_1_0());
 					}
 					ruleEString
 					{
@@ -4965,16 +5150,16 @@ ruleAddRelation returns [EObject current=null]
 			)
 		)?
 		(
-			otherlv_9='['
+			otherlv_12='['
 			{
-				newLeafNode(otherlv_9, grammarAccess.getAddRelationAccess().getLeftSquareBracketKeyword_7_0());
+				newLeafNode(otherlv_12, grammarAccess.getAddRelationAccess().getLeftSquareBracketKeyword_10_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAddRelationAccess().getCardinalityCardinalityEnumRuleCall_7_1_0());
+						newCompositeNode(grammarAccess.getAddRelationAccess().getCardinalityCardinalityEnumRuleCall_10_1_0());
 					}
-					lv_cardinality_10_0=ruleCardinality
+					lv_cardinality_13_0=ruleCardinality
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAddRelationRule());
@@ -4982,21 +5167,17 @@ ruleAddRelation returns [EObject current=null]
 						set(
 							$current,
 							"cardinality",
-							lv_cardinality_10_0,
+							lv_cardinality_13_0,
 							"it.univaq.disim.typhon.TyphonML.Cardinality");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-			otherlv_11=']'
+			otherlv_14=']'
 			{
-				newLeafNode(otherlv_11, grammarAccess.getAddRelationAccess().getRightSquareBracketKeyword_7_2());
+				newLeafNode(otherlv_14, grammarAccess.getAddRelationAccess().getRightSquareBracketKeyword_10_2());
 			}
 		)?
-		otherlv_12='}'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getAddRelationAccess().getRightCurlyBracketKeyword_8());
-		}
 	)
 ;
 

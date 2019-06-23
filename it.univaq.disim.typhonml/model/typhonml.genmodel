@@ -61,7 +61,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//MergeEntity/secondEntityToMerge"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//MergeEntity/newEntityName"/>
     </genClasses>
-    <genClasses ecoreClass="typhonml.ecore#//AddRelation"/>
+    <genClasses ecoreClass="typhonml.ecore#//AddRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddRelation/ownerEntity"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RemoveRelation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveRelation/relationToRemove"/>
     </genClasses>
@@ -85,7 +87,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeRelationCardinality/relation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangeRelationCardinality/newCardinality"/>
     </genClasses>
-    <genClasses ecoreClass="typhonml.ecore#//AddAttribute"/>
+    <genClasses ecoreClass="typhonml.ecore#//AddAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttribute/ownerEntity"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//ChangeAttributeType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeAttributeType/attributeToChange"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeAttributeType/newType"/>

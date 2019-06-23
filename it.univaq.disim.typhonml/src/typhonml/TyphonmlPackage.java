@@ -736,13 +736,22 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_RELATION__IS_CONTAINMENT = RELATION__IS_CONTAINMENT;
 
 	/**
+	 * The feature id for the '<em><b>Owner Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_RELATION__OWNER_ENTITY = RELATION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Add Relation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_RELATION_FEATURE_COUNT = RELATION_FEATURE_COUNT + 0;
+	int ADD_RELATION_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Add Relation</em>' class.
@@ -1123,13 +1132,22 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_ATTRIBUTE__TYPE = ATTRIBUTE__TYPE;
 
 	/**
+	 * The feature id for the '<em><b>Owner Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ATTRIBUTE__OWNER_ENTITY = ATTRIBUTE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Add Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 0;
+	int ADD_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Add Attribute</em>' class.
@@ -3306,6 +3324,17 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getAddRelation();
 
 	/**
+	 * Returns the meta object for the reference '{@link typhonml.AddRelation#getOwnerEntity <em>Owner Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Owner Entity</em>'.
+	 * @see typhonml.AddRelation#getOwnerEntity()
+	 * @see #getAddRelation()
+	 * @generated
+	 */
+	EReference getAddRelation_OwnerEntity();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.RemoveRelation <em>Remove Relation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3483,6 +3512,17 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAddAttribute();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.AddAttribute#getOwnerEntity <em>Owner Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Owner Entity</em>'.
+	 * @see typhonml.AddAttribute#getOwnerEntity()
+	 * @see #getAddAttribute()
+	 * @generated
+	 */
+	EReference getAddAttribute_OwnerEntity();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.ChangeAttributeType <em>Change Attribute Type</em>}'.
@@ -4757,6 +4797,14 @@ public interface TyphonmlPackage extends EPackage {
 		EClass ADD_RELATION = eINSTANCE.getAddRelation();
 
 		/**
+		 * The meta object literal for the '<em><b>Owner Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_RELATION__OWNER_ENTITY = eINSTANCE.getAddRelation_OwnerEntity();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.RemoveRelationImpl <em>Remove Relation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4907,6 +4955,14 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ADD_ATTRIBUTE = eINSTANCE.getAddAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Owner Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_ATTRIBUTE__OWNER_ENTITY = eINSTANCE.getAddAttribute_OwnerEntity();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.ChangeAttributeTypeImpl <em>Change Attribute Type</em>}' class.
