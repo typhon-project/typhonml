@@ -53,7 +53,7 @@ public class TyphonEvaluator {
     				// TODO there is an error here
     				// IEtlContext etlContext = ((EtlModule) module).getContext();
     				((EvlModule) module).getContext().getModelRepository().addModel(new TyphonEvaluator().createEmfModel(
-    						"NameForRunConfiguration", 
+    						"TyphonML", //This name is important for TyphonML!`Collection` in EOL files 
     						modelToEvaluatePath, 
     						"typhonml.ecore", 
     						true, 

@@ -1,20 +1,6 @@
-
-
 operation Entity checkIsContainmentER() : Boolean{
-	for(rel in self.relations){
-		if(rel.isContainment <> null and rel.isContainment == true){
-			if(rel.type.genericList <> null and rel.type.genericList.isTypeOf(Table)){
-				(self.name + " has "+rel.type.name+" (with reference "+rel.name+") " +
-				"as containment and mapped in ER").println();
-				return true;
-			}
-		}
-	}
-	return false;
+	return self.getAllIsContainmentER().notEmpty();
 }
-
-
-
 
 operation Entity getAllIsContainmentER() : List<Entity>{
 	var er_containmentEntities : List<Entity>; 
@@ -31,67 +17,26 @@ operation Entity getAllIsContainmentER() : List<Entity>{
 }
 
 operation Entity changeDBFromRelationalToDocument(){
-	
 	for(ent in self.getAllIsContainmentER()){
-		//ent.name.println();
-	
-		var nameOfTheDatabaseToTransfer;
-	
 		for(db in self.eContainer().databases){
 			if(db.isTypeOf(RelationalDB)){
-				for(table in db.tables){
-					if(table.entity == ent){
-						//table.entity.println();
-						nameOfTheDatabaseToTransfer = table.name;
-						//remove ent from db.tables
-						db.removeTable(table);
-						
-						db.addCollectionToDocumentDB(nameOfTheDatabaseToTransfer, ent);
-					}
-				}
+				var tableToDelete = db.tables.selectOne(tb : Table | tb.entity == ent);
+				var nameOfTheDatabaseToTransfer := tableToDelete.name;
+				delete tableToDelete;
+				db.addCollectionToDocumentDB(nameOfTheDatabaseToTransfer, ent);
 			}
 		}
-		
-		
 	}
-	
-	//self.eContainer().dataTypes.add(newEntity);
-	//("Entity " + self.name + " moved from Relational to Document").println();
-}
-operation RelationalDB removeTable(table : Table){
-/*
-	var tablesToDelete : List<Table>; 
-	for(t in self.tables){
-		if(t == table){
-			//self.tables.remove(t);
-			tablesToDelete.add(t);
-		}
-	}
-	
-	
-	
-	
-	for(t in tablesToDelete){
-//				self.eContainer().databases.remove(t);
-				delete t;
-				(t+" Removed!").println();
-				
-	}
-	
-	*/
-	delete self.tables.select(t|t == table);
-
 }
 
 operation Database addCollectionToDocumentDB(inputName : String, ent : Entity){
 	for(db in self.eContainer().databases){
 		if(db.isTypeOf(DocumentDB)){
-			("@@@"+inputName).println();
-			var newCollection : new `Collection`;
+			var newCollection := new TyphonML!`Collection`;
 			newCollection.name = inputName;
-			newCollection.println();
-			//add ent in db.collections
 			newCollection.entity = ent;
+			db.collections.add(newCollection);
 		}
 	}
 }
+
