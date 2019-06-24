@@ -16,9 +16,11 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import typhonml.AddAttribute;
+import typhonml.AddAttributesToIndex;
 import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
+import typhonml.AddIndex;
 import typhonml.AddRelation;
 import typhonml.Attribute;
 import typhonml.ChangeAttributeType;
@@ -31,6 +33,7 @@ import typhonml.CustomDataType;
 import typhonml.DataTypeImplementationPackage;
 import typhonml.DataTypeItem;
 import typhonml.DocumentDB;
+import typhonml.DropIndex;
 import typhonml.Entity;
 import typhonml.FreeText;
 import typhonml.GraphAttribute;
@@ -50,11 +53,14 @@ import typhonml.PrimitiveDataType;
 import typhonml.Relation;
 import typhonml.RelationalDB;
 import typhonml.RemoveAttribute;
+import typhonml.RemoveAttributesToIndex;
 import typhonml.RemoveEntity;
 import typhonml.RemoveRelation;
 import typhonml.RenameAttribute;
+import typhonml.RenameCollection;
 import typhonml.RenameEntity;
 import typhonml.RenameRelation;
+import typhonml.RenameTable;
 import typhonml.SplitEntity;
 import typhonml.Table;
 import typhonml.TyphonmlPackage;
@@ -76,6 +82,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.ADD_ATTRIBUTE:
 				sequence_AddAttribute(context, (AddAttribute) semanticObject); 
 				return; 
+			case TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX:
+				sequence_AddAttributesToIndex(context, (AddAttributesToIndex) semanticObject); 
+				return; 
 			case TyphonmlPackage.ADD_ENTITY:
 				sequence_AddEntity(context, (AddEntity) semanticObject); 
 				return; 
@@ -84,6 +93,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.ADD_GRAPH_EDGE:
 				sequence_AddGraphEdge(context, (AddGraphEdge) semanticObject); 
+				return; 
+			case TyphonmlPackage.ADD_INDEX:
+				sequence_AddIndexTable(context, (AddIndex) semanticObject); 
 				return; 
 			case TyphonmlPackage.ADD_RELATION:
 				sequence_AddRelation(context, (AddRelation) semanticObject); 
@@ -120,6 +132,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.DOCUMENT_DB:
 				sequence_DocumentDB(context, (DocumentDB) semanticObject); 
+				return; 
+			case TyphonmlPackage.DROP_INDEX:
+				sequence_DropIndexTable(context, (DropIndex) semanticObject); 
 				return; 
 			case TyphonmlPackage.ENTITY:
 				sequence_Entity_Impl(context, (Entity) semanticObject); 
@@ -178,6 +193,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.REMOVE_ATTRIBUTE:
 				sequence_RemoveAttribute(context, (RemoveAttribute) semanticObject); 
 				return; 
+			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_INDEX:
+				sequence_RemoveAttributesToIndex(context, (RemoveAttributesToIndex) semanticObject); 
+				return; 
 			case TyphonmlPackage.REMOVE_ENTITY:
 				sequence_RemoveEntity(context, (RemoveEntity) semanticObject); 
 				return; 
@@ -187,11 +205,17 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.RENAME_ATTRIBUTE:
 				sequence_RenameAttribute(context, (RenameAttribute) semanticObject); 
 				return; 
+			case TyphonmlPackage.RENAME_COLLECTION:
+				sequence_RenameCollection(context, (RenameCollection) semanticObject); 
+				return; 
 			case TyphonmlPackage.RENAME_ENTITY:
 				sequence_RenameEntity(context, (RenameEntity) semanticObject); 
 				return; 
 			case TyphonmlPackage.RENAME_RELATION:
 				sequence_RenameRelation(context, (RenameRelation) semanticObject); 
+				return; 
+			case TyphonmlPackage.RENAME_TABLE:
+				sequence_RenameTable(context, (RenameTable) semanticObject); 
 				return; 
 			case TyphonmlPackage.SPLIT_ENTITY:
 				sequence_SplitEntity(context, (SplitEntity) semanticObject); 
@@ -220,8 +244,20 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns AddAttributesToIndex
+	 *     AddAttributesToIndex returns AddAttributesToIndex
+	 *
+	 * Constraint:
+	 *     (table=[Table|EString] attributes+=[Attribute|EString] attributes+=[Attribute|EString]?)
+	 */
+	protected void sequence_AddAttributesToIndex(ISerializationContext context, AddAttributesToIndex semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ChangeOperator returns AddEntity
-	 *     Entity returns AddEntity
 	 *     AddEntity returns AddEntity
 	 *
 	 * Constraint:
@@ -254,6 +290,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (importedNamespace=EString? name=EString from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
 	 */
 	protected void sequence_AddGraphEdge(ISerializationContext context, AddGraphEdge semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns AddIndex
+	 *     AddIndexTable returns AddIndex
+	 *
+	 * Constraint:
+	 *     (table=[Table|EString] attributes+=[Attribute|EString] attributes+=[Attribute|EString]?)
+	 */
+	protected void sequence_AddIndexTable(ISerializationContext context, AddIndex semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -456,8 +505,26 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns DropIndex
+	 *     DropIndexTable returns DropIndex
+	 *
+	 * Constraint:
+	 *     table=[Table|EString]
+	 */
+	protected void sequence_DropIndexTable(ISerializationContext context, DropIndex semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DROP_INDEX__TABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DROP_INDEX__TABLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDropIndexTableAccess().getTableTableEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.DROP_INDEX__TABLE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     DataType returns Entity
-	 *     Entity returns Entity
 	 *     Entity_Impl returns Entity
 	 *
 	 * Constraint:
@@ -750,6 +817,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns RemoveAttributesToIndex
+	 *     RemoveAttributesToIndex returns RemoveAttributesToIndex
+	 *
+	 * Constraint:
+	 *     (table=[Table|EString] attributes+=[Attribute|EString] attributes+=[Attribute|EString]?)
+	 */
+	protected void sequence_RemoveAttributesToIndex(ISerializationContext context, RemoveAttributesToIndex semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ChangeOperator returns RemoveEntity
 	 *     RemoveEntity returns RemoveEntity
 	 *
@@ -810,6 +890,28 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns RenameCollection
+	 *     RenameCollection returns RenameCollection
+	 *
+	 * Constraint:
+	 *     (collectionToRename=[Collection|EString] newName=EString)
+	 */
+	protected void sequence_RenameCollection(ISerializationContext context, RenameCollection semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_COLLECTION__COLLECTION_TO_RENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_COLLECTION__COLLECTION_TO_RENAME));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_COLLECTION__NEW_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_COLLECTION__NEW_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRenameCollectionAccess().getCollectionToRenameCollectionEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_COLLECTION__COLLECTION_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameCollectionAccess().getNewNameEStringParserRuleCall_4_0(), semanticObject.getNewName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ChangeOperator returns RenameEntity
 	 *     RenameEntity returns RenameEntity
 	 *
@@ -848,6 +950,28 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRenameRelationAccess().getRelationToRenameRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_RELATION__RELATION_TO_RENAME, false));
 		feeder.accept(grammarAccess.getRenameRelationAccess().getNewRelationNameEStringParserRuleCall_4_0(), semanticObject.getNewRelationName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RenameTable
+	 *     RenameTable returns RenameTable
+	 *
+	 * Constraint:
+	 *     (tableToRename=[Table|EString] newName=EString)
+	 */
+	protected void sequence_RenameTable(ISerializationContext context, RenameTable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_TABLE__TABLE_TO_RENAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_TABLE__TABLE_TO_RENAME));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.RENAME_TABLE__NEW_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.RENAME_TABLE__NEW_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRenameTableAccess().getTableToRenameTableEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_TABLE__TABLE_TO_RENAME, false));
+		feeder.accept(grammarAccess.getRenameTableAccess().getNewNameEStringParserRuleCall_4_0(), semanticObject.getNewName());
 		feeder.finish();
 	}
 	

@@ -78,6 +78,11 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.RENAME_TABLE: return createRenameTable();
 			case TyphonmlPackage.ADD_INDEX: return createAddIndex();
 			case TyphonmlPackage.DROP_INDEX: return createDropIndex();
+			case TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX: return createAddAttributesToIndex();
+			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_INDEX: return createRemoveAttributesToIndex();
+			case TyphonmlPackage.RENAME_COLLECTION: return createRenameCollection();
+			case TyphonmlPackage.ADD_COLLECTION_INDEX: return createAddCollectionIndex();
+			case TyphonmlPackage.DROP_COLLECTION_INDEX: return createDropCollectionIndex();
 			case TyphonmlPackage.ADD_GRAPH_ATTRIBUTE: return createAddGraphAttribute();
 			case TyphonmlPackage.REMOVE_GRAPH_ATTRIBUTE: return createRemoveGraphAttribute();
 			case TyphonmlPackage.ADD_GRAPH_EDGE: return createAddGraphEdge();
@@ -378,6 +383,61 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public DropIndex createDropIndex() {
 		DropIndexImpl dropIndex = new DropIndexImpl();
 		return dropIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddAttributesToIndex createAddAttributesToIndex() {
+		AddAttributesToIndexImpl addAttributesToIndex = new AddAttributesToIndexImpl();
+		return addAttributesToIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RemoveAttributesToIndex createRemoveAttributesToIndex() {
+		RemoveAttributesToIndexImpl removeAttributesToIndex = new RemoveAttributesToIndexImpl();
+		return removeAttributesToIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RenameCollection createRenameCollection() {
+		RenameCollectionImpl renameCollection = new RenameCollectionImpl();
+		return renameCollection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddCollectionIndex createAddCollectionIndex() {
+		AddCollectionIndexImpl addCollectionIndex = new AddCollectionIndexImpl();
+		return addCollectionIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DropCollectionIndex createDropCollectionIndex() {
+		DropCollectionIndexImpl dropCollectionIndex = new DropCollectionIndexImpl();
+		return dropCollectionIndex;
 	}
 
 	/**

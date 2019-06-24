@@ -555,6 +555,121 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddAttributesToIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddAttributesToIndexItemProvider addAttributesToIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddAttributesToIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddAttributesToIndexAdapter() {
+		if (addAttributesToIndexItemProvider == null) {
+			addAttributesToIndexItemProvider = new AddAttributesToIndexItemProvider(this);
+		}
+
+		return addAttributesToIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveAttributesToIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveAttributesToIndexItemProvider removeAttributesToIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveAttributesToIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveAttributesToIndexAdapter() {
+		if (removeAttributesToIndexItemProvider == null) {
+			removeAttributesToIndexItemProvider = new RemoveAttributesToIndexItemProvider(this);
+		}
+
+		return removeAttributesToIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenameCollection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenameCollectionItemProvider renameCollectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenameCollection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenameCollectionAdapter() {
+		if (renameCollectionItemProvider == null) {
+			renameCollectionItemProvider = new RenameCollectionItemProvider(this);
+		}
+
+		return renameCollectionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddCollectionIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddCollectionIndexItemProvider addCollectionIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddCollectionIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddCollectionIndexAdapter() {
+		if (addCollectionIndexItemProvider == null) {
+			addCollectionIndexItemProvider = new AddCollectionIndexItemProvider(this);
+		}
+
+		return addCollectionIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DropCollectionIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DropCollectionIndexItemProvider dropCollectionIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DropCollectionIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDropCollectionIndexAdapter() {
+		if (dropCollectionIndexItemProvider == null) {
+			dropCollectionIndexItemProvider = new DropCollectionIndexItemProvider(this);
+		}
+
+		return dropCollectionIndexItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.AddGraphAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1416,6 +1531,11 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (renameTableItemProvider != null) renameTableItemProvider.dispose();
 		if (addIndexItemProvider != null) addIndexItemProvider.dispose();
 		if (dropIndexItemProvider != null) dropIndexItemProvider.dispose();
+		if (addAttributesToIndexItemProvider != null) addAttributesToIndexItemProvider.dispose();
+		if (removeAttributesToIndexItemProvider != null) removeAttributesToIndexItemProvider.dispose();
+		if (renameCollectionItemProvider != null) renameCollectionItemProvider.dispose();
+		if (addCollectionIndexItemProvider != null) addCollectionIndexItemProvider.dispose();
+		if (dropCollectionIndexItemProvider != null) dropCollectionIndexItemProvider.dispose();
 		if (addGraphAttributeItemProvider != null) addGraphAttributeItemProvider.dispose();
 		if (removeGraphAttributeItemProvider != null) removeGraphAttributeItemProvider.dispose();
 		if (addGraphEdgeItemProvider != null) addGraphEdgeItemProvider.dispose();

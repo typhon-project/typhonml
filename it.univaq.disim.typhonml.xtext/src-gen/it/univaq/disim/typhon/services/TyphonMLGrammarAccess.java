@@ -124,16 +124,27 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cChangeRelationContainementParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		private final RuleCall cChangeRelationCardinalityParserRuleCall_13 = (RuleCall)cAlternatives.eContents().get(13);
 		private final RuleCall cChangeAttributeTypeParserRuleCall_14 = (RuleCall)cAlternatives.eContents().get(14);
+		private final RuleCall cAddIndexTableParserRuleCall_15 = (RuleCall)cAlternatives.eContents().get(15);
+		private final RuleCall cDropIndexTableParserRuleCall_16 = (RuleCall)cAlternatives.eContents().get(16);
+		private final RuleCall cRenameTableParserRuleCall_17 = (RuleCall)cAlternatives.eContents().get(17);
+		private final RuleCall cAddAttributesToIndexParserRuleCall_18 = (RuleCall)cAlternatives.eContents().get(18);
+		private final RuleCall cRemoveAttributesToIndexParserRuleCall_19 = (RuleCall)cAlternatives.eContents().get(19);
+		private final RuleCall cRenameCollectionParserRuleCall_20 = (RuleCall)cAlternatives.eContents().get(20);
 		
 		//ChangeOperator:
 		//	AddEntity | RemoveEntity | RenameEntity | MigrateEntity | SplitEntity | MergeEntity | AddAttribute | AddRelation |
 		//	RenameAttribute | RenameRelation | RemoveAttribute | RemoveRelation | ChangeRelationContainement |
-		//	ChangeRelationCardinality | ChangeAttributeType;
+		//	ChangeRelationCardinality | ChangeAttributeType | AddIndexTable | DropIndexTable | RenameTable | AddAttributesToIndex
+		//	| RemoveAttributesToIndex | RenameCollection
+		//	//	AddCollectionIndex |
+		//	//	DropCollectionIndex
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//AddEntity | RemoveEntity | RenameEntity | MigrateEntity | SplitEntity | MergeEntity | AddAttribute | AddRelation |
 		//RenameAttribute | RenameRelation | RemoveAttribute | RemoveRelation | ChangeRelationContainement |
-		//ChangeRelationCardinality | ChangeAttributeType
+		//ChangeRelationCardinality | ChangeAttributeType | AddIndexTable | DropIndexTable | RenameTable | AddAttributesToIndex
+		//| RemoveAttributesToIndex | RenameCollection
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//AddEntity
@@ -180,6 +191,368 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ChangeAttributeType
 		public RuleCall getChangeAttributeTypeParserRuleCall_14() { return cChangeAttributeTypeParserRuleCall_14; }
+		
+		//AddIndexTable
+		public RuleCall getAddIndexTableParserRuleCall_15() { return cAddIndexTableParserRuleCall_15; }
+		
+		//DropIndexTable
+		public RuleCall getDropIndexTableParserRuleCall_16() { return cDropIndexTableParserRuleCall_16; }
+		
+		//RenameTable
+		public RuleCall getRenameTableParserRuleCall_17() { return cRenameTableParserRuleCall_17; }
+		
+		//AddAttributesToIndex
+		public RuleCall getAddAttributesToIndexParserRuleCall_18() { return cAddAttributesToIndexParserRuleCall_18; }
+		
+		//RemoveAttributesToIndex
+		public RuleCall getRemoveAttributesToIndexParserRuleCall_19() { return cRemoveAttributesToIndexParserRuleCall_19; }
+		
+		//RenameCollection
+		public RuleCall getRenameCollectionParserRuleCall_20() { return cRenameCollectionParserRuleCall_20; }
+	}
+	public class RenameCollectionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.RenameCollection");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRenameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cCollectionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cCollectionToRenameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cCollectionToRenameCollectionCrossReference_2_0 = (CrossReference)cCollectionToRenameAssignment_2.eContents().get(0);
+		private final RuleCall cCollectionToRenameCollectionEStringParserRuleCall_2_0_1 = (RuleCall)cCollectionToRenameCollectionCrossReference_2_0.eContents().get(1);
+		private final Keyword cAsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNewNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNewNameEStringParserRuleCall_4_0 = (RuleCall)cNewNameAssignment_4.eContents().get(0);
+		
+		////DropCollectionIndex returns DropCollectionIndex:;
+		// /* 
+		//AddCollectionIndex:
+		//	
+		//;
+		//*/ RenameCollection:
+		//	'rename' 'collection' collectionToRename=[Collection|EString] 'as' newName=EString;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'rename' 'collection' collectionToRename=[Collection|EString] 'as' newName=EString
+		public Group getGroup() { return cGroup; }
+		
+		//'rename'
+		public Keyword getRenameKeyword_0() { return cRenameKeyword_0; }
+		
+		//'collection'
+		public Keyword getCollectionKeyword_1() { return cCollectionKeyword_1; }
+		
+		//collectionToRename=[Collection|EString]
+		public Assignment getCollectionToRenameAssignment_2() { return cCollectionToRenameAssignment_2; }
+		
+		//[Collection|EString]
+		public CrossReference getCollectionToRenameCollectionCrossReference_2_0() { return cCollectionToRenameCollectionCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getCollectionToRenameCollectionEStringParserRuleCall_2_0_1() { return cCollectionToRenameCollectionEStringParserRuleCall_2_0_1; }
+		
+		//'as'
+		public Keyword getAsKeyword_3() { return cAsKeyword_3; }
+		
+		//newName=EString
+		public Assignment getNewNameAssignment_4() { return cNewNameAssignment_4; }
+		
+		//EString
+		public RuleCall getNewNameEStringParserRuleCall_4_0() { return cNewNameEStringParserRuleCall_4_0; }
+	}
+	public class AddAttributesToIndexElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddAttributesToIndex");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cExtendsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTableindexKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTableAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTableTableCrossReference_2_0 = (CrossReference)cTableAssignment_2.eContents().get(0);
+		private final RuleCall cTableTableEStringParserRuleCall_2_0_1 = (RuleCall)cTableTableCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributesAttributeCrossReference_4_0 = (CrossReference)cAttributesAssignment_4.eContents().get(0);
+		private final RuleCall cAttributesAttributeEStringParserRuleCall_4_0_1 = (RuleCall)cAttributesAttributeCrossReference_4_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAttributesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cAttributesAttributeCrossReference_5_1_0 = (CrossReference)cAttributesAssignment_5_1.eContents().get(0);
+		private final RuleCall cAttributesAttributeEStringParserRuleCall_5_1_0_1 = (RuleCall)cAttributesAttributeCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//AddAttributesToIndex:
+		//	'extends' 'tableindex' table=[Table|EString] '{'
+		//	attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'extends' 'tableindex' table=[Table|EString] '{' attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'extends'
+		public Keyword getExtendsKeyword_0() { return cExtendsKeyword_0; }
+		
+		//'tableindex'
+		public Keyword getTableindexKeyword_1() { return cTableindexKeyword_1; }
+		
+		//table=[Table|EString]
+		public Assignment getTableAssignment_2() { return cTableAssignment_2; }
+		
+		//[Table|EString]
+		public CrossReference getTableTableCrossReference_2_0() { return cTableTableCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getTableTableEStringParserRuleCall_2_0_1() { return cTableTableEStringParserRuleCall_2_0_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//attributes+=[Attribute|EString]
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributesAttributeCrossReference_4_0() { return cAttributesAttributeCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getAttributesAttributeEStringParserRuleCall_4_0_1() { return cAttributesAttributeEStringParserRuleCall_4_0_1; }
+		
+		//("," attributes+=[Attribute|EString])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//attributes+=[Attribute|EString]
+		public Assignment getAttributesAssignment_5_1() { return cAttributesAssignment_5_1; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributesAttributeCrossReference_5_1_0() { return cAttributesAttributeCrossReference_5_1_0; }
+		
+		//EString
+		public RuleCall getAttributesAttributeEStringParserRuleCall_5_1_0_1() { return cAttributesAttributeEStringParserRuleCall_5_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class RemoveAttributesToIndexElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.RemoveAttributesToIndex");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cReduceKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTableindexKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTableAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTableTableCrossReference_2_0 = (CrossReference)cTableAssignment_2.eContents().get(0);
+		private final RuleCall cTableTableEStringParserRuleCall_2_0_1 = (RuleCall)cTableTableCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributesAttributeCrossReference_4_0 = (CrossReference)cAttributesAssignment_4.eContents().get(0);
+		private final RuleCall cAttributesAttributeEStringParserRuleCall_4_0_1 = (RuleCall)cAttributesAttributeCrossReference_4_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAttributesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cAttributesAttributeCrossReference_5_1_0 = (CrossReference)cAttributesAssignment_5_1.eContents().get(0);
+		private final RuleCall cAttributesAttributeEStringParserRuleCall_5_1_0_1 = (RuleCall)cAttributesAttributeCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//RemoveAttributesToIndex:
+		//	'reduce' 'tableindex' table=[Table|EString] '{'
+		//	attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'reduce' 'tableindex' table=[Table|EString] '{' attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'reduce'
+		public Keyword getReduceKeyword_0() { return cReduceKeyword_0; }
+		
+		//'tableindex'
+		public Keyword getTableindexKeyword_1() { return cTableindexKeyword_1; }
+		
+		//table=[Table|EString]
+		public Assignment getTableAssignment_2() { return cTableAssignment_2; }
+		
+		//[Table|EString]
+		public CrossReference getTableTableCrossReference_2_0() { return cTableTableCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getTableTableEStringParserRuleCall_2_0_1() { return cTableTableEStringParserRuleCall_2_0_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//attributes+=[Attribute|EString]
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributesAttributeCrossReference_4_0() { return cAttributesAttributeCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getAttributesAttributeEStringParserRuleCall_4_0_1() { return cAttributesAttributeEStringParserRuleCall_4_0_1; }
+		
+		//("," attributes+=[Attribute|EString])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//attributes+=[Attribute|EString]
+		public Assignment getAttributesAssignment_5_1() { return cAttributesAssignment_5_1; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributesAttributeCrossReference_5_1_0() { return cAttributesAttributeCrossReference_5_1_0; }
+		
+		//EString
+		public RuleCall getAttributesAttributeEStringParserRuleCall_5_1_0_1() { return cAttributesAttributeEStringParserRuleCall_5_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+	public class RenameTableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.RenameTable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cRenameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTableKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTableToRenameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTableToRenameTableCrossReference_2_0 = (CrossReference)cTableToRenameAssignment_2.eContents().get(0);
+		private final RuleCall cTableToRenameTableEStringParserRuleCall_2_0_1 = (RuleCall)cTableToRenameTableCrossReference_2_0.eContents().get(1);
+		private final Keyword cAsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNewNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNewNameEStringParserRuleCall_4_0 = (RuleCall)cNewNameAssignment_4.eContents().get(0);
+		
+		//RenameTable:
+		//	'rename' 'table' tableToRename=[Table|EString] 'as' newName=EString;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'rename' 'table' tableToRename=[Table|EString] 'as' newName=EString
+		public Group getGroup() { return cGroup; }
+		
+		//'rename'
+		public Keyword getRenameKeyword_0() { return cRenameKeyword_0; }
+		
+		//'table'
+		public Keyword getTableKeyword_1() { return cTableKeyword_1; }
+		
+		//tableToRename=[Table|EString]
+		public Assignment getTableToRenameAssignment_2() { return cTableToRenameAssignment_2; }
+		
+		//[Table|EString]
+		public CrossReference getTableToRenameTableCrossReference_2_0() { return cTableToRenameTableCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getTableToRenameTableEStringParserRuleCall_2_0_1() { return cTableToRenameTableEStringParserRuleCall_2_0_1; }
+		
+		//'as'
+		public Keyword getAsKeyword_3() { return cAsKeyword_3; }
+		
+		//newName=EString
+		public Assignment getNewNameAssignment_4() { return cNewNameAssignment_4; }
+		
+		//EString
+		public RuleCall getNewNameEStringParserRuleCall_4_0() { return cNewNameEStringParserRuleCall_4_0; }
+	}
+	public class DropIndexTableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.DropIndexTable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDropKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTableindexKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTableAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTableTableCrossReference_2_0 = (CrossReference)cTableAssignment_2.eContents().get(0);
+		private final RuleCall cTableTableEStringParserRuleCall_2_0_1 = (RuleCall)cTableTableCrossReference_2_0.eContents().get(1);
+		
+		//DropIndexTable DropIndex:
+		//	'drop' 'tableindex' table=[Table|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'drop' 'tableindex' table=[Table|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//'drop'
+		public Keyword getDropKeyword_0() { return cDropKeyword_0; }
+		
+		//'tableindex'
+		public Keyword getTableindexKeyword_1() { return cTableindexKeyword_1; }
+		
+		//table=[Table|EString]
+		public Assignment getTableAssignment_2() { return cTableAssignment_2; }
+		
+		//[Table|EString]
+		public CrossReference getTableTableCrossReference_2_0() { return cTableTableCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getTableTableEStringParserRuleCall_2_0_1() { return cTableTableEStringParserRuleCall_2_0_1; }
+	}
+	public class AddIndexTableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddIndexTable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCreateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cTableindexKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cTableAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTableTableCrossReference_2_0 = (CrossReference)cTableAssignment_2.eContents().get(0);
+		private final RuleCall cTableTableEStringParserRuleCall_2_0_1 = (RuleCall)cTableTableCrossReference_2_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cAttributesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cAttributesAttributeCrossReference_4_0 = (CrossReference)cAttributesAssignment_4.eContents().get(0);
+		private final RuleCall cAttributesAttributeEStringParserRuleCall_4_0_1 = (RuleCall)cAttributesAttributeCrossReference_4_0.eContents().get(1);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAttributesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cAttributesAttributeCrossReference_5_1_0 = (CrossReference)cAttributesAssignment_5_1.eContents().get(0);
+		private final RuleCall cAttributesAttributeEStringParserRuleCall_5_1_0_1 = (RuleCall)cAttributesAttributeCrossReference_5_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//AddIndexTable AddIndex:
+		//	'create' 'tableindex' table=[Table|EString] '{'
+		//	attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+		//	'}';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'create' 'tableindex' table=[Table|EString] '{' attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+		//'}'
+		public Group getGroup() { return cGroup; }
+		
+		//'create'
+		public Keyword getCreateKeyword_0() { return cCreateKeyword_0; }
+		
+		//'tableindex'
+		public Keyword getTableindexKeyword_1() { return cTableindexKeyword_1; }
+		
+		//table=[Table|EString]
+		public Assignment getTableAssignment_2() { return cTableAssignment_2; }
+		
+		//[Table|EString]
+		public CrossReference getTableTableCrossReference_2_0() { return cTableTableCrossReference_2_0; }
+		
+		//EString
+		public RuleCall getTableTableEStringParserRuleCall_2_0_1() { return cTableTableEStringParserRuleCall_2_0_1; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		
+		//attributes+=[Attribute|EString]
+		public Assignment getAttributesAssignment_4() { return cAttributesAssignment_4; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributesAttributeCrossReference_4_0() { return cAttributesAttributeCrossReference_4_0; }
+		
+		//EString
+		public RuleCall getAttributesAttributeEStringParserRuleCall_4_0_1() { return cAttributesAttributeEStringParserRuleCall_4_0_1; }
+		
+		//("," attributes+=[Attribute|EString])?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//","
+		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
+		
+		//attributes+=[Attribute|EString]
+		public Assignment getAttributesAssignment_5_1() { return cAttributesAssignment_5_1; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributesAttributeCrossReference_5_1_0() { return cAttributesAttributeCrossReference_5_1_0; }
+		
+		//EString
+		public RuleCall getAttributesAttributeEStringParserRuleCall_5_1_0_1() { return cAttributesAttributeEStringParserRuleCall_5_1_0_1; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class ChangeAttributeTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ChangeAttributeType");
@@ -740,25 +1113,6 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//AddRelation
 		public RuleCall getAddRelationParserRuleCall_1() { return cAddRelationParserRuleCall_1; }
 	}
-	public class EntityElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Entity");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cEntity_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAddEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Entity:
-		//	Entity_Impl | AddEntity;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Entity_Impl | AddEntity
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Entity_Impl
-		public RuleCall getEntity_ImplParserRuleCall_0() { return cEntity_ImplParserRuleCall_0; }
-		
-		//AddEntity
-		public RuleCall getAddEntityParserRuleCall_1() { return cAddEntityParserRuleCall_1; }
-	}
 	public class DatabaseElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Database");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -768,6 +1122,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cGraphDBParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		private final RuleCall cColumnDBParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
+		////Entity returns Entity:
+		////	Entity_Impl | AddEntity;
 		//Database:
 		//	RelationalDB | DocumentDB | KeyValueDB | GraphDB | ColumnDB;
 		@Override public ParserRule getRule() { return rule; }
@@ -3728,6 +4084,12 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ModelElements pModel;
 	private final DataTypeElements pDataType;
 	private final ChangeOperatorElements pChangeOperator;
+	private final RenameCollectionElements pRenameCollection;
+	private final AddAttributesToIndexElements pAddAttributesToIndex;
+	private final RemoveAttributesToIndexElements pRemoveAttributesToIndex;
+	private final RenameTableElements pRenameTable;
+	private final DropIndexTableElements pDropIndexTable;
+	private final AddIndexTableElements pAddIndexTable;
 	private final ChangeAttributeTypeElements pChangeAttributeType;
 	private final MigrateEntityElements pMigrateEntity;
 	private final SplitEntityElements pSplitEntity;
@@ -3742,7 +4104,6 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final ChangeRelationCardinalityElements pChangeRelationCardinality;
 	private final AttributeElements pAttribute;
 	private final RelationElements pRelation;
-	private final EntityElements pEntity;
 	private final DatabaseElements pDatabase;
 	private final GraphAttributeElements pGraphAttribute;
 	private final GraphEdgeElements pGraphEdge;
@@ -3793,6 +4154,12 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pDataType = new DataTypeElements();
 		this.pChangeOperator = new ChangeOperatorElements();
+		this.pRenameCollection = new RenameCollectionElements();
+		this.pAddAttributesToIndex = new AddAttributesToIndexElements();
+		this.pRemoveAttributesToIndex = new RemoveAttributesToIndexElements();
+		this.pRenameTable = new RenameTableElements();
+		this.pDropIndexTable = new DropIndexTableElements();
+		this.pAddIndexTable = new AddIndexTableElements();
 		this.pChangeAttributeType = new ChangeAttributeTypeElements();
 		this.pMigrateEntity = new MigrateEntityElements();
 		this.pSplitEntity = new SplitEntityElements();
@@ -3807,7 +4174,6 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pChangeRelationCardinality = new ChangeRelationCardinalityElements();
 		this.pAttribute = new AttributeElements();
 		this.pRelation = new RelationElements();
-		this.pEntity = new EntityElements();
 		this.pDatabase = new DatabaseElements();
 		this.pGraphAttribute = new GraphAttributeElements();
 		this.pGraphEdge = new GraphEdgeElements();
@@ -3898,13 +4264,88 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	//ChangeOperator:
 	//	AddEntity | RemoveEntity | RenameEntity | MigrateEntity | SplitEntity | MergeEntity | AddAttribute | AddRelation |
 	//	RenameAttribute | RenameRelation | RemoveAttribute | RemoveRelation | ChangeRelationContainement |
-	//	ChangeRelationCardinality | ChangeAttributeType;
+	//	ChangeRelationCardinality | ChangeAttributeType | AddIndexTable | DropIndexTable | RenameTable | AddAttributesToIndex
+	//	| RemoveAttributesToIndex | RenameCollection
+	//	//	AddCollectionIndex |
+	//	//	DropCollectionIndex
+	//;
 	public ChangeOperatorElements getChangeOperatorAccess() {
 		return pChangeOperator;
 	}
 	
 	public ParserRule getChangeOperatorRule() {
 		return getChangeOperatorAccess().getRule();
+	}
+	
+	////DropCollectionIndex returns DropCollectionIndex:;
+	// /* 
+	//AddCollectionIndex:
+	//	
+	//;
+	//*/ RenameCollection:
+	//	'rename' 'collection' collectionToRename=[Collection|EString] 'as' newName=EString;
+	public RenameCollectionElements getRenameCollectionAccess() {
+		return pRenameCollection;
+	}
+	
+	public ParserRule getRenameCollectionRule() {
+		return getRenameCollectionAccess().getRule();
+	}
+	
+	//AddAttributesToIndex:
+	//	'extends' 'tableindex' table=[Table|EString] '{'
+	//	attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+	//	'}';
+	public AddAttributesToIndexElements getAddAttributesToIndexAccess() {
+		return pAddAttributesToIndex;
+	}
+	
+	public ParserRule getAddAttributesToIndexRule() {
+		return getAddAttributesToIndexAccess().getRule();
+	}
+	
+	//RemoveAttributesToIndex:
+	//	'reduce' 'tableindex' table=[Table|EString] '{'
+	//	attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+	//	'}';
+	public RemoveAttributesToIndexElements getRemoveAttributesToIndexAccess() {
+		return pRemoveAttributesToIndex;
+	}
+	
+	public ParserRule getRemoveAttributesToIndexRule() {
+		return getRemoveAttributesToIndexAccess().getRule();
+	}
+	
+	//RenameTable:
+	//	'rename' 'table' tableToRename=[Table|EString] 'as' newName=EString;
+	public RenameTableElements getRenameTableAccess() {
+		return pRenameTable;
+	}
+	
+	public ParserRule getRenameTableRule() {
+		return getRenameTableAccess().getRule();
+	}
+	
+	//DropIndexTable DropIndex:
+	//	'drop' 'tableindex' table=[Table|EString];
+	public DropIndexTableElements getDropIndexTableAccess() {
+		return pDropIndexTable;
+	}
+	
+	public ParserRule getDropIndexTableRule() {
+		return getDropIndexTableAccess().getRule();
+	}
+	
+	//AddIndexTable AddIndex:
+	//	'create' 'tableindex' table=[Table|EString] '{'
+	//	attributes+=[Attribute|EString] ("," attributes+=[Attribute|EString])?
+	//	'}';
+	public AddIndexTableElements getAddIndexTableAccess() {
+		return pAddIndexTable;
+	}
+	
+	public ParserRule getAddIndexTableRule() {
+		return getAddIndexTableAccess().getRule();
 	}
 	
 	//ChangeAttributeType:
@@ -4051,16 +4492,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getRelationAccess().getRule();
 	}
 	
-	//Entity:
-	//	Entity_Impl | AddEntity;
-	public EntityElements getEntityAccess() {
-		return pEntity;
-	}
-	
-	public ParserRule getEntityRule() {
-		return getEntityAccess().getRule();
-	}
-	
+	////Entity returns Entity:
+	////	Entity_Impl | AddEntity;
 	//Database:
 	//	RelationalDB | DocumentDB | KeyValueDB | GraphDB | ColumnDB;
 	public DatabaseElements getDatabaseAccess() {

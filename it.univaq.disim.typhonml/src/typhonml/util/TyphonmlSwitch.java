@@ -231,6 +231,41 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX: {
+				AddAttributesToIndex addAttributesToIndex = (AddAttributesToIndex)theEObject;
+				T result = caseAddAttributesToIndex(addAttributesToIndex);
+				if (result == null) result = caseChangeOperator(addAttributesToIndex);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_INDEX: {
+				RemoveAttributesToIndex removeAttributesToIndex = (RemoveAttributesToIndex)theEObject;
+				T result = caseRemoveAttributesToIndex(removeAttributesToIndex);
+				if (result == null) result = caseChangeOperator(removeAttributesToIndex);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.RENAME_COLLECTION: {
+				RenameCollection renameCollection = (RenameCollection)theEObject;
+				T result = caseRenameCollection(renameCollection);
+				if (result == null) result = caseChangeOperator(renameCollection);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.ADD_COLLECTION_INDEX: {
+				AddCollectionIndex addCollectionIndex = (AddCollectionIndex)theEObject;
+				T result = caseAddCollectionIndex(addCollectionIndex);
+				if (result == null) result = caseChangeOperator(addCollectionIndex);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.DROP_COLLECTION_INDEX: {
+				DropCollectionIndex dropCollectionIndex = (DropCollectionIndex)theEObject;
+				T result = caseDropCollectionIndex(dropCollectionIndex);
+				if (result == null) result = caseChangeOperator(dropCollectionIndex);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case TyphonmlPackage.ADD_GRAPH_ATTRIBUTE: {
 				AddGraphAttribute addGraphAttribute = (AddGraphAttribute)theEObject;
 				T result = caseAddGraphAttribute(addGraphAttribute);
@@ -828,6 +863,81 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDropIndex(DropIndex object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Add Attributes To Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Add Attributes To Index</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAddAttributesToIndex(AddAttributesToIndex object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Remove Attributes To Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Remove Attributes To Index</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRemoveAttributesToIndex(RemoveAttributesToIndex object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Rename Collection</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Rename Collection</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRenameCollection(RenameCollection object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Add Collection Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Add Collection Index</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAddCollectionIndex(AddCollectionIndex object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Drop Collection Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Drop Collection Index</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDropCollectionIndex(DropCollectionIndex object) {
 		return null;
 	}
 

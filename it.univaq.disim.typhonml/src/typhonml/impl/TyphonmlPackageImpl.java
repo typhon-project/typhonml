@@ -11,6 +11,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import typhonml.AddAttribute;
+import typhonml.AddAttributesToIndex;
+import typhonml.AddCollectionIndex;
 import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
@@ -33,6 +35,7 @@ import typhonml.Database;
 import typhonml.DisableBidirectionalRelation;
 import typhonml.DisableRelationContainment;
 import typhonml.DocumentDB;
+import typhonml.DropCollectionIndex;
 import typhonml.DropIndex;
 import typhonml.EnableBidirectionalRelation;
 import typhonml.EnableRelationContainment;
@@ -58,12 +61,14 @@ import typhonml.PrimitiveDataType;
 import typhonml.Relation;
 import typhonml.RelationalDB;
 import typhonml.RemoveAttribute;
+import typhonml.RemoveAttributesToIndex;
 import typhonml.RemoveEntity;
 import typhonml.RemoveGraphAttribute;
 import typhonml.RemoveGraphEdge;
 import typhonml.RemoveRelation;
 import typhonml.RenabeGraphEdgeLabel;
 import typhonml.RenameAttribute;
+import typhonml.RenameCollection;
 import typhonml.RenameEntity;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
@@ -239,6 +244,41 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass dropIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addAttributesToIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass removeAttributesToIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass renameCollectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addCollectionIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dropCollectionIndexEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1131,6 +1171,146 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	@Override
 	public EReference getDropIndex_Table() {
 		return (EReference)dropIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddAttributesToIndex() {
+		return addAttributesToIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddAttributesToIndex_Table() {
+		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddAttributesToIndex_Attributes() {
+		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRemoveAttributesToIndex() {
+		return removeAttributesToIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveAttributesToIndex_Table() {
+		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveAttributesToIndex_Attributes() {
+		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRenameCollection() {
+		return renameCollectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRenameCollection_CollectionToRename() {
+		return (EReference)renameCollectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRenameCollection_NewName() {
+		return (EAttribute)renameCollectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddCollectionIndex() {
+		return addCollectionIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddCollectionIndex_Collection() {
+		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddCollectionIndex_Attributes() {
+		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDropCollectionIndex() {
+		return dropCollectionIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDropCollectionIndex_Collection() {
+		return (EReference)dropCollectionIndexEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2073,6 +2253,25 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		dropIndexEClass = createEClass(DROP_INDEX);
 		createEReference(dropIndexEClass, DROP_INDEX__TABLE);
 
+		addAttributesToIndexEClass = createEClass(ADD_ATTRIBUTES_TO_INDEX);
+		createEReference(addAttributesToIndexEClass, ADD_ATTRIBUTES_TO_INDEX__TABLE);
+		createEReference(addAttributesToIndexEClass, ADD_ATTRIBUTES_TO_INDEX__ATTRIBUTES);
+
+		removeAttributesToIndexEClass = createEClass(REMOVE_ATTRIBUTES_TO_INDEX);
+		createEReference(removeAttributesToIndexEClass, REMOVE_ATTRIBUTES_TO_INDEX__TABLE);
+		createEReference(removeAttributesToIndexEClass, REMOVE_ATTRIBUTES_TO_INDEX__ATTRIBUTES);
+
+		renameCollectionEClass = createEClass(RENAME_COLLECTION);
+		createEReference(renameCollectionEClass, RENAME_COLLECTION__COLLECTION_TO_RENAME);
+		createEAttribute(renameCollectionEClass, RENAME_COLLECTION__NEW_NAME);
+
+		addCollectionIndexEClass = createEClass(ADD_COLLECTION_INDEX);
+		createEReference(addCollectionIndexEClass, ADD_COLLECTION_INDEX__COLLECTION);
+		createEReference(addCollectionIndexEClass, ADD_COLLECTION_INDEX__ATTRIBUTES);
+
+		dropCollectionIndexEClass = createEClass(DROP_COLLECTION_INDEX);
+		createEReference(dropCollectionIndexEClass, DROP_COLLECTION_INDEX__COLLECTION);
+
 		addGraphAttributeEClass = createEClass(ADD_GRAPH_ATTRIBUTE);
 
 		removeGraphAttributeEClass = createEClass(REMOVE_GRAPH_ATTRIBUTE);
@@ -2244,6 +2443,11 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		renameTableEClass.getESuperTypes().add(this.getChangeOperator());
 		addIndexEClass.getESuperTypes().add(this.getChangeOperator());
 		dropIndexEClass.getESuperTypes().add(this.getChangeOperator());
+		addAttributesToIndexEClass.getESuperTypes().add(this.getChangeOperator());
+		removeAttributesToIndexEClass.getESuperTypes().add(this.getChangeOperator());
+		renameCollectionEClass.getESuperTypes().add(this.getChangeOperator());
+		addCollectionIndexEClass.getESuperTypes().add(this.getChangeOperator());
+		dropCollectionIndexEClass.getESuperTypes().add(this.getChangeOperator());
 		addGraphAttributeEClass.getESuperTypes().add(this.getGraphAttribute());
 		addGraphAttributeEClass.getESuperTypes().add(this.getChangeOperator());
 		removeGraphAttributeEClass.getESuperTypes().add(this.getChangeOperator());
@@ -2363,6 +2567,25 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(dropIndexEClass, DropIndex.class, "DropIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDropIndex_Table(), this.getTable(), null, "table", null, 1, 1, DropIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addAttributesToIndexEClass, AddAttributesToIndex.class, "AddAttributesToIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddAttributesToIndex_Table(), this.getTable(), null, "table", null, 1, 1, AddAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAddAttributesToIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(removeAttributesToIndexEClass, RemoveAttributesToIndex.class, "RemoveAttributesToIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveAttributesToIndex_Table(), this.getTable(), null, "table", null, 1, 1, RemoveAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRemoveAttributesToIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, RemoveAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(renameCollectionEClass, RenameCollection.class, "RenameCollection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRenameCollection_CollectionToRename(), this.getCollection(), null, "collectionToRename", null, 1, 1, RenameCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRenameCollection_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addCollectionIndexEClass, AddCollectionIndex.class, "AddCollectionIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddCollectionIndex_Collection(), this.getCollection(), null, "collection", null, 1, 1, AddCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAddCollectionIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dropCollectionIndexEClass, DropCollectionIndex.class, "DropCollectionIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDropCollectionIndex_Collection(), this.getCollection(), null, "collection", null, 1, 1, DropCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addGraphAttributeEClass, AddGraphAttribute.class, "AddGraphAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

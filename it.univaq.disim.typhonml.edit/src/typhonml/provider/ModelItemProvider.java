@@ -300,6 +300,31 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddAttributesToIndex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRemoveAttributesToIndex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenameCollection()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddCollectionIndex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createDropCollectionIndex()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createAddGraphAttribute()));
 
 		newChildDescriptors.add

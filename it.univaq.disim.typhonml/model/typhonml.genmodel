@@ -112,6 +112,25 @@
     <genClasses ecoreClass="typhonml.ecore#//DropIndex">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//DropIndex/table"/>
     </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddAttributesToIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttributesToIndex/table"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttributesToIndex/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//RemoveAttributesToIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttributesToIndex/table"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttributesToIndex/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//RenameCollection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RenameCollection/collectionToRename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//RenameCollection/newName"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddCollectionIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddCollectionIndex/collection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddCollectionIndex/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//DropCollectionIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//DropCollectionIndex/collection"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//AddGraphAttribute"/>
     <genClasses ecoreClass="typhonml.ecore#//RemoveGraphAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveGraphAttribute/node"/>

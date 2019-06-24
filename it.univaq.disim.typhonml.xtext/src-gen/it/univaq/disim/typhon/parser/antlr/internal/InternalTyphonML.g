@@ -353,6 +353,502 @@ ruleChangeOperator returns [EObject current=null]
 			$current = $this_ChangeAttributeType_14.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddIndexTableParserRuleCall_15());
+		}
+		this_AddIndexTable_15=ruleAddIndexTable
+		{
+			$current = $this_AddIndexTable_15.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getDropIndexTableParserRuleCall_16());
+		}
+		this_DropIndexTable_16=ruleDropIndexTable
+		{
+			$current = $this_DropIndexTable_16.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameTableParserRuleCall_17());
+		}
+		this_RenameTable_17=ruleRenameTable
+		{
+			$current = $this_RenameTable_17.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddAttributesToIndexParserRuleCall_18());
+		}
+		this_AddAttributesToIndex_18=ruleAddAttributesToIndex
+		{
+			$current = $this_AddAttributesToIndex_18.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveAttributesToIndexParserRuleCall_19());
+		}
+		this_RemoveAttributesToIndex_19=ruleRemoveAttributesToIndex
+		{
+			$current = $this_RemoveAttributesToIndex_19.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameCollectionParserRuleCall_20());
+		}
+		this_RenameCollection_20=ruleRenameCollection
+		{
+			$current = $this_RenameCollection_20.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleRenameCollection
+entryRuleRenameCollection returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRenameCollectionRule()); }
+	iv_ruleRenameCollection=ruleRenameCollection
+	{ $current=$iv_ruleRenameCollection.current; }
+	EOF;
+
+// Rule RenameCollection
+ruleRenameCollection returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='rename'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRenameCollectionAccess().getRenameKeyword_0());
+		}
+		otherlv_1='collection'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRenameCollectionAccess().getCollectionKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRenameCollectionRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getRenameCollectionAccess().getCollectionToRenameCollectionCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='as'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getRenameCollectionAccess().getAsKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRenameCollectionAccess().getNewNameEStringParserRuleCall_4_0());
+				}
+				lv_newName_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRenameCollectionRule());
+					}
+					set(
+						$current,
+						"newName",
+						lv_newName_4_0,
+						"it.univaq.disim.typhon.TyphonML.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleAddAttributesToIndex
+entryRuleAddAttributesToIndex returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAddAttributesToIndexRule()); }
+	iv_ruleAddAttributesToIndex=ruleAddAttributesToIndex
+	{ $current=$iv_ruleAddAttributesToIndex.current; }
+	EOF;
+
+// Rule AddAttributesToIndex
+ruleAddAttributesToIndex returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='extends'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAddAttributesToIndexAccess().getExtendsKeyword_0());
+		}
+		otherlv_1='tableindex'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAddAttributesToIndexAccess().getTableindexKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddAttributesToIndexRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAddAttributesToIndexAccess().getTableTableCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAddAttributesToIndexAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddAttributesToIndexRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAddAttributesToIndexAccess().getAttributesAttributeCrossReference_4_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_5=','
+			{
+				newLeafNode(otherlv_5, grammarAccess.getAddAttributesToIndexAccess().getCommaKeyword_5_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAddAttributesToIndexRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getAddAttributesToIndexAccess().getAttributesAttributeCrossReference_5_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getAddAttributesToIndexAccess().getRightCurlyBracketKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleRemoveAttributesToIndex
+entryRuleRemoveAttributesToIndex returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRemoveAttributesToIndexRule()); }
+	iv_ruleRemoveAttributesToIndex=ruleRemoveAttributesToIndex
+	{ $current=$iv_ruleRemoveAttributesToIndex.current; }
+	EOF;
+
+// Rule RemoveAttributesToIndex
+ruleRemoveAttributesToIndex returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='reduce'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRemoveAttributesToIndexAccess().getReduceKeyword_0());
+		}
+		otherlv_1='tableindex'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRemoveAttributesToIndexAccess().getTableindexKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRemoveAttributesToIndexRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getRemoveAttributesToIndexAccess().getTableTableCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getRemoveAttributesToIndexAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRemoveAttributesToIndexRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getRemoveAttributesToIndexAccess().getAttributesAttributeCrossReference_4_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_5=','
+			{
+				newLeafNode(otherlv_5, grammarAccess.getRemoveAttributesToIndexAccess().getCommaKeyword_5_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRemoveAttributesToIndexRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getRemoveAttributesToIndexAccess().getAttributesAttributeCrossReference_5_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getRemoveAttributesToIndexAccess().getRightCurlyBracketKeyword_6());
+		}
+	)
+;
+
+// Entry rule entryRuleRenameTable
+entryRuleRenameTable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getRenameTableRule()); }
+	iv_ruleRenameTable=ruleRenameTable
+	{ $current=$iv_ruleRenameTable.current; }
+	EOF;
+
+// Rule RenameTable
+ruleRenameTable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='rename'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getRenameTableAccess().getRenameKeyword_0());
+		}
+		otherlv_1='table'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getRenameTableAccess().getTableKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRenameTableRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getRenameTableAccess().getTableToRenameTableCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='as'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getRenameTableAccess().getAsKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRenameTableAccess().getNewNameEStringParserRuleCall_4_0());
+				}
+				lv_newName_4_0=ruleEString
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRenameTableRule());
+					}
+					set(
+						$current,
+						"newName",
+						lv_newName_4_0,
+						"it.univaq.disim.typhon.TyphonML.EString");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleDropIndexTable
+entryRuleDropIndexTable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getDropIndexTableRule()); }
+	iv_ruleDropIndexTable=ruleDropIndexTable
+	{ $current=$iv_ruleDropIndexTable.current; }
+	EOF;
+
+// Rule DropIndexTable
+ruleDropIndexTable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='drop'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getDropIndexTableAccess().getDropKeyword_0());
+		}
+		otherlv_1='tableindex'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getDropIndexTableAccess().getTableindexKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getDropIndexTableRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getDropIndexTableAccess().getTableTableCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleAddIndexTable
+entryRuleAddIndexTable returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAddIndexTableRule()); }
+	iv_ruleAddIndexTable=ruleAddIndexTable
+	{ $current=$iv_ruleAddIndexTable.current; }
+	EOF;
+
+// Rule AddIndexTable
+ruleAddIndexTable returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='create'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAddIndexTableAccess().getCreateKeyword_0());
+		}
+		otherlv_1='tableindex'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAddIndexTableAccess().getTableindexKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddIndexTableRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAddIndexTableAccess().getTableTableCrossReference_2_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='{'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getAddIndexTableAccess().getLeftCurlyBracketKeyword_3());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAddIndexTableRule());
+					}
+				}
+				{
+					newCompositeNode(grammarAccess.getAddIndexTableAccess().getAttributesAttributeCrossReference_4_0());
+				}
+				ruleEString
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_5=','
+			{
+				newLeafNode(otherlv_5, grammarAccess.getAddIndexTableAccess().getCommaKeyword_5_0());
+			}
+			(
+				(
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAddIndexTableRule());
+						}
+					}
+					{
+						newCompositeNode(grammarAccess.getAddIndexTableAccess().getAttributesAttributeCrossReference_5_1_0());
+					}
+					ruleEString
+					{
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_7='}'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getAddIndexTableAccess().getRightCurlyBracketKeyword_6());
+		}
 	)
 ;
 

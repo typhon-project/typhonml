@@ -194,7 +194,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 29;
+	int DATA_TYPE = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -240,7 +240,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 36;
+	int ENTITY = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -597,7 +597,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRelation()
 	 * @generated
 	 */
-	int RELATION = 38;
+	int RELATION = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1047,7 +1047,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 37;
+	int ATTRIBUTE = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1417,6 +1417,227 @@ public interface TyphonmlPackage extends EPackage {
 	int DROP_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.AddAttributesToIndexImpl <em>Add Attributes To Index</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AddAttributesToIndexImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttributesToIndex()
+	 * @generated
+	 */
+	int ADD_ATTRIBUTES_TO_INDEX = 23;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ATTRIBUTES_TO_INDEX__TABLE = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ATTRIBUTES_TO_INDEX__ATTRIBUTES = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Add Attributes To Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ATTRIBUTES_TO_INDEX_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Add Attributes To Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ATTRIBUTES_TO_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.RemoveAttributesToIndexImpl <em>Remove Attributes To Index</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RemoveAttributesToIndexImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttributesToIndex()
+	 * @generated
+	 */
+	int REMOVE_ATTRIBUTES_TO_INDEX = 24;
+
+	/**
+	 * The feature id for the '<em><b>Table</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOVE_ATTRIBUTES_TO_INDEX__TABLE = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOVE_ATTRIBUTES_TO_INDEX__ATTRIBUTES = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Remove Attributes To Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOVE_ATTRIBUTES_TO_INDEX_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Remove Attributes To Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REMOVE_ATTRIBUTES_TO_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.RenameCollectionImpl <em>Rename Collection</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.RenameCollectionImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameCollection()
+	 * @generated
+	 */
+	int RENAME_COLLECTION = 25;
+
+	/**
+	 * The feature id for the '<em><b>Collection To Rename</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_COLLECTION__COLLECTION_TO_RENAME = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>New Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_COLLECTION__NEW_NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Rename Collection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_COLLECTION_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Rename Collection</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RENAME_COLLECTION_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.AddCollectionIndexImpl <em>Add Collection Index</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AddCollectionIndexImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAddCollectionIndex()
+	 * @generated
+	 */
+	int ADD_COLLECTION_INDEX = 26;
+
+	/**
+	 * The feature id for the '<em><b>Collection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_COLLECTION_INDEX__COLLECTION = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_COLLECTION_INDEX__ATTRIBUTES = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Add Collection Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_COLLECTION_INDEX_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Add Collection Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_COLLECTION_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.DropCollectionIndexImpl <em>Drop Collection Index</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.DropCollectionIndexImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getDropCollectionIndex()
+	 * @generated
+	 */
+	int DROP_COLLECTION_INDEX = 27;
+
+	/**
+	 * The feature id for the '<em><b>Collection</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_COLLECTION_INDEX__COLLECTION = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Drop Collection Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_COLLECTION_INDEX_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Drop Collection Index</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DROP_COLLECTION_INDEX_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link typhonml.impl.GraphAttributeImpl <em>Graph Attribute</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1424,7 +1645,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphAttribute()
 	 * @generated
 	 */
-	int GRAPH_ATTRIBUTE = 49;
+	int GRAPH_ATTRIBUTE = 54;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1479,7 +1700,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddGraphAttribute()
 	 * @generated
 	 */
-	int ADD_GRAPH_ATTRIBUTE = 23;
+	int ADD_GRAPH_ATTRIBUTE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1534,7 +1755,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveGraphAttribute()
 	 * @generated
 	 */
-	int REMOVE_GRAPH_ATTRIBUTE = 24;
+	int REMOVE_GRAPH_ATTRIBUTE = 29;
 
 	/**
 	 * The feature id for the '<em><b>Node</b></em>' reference.
@@ -1571,7 +1792,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphEdge()
 	 * @generated
 	 */
-	int GRAPH_EDGE = 50;
+	int GRAPH_EDGE = 55;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1644,7 +1865,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddGraphEdge()
 	 * @generated
 	 */
-	int ADD_GRAPH_EDGE = 25;
+	int ADD_GRAPH_EDGE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1717,7 +1938,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveGraphEdge()
 	 * @generated
 	 */
-	int REMOVE_GRAPH_EDGE = 26;
+	int REMOVE_GRAPH_EDGE = 31;
 
 	/**
 	 * The feature id for the '<em><b>Graph Edge To Remove</b></em>' reference.
@@ -1754,7 +1975,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenabeGraphEdgeLabel()
 	 * @generated
 	 */
-	int RENABE_GRAPH_EDGE_LABEL = 27;
+	int RENABE_GRAPH_EDGE_LABEL = 32;
 
 	/**
 	 * The feature id for the '<em><b>Edge</b></em>' reference.
@@ -1800,7 +2021,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDatabase()
 	 * @generated
 	 */
-	int DATABASE = 28;
+	int DATABASE = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1846,7 +2067,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getPrimitiveDataType()
 	 * @generated
 	 */
-	int PRIMITIVE_DATA_TYPE = 30;
+	int PRIMITIVE_DATA_TYPE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1892,7 +2113,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
 	 * @generated
 	 */
-	int FREE_TEXT = 33;
+	int FREE_TEXT = 38;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
@@ -1902,7 +2123,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTask()
 	 * @generated
 	 */
-	int NLP_TASK = 34;
+	int NLP_TASK = 39;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeImpl <em>Custom Data Type</em>}' class.
@@ -1912,7 +2133,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataType()
 	 * @generated
 	 */
-	int CUSTOM_DATA_TYPE = 31;
+	int CUSTOM_DATA_TYPE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1967,7 +2188,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDataTypeItem()
 	 * @generated
 	 */
-	int DATA_TYPE_ITEM = 32;
+	int DATA_TYPE_ITEM = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2103,7 +2324,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDataTypeImplementationPackage()
 	 * @generated
 	 */
-	int DATA_TYPE_IMPLEMENTATION_PACKAGE = 35;
+	int DATA_TYPE_IMPLEMENTATION_PACKAGE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -2140,7 +2361,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRelationalDB()
 	 * @generated
 	 */
-	int RELATIONAL_DB = 39;
+	int RELATIONAL_DB = 44;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2195,7 +2416,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getTable()
 	 * @generated
 	 */
-	int TABLE = 40;
+	int TABLE = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2277,7 +2498,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getIndexSpec()
 	 * @generated
 	 */
-	int INDEX_SPEC = 41;
+	int INDEX_SPEC = 46;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2350,7 +2571,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getIdSpec()
 	 * @generated
 	 */
-	int ID_SPEC = 42;
+	int ID_SPEC = 47;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
@@ -2396,7 +2617,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDocumentDB()
 	 * @generated
 	 */
-	int DOCUMENT_DB = 43;
+	int DOCUMENT_DB = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2451,7 +2672,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGenericList()
 	 * @generated
 	 */
-	int GENERIC_LIST = 54;
+	int GENERIC_LIST = 59;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
@@ -2488,7 +2709,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCollection()
 	 * @generated
 	 */
-	int COLLECTION = 44;
+	int COLLECTION = 49;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
@@ -2543,7 +2764,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueDB()
 	 * @generated
 	 */
-	int KEY_VALUE_DB = 45;
+	int KEY_VALUE_DB = 50;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2598,7 +2819,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueElement()
 	 * @generated
 	 */
-	int KEY_VALUE_ELEMENT = 46;
+	int KEY_VALUE_ELEMENT = 51;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2671,7 +2892,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphDB()
 	 * @generated
 	 */
-	int GRAPH_DB = 47;
+	int GRAPH_DB = 52;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2735,7 +2956,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphNode()
 	 * @generated
 	 */
-	int GRAPH_NODE = 48;
+	int GRAPH_NODE = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2799,7 +3020,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphEdgeLabel()
 	 * @generated
 	 */
-	int GRAPH_EDGE_LABEL = 51;
+	int GRAPH_EDGE_LABEL = 56;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2854,7 +3075,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getColumnDB()
 	 * @generated
 	 */
-	int COLUMN_DB = 52;
+	int COLUMN_DB = 57;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2909,7 +3130,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getColumn()
 	 * @generated
 	 */
-	int COLUMN = 53;
+	int COLUMN = 58;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2973,7 +3194,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameEntity()
 	 * @generated
 	 */
-	int RENAME_ENTITY = 55;
+	int RENAME_ENTITY = 60;
 
 	/**
 	 * The feature id for the '<em><b>Entity To Rename</b></em>' reference.
@@ -3019,7 +3240,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationContainement()
 	 * @generated
 	 */
-	int CHANGE_RELATION_CONTAINEMENT = 56;
+	int CHANGE_RELATION_CONTAINEMENT = 61;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -3065,7 +3286,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 57;
+	int CARDINALITY = 62;
 
 
 	/**
@@ -3076,7 +3297,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTaskType()
 	 * @generated
 	 */
-	int NLP_TASK_TYPE = 58;
+	int NLP_TASK_TYPE = 63;
 
 
 	/**
@@ -3693,6 +3914,155 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDropIndex_Table();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.AddAttributesToIndex <em>Add Attributes To Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Add Attributes To Index</em>'.
+	 * @see typhonml.AddAttributesToIndex
+	 * @generated
+	 */
+	EClass getAddAttributesToIndex();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.AddAttributesToIndex#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see typhonml.AddAttributesToIndex#getTable()
+	 * @see #getAddAttributesToIndex()
+	 * @generated
+	 */
+	EReference getAddAttributesToIndex_Table();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.AddAttributesToIndex#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see typhonml.AddAttributesToIndex#getAttributes()
+	 * @see #getAddAttributesToIndex()
+	 * @generated
+	 */
+	EReference getAddAttributesToIndex_Attributes();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.RemoveAttributesToIndex <em>Remove Attributes To Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Remove Attributes To Index</em>'.
+	 * @see typhonml.RemoveAttributesToIndex
+	 * @generated
+	 */
+	EClass getRemoveAttributesToIndex();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.RemoveAttributesToIndex#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Table</em>'.
+	 * @see typhonml.RemoveAttributesToIndex#getTable()
+	 * @see #getRemoveAttributesToIndex()
+	 * @generated
+	 */
+	EReference getRemoveAttributesToIndex_Table();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.RemoveAttributesToIndex#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see typhonml.RemoveAttributesToIndex#getAttributes()
+	 * @see #getRemoveAttributesToIndex()
+	 * @generated
+	 */
+	EReference getRemoveAttributesToIndex_Attributes();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.RenameCollection <em>Rename Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Rename Collection</em>'.
+	 * @see typhonml.RenameCollection
+	 * @generated
+	 */
+	EClass getRenameCollection();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.RenameCollection#getCollectionToRename <em>Collection To Rename</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Collection To Rename</em>'.
+	 * @see typhonml.RenameCollection#getCollectionToRename()
+	 * @see #getRenameCollection()
+	 * @generated
+	 */
+	EReference getRenameCollection_CollectionToRename();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.RenameCollection#getNewName <em>New Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>New Name</em>'.
+	 * @see typhonml.RenameCollection#getNewName()
+	 * @see #getRenameCollection()
+	 * @generated
+	 */
+	EAttribute getRenameCollection_NewName();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.AddCollectionIndex <em>Add Collection Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Add Collection Index</em>'.
+	 * @see typhonml.AddCollectionIndex
+	 * @generated
+	 */
+	EClass getAddCollectionIndex();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.AddCollectionIndex#getCollection <em>Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Collection</em>'.
+	 * @see typhonml.AddCollectionIndex#getCollection()
+	 * @see #getAddCollectionIndex()
+	 * @generated
+	 */
+	EReference getAddCollectionIndex_Collection();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.AddCollectionIndex#getAttributes <em>Attributes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attributes</em>'.
+	 * @see typhonml.AddCollectionIndex#getAttributes()
+	 * @see #getAddCollectionIndex()
+	 * @generated
+	 */
+	EReference getAddCollectionIndex_Attributes();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.DropCollectionIndex <em>Drop Collection Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Drop Collection Index</em>'.
+	 * @see typhonml.DropCollectionIndex
+	 * @generated
+	 */
+	EClass getDropCollectionIndex();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.DropCollectionIndex#getCollection <em>Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Collection</em>'.
+	 * @see typhonml.DropCollectionIndex#getCollection()
+	 * @see #getDropCollectionIndex()
+	 * @generated
+	 */
+	EReference getDropCollectionIndex_Collection();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.AddGraphAttribute <em>Add Graph Attribute</em>}'.
@@ -5103,6 +5473,128 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DROP_INDEX__TABLE = eINSTANCE.getDropIndex_Table();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.AddAttributesToIndexImpl <em>Add Attributes To Index</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.AddAttributesToIndexImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttributesToIndex()
+		 * @generated
+		 */
+		EClass ADD_ATTRIBUTES_TO_INDEX = eINSTANCE.getAddAttributesToIndex();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_ATTRIBUTES_TO_INDEX__TABLE = eINSTANCE.getAddAttributesToIndex_Table();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_ATTRIBUTES_TO_INDEX__ATTRIBUTES = eINSTANCE.getAddAttributesToIndex_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.RemoveAttributesToIndexImpl <em>Remove Attributes To Index</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.RemoveAttributesToIndexImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttributesToIndex()
+		 * @generated
+		 */
+		EClass REMOVE_ATTRIBUTES_TO_INDEX = eINSTANCE.getRemoveAttributesToIndex();
+
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REMOVE_ATTRIBUTES_TO_INDEX__TABLE = eINSTANCE.getRemoveAttributesToIndex_Table();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REMOVE_ATTRIBUTES_TO_INDEX__ATTRIBUTES = eINSTANCE.getRemoveAttributesToIndex_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.RenameCollectionImpl <em>Rename Collection</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.RenameCollectionImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getRenameCollection()
+		 * @generated
+		 */
+		EClass RENAME_COLLECTION = eINSTANCE.getRenameCollection();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection To Rename</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RENAME_COLLECTION__COLLECTION_TO_RENAME = eINSTANCE.getRenameCollection_CollectionToRename();
+
+		/**
+		 * The meta object literal for the '<em><b>New Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RENAME_COLLECTION__NEW_NAME = eINSTANCE.getRenameCollection_NewName();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.AddCollectionIndexImpl <em>Add Collection Index</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.AddCollectionIndexImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getAddCollectionIndex()
+		 * @generated
+		 */
+		EClass ADD_COLLECTION_INDEX = eINSTANCE.getAddCollectionIndex();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_COLLECTION_INDEX__COLLECTION = eINSTANCE.getAddCollectionIndex_Collection();
+
+		/**
+		 * The meta object literal for the '<em><b>Attributes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_COLLECTION_INDEX__ATTRIBUTES = eINSTANCE.getAddCollectionIndex_Attributes();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.DropCollectionIndexImpl <em>Drop Collection Index</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.DropCollectionIndexImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getDropCollectionIndex()
+		 * @generated
+		 */
+		EClass DROP_COLLECTION_INDEX = eINSTANCE.getDropCollectionIndex();
+
+		/**
+		 * The meta object literal for the '<em><b>Collection</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DROP_COLLECTION_INDEX__COLLECTION = eINSTANCE.getDropCollectionIndex_Collection();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.AddGraphAttributeImpl <em>Add Graph Attribute</em>}' class.

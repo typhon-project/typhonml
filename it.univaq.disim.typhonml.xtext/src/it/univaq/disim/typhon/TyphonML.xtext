@@ -30,8 +30,53 @@ ChangeOperator returns ChangeOperator:
 	RemoveRelation | 
 	ChangeRelationContainement| 
 	ChangeRelationCardinality |
-	ChangeAttributeType
+	ChangeAttributeType |
+	AddIndexTable |
+	DropIndexTable |
+	RenameTable |
+	AddAttributesToIndex |
+	RemoveAttributesToIndex |
+	RenameCollection 
+//	AddCollectionIndex |
+//	DropCollectionIndex
 ;
+
+//DropCollectionIndex returns DropCollectionIndex:;
+
+/* 
+AddCollectionIndex:
+	
+;
+*/
+
+RenameCollection returns RenameCollection:
+	'rename' 'collection' collectionToRename=[Collection|EString] 'as' newName=EString
+;
+
+AddAttributesToIndex returns AddAttributesToIndex:
+	'extends' 'tableindex' table=[Table|EString] '{'
+		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])?
+	'}';
+	
+RemoveAttributesToIndex returns RemoveAttributesToIndex:
+	'reduce' 'tableindex' table=[Table|EString] '{'
+		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])? 
+	'}';
+
+RenameTable returns RenameTable:
+	'rename' 'table' tableToRename=[Table|EString] 'as' newName=EString
+	;
+
+DropIndexTable returns DropIndex:
+	'drop' 'tableindex' table=[Table|EString]
+	;
+
+AddIndexTable returns AddIndex:
+	'create' 'tableindex' table=[Table|EString] '{'
+		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])?
+	'}'	
+;
+
 
 ChangeAttributeType returns ChangeAttributeType:
 	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[DataType|EString];
@@ -91,8 +136,8 @@ Relation returns Relation:
 
 
 
-Entity returns Entity:
-	Entity_Impl | AddEntity;
+//Entity returns Entity:
+//	Entity_Impl | AddEntity;
 
 Database returns Database:
 	RelationalDB | DocumentDB | KeyValueDB | GraphDB | ColumnDB;
@@ -141,7 +186,6 @@ CustomDataType returns CustomDataType:
 Entity_Impl returns Entity:
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
-		
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(fretextAttributes+=FreeText (fretextAttributes+=FreeText)*)?
 		(relations+=Relation (relations+=Relation)*)?
@@ -330,8 +374,6 @@ AddEntity returns AddEntity:
 		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
 		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
 	'}';
-
-
 
 Attribute_Impl returns Attribute:
 	{Attribute}

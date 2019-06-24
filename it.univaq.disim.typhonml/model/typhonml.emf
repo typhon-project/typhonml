@@ -107,6 +107,30 @@ class DropIndex extends ChangeOperator {
   ref Table[1] table;
 }
 
+class AddAttributesToIndex extends ChangeOperator {
+	ref Table[1] table;
+	ref Attribute[*] attributes;
+}
+
+class RemoveAttributesToIndex extends ChangeOperator {
+	ref Table[1] table;
+	ref Attribute[*] attributes;
+}
+
+class RenameCollection extends ChangeOperator {
+	ref Collection [1] collectionToRename;
+	attr String newName;
+}
+
+class AddCollectionIndex extends ChangeOperator {
+	ref Collection[1] collection;
+	ref Attribute[*] attributes;
+}
+
+class DropCollectionIndex extends ChangeOperator {
+	ref Collection[1] collection;
+}
+
 class AddGraphAttribute extends GraphAttribute, ChangeOperator {
 }
 
