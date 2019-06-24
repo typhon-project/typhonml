@@ -76,6 +76,13 @@
         </acceleoCompiler>
     </target>
 
+    <target name="dist" depends="compile" description="generate the distribution">
+        <buildnumber />
+        <mkdir dir="${OUTPUT_FOLDER}/lib" />
+ 
+        <jar destfile="${OUTPUT_FOLDER}/lib/it.univaq.disim.typhon.acceleo-1.0.0.jar" basedir="${OUTPUT_FOLDER}" />
+    </target>
+
     <target name="generate" description="Generates the generated">
         <java 
             classname="it.univaq.disim.typhon.acceleo.runner.Runner" 
@@ -84,7 +91,7 @@
         </java>
     </target>
 
-    <target name="all" depends="clean,compile,generate">
+    <target name="all" depends="clean,compile,dist,generate">
         <echo message="Success!" />
     </target>
 
