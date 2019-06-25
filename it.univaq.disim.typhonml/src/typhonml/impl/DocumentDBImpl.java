@@ -64,6 +64,7 @@ public class DocumentDBImpl extends DatabaseImpl implements DocumentDB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Collection> getCollections() {
 		if (collections == null) {
 			collections = new EObjectContainmentEList<Collection>(Collection.class, this, TyphonmlPackage.DOCUMENT_DB__COLLECTIONS);

@@ -13,6 +13,26 @@
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/zero_many"/>
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/one_many"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="typhonml.ecore#//NlpTaskType">
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/ParagraphSegmentation"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/SentenceSegmentation"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/Tokenisation"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/PhraseExtractor"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/NGramExtractor"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/POSTagging"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/Lemmatisation"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/Stemming"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/DependencyParsing"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/Chunking"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/SentimentAnalysis"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/TextClassification"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/TopicModelling"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/TermExtraction"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/NamedEntityRecognition"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/RelationExtraction"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/EventExtraction"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/CoreferenceResolution"/>
+    </genEnums>
     <genClasses ecoreClass="typhonml.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Model/databases"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Model/dataTypes"/>
@@ -41,7 +61,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//MergeEntity/secondEntityToMerge"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//MergeEntity/newEntityName"/>
     </genClasses>
-    <genClasses ecoreClass="typhonml.ecore#//AddRelation"/>
+    <genClasses ecoreClass="typhonml.ecore#//AddRelation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddRelation/ownerEntity"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RemoveRelation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveRelation/relationToRemove"/>
     </genClasses>
@@ -65,7 +87,9 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeRelationCardinality/relation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangeRelationCardinality/newCardinality"/>
     </genClasses>
-    <genClasses ecoreClass="typhonml.ecore#//AddAttribute"/>
+    <genClasses ecoreClass="typhonml.ecore#//AddAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttribute/ownerEntity"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//ChangeAttributeType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeAttributeType/attributeToChange"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeAttributeType/newType"/>
@@ -88,6 +112,25 @@
     <genClasses ecoreClass="typhonml.ecore#//DropIndex">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//DropIndex/table"/>
     </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddAttributesToIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttributesToIndex/table"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddAttributesToIndex/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//RemoveAttributesToIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttributesToIndex/table"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttributesToIndex/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//RenameCollection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RenameCollection/collectionToRename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//RenameCollection/newName"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddCollectionIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddCollectionIndex/collection"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddCollectionIndex/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//DropCollectionIndex">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//DropCollectionIndex/collection"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//AddGraphAttribute"/>
     <genClasses ecoreClass="typhonml.ecore#//RemoveGraphAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveGraphAttribute/node"/>
@@ -103,7 +146,6 @@
     <genClasses image="false" ecoreClass="typhonml.ecore#//Database"/>
     <genClasses image="false" ecoreClass="typhonml.ecore#//DataType"/>
     <genClasses ecoreClass="typhonml.ecore#//PrimitiveDataType"/>
-    <genClasses ecoreClass="typhonml.ecore#//FreeText"/>
     <genClasses ecoreClass="typhonml.ecore#//CustomDataType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//CustomDataType/elements"/>
     </genClasses>
@@ -111,11 +153,18 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//DataTypeItem/type"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//DataTypeItem/implementation"/>
     </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//FreeText">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//FreeText/tasks"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//NlpTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NlpTask/type"/>
+    </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//DataTypeImplementationPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//DataTypeImplementationPackage/location"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//Entity">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/attributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/fretextAttributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/relations"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/genericList"/>
     </genClasses>

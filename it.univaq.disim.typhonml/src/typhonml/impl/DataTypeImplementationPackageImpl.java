@@ -70,6 +70,7 @@ public class DataTypeImplementationPackageImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getLocation() {
 		return location;
 	}
@@ -79,6 +80,7 @@ public class DataTypeImplementationPackageImpl extends MinimalEObjectImpl.Contai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setLocation(String newLocation) {
 		String oldLocation = location;
 		location = newLocation;

@@ -82,6 +82,7 @@ public class GraphNodeImpl extends NamedElementImpl implements GraphNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -123,6 +124,7 @@ public class GraphNodeImpl extends NamedElementImpl implements GraphNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		if (newEntity != entity) {
 			NotificationChain msgs = null;
@@ -142,6 +144,7 @@ public class GraphNodeImpl extends NamedElementImpl implements GraphNode {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<GraphAttribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<GraphAttribute>(GraphAttribute.class, this, TyphonmlPackage.GRAPH_NODE__ATTRIBUTES);

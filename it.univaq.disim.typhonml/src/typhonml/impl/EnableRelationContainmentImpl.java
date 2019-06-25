@@ -61,6 +61,7 @@ public class EnableRelationContainmentImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Relation getRelation() {
 		if (relation != null && relation.eIsProxy()) {
 			InternalEObject oldRelation = (InternalEObject)relation;
@@ -87,6 +88,7 @@ public class EnableRelationContainmentImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelation(Relation newRelation) {
 		Relation oldRelation = relation;
 		relation = newRelation;

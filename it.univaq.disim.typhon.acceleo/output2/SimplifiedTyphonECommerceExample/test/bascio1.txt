@@ -1,0 +1,32 @@
+	
+	8080
+
+
+	
+	
+	
+		User
+			relation with Order through orders;
+		Order
+			relation with Product through orderProducts;
+		Product
+			relation with Order through productOrders;
+	
+	
+
+
+userdb	
+orderdb	
+productdb	
+
+orderdb	
+productdb	
+userdb	
+
+
+Order
+		orderProducts - Product (Relational database)
+Product
+		productOrders - Order (Document database)
+User
+		orders - Order (Document database)

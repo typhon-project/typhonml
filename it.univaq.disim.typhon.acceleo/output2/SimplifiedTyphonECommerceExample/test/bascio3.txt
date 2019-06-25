@@ -1,0 +1,17 @@
+
+	Call internal Template Query:
+		User
+		Order
+		Product
+
+	Call OCL Directly:
+		User
+		Order
+		Product
+
+	Call imported Utility Query:
+		Order
+		Product
+		User
+
+

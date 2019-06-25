@@ -50,7 +50,7 @@ public interface KeyValueElement extends NamedElement, GenericList {
 
 	/**
 	 * Returns the value of the '<em><b>Values</b></em>' reference list.
-	 * The list contents are of type {@link typhonml.DataType}.
+	 * The list contents are of type {@link typhonml.Attribute}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Values</em>' reference list isn't clear,
@@ -62,6 +62,6 @@ public interface KeyValueElement extends NamedElement, GenericList {
 	 * @model
 	 * @generated
 	 */
-	EList<DataType> getValues();
+	EList<Attribute> getValues();
 
 } // KeyValueElement

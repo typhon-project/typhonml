@@ -160,6 +160,26 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createDropIndexAdapter();
 			}
 			@Override
+			public Adapter caseAddAttributesToIndex(AddAttributesToIndex object) {
+				return createAddAttributesToIndexAdapter();
+			}
+			@Override
+			public Adapter caseRemoveAttributesToIndex(RemoveAttributesToIndex object) {
+				return createRemoveAttributesToIndexAdapter();
+			}
+			@Override
+			public Adapter caseRenameCollection(RenameCollection object) {
+				return createRenameCollectionAdapter();
+			}
+			@Override
+			public Adapter caseAddCollectionIndex(AddCollectionIndex object) {
+				return createAddCollectionIndexAdapter();
+			}
+			@Override
+			public Adapter caseDropCollectionIndex(DropCollectionIndex object) {
+				return createDropCollectionIndexAdapter();
+			}
+			@Override
 			public Adapter caseAddGraphAttribute(AddGraphAttribute object) {
 				return createAddGraphAttributeAdapter();
 			}
@@ -192,16 +212,20 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createPrimitiveDataTypeAdapter();
 			}
 			@Override
-			public Adapter caseFreeText(FreeText object) {
-				return createFreeTextAdapter();
-			}
-			@Override
 			public Adapter caseCustomDataType(CustomDataType object) {
 				return createCustomDataTypeAdapter();
 			}
 			@Override
 			public Adapter caseDataTypeItem(DataTypeItem object) {
 				return createDataTypeItemAdapter();
+			}
+			@Override
+			public Adapter caseFreeText(FreeText object) {
+				return createFreeTextAdapter();
+			}
+			@Override
+			public Adapter caseNlpTask(NlpTask object) {
+				return createNlpTaskAdapter();
 			}
 			@Override
 			public Adapter caseDataTypeImplementationPackage(DataTypeImplementationPackage object) {
@@ -634,6 +658,76 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.AddAttributesToIndex <em>Add Attributes To Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.AddAttributesToIndex
+	 * @generated
+	 */
+	public Adapter createAddAttributesToIndexAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.RemoveAttributesToIndex <em>Remove Attributes To Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.RemoveAttributesToIndex
+	 * @generated
+	 */
+	public Adapter createRemoveAttributesToIndexAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.RenameCollection <em>Rename Collection</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.RenameCollection
+	 * @generated
+	 */
+	public Adapter createRenameCollectionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.AddCollectionIndex <em>Add Collection Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.AddCollectionIndex
+	 * @generated
+	 */
+	public Adapter createAddCollectionIndexAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.DropCollectionIndex <em>Drop Collection Index</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.DropCollectionIndex
+	 * @generated
+	 */
+	public Adapter createDropCollectionIndexAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link typhonml.AddGraphAttribute <em>Add Graph Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -756,6 +850,20 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createFreeTextAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.NlpTask
+	 * @generated
+	 */
+	public Adapter createNlpTaskAdapter() {
 		return null;
 	}
 

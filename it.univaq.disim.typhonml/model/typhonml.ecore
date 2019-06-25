@@ -40,7 +40,10 @@
         eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newEntityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="#//Relation #//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="#//Relation #//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
+        eType="#//Entity"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveRelation" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="relationToRemove" lowerBound="1"
         eType="#//Relation"/>
@@ -72,7 +75,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newCardinality" lowerBound="1"
         eType="#//Cardinality"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="#//Attribute #//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="#//Attribute #//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
+        eType="#//Entity"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToChange" lowerBound="1"
         eType="#//Attribute"/>
@@ -100,6 +106,31 @@
   <eClassifiers xsi:type="ecore:EClass" name="DropIndex" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttributesToIndex" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RemoveAttributesToIndex" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RenameCollection" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collectionToRename" lowerBound="1"
+        eType="#//Collection"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddCollectionIndex" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collection" lowerBound="1"
+        eType="#//Collection"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//Attribute"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DropCollectionIndex" eSuperTypes="#//ChangeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="collection" lowerBound="1"
+        eType="#//Collection"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AddGraphAttribute" eSuperTypes="#//GraphAttribute #//ChangeOperator"/>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphAttribute" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="1" eType="#//GraphNode"/>
@@ -116,7 +147,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//DataType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="FreeText" eSuperTypes="#//PrimitiveDataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="CustomDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DataTypeItem" containment="true"/>
@@ -126,12 +156,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
         eType="#//DataTypeImplementationPackage" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FreeText" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//NlpTask" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NlpTask">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NlpTaskType"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeImplementationPackage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fretextAttributes" upperBound="-1"
+        eType="#//FreeText" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//Relation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" eType="#//GenericList"
@@ -184,7 +223,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="KeyValueElement" eSuperTypes="#//NamedElement #//GenericList">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
-        eType="#//DataType"/>
+        eType="#//Attribute"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphDB" eSuperTypes="#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
@@ -221,6 +260,26 @@
     <eLiterals name="one" value="1"/>
     <eLiterals name="zero_many" value="2"/>
     <eLiterals name="one_many" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NlpTaskType">
+    <eLiterals name="ParagraphSegmentation"/>
+    <eLiterals name="SentenceSegmentation" value="1"/>
+    <eLiterals name="Tokenisation" value="2"/>
+    <eLiterals name="PhraseExtractor" value="3"/>
+    <eLiterals name="NGramExtractor" value="4"/>
+    <eLiterals name="POSTagging" value="5"/>
+    <eLiterals name="Lemmatisation" value="6"/>
+    <eLiterals name="Stemming" value="7"/>
+    <eLiterals name="DependencyParsing" value="8"/>
+    <eLiterals name="Chunking" value="9"/>
+    <eLiterals name="SentimentAnalysis" value="10"/>
+    <eLiterals name="TextClassification" value="11"/>
+    <eLiterals name="TopicModelling" value="12"/>
+    <eLiterals name="TermExtraction" value="13"/>
+    <eLiterals name="NamedEntityRecognition" value="14"/>
+    <eLiterals name="RelationExtraction" value="15"/>
+    <eLiterals name="EventExtraction" value="16"/>
+    <eLiterals name="CoreferenceResolution" value="17"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GenericList">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
