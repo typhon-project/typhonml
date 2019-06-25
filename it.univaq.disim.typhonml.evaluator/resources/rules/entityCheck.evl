@@ -1,0 +1,20 @@
+import "entityGuard.eol";
+
+context Entity {
+	  critique hasContainmentInER{
+	 	check:
+			 not self.checkIsContainmentER()
+		message: self.name+" entity, mapped in Relational Database, " + 
+					"has a containment. Consider to move it to Document Database."
+	 	fix {
+	 		title: "Fix Containment changing " + 
+	 				" database from Relational to Document"
+	 		do {
+	 			"Refactoring".println();
+	 			self.changeDBFromRelationalToDocument();
+	 		}
+	 	}
+	 } 
+}
+
+

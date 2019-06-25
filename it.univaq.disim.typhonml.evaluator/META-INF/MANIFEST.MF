@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Evaluator
+Bundle-SymbolicName: it.univaq.disim.typhonml.evaluator
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: it.univaq.disim.typhonml.evaluator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.epsilon.emc.emf;bundle-version="1.5.1",
+ org.eclipse.epsilon.evl.engine;bundle-version="1.5.1"
+Import-Package: typhonml

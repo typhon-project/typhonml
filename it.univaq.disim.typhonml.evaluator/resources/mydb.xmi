@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius" xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius ../../it.univaq.disim.typhonml.evaluator/resources/typhonml.ecore">
+<typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius" xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius typhonml.ecore">
   <databases xsi:type="typhonml:RelationalDB" name="RelationalDatabase">
     <tables name="OrderDB" entity="//@dataTypes.9">
       <indexSpec name="orderIndex" attributes="//@dataTypes.9/@attributes.1"/>
@@ -71,5 +71,14 @@
     <attributes name="id" type="//@dataTypes.1"/>
     <attributes name="number" type="//@dataTypes.1"/>
     <attributes name="expiryDate" type="//@dataTypes.0"/>
+  </dataTypes>
+  <dataTypes xsi:type="typhonml:Entity" name="A">
+    <relations name="a2b" type="//@dataTypes.14"/>
+  </dataTypes>
+  <dataTypes xsi:type="typhonml:Entity" name="B">
+    <relations name="b2c" type="//@dataTypes.15"/>
+  </dataTypes>
+  <dataTypes xsi:type="typhonml:Entity" name="C">
+    <relations name="c2a" type="//@dataTypes.13"/>
   </dataTypes>
 </typhonml:Model>

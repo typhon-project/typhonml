@@ -1,0 +1,114 @@
+
+
+
+operation Entity hasCycle() : Boolean{
+	
+	var result = false;
+	for(rel in self.relations){
+		if(rel.type == self)
+			result = true;
+	}
+	return result;
+	
+	
+	
+	//("selef ->"+self.name).println();
+	
+	
+	
+	
+	
+	//self.getAllChildren();
+	//return false;
+	//return self.relations.recursion2(null, self);
+}
+
+
+operation Entity checkIsContainmentER() : Boolean{
+
+	if(self.genericList <> null){
+		if(self.genericList.isTypeOf(Table)){
+			for(rel in self.relations){
+				if(rel.isContainment <> null and rel.isContainment == true){
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+
+
+
+operation RelationalDB checkIsContainmentER2() : List<Entity>{
+	var er_containmentEntities : List<Entity>; 
+
+	for(table in self.tables){
+		for(rel in table.entity.relations){
+			if(rel.isContainment <> null and rel.isContainment == true){
+				er_containmentEntities.add(rel.type);
+			}
+		}
+	}
+	
+	/*
+	if(er_containmentEntities.size() > 0){
+		for(e in er_containmentEntities){
+			e.name.println();
+			
+		}
+		return true;
+	}else{
+		return false;
+	}
+	*/
+	return er_containmentEntities;
+}
+
+
+
+operation OrderedSet<Relation> recursion2(entity : Entity, entityToCheck : Entity) : Boolean{
+	//(entity.name + '@@@').println();
+	
+	var entityTMP;
+	
+	for(rel in self){
+		if(rel.type.isTypeOf(Entity)){
+			entityTMP = rel.type;
+			if(rel.type.name == entityToCheck.name){
+				('###' + rel.type.name + ' TRUE').println();
+				return true;
+			}else{
+				("$$$$$$" + rel.type.name).println();
+				("------" +entityToCheck.name).println();
+				return rel.type.relations.recursion2(rel.type, entityToCheck);
+			}
+		}
+	}
+	return false;
+}
+
+
+
+operation Entity getAllChildren() :Boolean{
+	
+	for(rel in self.relations){
+		if(self.relations.matches(rel.type.relations)){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+}
+
+
+operation Entity removeCycle(){
+	"Cycle has been removed".println();
+	var newEntity : Entity = new Entity;
+	
+	newEntity.name = "newEntity";
+	
+	self.eContainer().dataTypes.add(newEntity);
+}

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="generate" name="it.univaq.disim.typhon.acceleo">
-    <property name="ECLIPSE_HOME" value="../../../../tools/eclipse/java-2018-09/eclipse"/>
-    <property name="ECLIPSE_WORKSPACE" value="../../../../eclipse-workspaces/eclipse-workspace-typhon-github"/>
+  
+    <property name="ECLIPSE_HOME" value="../../../../../../ECLIPSE/SIRIUS/ObeoDesigner-Community.app/Contents/Eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../EpsilonTest"/>
 
     <!-- The classpath with only the dependencies used by the project -->
     <path id="it.univaq.disim.typhon.acceleo.libraryclasspath">
