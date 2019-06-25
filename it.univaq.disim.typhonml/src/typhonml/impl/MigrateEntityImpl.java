@@ -73,6 +73,7 @@ public class MigrateEntityImpl extends ChangeOperatorImpl implements MigrateEnti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -99,6 +100,7 @@ public class MigrateEntityImpl extends ChangeOperatorImpl implements MigrateEnti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		Entity oldEntity = entity;
 		entity = newEntity;
@@ -111,6 +113,7 @@ public class MigrateEntityImpl extends ChangeOperatorImpl implements MigrateEnti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Database getNewDatabase() {
 		if (newDatabase != null && newDatabase.eIsProxy()) {
 			InternalEObject oldNewDatabase = (InternalEObject)newDatabase;
@@ -137,6 +140,7 @@ public class MigrateEntityImpl extends ChangeOperatorImpl implements MigrateEnti
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewDatabase(Database newNewDatabase) {
 		Database oldNewDatabase = newDatabase;
 		newDatabase = newNewDatabase;

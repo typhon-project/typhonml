@@ -1,0 +1,168 @@
+datatype Date
+datatype String
+datatype int
+datatype Real
+datatype Blob
+datatype natural_language
+
+
+customdatatype Jpeg {
+	elements{
+		 	date : Date ['it.univaq.disim.Date'],
+		 	thumbnail : Blob ['it.univaq.disim.Blob']
+	}
+}
+
+
+entity Review{
+	id : String
+	product -> Product[1]
+}
+
+entity Product{
+	id : String
+	name : String
+	description : String
+	photo : Jpeg
+	review :-> Review."Review.product"[0..*]
+	orders -> Product[0..*]
+}
+
+entity Order{
+	id : String
+	date : Date
+	totalAmount : int
+	
+	products -> Product.products[0..*]
+	users -> User."User.orders"[1]
+	paidWith -> CreditCard[1]
+}
+
+entity User{
+	id : String
+	name : String
+	surname : String
+	comments :-> Comment[0..*]
+	paymentsDetails :-> CreditCard[0..*]
+	orders -> Order[0..*]
+}
+
+entity Comment{
+	id : String
+	freetext content [SentenceSegmentation,TextClassification]
+	responses :-> Comment[0..*]
+}
+
+entity CreditCard{
+	id : String
+	number : String
+	expiryDate : Date
+}
+
+
+
+relationaldb RelationalDatabase{
+	tables{
+		table {
+			OrderDB : Order
+			index orderIndex {
+				attributes ("Order.date")
+			}
+			idSpec ("Order.date")
+		}
+		table {
+			UserDB : User
+			index  userIndex{
+				attributes ('User.name')
+//				references ("User.comments")
+				}
+			idSpec ('User.name')
+		}
+		table {
+			CreditCardDB : CreditCard
+			idSpec ("CreditCard.number")
+		}
+	}
+}
+
+documentdb DocumentDatabase{
+	collections{
+			ReviewsDB : Review
+			CommentsDB : Comment
+	}
+}
+
+graphdb ProductDB  {
+	nodes {
+		node ProductNode!Product {
+			name = "Product.name"
+		}			
+	}
+	}
+ 	edges {
+ 		edge concordance {
+ 			from ProductNode
+ 			to ProductNode
+ 			labels {
+ 				concordance:Real
+ 			}
+ 		}
+ 	}
+}
+
+keyvaluedb PhotoDB {
+ 	elements {
+ 		photo { photokey -> ( "Product.photo" )	}	
+ 	}
+}
+
+
+
+changeOperators [
+	add entity newEntityName {
+		attributes {
+			att1 : String
+		}
+		relations {
+			ref -> User
+		}
+	}
+ 	remove entity CreditCard
+	rename entity Product as Item
+	merge entities Review Comment as NewName
+	
+	split entity Order {
+		left entity LeftOrderEntityName { 
+			//...
+		}
+		right entity RightOrderEntityName { 
+			//...
+		}
+	}
+	migrate Comment to RelationalDatabase
+	
+	add relation newRelationName to Order -> Product [0..*] 
+	remove relation "Review.product" 
+	rename relation "Product.orders" as newOrdersName
+	change cardinality "User.comments" as 0..*
+	change containment "User.comments" as false
+	add attribute newAttributeName:String to User
+	remove attribute "Product.description"
+	rename attribute "CreditCard.number" as num
+	change attribute "Order.totalAmount" type Real
+	
+	create tableindex "RelationalDatabase.CreditCardDB" {
+		"CreditCard.number"
+	}
+
+	drop tableindex "RelationalDatabase.OrderDB"
+	rename table "RelationalDatabase.UserDB" as UserT
+	
+	extends tableindex "RelationalDatabase.UserDB" {
+		"User.surname"
+	}
+	reduce tableindex "RelationalDatabase.UserDB" {
+		"User.name"
+	}
+
+]

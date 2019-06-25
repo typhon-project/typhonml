@@ -82,6 +82,7 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute getAttributeToRename() {
 		if (attributeToRename != null && attributeToRename.eIsProxy()) {
 			InternalEObject oldAttributeToRename = (InternalEObject)attributeToRename;
@@ -108,6 +109,7 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAttributeToRename(Attribute newAttributeToRename) {
 		Attribute oldAttributeToRename = attributeToRename;
 		attributeToRename = newAttributeToRename;
@@ -120,6 +122,7 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNewName() {
 		return newName;
 	}
@@ -129,6 +132,7 @@ public class RenameAttributeImpl extends ChangeOperatorImpl implements RenameAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewName(String newNewName) {
 		String oldNewName = newName;
 		newName = newNewName;

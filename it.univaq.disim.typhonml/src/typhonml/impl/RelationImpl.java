@@ -115,6 +115,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getType() {
 		if (type != null && type.eIsProxy()) {
 			InternalEObject oldType = (InternalEObject)type;
@@ -141,6 +142,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(Entity newType) {
 		Entity oldType = type;
 		type = newType;
@@ -153,6 +155,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Cardinality getCardinality() {
 		return cardinality;
 	}
@@ -162,6 +165,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCardinality(Cardinality newCardinality) {
 		Cardinality oldCardinality = cardinality;
 		cardinality = newCardinality == null ? CARDINALITY_EDEFAULT : newCardinality;
@@ -174,6 +178,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Relation getOpposite() {
 		if (opposite != null && opposite.eIsProxy()) {
 			InternalEObject oldOpposite = (InternalEObject)opposite;
@@ -200,6 +205,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOpposite(Relation newOpposite) {
 		Relation oldOpposite = opposite;
 		opposite = newOpposite;
@@ -212,6 +218,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Boolean getIsContainment() {
 		return isContainment;
 	}
@@ -221,6 +228,7 @@ public class RelationImpl extends NamedElementImpl implements Relation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIsContainment(Boolean newIsContainment) {
 		Boolean oldIsContainment = isContainment;
 		isContainment = newIsContainment;

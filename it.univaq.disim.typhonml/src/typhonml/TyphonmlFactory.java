@@ -211,6 +211,51 @@ public interface TyphonmlFactory extends EFactory {
 	DropIndex createDropIndex();
 
 	/**
+	 * Returns a new object of class '<em>Add Attributes To Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Attributes To Index</em>'.
+	 * @generated
+	 */
+	AddAttributesToIndex createAddAttributesToIndex();
+
+	/**
+	 * Returns a new object of class '<em>Remove Attributes To Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Attributes To Index</em>'.
+	 * @generated
+	 */
+	RemoveAttributesToIndex createRemoveAttributesToIndex();
+
+	/**
+	 * Returns a new object of class '<em>Rename Collection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rename Collection</em>'.
+	 * @generated
+	 */
+	RenameCollection createRenameCollection();
+
+	/**
+	 * Returns a new object of class '<em>Add Collection Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Collection Index</em>'.
+	 * @generated
+	 */
+	AddCollectionIndex createAddCollectionIndex();
+
+	/**
+	 * Returns a new object of class '<em>Drop Collection Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Drop Collection Index</em>'.
+	 * @generated
+	 */
+	DropCollectionIndex createDropCollectionIndex();
+
+	/**
 	 * Returns a new object of class '<em>Add Graph Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -272,6 +317,15 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	FreeText createFreeText();
+
+	/**
+	 * Returns a new object of class '<em>Nlp Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nlp Task</em>'.
+	 * @generated
+	 */
+	NlpTask createNlpTask();
 
 	/**
 	 * Returns a new object of class '<em>Custom Data Type</em>'.

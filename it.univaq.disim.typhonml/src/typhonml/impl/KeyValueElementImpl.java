@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import typhonml.DataType;
+import typhonml.Attribute;
 import typhonml.Entity;
 import typhonml.GenericList;
 import typhonml.KeyValueElement;
@@ -76,7 +76,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataType> values;
+	protected EList<Attribute> values;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +102,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -143,6 +144,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		if (newEntity != entity) {
 			NotificationChain msgs = null;
@@ -162,6 +164,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKey() {
 		return key;
 	}
@@ -171,6 +174,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKey(String newKey) {
 		String oldKey = key;
 		key = newKey;
@@ -183,9 +187,10 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DataType> getValues() {
+	@Override
+	public EList<Attribute> getValues() {
 		if (values == null) {
-			values = new EObjectResolvingEList<DataType>(DataType.class, this, TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES);
+			values = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES);
 		}
 		return values;
 	}
@@ -256,7 +261,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 				return;
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES:
 				getValues().clear();
-				getValues().addAll((Collection<? extends DataType>)newValue);
+				getValues().addAll((Collection<? extends Attribute>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

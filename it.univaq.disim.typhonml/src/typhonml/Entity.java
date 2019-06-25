@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link typhonml.Entity#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link typhonml.Entity#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getRelations <em>Relations</em>}</li>
  *   <li>{@link typhonml.Entity#getGenericList <em>Generic List</em>}</li>
  * </ul>
@@ -38,6 +39,18 @@ public interface Entity extends DataType {
 	 * @generated
 	 */
 	EList<Attribute> getAttributes();
+
+	/**
+	 * Returns the value of the '<em><b>Fretext Attributes</b></em>' containment reference list.
+	 * The list contents are of type {@link typhonml.FreeText}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fretext Attributes</em>' containment reference list.
+	 * @see typhonml.TyphonmlPackage#getEntity_FretextAttributes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<FreeText> getFretextAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Relations</b></em>' containment reference list.
