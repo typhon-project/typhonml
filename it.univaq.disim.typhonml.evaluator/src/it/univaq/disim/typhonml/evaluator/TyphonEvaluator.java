@@ -134,7 +134,7 @@ public class TyphonEvaluator {
 	
 	protected File getFile(String fileName) {
 		File resultFile = null;
-		URL url = getClass().getResource("/" + fileName);
+		URL url = getClass().getResource(File.separator + fileName);
 		try {
 			 resultFile = new File(url.toURI());
 		} catch (URISyntaxException e) {
