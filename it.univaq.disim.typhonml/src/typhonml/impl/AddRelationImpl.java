@@ -3,10 +3,12 @@
 package typhonml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import typhonml.AddRelation;
 import typhonml.Entity;
 import typhonml.TyphonmlPackage;
@@ -34,6 +36,7 @@ public class AddRelationImpl extends RelationImpl implements AddRelation {
 	 * @ordered
 	 */
 	protected Entity ownerEntity;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -58,7 +61,6 @@ public class AddRelationImpl extends RelationImpl implements AddRelation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Entity getOwnerEntity() {
 		if (ownerEntity != null && ownerEntity.eIsProxy()) {
 			InternalEObject oldOwnerEntity = (InternalEObject)ownerEntity;
@@ -85,7 +87,6 @@ public class AddRelationImpl extends RelationImpl implements AddRelation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setOwnerEntity(Entity newOwnerEntity) {
 		Entity oldOwnerEntity = ownerEntity;
 		ownerEntity = newOwnerEntity;

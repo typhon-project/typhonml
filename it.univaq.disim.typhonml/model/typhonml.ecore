@@ -173,8 +173,6 @@
         eType="#//FreeText" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//Relation" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="genericList" eType="#//GenericList"
-        eOpposite="#//GenericList/entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
@@ -190,12 +188,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
         eType="#//Table" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//NamedElement #//GenericList">
+  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="indexSpec" eType="#//IndexSpec"
         containment="true" eOpposite="#//IndexSpec/table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="idSpec" eType="#//IdSpec"
         containment="true" eOpposite="#//IdSpec/table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="db" eType="#//Database"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IndexSpec" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -215,15 +214,18 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="collections" upperBound="-1"
         eType="#//Collection" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//GenericList #//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KeyValueDB" eSuperTypes="#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//KeyValueElement" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="KeyValueElement" eSuperTypes="#//NamedElement #//GenericList">
+  <eClassifiers xsi:type="ecore:EClass" name="KeyValueElement" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
         eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphDB" eSuperTypes="#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
@@ -231,9 +233,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
         eType="#//GraphEdge" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphNode" eSuperTypes="#//NamedElement #//GenericList">
+  <eClassifiers xsi:type="ecore:EClass" name="GraphNode" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//GraphAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphAttribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Attribute"/>
@@ -251,9 +254,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
         eType="#//Column" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//NamedElement #//GenericList">
+  <eClassifiers xsi:type="ecore:EClass" name="Column" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">
     <eLiterals name="zero_one"/>
@@ -280,10 +284,6 @@
     <eLiterals name="RelationExtraction" value="15"/>
     <eLiterals name="EventExtraction" value="16"/>
     <eLiterals name="CoreferenceResolution" value="17"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GenericList">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"
-        eOpposite="#//Entity/genericList"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RenameEntity" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRename" eType="#//Entity"/>

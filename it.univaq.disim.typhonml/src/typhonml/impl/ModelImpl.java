@@ -92,7 +92,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Database> getDatabases() {
 		if (databases == null) {
 			databases = new EObjectContainmentEList<Database>(Database.class, this, TyphonmlPackage.MODEL__DATABASES);
@@ -105,7 +104,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<DataType> getDataTypes() {
 		if (dataTypes == null) {
 			dataTypes = new EObjectContainmentEList<DataType>(DataType.class, this, TyphonmlPackage.MODEL__DATA_TYPES);
@@ -118,7 +116,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<ChangeOperator> getChangeOperators() {
 		if (changeOperators == null) {
 			changeOperators = new EObjectContainmentEList<ChangeOperator>(ChangeOperator.class, this, TyphonmlPackage.MODEL__CHANGE_OPERATORS);

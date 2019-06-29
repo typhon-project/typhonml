@@ -45,33 +45,11 @@ public class KeyValueElementItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityPropertyDescriptor(object);
 			addKeyPropertyDescriptor(object);
 			addValuesPropertyDescriptor(object);
+			addEntityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GenericList_entity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GenericList_entity_feature", "_UI_GenericList_type"),
-				 TyphonmlPackage.Literals.GENERIC_LIST__ENTITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -110,6 +88,28 @@ public class KeyValueElementItemProvider extends NamedElementItemProvider {
 				 getString("_UI_KeyValueElement_values_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_KeyValueElement_values_feature", "_UI_KeyValueElement_type"),
 				 TyphonmlPackage.Literals.KEY_VALUE_ELEMENT__VALUES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_KeyValueElement_entity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_KeyValueElement_entity_feature", "_UI_KeyValueElement_type"),
+				 TyphonmlPackage.Literals.KEY_VALUE_ELEMENT__ENTITY,
 				 true,
 				 false,
 				 true,

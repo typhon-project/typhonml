@@ -79,7 +79,6 @@ public class AddAttributesToIndexImpl extends ChangeOperatorImpl implements AddA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Table getTable() {
 		if (table != null && table.eIsProxy()) {
 			InternalEObject oldTable = (InternalEObject)table;
@@ -106,7 +105,6 @@ public class AddAttributesToIndexImpl extends ChangeOperatorImpl implements AddA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTable(Table newTable) {
 		Table oldTable = table;
 		table = newTable;
@@ -119,7 +117,6 @@ public class AddAttributesToIndexImpl extends ChangeOperatorImpl implements AddA
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX__ATTRIBUTES);

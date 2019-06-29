@@ -77,7 +77,6 @@ public class AddCollectionIndexImpl extends ChangeOperatorImpl implements AddCol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Collection getCollection() {
 		if (collection != null && collection.eIsProxy()) {
 			InternalEObject oldCollection = (InternalEObject)collection;
@@ -104,7 +103,6 @@ public class AddCollectionIndexImpl extends ChangeOperatorImpl implements AddCol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCollection(Collection newCollection) {
 		Collection oldCollection = collection;
 		collection = newCollection;
@@ -117,7 +115,6 @@ public class AddCollectionIndexImpl extends ChangeOperatorImpl implements AddCol
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.ADD_COLLECTION_INDEX__ATTRIBUTES);

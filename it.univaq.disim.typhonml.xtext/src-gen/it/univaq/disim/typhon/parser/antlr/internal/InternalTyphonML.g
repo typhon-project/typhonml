@@ -2549,39 +2549,9 @@ ruleEntity_Impl returns [EObject current=null]
 				)
 			)*
 		)?
-		(
-			otherlv_11='genericList'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getGenericListKeyword_7_0());
-			}
-			otherlv_12='{'
-			{
-				newLeafNode(otherlv_12, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_7_1());
-			}
-			(
-				(
-					{
-						if ($current==null) {
-							$current = createModelElement(grammarAccess.getEntity_ImplRule());
-						}
-					}
-					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getGenericListGenericListCrossReference_7_2_0());
-					}
-					ruleEString
-					{
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_14='}'
-			{
-				newLeafNode(otherlv_14, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_7_3());
-			}
-		)?
-		otherlv_15='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_15, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_7());
 		}
 	)
 ;

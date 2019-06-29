@@ -61,7 +61,6 @@ public class RemoveGraphAttributeImpl extends ChangeOperatorImpl implements Remo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public GraphNode getNode() {
 		if (node != null && node.eIsProxy()) {
 			InternalEObject oldNode = (InternalEObject)node;
@@ -88,7 +87,6 @@ public class RemoveGraphAttributeImpl extends ChangeOperatorImpl implements Remo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNode(GraphNode newNode) {
 		GraphNode oldNode = node;
 		node = newNode;

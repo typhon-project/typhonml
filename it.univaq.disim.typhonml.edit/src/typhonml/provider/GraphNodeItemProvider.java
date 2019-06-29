@@ -63,9 +63,9 @@ public class GraphNodeItemProvider extends NamedElementItemProvider {
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_GenericList_entity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GenericList_entity_feature", "_UI_GenericList_type"),
-				 TyphonmlPackage.Literals.GENERIC_LIST__ENTITY,
+				 getString("_UI_GraphNode_entity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GraphNode_entity_feature", "_UI_GraphNode_type"),
+				 TyphonmlPackage.Literals.GRAPH_NODE__ENTITY,
 				 true,
 				 false,
 				 true,

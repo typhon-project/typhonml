@@ -310,24 +310,6 @@ public interface TyphonmlFactory extends EFactory {
 	PrimitiveDataType createPrimitiveDataType();
 
 	/**
-	 * Returns a new object of class '<em>Free Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Free Text</em>'.
-	 * @generated
-	 */
-	FreeText createFreeText();
-
-	/**
-	 * Returns a new object of class '<em>Nlp Task</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Nlp Task</em>'.
-	 * @generated
-	 */
-	NlpTask createNlpTask();
-
-	/**
 	 * Returns a new object of class '<em>Custom Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,6 +326,24 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	DataTypeItem createDataTypeItem();
+
+	/**
+	 * Returns a new object of class '<em>Free Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Free Text</em>'.
+	 * @generated
+	 */
+	FreeText createFreeText();
+
+	/**
+	 * Returns a new object of class '<em>Nlp Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nlp Task</em>'.
+	 * @generated
+	 */
+	NlpTask createNlpTask();
 
 	/**
 	 * Returns a new object of class '<em>Data Type Implementation Package</em>'.
@@ -515,15 +515,6 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	Column createColumn();
-
-	/**
-	 * Returns a new object of class '<em>Generic List</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Generic List</em>'.
-	 * @generated
-	 */
-	GenericList createGenericList();
 
 	/**
 	 * Returns a new object of class '<em>Rename Entity</em>'.

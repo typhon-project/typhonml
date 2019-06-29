@@ -16,7 +16,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link typhonml.Entity#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getRelations <em>Relations</em>}</li>
- *   <li>{@link typhonml.Entity#getGenericList <em>Generic List</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getEntity()
@@ -44,6 +43,10 @@ public interface Entity extends DataType {
 	 * Returns the value of the '<em><b>Fretext Attributes</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.FreeText}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fretext Attributes</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Fretext Attributes</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getEntity_FretextAttributes()
@@ -67,33 +70,5 @@ public interface Entity extends DataType {
 	 * @generated
 	 */
 	EList<Relation> getRelations();
-
-	/**
-	 * Returns the value of the '<em><b>Generic List</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link typhonml.GenericList#getEntity <em>Entity</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Generic List</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Generic List</em>' reference.
-	 * @see #setGenericList(GenericList)
-	 * @see typhonml.TyphonmlPackage#getEntity_GenericList()
-	 * @see typhonml.GenericList#getEntity
-	 * @model opposite="entity"
-	 * @generated
-	 */
-	GenericList getGenericList();
-
-	/**
-	 * Sets the value of the '{@link typhonml.Entity#getGenericList <em>Generic List</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Generic List</em>' reference.
-	 * @see #getGenericList()
-	 * @generated
-	 */
-	void setGenericList(GenericList value);
 
 } // Entity

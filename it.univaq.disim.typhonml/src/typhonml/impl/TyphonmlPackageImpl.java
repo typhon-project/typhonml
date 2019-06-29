@@ -41,7 +41,6 @@ import typhonml.EnableBidirectionalRelation;
 import typhonml.EnableRelationContainment;
 import typhonml.Entity;
 import typhonml.FreeText;
-import typhonml.GenericList;
 import typhonml.GraphAttribute;
 import typhonml.GraphDB;
 import typhonml.GraphEdge;
@@ -341,20 +340,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass freeTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass nlpTaskEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass customDataTypeEClass = null;
 
 	/**
@@ -363,6 +348,20 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass dataTypeItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass freeTextEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nlpTaskEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -502,13 +501,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass genericListEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass renameEntityEClass = null;
 
 	/**
@@ -598,7 +590,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getModel() {
 		return modelEClass;
 	}
@@ -608,7 +599,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getModel_Databases() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(0);
 	}
@@ -618,7 +608,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getModel_DataTypes() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(1);
 	}
@@ -628,7 +617,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getModel_ChangeOperators() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(2);
 	}
@@ -638,7 +626,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -648,7 +635,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getNamedElement_Name() {
 		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -658,7 +644,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getNamedElement_ImportedNamespace() {
 		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -668,7 +653,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getChangeOperator() {
 		return changeOperatorEClass;
 	}
@@ -678,7 +662,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddEntity() {
 		return addEntityEClass;
 	}
@@ -688,7 +671,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRemoveEntity() {
 		return removeEntityEClass;
 	}
@@ -698,7 +680,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveEntity_EntityToRemove() {
 		return (EReference)removeEntityEClass.getEStructuralFeatures().get(0);
 	}
@@ -708,7 +689,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getSplitEntity() {
 		return splitEntityEClass;
 	}
@@ -718,7 +698,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getSplitEntity_EntityToBeSplit() {
 		return (EReference)splitEntityEClass.getEStructuralFeatures().get(0);
 	}
@@ -728,7 +707,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getSplitEntity_FirstNewEntity() {
 		return (EReference)splitEntityEClass.getEStructuralFeatures().get(1);
 	}
@@ -738,7 +716,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getSplitEntity_SecondNewEntity() {
 		return (EReference)splitEntityEClass.getEStructuralFeatures().get(2);
 	}
@@ -748,7 +725,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMigrateEntity() {
 		return migrateEntityEClass;
 	}
@@ -758,7 +734,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getMigrateEntity_Entity() {
 		return (EReference)migrateEntityEClass.getEStructuralFeatures().get(0);
 	}
@@ -768,7 +743,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getMigrateEntity_NewDatabase() {
 		return (EReference)migrateEntityEClass.getEStructuralFeatures().get(1);
 	}
@@ -778,7 +752,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getMergeEntity() {
 		return mergeEntityEClass;
 	}
@@ -788,7 +761,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getMergeEntity_FirstEntityToMerge() {
 		return (EReference)mergeEntityEClass.getEStructuralFeatures().get(0);
 	}
@@ -798,7 +770,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getMergeEntity_SecondEntityToMerge() {
 		return (EReference)mergeEntityEClass.getEStructuralFeatures().get(1);
 	}
@@ -808,7 +779,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getMergeEntity_NewEntityName() {
 		return (EAttribute)mergeEntityEClass.getEStructuralFeatures().get(2);
 	}
@@ -818,7 +788,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddRelation() {
 		return addRelationEClass;
 	}
@@ -828,7 +797,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddRelation_OwnerEntity() {
 		return (EReference)addRelationEClass.getEStructuralFeatures().get(0);
 	}
@@ -838,7 +806,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRemoveRelation() {
 		return removeRelationEClass;
 	}
@@ -848,7 +815,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveRelation_RelationToRemove() {
 		return (EReference)removeRelationEClass.getEStructuralFeatures().get(0);
 	}
@@ -858,7 +824,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRenameRelation() {
 		return renameRelationEClass;
 	}
@@ -868,7 +833,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRenameRelation_RelationToRename() {
 		return (EReference)renameRelationEClass.getEStructuralFeatures().get(0);
 	}
@@ -878,7 +842,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRenameRelation_NewRelationName() {
 		return (EAttribute)renameRelationEClass.getEStructuralFeatures().get(1);
 	}
@@ -888,7 +851,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getEnableRelationContainment() {
 		return enableRelationContainmentEClass;
 	}
@@ -898,7 +860,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEnableRelationContainment_Relation() {
 		return (EReference)enableRelationContainmentEClass.getEStructuralFeatures().get(0);
 	}
@@ -908,7 +869,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDisableRelationContainment() {
 		return disableRelationContainmentEClass;
 	}
@@ -918,7 +878,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDisableRelationContainment_Relation() {
 		return (EReference)disableRelationContainmentEClass.getEStructuralFeatures().get(0);
 	}
@@ -928,7 +887,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getEnableBidirectionalRelation() {
 		return enableBidirectionalRelationEClass;
 	}
@@ -938,7 +896,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEnableBidirectionalRelation_Relation() {
 		return (EReference)enableBidirectionalRelationEClass.getEStructuralFeatures().get(0);
 	}
@@ -948,7 +905,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDisableBidirectionalRelation() {
 		return disableBidirectionalRelationEClass;
 	}
@@ -958,7 +914,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDisableBidirectionalRelation_Relation() {
 		return (EReference)disableBidirectionalRelationEClass.getEStructuralFeatures().get(0);
 	}
@@ -968,7 +923,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getChangeRelationCardinality() {
 		return changeRelationCardinalityEClass;
 	}
@@ -978,7 +932,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getChangeRelationCardinality_Relation() {
 		return (EReference)changeRelationCardinalityEClass.getEStructuralFeatures().get(0);
 	}
@@ -988,7 +941,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getChangeRelationCardinality_NewCardinality() {
 		return (EAttribute)changeRelationCardinalityEClass.getEStructuralFeatures().get(1);
 	}
@@ -998,7 +950,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddAttribute() {
 		return addAttributeEClass;
 	}
@@ -1008,7 +959,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddAttribute_OwnerEntity() {
 		return (EReference)addAttributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1018,7 +968,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getChangeAttributeType() {
 		return changeAttributeTypeEClass;
 	}
@@ -1028,7 +977,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getChangeAttributeType_AttributeToChange() {
 		return (EReference)changeAttributeTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1038,7 +986,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getChangeAttributeType_NewType() {
 		return (EReference)changeAttributeTypeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1048,7 +995,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRemoveAttribute() {
 		return removeAttributeEClass;
 	}
@@ -1058,7 +1004,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveAttribute_AttributeToRemove() {
 		return (EReference)removeAttributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1068,7 +1013,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRenameAttribute() {
 		return renameAttributeEClass;
 	}
@@ -1078,7 +1022,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRenameAttribute_AttributeToRename() {
 		return (EReference)renameAttributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1088,7 +1031,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRenameAttribute_NewName() {
 		return (EAttribute)renameAttributeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1098,7 +1040,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRenameTable() {
 		return renameTableEClass;
 	}
@@ -1108,7 +1049,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRenameTable_TableToRename() {
 		return (EReference)renameTableEClass.getEStructuralFeatures().get(0);
 	}
@@ -1118,7 +1058,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRenameTable_NewName() {
 		return (EAttribute)renameTableEClass.getEStructuralFeatures().get(1);
 	}
@@ -1128,7 +1067,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddIndex() {
 		return addIndexEClass;
 	}
@@ -1138,7 +1076,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddIndex_Table() {
 		return (EReference)addIndexEClass.getEStructuralFeatures().get(0);
 	}
@@ -1148,7 +1085,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddIndex_Attributes() {
 		return (EReference)addIndexEClass.getEStructuralFeatures().get(1);
 	}
@@ -1158,7 +1094,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDropIndex() {
 		return dropIndexEClass;
 	}
@@ -1168,7 +1103,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDropIndex_Table() {
 		return (EReference)dropIndexEClass.getEStructuralFeatures().get(0);
 	}
@@ -1178,7 +1112,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddAttributesToIndex() {
 		return addAttributesToIndexEClass;
 	}
@@ -1188,7 +1121,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddAttributesToIndex_Table() {
 		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(0);
 	}
@@ -1198,7 +1130,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddAttributesToIndex_Attributes() {
 		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(1);
 	}
@@ -1208,7 +1139,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRemoveAttributesToIndex() {
 		return removeAttributesToIndexEClass;
 	}
@@ -1218,7 +1148,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveAttributesToIndex_Table() {
 		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(0);
 	}
@@ -1228,7 +1157,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveAttributesToIndex_Attributes() {
 		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(1);
 	}
@@ -1238,7 +1166,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRenameCollection() {
 		return renameCollectionEClass;
 	}
@@ -1248,7 +1175,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRenameCollection_CollectionToRename() {
 		return (EReference)renameCollectionEClass.getEStructuralFeatures().get(0);
 	}
@@ -1258,7 +1184,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRenameCollection_NewName() {
 		return (EAttribute)renameCollectionEClass.getEStructuralFeatures().get(1);
 	}
@@ -1268,7 +1193,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddCollectionIndex() {
 		return addCollectionIndexEClass;
 	}
@@ -1278,7 +1202,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddCollectionIndex_Collection() {
 		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(0);
 	}
@@ -1288,7 +1211,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAddCollectionIndex_Attributes() {
 		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(1);
 	}
@@ -1298,7 +1220,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDropCollectionIndex() {
 		return dropCollectionIndexEClass;
 	}
@@ -1308,7 +1229,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDropCollectionIndex_Collection() {
 		return (EReference)dropCollectionIndexEClass.getEStructuralFeatures().get(0);
 	}
@@ -1318,7 +1238,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddGraphAttribute() {
 		return addGraphAttributeEClass;
 	}
@@ -1328,7 +1247,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRemoveGraphAttribute() {
 		return removeGraphAttributeEClass;
 	}
@@ -1338,7 +1256,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveGraphAttribute_Node() {
 		return (EReference)removeGraphAttributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1348,7 +1265,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getAddGraphEdge() {
 		return addGraphEdgeEClass;
 	}
@@ -1358,7 +1274,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRemoveGraphEdge() {
 		return removeGraphEdgeEClass;
 	}
@@ -1368,7 +1283,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRemoveGraphEdge_GraphEdgeToRemove() {
 		return (EReference)removeGraphEdgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1378,7 +1292,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRenabeGraphEdgeLabel() {
 		return renabeGraphEdgeLabelEClass;
 	}
@@ -1388,7 +1301,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRenabeGraphEdgeLabel_Edge() {
 		return (EReference)renabeGraphEdgeLabelEClass.getEStructuralFeatures().get(0);
 	}
@@ -1398,7 +1310,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRenabeGraphEdgeLabel_NewName() {
 		return (EAttribute)renabeGraphEdgeLabelEClass.getEStructuralFeatures().get(1);
 	}
@@ -1408,7 +1319,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDatabase() {
 		return databaseEClass;
 	}
@@ -1418,7 +1328,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDataType() {
 		return dataTypeEClass;
 	}
@@ -1428,7 +1337,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getPrimitiveDataType() {
 		return primitiveDataTypeEClass;
 	}
@@ -1438,47 +1346,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EClass getFreeText() {
-		return freeTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getFreeText_Tasks() {
-		return (EReference)freeTextEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getNlpTask() {
-		return nlpTaskEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNlpTask_Type() {
-		return (EAttribute)nlpTaskEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getCustomDataType() {
 		return customDataTypeEClass;
 	}
@@ -1488,7 +1355,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getCustomDataType_Elements() {
 		return (EReference)customDataTypeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1498,7 +1364,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDataTypeItem() {
 		return dataTypeItemEClass;
 	}
@@ -1508,7 +1373,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDataTypeItem_Type() {
 		return (EReference)dataTypeItemEClass.getEStructuralFeatures().get(0);
 	}
@@ -1518,7 +1382,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDataTypeItem_Implementation() {
 		return (EReference)dataTypeItemEClass.getEStructuralFeatures().get(1);
 	}
@@ -1528,7 +1391,42 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EClass getFreeText() {
+		return freeTextEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFreeText_Tasks() {
+		return (EReference)freeTextEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNlpTask() {
+		return nlpTaskEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNlpTask_Type() {
+		return (EAttribute)nlpTaskEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDataTypeImplementationPackage() {
 		return dataTypeImplementationPackageEClass;
 	}
@@ -1538,7 +1436,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getDataTypeImplementationPackage_Location() {
 		return (EAttribute)dataTypeImplementationPackageEClass.getEStructuralFeatures().get(0);
 	}
@@ -1548,7 +1445,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getEntity() {
 		return entityEClass;
 	}
@@ -1558,7 +1454,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEntity_Attributes() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(0);
 	}
@@ -1568,7 +1463,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEntity_FretextAttributes() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
@@ -1578,7 +1472,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getEntity_Relations() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
@@ -1588,17 +1481,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getEntity_GenericList() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getAttribute() {
 		return attributeEClass;
 	}
@@ -1608,7 +1490,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getAttribute_Type() {
 		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1618,7 +1499,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRelation() {
 		return relationEClass;
 	}
@@ -1628,7 +1508,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRelation_Type() {
 		return (EReference)relationEClass.getEStructuralFeatures().get(0);
 	}
@@ -1638,7 +1517,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRelation_Cardinality() {
 		return (EAttribute)relationEClass.getEStructuralFeatures().get(1);
 	}
@@ -1648,7 +1526,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRelation_Opposite() {
 		return (EReference)relationEClass.getEStructuralFeatures().get(2);
 	}
@@ -1658,7 +1535,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRelation_IsContainment() {
 		return (EAttribute)relationEClass.getEStructuralFeatures().get(3);
 	}
@@ -1668,7 +1544,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getRelationalDB() {
 		return relationalDBEClass;
 	}
@@ -1678,7 +1553,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRelationalDB_Tables() {
 		return (EReference)relationalDBEClass.getEStructuralFeatures().get(0);
 	}
@@ -1688,7 +1562,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getTable() {
 		return tableEClass;
 	}
@@ -1698,7 +1571,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTable_IndexSpec() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(0);
 	}
@@ -1708,7 +1580,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTable_IdSpec() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(1);
 	}
@@ -1718,7 +1589,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getTable_Db() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(2);
 	}
@@ -1728,7 +1598,15 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EReference getTable_Entity() {
+		return (EReference)tableEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIndexSpec() {
 		return indexSpecEClass;
 	}
@@ -1738,7 +1616,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getIndexSpec_Attributes() {
 		return (EReference)indexSpecEClass.getEStructuralFeatures().get(0);
 	}
@@ -1748,7 +1625,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getIndexSpec_References() {
 		return (EReference)indexSpecEClass.getEStructuralFeatures().get(1);
 	}
@@ -1758,7 +1634,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getIndexSpec_Table() {
 		return (EReference)indexSpecEClass.getEStructuralFeatures().get(2);
 	}
@@ -1768,7 +1643,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getIdSpec() {
 		return idSpecEClass;
 	}
@@ -1778,7 +1652,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getIdSpec_Attributes() {
 		return (EReference)idSpecEClass.getEStructuralFeatures().get(0);
 	}
@@ -1788,7 +1661,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getIdSpec_Table() {
 		return (EReference)idSpecEClass.getEStructuralFeatures().get(1);
 	}
@@ -1798,7 +1670,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getDocumentDB() {
 		return documentDBEClass;
 	}
@@ -1808,7 +1679,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getDocumentDB_Collections() {
 		return (EReference)documentDBEClass.getEStructuralFeatures().get(0);
 	}
@@ -1818,7 +1688,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getCollection() {
 		return collectionEClass;
 	}
@@ -1828,7 +1697,15 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EReference getCollection_Entity() {
+		return (EReference)collectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getKeyValueDB() {
 		return keyValueDBEClass;
 	}
@@ -1838,7 +1715,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getKeyValueDB_Elements() {
 		return (EReference)keyValueDBEClass.getEStructuralFeatures().get(0);
 	}
@@ -1848,7 +1724,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getKeyValueElement() {
 		return keyValueElementEClass;
 	}
@@ -1858,7 +1733,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getKeyValueElement_Key() {
 		return (EAttribute)keyValueElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -1868,7 +1742,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getKeyValueElement_Values() {
 		return (EReference)keyValueElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -1878,7 +1751,15 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EReference getKeyValueElement_Entity() {
+		return (EReference)keyValueElementEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGraphDB() {
 		return graphDBEClass;
 	}
@@ -1888,7 +1769,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphDB_Nodes() {
 		return (EReference)graphDBEClass.getEStructuralFeatures().get(0);
 	}
@@ -1898,7 +1778,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphDB_Edges() {
 		return (EReference)graphDBEClass.getEStructuralFeatures().get(1);
 	}
@@ -1908,7 +1787,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getGraphNode() {
 		return graphNodeEClass;
 	}
@@ -1918,7 +1796,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphNode_Attributes() {
 		return (EReference)graphNodeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1928,7 +1805,15 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public EReference getGraphNode_Entity() {
+		return (EReference)graphNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getGraphAttribute() {
 		return graphAttributeEClass;
 	}
@@ -1938,7 +1823,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphAttribute_Value() {
 		return (EReference)graphAttributeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1948,7 +1832,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getGraphEdge() {
 		return graphEdgeEClass;
 	}
@@ -1958,7 +1841,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphEdge_From() {
 		return (EReference)graphEdgeEClass.getEStructuralFeatures().get(0);
 	}
@@ -1968,7 +1850,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphEdge_To() {
 		return (EReference)graphEdgeEClass.getEStructuralFeatures().get(1);
 	}
@@ -1978,7 +1859,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphEdge_Labels() {
 		return (EReference)graphEdgeEClass.getEStructuralFeatures().get(2);
 	}
@@ -1988,7 +1868,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getGraphEdgeLabel() {
 		return graphEdgeLabelEClass;
 	}
@@ -1998,7 +1877,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getGraphEdgeLabel_Type() {
 		return (EReference)graphEdgeLabelEClass.getEStructuralFeatures().get(0);
 	}
@@ -2008,7 +1886,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getColumnDB() {
 		return columnDBEClass;
 	}
@@ -2018,7 +1895,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getColumnDB_Columns() {
 		return (EReference)columnDBEClass.getEStructuralFeatures().get(0);
 	}
@@ -2028,7 +1904,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getColumn() {
 		return columnEClass;
 	}
@@ -2038,7 +1913,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getColumn_Attributes() {
 		return (EReference)columnEClass.getEStructuralFeatures().get(0);
 	}
@@ -2048,9 +1922,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EClass getGenericList() {
-		return genericListEClass;
+	public EReference getColumn_Entity() {
+		return (EReference)columnEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2058,17 +1931,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EReference getGenericList_Entity() {
-		return (EReference)genericListEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getRenameEntity() {
 		return renameEntityEClass;
 	}
@@ -2078,7 +1940,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getRenameEntity_EntityToRename() {
 		return (EReference)renameEntityEClass.getEStructuralFeatures().get(0);
 	}
@@ -2088,7 +1949,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getRenameEntity_NewEntityName() {
 		return (EAttribute)renameEntityEClass.getEStructuralFeatures().get(1);
 	}
@@ -2098,7 +1958,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EClass getChangeRelationContainement() {
 		return changeRelationContainementEClass;
 	}
@@ -2108,7 +1967,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EReference getChangeRelationContainement_Relation() {
 		return (EReference)changeRelationContainementEClass.getEStructuralFeatures().get(0);
 	}
@@ -2118,7 +1976,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EAttribute getChangeRelationContainement_NewContainment() {
 		return (EAttribute)changeRelationContainementEClass.getEStructuralFeatures().get(1);
 	}
@@ -2128,7 +1985,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EEnum getCardinality() {
 		return cardinalityEEnum;
 	}
@@ -2138,7 +1994,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EEnum getNlpTaskType() {
 		return nlpTaskTypeEEnum;
 	}
@@ -2148,7 +2003,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public TyphonmlFactory getTyphonmlFactory() {
 		return (TyphonmlFactory)getEFactoryInstance();
 	}
@@ -2312,7 +2166,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__FRETEXT_ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__RELATIONS);
-		createEReference(entityEClass, ENTITY__GENERIC_LIST);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__TYPE);
@@ -2330,6 +2183,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(tableEClass, TABLE__INDEX_SPEC);
 		createEReference(tableEClass, TABLE__ID_SPEC);
 		createEReference(tableEClass, TABLE__DB);
+		createEReference(tableEClass, TABLE__ENTITY);
 
 		indexSpecEClass = createEClass(INDEX_SPEC);
 		createEReference(indexSpecEClass, INDEX_SPEC__ATTRIBUTES);
@@ -2344,6 +2198,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(documentDBEClass, DOCUMENT_DB__COLLECTIONS);
 
 		collectionEClass = createEClass(COLLECTION);
+		createEReference(collectionEClass, COLLECTION__ENTITY);
 
 		keyValueDBEClass = createEClass(KEY_VALUE_DB);
 		createEReference(keyValueDBEClass, KEY_VALUE_DB__ELEMENTS);
@@ -2351,6 +2206,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		keyValueElementEClass = createEClass(KEY_VALUE_ELEMENT);
 		createEAttribute(keyValueElementEClass, KEY_VALUE_ELEMENT__KEY);
 		createEReference(keyValueElementEClass, KEY_VALUE_ELEMENT__VALUES);
+		createEReference(keyValueElementEClass, KEY_VALUE_ELEMENT__ENTITY);
 
 		graphDBEClass = createEClass(GRAPH_DB);
 		createEReference(graphDBEClass, GRAPH_DB__NODES);
@@ -2358,6 +2214,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		graphNodeEClass = createEClass(GRAPH_NODE);
 		createEReference(graphNodeEClass, GRAPH_NODE__ATTRIBUTES);
+		createEReference(graphNodeEClass, GRAPH_NODE__ENTITY);
 
 		graphAttributeEClass = createEClass(GRAPH_ATTRIBUTE);
 		createEReference(graphAttributeEClass, GRAPH_ATTRIBUTE__VALUE);
@@ -2375,9 +2232,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		columnEClass = createEClass(COLUMN);
 		createEReference(columnEClass, COLUMN__ATTRIBUTES);
-
-		genericListEClass = createEClass(GENERIC_LIST);
-		createEReference(genericListEClass, GENERIC_LIST__ENTITY);
+		createEReference(columnEClass, COLUMN__ENTITY);
 
 		renameEntityEClass = createEClass(RENAME_ENTITY);
 		createEReference(renameEntityEClass, RENAME_ENTITY__ENTITY_TO_RENAME);
@@ -2466,23 +2321,18 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		relationEClass.getESuperTypes().add(this.getNamedElement());
 		relationalDBEClass.getESuperTypes().add(this.getDatabase());
 		tableEClass.getESuperTypes().add(this.getNamedElement());
-		tableEClass.getESuperTypes().add(this.getGenericList());
 		indexSpecEClass.getESuperTypes().add(this.getNamedElement());
 		documentDBEClass.getESuperTypes().add(this.getDatabase());
-		collectionEClass.getESuperTypes().add(this.getGenericList());
 		collectionEClass.getESuperTypes().add(this.getNamedElement());
 		keyValueDBEClass.getESuperTypes().add(this.getDatabase());
 		keyValueElementEClass.getESuperTypes().add(this.getNamedElement());
-		keyValueElementEClass.getESuperTypes().add(this.getGenericList());
 		graphDBEClass.getESuperTypes().add(this.getDatabase());
 		graphNodeEClass.getESuperTypes().add(this.getNamedElement());
-		graphNodeEClass.getESuperTypes().add(this.getGenericList());
 		graphAttributeEClass.getESuperTypes().add(this.getNamedElement());
 		graphEdgeEClass.getESuperTypes().add(this.getNamedElement());
 		graphEdgeLabelEClass.getESuperTypes().add(this.getNamedElement());
 		columnDBEClass.getESuperTypes().add(this.getDatabase());
 		columnEClass.getESuperTypes().add(this.getNamedElement());
-		columnEClass.getESuperTypes().add(this.getGenericList());
 		renameEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		changeRelationContainementEClass.getESuperTypes().add(this.getChangeOperator());
 
@@ -2627,7 +2477,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_FretextAttributes(), this.getFreeText(), null, "fretextAttributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_GenericList(), this.getGenericList(), this.getGenericList_Entity(), "genericList", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2645,6 +2494,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getTable_IndexSpec(), this.getIndexSpec(), this.getIndexSpec_Table(), "indexSpec", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_IdSpec(), this.getIdSpec(), this.getIdSpec_Table(), "idSpec", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_Db(), this.getDatabase(), null, "db", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTable_Entity(), this.getEntity(), null, "entity", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(indexSpecEClass, IndexSpec.class, "IndexSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIndexSpec_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, IndexSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2659,6 +2509,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getDocumentDB_Collections(), this.getCollection(), null, "collections", null, 0, -1, DocumentDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(collectionEClass, Collection.class, "Collection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCollection_Entity(), this.getEntity(), null, "entity", null, 0, 1, Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(keyValueDBEClass, KeyValueDB.class, "KeyValueDB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKeyValueDB_Elements(), this.getKeyValueElement(), null, "elements", null, 0, -1, KeyValueDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2666,6 +2517,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(keyValueElementEClass, KeyValueElement.class, "KeyValueElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getKeyValueElement_Key(), ecorePackage.getEString(), "key", null, 0, 1, KeyValueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getKeyValueElement_Values(), this.getAttribute(), null, "values", null, 0, -1, KeyValueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getKeyValueElement_Entity(), this.getEntity(), null, "entity", null, 0, 1, KeyValueElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(graphDBEClass, GraphDB.class, "GraphDB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraphDB_Nodes(), this.getGraphNode(), null, "nodes", null, 0, -1, GraphDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2673,6 +2525,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(graphNodeEClass, GraphNode.class, "GraphNode", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraphNode_Attributes(), this.getGraphAttribute(), null, "attributes", null, 0, -1, GraphNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGraphNode_Entity(), this.getEntity(), null, "entity", null, 0, 1, GraphNode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(graphAttributeEClass, GraphAttribute.class, "GraphAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraphAttribute_Value(), this.getAttribute(), null, "value", null, 0, 1, GraphAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2690,9 +2543,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getColumn_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(genericListEClass, GenericList.class, "GenericList", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGenericList_Entity(), this.getEntity(), this.getEntity_GenericList(), "entity", null, 0, 1, GenericList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColumn_Entity(), this.getEntity(), null, "entity", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(renameEntityEClass, RenameEntity.class, "RenameEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRenameEntity_EntityToRename(), this.getEntity(), null, "entityToRename", null, 0, 1, RenameEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

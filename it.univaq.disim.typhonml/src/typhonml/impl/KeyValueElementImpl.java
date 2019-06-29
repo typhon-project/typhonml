@@ -5,7 +5,6 @@ package typhonml.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -18,7 +17,6 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import typhonml.Attribute;
 import typhonml.Entity;
-import typhonml.GenericList;
 import typhonml.KeyValueElement;
 import typhonml.TyphonmlPackage;
 
@@ -30,24 +28,14 @@ import typhonml.TyphonmlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link typhonml.impl.KeyValueElementImpl#getEntity <em>Entity</em>}</li>
  *   <li>{@link typhonml.impl.KeyValueElementImpl#getKey <em>Key</em>}</li>
  *   <li>{@link typhonml.impl.KeyValueElementImpl#getValues <em>Values</em>}</li>
+ *   <li>{@link typhonml.impl.KeyValueElementImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class KeyValueElementImpl extends NamedElementImpl implements KeyValueElement {
-	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Entity entity;
-
 	/**
 	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -79,6 +67,16 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	protected EList<Attribute> values;
 
 	/**
+	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity entity;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -102,7 +100,39 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
+	public String getKey() {
+		return key;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setKey(String newKey) {
+		String oldKey = key;
+		key = newKey;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.KEY_VALUE_ELEMENT__KEY, oldKey, key));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Attribute> getValues() {
+		if (values == null) {
+			values = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES);
+		}
+		return values;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -129,100 +159,11 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
+	public void setEntity(Entity newEntity) {
 		Entity oldEntity = entity;
 		entity = newEntity;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY, oldEntity, newEntity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEntity(Entity newEntity) {
-		if (newEntity != entity) {
-			NotificationChain msgs = null;
-			if (entity != null)
-				msgs = ((InternalEObject)entity).eInverseRemove(this, TyphonmlPackage.ENTITY__GENERIC_LIST, Entity.class, msgs);
-			if (newEntity != null)
-				msgs = ((InternalEObject)newEntity).eInverseAdd(this, TyphonmlPackage.ENTITY__GENERIC_LIST, Entity.class, msgs);
-			msgs = basicSetEntity(newEntity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY, newEntity, newEntity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getKey() {
-		return key;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setKey(String newKey) {
-		String oldKey = key;
-		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.KEY_VALUE_ELEMENT__KEY, oldKey, key));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Attribute> getValues() {
-		if (values == null) {
-			values = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES);
-		}
-		return values;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
-				if (entity != null)
-					msgs = ((InternalEObject)entity).eInverseRemove(this, TyphonmlPackage.ENTITY__GENERIC_LIST, Entity.class, msgs);
-				return basicSetEntity((Entity)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
-				return basicSetEntity(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY, oldEntity, entity));
 	}
 
 	/**
@@ -233,13 +174,13 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
-				if (resolve) return getEntity();
-				return basicGetEntity();
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__KEY:
 				return getKey();
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES:
 				return getValues();
+			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
+				if (resolve) return getEntity();
+				return basicGetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -253,15 +194,15 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
-				setEntity((Entity)newValue);
-				return;
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__KEY:
 				setKey((String)newValue);
 				return;
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES:
 				getValues().clear();
 				getValues().addAll((Collection<? extends Attribute>)newValue);
+				return;
+			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
+				setEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -275,14 +216,14 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
-				setEntity((Entity)null);
-				return;
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__KEY:
 				setKey(KEY_EDEFAULT);
 				return;
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES:
 				getValues().clear();
+				return;
+			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
+				setEntity((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -296,46 +237,14 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
-				return entity != null;
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__KEY:
 				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
 			case TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES:
 				return values != null && !values.isEmpty();
+			case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY:
+				return entity != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == GenericList.class) {
-			switch (derivedFeatureID) {
-				case TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY: return TyphonmlPackage.GENERIC_LIST__ENTITY;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == GenericList.class) {
-			switch (baseFeatureID) {
-				case TyphonmlPackage.GENERIC_LIST__ENTITY: return TyphonmlPackage.KEY_VALUE_ELEMENT__ENTITY;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 	/**

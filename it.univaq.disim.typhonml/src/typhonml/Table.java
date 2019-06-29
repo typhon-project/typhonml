@@ -15,13 +15,14 @@ package typhonml;
  *   <li>{@link typhonml.Table#getIndexSpec <em>Index Spec</em>}</li>
  *   <li>{@link typhonml.Table#getIdSpec <em>Id Spec</em>}</li>
  *   <li>{@link typhonml.Table#getDb <em>Db</em>}</li>
+ *   <li>{@link typhonml.Table#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getTable()
  * @model
  * @generated
  */
-public interface Table extends NamedElement, GenericList {
+public interface Table extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Index Spec</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link typhonml.IndexSpec#getTable <em>Table</em>}'.
@@ -103,5 +104,31 @@ public interface Table extends NamedElement, GenericList {
 	 * @generated
 	 */
 	void setDb(Database value);
+
+	/**
+	 * Returns the value of the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Entity</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Entity</em>' reference.
+	 * @see #setEntity(Entity)
+	 * @see typhonml.TyphonmlPackage#getTable_Entity()
+	 * @model
+	 * @generated
+	 */
+	Entity getEntity();
+
+	/**
+	 * Sets the value of the '{@link typhonml.Table#getEntity <em>Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Entity</em>' reference.
+	 * @see #getEntity()
+	 * @generated
+	 */
+	void setEntity(Entity value);
 
 } // Table

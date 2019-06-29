@@ -410,7 +410,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     GenericList returns Collection
 	 *     Collection returns Collection
 	 *
 	 * Constraint:
@@ -436,7 +435,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     GenericList returns Column
 	 *     Column returns Column
 	 *
 	 * Constraint:
@@ -533,8 +531,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         name=EString 
 	 *         (attributes+=Attribute attributes+=Attribute*)? 
 	 *         (fretextAttributes+=FreeText fretextAttributes+=FreeText*)? 
-	 *         (relations+=Relation relations+=Relation*)? 
-	 *         genericList=[GenericList|EString]?
+	 *         (relations+=Relation relations+=Relation*)?
 	 *     )
 	 */
 	protected void sequence_Entity_Impl(ISerializationContext context, Entity semanticObject) {
@@ -607,7 +604,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     GenericList returns GraphNode
 	 *     GraphNode returns GraphNode
 	 *
 	 * Constraint:
@@ -662,7 +658,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     GenericList returns KeyValueElement
 	 *     KeyValueElement returns KeyValueElement
 	 *
 	 * Constraint:
@@ -1003,7 +998,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     GenericList returns Table
 	 *     Table returns Table
 	 *
 	 * Constraint:

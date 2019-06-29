@@ -189,11 +189,8 @@ Entity_Impl returns Entity:
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(fretextAttributes+=FreeText (fretextAttributes+=FreeText)*)?
 		(relations+=Relation (relations+=Relation)*)?
-		('genericList' '{' genericList=[GenericList|EString] '}')?
 	'}';
 	
-GenericList returns GenericList: 
-	Table|Collection|Column|KeyValueElement|GraphNode;
 
 Relation_Impl returns Relation:
 	('importedNamespace' importedNamespace=EString)?

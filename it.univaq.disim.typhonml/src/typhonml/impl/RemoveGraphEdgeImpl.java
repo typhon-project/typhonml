@@ -61,7 +61,6 @@ public class RemoveGraphEdgeImpl extends ChangeOperatorImpl implements RemoveGra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public GraphEdge getGraphEdgeToRemove() {
 		if (graphEdgeToRemove != null && graphEdgeToRemove.eIsProxy()) {
 			InternalEObject oldGraphEdgeToRemove = (InternalEObject)graphEdgeToRemove;
@@ -88,7 +87,6 @@ public class RemoveGraphEdgeImpl extends ChangeOperatorImpl implements RemoveGra
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setGraphEdgeToRemove(GraphEdge newGraphEdgeToRemove) {
 		GraphEdge oldGraphEdgeToRemove = graphEdgeToRemove;
 		graphEdgeToRemove = newGraphEdgeToRemove;

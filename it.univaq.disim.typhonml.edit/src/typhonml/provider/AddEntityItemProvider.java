@@ -81,6 +81,7 @@ public class AddEntityItemProvider extends EntityItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**
