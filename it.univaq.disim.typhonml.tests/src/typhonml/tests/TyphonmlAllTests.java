@@ -31,6 +31,7 @@ public class TyphonmlAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new TyphonmlAllTests("Typhonml Tests");
+		suite.addTest(TyphonmlTests.suite());
 		return suite;
 	}
 

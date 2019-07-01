@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import typhonml.Database;
 import typhonml.Entity;
-import typhonml.GenericList;
 import typhonml.IdSpec;
 import typhonml.IndexSpec;
 import typhonml.Table;
@@ -26,25 +25,15 @@ import typhonml.TyphonmlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link typhonml.impl.TableImpl#getEntity <em>Entity</em>}</li>
  *   <li>{@link typhonml.impl.TableImpl#getIndexSpec <em>Index Spec</em>}</li>
  *   <li>{@link typhonml.impl.TableImpl#getIdSpec <em>Id Spec</em>}</li>
  *   <li>{@link typhonml.impl.TableImpl#getDb <em>Db</em>}</li>
+ *   <li>{@link typhonml.impl.TableImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TableImpl extends NamedElementImpl implements Table {
-	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Entity entity;
-
 	/**
 	 * The cached value of the '{@link #getIndexSpec() <em>Index Spec</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -76,6 +65,16 @@ public class TableImpl extends NamedElementImpl implements Table {
 	protected Database db;
 
 	/**
+	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity entity;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -99,69 +98,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Entity getEntity() {
-		if (entity != null && entity.eIsProxy()) {
-			InternalEObject oldEntity = (InternalEObject)entity;
-			entity = (Entity)eResolveProxy(oldEntity);
-			if (entity != oldEntity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.TABLE__ENTITY, oldEntity, entity));
-			}
-		}
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity basicGetEntity() {
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetEntity(Entity newEntity, NotificationChain msgs) {
-		Entity oldEntity = entity;
-		entity = newEntity;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TyphonmlPackage.TABLE__ENTITY, oldEntity, newEntity);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEntity(Entity newEntity) {
-		if (newEntity != entity) {
-			NotificationChain msgs = null;
-			if (entity != null)
-				msgs = ((InternalEObject)entity).eInverseRemove(this, TyphonmlPackage.ENTITY__GENERIC_LIST, Entity.class, msgs);
-			if (newEntity != null)
-				msgs = ((InternalEObject)newEntity).eInverseAdd(this, TyphonmlPackage.ENTITY__GENERIC_LIST, Entity.class, msgs);
-			msgs = basicSetEntity(newEntity, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.TABLE__ENTITY, newEntity, newEntity));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public IndexSpec getIndexSpec() {
 		return indexSpec;
 	}
@@ -186,7 +122,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setIndexSpec(IndexSpec newIndexSpec) {
 		if (newIndexSpec != indexSpec) {
 			NotificationChain msgs = null;
@@ -206,7 +141,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public IdSpec getIdSpec() {
 		return idSpec;
 	}
@@ -231,7 +165,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setIdSpec(IdSpec newIdSpec) {
 		if (newIdSpec != idSpec) {
 			NotificationChain msgs = null;
@@ -251,7 +184,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Database getDb() {
 		if (db != null && db.eIsProxy()) {
 			InternalEObject oldDb = (InternalEObject)db;
@@ -278,7 +210,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setDb(Database newDb) {
 		Database oldDb = db;
 		db = newDb;
@@ -291,13 +222,47 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Entity getEntity() {
+		if (entity != null && entity.eIsProxy()) {
+			InternalEObject oldEntity = (InternalEObject)entity;
+			entity = (Entity)eResolveProxy(oldEntity);
+			if (entity != oldEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.TABLE__ENTITY, oldEntity, entity));
+			}
+		}
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetEntity() {
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEntity(Entity newEntity) {
+		Entity oldEntity = entity;
+		entity = newEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.TABLE__ENTITY, oldEntity, entity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__ENTITY:
-				if (entity != null)
-					msgs = ((InternalEObject)entity).eInverseRemove(this, TyphonmlPackage.ENTITY__GENERIC_LIST, Entity.class, msgs);
-				return basicSetEntity((Entity)otherEnd, msgs);
 			case TyphonmlPackage.TABLE__INDEX_SPEC:
 				if (indexSpec != null)
 					msgs = ((InternalEObject)indexSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.TABLE__INDEX_SPEC, null, msgs);
@@ -318,8 +283,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__ENTITY:
-				return basicSetEntity(null, msgs);
 			case TyphonmlPackage.TABLE__INDEX_SPEC:
 				return basicSetIndexSpec(null, msgs);
 			case TyphonmlPackage.TABLE__ID_SPEC:
@@ -336,9 +299,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__ENTITY:
-				if (resolve) return getEntity();
-				return basicGetEntity();
 			case TyphonmlPackage.TABLE__INDEX_SPEC:
 				return getIndexSpec();
 			case TyphonmlPackage.TABLE__ID_SPEC:
@@ -346,6 +306,9 @@ public class TableImpl extends NamedElementImpl implements Table {
 			case TyphonmlPackage.TABLE__DB:
 				if (resolve) return getDb();
 				return basicGetDb();
+			case TyphonmlPackage.TABLE__ENTITY:
+				if (resolve) return getEntity();
+				return basicGetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -358,9 +321,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__ENTITY:
-				setEntity((Entity)newValue);
-				return;
 			case TyphonmlPackage.TABLE__INDEX_SPEC:
 				setIndexSpec((IndexSpec)newValue);
 				return;
@@ -369,6 +329,9 @@ public class TableImpl extends NamedElementImpl implements Table {
 				return;
 			case TyphonmlPackage.TABLE__DB:
 				setDb((Database)newValue);
+				return;
+			case TyphonmlPackage.TABLE__ENTITY:
+				setEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -382,9 +345,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__ENTITY:
-				setEntity((Entity)null);
-				return;
 			case TyphonmlPackage.TABLE__INDEX_SPEC:
 				setIndexSpec((IndexSpec)null);
 				return;
@@ -393,6 +353,9 @@ public class TableImpl extends NamedElementImpl implements Table {
 				return;
 			case TyphonmlPackage.TABLE__DB:
 				setDb((Database)null);
+				return;
+			case TyphonmlPackage.TABLE__ENTITY:
+				setEntity((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -406,48 +369,16 @@ public class TableImpl extends NamedElementImpl implements Table {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__ENTITY:
-				return entity != null;
 			case TyphonmlPackage.TABLE__INDEX_SPEC:
 				return indexSpec != null;
 			case TyphonmlPackage.TABLE__ID_SPEC:
 				return idSpec != null;
 			case TyphonmlPackage.TABLE__DB:
 				return db != null;
+			case TyphonmlPackage.TABLE__ENTITY:
+				return entity != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == GenericList.class) {
-			switch (derivedFeatureID) {
-				case TyphonmlPackage.TABLE__ENTITY: return TyphonmlPackage.GENERIC_LIST__ENTITY;
-				default: return -1;
-			}
-		}
-		return super.eBaseStructuralFeatureID(derivedFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == GenericList.class) {
-			switch (baseFeatureID) {
-				case TyphonmlPackage.GENERIC_LIST__ENTITY: return TyphonmlPackage.TABLE__ENTITY;
-				default: return -1;
-			}
-		}
-		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
 	}
 
 } //TableImpl

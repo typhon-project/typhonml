@@ -5,6 +5,7 @@ package typhonml;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -22,6 +23,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see typhonml.TyphonmlFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface TyphonmlPackage extends EPackage {
@@ -288,22 +291,58 @@ public interface TyphonmlPackage extends EPackage {
 	int ENTITY__RELATIONS = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Generic List</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ENTITY__GENERIC_LIST = DATA_TYPE_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 4;
+	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Collections</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_COLLECTIONS = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Tables</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_TABLES = DATA_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Key Value Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_KEY_VALUE_ELEMENTS = DATA_TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Graph Nodes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_GRAPH_NODES = DATA_TYPE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Columns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_COLUMNS = DATA_TYPE_OPERATION_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Entity</em>' class.
@@ -312,7 +351,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int ENTITY_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.AddEntityImpl <em>Add Entity</em>}' class.
@@ -370,15 +409,6 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_ENTITY__RELATIONS = ENTITY__RELATIONS;
 
 	/**
-	 * The feature id for the '<em><b>Generic List</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ENTITY__GENERIC_LIST = ENTITY__GENERIC_LIST;
-
-	/**
 	 * The number of structural features of the '<em>Add Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -386,6 +416,51 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADD_ENTITY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Collections</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_COLLECTIONS = ENTITY___GET_COLLECTIONS;
+
+	/**
+	 * The operation id for the '<em>Get Tables</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_TABLES = ENTITY___GET_TABLES;
+
+	/**
+	 * The operation id for the '<em>Get Key Value Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_KEY_VALUE_ELEMENTS = ENTITY___GET_KEY_VALUE_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Graph Nodes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_GRAPH_NODES = ENTITY___GET_GRAPH_NODES;
+
+	/**
+	 * The operation id for the '<em>Get Columns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_COLUMNS = ENTITY___GET_COLUMNS;
 
 	/**
 	 * The number of operations of the '<em>Add Entity</em>' class.
@@ -2106,26 +2181,6 @@ public interface TyphonmlPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.FreeTextImpl <em>Free Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.FreeTextImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
-	 * @generated
-	 */
-	int FREE_TEXT = 38;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.NlpTaskImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTask()
-	 * @generated
-	 */
-	int NLP_TASK = 39;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeImpl <em>Custom Data Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2245,6 +2300,16 @@ public interface TyphonmlPackage extends EPackage {
 	int DATA_TYPE_ITEM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.FreeTextImpl <em>Free Text</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.FreeTextImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
+	 * @generated
+	 */
+	int FREE_TEXT = 38;
+
+	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2288,6 +2353,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int FREE_TEXT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.NlpTaskImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTask()
+	 * @generated
+	 */
+	int NLP_TASK = 39;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -2437,22 +2512,13 @@ public interface TyphonmlPackage extends EPackage {
 	int TABLE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Index Spec</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__INDEX_SPEC = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int TABLE__INDEX_SPEC = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Id Spec</b></em>' containment reference.
@@ -2461,7 +2527,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__ID_SPEC = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int TABLE__ID_SPEC = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Db</b></em>' reference.
@@ -2470,7 +2536,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__DB = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int TABLE__DB = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Table</em>' class.
@@ -2665,43 +2740,6 @@ public interface TyphonmlPackage extends EPackage {
 	int DOCUMENT_DB_OPERATION_COUNT = DATABASE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.GenericListImpl <em>Generic List</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.GenericListImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getGenericList()
-	 * @generated
-	 */
-	int GENERIC_LIST = 59;
-
-	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_LIST__ENTITY = 0;
-
-	/**
-	 * The number of structural features of the '<em>Generic List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_LIST_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Generic List</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERIC_LIST_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.CollectionImpl <em>Collection</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2712,22 +2750,13 @@ public interface TyphonmlPackage extends EPackage {
 	int COLLECTION = 49;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLLECTION__ENTITY = GENERIC_LIST__ENTITY;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION__NAME = GENERIC_LIST_FEATURE_COUNT + 0;
+	int COLLECTION__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -2736,7 +2765,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION__IMPORTED_NAMESPACE = GENERIC_LIST_FEATURE_COUNT + 1;
+	int COLLECTION__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Collection</em>' class.
@@ -2745,7 +2783,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_FEATURE_COUNT = GENERIC_LIST_FEATURE_COUNT + 2;
+	int COLLECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Collection</em>' class.
@@ -2754,7 +2792,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_OPERATION_COUNT = GENERIC_LIST_OPERATION_COUNT + 0;
+	int COLLECTION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.KeyValueDBImpl <em>Key Value DB</em>}' class.
@@ -2840,22 +2878,13 @@ public interface TyphonmlPackage extends EPackage {
 	int KEY_VALUE_ELEMENT__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int KEY_VALUE_ELEMENT__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT__KEY = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int KEY_VALUE_ELEMENT__KEY = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' reference list.
@@ -2864,7 +2893,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KEY_VALUE_ELEMENT__VALUES = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int KEY_VALUE_ELEMENT__VALUES = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KEY_VALUE_ELEMENT__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Key Value Element</em>' class.
@@ -2977,22 +3015,22 @@ public interface TyphonmlPackage extends EPackage {
 	int GRAPH_NODE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_NODE__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_NODE__ATTRIBUTES = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int GRAPH_NODE__ATTRIBUTES = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_NODE__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Graph Node</em>' class.
@@ -3151,22 +3189,22 @@ public interface TyphonmlPackage extends EPackage {
 	int COLUMN__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
 
 	/**
-	 * The feature id for the '<em><b>Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLUMN__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN__ATTRIBUTES = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COLUMN__ATTRIBUTES = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -3194,7 +3232,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameEntity()
 	 * @generated
 	 */
-	int RENAME_ENTITY = 60;
+	int RENAME_ENTITY = 59;
 
 	/**
 	 * The feature id for the '<em><b>Entity To Rename</b></em>' reference.
@@ -3240,7 +3278,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationContainement()
 	 * @generated
 	 */
-	int CHANGE_RELATION_CONTAINEMENT = 61;
+	int CHANGE_RELATION_CONTAINEMENT = 60;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -3286,8 +3324,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 62;
-
+	int CARDINALITY = 61;
 
 	/**
 	 * The meta object id for the '{@link typhonml.NlpTaskType <em>Nlp Task Type</em>}' enum.
@@ -3297,7 +3334,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTaskType()
 	 * @generated
 	 */
-	int NLP_TASK_TYPE = 63;
+	int NLP_TASK_TYPE = 62;
 
 
 	/**
@@ -4189,48 +4226,6 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getPrimitiveDataType();
 
 	/**
-	 * Returns the meta object for class '{@link typhonml.FreeText <em>Free Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Free Text</em>'.
-	 * @see typhonml.FreeText
-	 * @generated
-	 */
-	EClass getFreeText();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link typhonml.FreeText#getTasks <em>Tasks</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Tasks</em>'.
-	 * @see typhonml.FreeText#getTasks()
-	 * @see #getFreeText()
-	 * @generated
-	 */
-	EReference getFreeText_Tasks();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Nlp Task</em>'.
-	 * @see typhonml.NlpTask
-	 * @generated
-	 */
-	EClass getNlpTask();
-
-	/**
-	 * Returns the meta object for the attribute '{@link typhonml.NlpTask#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see typhonml.NlpTask#getType()
-	 * @see #getNlpTask()
-	 * @generated
-	 */
-	EAttribute getNlpTask_Type();
-
-	/**
 	 * Returns the meta object for class '{@link typhonml.CustomDataType <em>Custom Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4282,6 +4277,48 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDataTypeItem_Implementation();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.FreeText <em>Free Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Free Text</em>'.
+	 * @see typhonml.FreeText
+	 * @generated
+	 */
+	EClass getFreeText();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link typhonml.FreeText#getTasks <em>Tasks</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tasks</em>'.
+	 * @see typhonml.FreeText#getTasks()
+	 * @see #getFreeText()
+	 * @generated
+	 */
+	EReference getFreeText_Tasks();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Nlp Task</em>'.
+	 * @see typhonml.NlpTask
+	 * @generated
+	 */
+	EClass getNlpTask();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.NlpTask#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see typhonml.NlpTask#getType()
+	 * @see #getNlpTask()
+	 * @generated
+	 */
+	EAttribute getNlpTask_Type();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.DataTypeImplementationPackage <em>Data Type Implementation Package</em>}'.
@@ -4348,15 +4385,54 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getEntity_Relations();
 
 	/**
-	 * Returns the meta object for the reference '{@link typhonml.Entity#getGenericList <em>Generic List</em>}'.
+	 * Returns the meta object for the '{@link typhonml.Entity#getCollections() <em>Get Collections</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Generic List</em>'.
-	 * @see typhonml.Entity#getGenericList()
-	 * @see #getEntity()
+	 * @return the meta object for the '<em>Get Collections</em>' operation.
+	 * @see typhonml.Entity#getCollections()
 	 * @generated
 	 */
-	EReference getEntity_GenericList();
+	EOperation getEntity__GetCollections();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getTables() <em>Get Tables</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Tables</em>' operation.
+	 * @see typhonml.Entity#getTables()
+	 * @generated
+	 */
+	EOperation getEntity__GetTables();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getKeyValueElements() <em>Get Key Value Elements</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Key Value Elements</em>' operation.
+	 * @see typhonml.Entity#getKeyValueElements()
+	 * @generated
+	 */
+	EOperation getEntity__GetKeyValueElements();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getGraphNodes() <em>Get Graph Nodes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Graph Nodes</em>' operation.
+	 * @see typhonml.Entity#getGraphNodes()
+	 * @generated
+	 */
+	EOperation getEntity__GetGraphNodes();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getColumns() <em>Get Columns</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Columns</em>' operation.
+	 * @see typhonml.Entity#getColumns()
+	 * @generated
+	 */
+	EOperation getEntity__GetColumns();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.Attribute <em>Attribute</em>}'.
@@ -4498,6 +4574,17 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getTable_Db();
 
 	/**
+	 * Returns the meta object for the reference '{@link typhonml.Table#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see typhonml.Table#getEntity()
+	 * @see #getTable()
+	 * @generated
+	 */
+	EReference getTable_Entity();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.IndexSpec <em>Index Spec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4604,6 +4691,17 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getCollection();
 
 	/**
+	 * Returns the meta object for the reference '{@link typhonml.Collection#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see typhonml.Collection#getEntity()
+	 * @see #getCollection()
+	 * @generated
+	 */
+	EReference getCollection_Entity();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.KeyValueDB <em>Key Value DB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4657,6 +4755,17 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getKeyValueElement_Values();
 
 	/**
+	 * Returns the meta object for the reference '{@link typhonml.KeyValueElement#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see typhonml.KeyValueElement#getEntity()
+	 * @see #getKeyValueElement()
+	 * @generated
+	 */
+	EReference getKeyValueElement_Entity();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.GraphDB <em>Graph DB</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4708,6 +4817,17 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGraphNode_Attributes();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.GraphNode#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see typhonml.GraphNode#getEntity()
+	 * @see #getGraphNode()
+	 * @generated
+	 */
+	EReference getGraphNode_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.GraphAttribute <em>Graph Attribute</em>}'.
@@ -4837,25 +4957,15 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getColumn_Attributes();
 
 	/**
-	 * Returns the meta object for class '{@link typhonml.GenericList <em>Generic List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Generic List</em>'.
-	 * @see typhonml.GenericList
-	 * @generated
-	 */
-	EClass getGenericList();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.GenericList#getEntity <em>Entity</em>}'.
+	 * Returns the meta object for the reference '{@link typhonml.Column#getEntity <em>Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Entity</em>'.
-	 * @see typhonml.GenericList#getEntity()
-	 * @see #getGenericList()
+	 * @see typhonml.Column#getEntity()
+	 * @see #getColumn()
 	 * @generated
 	 */
-	EReference getGenericList_Entity();
+	EReference getColumn_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.RenameEntity <em>Rename Entity</em>}'.
@@ -5709,42 +5819,6 @@ public interface TyphonmlPackage extends EPackage {
 		EClass PRIMITIVE_DATA_TYPE = eINSTANCE.getPrimitiveDataType();
 
 		/**
-		 * The meta object literal for the '{@link typhonml.impl.FreeTextImpl <em>Free Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.FreeTextImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
-		 * @generated
-		 */
-		EClass FREE_TEXT = eINSTANCE.getFreeText();
-
-		/**
-		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference FREE_TEXT__TASKS = eINSTANCE.getFreeText_Tasks();
-
-		/**
-		 * The meta object literal for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.NlpTaskImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTask()
-		 * @generated
-		 */
-		EClass NLP_TASK = eINSTANCE.getNlpTask();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NLP_TASK__TYPE = eINSTANCE.getNlpTask_Type();
-
-		/**
 		 * The meta object literal for the '{@link typhonml.impl.CustomDataTypeImpl <em>Custom Data Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -5787,6 +5861,42 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DATA_TYPE_ITEM__IMPLEMENTATION = eINSTANCE.getDataTypeItem_Implementation();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.FreeTextImpl <em>Free Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.FreeTextImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getFreeText()
+		 * @generated
+		 */
+		EClass FREE_TEXT = eINSTANCE.getFreeText();
+
+		/**
+		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FREE_TEXT__TASKS = eINSTANCE.getFreeText_Tasks();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.NlpTaskImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTask()
+		 * @generated
+		 */
+		EClass NLP_TASK = eINSTANCE.getNlpTask();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NLP_TASK__TYPE = eINSTANCE.getNlpTask_Type();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.DataTypeImplementationPackageImpl <em>Data Type Implementation Package</em>}' class.
@@ -5841,12 +5951,44 @@ public interface TyphonmlPackage extends EPackage {
 		EReference ENTITY__RELATIONS = eINSTANCE.getEntity_Relations();
 
 		/**
-		 * The meta object literal for the '<em><b>Generic List</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Get Collections</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ENTITY__GENERIC_LIST = eINSTANCE.getEntity_GenericList();
+		EOperation ENTITY___GET_COLLECTIONS = eINSTANCE.getEntity__GetCollections();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Tables</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_TABLES = eINSTANCE.getEntity__GetTables();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Key Value Elements</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_KEY_VALUE_ELEMENTS = eINSTANCE.getEntity__GetKeyValueElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Graph Nodes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_GRAPH_NODES = eINSTANCE.getEntity__GetGraphNodes();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Columns</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_COLUMNS = eINSTANCE.getEntity__GetColumns();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -5961,6 +6103,14 @@ public interface TyphonmlPackage extends EPackage {
 		EReference TABLE__DB = eINSTANCE.getTable_Db();
 
 		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE__ENTITY = eINSTANCE.getTable_Entity();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.IndexSpecImpl <em>Index Spec</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6049,6 +6199,14 @@ public interface TyphonmlPackage extends EPackage {
 		EClass COLLECTION = eINSTANCE.getCollection();
 
 		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLLECTION__ENTITY = eINSTANCE.getCollection_Entity();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.KeyValueDBImpl <em>Key Value DB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6093,6 +6251,14 @@ public interface TyphonmlPackage extends EPackage {
 		EReference KEY_VALUE_ELEMENT__VALUES = eINSTANCE.getKeyValueElement_Values();
 
 		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference KEY_VALUE_ELEMENT__ENTITY = eINSTANCE.getKeyValueElement_Entity();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.GraphDBImpl <em>Graph DB</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6135,6 +6301,14 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GRAPH_NODE__ATTRIBUTES = eINSTANCE.getGraphNode_Attributes();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GRAPH_NODE__ENTITY = eINSTANCE.getGraphNode_Entity();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.GraphAttributeImpl <em>Graph Attribute</em>}' class.
@@ -6243,22 +6417,12 @@ public interface TyphonmlPackage extends EPackage {
 		EReference COLUMN__ATTRIBUTES = eINSTANCE.getColumn_Attributes();
 
 		/**
-		 * The meta object literal for the '{@link typhonml.impl.GenericListImpl <em>Generic List</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.GenericListImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getGenericList()
-		 * @generated
-		 */
-		EClass GENERIC_LIST = eINSTANCE.getGenericList();
-
-		/**
 		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference GENERIC_LIST__ENTITY = eINSTANCE.getGenericList_Entity();
+		EReference COLUMN__ENTITY = eINSTANCE.getColumn_Entity();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.RenameEntityImpl <em>Rename Entity</em>}' class.

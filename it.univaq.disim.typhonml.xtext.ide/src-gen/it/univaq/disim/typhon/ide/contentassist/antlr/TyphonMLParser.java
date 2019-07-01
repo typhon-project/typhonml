@@ -39,7 +39,6 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGraphAttributeAccess().getAlternatives(), "rule__GraphAttribute__Alternatives");
 			builder.put(grammarAccess.getGraphEdgeAccess().getAlternatives(), "rule__GraphEdge__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getGenericListAccess().getAlternatives(), "rule__GenericList__Alternatives");
 			builder.put(grammarAccess.getEBooleanObjectAccess().getAlternatives(), "rule__EBooleanObject__Alternatives");
 			builder.put(grammarAccess.getCardinalityAccess().getAlternatives(), "rule__Cardinality__Alternatives");
 			builder.put(grammarAccess.getNlpTaskTypeAccess().getAlternatives(), "rule__NlpTaskType__Alternatives");
@@ -83,7 +82,6 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntity_ImplAccess().getGroup_4(), "rule__Entity_Impl__Group_4__0");
 			builder.put(grammarAccess.getEntity_ImplAccess().getGroup_5(), "rule__Entity_Impl__Group_5__0");
 			builder.put(grammarAccess.getEntity_ImplAccess().getGroup_6(), "rule__Entity_Impl__Group_6__0");
-			builder.put(grammarAccess.getEntity_ImplAccess().getGroup_7(), "rule__Entity_Impl__Group_7__0");
 			builder.put(grammarAccess.getRelation_ImplAccess().getGroup(), "rule__Relation_Impl__Group__0");
 			builder.put(grammarAccess.getRelation_ImplAccess().getGroup_0(), "rule__Relation_Impl__Group_0__0");
 			builder.put(grammarAccess.getRelation_ImplAccess().getGroup_5(), "rule__Relation_Impl__Group_5__0");
@@ -230,7 +228,6 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntity_ImplAccess().getFretextAttributesAssignment_5_1(), "rule__Entity_Impl__FretextAttributesAssignment_5_1");
 			builder.put(grammarAccess.getEntity_ImplAccess().getRelationsAssignment_6_0(), "rule__Entity_Impl__RelationsAssignment_6_0");
 			builder.put(grammarAccess.getEntity_ImplAccess().getRelationsAssignment_6_1(), "rule__Entity_Impl__RelationsAssignment_6_1");
-			builder.put(grammarAccess.getEntity_ImplAccess().getGenericListAssignment_7_2(), "rule__Entity_Impl__GenericListAssignment_7_2");
 			builder.put(grammarAccess.getRelation_ImplAccess().getImportedNamespaceAssignment_0_1(), "rule__Relation_Impl__ImportedNamespaceAssignment_0_1");
 			builder.put(grammarAccess.getRelation_ImplAccess().getNameAssignment_1(), "rule__Relation_Impl__NameAssignment_1");
 			builder.put(grammarAccess.getRelation_ImplAccess().getIsContainmentAssignment_2(), "rule__Relation_Impl__IsContainmentAssignment_2");

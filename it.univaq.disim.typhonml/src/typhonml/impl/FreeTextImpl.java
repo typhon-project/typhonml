@@ -3,13 +3,17 @@
 package typhonml.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import typhonml.FreeText;
 import typhonml.NlpTask;
 import typhonml.TyphonmlPackage;
@@ -62,7 +66,6 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<NlpTask> getTasks() {
 		if (tasks == null) {
 			tasks = new EObjectContainmentEList<NlpTask>(NlpTask.class, this, TyphonmlPackage.FREE_TEXT__TASKS);

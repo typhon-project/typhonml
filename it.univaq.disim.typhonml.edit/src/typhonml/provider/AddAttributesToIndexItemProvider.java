@@ -125,6 +125,7 @@ public class AddAttributesToIndexItemProvider extends ChangeOperatorItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

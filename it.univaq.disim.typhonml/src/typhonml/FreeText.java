@@ -4,7 +4,6 @@ package typhonml;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Free Text</b></em>'.
@@ -22,11 +21,14 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface FreeText extends NamedElement {
-
 	/**
 	 * Returns the value of the '<em><b>Tasks</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.NlpTask}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tasks</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tasks</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getFreeText_Tasks()
@@ -34,4 +36,5 @@ public interface FreeText extends NamedElement {
 	 * @generated
 	 */
 	EList<NlpTask> getTasks();
+
 } // FreeText

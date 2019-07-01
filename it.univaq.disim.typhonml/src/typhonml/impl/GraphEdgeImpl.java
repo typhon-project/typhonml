@@ -92,7 +92,6 @@ public class GraphEdgeImpl extends NamedElementImpl implements GraphEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public GraphNode getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
@@ -119,7 +118,6 @@ public class GraphEdgeImpl extends NamedElementImpl implements GraphEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setFrom(GraphNode newFrom) {
 		GraphNode oldFrom = from;
 		from = newFrom;
@@ -132,7 +130,6 @@ public class GraphEdgeImpl extends NamedElementImpl implements GraphEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public GraphNode getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
@@ -159,7 +156,6 @@ public class GraphEdgeImpl extends NamedElementImpl implements GraphEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTo(GraphNode newTo) {
 		GraphNode oldTo = to;
 		to = newTo;
@@ -172,7 +168,6 @@ public class GraphEdgeImpl extends NamedElementImpl implements GraphEdge {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<GraphEdgeLabel> getLabels() {
 		if (labels == null) {
 			labels = new EObjectContainmentEList<GraphEdgeLabel>(GraphEdgeLabel.class, this, TyphonmlPackage.GRAPH_EDGE__LABELS);

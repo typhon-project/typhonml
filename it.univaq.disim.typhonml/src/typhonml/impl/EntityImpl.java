@@ -2,26 +2,29 @@
  */
 package typhonml.impl;
 
-import java.util.Collection;
+import java.lang.reflect.InvocationTargetException;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.WrappedException;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import typhonml.Attribute;
+import typhonml.Collection;
+import typhonml.Column;
 import typhonml.Entity;
 import typhonml.FreeText;
-import typhonml.GenericList;
+import typhonml.GraphNode;
+import typhonml.KeyValueElement;
 import typhonml.Relation;
+import typhonml.Table;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -35,7 +38,6 @@ import typhonml.TyphonmlPackage;
  *   <li>{@link typhonml.impl.EntityImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getRelations <em>Relations</em>}</li>
- *   <li>{@link typhonml.impl.EntityImpl#getGenericList <em>Generic List</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,16 +74,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	protected EList<Relation> relations;
 
 	/**
-	 * The cached value of the '{@link #getGenericList() <em>Generic List</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getGenericList()
-	 * @generated
-	 * @ordered
-	 */
-	protected GenericList genericList;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -105,7 +97,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, TyphonmlPackage.ENTITY__ATTRIBUTES);
@@ -118,7 +109,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<FreeText> getFretextAttributes() {
 		if (fretextAttributes == null) {
 			fretextAttributes = new EObjectContainmentEList<FreeText>(FreeText.class, this, TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES);
@@ -131,7 +121,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<Relation> getRelations() {
 		if (relations == null) {
 			relations = new EObjectContainmentEList<Relation>(Relation.class, this, TyphonmlPackage.ENTITY__RELATIONS);
@@ -140,81 +129,128 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	}
 
 	/**
+	 * The cached invocation delegate for the '{@link #getCollections() <em>Get Collections</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @see #getCollections()
 	 * @generated
+	 * @ordered
 	 */
-	@Override
-	public GenericList getGenericList() {
-		if (genericList != null && genericList.eIsProxy()) {
-			InternalEObject oldGenericList = (InternalEObject)genericList;
-			genericList = (GenericList)eResolveProxy(oldGenericList);
-			if (genericList != oldGenericList) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.ENTITY__GENERIC_LIST, oldGenericList, genericList));
-			}
-		}
-		return genericList;
-	}
+	protected static final EOperation.Internal.InvocationDelegate GET_COLLECTIONS__EINVOCATION_DELEGATE = ((EOperation.Internal)TyphonmlPackage.Literals.ENTITY___GET_COLLECTIONS).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GenericList basicGetGenericList() {
-		return genericList;
+	@SuppressWarnings("unchecked")
+	public EList<Collection> getCollections() {
+		try {
+			return (EList<Collection>)GET_COLLECTIONS__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #getTables() <em>Get Tables</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTables()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GET_TABLES__EINVOCATION_DELEGATE = ((EOperation.Internal)TyphonmlPackage.Literals.ENTITY___GET_TABLES).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetGenericList(GenericList newGenericList, NotificationChain msgs) {
-		GenericList oldGenericList = genericList;
-		genericList = newGenericList;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ENTITY__GENERIC_LIST, oldGenericList, newGenericList);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	@SuppressWarnings("unchecked")
+	public EList<Table> getTables() {
+		try {
+			return (EList<Table>)GET_TABLES__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
-		return msgs;
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #getKeyValueElements() <em>Get Key Value Elements</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKeyValueElements()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GET_KEY_VALUE_ELEMENTS__EINVOCATION_DELEGATE = ((EOperation.Internal)TyphonmlPackage.Literals.ENTITY___GET_KEY_VALUE_ELEMENTS).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setGenericList(GenericList newGenericList) {
-		if (newGenericList != genericList) {
-			NotificationChain msgs = null;
-			if (genericList != null)
-				msgs = ((InternalEObject)genericList).eInverseRemove(this, TyphonmlPackage.GENERIC_LIST__ENTITY, GenericList.class, msgs);
-			if (newGenericList != null)
-				msgs = ((InternalEObject)newGenericList).eInverseAdd(this, TyphonmlPackage.GENERIC_LIST__ENTITY, GenericList.class, msgs);
-			msgs = basicSetGenericList(newGenericList, msgs);
-			if (msgs != null) msgs.dispatch();
+	@SuppressWarnings("unchecked")
+	public EList<KeyValueElement> getKeyValueElements() {
+		try {
+			return (EList<KeyValueElement>)GET_KEY_VALUE_ELEMENTS__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ENTITY__GENERIC_LIST, newGenericList, newGenericList));
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #getGraphNodes() <em>Get Graph Nodes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGraphNodes()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GET_GRAPH_NODES__EINVOCATION_DELEGATE = ((EOperation.Internal)TyphonmlPackage.Literals.ENTITY___GET_GRAPH_NODES).getInvocationDelegate();
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case TyphonmlPackage.ENTITY__GENERIC_LIST:
-				if (genericList != null)
-					msgs = ((InternalEObject)genericList).eInverseRemove(this, TyphonmlPackage.GENERIC_LIST__ENTITY, GenericList.class, msgs);
-				return basicSetGenericList((GenericList)otherEnd, msgs);
+	@SuppressWarnings("unchecked")
+	public EList<GraphNode> getGraphNodes() {
+		try {
+			return (EList<GraphNode>)GET_GRAPH_NODES__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
 		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
+	}
+
+	/**
+	 * The cached invocation delegate for the '{@link #getColumns() <em>Get Columns</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getColumns()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final EOperation.Internal.InvocationDelegate GET_COLUMNS__EINVOCATION_DELEGATE = ((EOperation.Internal)TyphonmlPackage.Literals.ENTITY___GET_COLUMNS).getInvocationDelegate();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public EList<Column> getColumns() {
+		try {
+			return (EList<Column>)GET_COLUMNS__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
+		}
+		catch (InvocationTargetException ite) {
+			throw new WrappedException(ite);
+		}
 	}
 
 	/**
@@ -231,8 +267,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return ((InternalEList<?>)getFretextAttributes()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return ((InternalEList<?>)getRelations()).basicRemove(otherEnd, msgs);
-			case TyphonmlPackage.ENTITY__GENERIC_LIST:
-				return basicSetGenericList(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -251,9 +285,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return getFretextAttributes();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return getRelations();
-			case TyphonmlPackage.ENTITY__GENERIC_LIST:
-				if (resolve) return getGenericList();
-				return basicGetGenericList();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -269,18 +300,15 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 		switch (featureID) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				getAttributes().clear();
-				getAttributes().addAll((Collection<? extends Attribute>)newValue);
+				getAttributes().addAll((java.util.Collection<? extends Attribute>)newValue);
 				return;
 			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
 				getFretextAttributes().clear();
-				getFretextAttributes().addAll((Collection<? extends FreeText>)newValue);
+				getFretextAttributes().addAll((java.util.Collection<? extends FreeText>)newValue);
 				return;
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();
-				getRelations().addAll((Collection<? extends Relation>)newValue);
-				return;
-			case TyphonmlPackage.ENTITY__GENERIC_LIST:
-				setGenericList((GenericList)newValue);
+				getRelations().addAll((java.util.Collection<? extends Relation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -303,9 +331,6 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();
 				return;
-			case TyphonmlPackage.ENTITY__GENERIC_LIST:
-				setGenericList((GenericList)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -324,10 +349,30 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return fretextAttributes != null && !fretextAttributes.isEmpty();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return relations != null && !relations.isEmpty();
-			case TyphonmlPackage.ENTITY__GENERIC_LIST:
-				return genericList != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
+		switch (operationID) {
+			case TyphonmlPackage.ENTITY___GET_COLLECTIONS:
+				return getCollections();
+			case TyphonmlPackage.ENTITY___GET_TABLES:
+				return getTables();
+			case TyphonmlPackage.ENTITY___GET_KEY_VALUE_ELEMENTS:
+				return getKeyValueElements();
+			case TyphonmlPackage.ENTITY___GET_GRAPH_NODES:
+				return getGraphNodes();
+			case TyphonmlPackage.ENTITY___GET_COLUMNS:
+				return getColumns();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 } //EntityImpl

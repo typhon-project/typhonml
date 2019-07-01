@@ -395,7 +395,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				Table table = (Table)theEObject;
 				T result = caseTable(table);
 				if (result == null) result = caseNamedElement(table);
-				if (result == null) result = caseGenericList(table);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -423,7 +422,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.COLLECTION: {
 				Collection collection = (Collection)theEObject;
 				T result = caseCollection(collection);
-				if (result == null) result = caseGenericList(collection);
 				if (result == null) result = caseNamedElement(collection);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -440,7 +438,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				KeyValueElement keyValueElement = (KeyValueElement)theEObject;
 				T result = caseKeyValueElement(keyValueElement);
 				if (result == null) result = caseNamedElement(keyValueElement);
-				if (result == null) result = caseGenericList(keyValueElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -456,7 +453,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				GraphNode graphNode = (GraphNode)theEObject;
 				T result = caseGraphNode(graphNode);
 				if (result == null) result = caseNamedElement(graphNode);
-				if (result == null) result = caseGenericList(graphNode);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -493,13 +489,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				Column column = (Column)theEObject;
 				T result = caseColumn(column);
 				if (result == null) result = caseNamedElement(column);
-				if (result == null) result = caseGenericList(column);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case TyphonmlPackage.GENERIC_LIST: {
-				GenericList genericList = (GenericList)theEObject;
-				T result = caseGenericList(genericList);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1062,36 +1051,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Free Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Free Text</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseFreeText(FreeText object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Nlp Task</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Nlp Task</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNlpTask(NlpTask object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Custom Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -1118,6 +1077,36 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataTypeItem(DataTypeItem object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Free Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Free Text</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFreeText(FreeText object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Nlp Task</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Nlp Task</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNlpTask(NlpTask object) {
 		return null;
 	}
 
@@ -1403,21 +1392,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseColumn(Column object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generic List</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generic List</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGenericList(GenericList object) {
 		return null;
 	}
 

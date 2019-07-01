@@ -66,7 +66,6 @@ public class KeyValueDBImpl extends DatabaseImpl implements KeyValueDB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<KeyValueElement> getElements() {
 		if (elements == null) {
 			elements = new EObjectContainmentEList<KeyValueElement>(KeyValueElement.class, this, TyphonmlPackage.KEY_VALUE_DB__ELEMENTS);

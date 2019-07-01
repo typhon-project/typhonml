@@ -61,7 +61,6 @@ public class DropCollectionIndexImpl extends ChangeOperatorImpl implements DropC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Collection getCollection() {
 		if (collection != null && collection.eIsProxy()) {
 			InternalEObject oldCollection = (InternalEObject)collection;
@@ -88,7 +87,6 @@ public class DropCollectionIndexImpl extends ChangeOperatorImpl implements DropC
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setCollection(Collection newCollection) {
 		Collection oldCollection = collection;
 		collection = newCollection;

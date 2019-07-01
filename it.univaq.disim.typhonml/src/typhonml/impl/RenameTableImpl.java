@@ -82,7 +82,6 @@ public class RenameTableImpl extends ChangeOperatorImpl implements RenameTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Table getTableToRename() {
 		if (tableToRename != null && tableToRename.eIsProxy()) {
 			InternalEObject oldTableToRename = (InternalEObject)tableToRename;
@@ -109,7 +108,6 @@ public class RenameTableImpl extends ChangeOperatorImpl implements RenameTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTableToRename(Table newTableToRename) {
 		Table oldTableToRename = tableToRename;
 		tableToRename = newTableToRename;
@@ -122,7 +120,6 @@ public class RenameTableImpl extends ChangeOperatorImpl implements RenameTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNewName() {
 		return newName;
 	}
@@ -132,7 +129,6 @@ public class RenameTableImpl extends ChangeOperatorImpl implements RenameTable {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNewName(String newNewName) {
 		String oldNewName = newName;
 		newName = newNewName;

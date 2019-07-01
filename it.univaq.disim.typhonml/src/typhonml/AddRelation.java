@@ -20,10 +20,13 @@ package typhonml;
  * @generated
  */
 public interface AddRelation extends Relation, ChangeOperator {
-
 	/**
 	 * Returns the value of the '<em><b>Owner Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owner Entity</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owner Entity</em>' reference.
 	 * @see #setOwnerEntity(Entity)
@@ -42,4 +45,5 @@ public interface AddRelation extends Relation, ChangeOperator {
 	 * @generated
 	 */
 	void setOwnerEntity(Entity value);
+
 } // AddRelation

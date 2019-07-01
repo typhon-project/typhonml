@@ -304,10 +304,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createColumnAdapter();
 			}
 			@Override
-			public Adapter caseGenericList(GenericList object) {
-				return createGenericListAdapter();
-			}
-			@Override
 			public Adapter caseRenameEntity(RenameEntity object) {
 				return createRenameEntityAdapter();
 			}
@@ -840,34 +836,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.FreeText <em>Free Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.FreeText
-	 * @generated
-	 */
-	public Adapter createFreeTextAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.NlpTask
-	 * @generated
-	 */
-	public Adapter createNlpTaskAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link typhonml.CustomDataType <em>Custom Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -892,6 +860,34 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataTypeItemAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.FreeText <em>Free Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.FreeText
+	 * @generated
+	 */
+	public Adapter createFreeTextAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.NlpTask
+	 * @generated
+	 */
+	public Adapter createNlpTaskAdapter() {
 		return null;
 	}
 
@@ -1158,20 +1154,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createColumnAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.GenericList <em>Generic List</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.GenericList
-	 * @generated
-	 */
-	public Adapter createGenericListAdapter() {
 		return null;
 	}
 

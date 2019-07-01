@@ -82,7 +82,6 @@ public class RenabeGraphEdgeLabelImpl extends ChangeOperatorImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public GraphEdge getEdge() {
 		if (edge != null && edge.eIsProxy()) {
 			InternalEObject oldEdge = (InternalEObject)edge;
@@ -109,7 +108,6 @@ public class RenabeGraphEdgeLabelImpl extends ChangeOperatorImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setEdge(GraphEdge newEdge) {
 		GraphEdge oldEdge = edge;
 		edge = newEdge;
@@ -122,7 +120,6 @@ public class RenabeGraphEdgeLabelImpl extends ChangeOperatorImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public String getNewName() {
 		return newName;
 	}
@@ -132,7 +129,6 @@ public class RenabeGraphEdgeLabelImpl extends ChangeOperatorImpl implements Rena
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setNewName(String newNewName) {
 		String oldNewName = newName;
 		newName = newNewName;

@@ -237,7 +237,7 @@ public class [e.name.toUpperFirst()/]Test {
 			<artifactId>spring-boot-starter-data-rest</artifactId>
 		</dependency>
 		
-		[e.genericList.getPOMInformation()/]
+	[e.getPOMInformation()/]
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -295,21 +295,21 @@ package org.typhon.[e.name.toLowerCase()/].model;
 
 import java.util.*;
 
-[e.genericList.getDatabaseBean()/]
+[e.getDatabaseBean()/]
 [/file]
 
 
 
 [comment orderdb/src/main/java/org/typhon/orderdb/model/repository/OrderRepository.java/]
 [file (e.name.toLower()+'/src/main/java/org/typhon/'+e.name.toLower()+'/model/repository/'+e.name.toUpperFirst()+'Repository.java', false, 'UTF-8')]
-[e.genericList.getDatabaseRepositoryInformation()/]
+[e.getDatabaseRepositoryInformation()/]
 [/file]
 
 
 
 [comment orderdb/src/main/resources/application.properties/]
 [file (e.name.toLower()+'/src/main/resources/application.properties', false, 'UTF-8')]
-[e.genericList.getProperties(count + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e))/]
+[e.getProperties(count + getAllModelEntitiesUtilityOrdered(aModel)->indexOf(e))/]
 [/file]
 
 
@@ -321,18 +321,14 @@ import java.util.*;
 
 
 
-
-
 [comment  
 ######################################################################################
 ###### START - POLYMORFISM FOR POM
 ######################################################################################
 /]
-[template private getPOMInformation(database : GenericList) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getPOMInformation(database : Table) ]
+[template private getPOMInformation(e : Entity) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -341,25 +337,26 @@ import java.util.*;
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 	</dependency>
-[/template]
-
-[template private getPOMInformation(database : Collection) ]
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
 	<dependency>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-data-mongodb</artifactId>
 	</dependency>
-[/template]
-
-[template private getPOMInformation(database : KeyValueElement) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getPOMInformation(database : GraphNode) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getPOMInformation(database : Column) ]
-	[comment TODO Auto-generated template stub/]
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 [comment  
 ######################################################################################
@@ -376,14 +373,12 @@ import java.util.*;
 ###### START - POLYMORFISM FOR DATABASE REPOSITORY
 ######################################################################################
 /]
-[template private getDatabaseRepositoryInformation(database : GenericList) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
+[template private getDatabaseRepositoryInformation(e : Entity) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
+package org.typhon.[e.name.toLowerCase()/].model.repository;
 
-[template private getDatabaseRepositoryInformation(database : Table) ]
-package org.typhon.[database.entity.name.toLowerCase()/].model.repository;
-
-import org.typhon.[database.entity.name.toLowerCase()/].model.[database.entity.name.toUpperFirst()/];
+import org.typhon.[e.name.toLowerCase()/].model.[e.name.toUpperFirst()/];
 
 import java.util.List;
 
@@ -396,43 +391,45 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 @Api
-@RepositoryRestResource(collectionResourceRel = "[database.entity.name.toLowerCase()/]", path = "[database.entity.name.toLowerCase()/]")
-public interface [database.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.entity.name.toUpperFirst()/], Long> {
+@RepositoryRestResource(collectionResourceRel = "[e.name.toLowerCase()/]", path = "[e.name.toLowerCase()/]")
+public interface [e.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[e.name.toUpperFirst()/], Long> {
 	
-[for (attribute : Attribute | database.entity.attributes)]
-	@ApiOperation("Get [database.entity.name.toLower()/] by [attribute.name/]")
-	List<[database.entity.name.toUpperFirst()/]> findBy[attribute.name.toUpperFirst()/](@Param("[attribute.name/]") 
+[for (attribute : Attribute | e.attributes)]
+	@ApiOperation("Get [e.name.toLower()/] by [attribute.name/]")
+	List<[e.name.toUpperFirst()/]> findBy[attribute.name.toUpperFirst()/](@Param("[attribute.name/]") 
 								@ApiParam(value="[attribute.name.toUpperFirst()/]")String [attribute.name/]);
 
 [/for]
 }
-[/template]
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
+package org.typhon.[e.name.toLowerCase()/].model.repository;
 
-[template private getDatabaseRepositoryInformation(database : Collection) ]
-package org.typhon.[database.entity.name.toLowerCase()/].model.repository;
-
-import org.typhon.[database.entity.name.toLowerCase()/].model.[database.entity.name.toUpperFirst()/];
+import org.typhon.[e.name.toLowerCase()/].model.[e.name.toUpperFirst()/];
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(collectionResourceRel = "[database.entity.name.toLowerCase()/]", path = "[database.entity.name.toLowerCase()/]")
-public interface [database.entity.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[database.entity.name.toUpperFirst()/], String> {
+@RepositoryRestResource(collectionResourceRel = "[e.name.toLowerCase()/]", path = "[e.name.toLowerCase()/]")
+public interface [e.name.toUpperFirst()/]Repository extends PagingAndSortingRepository<[e.name.toUpperFirst()/], String> {
 
 }
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 
-[template private getDatabaseRepositoryInformation(database : KeyValueElement) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getDatabaseRepositoryInformation(database : GraphNode) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getDatabaseRepositoryInformation(database : Column) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
 [comment  
 ######################################################################################
 ###### END - POLYMORFISM FOR DATABASE REPOSITORY
@@ -452,11 +449,9 @@ public interface [database.entity.name.toUpperFirst()/]Repository extends Paging
 ###### START - POLYMORFISM FOR DATABASE BEANS
 ######################################################################################
 /]
-[template private getDatabaseBean(database : GenericList) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getDatabaseBean(database : Table) ]
+[template private getDatabaseBean(e : Entity) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -465,18 +460,18 @@ import javax.persistence.Id;
 
 
 @Entity
-public class [database.entity.name.toUpperFirst()/] {
+public class [e.name.toUpperFirst()/] {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-[for (attribute : Attribute | database.entity.attributes)]
+[for (attribute : Attribute | e.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/]; 
 	[/if]
 [/for]
 
-[for (relation : Relation | database.entity.relations)]
+[for (relation : Relation | e.relations)]
 	@ElementCollection
 	private List<String> [relation.name/]; 
 [/for]
@@ -488,7 +483,7 @@ public class [database.entity.name.toUpperFirst()/] {
 		this.id = id;
 	}
 		
-[for (attribute : Attribute | database.entity.attributes)]
+[for (attribute : Attribute | e.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	public void set[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/]([if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [attribute.name/][elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/] [/if]){
 		this.[attribute.name/] = [attribute.name/];
@@ -500,7 +495,7 @@ public class [database.entity.name.toUpperFirst()/] {
 	[/if]
 [/for]	
 
-[for (relation : Relation | database.entity.relations)separator('\n')]
+[for (relation : Relation | e.relations)separator('\n')]
 	public void set[relation.name.toUpperFirst()/](List<String> [relation.name/]){
 		this.[relation.name/] = [relation.name/];
 	}
@@ -510,27 +505,26 @@ public class [database.entity.name.toUpperFirst()/] {
 	}
 [/for]
 }
-
-[/template]
-
-[template private getDatabaseBean(database : Collection) ]
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
 @Document
-public class [database.entity.name.toUpperFirst()/] {
+public class [e.name.toUpperFirst()/] {
 
 	@Id
 	private String id;
 
-[for (attribute : Attribute | database.entity.attributes)]
+[for (attribute : Attribute | e.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/];
 	[/if] 
 [/for]
 
-[for (relation : Relation | database.entity.relations)]
+[for (relation : Relation | e.relations)]
 	private List<Integer> [relation.name/]; 
 [/for]
 
@@ -542,7 +536,7 @@ public class [database.entity.name.toUpperFirst()/] {
 		this.id = id;
 	}
 
-[for (attribute : Attribute | database.entity.attributes)]
+[for (attribute : Attribute | e.attributes)]
 	[if (attribute.name.strcmp('id') <> 0)]
 	public void set[attribute.name.at(1).toUpper()+attribute.name.substring(2, attribute.name.size())/]([if (attribute.type.oclIsTypeOf(typhonml::PrimitiveDataType))][attribute.type.name/] [attribute.name/][elseif (attribute.type.oclIsTypeOf(typhonml::CustomDataType))]List<[attribute.type.name/]> [attribute.name.toLower()/] [/if]){
 		this.[attribute.name/] = [attribute.name/];
@@ -554,7 +548,7 @@ public class [database.entity.name.toUpperFirst()/] {
 	[/if]
 [/for]	
 
-[for (relation : Relation | database.entity.relations)separator('\n')]
+[for (relation : Relation | e.relations)separator('\n')]
 	public void set[relation.name.toUpperFirst()/](List<Integer> [relation.name/]){
 		this.[relation.name/] = [relation.name/];
 	}
@@ -564,19 +558,21 @@ public class [database.entity.name.toUpperFirst()/] {
 	}
 [/for]
 }
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 
-[template private getDatabaseBean(database : KeyValueElement) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getDatabaseBean(database : GraphNode) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getDatabaseBean(database : Column) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
 [comment  
 ######################################################################################
 ###### END - POLYMORFISM FOR DATABASE BEANS
@@ -593,42 +589,39 @@ public class [database.entity.name.toUpperFirst()/] {
 ###### START - POLYMORFISM FOR application.properies
 ######################################################################################
 /]
-[template private getProperties(database : GenericList, portNumber : Integer) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getProperties(database : Table, portNumber : Integer) ]
+[template private getProperties(e : Entity, portNumber : Integer) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
 server.port=[portNumber/]
 spring.jpa.hibernate.ddl-auto=create
-spring.datasource.url=jdbc:mysql://localhost:[getRelationalDBServerPort()/]/[database.name.toLowerCase()/]
+spring.datasource.url=jdbc:mysql://localhost:[getRelationalDBServerPort()/]/[e.getTables().name.toLowerCase()/]
 spring.datasource.username=root
 spring.datasource.password=root
-spring.datasource.driver-class-name:com.mysql.jdbc.Driver
-[/template]
-
-[template private getProperties(database : Collection, portNumber : Integer) ]
+spring.datasource.driver-class-name:com.mysql.jdbc.Driver	
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
 server.port=[portNumber/]
 spring.data.mongodb.host=localhost 
 spring.data.mongodb.port=[getDocumentDBServerPort()/]
-spring.data.mongodb.database=[database.name.toLowerCase()/]
-[/template]
-
-[template private getProperties(database : KeyValueElement, portNumber : Integer) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getProperties(database : GraphNode, portNumber : Integer) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getProperties(database : Column, portNumber : Integer) ]
-	[comment TODO Auto-generated template stub/]
+spring.data.mongodb.database=[e.getCollections().name.toLowerCase()/]
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 [comment  
 ######################################################################################
 ###### END - POLYMORFISM FOR application.properies
 ######################################################################################
 /]
-
-
 

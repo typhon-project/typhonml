@@ -30,8 +30,7 @@
   </databases>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="User"
-      genericList="//@databases.0/@tables.0">
+      name="User">
     <attributes
         name="name"
         type="//@dataTypes.3"/>
@@ -47,8 +46,7 @@
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="Order"
-      genericList="//@databases.1/@collections.0">
+      name="Order">
     <attributes
         name="date"
         type="//@dataTypes.4"/>
@@ -65,8 +63,7 @@
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="Product"
-      genericList="//@databases.2/@tables.0">
+      name="Product">
     <attributes
         name="description"
         type="//@dataTypes.3"/>

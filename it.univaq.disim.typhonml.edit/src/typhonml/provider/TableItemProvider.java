@@ -47,32 +47,10 @@ public class TableItemProvider extends NamedElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addEntityPropertyDescriptor(object);
 			addDbPropertyDescriptor(object);
+			addEntityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GenericList_entity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GenericList_entity_feature", "_UI_GenericList_type"),
-				 TyphonmlPackage.Literals.GENERIC_LIST__ENTITY,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -89,6 +67,28 @@ public class TableItemProvider extends NamedElementItemProvider {
 				 getString("_UI_Table_db_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Table_db_feature", "_UI_Table_type"),
 				 TyphonmlPackage.Literals.TABLE__DB,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Table_entity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Table_entity_feature", "_UI_Table_type"),
+				 TyphonmlPackage.Literals.TABLE__ENTITY,
 				 true,
 				 false,
 				 true,

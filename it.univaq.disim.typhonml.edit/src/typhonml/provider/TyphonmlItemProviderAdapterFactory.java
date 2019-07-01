@@ -808,52 +808,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.FreeText} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected FreeTextItemProvider freeTextItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.FreeText}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createFreeTextAdapter() {
-		if (freeTextItemProvider == null) {
-			freeTextItemProvider = new FreeTextItemProvider(this);
-		}
-
-		return freeTextItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.NlpTask} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NlpTaskItemProvider nlpTaskItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.NlpTask}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNlpTaskAdapter() {
-		if (nlpTaskItemProvider == null) {
-			nlpTaskItemProvider = new NlpTaskItemProvider(this);
-		}
-
-		return nlpTaskItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -897,6 +851,52 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		}
 
 		return dataTypeItemItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.FreeText} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FreeTextItemProvider freeTextItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.FreeText}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFreeTextAdapter() {
+		if (freeTextItemProvider == null) {
+			freeTextItemProvider = new FreeTextItemProvider(this);
+		}
+
+		return freeTextItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.NlpTask} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NlpTaskItemProvider nlpTaskItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.NlpTask}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNlpTaskAdapter() {
+		if (nlpTaskItemProvider == null) {
+			nlpTaskItemProvider = new NlpTaskItemProvider(this);
+		}
+
+		return nlpTaskItemProvider;
 	}
 
 	/**
@@ -1337,29 +1337,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.GenericList} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GenericListItemProvider genericListItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.GenericList}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGenericListAdapter() {
-		if (genericListItemProvider == null) {
-			genericListItemProvider = new GenericListItemProvider(this);
-		}
-
-		return genericListItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.RenameEntity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1411,7 +1388,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public ComposeableAdapterFactory getRootAdapterFactory() {
 		return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
 	}
@@ -1422,7 +1398,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
@@ -1471,7 +1446,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void addListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
@@ -1482,7 +1456,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void removeListener(INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
@@ -1493,7 +1466,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void fireNotifyChanged(Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
@@ -1508,7 +1480,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void dispose() {
 		if (modelItemProvider != null) modelItemProvider.dispose();
 		if (addEntityItemProvider != null) addEntityItemProvider.dispose();
@@ -1565,7 +1536,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (graphEdgeLabelItemProvider != null) graphEdgeLabelItemProvider.dispose();
 		if (columnDBItemProvider != null) columnDBItemProvider.dispose();
 		if (columnItemProvider != null) columnItemProvider.dispose();
-		if (genericListItemProvider != null) genericListItemProvider.dispose();
 		if (renameEntityItemProvider != null) renameEntityItemProvider.dispose();
 		if (changeRelationContainementItemProvider != null) changeRelationContainementItemProvider.dispose();
 	}

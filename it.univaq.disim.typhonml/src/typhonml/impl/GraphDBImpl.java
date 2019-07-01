@@ -78,7 +78,6 @@ public class GraphDBImpl extends DatabaseImpl implements GraphDB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<GraphNode> getNodes() {
 		if (nodes == null) {
 			nodes = new EObjectContainmentEList<GraphNode>(GraphNode.class, this, TyphonmlPackage.GRAPH_DB__NODES);
@@ -91,7 +90,6 @@ public class GraphDBImpl extends DatabaseImpl implements GraphDB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public EList<GraphEdge> getEdges() {
 		if (edges == null) {
 			edges = new EObjectContainmentEList<GraphEdge>(GraphEdge.class, this, TyphonmlPackage.GRAPH_DB__EDGES);

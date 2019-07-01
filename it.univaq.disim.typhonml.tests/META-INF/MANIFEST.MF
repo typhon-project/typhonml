@@ -8,7 +8,8 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: typhonml.tests
+Export-Package: oclstdlib.tests,
+ typhonml.tests
 Require-Bundle: org.eclipse.core.runtime,
  it.univaq.disim.typhonml;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

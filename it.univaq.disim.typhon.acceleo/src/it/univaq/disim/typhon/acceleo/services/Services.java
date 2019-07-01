@@ -42,24 +42,22 @@ public class Services {
 		Resource resource = resourceSet.getResource(uri, true);
 		Model model = (Model) resource.getContents().get(0);
 
-		for (Database db : model.getDatabases()) {
-
-			if (db instanceof RelationalDB) {
-				RelationalDB v = (RelationalDB) db;
-				for (Table t : v.getTables()) {
-					t.getEntity().setGenericList(t);
-
-				}
-			}
-			if (db instanceof DocumentDB) {
-				DocumentDB v = (DocumentDB) db;
-				for (Collection t : v.getCollections()) {
-					t.getEntity().setGenericList(t);
-
-				}
-			}
-
-		}
+//		for (Database db : model.getDatabases()) {
+//			if (db instanceof RelationalDB) {
+//				RelationalDB v = (RelationalDB) db;
+//				for (Table t : v.getTables()) {
+//					t.getEntity().setGenericList(t);
+//				}
+//			}
+//			if (db instanceof DocumentDB) {
+//				DocumentDB v = (DocumentDB) db;
+//				for (Collection t : v.getCollections()) {
+//					t.getEntity().setGenericList(t);
+//				}
+//			}
+//		}
+		
+		
 		return model;
 	}
 

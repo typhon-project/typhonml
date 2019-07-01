@@ -61,7 +61,6 @@ public class RemoveAttributeImpl extends ChangeOperatorImpl implements RemoveAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Attribute getAttributeToRemove() {
 		if (attributeToRemove != null && attributeToRemove.eIsProxy()) {
 			InternalEObject oldAttributeToRemove = (InternalEObject)attributeToRemove;
@@ -88,7 +87,6 @@ public class RemoveAttributeImpl extends ChangeOperatorImpl implements RemoveAtt
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setAttributeToRemove(Attribute newAttributeToRemove) {
 		Attribute oldAttributeToRemove = attributeToRemove;
 		attributeToRemove = newAttributeToRemove;

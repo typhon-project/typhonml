@@ -61,7 +61,6 @@ public class DropIndexImpl extends ChangeOperatorImpl implements DropIndex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Table getTable() {
 		if (table != null && table.eIsProxy()) {
 			InternalEObject oldTable = (InternalEObject)table;
@@ -88,7 +87,6 @@ public class DropIndexImpl extends ChangeOperatorImpl implements DropIndex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setTable(Table newTable) {
 		Table oldTable = table;
 		table = newTable;

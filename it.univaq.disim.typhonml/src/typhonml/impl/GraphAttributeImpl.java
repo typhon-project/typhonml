@@ -61,7 +61,6 @@ public class GraphAttributeImpl extends NamedElementImpl implements GraphAttribu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public Attribute getValue() {
 		if (value != null && value.eIsProxy()) {
 			InternalEObject oldValue = (InternalEObject)value;
@@ -88,7 +87,6 @@ public class GraphAttributeImpl extends NamedElementImpl implements GraphAttribu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
 	public void setValue(Attribute newValue) {
 		Attribute oldValue = value;
 		value = newValue;

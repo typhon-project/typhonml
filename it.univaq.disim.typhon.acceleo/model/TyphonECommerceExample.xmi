@@ -45,8 +45,7 @@
   </databases>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="User"
-      genericList="//@databases.0/@tables.0">
+      name="User">
     <attributes
         name="name"
         type="//@dataTypes.5"/>
@@ -75,8 +74,7 @@
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="Order"
-      genericList="//@databases.1/@collections.0">
+      name="Order">
     <attributes
         name="date"
         type="//@dataTypes.6"/>
@@ -93,8 +91,7 @@
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="Review"
-      genericList="//@databases.4/@collections.0">
+      name="Review">
     <attributes
         name="rating"
         type="//@dataTypes.7"/>
@@ -113,8 +110,7 @@
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="Comment"
-      genericList="//@databases.2/@tables.0">
+      name="Comment">
     <attributes
         name="content"
         type="//@dataTypes.5"/>
@@ -127,8 +123,7 @@
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"
-      name="Product"
-      genericList="//@databases.3/@tables.0">
+      name="Product">
     <attributes
         name="description"
         type="//@dataTypes.5"/>
