@@ -8,9 +8,13 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: typhonml,
+Export-Package: oclstdlib,
+ oclstdlib.impl,
+ oclstdlib.util,
+ typhonml,
  typhonml.impl,
  typhonml.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.ocl.pivot;bundle-version="1.4.0"
 Bundle-ActivationPolicy: lazy

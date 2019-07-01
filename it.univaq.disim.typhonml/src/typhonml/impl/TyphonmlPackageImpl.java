@@ -2,9 +2,14 @@
  */
 package typhonml.impl;
 
+import oclstdlib.OclstdlibPackage;
+
+import oclstdlib.impl.OclstdlibPackageImpl;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -571,11 +576,17 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OclstdlibPackage.eNS_URI);
+		OclstdlibPackageImpl theOclstdlibPackage = (OclstdlibPackageImpl)(registeredPackage instanceof OclstdlibPackageImpl ? registeredPackage : OclstdlibPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theTyphonmlPackage.createPackageContents();
+		theOclstdlibPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theTyphonmlPackage.initializePackageContents();
+		theOclstdlibPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theTyphonmlPackage.freeze();
@@ -1481,6 +1492,51 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getEntity__GetCollections() {
+		return entityEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntity__GetTables() {
+		return entityEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntity__GetKeyValueElements() {
+		return entityEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntity__GetGraphNodes() {
+		return entityEClass.getEOperations().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getEntity__GetColumns() {
+		return entityEClass.getEOperations().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAttribute() {
 		return attributeEClass;
 	}
@@ -2166,6 +2222,11 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__FRETEXT_ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__RELATIONS);
+		createEOperation(entityEClass, ENTITY___GET_COLLECTIONS);
+		createEOperation(entityEClass, ENTITY___GET_TABLES);
+		createEOperation(entityEClass, ENTITY___GET_KEY_VALUE_ELEMENTS);
+		createEOperation(entityEClass, ENTITY___GET_GRAPH_NODES);
+		createEOperation(entityEClass, ENTITY___GET_COLUMNS);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__TYPE);
@@ -2478,6 +2539,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getEntity_FretextAttributes(), this.getFreeText(), null, "fretextAttributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEOperation(getEntity__GetCollections(), this.getCollection(), "getCollections", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getEntity__GetTables(), this.getTable(), "getTables", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getEntity__GetKeyValueElements(), this.getKeyValueElement(), "getKeyValueElements", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getEntity__GetGraphNodes(), this.getGraphNode(), "getGraphNodes", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getEntity__GetColumns(), this.getColumn(), "getColumns", 0, -1, IS_UNIQUE, !IS_ORDERED);
+
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2582,6 +2653,130 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+		// http://www.eclipse.org/OCL/Collection
+		createCollectionAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "ecore", "http://www.eclipse.org/emf/2002/Ecore"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation
+		  (getEntity__GetCollections(),
+		   source,
+		   new String[] {
+			   "body", "typhonml::Collection.allInstances()->select(e|e.entity = self)"
+		   });
+		addAnnotation
+		  (getEntity__GetTables(),
+		   source,
+		   new String[] {
+			   "body", "typhonml::Table.allInstances()->select(e|e.entity = self)"
+		   });
+		addAnnotation
+		  (getEntity__GetKeyValueElements(),
+		   source,
+		   new String[] {
+			   "body", "typhonml::KeyValueElement.allInstances()->select(e|e.entity = self)"
+		   });
+		addAnnotation
+		  (getEntity__GetGraphNodes(),
+		   source,
+		   new String[] {
+			   "body", "typhonml::GraphNode.allInstances()->select(e|e.entity = self)"
+		   });
+		addAnnotation
+		  (getEntity__GetColumns(),
+		   source,
+		   new String[] {
+			   "body", "typhonml::Column.allInstances()->select(e|e.entity = self)"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Collection</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createCollectionAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Collection";
+		addAnnotation
+		  (getEntity__GetCollections(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
+		   });
+		addAnnotation
+		  (getEntity__GetTables(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
+		   });
+		addAnnotation
+		  (getEntity__GetKeyValueElements(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
+		   });
+		addAnnotation
+		  (getEntity__GetGraphNodes(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
+		   });
+		addAnnotation
+		  (getEntity__GetColumns(),
+		   source,
+		   new String[] {
+			   "nullFree", "false"
+		   });
 	}
 
 } //TyphonmlPackageImpl

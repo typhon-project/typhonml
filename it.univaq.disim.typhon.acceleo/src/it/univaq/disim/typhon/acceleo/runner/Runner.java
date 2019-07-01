@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.BasicMonitor;
 
 import it.univaq.disim.typhon.acceleo.main.Generate;
 import it.univaq.disim.typhon.acceleo.services.Services;
+import it.univaq.disim.typhon.acceleo.test.Test;
 
 public class Runner {
 
@@ -55,7 +56,7 @@ public class Runner {
 			System.out.println("Generated!");
 	                
 //	        System.out.print("Generating Test...");
-//	        Test test = new Test(modelURI, folder, arguments);
+//	        Test test = new Test(Services.loadModel(modelUri), folder, arguments);
 //	        test.doGenerate(new BasicMonitor());
 //	        System.out.println("Generated!");
 

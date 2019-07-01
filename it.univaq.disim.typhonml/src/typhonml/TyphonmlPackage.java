@@ -5,6 +5,7 @@ package typhonml;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -22,6 +23,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see typhonml.TyphonmlFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface TyphonmlPackage extends EPackage {
@@ -297,13 +300,58 @@ public interface TyphonmlPackage extends EPackage {
 	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Get Collections</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_COLLECTIONS = DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Tables</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_TABLES = DATA_TYPE_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Key Value Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_KEY_VALUE_ELEMENTS = DATA_TYPE_OPERATION_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Graph Nodes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_GRAPH_NODES = DATA_TYPE_OPERATION_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Get Columns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY___GET_COLUMNS = DATA_TYPE_OPERATION_COUNT + 4;
+
+	/**
 	 * The number of operations of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
+	int ENTITY_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.AddEntityImpl <em>Add Entity</em>}' class.
@@ -368,6 +416,51 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADD_ENTITY_FEATURE_COUNT = ENTITY_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Collections</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_COLLECTIONS = ENTITY___GET_COLLECTIONS;
+
+	/**
+	 * The operation id for the '<em>Get Tables</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_TABLES = ENTITY___GET_TABLES;
+
+	/**
+	 * The operation id for the '<em>Get Key Value Elements</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_KEY_VALUE_ELEMENTS = ENTITY___GET_KEY_VALUE_ELEMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Graph Nodes</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_GRAPH_NODES = ENTITY___GET_GRAPH_NODES;
+
+	/**
+	 * The operation id for the '<em>Get Columns</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY___GET_COLUMNS = ENTITY___GET_COLUMNS;
 
 	/**
 	 * The number of operations of the '<em>Add Entity</em>' class.
@@ -4292,6 +4385,56 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getEntity_Relations();
 
 	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getCollections() <em>Get Collections</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Collections</em>' operation.
+	 * @see typhonml.Entity#getCollections()
+	 * @generated
+	 */
+	EOperation getEntity__GetCollections();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getTables() <em>Get Tables</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Tables</em>' operation.
+	 * @see typhonml.Entity#getTables()
+	 * @generated
+	 */
+	EOperation getEntity__GetTables();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getKeyValueElements() <em>Get Key Value Elements</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Key Value Elements</em>' operation.
+	 * @see typhonml.Entity#getKeyValueElements()
+	 * @generated
+	 */
+	EOperation getEntity__GetKeyValueElements();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getGraphNodes() <em>Get Graph Nodes</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Graph Nodes</em>' operation.
+	 * @see typhonml.Entity#getGraphNodes()
+	 * @generated
+	 */
+	EOperation getEntity__GetGraphNodes();
+
+	/**
+	 * Returns the meta object for the '{@link typhonml.Entity#getColumns() <em>Get Columns</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Columns</em>' operation.
+	 * @see typhonml.Entity#getColumns()
+	 * @generated
+	 */
+	EOperation getEntity__GetColumns();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.Attribute <em>Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5806,6 +5949,46 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENTITY__RELATIONS = eINSTANCE.getEntity_Relations();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Collections</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_COLLECTIONS = eINSTANCE.getEntity__GetCollections();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Tables</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_TABLES = eINSTANCE.getEntity__GetTables();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Key Value Elements</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_KEY_VALUE_ELEMENTS = eINSTANCE.getEntity__GetKeyValueElements();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Graph Nodes</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_GRAPH_NODES = eINSTANCE.getEntity__GetGraphNodes();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Columns</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ENTITY___GET_COLUMNS = eINSTANCE.getEntity__GetColumns();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.

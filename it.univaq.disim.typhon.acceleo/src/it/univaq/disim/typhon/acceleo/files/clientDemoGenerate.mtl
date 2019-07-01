@@ -26,12 +26,12 @@ public class [e.name.toUpperFirst()/]DTO {
 		[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/];
 		[else]
-	private [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id;
+	private [e.getTypeValueForDifferentDatabase()/] id;
 		[/if]
  	[/if]
 [/for]
 [for (relation : Relation | e.relations)]
-	private List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj; 
+	private List<[relation.type.getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj; 
 [/for]
 		
 [for (attribute : Attribute | e.attributes)]
@@ -45,10 +45,10 @@ public class [e.name.toUpperFirst()/]DTO {
 		return [attribute.name/];
 	}
 	[else]
-	public void setId ([e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id){
+	public void setId ([e.getTypeValueForDifferentDatabase()/] id){
 		this.id = id;
 	}
-	public [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] getId(){
+	public [e.getTypeValueForDifferentDatabase()/] getId(){
 		return id;
 	}
 	[/if]
@@ -56,10 +56,10 @@ public class [e.name.toUpperFirst()/]DTO {
 
 [/for]
 [for (relation : Relation | e.relations)]
-	public List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> get[relation.name.toUpperFirst()/](){
+	public List<[relation.type.getVariableTypeBasedOnDatabaseType()/]> get[relation.name.toUpperFirst()/](){
 		return [relation.name/]Obj;
 	}
-	public void set[relation.name.toUpperFirst()/](List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj){
+	public void set[relation.name.toUpperFirst()/](List<[relation.type.getVariableTypeBasedOnDatabaseType()/]> [relation.name/]Obj){
 		this.[relation.name/]Obj = [relation.name/]Obj;
 	}
 [/for]
@@ -87,12 +87,12 @@ private static final Logger logger = LoggerFactory.getLogger([e.name.toUpperFirs
 	[if (attribute.name.strcmp('id') <> 0)]
 	private [attribute.type.name/] [attribute.name/];
 	[else]
-	private [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id;
+	private [e.getTypeValueForDifferentDatabase()/] id;
 	[/if] 
 [/for]
 [for (relation : Relation | e.relations)]
 	private List<[relation.type.name/]> [relation.name/]Obj; 
-	private List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]; 
+	private List<[relation.type.getVariableTypeBasedOnDatabaseType()/]> [relation.name/]; 
 
 [/for]
 		
@@ -106,20 +106,20 @@ private static final Logger logger = LoggerFactory.getLogger([e.name.toUpperFirs
 		return [attribute.name/];
 	}
 	[else]
-	public void setId ([e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id){
+	public void setId ([e.getTypeValueForDifferentDatabase()/] id){
 		this.id = id;
 	}
-	public [e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] getId(){
+	public [e.getTypeValueForDifferentDatabase()/] getId(){
 		return id;
 	}
 	[/if]
 
 [/for]
 [for (relation : Relation | e.relations)]
-	public List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> get[relation.name.toUpperFirst()/](){
+	public List<[relation.type.getVariableTypeBasedOnDatabaseType()/]> get[relation.name.toUpperFirst()/](){
 		return [relation.name/];
 	}
-	public void set[relation.name.toUpperFirst()/](List<[relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/]> [relation.name/]){
+	public void set[relation.name.toUpperFirst()/](List<[relation.type.getVariableTypeBasedOnDatabaseType()/]> [relation.name/]){
 		this.[relation.name/] = [relation.name/];
 	}
 [/for]
@@ -129,7 +129,7 @@ private static final Logger logger = LoggerFactory.getLogger([e.name.toUpperFirs
 	public List<[relation.type.name.toUpperFirst()/]> get[relation.type.name.toUpperFirst()/]Obj() {
 		[relation.type.name.toUpperFirst()/]Service [relation.type.name.toLower()/]Service = new [relation.type.name.toUpperFirst()/]Service("http://localhost:[calculateEntityPortByRelation(aModel, relation)/]");
 		List<[relation.type.name.toUpperFirst()/]> result = new ArrayList<[relation.type.name.toUpperFirst()/]>();
-		for ([relation.type.genericList.eContainer(Database).getVariableTypeBasedOnDatabaseType()/] typeObj : [relation.name/]) {
+		for ([relation.type.getVariableTypeBasedOnDatabaseType()/] typeObj : [relation.name/]) {
 			try {
 				result.add([relation.type.name.toLower()/]Service.findById(typeObj));
 			}
@@ -199,7 +199,7 @@ public class [e.name.toUpperFirst()/]Service {
 		return new RestTemplate(Arrays.asList(messageConverter));
 	}
 
-	public [e.name.toUpperFirst()/] findById([e.genericList.eContainer(Database).getTypeValueForDifferentDatabase()/] id) {
+	public [e.name.toUpperFirst()/] findById([e.getTypeValueForDifferentDatabase()/] id) {
 		UriComponentsBuilder builder = UriComponentsBuilder.fromUriString(baseUrl + "/[e.name.toLowerCase()/]/" + id);
 		String uriBuilder = builder.build().encode().toUriString();
 		[e.name.toUpperFirst()/]DTO [e.name.toLowerCase()/]DTO = restTemplate
@@ -343,7 +343,7 @@ public class RelationTest {
 	[for (entityForRelation : Entity | getAllModelEntitiesUtility(aModel))]
 	@Test
 	public void testFind[entityForRelation.name.toUpperFirst()/]ById() {
-		[entityForRelation.name.toUpperFirst()/] p = [entityForRelation.name.toLower()/]Service.findById([entityForRelation.genericList.eContainer(Database).getTestValueBasedOnDatabaseType()/]);
+		[entityForRelation.name.toUpperFirst()/] p = [entityForRelation.name.toLower()/]Service.findById([entityForRelation.getTestValueBasedOnDatabaseType()/]);
 		[for (relation : Relation | entityForRelation.relations)]
 		List<[relation.type.name.toUpperFirst()/]> [relation.name/] = p.get[relation.type.name.toUpperFirst()/]Obj();
 		System.out.println(String.format("The [entityForRelation.name.toUpperFirst()/] is related with [relation.type.name.toUpperFirst()/]:"));
@@ -514,28 +514,27 @@ public class RelationTest {
 ###### START - POLYMORFISM FOR Variable Type Based On Database Type
 ######################################################################################
 /]
-[template private getVariableTypeBasedOnDatabaseType(database : Database) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getVariableTypeBasedOnDatabaseType(database : RelationalDB) ]
+[template private getVariableTypeBasedOnDatabaseType(e : Entity) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
 Integer
-[/template]
-
-[template private getVariableTypeBasedOnDatabaseType(database : DocumentDB) ]
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
 String
-[/template]
-
-[template private getVariableTypeBasedOnDatabaseType(database : GraphDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getVariableTypeBasedOnDatabaseType(database : KeyValueDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getVariableTypeBasedOnDatabaseType(database : ColumnDB) ]
-	[comment TODO Auto-generated template stub/]
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 [comment  
 ######################################################################################
@@ -550,63 +549,27 @@ String
 ###### START - POLYMORFISM FOR Variable Type Based On Database Type
 ######################################################################################
 /]
-[template private getTypeValueForDifferentDatabase(database : Database) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTypeValueForDifferentDatabase(database : RelationalDB) ]
+[template private getTypeValueForDifferentDatabase(e : Entity) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
 int
-[/template]
-
-[template private getTypeValueForDifferentDatabase(database : DocumentDB) ]
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
 String
-[/template]
-
-[template private getTypeValueForDifferentDatabase(database : GraphDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTypeValueForDifferentDatabase(database : KeyValueDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTypeValueForDifferentDatabase(database : ColumnDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-[comment  
-######################################################################################
-###### END - POLYMORFISM FOR Variable Type Based On Database Type
-######################################################################################
-/]
-
-
-[comment  
-######################################################################################
-###### START - POLYMORFISM FOR Variable Type Based On Database Type
-######################################################################################
-/]
-[template private getTypeValueForDifferentDatabase2(database : GenericList) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTypeValueForDifferentDatabase2(database : Table) ]
-int
-[/template]
-
-[template private getTypeValueForDifferentDatabase2(database : Collection) ]
-String
-[/template]
-
-[template private getTypeValueForDifferentDatabase2(database : GraphNode) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTypeValueForDifferentDatabase2(database : KeyValueElement) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTypeValueForDifferentDatabase2(database : Column) ]
-	[comment TODO Auto-generated template stub/]
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 [comment  
 ######################################################################################
@@ -624,28 +587,27 @@ String
 ###### START - POLYMORFISM FOR Test Value Based On Database Type
 ######################################################################################
 /]
-[template private getTestValueBasedOnDatabaseType(database : Database) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTestValueBasedOnDatabaseType(database : RelationalDB) ]
+[template private getTestValueBasedOnDatabaseType(e : Entity) ]
+[comment TABLES /]	
+[if(not(e.getTables()->isEmpty()))]
 1
-[/template]
-
-[template private getTestValueBasedOnDatabaseType(database : DocumentDB) ]
+[/if]
+[comment COLLECTIONS /]	
+[if(not(e.getCollections()->isEmpty()))]
 "1"
-[/template]
-
-[template private getTestValueBasedOnDatabaseType(database : GraphDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTestValueBasedOnDatabaseType(database : KeyValueDB) ]
-	[comment TODO Auto-generated template stub/]
-[/template]
-
-[template private getTestValueBasedOnDatabaseType(database : ColumnDB) ]
-	[comment TODO Auto-generated template stub/]
+[/if]
+[comment KEY VALUE ELEMENTS /]	
+[if(not(e.getKeyValueElements()->isEmpty()))]
+	
+[/if]
+[comment GRAPH NODES /]	
+[if(not(e.getGraphNodes()->isEmpty()))]
+	
+[/if]
+[comment COLUMNS /]	
+[if(not(e.getColumns()->isEmpty()))]
+	
+[/if]
 [/template]
 [comment  
 ######################################################################################
