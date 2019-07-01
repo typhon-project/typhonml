@@ -13,5 +13,6 @@ Export-Package: oclstdlib.tests,
 Require-Bundle: org.eclipse.core.runtime,
  it.univaq.disim.typhonml;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,
- org.junit;visibility:=reexport
+ org.junit;visibility:=reexport,
+ org.eclipse.ocl.pivot;bundle-version="1.4.0"
 Bundle-ActivationPolicy: lazy
