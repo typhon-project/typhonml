@@ -157,6 +157,7 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import typhonml.provider.TyphonmlItemProviderAdapterFactory;
 
+import oclstdlib.provider.OclstdlibItemProviderAdapterFactory;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 
 
@@ -701,6 +702,7 @@ public class TyphonmlEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TyphonmlItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new OclstdlibItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

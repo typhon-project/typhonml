@@ -1,6 +1,6 @@
 /**
  */
-package typhonml.tests;
+package oclstdlib.tests;
 
 import junit.framework.Test;
 import junit.framework.TestSuite;
@@ -9,11 +9,11 @@ import junit.textui.TestRunner;
 
 /**
  * <!-- begin-user-doc -->
- * A test suite for the '<em><b>typhonml</b></em>' package.
+ * A test suite for the '<em><b>oclstdlib</b></em>' package.
  * <!-- end-user-doc -->
  * @generated
  */
-public class TyphonmlTests extends TestSuite {
+public class OclstdlibTests extends TestSuite {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -30,9 +30,7 @@ public class TyphonmlTests extends TestSuite {
 	 * @generated
 	 */
 	public static Test suite() {
-		TestSuite suite = new TyphonmlTests("typhonml Tests");
-		suite.addTestSuite(AddEntityTest.class);
-		suite.addTestSuite(EntityTest.class);
+		TestSuite suite = new OclstdlibTests("oclstdlib Tests");
 		return suite;
 	}
 
@@ -41,8 +39,8 @@ public class TyphonmlTests extends TestSuite {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TyphonmlTests(String name) {
+	public OclstdlibTests(String name) {
 		super(name);
 	}
 
-} //TyphonmlTests
+} //OclstdlibTests
