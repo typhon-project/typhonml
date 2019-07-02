@@ -9,6 +9,7 @@
 	<modules>
 		<module>it.univaq.disim.typhonml</module>
 		<module>it.univaq.disim.typhon.acceleo</module>
+		<module>it.univaq.disim.typhonml.evaluator</module>
 		<module>it.univaq.disim.typhonml.design</module>
 		<module>it.univaq.disim.typhonml.ui</module>
 		<module>it.univaq.disim.typhonml.edit</module>
@@ -26,6 +27,14 @@
 	</properties>
 
 	<repositories>
+		<repository>
+			<id>epsilon</id>
+			<url>http://download.eclipse.org/epsilon/updates//</url>
+			<snapshots>
+	            <updatePolicy>always</updatePolicy>
+	        </snapshots>
+			<layout>p2</layout>
+		</repository>
 		<repository>
 			<id>kepler</id>
 			<url>http://download.eclipse.org/releases/2018-12</url>
