@@ -6,7 +6,7 @@ operation Entity getAllIsContainmentER() : List<Entity>{
 	var er_containmentEntities : List<Entity>; 
 	for(rel in self.relations){
 		if(rel.isContainment <> null and rel.isContainment == true){
-			if(rel.type.genericList <> null and rel.type.genericList.isTypeOf(Table)){
+			if(not TyphonML!Table.allInstances()->select(tab|tab.entity = rel.type).isEmpty()){
 				(self.name + " has "+rel.type.name+" (with reference "+rel.name+") " +
 				"as containment and mapped in ER").println();
 				er_containmentEntities.add(rel.type);
