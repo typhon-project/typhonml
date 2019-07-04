@@ -1,4 +1,4 @@
 output/
 tasks/
-./classpath
 .metadata/
+xtend-gen/
