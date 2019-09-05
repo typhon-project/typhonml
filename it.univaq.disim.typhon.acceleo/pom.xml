@@ -10,6 +10,14 @@
   <version>1.0.0-SNAPSHOT</version>
   <packaging>eclipse-plugin</packaging>
   
+  <dependencies>
+  <dependency>
+      <groupId>org.eclipse.ocl</groupId>
+      <artifactId>org.eclipse.ocl</artifactId>
+      <version>3.4.2.v20140725-2242</version>
+  </dependency>
+  </dependencies>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>

@@ -75,7 +75,10 @@
 	        </snapshots>
 			<layout>p2</layout>
 		</repository>
-
+		<repository>
+		    <id>eclipse-releases</id>
+		    <url>https://repo.eclipse.org/content/groups/releases</url>
+		</repository>
 	</repositories>
 
 	<build>
