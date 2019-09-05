@@ -25,6 +25,7 @@
         <pathelement location="${PLUGINS}/org.eclipse.emf.common_2.14.0.v20180527-1134.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.emf.ecore.xmi_2.14.0.v20180129-1548.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.ocl_3.9.0.v20180611-1119.jar"/>
+        <pathelement location="${PLUGINS}/org.eclipse.ocl.pivot_1.4.0.v20180611-1119.jar"/>
         <pathelement location="${PLUGINS}/lpg.runtime.java_2.0.17.v201004271640.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.ocl.common_1.4.300.v20180611-1119.jar"/>
         <pathelement location="${PLUGINS}/org.eclipse.ocl.ecore_3.9.0.v20180611-1119.jar"/>
