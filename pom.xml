@@ -19,6 +19,13 @@
 		<module>it.univaq.disim.typhonml.xtext.ui</module>
 	</modules>
 
+	<distributionManagement>
+		<repository>
+			<id>internal</id>
+			<url>http://archiva.clmsuk.com:8090/repository/internal/</url>
+		</repository>
+	</distributionManagement>
+
 	<properties>
 		<tycho-version>1.3.0</tycho-version>
 		<xtext-version>2.16.0</xtext-version>
