@@ -22,55 +22,31 @@ import com.google.inject.Injector;
 
 import it.univaq.disim.typhon.TyphonMLStandaloneSetup;
 import it.univaq.disim.typhon.acceleo.main.Generate;
-import typhonml.Collection;
-import typhonml.Database;
-import typhonml.DocumentDB;
 import typhonml.Model;
-import typhonml.RelationalDB;
-import typhonml.Table;
 import typhonml.TyphonmlPackage;
 
 public class Services {
 
 	public static Model loadXtextModel(String pathToXTextModel) {
 		registerTyphonMM();
-//		new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
 		Injector injector = new TyphonMLStandaloneSetup().createInjectorAndDoEMFRegistration();
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		URI uri = URI.createURI(pathToXTextModel);
 		Resource resource = resourceSet.getResource(uri, true);
 		Model model = (Model) resource.getContents().get(0);
-
-//		for (Database db : model.getDatabases()) {
-//			if (db instanceof RelationalDB) {
-//				RelationalDB v = (RelationalDB) db;
-//				for (Table t : v.getTables()) {
-//					t.getEntity().setGenericList(t);
-//				}
-//			}
-//			if (db instanceof DocumentDB) {
-//				DocumentDB v = (DocumentDB) db;
-//				for (Collection t : v.getCollections()) {
-//					t.getEntity().setGenericList(t);
-//				}
-//			}
-//		}
-		
 		
 		return model;
 	}
 
 	static ResourceSet outputMetamodelResourceSet = new ResourceSetImpl();
 	static {
-		outputMetamodelResourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*",
-				new XMLResourceFactoryImpl());
+		outputMetamodelResourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("*", new XMLResourceFactoryImpl());
 	}
 
 	public static void serialize(EObject root, String path) {
 
 		// create a resource
-//		new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
 		URI uri = URI.createURI(path);
 		Resource outputMetamodelResource = outputMetamodelResourceSet.createResource(uri);
 
@@ -93,10 +69,8 @@ public class Services {
 	}
 
 	public static void registerTyphonMM() {
-		// System.out.print("Registering Typhon Metamodel...");
 		EPackage.Registry.INSTANCE.put(TyphonmlPackage.eNS_URI, TyphonmlPackage.eINSTANCE);
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", TyphonmlPackage.eINSTANCE);
-		// System.out.println("Registered!");
 	}
 
 	public static String getNameForOutputProjects(String filePath) {
@@ -104,7 +78,7 @@ public class Services {
 		try {
 			java.net.URI uri = new java.net.URI(filePath);
 			String path = uri.getPath();
-			result = path.substring(path.lastIndexOf('/') + 1);
+			result = path.substring(path.lastIndexOf(File.separator) + 1);
 			result = result.replaceFirst("[.][^.]+$", "");
 		} catch (java.net.URISyntaxException e) {
 			// TODO Auto-generated catch block
@@ -117,17 +91,11 @@ public class Services {
 		
 		try {
 			List<String> arguments = new ArrayList<String>();
-
 			System.out.print("\t" + "Generate all the files from the template...");
-			
-			
-			
 			File folder = new File(folderS);
-			
 			Generate generator = new Generate(Services.loadXtextModel(modelUri), folder, arguments);
 			generator.doGenerate(new BasicMonitor());
 			System.out.println("Generated!");
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -135,7 +103,6 @@ public class Services {
 	}
 	
 	public static void generateFromXMI(String modelUri, String folderS) {
-		
 		try {
 			List<String> arguments = new ArrayList<String>();
 			System.out.print("\t" + "Generate all the files from the template...");
@@ -143,7 +110,6 @@ public class Services {
 			Generate generator = new Generate(Services.loadModel(modelUri), folder, arguments);
 			generator.doGenerate(new BasicMonitor());
 			System.out.println("Generated!");
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
