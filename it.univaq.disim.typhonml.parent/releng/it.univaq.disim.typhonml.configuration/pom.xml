@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.univaq.disim.typhonml</groupId>
+    <artifactId>it.univaq.disim.typhonml.configuration</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <tycho.version>1.4.0</tycho.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <eclipse-repo.url>http://download.eclipse.org/releases/2018-12</eclipse-repo.url>
+        <!-- Skip the deployment here, submodules can override this property -->
+        <!--maven.deploy.skip>true</maven.deploy.skip-->
+    </properties>
+    
+     <repositories>
+  <repository>
+   <id>eclipse-release</id>
+   <url>${eclipse-repo.url}</url>
+   <layout>p2</layout>
+  </repository>
+
+ </repositories>
+    <build>
+        <plugins>
+            <!--Enable the replacement of the SNAPSHOT version based on the last commit-->
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-packaging-plugin</artifactId>
+                <version>${tycho.version}</version>
+                
+                
+                </plugin>
+                <!-- Skip the install, since we do not need the artifacts in our local mvn repo -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-maven-plugin</artifactId>
+                    <version>${tycho.version}</version>
+                    <extensions>true</extensions>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>target-platform-configuration</artifactId>
+                    <version>${tycho.version}</version>
+                    <configuration>
+                        
+                        <environments>
+                            <environment>
+                                <os>linux</os>
+                                <ws>gtk</ws>
+                                <arch>x86_64</arch>
+                            </environment>
+                            <environment>
+                                <os>win32</os>
+                                <ws>win32</ws>
+                                <arch>x86_64</arch>
+                            </environment>
+                            <environment>
+                                <os>macosx</os>
+                                <ws>cocoa</ws>
+                                <arch>x86_64</arch>
+                            </environment>
+                        </environments>
+                    </configuration>
+                </plugin>
+                <!-- enable source feature generation -->
+                <!--plugin>
+                <groupId>org.eclipse.tycho.extras</groupId>
+                <artifactId>tycho-source-feature-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <executions>
+                    <execution>
+                        <id>source-feature</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>source-feature</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-source-plugin</artifactId>
+                <version>${tycho.version}</version>
+                <executions>
+                    <execution>
+                        <id>plugin-source</id>
+                        <goals>
+                            <goal>plugin-source</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin-->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>3.1.3</version>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <failOnError>false</failOnError>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+

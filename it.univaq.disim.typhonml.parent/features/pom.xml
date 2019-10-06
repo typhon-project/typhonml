@@ -1,0 +1,17 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>it.univaq.disim.typhonml</groupId>
+    <artifactId>it.univaq.disim.typhonml.features</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    
+    <parent>
+        <groupId>it.univaq.disim.typhonml</groupId>
+        <artifactId>it.univaq.disim.typhonml.parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>it.univaq.disim.typhonml.feature</module>
+    </modules>
+</project>
