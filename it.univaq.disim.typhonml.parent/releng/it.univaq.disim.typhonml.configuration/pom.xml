@@ -20,6 +20,11 @@
    <url>${eclipse-repo.url}</url>
    <layout>p2</layout>
   </repository>
+  <repository>
+    <id>eclipse-epsilon</id>
+    <url>http://download.eclipse.org/epsilon/updates/</url>
+    <layout>p2</layout>
+</repository>
 
  </repositories>
     <build>
