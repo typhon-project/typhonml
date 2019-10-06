@@ -6,6 +6,12 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <distributionManagement>
+        <repository>
+            <id>internal</id>
+            <url>http://archiva.clmsuk.com:8090/repository/internal/</url>
+        </repository>
+    </distributionManagement>
     <properties>
         <tycho.version>1.4.0</tycho.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

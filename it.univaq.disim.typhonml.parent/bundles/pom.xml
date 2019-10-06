@@ -14,9 +14,16 @@
 
 	<modules>
 		<module>it.univaq.disim.typhonml</module>
+		<module>it.univaq.disim.typhonml.usage_example</module>
 		<module>it.univaq.disim.typhonml.edit</module>
 		<module>it.univaq.disim.typhonml.editor</module>
+		<module>it.univaq.disim.typhonml.design</module>
 		<module>it.univaq.disim.typhonml.xtext</module>
+		<module>it.univaq.disim.typhonml.xtext.ide</module>
+		<!--<module>it.univaq.disim.typhonml.xtext.tests</module>
+		<module>it.univaq.disim.typhonml.tests</module>
+		<module>it.univaq.disim.typhonml.xtext.ui.tests</module>-->
+		<module>it.univaq.disim.typhonml.xtext.ui</module>
 		<module>it.univaq.disim.typhon.acceleo</module>
 		<module>it.univaq.disim.typhonml.evaluator</module>
 		<module>it.univaq.disim.typhonml.ui</module>
