@@ -23,5 +23,6 @@ Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: it.univaq.disim.typhon.ui.quickfix,
  it.univaq.disim.typhonml.xtext.ui.internal,
- it.univaq.disim.typhon.ui.contentassist
+ it.univaq.disim.typhon.ui.contentassist,
+ bundles/it.univaq.disim.typhonml.xtext.ui.internal
 Bundle-Activator: it.univaq.disim.typhonml.xtext.ui.internal.XtextActivator

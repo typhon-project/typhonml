@@ -16,6 +16,7 @@
         <tycho.version>1.4.0</tycho.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <eclipse-repo.url>http://download.eclipse.org/releases/2018-12</eclipse-repo.url>
+        <xtext.version>2.16.0</xtext.version>
         <!-- Skip the deployment here, submodules can override this property -->
         <!--maven.deploy.skip>true</maven.deploy.skip-->
     </properties>
@@ -33,7 +34,9 @@
 </repository>
 
  </repositories>
+
     <build>
+        
         <plugins>
             <!--Enable the replacement of the SNAPSHOT version based on the last commit-->
             <plugin>

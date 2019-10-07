@@ -22,8 +22,8 @@
 		<module>it.univaq.disim.typhonml.xtext.ide</module>
 		<!--<module>it.univaq.disim.typhonml.xtext.tests</module>
 		<module>it.univaq.disim.typhonml.tests</module>
-		<module>it.univaq.disim.typhonml.xtext.ui.tests</module>-->
-		<module>it.univaq.disim.typhonml.xtext.ui</module>
+		<module>it.univaq.disim.typhonml.xtext.ui.tests</module>
+		<module>it.univaq.disim.typhonml.xtext.ui</module>-->
 		<module>it.univaq.disim.typhon.acceleo</module>
 		<module>it.univaq.disim.typhonml.evaluator</module>
 		<module>it.univaq.disim.typhonml.ui</module>
