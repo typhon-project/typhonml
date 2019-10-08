@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius">
   <databases xsi:type="typhonml:DocumentDB" name="MongoDB">
-    <collections entity="//@dataTypes.1" name="orderCollection"/>
+    <collections name="orderCollection" entity="//@dataTypes.1"/>
   </databases>
   <databases xsi:type="typhonml:RelationalDB" name="MySQL">
-    <tables name="clientsTable" entity="//@dataTypes.0" db="//@databases.1"/>
+    <tables name="clientsTable" db="//@databases.1" entity="//@dataTypes.0"/>
   </databases>
-  <dataTypes xsi:type="typhonml:Entity" name="User" genericList="//@databases.1/@tables.0">
+  <dataTypes xsi:type="typhonml:Entity" name="User">
     <attributes name="name" type="//@dataTypes.0"/>
     <attributes name="surname" type="//@dataTypes.0"/>
   </dataTypes>
-  <dataTypes xsi:type="typhonml:Entity" name="Order" genericList="//@databases.0/@collections.0">
+  <dataTypes xsi:type="typhonml:Entity" name="Order">
     <attributes name="date" type="//@dataTypes.1"/>
     <attributes name="totalAmount" type="//@dataTypes.1"/>
   </dataTypes>

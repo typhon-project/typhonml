@@ -1,5 +1,6 @@
-package it.univaq.disim.typhonml.usage_example;
+package it.univaq.disim.typhonml.usage;
 
+import it.univaq.disim.typhon.TyphonMLStandaloneSetup;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
@@ -10,6 +11,10 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+
+import com.google.inject.Injector;
 
 import typhonml.AddAttribute;
 import typhonml.Attribute;
@@ -24,19 +29,18 @@ import typhonml.Table;
 import typhonml.TyphonmlFactory;
 import typhonml.TyphonmlPackage;
 
-public class UsageExample {
-	
+public class SimpleUsage {
 	private static final String COMPLETE_MODEL_PATH = "resources/generated_demo.xmi";
 	final private static ResourceSet resourceSet = new ResourceSetImpl();
 
-	public UsageExample() {
+	public SimpleUsage() {
 		//The Typhon Metamodel registring is MANDATORY as first command in order to be able to use it.
 		typhonMLPackageRegistering();
 	}
 	
 	
 	public static void main(String[] args) {
-		UsageExample usageExample = new UsageExample();
+		SimpleUsage usageExample = new SimpleUsage();
 		//Create base test typhon model instance
 		Model typhonModelExample = usageExample.createTyphonModelExample();
 
@@ -45,6 +49,11 @@ public class UsageExample {
 		
 		changeOperatorRenameEntity(typhonModelExample, entity, "newCreditCardName");
 		changeOperatorAddAttributeIntoEntity(typhonModelExample, entity, "New Attribute for "+entity.getName()+ " entity");
+		Resource modelResource = loadModel("resources/demo.xmi");
+		Resource modelResource2 = loadTml("resources/demo.tml");
+		
+		Model model = (Model) modelResource2.getContents().get(0);
+		model.getDataTypes().forEach(z->System.out.println(z.getName()));
 	}
 	
 	
@@ -195,7 +204,8 @@ public class UsageExample {
 	 * Method needed before use TyphonML classes. It register all the needed resources.
 	 */
 	public static void typhonMLPackageRegistering() {
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("tml", new TyphonMLStandaloneSetup().createInjectorAndDoEMFRegistration().getInstance(XtextResourceSet.class));
 		resourceSet.getPackageRegistry().put(TyphonmlPackage.eINSTANCE.getNsURI(), TyphonmlPackage.eINSTANCE);
 	}
 	
@@ -230,4 +240,15 @@ public class UsageExample {
 		return resource;
 	}
 	
+	private static Resource loadTml(String modelPath) {
+		Injector injector = new TyphonMLStandaloneSetup().createInjectorAndDoEMFRegistration();
+		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		URI uri = URI.createURI(modelPath);
+		Resource resource = resourceSet.getResource(uri, true);
+		Model model = (Model) resource.getContents().get(0);
+		
+		return resource;
+	}
+
 }

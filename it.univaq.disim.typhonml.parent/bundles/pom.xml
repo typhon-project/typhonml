@@ -27,5 +27,6 @@
 		<module>it.univaq.disim.typhon.acceleo</module>
 		<module>it.univaq.disim.typhonml.evaluator</module>
 		<module>it.univaq.disim.typhonml.ui</module>
+		<module>it.univaq.disim.typhonml.usage</module>
 	</modules>
 </project>
