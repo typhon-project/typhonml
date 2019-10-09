@@ -14,7 +14,6 @@
 
 	<modules>
 		<module>it.univaq.disim.typhonml</module>
-		<module>it.univaq.disim.typhonml.usage_example</module>
 		<module>it.univaq.disim.typhonml.edit</module>
 		<module>it.univaq.disim.typhonml.editor</module>
 		<module>it.univaq.disim.typhonml.design</module>
