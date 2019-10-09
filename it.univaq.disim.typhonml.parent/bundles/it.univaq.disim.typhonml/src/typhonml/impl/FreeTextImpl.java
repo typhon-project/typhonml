@@ -66,6 +66,7 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<NlpTask> getTasks() {
 		if (tasks == null) {
 			tasks = new EObjectContainmentEList<NlpTask>(NlpTask.class, this, TyphonmlPackage.FREE_TEXT__TASKS);

@@ -66,6 +66,7 @@ public class CustomDataTypeImpl extends DataTypeImpl implements CustomDataType {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<DataTypeItem> getElements() {
 		if (elements == null) {
 			elements = new EObjectContainmentEList<DataTypeItem>(DataTypeItem.class, this, TyphonmlPackage.CUSTOM_DATA_TYPE__ELEMENTS);

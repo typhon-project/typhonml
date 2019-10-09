@@ -82,6 +82,7 @@ public class RenameCollectionImpl extends ChangeOperatorImpl implements RenameCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Collection getCollectionToRename() {
 		if (collectionToRename != null && collectionToRename.eIsProxy()) {
 			InternalEObject oldCollectionToRename = (InternalEObject)collectionToRename;
@@ -108,6 +109,7 @@ public class RenameCollectionImpl extends ChangeOperatorImpl implements RenameCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setCollectionToRename(Collection newCollectionToRename) {
 		Collection oldCollectionToRename = collectionToRename;
 		collectionToRename = newCollectionToRename;
@@ -120,6 +122,7 @@ public class RenameCollectionImpl extends ChangeOperatorImpl implements RenameCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNewName() {
 		return newName;
 	}
@@ -129,6 +132,7 @@ public class RenameCollectionImpl extends ChangeOperatorImpl implements RenameCo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewName(String newNewName) {
 		String oldNewName = newName;
 		newName = newNewName;

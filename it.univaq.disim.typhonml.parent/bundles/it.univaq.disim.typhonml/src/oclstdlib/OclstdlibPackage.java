@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see oclstdlib.OclstdlibFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/ASLibrary"
  * @generated
  */
 public interface OclstdlibPackage extends EPackage {

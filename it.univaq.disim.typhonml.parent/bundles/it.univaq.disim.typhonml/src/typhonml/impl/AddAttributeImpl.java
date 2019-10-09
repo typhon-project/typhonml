@@ -61,6 +61,7 @@ public class AddAttributeImpl extends AttributeImpl implements AddAttribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getOwnerEntity() {
 		if (ownerEntity != null && ownerEntity.eIsProxy()) {
 			InternalEObject oldOwnerEntity = (InternalEObject)ownerEntity;
@@ -87,6 +88,7 @@ public class AddAttributeImpl extends AttributeImpl implements AddAttribute {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setOwnerEntity(Entity newOwnerEntity) {
 		Entity oldOwnerEntity = ownerEntity;
 		ownerEntity = newOwnerEntity;

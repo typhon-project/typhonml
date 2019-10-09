@@ -28,7 +28,7 @@
             id="typhonml.presentation.TyphonmlEditorID"
             name="%_UI_TyphonmlEditor_label"
             icon="icons/full/obj16/TyphonmlModelFile.gif"
-            extensions="*"
+            extensions="tmlx"
             class="typhonml.presentation.TyphonmlEditor"
             contributorClass="typhonml.presentation.TyphonmlActionBarContributor">
       </editor>

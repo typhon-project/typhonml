@@ -82,6 +82,7 @@ public class RenameEntityImpl extends ChangeOperatorImpl implements RenameEntity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntityToRename() {
 		if (entityToRename != null && entityToRename.eIsProxy()) {
 			InternalEObject oldEntityToRename = (InternalEObject)entityToRename;
@@ -108,6 +109,7 @@ public class RenameEntityImpl extends ChangeOperatorImpl implements RenameEntity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntityToRename(Entity newEntityToRename) {
 		Entity oldEntityToRename = entityToRename;
 		entityToRename = newEntityToRename;
@@ -120,6 +122,7 @@ public class RenameEntityImpl extends ChangeOperatorImpl implements RenameEntity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getNewEntityName() {
 		return newEntityName;
 	}
@@ -129,6 +132,7 @@ public class RenameEntityImpl extends ChangeOperatorImpl implements RenameEntity
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewEntityName(String newNewEntityName) {
 		String oldNewEntityName = newEntityName;
 		newEntityName = newNewEntityName;

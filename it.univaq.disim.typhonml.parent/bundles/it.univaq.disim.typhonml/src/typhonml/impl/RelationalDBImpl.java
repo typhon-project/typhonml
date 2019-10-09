@@ -66,6 +66,7 @@ public class RelationalDBImpl extends DatabaseImpl implements RelationalDB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Table> getTables() {
 		if (tables == null) {
 			tables = new EObjectContainmentEList<Table>(Table.class, this, TyphonmlPackage.RELATIONAL_DB__TABLES);

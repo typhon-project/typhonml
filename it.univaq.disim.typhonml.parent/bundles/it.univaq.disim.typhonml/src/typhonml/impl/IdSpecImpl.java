@@ -72,6 +72,7 @@ public class IdSpecImpl extends MinimalEObjectImpl.Container implements IdSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.ID_SPEC__ATTRIBUTES);
@@ -84,6 +85,7 @@ public class IdSpecImpl extends MinimalEObjectImpl.Container implements IdSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Table getTable() {
 		if (eContainerFeatureID() != TyphonmlPackage.ID_SPEC__TABLE) return null;
 		return (Table)eInternalContainer();
@@ -104,6 +106,7 @@ public class IdSpecImpl extends MinimalEObjectImpl.Container implements IdSpec {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(Table newTable) {
 		if (newTable != eInternalContainer() || (eContainerFeatureID() != TyphonmlPackage.ID_SPEC__TABLE && newTable != null)) {
 			if (EcoreUtil.isAncestor(this, newTable))

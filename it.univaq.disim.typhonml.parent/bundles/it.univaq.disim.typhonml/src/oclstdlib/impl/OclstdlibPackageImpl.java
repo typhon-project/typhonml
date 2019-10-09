@@ -298,6 +298,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getBag() {
 		return bagEClass;
 	}
@@ -307,6 +308,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getCollection() {
 		return collectionEClass;
 	}
@@ -316,6 +318,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getCollection_ElementType() {
 		return (EReference)collectionEClass.getEStructuralFeatures().get(0);
 	}
@@ -325,6 +328,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCollection_Lower() {
 		return (EAttribute)collectionEClass.getEStructuralFeatures().get(1);
 	}
@@ -334,6 +338,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getCollection_Upper() {
 		return (EAttribute)collectionEClass.getEStructuralFeatures().get(2);
 	}
@@ -343,6 +348,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getMap() {
 		return mapEClass;
 	}
@@ -352,6 +358,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMap_KeyType() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(0);
 	}
@@ -361,6 +368,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getMap_ValueType() {
 		return (EReference)mapEClass.getEStructuralFeatures().get(1);
 	}
@@ -370,6 +378,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclAny() {
 		return oclAnyEClass;
 	}
@@ -379,6 +388,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclComparable() {
 		return oclComparableEClass;
 	}
@@ -388,6 +398,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclElement() {
 		return oclElementEClass;
 	}
@@ -397,6 +408,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOclElement_OclContainer() {
 		return (EReference)oclElementEClass.getEStructuralFeatures().get(0);
 	}
@@ -406,6 +418,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOclElement_OclContents() {
 		return (EReference)oclElementEClass.getEStructuralFeatures().get(1);
 	}
@@ -415,6 +428,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclEnumeration() {
 		return oclEnumerationEClass;
 	}
@@ -424,6 +438,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclInvalid() {
 		return oclInvalidEClass;
 	}
@@ -433,6 +448,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getOclInvalid_OclBadProperty() {
 		return (EReference)oclInvalidEClass.getEStructuralFeatures().get(0);
 	}
@@ -442,6 +458,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclLambda() {
 		return oclLambdaEClass;
 	}
@@ -451,6 +468,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclMessage() {
 		return oclMessageEClass;
 	}
@@ -460,6 +478,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclSelf() {
 		return oclSelfEClass;
 	}
@@ -469,6 +488,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclState() {
 		return oclStateEClass;
 	}
@@ -478,6 +498,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclStereotype() {
 		return oclStereotypeEClass;
 	}
@@ -487,6 +508,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclSummable() {
 		return oclSummableEClass;
 	}
@@ -496,6 +518,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclTuple() {
 		return oclTupleEClass;
 	}
@@ -505,6 +528,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclType() {
 		return oclTypeEClass;
 	}
@@ -514,6 +538,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOclVoid() {
 		return oclVoidEClass;
 	}
@@ -523,6 +548,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOrderedCollection() {
 		return orderedCollectionEClass;
 	}
@@ -532,6 +558,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getOrderedSet() {
 		return orderedSetEClass;
 	}
@@ -541,6 +568,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSequence() {
 		return sequenceEClass;
 	}
@@ -550,6 +578,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getSet() {
 		return setEClass;
 	}
@@ -559,6 +588,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getUniqueCollection() {
 		return uniqueCollectionEClass;
 	}
@@ -568,6 +598,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getBoolean() {
 		return booleanEDataType;
 	}
@@ -577,6 +608,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getInteger() {
 		return integerEDataType;
 	}
@@ -586,6 +618,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getReal() {
 		return realEDataType;
 	}
@@ -595,6 +628,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getString() {
 		return stringEDataType;
 	}
@@ -604,6 +638,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EDataType getUnlimitedNatural() {
 		return unlimitedNaturalEDataType;
 	}
@@ -613,6 +648,7 @@ public class OclstdlibPackageImpl extends EPackageImpl implements OclstdlibPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public OclstdlibFactory getOclstdlibFactory() {
 		return (OclstdlibFactory)getEFactoryInstance();
 	}

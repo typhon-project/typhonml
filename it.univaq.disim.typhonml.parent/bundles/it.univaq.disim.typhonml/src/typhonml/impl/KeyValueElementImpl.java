@@ -100,6 +100,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getKey() {
 		return key;
 	}
@@ -109,6 +110,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setKey(String newKey) {
 		String oldKey = key;
 		key = newKey;
@@ -121,6 +123,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getValues() {
 		if (values == null) {
 			values = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.KEY_VALUE_ELEMENT__VALUES);
@@ -133,6 +136,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -159,6 +163,7 @@ public class KeyValueElementImpl extends NamedElementImpl implements KeyValueEle
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		Entity oldEntity = entity;
 		entity = newEntity;

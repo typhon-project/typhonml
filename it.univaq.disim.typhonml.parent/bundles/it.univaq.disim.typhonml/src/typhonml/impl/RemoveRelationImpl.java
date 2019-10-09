@@ -61,6 +61,7 @@ public class RemoveRelationImpl extends ChangeOperatorImpl implements RemoveRela
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Relation getRelationToRemove() {
 		if (relationToRemove != null && relationToRemove.eIsProxy()) {
 			InternalEObject oldRelationToRemove = (InternalEObject)relationToRemove;
@@ -87,6 +88,7 @@ public class RemoveRelationImpl extends ChangeOperatorImpl implements RemoveRela
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelationToRemove(Relation newRelationToRemove) {
 		Relation oldRelationToRemove = relationToRemove;
 		relationToRemove = newRelationToRemove;

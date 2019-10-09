@@ -83,6 +83,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Relation getRelation() {
 		if (relation != null && relation.eIsProxy()) {
 			InternalEObject oldRelation = (InternalEObject)relation;
@@ -109,6 +110,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setRelation(Relation newRelation) {
 		Relation oldRelation = relation;
 		relation = newRelation;
@@ -121,6 +123,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Cardinality getNewCardinality() {
 		return newCardinality;
 	}
@@ -130,6 +133,7 @@ public class ChangeRelationCardinalityImpl extends ChangeOperatorImpl implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewCardinality(Cardinality newNewCardinality) {
 		Cardinality oldNewCardinality = newCardinality;
 		newCardinality = newNewCardinality == null ? NEW_CARDINALITY_EDEFAULT : newNewCardinality;

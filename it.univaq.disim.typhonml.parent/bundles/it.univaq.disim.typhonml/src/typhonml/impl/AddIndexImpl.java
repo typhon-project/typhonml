@@ -79,6 +79,7 @@ public class AddIndexImpl extends ChangeOperatorImpl implements AddIndex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Table getTable() {
 		if (table != null && table.eIsProxy()) {
 			InternalEObject oldTable = (InternalEObject)table;
@@ -105,6 +106,7 @@ public class AddIndexImpl extends ChangeOperatorImpl implements AddIndex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setTable(Table newTable) {
 		Table oldTable = table;
 		table = newTable;
@@ -117,6 +119,7 @@ public class AddIndexImpl extends ChangeOperatorImpl implements AddIndex {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectResolvingEList<Attribute>(Attribute.class, this, TyphonmlPackage.ADD_INDEX__ATTRIBUTES);

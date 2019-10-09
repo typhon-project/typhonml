@@ -66,6 +66,7 @@ public class ColumnDBImpl extends DatabaseImpl implements ColumnDB {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Column> getColumns() {
 		if (columns == null) {
 			columns = new EObjectContainmentEList<Column>(Column.class, this, TyphonmlPackage.COLUMN_DB__COLUMNS);

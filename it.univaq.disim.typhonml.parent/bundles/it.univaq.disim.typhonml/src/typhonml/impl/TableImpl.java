@@ -98,6 +98,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IndexSpec getIndexSpec() {
 		return indexSpec;
 	}
@@ -122,6 +123,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIndexSpec(IndexSpec newIndexSpec) {
 		if (newIndexSpec != indexSpec) {
 			NotificationChain msgs = null;
@@ -141,6 +143,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public IdSpec getIdSpec() {
 		return idSpec;
 	}
@@ -165,6 +168,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setIdSpec(IdSpec newIdSpec) {
 		if (newIdSpec != idSpec) {
 			NotificationChain msgs = null;
@@ -184,6 +188,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Database getDb() {
 		if (db != null && db.eIsProxy()) {
 			InternalEObject oldDb = (InternalEObject)db;
@@ -210,6 +215,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDb(Database newDb) {
 		Database oldDb = db;
 		db = newDb;
@@ -222,6 +228,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Entity getEntity() {
 		if (entity != null && entity.eIsProxy()) {
 			InternalEObject oldEntity = (InternalEObject)entity;
@@ -248,6 +255,7 @@ public class TableImpl extends NamedElementImpl implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setEntity(Entity newEntity) {
 		Entity oldEntity = entity;
 		entity = newEntity;

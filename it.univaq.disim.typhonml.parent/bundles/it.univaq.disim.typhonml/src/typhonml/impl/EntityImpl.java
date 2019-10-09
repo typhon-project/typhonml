@@ -97,6 +97,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Attribute> getAttributes() {
 		if (attributes == null) {
 			attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, TyphonmlPackage.ENTITY__ATTRIBUTES);
@@ -109,6 +110,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<FreeText> getFretextAttributes() {
 		if (fretextAttributes == null) {
 			fretextAttributes = new EObjectContainmentEList<FreeText>(FreeText.class, this, TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES);
@@ -121,6 +123,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Relation> getRelations() {
 		if (relations == null) {
 			relations = new EObjectContainmentEList<Relation>(Relation.class, this, TyphonmlPackage.ENTITY__RELATIONS);
@@ -144,6 +147,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Collection> getCollections() {
 		try {
 			return (EList<Collection>)GET_COLLECTIONS__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
@@ -169,6 +173,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Table> getTables() {
 		try {
 			return (EList<Table>)GET_TABLES__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
@@ -194,6 +199,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<KeyValueElement> getKeyValueElements() {
 		try {
 			return (EList<KeyValueElement>)GET_KEY_VALUE_ELEMENTS__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
@@ -219,6 +225,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<GraphNode> getGraphNodes() {
 		try {
 			return (EList<GraphNode>)GET_GRAPH_NODES__EINVOCATION_DELEGATE.dynamicInvoke(this, null);
@@ -244,6 +251,7 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
+	@Override
 	public EList<Column> getColumns() {
 		try {
 			return (EList<Column>)GET_COLUMNS__EINVOCATION_DELEGATE.dynamicInvoke(this, null);

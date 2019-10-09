@@ -71,6 +71,7 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public NlpTaskType getType() {
 		return type;
 	}
@@ -80,6 +81,7 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(NlpTaskType newType) {
 		NlpTaskType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;

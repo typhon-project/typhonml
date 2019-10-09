@@ -5,7 +5,7 @@
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
     operationReflection="true" importOrganizing="true">
   <foreignModel>typhonml.ecore</foreignModel>
-  <genPackages prefix="Typhonml" disposableProviderFactory="true" fileExtensions="*"
+  <genPackages prefix="Typhonml" disposableProviderFactory="true" fileExtensions="tmlx"
       ecorePackage="typhonml.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="typhonml.ecore#//Cardinality">
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//Cardinality/zero_one"/>

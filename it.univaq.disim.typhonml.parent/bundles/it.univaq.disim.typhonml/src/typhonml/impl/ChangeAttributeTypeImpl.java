@@ -73,6 +73,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Attribute getAttributeToChange() {
 		if (attributeToChange != null && attributeToChange.eIsProxy()) {
 			InternalEObject oldAttributeToChange = (InternalEObject)attributeToChange;
@@ -99,6 +100,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setAttributeToChange(Attribute newAttributeToChange) {
 		Attribute oldAttributeToChange = attributeToChange;
 		attributeToChange = newAttributeToChange;
@@ -111,6 +113,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public DataType getNewType() {
 		if (newType != null && newType.eIsProxy()) {
 			InternalEObject oldNewType = (InternalEObject)newType;
@@ -137,6 +140,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setNewType(DataType newNewType) {
 		DataType oldNewType = newType;
 		newType = newNewType;
