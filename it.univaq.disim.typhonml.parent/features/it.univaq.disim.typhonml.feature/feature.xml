@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="it.univaq.disim.typhonml.feature"
-      label="Feature"
+      label="SDK and utilities"
       version="1.0.0.qualifier"
       provider-name="Typhon">
 
