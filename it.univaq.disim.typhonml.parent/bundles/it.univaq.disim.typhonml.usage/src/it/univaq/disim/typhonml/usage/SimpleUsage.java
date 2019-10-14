@@ -54,6 +54,7 @@ public class SimpleUsage {
 		
 		Model model = (Model) modelResource2.getContents().get(0);
 		model.getDataTypes().forEach(z->System.out.println(z.getName()));
+		generateTMLXFromTML("resources/demo.xmi");
 	}
 	
 	
@@ -246,9 +247,16 @@ public class SimpleUsage {
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		URI uri = URI.createURI(modelPath);
 		Resource resource = resourceSet.getResource(uri, true);
-		Model model = (Model) resource.getContents().get(0);
+		
 		
 		return resource;
+	}
+	
+	public static void generateTMLXFromTML(String tmlxPath) {
+		Resource resource = loadTml(tmlxPath);
+		Model model = (Model) resource.getContents().get(0);
+		saveModel(model);
+		
 	}
 
 }
