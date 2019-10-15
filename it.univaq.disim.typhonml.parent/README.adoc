@@ -1,0 +1,7 @@
+Demonstrates the usage of the Maven Tycho build system for Eclipse plug-ins.
+
+The following is demonstrated:
+
+* Pomless build for bundles, tests and features
+* P2 update sites
+* Product builds
