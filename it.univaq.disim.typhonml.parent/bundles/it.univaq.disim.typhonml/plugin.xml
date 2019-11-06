@@ -14,12 +14,4 @@
             genModel="model/typhonml.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated typhonml -->
-      <package
-            uri="http://www.eclipse.org/ocl/2015/Library"
-            class="oclstdlib.OclstdlibPackage"
-            genModel="model/typhonml.genmodel"/>
-   </extension>
-
 </plugin>

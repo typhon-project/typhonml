@@ -356,6 +356,16 @@ public class ModelItemProvider
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createChangeRelationContainement()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createSplitEntityVertical()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createSplitEntityHorizontal()));
 	}
 
 	/**
