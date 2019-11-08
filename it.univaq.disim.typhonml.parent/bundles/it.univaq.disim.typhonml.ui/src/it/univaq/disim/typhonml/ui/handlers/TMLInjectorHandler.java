@@ -23,7 +23,7 @@ import typhonml.Model;
  * @see org.eclipse.core.commands.IHandler
  * @see org.eclipse.core.commands.AbstractHandler
  */
-public class ModelInjectorHandler extends AbstractHandler {
+public class TMLInjectorHandler extends AbstractHandler {
 
 	@Override
 	public Object execute(ExecutionEvent event) throws ExecutionException {
@@ -32,9 +32,9 @@ public class ModelInjectorHandler extends AbstractHandler {
         Object object = selection.getFirstElement();
         if (object instanceof IFile) {
         	IFile f = (IFile) object;
-        	Model model = Services.loadXtextModel(f.getFullPath().toString());
+        	Model model = Services.loadModel(f.getFullPath().toString());
         	
-        	Services.serialize(model, f.getFullPath().toString().replace(".tml", ".tmlx"));
+        	Services.serializeTML(model, f.getFullPath().toString().replace(".tml", ".xmi"));
         	for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
         	    try {
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());

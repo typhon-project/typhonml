@@ -149,10 +149,35 @@ ruleModel returns [EObject current=null]
 						afterParserOrEnumRuleCall();
 					}
 				)
+			)
+			(
+				otherlv_6=','
+				{
+					newLeafNode(otherlv_6, grammarAccess.getModelAccess().getCommaKeyword_3_3_0());
+				}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getModelAccess().getChangeOperatorsChangeOperatorParserRuleCall_3_3_1_0());
+						}
+						lv_changeOperators_7_0=ruleChangeOperator
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getModelRule());
+							}
+							add(
+								$current,
+								"changeOperators",
+								lv_changeOperators_7_0,
+								"it.univaq.disim.typhon.TyphonML.ChangeOperator");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
 			)*
-			otherlv_6=']'
+			otherlv_8=']'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getModelAccess().getRightSquareBracketKeyword_3_3());
+				newLeafNode(otherlv_8, grammarAccess.getModelAccess().getRightSquareBracketKeyword_3_4());
 			}
 		)?
 	)
@@ -5270,9 +5295,9 @@ ruleAddEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAddEntityAccess().getAttributesAttributeParserRuleCall_5_2_0());
+						newCompositeNode(grammarAccess.getAddEntityAccess().getAttributesAddAttributeParserRuleCall_5_2_0());
 					}
-					lv_attributes_8_0=ruleAttribute
+					lv_attributes_8_0=ruleAddAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAddEntityRule());
@@ -5281,7 +5306,7 @@ ruleAddEntity returns [EObject current=null]
 							$current,
 							"attributes",
 							lv_attributes_8_0,
-							"it.univaq.disim.typhon.TyphonML.Attribute");
+							"it.univaq.disim.typhon.TyphonML.AddAttribute");
 						afterParserOrEnumRuleCall();
 					}
 				)
@@ -5328,9 +5353,9 @@ ruleAddEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getAddEntityAccess().getRelationsRelationParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getAddEntityAccess().getRelationsAddRelationParserRuleCall_6_2_0());
 					}
-					lv_relations_14_0=ruleRelation
+					lv_relations_14_0=ruleAddRelation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getAddEntityRule());
@@ -5339,7 +5364,7 @@ ruleAddEntity returns [EObject current=null]
 							$current,
 							"relations",
 							lv_relations_14_0,
-							"it.univaq.disim.typhon.TyphonML.Relation");
+							"it.univaq.disim.typhon.TyphonML.AddRelation");
 						afterParserOrEnumRuleCall();
 					}
 				)

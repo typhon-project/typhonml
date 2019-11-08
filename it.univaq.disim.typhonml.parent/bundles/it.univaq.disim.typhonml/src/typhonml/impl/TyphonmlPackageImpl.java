@@ -2,10 +2,6 @@
  */
 package typhonml.impl;
 
-import oclstdlib.OclstdlibPackage;
-
-import oclstdlib.impl.OclstdlibPackageImpl;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -576,17 +572,11 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(OclstdlibPackage.eNS_URI);
-		OclstdlibPackageImpl theOclstdlibPackage = (OclstdlibPackageImpl)(registeredPackage instanceof OclstdlibPackageImpl ? registeredPackage : OclstdlibPackage.eINSTANCE);
-
 		// Create package meta-data objects
 		theTyphonmlPackage.createPackageContents();
-		theOclstdlibPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theTyphonmlPackage.initializePackageContents();
-		theOclstdlibPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theTyphonmlPackage.freeze();
@@ -2713,7 +2703,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEOperation(getEntity__GetColumns(), this.getColumn(), "getColumns", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelation_Type(), this.getEntity(), null, "type", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

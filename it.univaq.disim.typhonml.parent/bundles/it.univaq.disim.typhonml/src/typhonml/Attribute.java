@@ -31,7 +31,7 @@ public interface Attribute extends NamedElement {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(DataType)
 	 * @see typhonml.TyphonmlPackage#getAttribute_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	DataType getType();

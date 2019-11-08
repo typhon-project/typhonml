@@ -41,6 +41,12 @@
             locationURI="popup:org.eclipse.ui.popup.any">
            <menu
                  label="Typhon">
+           <command
+	                  commandId="TMLInjectorHandler"
+	                  label="Inject to TML"
+	                  style="push"
+	                  tooltip="Inject">
+	        </command>
 	        <command
 	                  commandId="XMIGeneratorHandler"
 	                  label="Generate microservices architecture"
@@ -53,7 +59,7 @@
 				      <iterate
 				           ifEmpty="false">
 				         <adapt type="org.eclipse.core.resources.IResource">
-				              <test property="org.eclipse.core.resources.extension" value="xmi" />
+				              <test property="org.eclipse.core.resources.extension" value="tmlx" />
 				         </adapt>
 				      </iterate>
 				   </with>
@@ -63,6 +69,10 @@
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
+      <handler
+            class="it.univaq.disim.typhonml.ui.handlers.TMLInjectorHandler"
+            commandId="TMLInjectorHandler">
+      </handler>
       <handler
             class="it.univaq.disim.typhonml.ui.handlers.ModelInjectorHandler"
             commandId="ModelInjectorHandler">

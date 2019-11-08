@@ -40,14 +40,20 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftSquareBracketKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Assignment cChangeOperatorsAssignment_3_2 = (Assignment)cGroup_3.eContents().get(2);
 		private final RuleCall cChangeOperatorsChangeOperatorParserRuleCall_3_2_0 = (RuleCall)cChangeOperatorsAssignment_3_2.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
+		private final Group cGroup_3_3 = (Group)cGroup_3.eContents().get(3);
+		private final Keyword cCommaKeyword_3_3_0 = (Keyword)cGroup_3_3.eContents().get(0);
+		private final Assignment cChangeOperatorsAssignment_3_3_1 = (Assignment)cGroup_3_3.eContents().get(1);
+		private final RuleCall cChangeOperatorsChangeOperatorParserRuleCall_3_3_1_0 = (RuleCall)cChangeOperatorsAssignment_3_3_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_3_4 = (Keyword)cGroup_3.eContents().get(4);
 		
 		//Model:
 		//	{Model} dataTypes+=DataType*
-		//	databases+=Database* ('changeOperators' '[' changeOperators+=ChangeOperator* ']')?;
+		//	databases+=Database* ('changeOperators' '[' changeOperators+=ChangeOperator ("," changeOperators+=ChangeOperator)*
+		//	']')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Model} dataTypes+=DataType* databases+=Database* ('changeOperators' '[' changeOperators+=ChangeOperator* ']')?
+		//{Model} dataTypes+=DataType* databases+=Database* ('changeOperators' '[' changeOperators+=ChangeOperator (","
+		//changeOperators+=ChangeOperator)* ']')?
 		public Group getGroup() { return cGroup; }
 		
 		//{Model}
@@ -65,7 +71,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//Database
 		public RuleCall getDatabasesDatabaseParserRuleCall_2_0() { return cDatabasesDatabaseParserRuleCall_2_0; }
 		
-		//('changeOperators' '[' changeOperators+=ChangeOperator* ']')?
+		//('changeOperators' '[' changeOperators+=ChangeOperator ("," changeOperators+=ChangeOperator)* ']')?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//'changeOperators'
@@ -74,14 +80,26 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_3_1() { return cLeftSquareBracketKeyword_3_1; }
 		
-		//changeOperators+=ChangeOperator*
+		//changeOperators+=ChangeOperator
 		public Assignment getChangeOperatorsAssignment_3_2() { return cChangeOperatorsAssignment_3_2; }
 		
 		//ChangeOperator
 		public RuleCall getChangeOperatorsChangeOperatorParserRuleCall_3_2_0() { return cChangeOperatorsChangeOperatorParserRuleCall_3_2_0; }
 		
+		//("," changeOperators+=ChangeOperator)*
+		public Group getGroup_3_3() { return cGroup_3_3; }
+		
+		//","
+		public Keyword getCommaKeyword_3_3_0() { return cCommaKeyword_3_3_0; }
+		
+		//changeOperators+=ChangeOperator
+		public Assignment getChangeOperatorsAssignment_3_3_1() { return cChangeOperatorsAssignment_3_3_1; }
+		
+		//ChangeOperator
+		public RuleCall getChangeOperatorsChangeOperatorParserRuleCall_3_3_1_0() { return cChangeOperatorsChangeOperatorParserRuleCall_3_3_1_0; }
+		
 		//']'
-		public Keyword getRightSquareBracketKeyword_3_3() { return cRightSquareBracketKeyword_3_3; }
+		public Keyword getRightSquareBracketKeyword_3_4() { return cRightSquareBracketKeyword_3_4; }
 	}
 	public class DataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.DataType");
@@ -3497,7 +3515,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cAttributesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Assignment cAttributesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cAttributesAttributeParserRuleCall_5_2_0 = (RuleCall)cAttributesAssignment_5_2.eContents().get(0);
+		private final RuleCall cAttributesAddAttributeParserRuleCall_5_2_0 = (RuleCall)cAttributesAssignment_5_2.eContents().get(0);
 		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
 		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
 		private final Assignment cAttributesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
@@ -3507,7 +3525,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRelationsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Assignment cRelationsAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cRelationsRelationParserRuleCall_6_2_0 = (RuleCall)cRelationsAssignment_6_2.eContents().get(0);
+		private final RuleCall cRelationsAddRelationParserRuleCall_6_2_0 = (RuleCall)cRelationsAssignment_6_2.eContents().get(0);
 		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
 		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
 		private final Assignment cRelationsAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
@@ -3519,13 +3537,14 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//	('importedNamespace' importedNamespace=EString)?
 		//	'add' 'entity'
 		//	name=EString
-		//	'{' ('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')? ('relations' '{' relations+=Relation
-		//	("," relations+=Relation)* '}')?
+		//	'{' ('attributes' '{' attributes+=AddAttribute ("," attributes+=Attribute)* '}')? ('relations' '{'
+		//	relations+=AddRelation ("," relations+=Relation)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('importedNamespace' importedNamespace=EString)? 'add' 'entity' name=EString '{' ('attributes' '{' attributes+=Attribute
-		//("," attributes+=Attribute)* '}')? ('relations' '{' relations+=Relation ("," relations+=Relation)* '}')? '}'
+		//('importedNamespace' importedNamespace=EString)? 'add' 'entity' name=EString '{' ('attributes' '{'
+		//attributes+=AddAttribute ("," attributes+=Attribute)* '}')? ('relations' '{' relations+=AddRelation (","
+		//relations+=Relation)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//('importedNamespace' importedNamespace=EString)?
@@ -3555,7 +3574,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')?
+		//('attributes' '{' attributes+=AddAttribute ("," attributes+=Attribute)* '}')?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'attributes'
@@ -3564,11 +3583,11 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 		
-		//attributes+=Attribute
+		//attributes+=AddAttribute
 		public Assignment getAttributesAssignment_5_2() { return cAttributesAssignment_5_2; }
 		
-		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_5_2_0() { return cAttributesAttributeParserRuleCall_5_2_0; }
+		//AddAttribute
+		public RuleCall getAttributesAddAttributeParserRuleCall_5_2_0() { return cAttributesAddAttributeParserRuleCall_5_2_0; }
 		
 		//("," attributes+=Attribute)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
@@ -3585,7 +3604,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 		
-		//('relations' '{' relations+=Relation ("," relations+=Relation)* '}')?
+		//('relations' '{' relations+=AddRelation ("," relations+=Relation)* '}')?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'relations'
@@ -3594,11 +3613,11 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
 		
-		//relations+=Relation
+		//relations+=AddRelation
 		public Assignment getRelationsAssignment_6_2() { return cRelationsAssignment_6_2; }
 		
-		//Relation
-		public RuleCall getRelationsRelationParserRuleCall_6_2_0() { return cRelationsRelationParserRuleCall_6_2_0; }
+		//AddRelation
+		public RuleCall getRelationsAddRelationParserRuleCall_6_2_0() { return cRelationsAddRelationParserRuleCall_6_2_0; }
 		
 		//("," relations+=Relation)*
 		public Group getGroup_6_3() { return cGroup_6_3; }
@@ -4180,7 +4199,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Model:
 	//	{Model} dataTypes+=DataType*
-	//	databases+=Database* ('changeOperators' '[' changeOperators+=ChangeOperator* ']')?;
+	//	databases+=Database* ('changeOperators' '[' changeOperators+=ChangeOperator ("," changeOperators+=ChangeOperator)*
+	//	']')?;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -4843,8 +4863,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	('importedNamespace' importedNamespace=EString)?
 	//	'add' 'entity'
 	//	name=EString
-	//	'{' ('attributes' '{' attributes+=Attribute ("," attributes+=Attribute)* '}')? ('relations' '{' relations+=Relation
-	//	("," relations+=Relation)* '}')?
+	//	'{' ('attributes' '{' attributes+=AddAttribute ("," attributes+=Attribute)* '}')? ('relations' '{'
+	//	relations+=AddRelation ("," relations+=Relation)* '}')?
 	//	'}';
 	public AddEntityElements getAddEntityAccess() {
 		return pAddEntity;
