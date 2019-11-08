@@ -44,6 +44,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNlpTaskTypeAccess().getAlternatives(), "rule__NlpTaskType__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getModelAccess().getGroup_3(), "rule__Model__Group_3__0");
+			builder.put(grammarAccess.getModelAccess().getGroup_3_3(), "rule__Model__Group_3_3__0");
 			builder.put(grammarAccess.getRenameCollectionAccess().getGroup(), "rule__RenameCollection__Group__0");
 			builder.put(grammarAccess.getAddAttributesToIndexAccess().getGroup(), "rule__AddAttributesToIndex__Group__0");
 			builder.put(grammarAccess.getAddAttributesToIndexAccess().getGroup_5(), "rule__AddAttributesToIndex__Group_5__0");
@@ -168,6 +169,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getDataTypesAssignment_1(), "rule__Model__DataTypesAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getDatabasesAssignment_2(), "rule__Model__DatabasesAssignment_2");
 			builder.put(grammarAccess.getModelAccess().getChangeOperatorsAssignment_3_2(), "rule__Model__ChangeOperatorsAssignment_3_2");
+			builder.put(grammarAccess.getModelAccess().getChangeOperatorsAssignment_3_3_1(), "rule__Model__ChangeOperatorsAssignment_3_3_1");
 			builder.put(grammarAccess.getRenameCollectionAccess().getCollectionToRenameAssignment_2(), "rule__RenameCollection__CollectionToRenameAssignment_2");
 			builder.put(grammarAccess.getRenameCollectionAccess().getNewNameAssignment_4(), "rule__RenameCollection__NewNameAssignment_4");
 			builder.put(grammarAccess.getAddAttributesToIndexAccess().getTableAssignment_2(), "rule__AddAttributesToIndex__TableAssignment_2");

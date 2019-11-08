@@ -261,7 +261,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddEntity returns AddEntity
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString (attributes+=Attribute attributes+=Attribute*)? (relations+=Relation relations+=Relation*)?)
+	 *     (importedNamespace=EString? name=EString (attributes+=AddAttribute attributes+=Attribute*)? (relations+=AddRelation relations+=Relation*)?)
 	 */
 	protected void sequence_AddEntity(ISerializationContext context, AddEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -720,7 +720,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (dataTypes+=DataType* databases+=Database* changeOperators+=ChangeOperator*)
+	 *     (dataTypes+=DataType* databases+=Database* (changeOperators+=ChangeOperator changeOperators+=ChangeOperator*)?)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

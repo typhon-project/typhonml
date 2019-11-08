@@ -9,7 +9,7 @@ Model returns Model:
 	{Model}
 		(dataTypes+=DataType)*
 		(databases+=Database)*
-		('changeOperators' '['(changeOperators+=ChangeOperator)*']')?
+		('changeOperators' '['(changeOperators+=ChangeOperator)("," changeOperators+=ChangeOperator)*']')?
 		;  
 
 DataType returns DataType:
