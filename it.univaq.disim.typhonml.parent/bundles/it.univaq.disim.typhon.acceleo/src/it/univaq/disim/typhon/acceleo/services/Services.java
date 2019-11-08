@@ -57,16 +57,35 @@ public class Services {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void serializeTML(EObject root, String path) {
+
+		XtextResourceSet resourceSetXText = new TyphonMLStandaloneSetup().createInjectorAndDoEMFRegistration()
+				.getInstance(XtextResourceSet.class);
+		resourceSetXText.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		Resource resource = resourceSetXText.createResource(URI.createURI(path));
+        resource.getContents().add(root);
+        
+        try {
+            resource.save(Collections.EMPTY_MAP);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	
+	
 
 	public static Model loadModel(String modelPath) {
 		registerTyphonMM();
 		ResourceSet resourceSet = new ResourceSetImpl();
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("model", new XMIResourceFactoryImpl());
+		resourceSet.getPackageRegistry().put(TyphonmlPackage.eINSTANCE.getNsURI(), TyphonmlPackage.eINSTANCE);
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("tmlx", new XMIResourceFactoryImpl());
 		Resource resource = resourceSet.getResource(URI.createURI(modelPath), true);
 		Model model = (Model) resource.getContents().get(0);
 		return model;
 	}
+
+
 
 	public static void registerTyphonMM() {
 		EPackage.Registry.INSTANCE.put(TyphonmlPackage.eNS_URI, TyphonmlPackage.eINSTANCE);

@@ -223,7 +223,7 @@
         eType="#//Relation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Entity"/>

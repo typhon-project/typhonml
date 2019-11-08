@@ -9,7 +9,7 @@ Model returns Model:
 	{Model}
 		(dataTypes+=DataType)*
 		(databases+=Database)*
-		('changeOperators' '['(changeOperators+=ChangeOperator)*']')?
+		('changeOperators' '['(changeOperators+=ChangeOperator)("," changeOperators+=ChangeOperator)*']')?
 		;  
 
 DataType returns DataType:
@@ -368,8 +368,8 @@ AddEntity returns AddEntity:
 	name=EString
 	'{'
 		
-		('attributes' '{' attributes+=Attribute ( "," attributes+=Attribute)* '}' )?
-		('relations' '{' relations+=Relation ( "," relations+=Relation)* '}' )?
+		('attributes' '{' attributes+=AddAttribute ( "," attributes+=Attribute)* '}' )?
+		('relations' '{' relations+=AddRelation ( "," relations+=Relation)* '}' )?
 	'}';
 
 Attribute_Impl returns Attribute:

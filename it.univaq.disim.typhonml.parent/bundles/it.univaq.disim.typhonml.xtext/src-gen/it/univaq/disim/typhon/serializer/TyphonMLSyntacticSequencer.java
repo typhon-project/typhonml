@@ -11,9 +11,6 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
-import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
-import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -21,12 +18,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TyphonMLGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_Model___ChangeOperatorsKeyword_3_0_LeftSquareBracketKeyword_3_1_RightSquareBracketKeyword_3_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TyphonMLGrammarAccess) access;
-		match_Model___ChangeOperatorsKeyword_3_0_LeftSquareBracketKeyword_3_1_RightSquareBracketKeyword_3_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getModelAccess().getChangeOperatorsKeyword_3_0()), new TokenAlias(false, false, grammarAccess.getModelAccess().getLeftSquareBracketKeyword_3_1()), new TokenAlias(false, false, grammarAccess.getModelAccess().getRightSquareBracketKeyword_3_3()));
 	}
 	
 	@Override
@@ -41,23 +36,8 @@ public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Model___ChangeOperatorsKeyword_3_0_LeftSquareBracketKeyword_3_1_RightSquareBracketKeyword_3_3__q.equals(syntax))
-				emit_Model___ChangeOperatorsKeyword_3_0_LeftSquareBracketKeyword_3_1_RightSquareBracketKeyword_3_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else acceptNodes(getLastNavigableState(), syntaxNodes);
+			acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
-	/**
-	 * Ambiguous syntax:
-	 *     ('changeOperators' '[' ']')?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) (rule start)
-	 *     dataTypes+=DataType (ambiguity) (rule end)
-	 *     databases+=Database (ambiguity) (rule end)
-	 */
-	protected void emit_Model___ChangeOperatorsKeyword_3_0_LeftSquareBracketKeyword_3_1_RightSquareBracketKeyword_3_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
 }
