@@ -11,6 +11,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 
@@ -18,10 +21,14 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected TyphonMLGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q;
+	protected AbstractElementAlias match_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TyphonMLGrammarAccess) access;
+		match_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getAttributesKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getLeftSquareBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getRightSquareBracketKeyword_5_3()));
+		match_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getRelationsKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getLeftSquareBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getRightSquareBracketKeyword_6_3()));
 	}
 	
 	@Override
@@ -36,8 +43,36 @@ public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q.equals(syntax))
+				emit_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q.equals(syntax))
+				emit_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ('attributes' '[' ']')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=EString '{' (ambiguity) 'relations' '[' relations+=AddRelation
+	 *     name=EString '{' (ambiguity) ('relations' '[' ']')? '}' (rule end)
+	 */
+	protected void emit_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('relations' '[' ']')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     attributes+=AddAttribute ']' (ambiguity) '}' (rule end)
+	 *     name=EString '{' ('attributes' '[' ']')? (ambiguity) '}' (rule end)
+	 */
+	protected void emit_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

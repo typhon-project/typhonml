@@ -62,6 +62,8 @@ import typhonml.RenameEntity;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
 import typhonml.SplitEntity;
+import typhonml.SplitEntityHorizontal;
+import typhonml.SplitEntityVertical;
 import typhonml.Table;
 import typhonml.TyphonmlPackage;
 
@@ -220,6 +222,12 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.SPLIT_ENTITY:
 				sequence_SplitEntity(context, (SplitEntity) semanticObject); 
 				return; 
+			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL:
+				sequence_SplitEntityHorizontal(context, (SplitEntityHorizontal) semanticObject); 
+				return; 
+			case TyphonmlPackage.SPLIT_ENTITY_VERTICAL:
+				sequence_SplitEntityVertical(context, (SplitEntityVertical) semanticObject); 
+				return; 
 			case TyphonmlPackage.TABLE:
 				sequence_Table(context, (Table) semanticObject); 
 				return; 
@@ -231,7 +239,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Contexts:
 	 *     ChangeOperator returns AddAttribute
-	 *     Attribute returns AddAttribute
 	 *     AddAttribute returns AddAttribute
 	 *
 	 * Constraint:
@@ -261,7 +268,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddEntity returns AddEntity
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString (attributes+=AddAttribute attributes+=Attribute*)? (relations+=AddRelation relations+=Relation*)?)
+	 *     (importedNamespace=EString? name=EString (attributes+=AddAttribute attributes+=AddAttribute*)* (relations+=AddRelation relations+=AddRelation*)*)
 	 */
 	protected void sequence_AddEntity(ISerializationContext context, AddEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -310,7 +317,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Contexts:
 	 *     ChangeOperator returns AddRelation
-	 *     Relation returns AddRelation
 	 *     AddRelation returns AddRelation
 	 *
 	 * Constraint:
@@ -968,6 +974,47 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		feeder.accept(grammarAccess.getRenameTableAccess().getTableToRenameTableEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.RENAME_TABLE__TABLE_TO_RENAME, false));
 		feeder.accept(grammarAccess.getRenameTableAccess().getNewNameEStringParserRuleCall_4_0(), semanticObject.getNewName());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns SplitEntityHorizontal
+	 *     SplitEntityHorizontal returns SplitEntityHorizontal
+	 *
+	 * Constraint:
+	 *     (entity1=[Entity|EString] entity2name=EString attribute=[Attribute|EString] expression=STRING)
+	 */
+	protected void sequence_SplitEntityHorizontal(ISerializationContext context, SplitEntityHorizontal semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ENTITY1) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ENTITY1));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSplitEntityHorizontalAccess().getEntity1EntityEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ENTITY1, false));
+		feeder.accept(grammarAccess.getSplitEntityHorizontalAccess().getEntity2nameEStringParserRuleCall_5_0(), semanticObject.getEntity2name());
+		feeder.accept(grammarAccess.getSplitEntityHorizontalAccess().getAttributeAttributeEStringParserRuleCall_7_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE, false));
+		feeder.accept(grammarAccess.getSplitEntityHorizontalAccess().getExpressionSTRINGTerminalRuleCall_9_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns SplitEntityVertical
+	 *     SplitEntityVertical returns SplitEntityVertical
+	 *
+	 * Constraint:
+	 *     (entity1=[Entity|EString] entity2name=EString (attributeList+=[Attribute|EString] attributeList+=[Attribute|EString]*)*)
+	 */
+	protected void sequence_SplitEntityVertical(ISerializationContext context, SplitEntityVertical semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
