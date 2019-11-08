@@ -96,7 +96,7 @@ SplitEntity returns SplitEntity:
 SplitEntityVertical returns SplitEntityVertical:
 	'split' 'entity' 'vertical' entity1=[Entity|EString] 'to' entity2name=EString
 	'attributes:' '['
-		(attributeList+=[Attribute|EString] (',' attributeList += [Attribute|EString])*)*
+		(attributeList+=[Attribute|EString] (',' attributeList+=[Attribute|EString])*)*	
 	']'
 ;
 
