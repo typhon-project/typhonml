@@ -4,7 +4,6 @@ bin/
 target/
 # Log file
 *.log
-xtend-gen/
 
 # BlueJ files
 *.ctxt
@@ -26,5 +25,5 @@ hs_err_pid*
 
 .settings/
 .metadata/
-#.classpath
-#.project
+.classpath
+.project

@@ -1,4 +1,4 @@
-import "guard.eol";
+import "guardTest.eol";
 
 context Entity {
 	 critique hasCycles{

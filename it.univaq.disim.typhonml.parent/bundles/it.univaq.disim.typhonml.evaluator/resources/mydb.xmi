@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius" xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius ../../it.univaq.disim.typhonml.evaluator/resources/typhonml.ecore">
+<typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius" xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius typhonml.ecore">
   <databases xsi:type="typhonml:RelationalDB" name="RelationalDatabase">
     <tables name="OrderDB" entity="//@dataTypes.9">
       <indexSpec name="orderIndex" attributes="//@dataTypes.9/@attributes.1"/>
@@ -19,8 +19,8 @@
     </tables>
   </databases>
   <databases xsi:type="typhonml:DocumentDB" name="DocumentDatabase">
-    <collections entity="//@dataTypes.7" name="ReviewsDB"/>
-    <collections entity="//@dataTypes.11" name="CommentsDB"/>
+    <collections name="ReviewsDB" entity="//@dataTypes.7"/>
+    <collections name="CommentsDB" entity="//@dataTypes.11"/>
   </databases>
   <dataTypes xsi:type="typhonml:PrimitiveDataType" name="Date"/>
   <dataTypes xsi:type="typhonml:PrimitiveDataType" name="String"/>
