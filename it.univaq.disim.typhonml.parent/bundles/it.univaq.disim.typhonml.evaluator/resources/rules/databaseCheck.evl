@@ -5,16 +5,27 @@ context Database {
 	 	check:
 			 not self.checkCycles()
 		message: "Database cycle detected in " + self.name
-	 	
 	 } 
 	 
 	 constraint Error{
 	 	check: 
 	 		true
 	 	message: "ERROR --> " + self.name
-	 	
 	 }
+}
+
+context Database {
+	  critique hasCycles{
+	 	check:
+			 not self.checkGodTable()
+		message: "God Table in " + self.name
+	 } 
 	 
+	 constraint Error{
+	 	check: 
+	 		true
+	 	message: "ERROR --> " + self.name
+	 }
 }
 
 
