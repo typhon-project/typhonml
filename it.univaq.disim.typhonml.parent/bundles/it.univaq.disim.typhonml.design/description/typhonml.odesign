@@ -782,6 +782,14 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
+        <edgeMappings name="AddEntityDBRelationEVO" sourceMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='RealtionalDBEVO']/@subContainerMappings[name='TableEVO']" targetMapping="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='EntityEVO'] //@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@containerMappings[name='AddEntity']" targetFinderExpression="feature:entity" sourceFinderExpression="aql:self" domainClass="typhonml::Table" useDomainElement="true">
+          <style lineStyle="dash" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
         <containerMappings name="EntityEVO" semanticCandidatesExpression="feature:dataTypes" domainClass="typhonml::Entity">
           <subNodeMappings name="AttributeEVO" semanticCandidatesExpression="feature:attributes" domainClass="typhonml::Attribute">
             <style xsi:type="style:SquareDescription" labelSize="12" labelPosition="node" resizeKind="NSEW">
