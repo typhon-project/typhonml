@@ -1,0 +1,46 @@
+import "smellsTyphonMLCheck.eol";
+
+
+pre{
+	"".println();
+	"Smells TyphonML Checks...".println();
+	
+	var maxNumberOfAttributesForGodTable = 2;
+}
+
+
+context Entity {
+	//GOD TABLE Smell
+	critique hasGodTable{
+	 	check:
+			  not self.checkGodTable(maxNumberOfAttributesForGodTable)
+		message: "God Table in " + self.name + "; \n\t"
+			+ "Excessive number of attributes ("+maxNumberOfAttributesForGodTable+")"
+			+ " tend to violate the principles of normalization which in turn introduce a variety of problems."  
+			+ " Additionally, it impacts maintainability of the database."
+	 } 
+	 
+	 
+	 //OVERLOADED ATTRIBUTE NAME Smell
+	 critique hasOverloadedAttributeName{
+	 	check{
+	 		return self.checkOverloadedAttributeName();
+	 	}	
+		message: "Overloaded Attribute Name in " + self.name
+	 } 
+	 
+	 
+	 constraint Error{
+	 	check: 
+	 		true
+	 	message: "ERROR --> " + self.name
+	 }
+}
+
+
+	 
+	 
+	 
+
+
+
