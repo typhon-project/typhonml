@@ -38,12 +38,14 @@
   </dataTypes>
   <dataTypes xsi:type="typhonml:Entity" name="Review">
     <attributes name="id" type="//@dataTypes.1"/>
+    <attributes xsi:type="typhonml:AddAttribute" name="modify" type="//@dataTypes.0"/>
     <relations name="product" type="//@dataTypes.8" cardinality="one"/>
   </dataTypes>
   <dataTypes xsi:type="typhonml:Entity" name="Product">
     <attributes name="id" type="//@dataTypes.1"/>
     <attributes name="name" type="//@dataTypes.1"/>
     <attributes name="description" type="//@dataTypes.1"/>
+    <attributes xsi:type="typhonml:AddAttribute" name="modify" type="//@dataTypes.2"/>
     <relations name="review" type="//@dataTypes.7" cardinality="zero_many" opposite="//@dataTypes.7/@relations.0" isContainment="true"/>
     <relations name="orders" type="//@dataTypes.9" cardinality="zero_many"/>
   </dataTypes>

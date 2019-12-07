@@ -30,14 +30,28 @@ operation Entity checkMeaninglessName() : Boolean{
 		confusion and could lead to subtle bugs in queries.
 */
 operation getOverloadedAttributeName() : Map{
-	//self.name.println();
+	
 	var returnMap: Map;
 	return returnMap;
 	
 }
 
-operation Entity checkOverloadedAttributeName() : Boolean{
-	return true;
+operation Entity checkOverloadedAttributeName() : String{
+	//delete self entity from the list of all entities
+	var filteredEntities = TyphonML!Entity.allInstances()->select(e|e <> self);
+	for(selfAttribute in self.attributes){
+		for(entity in filteredEntities){
+			for(attribute in entity.attributes){
+				if(selfAttribute.name == attribute.name){
+					if(selfAttribute.type.name <> attribute.type.name){
+						//(selfAttribute.name +"=="+attribute.name+"@@@@ "+selfAttribute.type.name +"<>"+ attribute.type.name).println(); 
+						return selfAttribute.name;
+					}
+				}
+			}
+		}
+	}
+	return null;
 }
 
 
