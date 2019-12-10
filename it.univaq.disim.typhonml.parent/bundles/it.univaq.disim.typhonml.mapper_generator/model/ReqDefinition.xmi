@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typhonmlreq:Model
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:typhonmlreq="http://org.typhon.dsls.typhonml.req"
+    xsi:schemaLocation="http://org.typhon.dsls.typhonml.req typhonmlreq.ecore">
+  <dbTypes name="mariadb"
+      frequirements="//@frequirements.4 //@frequirements.1 //@frequirements.0"
+      nfrequirements="//@nfrequirements.2"/>
+  <dbTypes name="mongodb"
+      frequirements="//@frequirements.1"
+      nfrequirements="//@nfrequirements.0 //@nfrequirements.1 //@nfrequirements.2"/>
+  <frequirements
+      name="join"/>
+  <frequirements
+      name="sorting"/>
+  <frequirements
+      name="filterqueries"/>
+  <frequirements
+      name="fulltextsearch"/>
+  <frequirements
+      name="acid"/>
+  <nfrequirements
+      name="datascalability"/>
+  <nfrequirements
+      name="readlatency"/>
+  <nfrequirements
+      name="durability"
+      description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+</typhonmlreq:Model>

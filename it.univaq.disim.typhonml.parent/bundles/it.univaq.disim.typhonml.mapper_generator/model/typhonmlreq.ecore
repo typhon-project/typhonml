@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="typhonmlreq" nsURI="http://org.typhon.dsls.typhonml.req" nsPrefix="typhonmlreq">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelReq">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dbTypes" upperBound="-1"
+        eType="#//DBType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frequirements" upperBound="-1"
+        eType="#//FRequirement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nfrequirements" upperBound="-1"
+        eType="#//NFRequirement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DBType" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frequirements" upperBound="-1"
+        eType="#//FRequirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nfrequirements" upperBound="-1"
+        eType="#//NFRequirement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FRequirement" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NFRequirement" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
