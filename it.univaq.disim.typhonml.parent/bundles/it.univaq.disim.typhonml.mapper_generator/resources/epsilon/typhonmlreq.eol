@@ -1,13 +1,42 @@
 
-
-
-operation EntityTag hasTags() : Boolean{
-   return self.functionalTag.isEmpty() and self.nfunctionalTag.isEmpty();
+operation TyphonML!Entity hasTags(): Boolean{
+   return self.functionalTags.notEmpty() and self.nfunctionalTags.notEmpty();
 }
 
 
+operation TyphonML!Entity feasabilityCheck(): Boolean{
+	//get all Entities with tag
+	
+	//get all DBType with requirements
+	return false;
+}
 
-//var selectedClasses = System.user.choose("Select classes for code generating: ", source!EClass.allInstances(), new List<EClass>);
+operation getEntitiesTag(): String{
+	for(tag in TyphonML!Entity.allInstances()){
+		tag.name.println();
+		for(f in tag.functionalTags){
+			("\t"+f.name).println();
+		}
+		for(nf in tag.nfunctionalTags){
+			("\t"+nf.name).println();
+		}
+	}
+	return "Done";
+}
+
+operation getDBRequirements(): String{
+	for(db in TyphonMLReq!DBType.allInstances()){
+		db.name.println();
+		for(f in db.frequirements){
+			("\t"+f.name).println();
+		}
+		for(nf in db.nfrequirements){
+			("\t"+nf.name).println();
+		}
+	}
+	return "Done";
+}
+
 
 
 

@@ -4,6 +4,7 @@ package typhonmlreq;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -186,13 +187,22 @@ public interface TyphonmlreqPackage extends EPackage {
 	int DB_TYPE__NFREQUIREMENTS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Db Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DB_TYPE__DB_TYPE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>DB Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DB_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int DB_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>DB Type</em>' class.
@@ -313,6 +323,16 @@ public interface TyphonmlreqPackage extends EPackage {
 	 */
 	int NF_REQUIREMENT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link typhonmlreq.databaseType <em>database Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonmlreq.databaseType
+	 * @see typhonmlreq.impl.TyphonmlreqPackageImpl#getdatabaseType()
+	 * @generated
+	 */
+	int DATABASE_TYPE = 5;
+
 
 	/**
 	 * Returns the meta object for class '{@link typhonmlreq.NamedElement <em>Named Element</em>}'.
@@ -400,6 +420,17 @@ public interface TyphonmlreqPackage extends EPackage {
 	EReference getDBType_Nfrequirements();
 
 	/**
+	 * Returns the meta object for the attribute '{@link typhonmlreq.DBType#getDbType <em>Db Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Db Type</em>'.
+	 * @see typhonmlreq.DBType#getDbType()
+	 * @see #getDBType()
+	 * @generated
+	 */
+	EAttribute getDBType_DbType();
+
+	/**
 	 * Returns the meta object for class '{@link typhonmlreq.FRequirement <em>FRequirement</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -440,6 +471,16 @@ public interface TyphonmlreqPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNFRequirement_Description();
+
+	/**
+	 * Returns the meta object for enum '{@link typhonmlreq.databaseType <em>database Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>database Type</em>'.
+	 * @see typhonmlreq.databaseType
+	 * @generated
+	 */
+	EEnum getdatabaseType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -535,6 +576,14 @@ public interface TyphonmlreqPackage extends EPackage {
 		EReference DB_TYPE__NFREQUIREMENTS = eINSTANCE.getDBType_Nfrequirements();
 
 		/**
+		 * The meta object literal for the '<em><b>Db Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DB_TYPE__DB_TYPE = eINSTANCE.getDBType_DbType();
+
+		/**
 		 * The meta object literal for the '{@link typhonmlreq.impl.FRequirementImpl <em>FRequirement</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -569,6 +618,16 @@ public interface TyphonmlreqPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NF_REQUIREMENT__DESCRIPTION = eINSTANCE.getNFRequirement_Description();
+
+		/**
+		 * The meta object literal for the '{@link typhonmlreq.databaseType <em>database Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonmlreq.databaseType
+		 * @see typhonmlreq.impl.TyphonmlreqPackageImpl#getdatabaseType()
+		 * @generated
+		 */
+		EEnum DATABASE_TYPE = eINSTANCE.getdatabaseType();
 
 	}
 

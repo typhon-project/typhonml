@@ -1,25 +1,31 @@
-import "typhonmltag.eol";
+import "typhonmlreq.eol";
 
 pre{
+	//Create stubs of all databases in the TyphonMLReq
 	
-	//var name = System.user.prompt("Name?");
-	//var selectedClasses = System.user.chooseMany("Select classes for code generating: ", null, new List<EClass>);
 }
 
 
-
-
-context EntityTag {
-	  critique test{
-	 	check:
-			 self.hasTags()
-		message: "Bascio"
+context TyphonML!Entity {
+		guard: self.hasTags() //It get only Entities with Requirements
+	  	critique generateDatabaseForEntity{
+	 	check{
+			 return self.feasabilityCheck();
+	 	}
+		message: "Generate Database for "+self.name
 	 	fix {
-	 		title: "Fix Containment changing " + 
-	 				" database from Relational to Document"
+	 		title: "Generate Database for "+self.name
 	 		do {
-	 			"Refactoring".println();
+	 			var selectedDatabase = System.user.choose("Select Database Type: ", TyphonMLReq!DBType.allInstances(), new List<TyphonMLReq!DBType>);
+	 			self.generateDatabaseForEntity(selectedDatabase);
+	 			selectedDatabase.println();
 	 		}
 	 	}
 	 }
+}
+
+
+post{
+	//Delete all stubs of unused/empty databases
+	
 }

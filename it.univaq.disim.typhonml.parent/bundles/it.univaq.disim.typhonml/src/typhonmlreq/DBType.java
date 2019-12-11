@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link typhonmlreq.DBType#getFrequirements <em>Frequirements</em>}</li>
  *   <li>{@link typhonmlreq.DBType#getNfrequirements <em>Nfrequirements</em>}</li>
+ *   <li>{@link typhonmlreq.DBType#getDbType <em>Db Type</em>}</li>
  * </ul>
  *
  * @see typhonmlreq.TyphonmlreqPackage#getDBType()
@@ -45,5 +46,30 @@ public interface DBType extends NamedElement {
 	 * @generated
 	 */
 	EList<NFRequirement> getNfrequirements();
+
+	/**
+	 * Returns the value of the '<em><b>Db Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link typhonmlreq.databaseType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Db Type</em>' attribute.
+	 * @see typhonmlreq.databaseType
+	 * @see #setDbType(databaseType)
+	 * @see typhonmlreq.TyphonmlreqPackage#getDBType_DbType()
+	 * @model required="true"
+	 * @generated
+	 */
+	databaseType getDbType();
+
+	/**
+	 * Sets the value of the '{@link typhonmlreq.DBType#getDbType <em>Db Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Db Type</em>' attribute.
+	 * @see typhonmlreq.databaseType
+	 * @see #getDbType()
+	 * @generated
+	 */
+	void setDbType(databaseType value);
 
 } // DBType

@@ -4,6 +4,7 @@ package typhonmlreq.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -16,6 +17,7 @@ import typhonmlreq.NFRequirement;
 import typhonmlreq.NamedElement;
 import typhonmlreq.TyphonmlreqFactory;
 import typhonmlreq.TyphonmlreqPackage;
+import typhonmlreq.databaseType;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,6 +60,13 @@ public class TyphonmlreqPackageImpl extends EPackageImpl implements TyphonmlreqP
 	 * @generated
 	 */
 	private EClass nfRequirementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum databaseTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -206,6 +215,16 @@ public class TyphonmlreqPackageImpl extends EPackageImpl implements TyphonmlreqP
 	 * @generated
 	 */
 	@Override
+	public EAttribute getDBType_DbType() {
+		return (EAttribute)dbTypeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getFRequirement() {
 		return fRequirementEClass;
 	}
@@ -238,6 +257,16 @@ public class TyphonmlreqPackageImpl extends EPackageImpl implements TyphonmlreqP
 	@Override
 	public EAttribute getNFRequirement_Description() {
 		return (EAttribute)nfRequirementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getdatabaseType() {
+		return databaseTypeEEnum;
 	}
 
 	/**
@@ -279,12 +308,16 @@ public class TyphonmlreqPackageImpl extends EPackageImpl implements TyphonmlreqP
 		dbTypeEClass = createEClass(DB_TYPE);
 		createEReference(dbTypeEClass, DB_TYPE__FREQUIREMENTS);
 		createEReference(dbTypeEClass, DB_TYPE__NFREQUIREMENTS);
+		createEAttribute(dbTypeEClass, DB_TYPE__DB_TYPE);
 
 		fRequirementEClass = createEClass(FREQUIREMENT);
 		createEAttribute(fRequirementEClass, FREQUIREMENT__DESCRIPTION);
 
 		nfRequirementEClass = createEClass(NF_REQUIREMENT);
 		createEAttribute(nfRequirementEClass, NF_REQUIREMENT__DESCRIPTION);
+
+		// Create enums
+		databaseTypeEEnum = createEEnum(DATABASE_TYPE);
 	}
 
 	/**
@@ -330,12 +363,21 @@ public class TyphonmlreqPackageImpl extends EPackageImpl implements TyphonmlreqP
 		initEClass(dbTypeEClass, DBType.class, "DBType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDBType_Frequirements(), this.getFRequirement(), null, "frequirements", null, 0, -1, DBType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getDBType_Nfrequirements(), this.getNFRequirement(), null, "nfrequirements", null, 0, -1, DBType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDBType_DbType(), this.getdatabaseType(), "dbType", null, 1, 1, DBType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fRequirementEClass, FRequirement.class, "FRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFRequirement_Description(), ecorePackage.getEString(), "description", null, 0, 1, FRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nfRequirementEClass, NFRequirement.class, "NFRequirement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNFRequirement_Description(), ecorePackage.getEString(), "description", null, 0, 1, NFRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(databaseTypeEEnum, databaseType.class, "databaseType");
+		addEEnumLiteral(databaseTypeEEnum, databaseType.RELATIONAL_DB);
+		addEEnumLiteral(databaseTypeEEnum, databaseType.DOCUMENT_DB);
+		addEEnumLiteral(databaseTypeEEnum, databaseType.KEY_VALUE_DB);
+		addEEnumLiteral(databaseTypeEEnum, databaseType.GRAPH_DB);
+		addEEnumLiteral(databaseTypeEEnum, databaseType.COLUMN_DB);
 
 		// Create resource
 		createResource(eNS_URI);

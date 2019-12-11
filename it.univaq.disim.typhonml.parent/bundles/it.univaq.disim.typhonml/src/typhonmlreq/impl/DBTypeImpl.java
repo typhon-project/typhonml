@@ -4,12 +4,15 @@ package typhonmlreq.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -18,6 +21,7 @@ import typhonmlreq.DBType;
 import typhonmlreq.FRequirement;
 import typhonmlreq.NFRequirement;
 import typhonmlreq.TyphonmlreqPackage;
+import typhonmlreq.databaseType;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +33,7 @@ import typhonmlreq.TyphonmlreqPackage;
  * <ul>
  *   <li>{@link typhonmlreq.impl.DBTypeImpl#getFrequirements <em>Frequirements</em>}</li>
  *   <li>{@link typhonmlreq.impl.DBTypeImpl#getNfrequirements <em>Nfrequirements</em>}</li>
+ *   <li>{@link typhonmlreq.impl.DBTypeImpl#getDbType <em>Db Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +58,26 @@ public class DBTypeImpl extends NamedElementImpl implements DBType {
 	 * @ordered
 	 */
 	protected EList<NFRequirement> nfrequirements;
+
+	/**
+	 * The default value of the '{@link #getDbType() <em>Db Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDbType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final databaseType DB_TYPE_EDEFAULT = databaseType.RELATIONAL_DB;
+
+	/**
+	 * The cached value of the '{@link #getDbType() <em>Db Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDbType()
+	 * @generated
+	 * @ordered
+	 */
+	protected databaseType dbType = DB_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,6 +130,29 @@ public class DBTypeImpl extends NamedElementImpl implements DBType {
 	 * @generated
 	 */
 	@Override
+	public databaseType getDbType() {
+		return dbType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDbType(databaseType newDbType) {
+		databaseType oldDbType = dbType;
+		dbType = newDbType == null ? DB_TYPE_EDEFAULT : newDbType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlreqPackage.DB_TYPE__DB_TYPE, oldDbType, dbType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TyphonmlreqPackage.DB_TYPE__FREQUIREMENTS:
@@ -127,6 +175,8 @@ public class DBTypeImpl extends NamedElementImpl implements DBType {
 				return getFrequirements();
 			case TyphonmlreqPackage.DB_TYPE__NFREQUIREMENTS:
 				return getNfrequirements();
+			case TyphonmlreqPackage.DB_TYPE__DB_TYPE:
+				return getDbType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -148,6 +198,9 @@ public class DBTypeImpl extends NamedElementImpl implements DBType {
 				getNfrequirements().clear();
 				getNfrequirements().addAll((Collection<? extends NFRequirement>)newValue);
 				return;
+			case TyphonmlreqPackage.DB_TYPE__DB_TYPE:
+				setDbType((databaseType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -166,6 +219,9 @@ public class DBTypeImpl extends NamedElementImpl implements DBType {
 			case TyphonmlreqPackage.DB_TYPE__NFREQUIREMENTS:
 				getNfrequirements().clear();
 				return;
+			case TyphonmlreqPackage.DB_TYPE__DB_TYPE:
+				setDbType(DB_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -182,8 +238,26 @@ public class DBTypeImpl extends NamedElementImpl implements DBType {
 				return frequirements != null && !frequirements.isEmpty();
 			case TyphonmlreqPackage.DB_TYPE__NFREQUIREMENTS:
 				return nfrequirements != null && !nfrequirements.isEmpty();
+			case TyphonmlreqPackage.DB_TYPE__DB_TYPE:
+				return dbType != DB_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (dbType: ");
+		result.append(dbType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DBTypeImpl

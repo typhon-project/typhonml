@@ -38,8 +38,7 @@ public abstract class EpsilonStandalone {
 
 	public void execute() throws Exception {
 		
-		Utility.TyphonMLPackageRegistering();
-		Utility.TyphonMLREQPackageRegistering();
+		Utility.registryMetamodels();
 
 		module = createModule();
 		module.parse(Utility.getFile(getSource()));

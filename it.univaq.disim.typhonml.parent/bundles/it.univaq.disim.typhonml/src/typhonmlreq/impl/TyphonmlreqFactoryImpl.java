@@ -3,6 +3,7 @@
 package typhonmlreq.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,6 +72,36 @@ public class TyphonmlreqFactoryImpl extends EFactoryImpl implements TyphonmlreqF
 	 * @generated
 	 */
 	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case TyphonmlreqPackage.DATABASE_TYPE:
+				return createdatabaseTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case TyphonmlreqPackage.DATABASE_TYPE:
+				return convertdatabaseTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ModelReq createModelReq() {
 		ModelReqImpl modelReq = new ModelReqImpl();
 		return modelReq;
@@ -107,6 +138,26 @@ public class TyphonmlreqFactoryImpl extends EFactoryImpl implements TyphonmlreqF
 	public NFRequirement createNFRequirement() {
 		NFRequirementImpl nfRequirement = new NFRequirementImpl();
 		return nfRequirement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public databaseType createdatabaseTypeFromString(EDataType eDataType, String initialValue) {
+		databaseType result = databaseType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertdatabaseTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

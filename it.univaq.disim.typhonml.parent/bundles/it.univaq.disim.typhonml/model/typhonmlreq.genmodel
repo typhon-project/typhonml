@@ -6,6 +6,13 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>typhonmlreq.ecore</foreignModel>
   <genPackages prefix="Typhonmlreq" disposableProviderFactory="true" ecorePackage="typhonmlreq.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="typhonmlreq.ecore#//databaseType">
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/RelationalDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/DocumentDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/KeyValueDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/GraphDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/ColumnDB"/>
+    </genEnums>
     <genClasses image="false" ecoreClass="typhonmlreq.ecore#//NamedElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//NamedElement/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//NamedElement/importedNamespace"/>
@@ -16,6 +23,7 @@
     <genClasses ecoreClass="typhonmlreq.ecore#//DBType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonmlreq.ecore#//DBType/frequirements"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonmlreq.ecore#//DBType/nfrequirements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//DBType/dbType"/>
     </genClasses>
     <genClasses ecoreClass="typhonmlreq.ecore#//FRequirement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//FRequirement/description"/>

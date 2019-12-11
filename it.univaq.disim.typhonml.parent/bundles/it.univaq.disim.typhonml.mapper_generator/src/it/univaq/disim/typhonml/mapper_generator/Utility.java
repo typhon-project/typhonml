@@ -40,15 +40,10 @@ public class Utility {
 	}
 	
 	
-	public static void TyphonMLPackageRegistering() {
+	public static void registryMetamodels() {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 		resourceSet.getPackageRegistry().put(TyphonmlPackage.eINSTANCE.getNsURI(), TyphonmlPackage.eINSTANCE);
-	}
-	
-	public static void TyphonMLREQPackageRegistering() {
-		ResourceSet resourceSet = new ResourceSetImpl();
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
 		resourceSet.getPackageRegistry().put(TyphonmlreqPackage.eINSTANCE.getNsURI(), TyphonmlreqPackage.eINSTANCE);
 	}
 	

@@ -1,0 +1,17 @@
+import "wizard.eol";
+
+
+wizard relDB{
+  guard: self.isTypeOf(Entity)
+  title: "Generate Best Database for " + self.name
+  do{
+  	if(self.hasFunctionals() and self.hasNFunctionals()){
+  		"Generating Best Match Database...".println();
+  		self.selectBestDatabaseMatch();
+  		"Generation Done!".println();
+  	}else{
+		("functional and non-functional requirements were not provided for the Entity " + self.name).println();  		
+  	}
+	
+  }
+}
