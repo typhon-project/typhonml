@@ -3317,6 +3317,134 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_RELATION_CONTAINEMENT_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.SplitEntityVerticalImpl <em>Split Entity Vertical</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.SplitEntityVerticalImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityVertical()
+	 * @generated
+	 */
+	int SPLIT_ENTITY_VERTICAL = 61;
+
+	/**
+	 * The feature id for the '<em><b>Entity1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__ENTITY1 = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity2name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__ENTITY2NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Attribute List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__ATTRIBUTE_LIST = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Relation List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__RELATION_LIST = CHANGE_OPERATOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Split Entity Vertical</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Split Entity Vertical</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.SplitEntityHorizontalImpl <em>Split Entity Horizontal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.SplitEntityHorizontalImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityHorizontal()
+	 * @generated
+	 */
+	int SPLIT_ENTITY_HORIZONTAL = 62;
+
+	/**
+	 * The feature id for the '<em><b>Entity1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__ENTITY1 = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity2name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__EXPRESSION = CHANGE_OPERATOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Split Entity Horizontal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Split Entity Horizontal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3324,7 +3452,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 61;
+	int CARDINALITY = 63;
 
 	/**
 	 * The meta object id for the '{@link typhonml.NlpTaskType <em>Nlp Task Type</em>}' enum.
@@ -3334,7 +3462,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTaskType()
 	 * @generated
 	 */
-	int NLP_TASK_TYPE = 62;
+	int NLP_TASK_TYPE = 64;
 
 
 	/**
@@ -5032,6 +5160,114 @@ public interface TyphonmlPackage extends EPackage {
 	EAttribute getChangeRelationContainement_NewContainment();
 
 	/**
+	 * Returns the meta object for class '{@link typhonml.SplitEntityVertical <em>Split Entity Vertical</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Split Entity Vertical</em>'.
+	 * @see typhonml.SplitEntityVertical
+	 * @generated
+	 */
+	EClass getSplitEntityVertical();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.SplitEntityVertical#getEntity1 <em>Entity1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity1</em>'.
+	 * @see typhonml.SplitEntityVertical#getEntity1()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EReference getSplitEntityVertical_Entity1();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.SplitEntityVertical#getEntity2name <em>Entity2name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Entity2name</em>'.
+	 * @see typhonml.SplitEntityVertical#getEntity2name()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EAttribute getSplitEntityVertical_Entity2name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.SplitEntityVertical#getAttributeList <em>Attribute List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attribute List</em>'.
+	 * @see typhonml.SplitEntityVertical#getAttributeList()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EReference getSplitEntityVertical_AttributeList();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.SplitEntityVertical#getRelationList <em>Relation List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Relation List</em>'.
+	 * @see typhonml.SplitEntityVertical#getRelationList()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EReference getSplitEntityVertical_RelationList();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.SplitEntityHorizontal <em>Split Entity Horizontal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Split Entity Horizontal</em>'.
+	 * @see typhonml.SplitEntityHorizontal
+	 * @generated
+	 */
+	EClass getSplitEntityHorizontal();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.SplitEntityHorizontal#getEntity1 <em>Entity1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity1</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getEntity1()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EReference getSplitEntityHorizontal_Entity1();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.SplitEntityHorizontal#getEntity2name <em>Entity2name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Entity2name</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getEntity2name()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EAttribute getSplitEntityHorizontal_Entity2name();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.SplitEntityHorizontal#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getAttribute()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EReference getSplitEntityHorizontal_Attribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.SplitEntityHorizontal#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expression</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getExpression()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EAttribute getSplitEntityHorizontal_Expression();
+
+	/**
 	 * Returns the meta object for enum '{@link typhonml.Cardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6475,6 +6711,90 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT = eINSTANCE.getChangeRelationContainement_NewContainment();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.SplitEntityVerticalImpl <em>Split Entity Vertical</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.SplitEntityVerticalImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityVertical()
+		 * @generated
+		 */
+		EClass SPLIT_ENTITY_VERTICAL = eINSTANCE.getSplitEntityVertical();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_VERTICAL__ENTITY1 = eINSTANCE.getSplitEntityVertical_Entity1();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity2name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPLIT_ENTITY_VERTICAL__ENTITY2NAME = eINSTANCE.getSplitEntityVertical_Entity2name();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute List</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_VERTICAL__ATTRIBUTE_LIST = eINSTANCE.getSplitEntityVertical_AttributeList();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation List</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_VERTICAL__RELATION_LIST = eINSTANCE.getSplitEntityVertical_RelationList();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.SplitEntityHorizontalImpl <em>Split Entity Horizontal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.SplitEntityHorizontalImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityHorizontal()
+		 * @generated
+		 */
+		EClass SPLIT_ENTITY_HORIZONTAL = eINSTANCE.getSplitEntityHorizontal();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_HORIZONTAL__ENTITY1 = eINSTANCE.getSplitEntityHorizontal_Entity1();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity2name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME = eINSTANCE.getSplitEntityHorizontal_Entity2name();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE = eINSTANCE.getSplitEntityHorizontal_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPLIT_ENTITY_HORIZONTAL__EXPRESSION = eINSTANCE.getSplitEntityHorizontal_Expression();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.

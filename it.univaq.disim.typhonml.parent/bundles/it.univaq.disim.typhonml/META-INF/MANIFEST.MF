@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: it.univaq.disim.typhonml;singleton:=true
 Automatic-Module-Name: it.univaq.disim.typhonml
-Bundle-Version: 0.1.1.qualifier
+Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin

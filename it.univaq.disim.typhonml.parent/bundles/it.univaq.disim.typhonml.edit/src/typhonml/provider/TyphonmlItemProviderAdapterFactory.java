@@ -1383,6 +1383,52 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.SplitEntityVertical} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SplitEntityVerticalItemProvider splitEntityVerticalItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.SplitEntityVertical}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSplitEntityVerticalAdapter() {
+		if (splitEntityVerticalItemProvider == null) {
+			splitEntityVerticalItemProvider = new SplitEntityVerticalItemProvider(this);
+		}
+
+		return splitEntityVerticalItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.SplitEntityHorizontal} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SplitEntityHorizontalItemProvider splitEntityHorizontalItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.SplitEntityHorizontal}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSplitEntityHorizontalAdapter() {
+		if (splitEntityHorizontalItemProvider == null) {
+			splitEntityHorizontalItemProvider = new SplitEntityHorizontalItemProvider(this);
+		}
+
+		return splitEntityHorizontalItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1544,6 +1590,8 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (columnItemProvider != null) columnItemProvider.dispose();
 		if (renameEntityItemProvider != null) renameEntityItemProvider.dispose();
 		if (changeRelationContainementItemProvider != null) changeRelationContainementItemProvider.dispose();
+		if (splitEntityVerticalItemProvider != null) splitEntityVerticalItemProvider.dispose();
+		if (splitEntityHorizontalItemProvider != null) splitEntityHorizontalItemProvider.dispose();
 	}
 
 }

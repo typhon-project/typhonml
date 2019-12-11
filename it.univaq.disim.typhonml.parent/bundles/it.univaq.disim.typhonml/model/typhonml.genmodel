@@ -247,5 +247,17 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeRelationContainement/relation"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangeRelationContainement/newContainment"/>
     </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//SplitEntityVertical">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//SplitEntityVertical/entity1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//SplitEntityVertical/entity2name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//SplitEntityVertical/attributeList"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//SplitEntityVertical/relationList"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//SplitEntityHorizontal">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//SplitEntityHorizontal/entity1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//SplitEntityHorizontal/entity2name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//SplitEntityHorizontal/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//SplitEntityHorizontal/expression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
