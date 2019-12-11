@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typhonmltag:ModelTag xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonmltag="http://org.typhon.dsls.typhonml.tag" xsi:schemaLocation="http://org.typhon.dsls.typhonml.tag typhonmltag.ecore">
+  <entityTags name="User" functionalTag="//@functionalRequirements.0" nfunctionalTag="//@nfunctionalRequirements.0">
+    <attributes name="AttributeExample1" type="//@entityTags.0"/>
+  </entityTags>
+  <functionalRequirements tagName="sort"/>
+  <functionalRequirements tagName="join"/>
+  <nfunctionalRequirements tagName="scalability"/>
+</typhonmltag:ModelTag>

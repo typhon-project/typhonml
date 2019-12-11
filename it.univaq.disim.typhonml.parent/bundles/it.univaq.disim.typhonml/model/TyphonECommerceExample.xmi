@@ -10,8 +10,8 @@
       name="MySQL">
     <tables
         name="clientsTable"
-        entity="//@dataTypes.0"
-        db="//@databases.0"/>
+        db="//@databases.0"
+        entity="//@dataTypes.0"/>
   </databases>
   <databases
       xsi:type="typhonml:DocumentDB"
