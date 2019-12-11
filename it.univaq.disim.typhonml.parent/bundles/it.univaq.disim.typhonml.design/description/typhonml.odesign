@@ -1077,7 +1077,66 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="AddEntity" referenceName="changeOperators"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="AddEntity" referenceName="changeOperators" variableName="addEntity">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Select persintence layer">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation/>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.1/@ownedTools[name='AddEntity']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Select and create new tables, collections, KeyValueElement, GraphNode, and Column" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="AddEntityName" labelExpression="Name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:SelectDescription" name="table" labelExpression="Select persistence unit" valueExpression="table" candidatesExpression="aql:addEntity.eContainer().eAllContents(typhonml::Table)" candidateDisplayExpression="aql:candidate.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newValue">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="entity" valueExpression="var:addEntity"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:SelectDescription" name="SelectDB" labelExpression="or create a new one: Select Relation DB where a new table will be created" candidatesExpression="aql:addEntity.eContainer().eAllContents(typhonml::RelationalDB)" candidateDisplayExpression="aql:candidate.name">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newValue">
+                            <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Table" referenceName="tables">
+                              <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="New Dialog">
+                                  <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                                    <initialOperation/>
+                                  </buttons>
+                                  <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                                    <initialOperation/>
+                                  </buttons>
+                                  <page name="Default Page" labelExpression="Page" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='evolution%20mode']/@defaultLayer/@toolSections.1/@ownedTools[name='AddEntity']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0/@controls.2/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                                  <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                                    <controls xsi:type="properties:TextDescription" name="NewTableName" valueExpression="feature:name">
+                                      <initialOperation>
+                                        <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                                      </initialOperation>
+                                    </controls>
+                                  </groups>
+                                </subModelOperations>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                      <controls xsi:type="properties:ListDescription" valueExpression="aql:addEntity.eContainer().eAllContents(typhonml::Table)->select(z|z.entity=addEntity)" displayExpression="aql:value.name">
+                        <onClickOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="var:self.entity" valueExpression="var:addEntity"/>
+                          </firstModelOperations>
+                        </onClickOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
