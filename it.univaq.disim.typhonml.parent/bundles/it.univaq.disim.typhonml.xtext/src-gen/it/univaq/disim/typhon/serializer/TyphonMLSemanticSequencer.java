@@ -1051,7 +1051,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (
 	 *         importedNamespace=EString? 
 	 *         name=EString 
-	 *         entity=[Entity|EString] 
+	 *         entity=[Entity|EString]? 
 	 *         db=[Database|EString]? 
 	 *         indexSpec=IndexSpec? 
 	 *         idSpec=IdSpec?

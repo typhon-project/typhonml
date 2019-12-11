@@ -3076,7 +3076,7 @@ ruleTable returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			otherlv_7='db'
 			{

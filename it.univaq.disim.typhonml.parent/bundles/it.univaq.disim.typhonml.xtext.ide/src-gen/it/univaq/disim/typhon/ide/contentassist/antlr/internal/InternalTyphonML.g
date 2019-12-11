@@ -7719,7 +7719,7 @@ rule__Table__Group__5__Impl
 :
 (
 	{ before(grammarAccess.getTableAccess().getEntityAssignment_5()); }
-	(rule__Table__EntityAssignment_5)
+	(rule__Table__EntityAssignment_5)?
 	{ after(grammarAccess.getTableAccess().getEntityAssignment_5()); }
 )
 ;

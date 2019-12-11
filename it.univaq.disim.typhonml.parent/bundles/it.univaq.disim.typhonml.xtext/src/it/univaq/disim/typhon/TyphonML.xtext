@@ -246,7 +246,7 @@ Table returns Table:
 	('importedNamespace' importedNamespace=EString)?
 	'table'
 	'{'
-		name=EString ':' entity=[Entity|EString]
+		name=EString ':' entity=[Entity|EString]?
 		('db' db=[Database|EString])?
 		(indexSpec=IndexSpec)?
 		(idSpec=IdSpec)?

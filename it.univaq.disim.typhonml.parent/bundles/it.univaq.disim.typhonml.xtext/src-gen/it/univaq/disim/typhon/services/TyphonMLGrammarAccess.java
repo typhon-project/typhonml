@@ -1962,13 +1962,13 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//	('importedNamespace' importedNamespace=EString)?
 		//	'table'
 		//	'{'
-		//	name=EString ':' entity=[Entity|EString] ('db' db=[Database|EString])?
+		//	name=EString ':' entity=[Entity|EString]? ('db' db=[Database|EString])?
 		//	indexSpec=IndexSpec?
 		//	idSpec=IdSpec?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('importedNamespace' importedNamespace=EString)? 'table' '{' name=EString ':' entity=[Entity|EString] ('db'
+		//('importedNamespace' importedNamespace=EString)? 'table' '{' name=EString ':' entity=[Entity|EString]? ('db'
 		//db=[Database|EString])? indexSpec=IndexSpec? idSpec=IdSpec? '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -1999,7 +1999,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//':'
 		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
-		//entity=[Entity|EString]
+		//entity=[Entity|EString]?
 		public Assignment getEntityAssignment_5() { return cEntityAssignment_5; }
 		
 		//[Entity|EString]
@@ -4838,7 +4838,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	('importedNamespace' importedNamespace=EString)?
 	//	'table'
 	//	'{'
-	//	name=EString ':' entity=[Entity|EString] ('db' db=[Database|EString])?
+	//	name=EString ':' entity=[Entity|EString]? ('db' db=[Database|EString])?
 	//	indexSpec=IndexSpec?
 	//	idSpec=IdSpec?
 	//	'}';
