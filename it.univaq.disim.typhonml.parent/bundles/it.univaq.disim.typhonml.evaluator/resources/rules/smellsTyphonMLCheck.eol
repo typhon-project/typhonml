@@ -1,0 +1,57 @@
+/*
+ 	God Table
+	This smell arises when a table contains excessive number of attributes. 
+	Rationale: Excessive number of attributes tend to violate the principles 
+		of normalization which in turn introduce a variety of problems. 
+		Additionally, it impacts maintainability of the database. 
+*/
+operation Entity checkGodTable(maxNumberOfAttributes : Integer) : Boolean{
+	if(self.attributes.size > maxNumberOfAttributes){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+/*
+ 	Meaningless name 
+	This smell occurs when a table or an attribute name is cryptic or meaningless 
+	Rationale: Meaningless or cryptic names hamper readability of the database’s schema. 
+*/
+operation Entity checkMeaninglessName() : Boolean{
+	return true;
+}
+
+/*
+ 	Overloaded attribute names 
+	This smell occurs when two or more attributes are defined with 
+		identical names but as distinct data types in different tables.
+	Rationale: Identical names with different data types create 
+		confusion and could lead to subtle bugs in queries.
+*/
+operation getOverloadedAttributeName() : Map{
+	
+	var returnMap: Map;
+	return returnMap;
+	
+}
+
+operation Entity checkOverloadedAttributeName() : String{
+	//delete self entity from the list of all entities
+	var filteredEntities = TyphonML!Entity.allInstances()->select(e|e <> self);
+	for(selfAttribute in self.attributes){
+		for(entity in filteredEntities){
+			for(attribute in entity.attributes){
+				if(selfAttribute.name == attribute.name){
+					if(selfAttribute.type.name <> attribute.type.name){
+						//(selfAttribute.name +"=="+attribute.name+"@@@@ "+selfAttribute.type.name +"<>"+ attribute.type.name).println(); 
+						return selfAttribute.name;
+					}
+				}
+			}
+		}
+	}
+	return null;
+}
+
+

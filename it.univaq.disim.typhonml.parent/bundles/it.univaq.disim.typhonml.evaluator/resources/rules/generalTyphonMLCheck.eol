@@ -40,3 +40,8 @@ operation Database addCollectionToDocumentDB(inputName : String, ent : Entity){
 	}
 }
 
+
+operation Database checkCycles() : Boolean{
+	return false;
+}
+
