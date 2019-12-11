@@ -31,6 +31,8 @@
         type="//@dataTypes.0"/>
     <functionalTags
         name="sort"/>
+    <nfunctionalTags
+        name="scalability"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"

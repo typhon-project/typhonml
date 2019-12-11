@@ -13,7 +13,10 @@ Export-Package: oclstdlib,
  oclstdlib.util,
  typhonml,
  typhonml.impl,
- typhonml.util
+ typhonml.util,
+ typhonmlreq,
+ typhonmlreq.impl,
+ typhonmlreq.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ocl.pivot;bundle-version="1.4.0"

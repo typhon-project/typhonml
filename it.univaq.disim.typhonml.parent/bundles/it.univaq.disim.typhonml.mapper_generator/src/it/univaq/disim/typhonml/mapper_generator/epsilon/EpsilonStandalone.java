@@ -17,7 +17,6 @@ import org.eclipse.epsilon.eol.models.IRelativePathResolver;
 
 import it.univaq.disim.typhonml.mapper_generator.Utility;
 
-
 public abstract class EpsilonStandalone {
 
 	protected IEolModule module;
@@ -38,6 +37,9 @@ public abstract class EpsilonStandalone {
 	};
 
 	public void execute() throws Exception {
+		
+		Utility.TyphonMLPackageRegistering();
+		Utility.TyphonMLREQPackageRegistering();
 
 		module = createModule();
 		module.parse(Utility.getFile(getSource()));
@@ -73,13 +75,38 @@ public abstract class EpsilonStandalone {
 		return module.execute();
 	}
 
+//	protected EmfModel createEmfModelByURI(String name, String model, String metamodel, boolean readOnLoad,
+//	boolean storeOnDisposal) throws EolModelLoadingException, URISyntaxException {
+//EmfModel emfModel = new EmfModel();
+//StringProperties properties = new StringProperties();
+//properties.put(EmfModel.PROPERTY_NAME, name);
+//properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodel);
+//properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.getURIFromResource(model).toString());
+//properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
+//properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
+//emfModel.load(properties, (IRelativePathResolver) null);
+//return emfModel;
+//}
+
+	protected EmfModel createEmfModelByURI(String name, String model, String metamodel, boolean readOnLoad,
+			boolean storeOnDisposal) throws EolModelLoadingException, URISyntaxException {
+		EmfModel emfModel = new EmfModel();
+		StringProperties properties = new StringProperties();
+		properties.put(EmfModel.PROPERTY_NAME, name);
+		properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodel);
+		properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.getFile(model).toURI().toString());
+		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
+		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
+		emfModel.load(properties, (IRelativePathResolver) null);
+		return emfModel;
+	}
+
 	public EmfModel createEmfModel(String name, String model, String metamodel, boolean readOnLoad,
 			boolean storeOnDisposal) {
 		EmfModel emfModel = new EmfModel();
 		StringProperties properties = new StringProperties();
 		properties.put(EmfModel.PROPERTY_NAME, name);
-		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI,
-				Utility.getFile(metamodel).toURI().toString());
+		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, Utility.getFile(metamodel).toURI().toString());
 		properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.getFile(model).toURI().toString());
 		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
 		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
@@ -97,8 +124,7 @@ public abstract class EpsilonStandalone {
 		EmfModel emfModel = new EmfModel();
 		StringProperties properties = new StringProperties();
 		properties.put(EmfModel.PROPERTY_NAME, name);
-		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI,
-				Utility.getFile(metamodel).toURI().toString());
+		properties.put(EmfModel.PROPERTY_FILE_BASED_METAMODEL_URI, Utility.getFile(metamodel).toURI().toString());
 		properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.createFile(model).toURI().toString());
 		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
 		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
@@ -110,19 +136,5 @@ public abstract class EpsilonStandalone {
 		}
 		return emfModel;
 	}
-
-	protected EmfModel createEmfModelByURI(String name, String model, String metamodel, boolean readOnLoad,
-			boolean storeOnDisposal) throws EolModelLoadingException, URISyntaxException {
-		EmfModel emfModel = new EmfModel();
-		StringProperties properties = new StringProperties();
-		properties.put(EmfModel.PROPERTY_NAME, name);
-		properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodel);
-		properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.getURIFromResource(model).toString());
-		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
-		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
-		emfModel.load(properties, (IRelativePathResolver) null);
-		return emfModel;
-	}
-
 
 }

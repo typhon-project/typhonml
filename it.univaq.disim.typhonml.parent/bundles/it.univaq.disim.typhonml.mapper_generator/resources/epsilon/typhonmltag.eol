@@ -6,13 +6,13 @@ operation feasabilityCheck(){
 }
 
 operation getEntitiesTag(): String{
-	for(tag in TyphonMLTag!EntityTag.allInstances()){
+	for(tag in TyphonML!Entity.allInstances()){
 		tag.name.println();
-		for(f in tag.functionalTag){
-			("\t"+f.tagName).println();
+		for(f in tag.functionalTags){
+			("\t"+f.name).println();
 		}
-		for(nf in tag.nfunctionalTag){
-			("\t"+nf.tagName).println();
+		for(nf in tag.nfunctionalTags){
+			("\t"+nf.name).println();
 		}
 		
 	}

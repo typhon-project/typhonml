@@ -11,6 +11,9 @@ import org.eclipse.epsilon.eol.dom.OperationList;
 import org.eclipse.epsilon.eol.exceptions.EolRuntimeException;
 import org.eclipse.epsilon.eol.models.IModel;
 
+import typhonml.TyphonmlPackage;
+import typhonmlreq.TyphonmlreqPackage;
+
 public class EOLStandaloneReturn extends EpsilonStandalone{
 	
 	public static void main(String[] args) throws Exception {
@@ -25,8 +28,8 @@ public class EOLStandaloneReturn extends EpsilonStandalone{
 	@Override
 	public List<IModel> getModels() throws Exception {
 		List<IModel> models = new ArrayList<IModel>();
-		models.add(createEmfModel("TyphonMLReq", "model/RequirementsDefinition.xmi", "model/typhonmlreq.ecore", true, false));
-		models.add(createEmfModel("TyphonMLTag", "model/typhonmlTaggedCE.xmi", "model/typhonmltag.ecore", true, false));
+		models.add(createEmfModelByURI("TyphonMLReq", "model/RequirementsDefinition.xmi", TyphonmlreqPackage.eNS_URI, true, false));
+		models.add(createEmfModelByURI("TyphonML", "model/TyphonECommerceExample.xmi", TyphonmlPackage.eNS_URI, true, false));
 		return models;
 	}
 

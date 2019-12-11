@@ -12,6 +12,18 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.List;
 
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.BasicExtendedMetaData;
+import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import typhonml.TyphonmlPackage;
+import typhonmlreq.TyphonmlreqPackage;
+
 public class Utility {
 
 	public static void search(final String pattern, final File folder, List<File> result) {
@@ -26,6 +38,20 @@ public class Utility {
 			}
 		}
 	}
+	
+	
+	public static void TyphonMLPackageRegistering() {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
+		resourceSet.getPackageRegistry().put(TyphonmlPackage.eINSTANCE.getNsURI(), TyphonmlPackage.eINSTANCE);
+	}
+	
+	public static void TyphonMLREQPackageRegistering() {
+		ResourceSet resourceSet = new ResourceSetImpl();
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new XMIResourceFactoryImpl());
+		resourceSet.getPackageRegistry().put(TyphonmlreqPackage.eINSTANCE.getNsURI(), TyphonmlreqPackage.eINSTANCE);
+	}
+	
 
 	public static File getFileFromResource(String fileName) {
 		ClassLoader classLoader = new Utility().getClass().getClassLoader();
