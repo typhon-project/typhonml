@@ -1,0 +1,34 @@
+operation feasabilityCheck(){
+	//get all Entities with tag
+	
+	//get all DBType with requirements
+	
+}
+
+operation getEntitiesTag(): String{
+	for(tag in TyphonMLTag!EntityTag.allInstances()){
+		tag.name.println();
+		for(f in tag.functionalTag){
+			("\t"+f.tagName).println();
+		}
+		for(nf in tag.nfunctionalTag){
+			("\t"+nf.tagName).println();
+		}
+		
+	}
+	return "Done";
+}
+
+operation getDBRequirements(): String{
+	for(db in TyphonMLReq!DBType.allInstances()){
+		db.name.println();
+		for(f in db.frequirements){
+			("\t"+f.name).println();
+		}
+		for(nf in db.nfrequirements){
+			("\t"+nf.name).println();
+		}
+	}
+	return "Done";
+}
+

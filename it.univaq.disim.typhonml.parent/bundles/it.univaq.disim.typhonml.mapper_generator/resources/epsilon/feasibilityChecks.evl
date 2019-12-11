@@ -1,0 +1,25 @@
+import "typhonmltag.eol";
+
+pre{
+	
+	//var name = System.user.prompt("Name?");
+	//var selectedClasses = System.user.chooseMany("Select classes for code generating: ", null, new List<EClass>);
+}
+
+
+
+
+context EntityTag {
+	  critique test{
+	 	check:
+			 self.hasTags()
+		message: "Bascio"
+	 	fix {
+	 		title: "Fix Containment changing " + 
+	 				" database from Relational to Document"
+	 		do {
+	 			"Refactoring".println();
+	 		}
+	 	}
+	 }
+}

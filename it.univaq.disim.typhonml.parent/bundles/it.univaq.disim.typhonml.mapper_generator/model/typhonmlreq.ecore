@@ -1,30 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="typhonmlreq" nsURI="http://org.typhon.dsls.typhonml.req" nsPrefix="typhonmlreq">
-  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ecore:EPackage xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="typhonmlreq" nsPrefix="typhonmlreq" nsURI="http://org.typhon.dsls.typhonml.req" xmi:version="2.0">
+  <eClassifiers abstract="true" name="NamedElement" xsi:type="ecore:EClass">
+    <eStructuralFeatures eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" lowerBound="1" name="name" xsi:type="ecore:EAttribute"/>
+    <eStructuralFeatures eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" name="importedNamespace" xsi:type="ecore:EAttribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ModelReq">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dbTypes" upperBound="-1"
-        eType="#//DBType" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="frequirements" upperBound="-1"
-        eType="#//FRequirement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nfrequirements" upperBound="-1"
-        eType="#//NFRequirement" containment="true"/>
+  <eClassifiers name="ModelReq" xsi:type="ecore:EClass">
+    <eStructuralFeatures containment="true" eType="#//DBType" name="dbTypes" upperBound="-1" xsi:type="ecore:EReference"/>
+    <eStructuralFeatures containment="true" eType="#//FRequirement" name="frequirements" upperBound="-1" xsi:type="ecore:EReference"/>
+    <eStructuralFeatures containment="true" eType="#//NFRequirement" name="nfrequirements" upperBound="-1" xsi:type="ecore:EReference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DBType" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="frequirements" upperBound="-1"
-        eType="#//FRequirement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nfrequirements" upperBound="-1"
-        eType="#//NFRequirement"/>
+  <eClassifiers eSuperTypes="#//NamedElement" name="DBType" xsi:type="ecore:EClass">
+    <eStructuralFeatures eType="#//FRequirement" name="frequirements" upperBound="-1" xsi:type="ecore:EReference"/>
+    <eStructuralFeatures eType="#//NFRequirement" name="nfrequirements" upperBound="-1" xsi:type="ecore:EReference"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FRequirement" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers eSuperTypes="#//NamedElement" name="FRequirement" xsi:type="ecore:EClass">
+    <eStructuralFeatures eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" lowerBound="1" name="description" xsi:type="ecore:EAttribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NFRequirement" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers eSuperTypes="#//NamedElement" name="NFRequirement" xsi:type="ecore:EClass">
+    <eStructuralFeatures eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" lowerBound="1" name="description" xsi:type="ecore:EAttribute"/>
   </eClassifiers>
 </ecore:EPackage>

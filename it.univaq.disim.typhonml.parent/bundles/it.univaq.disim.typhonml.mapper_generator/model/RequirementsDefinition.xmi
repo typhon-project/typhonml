@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typhonmlreq:ModelReq xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonmlreq="http://org.typhon.dsls.typhonml.req" xsi:schemaLocation="http://org.typhon.dsls.typhonml.req typhonmlreq.ecore">
+  <dbTypes name="mariadb" frequirements="//@frequirements.0 //@frequirements.1 //@frequirements.4" nfrequirements="//@nfrequirements.1"/>
+  <dbTypes name="mongodb" frequirements="//@frequirements.1" nfrequirements="//@nfrequirements.0 //@nfrequirements.1 //@nfrequirements.2"/>
+  <frequirements name="sorting" description="Req for Sorting"/>
+  <frequirements name="join" description="Req for Join"/>
+  <frequirements name="acid" description="Req for ACID"/>
+  <frequirements name="filterqueries" description="Req for Queries Filtering"/>
+  <frequirements name="fulltextsearch" description="Req for Full Text Search"/>
+  <nfrequirements name="datascalability" description="Req for Data Scalability"/>
+  <nfrequirements name="readlatency" description="Req for Latency in reading"/>
+  <nfrequirements name="durability" description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+</typhonmlreq:ModelReq>

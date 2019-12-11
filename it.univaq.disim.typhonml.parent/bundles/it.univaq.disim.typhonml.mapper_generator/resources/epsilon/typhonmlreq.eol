@@ -1,0 +1,13 @@
+
+
+
+operation EntityTag hasTags() : Boolean{
+   return self.functionalTag.isEmpty() and self.nfunctionalTag.isEmpty();
+}
+
+
+
+//var selectedClasses = System.user.choose("Select classes for code generating: ", source!EClass.allInstances(), new List<EClass>);
+
+
+
