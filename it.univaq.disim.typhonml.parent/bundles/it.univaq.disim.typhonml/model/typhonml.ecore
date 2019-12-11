@@ -143,7 +143,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphAttribute" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="1" eType="#//GraphNode"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddGraphEdge" eSuperTypes="#//GraphEdge #//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddGraphEdge" eSuperTypes="#//ChangeOperator #//GraphEdge"/>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveGraphEdge" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="graphEdgeToRemove" lowerBound="1"
         eType="#//GraphEdge"/>
@@ -221,6 +221,10 @@
         eType="#//FreeText" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//Relation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="functionalTags" upperBound="-1"
+        eType="#//FunctionalTag" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nfunctionalTags" upperBound="-1"
+        eType="#//NFunctionalTag" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
@@ -362,4 +366,6 @@
         eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionalTag" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NFunctionalTag" eSuperTypes="#//NamedElement"/>
 </ecore:EPackage>

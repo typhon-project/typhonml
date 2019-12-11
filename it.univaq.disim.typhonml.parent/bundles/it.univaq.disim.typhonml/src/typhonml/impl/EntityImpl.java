@@ -21,8 +21,10 @@ import typhonml.Collection;
 import typhonml.Column;
 import typhonml.Entity;
 import typhonml.FreeText;
+import typhonml.FunctionalTag;
 import typhonml.GraphNode;
 import typhonml.KeyValueElement;
+import typhonml.NFunctionalTag;
 import typhonml.Relation;
 import typhonml.Table;
 import typhonml.TyphonmlPackage;
@@ -38,6 +40,8 @@ import typhonml.TyphonmlPackage;
  *   <li>{@link typhonml.impl.EntityImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.impl.EntityImpl#getRelations <em>Relations</em>}</li>
+ *   <li>{@link typhonml.impl.EntityImpl#getFunctionalTags <em>Functional Tags</em>}</li>
+ *   <li>{@link typhonml.impl.EntityImpl#getNfunctionalTags <em>Nfunctional Tags</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,6 +76,26 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 	 * @ordered
 	 */
 	protected EList<Relation> relations;
+
+	/**
+	 * The cached value of the '{@link #getFunctionalTags() <em>Functional Tags</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFunctionalTags()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<FunctionalTag> functionalTags;
+
+	/**
+	 * The cached value of the '{@link #getNfunctionalTags() <em>Nfunctional Tags</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNfunctionalTags()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<NFunctionalTag> nfunctionalTags;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -129,6 +153,32 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			relations = new EObjectContainmentEList<Relation>(Relation.class, this, TyphonmlPackage.ENTITY__RELATIONS);
 		}
 		return relations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<FunctionalTag> getFunctionalTags() {
+		if (functionalTags == null) {
+			functionalTags = new EObjectContainmentEList<FunctionalTag>(FunctionalTag.class, this, TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS);
+		}
+		return functionalTags;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<NFunctionalTag> getNfunctionalTags() {
+		if (nfunctionalTags == null) {
+			nfunctionalTags = new EObjectContainmentEList<NFunctionalTag>(NFunctionalTag.class, this, TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS);
+		}
+		return nfunctionalTags;
 	}
 
 	/**
@@ -275,6 +325,10 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return ((InternalEList<?>)getFretextAttributes()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return ((InternalEList<?>)getRelations()).basicRemove(otherEnd, msgs);
+			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
+				return ((InternalEList<?>)getFunctionalTags()).basicRemove(otherEnd, msgs);
+			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
+				return ((InternalEList<?>)getNfunctionalTags()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -293,6 +347,10 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return getFretextAttributes();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return getRelations();
+			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
+				return getFunctionalTags();
+			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
+				return getNfunctionalTags();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -318,6 +376,14 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				getRelations().clear();
 				getRelations().addAll((java.util.Collection<? extends Relation>)newValue);
 				return;
+			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
+				getFunctionalTags().clear();
+				getFunctionalTags().addAll((java.util.Collection<? extends FunctionalTag>)newValue);
+				return;
+			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
+				getNfunctionalTags().clear();
+				getNfunctionalTags().addAll((java.util.Collection<? extends NFunctionalTag>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -339,6 +405,12 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();
 				return;
+			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
+				getFunctionalTags().clear();
+				return;
+			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
+				getNfunctionalTags().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -357,6 +429,10 @@ public class EntityImpl extends DataTypeImpl implements Entity {
 				return fretextAttributes != null && !fretextAttributes.isEmpty();
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				return relations != null && !relations.isEmpty();
+			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
+				return functionalTags != null && !functionalTags.isEmpty();
+			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
+				return nfunctionalTags != null && !nfunctionalTags.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

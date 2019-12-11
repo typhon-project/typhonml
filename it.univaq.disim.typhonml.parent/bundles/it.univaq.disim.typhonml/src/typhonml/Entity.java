@@ -16,6 +16,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link typhonml.Entity#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getRelations <em>Relations</em>}</li>
+ *   <li>{@link typhonml.Entity#getFunctionalTags <em>Functional Tags</em>}</li>
+ *   <li>{@link typhonml.Entity#getNfunctionalTags <em>Nfunctional Tags</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getEntity()
@@ -70,6 +72,30 @@ public interface Entity extends DataType {
 	 * @generated
 	 */
 	EList<Relation> getRelations();
+
+	/**
+	 * Returns the value of the '<em><b>Functional Tags</b></em>' containment reference list.
+	 * The list contents are of type {@link typhonml.FunctionalTag}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Functional Tags</em>' containment reference list.
+	 * @see typhonml.TyphonmlPackage#getEntity_FunctionalTags()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<FunctionalTag> getFunctionalTags();
+
+	/**
+	 * Returns the value of the '<em><b>Nfunctional Tags</b></em>' containment reference list.
+	 * The list contents are of type {@link typhonml.NFunctionalTag}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Nfunctional Tags</em>' containment reference list.
+	 * @see typhonml.TyphonmlPackage#getEntity_NfunctionalTags()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<NFunctionalTag> getNfunctionalTags();
 
 	/**
 	 * <!-- begin-user-doc -->
