@@ -54,7 +54,6 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAddIndexTableAccess().getGroup_5(), "rule__AddIndexTable__Group_5__0");
 			builder.put(grammarAccess.getChangeAttributeTypeAccess().getGroup(), "rule__ChangeAttributeType__Group__0");
 			builder.put(grammarAccess.getMigrateEntityAccess().getGroup(), "rule__MigrateEntity__Group__0");
-			builder.put(grammarAccess.getSplitEntityAccess().getGroup(), "rule__SplitEntity__Group__0");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getGroup(), "rule__SplitEntityVertical__Group__0");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getGroup_8(), "rule__SplitEntityVertical__Group_8__0");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getGroup_8_1(), "rule__SplitEntityVertical__Group_8_1__0");
@@ -192,9 +191,6 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getChangeAttributeTypeAccess().getNewTypeAssignment_4(), "rule__ChangeAttributeType__NewTypeAssignment_4");
 			builder.put(grammarAccess.getMigrateEntityAccess().getEntityAssignment_1(), "rule__MigrateEntity__EntityAssignment_1");
 			builder.put(grammarAccess.getMigrateEntityAccess().getNewDatabaseAssignment_3(), "rule__MigrateEntity__NewDatabaseAssignment_3");
-			builder.put(grammarAccess.getSplitEntityAccess().getEntityToBeSplitAssignment_2(), "rule__SplitEntity__EntityToBeSplitAssignment_2");
-			builder.put(grammarAccess.getSplitEntityAccess().getFirstNewEntityAssignment_5(), "rule__SplitEntity__FirstNewEntityAssignment_5");
-			builder.put(grammarAccess.getSplitEntityAccess().getSecondNewEntityAssignment_7(), "rule__SplitEntity__SecondNewEntityAssignment_7");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getEntity1Assignment_3(), "rule__SplitEntityVertical__Entity1Assignment_3");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getEntity2nameAssignment_5(), "rule__SplitEntityVertical__Entity2nameAssignment_5");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getAttributeListAssignment_8_0(), "rule__SplitEntityVertical__AttributeListAssignment_8_0");

@@ -61,7 +61,6 @@ import typhonml.RenameCollection;
 import typhonml.RenameEntity;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
-import typhonml.SplitEntity;
 import typhonml.SplitEntityHorizontal;
 import typhonml.SplitEntityVertical;
 import typhonml.Table;
@@ -218,9 +217,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.RENAME_TABLE:
 				sequence_RenameTable(context, (RenameTable) semanticObject); 
-				return; 
-			case TyphonmlPackage.SPLIT_ENTITY:
-				sequence_SplitEntity(context, (SplitEntity) semanticObject); 
 				return; 
 			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL:
 				sequence_SplitEntityHorizontal(context, (SplitEntityHorizontal) semanticObject); 
@@ -1015,31 +1011,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_SplitEntityVertical(ISerializationContext context, SplitEntityVertical semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     ChangeOperator returns SplitEntity
-	 *     SplitEntity returns SplitEntity
-	 *
-	 * Constraint:
-	 *     (entityToBeSplit=[Entity|EString] firstNewEntity=Entity_Impl secondNewEntity=Entity_Impl)
-	 */
-	protected void sequence_SplitEntity(ISerializationContext context, SplitEntity semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__ENTITY_TO_BE_SPLIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__ENTITY_TO_BE_SPLIT));
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__FIRST_NEW_ENTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__FIRST_NEW_ENTITY));
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__SECOND_NEW_ENTITY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__SECOND_NEW_ENTITY));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSplitEntityAccess().getEntityToBeSplitEntityEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.SPLIT_ENTITY__ENTITY_TO_BE_SPLIT, false));
-		feeder.accept(grammarAccess.getSplitEntityAccess().getFirstNewEntityEntity_ImplParserRuleCall_5_0(), semanticObject.getFirstNewEntity());
-		feeder.accept(grammarAccess.getSplitEntityAccess().getSecondNewEntityEntity_ImplParserRuleCall_7_0(), semanticObject.getSecondNewEntity());
-		feeder.finish();
 	}
 	
 	

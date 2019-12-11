@@ -281,173 +281,164 @@ ruleChangeOperator returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getSplitEntityParserRuleCall_4());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getSplitEntityVerticalParserRuleCall_4());
 		}
-		this_SplitEntity_4=ruleSplitEntity
+		this_SplitEntityVertical_4=ruleSplitEntityVertical
 		{
-			$current = $this_SplitEntity_4.current;
+			$current = $this_SplitEntityVertical_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getSplitEntityVerticalParserRuleCall_5());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getSplitEntityHorizontalParserRuleCall_5());
 		}
-		this_SplitEntityVertical_5=ruleSplitEntityVertical
+		this_SplitEntityHorizontal_5=ruleSplitEntityHorizontal
 		{
-			$current = $this_SplitEntityVertical_5.current;
+			$current = $this_SplitEntityHorizontal_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getSplitEntityHorizontalParserRuleCall_6());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getMergeEntityParserRuleCall_6());
 		}
-		this_SplitEntityHorizontal_6=ruleSplitEntityHorizontal
+		this_MergeEntity_6=ruleMergeEntity
 		{
-			$current = $this_SplitEntityHorizontal_6.current;
+			$current = $this_MergeEntity_6.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getMergeEntityParserRuleCall_7());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddAttributeParserRuleCall_7());
 		}
-		this_MergeEntity_7=ruleMergeEntity
+		this_AddAttribute_7=ruleAddAttribute
 		{
-			$current = $this_MergeEntity_7.current;
+			$current = $this_AddAttribute_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddAttributeParserRuleCall_8());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddRelationParserRuleCall_8());
 		}
-		this_AddAttribute_8=ruleAddAttribute
+		this_AddRelation_8=ruleAddRelation
 		{
-			$current = $this_AddAttribute_8.current;
+			$current = $this_AddRelation_8.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddRelationParserRuleCall_9());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameAttributeParserRuleCall_9());
 		}
-		this_AddRelation_9=ruleAddRelation
+		this_RenameAttribute_9=ruleRenameAttribute
 		{
-			$current = $this_AddRelation_9.current;
+			$current = $this_RenameAttribute_9.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameAttributeParserRuleCall_10());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameRelationParserRuleCall_10());
 		}
-		this_RenameAttribute_10=ruleRenameAttribute
+		this_RenameRelation_10=ruleRenameRelation
 		{
-			$current = $this_RenameAttribute_10.current;
+			$current = $this_RenameRelation_10.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameRelationParserRuleCall_11());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveAttributeParserRuleCall_11());
 		}
-		this_RenameRelation_11=ruleRenameRelation
+		this_RemoveAttribute_11=ruleRemoveAttribute
 		{
-			$current = $this_RenameRelation_11.current;
+			$current = $this_RemoveAttribute_11.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveAttributeParserRuleCall_12());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveRelationParserRuleCall_12());
 		}
-		this_RemoveAttribute_12=ruleRemoveAttribute
+		this_RemoveRelation_12=ruleRemoveRelation
 		{
-			$current = $this_RemoveAttribute_12.current;
+			$current = $this_RemoveRelation_12.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveRelationParserRuleCall_13());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationContainementParserRuleCall_13());
 		}
-		this_RemoveRelation_13=ruleRemoveRelation
+		this_ChangeRelationContainement_13=ruleChangeRelationContainement
 		{
-			$current = $this_RemoveRelation_13.current;
+			$current = $this_ChangeRelationContainement_13.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationContainementParserRuleCall_14());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationCardinalityParserRuleCall_14());
 		}
-		this_ChangeRelationContainement_14=ruleChangeRelationContainement
+		this_ChangeRelationCardinality_14=ruleChangeRelationCardinality
 		{
-			$current = $this_ChangeRelationContainement_14.current;
+			$current = $this_ChangeRelationCardinality_14.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeRelationCardinalityParserRuleCall_15());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeAttributeTypeParserRuleCall_15());
 		}
-		this_ChangeRelationCardinality_15=ruleChangeRelationCardinality
+		this_ChangeAttributeType_15=ruleChangeAttributeType
 		{
-			$current = $this_ChangeRelationCardinality_15.current;
+			$current = $this_ChangeAttributeType_15.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getChangeAttributeTypeParserRuleCall_16());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddIndexTableParserRuleCall_16());
 		}
-		this_ChangeAttributeType_16=ruleChangeAttributeType
+		this_AddIndexTable_16=ruleAddIndexTable
 		{
-			$current = $this_ChangeAttributeType_16.current;
+			$current = $this_AddIndexTable_16.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddIndexTableParserRuleCall_17());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getDropIndexTableParserRuleCall_17());
 		}
-		this_AddIndexTable_17=ruleAddIndexTable
+		this_DropIndexTable_17=ruleDropIndexTable
 		{
-			$current = $this_AddIndexTable_17.current;
+			$current = $this_DropIndexTable_17.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getDropIndexTableParserRuleCall_18());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameTableParserRuleCall_18());
 		}
-		this_DropIndexTable_18=ruleDropIndexTable
+		this_RenameTable_18=ruleRenameTable
 		{
-			$current = $this_DropIndexTable_18.current;
+			$current = $this_RenameTable_18.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameTableParserRuleCall_19());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddAttributesToIndexParserRuleCall_19());
 		}
-		this_RenameTable_19=ruleRenameTable
+		this_AddAttributesToIndex_19=ruleAddAttributesToIndex
 		{
-			$current = $this_RenameTable_19.current;
+			$current = $this_AddAttributesToIndex_19.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getAddAttributesToIndexParserRuleCall_20());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveAttributesToIndexParserRuleCall_20());
 		}
-		this_AddAttributesToIndex_20=ruleAddAttributesToIndex
+		this_RemoveAttributesToIndex_20=ruleRemoveAttributesToIndex
 		{
-			$current = $this_AddAttributesToIndex_20.current;
+			$current = $this_RemoveAttributesToIndex_20.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRemoveAttributesToIndexParserRuleCall_21());
+			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameCollectionParserRuleCall_21());
 		}
-		this_RemoveAttributesToIndex_21=ruleRemoveAttributesToIndex
+		this_RenameCollection_21=ruleRenameCollection
 		{
-			$current = $this_RemoveAttributesToIndex_21.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getChangeOperatorAccess().getRenameCollectionParserRuleCall_22());
-		}
-		this_RenameCollection_22=ruleRenameCollection
-		{
-			$current = $this_RenameCollection_22.current;
+			$current = $this_RenameCollection_21.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1014,103 +1005,6 @@ ruleMigrateEntity returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleSplitEntity
-entryRuleSplitEntity returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSplitEntityRule()); }
-	iv_ruleSplitEntity=ruleSplitEntity
-	{ $current=$iv_ruleSplitEntity.current; }
-	EOF;
-
-// Rule SplitEntity
-ruleSplitEntity returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='split'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getSplitEntityAccess().getSplitKeyword_0());
-		}
-		otherlv_1='entity'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getSplitEntityAccess().getEntityKeyword_1());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSplitEntityRule());
-					}
-				}
-				{
-					newCompositeNode(grammarAccess.getSplitEntityAccess().getEntityToBeSplitEntityCrossReference_2_0());
-				}
-				ruleEString
-				{
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_3='{'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getSplitEntityAccess().getLeftCurlyBracketKeyword_3());
-		}
-		otherlv_4='left'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getSplitEntityAccess().getLeftKeyword_4());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSplitEntityAccess().getFirstNewEntityEntity_ImplParserRuleCall_5_0());
-				}
-				lv_firstNewEntity_5_0=ruleEntity_Impl
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSplitEntityRule());
-					}
-					set(
-						$current,
-						"firstNewEntity",
-						lv_firstNewEntity_5_0,
-						"it.univaq.disim.typhon.TyphonML.Entity_Impl");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_6='right'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getSplitEntityAccess().getRightKeyword_6());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSplitEntityAccess().getSecondNewEntityEntity_ImplParserRuleCall_7_0());
-				}
-				lv_secondNewEntity_7_0=ruleEntity_Impl
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSplitEntityRule());
-					}
-					set(
-						$current,
-						"secondNewEntity",
-						lv_secondNewEntity_7_0,
-						"it.univaq.disim.typhon.TyphonML.Entity_Impl");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_8='}'
-		{
-			newLeafNode(otherlv_8, grammarAccess.getSplitEntityAccess().getRightCurlyBracketKeyword_8());
-		}
 	)
 ;
 

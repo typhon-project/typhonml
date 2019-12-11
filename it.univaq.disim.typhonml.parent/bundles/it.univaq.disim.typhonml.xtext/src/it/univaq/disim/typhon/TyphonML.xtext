@@ -20,7 +20,6 @@ ChangeOperator returns ChangeOperator:
 	RemoveEntity | 
 	RenameEntity |
 	MigrateEntity |
-	SplitEntity |
 	SplitEntityVertical |
 	SplitEntityHorizontal |
 	MergeEntity |
@@ -87,12 +86,6 @@ MigrateEntity returns MigrateEntity:
 	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
 ;
 
-SplitEntity returns SplitEntity:
-	'split' 'entity' entityToBeSplit=[Entity|EString] '{'
-		'left'  firstNewEntity=Entity_Impl
-		'right' secondNewEntity=Entity_Impl
-	'}'
-;
 SplitEntityVertical returns SplitEntityVertical:
 	'split' 'entity' 'vertical' entity1=[Entity|EString] 'to' entity2name=EString
 	'attributes:' '['
