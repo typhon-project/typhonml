@@ -320,6 +320,14 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createSplitEntityHorizontalAdapter();
 			}
 			@Override
+			public Adapter caseFunctionalTag(FunctionalTag object) {
+				return createFunctionalTagAdapter();
+			}
+			@Override
+			public Adapter caseNFunctionalTag(NFunctionalTag object) {
+				return createNFunctionalTagAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1218,6 +1226,34 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSplitEntityHorizontalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.FunctionalTag <em>Functional Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.FunctionalTag
+	 * @generated
+	 */
+	public Adapter createFunctionalTagAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.NFunctionalTag <em>NFunctional Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.NFunctionalTag
+	 * @generated
+	 */
+	public Adapter createNFunctionalTagAdapter() {
 		return null;
 	}
 
