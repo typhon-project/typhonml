@@ -4,11 +4,13 @@ operation TyphonML!Entity hasTags(): Boolean{
 }
 
 
-operation TyphonML!Entity feasabilityCheck(): Boolean{
+operation TyphonML!Entity feasabilityCheck(): List<TyphonMLReq!DBType>{
 	//get all Entities with tag
 	
 	//get all DBType with requirements
-	return false;
+	
+	var result = TyphonMLReq!DBType.allInstances();
+	return result;
 }
 
 operation getEntitiesTag(): String{
@@ -38,5 +40,45 @@ operation getDBRequirements(): String{
 }
 
 
+operation TyphonML!Entity generateDatabaseForEntity(selectedDatabase : TyphonMLReq!DBType): Boolean{
+	switch(selectedDatabase.dbType.name){
+		case "RelationalDB" : createRelationalDB(self, selectedDatabase.name);
+		case "DocumentDB" : createDocumentDB(self);
+		case "KeyValueDB" : createKeyValueDB(self);
+		case "GraphDB" : createGraphDB(self);
+		case "ColumnDB" : createColumnDB(self);
+		default : "No Databases Available.";
+	}
+	return true;
+}
+
+
+operation createRelationalDB(entity : TyphonML!Entity, dbName: String){
+	var db = new TyphonML!RelationalDB;
+	db.name = dbName;
+	var table = new TyphonML!Table;
+	table.name = entity.name + "Table";
+	table.entity = entity;
+	table.db = db;
+	db.tables.add(table);
+	entity.eContainer().databases.add(db);
+	"RelationalDB creation".println();
+}
+
+operation createDocumentDB(entity : TyphonML!Entity){
+	"DocumentDB creation".println();
+}
+
+operation createKeyValueDB(entity : TyphonML!Entity){
+	"KeyValueDB creation".println();
+}
+
+operation createGraphDB(entity : TyphonML!Entity){
+	"GraphDB creation".println();
+}
+
+operation createColumnDB(entity : TyphonML!Entity){
+	"ColumnDB creation".println();	
+}
 
 

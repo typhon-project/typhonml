@@ -10,15 +10,14 @@ context TyphonML!Entity {
 		guard: self.hasTags() //It get only Entities with Requirements
 	  	critique generateDatabaseForEntity{
 	 	check{
-			 return self.feasabilityCheck();
+	 		return self.feasabilityCheck().isEmpty();
 	 	}
 		message: "Generate Database for "+self.name
 	 	fix {
 	 		title: "Generate Database for "+self.name
 	 		do {
-	 			var selectedDatabase = System.user.choose("Select Database Type: ", TyphonMLReq!DBType.allInstances(), new List<TyphonMLReq!DBType>);
+	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck(), new List<TyphonMLReq!DBType>);
 	 			self.generateDatabaseForEntity(selectedDatabase);
-	 			selectedDatabase.println();
 	 		}
 	 	}
 	 }
