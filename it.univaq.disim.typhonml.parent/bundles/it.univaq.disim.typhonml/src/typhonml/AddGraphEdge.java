@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface AddGraphEdge extends GraphEdge, ChangeOperator {
+public interface AddGraphEdge extends ChangeOperator, GraphEdge {
 } // AddGraphEdge

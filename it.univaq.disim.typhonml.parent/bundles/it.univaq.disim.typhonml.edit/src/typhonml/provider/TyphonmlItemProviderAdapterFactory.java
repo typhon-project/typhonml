@@ -1429,6 +1429,52 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.FunctionalTag} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FunctionalTagItemProvider functionalTagItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.FunctionalTag}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFunctionalTagAdapter() {
+		if (functionalTagItemProvider == null) {
+			functionalTagItemProvider = new FunctionalTagItemProvider(this);
+		}
+
+		return functionalTagItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.NFunctionalTag} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NFunctionalTagItemProvider nFunctionalTagItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.NFunctionalTag}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNFunctionalTagAdapter() {
+		if (nFunctionalTagItemProvider == null) {
+			nFunctionalTagItemProvider = new NFunctionalTagItemProvider(this);
+		}
+
+		return nFunctionalTagItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1592,6 +1638,8 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (changeRelationContainementItemProvider != null) changeRelationContainementItemProvider.dispose();
 		if (splitEntityVerticalItemProvider != null) splitEntityVerticalItemProvider.dispose();
 		if (splitEntityHorizontalItemProvider != null) splitEntityHorizontalItemProvider.dispose();
+		if (functionalTagItemProvider != null) functionalTagItemProvider.dispose();
+		if (nFunctionalTagItemProvider != null) nFunctionalTagItemProvider.dispose();
 	}
 
 }

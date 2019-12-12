@@ -79,7 +79,7 @@ public class Services {
 		registerTyphonMM();
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getPackageRegistry().put(TyphonmlPackage.eINSTANCE.getNsURI(), TyphonmlPackage.eINSTANCE);
-		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("tmlx", new XMIResourceFactoryImpl());
+		Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 		Resource resource = resourceSet.getResource(URI.createURI(modelPath), true);
 		Model model = (Model) resource.getContents().get(0);
 		return model;

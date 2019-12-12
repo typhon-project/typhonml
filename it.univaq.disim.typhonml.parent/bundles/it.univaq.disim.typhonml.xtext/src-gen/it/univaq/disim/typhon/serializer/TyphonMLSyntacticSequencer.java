@@ -23,12 +23,16 @@ public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected TyphonMLGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q;
 	protected AbstractElementAlias match_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q;
+	protected AbstractElementAlias match_Entity_Impl___FunctionalTagsKeyword_0_0_LeftParenthesisKeyword_0_1_RightParenthesisKeyword_0_3__q;
+	protected AbstractElementAlias match_Entity_Impl___NFunctionalTagsKeyword_1_0_LeftParenthesisKeyword_1_1_RightParenthesisKeyword_1_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (TyphonMLGrammarAccess) access;
 		match_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getAttributesKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getLeftSquareBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getRightSquareBracketKeyword_5_3()));
 		match_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getRelationsKeyword_6_0()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getLeftSquareBracketKeyword_6_1()), new TokenAlias(false, false, grammarAccess.getAddEntityAccess().getRightSquareBracketKeyword_6_3()));
+		match_Entity_Impl___FunctionalTagsKeyword_0_0_LeftParenthesisKeyword_0_1_RightParenthesisKeyword_0_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntity_ImplAccess().getFunctionalTagsKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getEntity_ImplAccess().getLeftParenthesisKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getEntity_ImplAccess().getRightParenthesisKeyword_0_3()));
+		match_Entity_Impl___NFunctionalTagsKeyword_1_0_LeftParenthesisKeyword_1_1_RightParenthesisKeyword_1_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getEntity_ImplAccess().getNFunctionalTagsKeyword_1_0()), new TokenAlias(false, false, grammarAccess.getEntity_ImplAccess().getLeftParenthesisKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getEntity_ImplAccess().getRightParenthesisKeyword_1_3()));
 	}
 	
 	@Override
@@ -47,6 +51,10 @@ public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_AddEntity___AttributesKeyword_5_0_LeftSquareBracketKeyword_5_1_RightSquareBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q.equals(syntax))
 				emit_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entity_Impl___FunctionalTagsKeyword_0_0_LeftParenthesisKeyword_0_1_RightParenthesisKeyword_0_3__q.equals(syntax))
+				emit_Entity_Impl___FunctionalTagsKeyword_0_0_LeftParenthesisKeyword_0_1_RightParenthesisKeyword_0_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Entity_Impl___NFunctionalTagsKeyword_1_0_LeftParenthesisKeyword_1_1_RightParenthesisKeyword_1_3__q.equals(syntax))
+				emit_Entity_Impl___NFunctionalTagsKeyword_1_0_LeftParenthesisKeyword_1_1_RightParenthesisKeyword_1_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -72,6 +80,33 @@ public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=EString '{' ('attributes' '[' ']')? (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('@functionalTags' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) '@nFunctionalTags' '(' nfunctionalTags+=NFunctionalTag_Impl
+	 *     (rule start) (ambiguity) ('@nFunctionalTags' '(' ')')? 'entity' name=EString
+	 *     (rule start) (ambiguity) ('@nFunctionalTags' '(' ')')? 'importedNamespace' importedNamespace=EString
+	 */
+	protected void emit_Entity_Impl___FunctionalTagsKeyword_0_0_LeftParenthesisKeyword_0_1_RightParenthesisKeyword_0_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('@nFunctionalTags' '(' ')')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) ('@functionalTags' '(' ')')? (ambiguity) 'entity' name=EString
+	 *     (rule start) ('@functionalTags' '(' ')')? (ambiguity) 'importedNamespace' importedNamespace=EString
+	 *     functionalTags+=FunctionalTag_Impl ')' (ambiguity) 'entity' name=EString
+	 *     functionalTags+=FunctionalTag_Impl ')' (ambiguity) 'importedNamespace' importedNamespace=EString
+	 */
+	protected void emit_Entity_Impl___NFunctionalTagsKeyword_1_0_LeftParenthesisKeyword_1_1_RightParenthesisKeyword_1_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

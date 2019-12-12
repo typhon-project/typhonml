@@ -2710,8 +2710,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addGraphAttributeEClass.getESuperTypes().add(this.getGraphAttribute());
 		addGraphAttributeEClass.getESuperTypes().add(this.getChangeOperator());
 		removeGraphAttributeEClass.getESuperTypes().add(this.getChangeOperator());
-		addGraphEdgeEClass.getESuperTypes().add(this.getGraphEdge());
 		addGraphEdgeEClass.getESuperTypes().add(this.getChangeOperator());
+		addGraphEdgeEClass.getESuperTypes().add(this.getGraphEdge());
 		removeGraphEdgeEClass.getESuperTypes().add(this.getChangeOperator());
 		renabeGraphEdgeLabelEClass.getESuperTypes().add(this.getChangeOperator());
 		databaseEClass.getESuperTypes().add(this.getNamedElement());
