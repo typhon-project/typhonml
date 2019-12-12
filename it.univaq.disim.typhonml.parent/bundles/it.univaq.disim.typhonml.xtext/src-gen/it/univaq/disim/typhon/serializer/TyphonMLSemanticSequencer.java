@@ -36,6 +36,7 @@ import typhonml.DocumentDB;
 import typhonml.DropIndex;
 import typhonml.Entity;
 import typhonml.FreeText;
+import typhonml.FunctionalTag;
 import typhonml.GraphAttribute;
 import typhonml.GraphDB;
 import typhonml.GraphEdge;
@@ -48,6 +49,7 @@ import typhonml.KeyValueElement;
 import typhonml.MergeEntity;
 import typhonml.MigrateEntity;
 import typhonml.Model;
+import typhonml.NFunctionalTag;
 import typhonml.NlpTask;
 import typhonml.PrimitiveDataType;
 import typhonml.Relation;
@@ -143,6 +145,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.FREE_TEXT:
 				sequence_FreeText(context, (FreeText) semanticObject); 
 				return; 
+			case TyphonmlPackage.FUNCTIONAL_TAG:
+				sequence_FunctionalTag_Impl(context, (FunctionalTag) semanticObject); 
+				return; 
 			case TyphonmlPackage.GRAPH_ATTRIBUTE:
 				sequence_GraphAttribute_Impl(context, (GraphAttribute) semanticObject); 
 				return; 
@@ -178,6 +183,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				return; 
 			case TyphonmlPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case TyphonmlPackage.NFUNCTIONAL_TAG:
+				sequence_NFunctionalTag_Impl(context, (NFunctionalTag) semanticObject); 
 				return; 
 			case TyphonmlPackage.NLP_TASK:
 				sequence_NlpTask(context, (NlpTask) semanticObject); 
@@ -529,6 +537,8 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *
 	 * Constraint:
 	 *     (
+	 *         (functionalTags+=FunctionalTag_Impl functionalTags+=FunctionalTag_Impl*)? 
+	 *         (nfunctionalTags+=NFunctionalTag_Impl nfunctionalTags+=NFunctionalTag_Impl*)? 
 	 *         importedNamespace=EString? 
 	 *         name=EString 
 	 *         (attributes+=Attribute attributes+=Attribute*)? 
@@ -550,6 +560,24 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_FreeText(ISerializationContext context, FreeText semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     FunctionalTag_Impl returns FunctionalTag
+	 *
+	 * Constraint:
+	 *     name=EString
+	 */
+	protected void sequence_FunctionalTag_Impl(ISerializationContext context, FunctionalTag semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.NAMED_ELEMENT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFunctionalTag_ImplAccess().getNameEStringParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	
@@ -726,6 +754,24 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NFunctionalTag_Impl returns NFunctionalTag
+	 *
+	 * Constraint:
+	 *     name=EString
+	 */
+	protected void sequence_NFunctionalTag_Impl(ISerializationContext context, NFunctionalTag semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.NAMED_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.NAMED_ELEMENT__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNFunctionalTag_ImplAccess().getNameEStringParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

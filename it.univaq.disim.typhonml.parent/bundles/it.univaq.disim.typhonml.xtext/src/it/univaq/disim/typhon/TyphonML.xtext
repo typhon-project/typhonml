@@ -189,14 +189,20 @@ CustomDataType returns CustomDataType:
 	'}';
 
 Entity_Impl returns Entity:
+	('@functionalTags' '('(functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)?')')?
+	('@nFunctionalTags' '('(nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)?')')?
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(fretextAttributes+=FreeText (fretextAttributes+=FreeText)*)?
 		(relations+=Relation (relations+=Relation)*)?
 	'}';
-	
-
+FunctionalTag_Impl returns FunctionalTag:
+	name=EString
+;	
+NFunctionalTag_Impl returns NFunctionalTag:
+	name=EString
+;
 Relation_Impl returns Relation:
 	('importedNamespace' importedNamespace=EString)?
 	name=EString

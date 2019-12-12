@@ -166,8 +166,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/attributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/fretextAttributes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/relations"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/functionalTags"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/nfunctionalTags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/functionalTags"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Entity/nfunctionalTags"/>
       <genOperations ecoreOperation="typhonml.ecore#//Entity/getCollections"/>
       <genOperations ecoreOperation="typhonml.ecore#//Entity/getTables"/>
       <genOperations ecoreOperation="typhonml.ecore#//Entity/getKeyValueElements"/>

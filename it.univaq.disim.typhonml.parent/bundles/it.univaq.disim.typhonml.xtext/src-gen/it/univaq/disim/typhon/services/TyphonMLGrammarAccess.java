@@ -1630,113 +1630,235 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Entity_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
-		private final Keyword cImportedNamespaceKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cImportedNamespaceAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cImportedNamespaceEStringParserRuleCall_0_1_0 = (RuleCall)cImportedNamespaceAssignment_0_1.eContents().get(0);
-		private final Keyword cEntityKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cAttributesAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cAttributesAttributeParserRuleCall_4_0_0 = (RuleCall)cAttributesAssignment_4_0.eContents().get(0);
-		private final Assignment cAttributesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cAttributesAttributeParserRuleCall_4_1_0 = (RuleCall)cAttributesAssignment_4_1.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Assignment cFretextAttributesAssignment_5_0 = (Assignment)cGroup_5.eContents().get(0);
-		private final RuleCall cFretextAttributesFreeTextParserRuleCall_5_0_0 = (RuleCall)cFretextAttributesAssignment_5_0.eContents().get(0);
-		private final Assignment cFretextAttributesAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cFretextAttributesFreeTextParserRuleCall_5_1_0 = (RuleCall)cFretextAttributesAssignment_5_1.eContents().get(0);
+		private final Keyword cFunctionalTagsKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_0_2 = (Group)cGroup_0.eContents().get(2);
+		private final Assignment cFunctionalTagsAssignment_0_2_0 = (Assignment)cGroup_0_2.eContents().get(0);
+		private final RuleCall cFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_0_0 = (RuleCall)cFunctionalTagsAssignment_0_2_0.eContents().get(0);
+		private final Group cGroup_0_2_1 = (Group)cGroup_0_2.eContents().get(1);
+		private final Keyword cCommaKeyword_0_2_1_0 = (Keyword)cGroup_0_2_1.eContents().get(0);
+		private final Assignment cFunctionalTagsAssignment_0_2_1_1 = (Assignment)cGroup_0_2_1.eContents().get(1);
+		private final RuleCall cFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_1_1_0 = (RuleCall)cFunctionalTagsAssignment_0_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cNFunctionalTagsKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Assignment cNfunctionalTagsAssignment_1_2_0 = (Assignment)cGroup_1_2.eContents().get(0);
+		private final RuleCall cNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_0_0 = (RuleCall)cNfunctionalTagsAssignment_1_2_0.eContents().get(0);
+		private final Group cGroup_1_2_1 = (Group)cGroup_1_2.eContents().get(1);
+		private final Keyword cCommaKeyword_1_2_1_0 = (Keyword)cGroup_1_2_1.eContents().get(0);
+		private final Assignment cNfunctionalTagsAssignment_1_2_1_1 = (Assignment)cGroup_1_2_1.eContents().get(1);
+		private final RuleCall cNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_1_1_0 = (RuleCall)cNfunctionalTagsAssignment_1_2_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cImportedNamespaceKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cImportedNamespaceEStringParserRuleCall_2_1_0 = (RuleCall)cImportedNamespaceAssignment_2_1.eContents().get(0);
+		private final Keyword cEntityKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameEStringParserRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Assignment cRelationsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
-		private final RuleCall cRelationsRelationParserRuleCall_6_0_0 = (RuleCall)cRelationsAssignment_6_0.eContents().get(0);
-		private final Assignment cRelationsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cRelationsRelationParserRuleCall_6_1_0 = (RuleCall)cRelationsAssignment_6_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cAttributesAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cAttributesAttributeParserRuleCall_6_0_0 = (RuleCall)cAttributesAssignment_6_0.eContents().get(0);
+		private final Assignment cAttributesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cAttributesAttributeParserRuleCall_6_1_0 = (RuleCall)cAttributesAssignment_6_1.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Assignment cFretextAttributesAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
+		private final RuleCall cFretextAttributesFreeTextParserRuleCall_7_0_0 = (RuleCall)cFretextAttributesAssignment_7_0.eContents().get(0);
+		private final Assignment cFretextAttributesAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cFretextAttributesFreeTextParserRuleCall_7_1_0 = (RuleCall)cFretextAttributesAssignment_7_1.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Assignment cRelationsAssignment_8_0 = (Assignment)cGroup_8.eContents().get(0);
+		private final RuleCall cRelationsRelationParserRuleCall_8_0_0 = (RuleCall)cRelationsAssignment_8_0.eContents().get(0);
+		private final Assignment cRelationsAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cRelationsRelationParserRuleCall_8_1_0 = (RuleCall)cRelationsAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Entity_Impl Entity:
+		//	('@functionalTags' '(' (functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)? ')')?
+		//	('@nFunctionalTags' '(' (nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)? ')')?
 		//	('importedNamespace' importedNamespace=EString)?
 		//	'entity' name=EString '{' (attributes+=Attribute attributes+=Attribute*)? (fretextAttributes+=FreeText
 		//	fretextAttributes+=FreeText*)? (relations+=Relation relations+=Relation*)?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
+		//('@functionalTags' '(' (functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)? ')')?
+		//('@nFunctionalTags' '(' (nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)? ')')?
 		//('importedNamespace' importedNamespace=EString)? 'entity' name=EString '{' (attributes+=Attribute
 		//attributes+=Attribute*)? (fretextAttributes+=FreeText fretextAttributes+=FreeText*)? (relations+=Relation
 		//relations+=Relation*)? '}'
 		public Group getGroup() { return cGroup; }
 		
-		//('importedNamespace' importedNamespace=EString)?
+		//('@functionalTags' '(' (functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)? ')')?
 		public Group getGroup_0() { return cGroup_0; }
 		
+		//'@functionalTags'
+		public Keyword getFunctionalTagsKeyword_0_0() { return cFunctionalTagsKeyword_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0_1() { return cLeftParenthesisKeyword_0_1; }
+		
+		//(functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)?
+		public Group getGroup_0_2() { return cGroup_0_2; }
+		
+		//functionalTags+=FunctionalTag_Impl
+		public Assignment getFunctionalTagsAssignment_0_2_0() { return cFunctionalTagsAssignment_0_2_0; }
+		
+		//FunctionalTag_Impl
+		public RuleCall getFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_0_0() { return cFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_0_0; }
+		
+		//(',' functionalTags+=FunctionalTag_Impl)*
+		public Group getGroup_0_2_1() { return cGroup_0_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_0_2_1_0() { return cCommaKeyword_0_2_1_0; }
+		
+		//functionalTags+=FunctionalTag_Impl
+		public Assignment getFunctionalTagsAssignment_0_2_1_1() { return cFunctionalTagsAssignment_0_2_1_1; }
+		
+		//FunctionalTag_Impl
+		public RuleCall getFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_1_1_0() { return cFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_0_3() { return cRightParenthesisKeyword_0_3; }
+		
+		//('@nFunctionalTags' '(' (nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)? ')')?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'@nFunctionalTags'
+		public Keyword getNFunctionalTagsKeyword_1_0() { return cNFunctionalTagsKeyword_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1_1() { return cLeftParenthesisKeyword_1_1; }
+		
+		//(nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)?
+		public Group getGroup_1_2() { return cGroup_1_2; }
+		
+		//nfunctionalTags+=NFunctionalTag_Impl
+		public Assignment getNfunctionalTagsAssignment_1_2_0() { return cNfunctionalTagsAssignment_1_2_0; }
+		
+		//NFunctionalTag_Impl
+		public RuleCall getNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_0_0() { return cNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_0_0; }
+		
+		//(',' nfunctionalTags+=NFunctionalTag_Impl)*
+		public Group getGroup_1_2_1() { return cGroup_1_2_1; }
+		
+		//','
+		public Keyword getCommaKeyword_1_2_1_0() { return cCommaKeyword_1_2_1_0; }
+		
+		//nfunctionalTags+=NFunctionalTag_Impl
+		public Assignment getNfunctionalTagsAssignment_1_2_1_1() { return cNfunctionalTagsAssignment_1_2_1_1; }
+		
+		//NFunctionalTag_Impl
+		public RuleCall getNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_1_1_0() { return cNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_1_3() { return cRightParenthesisKeyword_1_3; }
+		
+		//('importedNamespace' importedNamespace=EString)?
+		public Group getGroup_2() { return cGroup_2; }
+		
 		//'importedNamespace'
-		public Keyword getImportedNamespaceKeyword_0_0() { return cImportedNamespaceKeyword_0_0; }
+		public Keyword getImportedNamespaceKeyword_2_0() { return cImportedNamespaceKeyword_2_0; }
 		
 		//importedNamespace=EString
-		public Assignment getImportedNamespaceAssignment_0_1() { return cImportedNamespaceAssignment_0_1; }
+		public Assignment getImportedNamespaceAssignment_2_1() { return cImportedNamespaceAssignment_2_1; }
 		
 		//EString
-		public RuleCall getImportedNamespaceEStringParserRuleCall_0_1_0() { return cImportedNamespaceEStringParserRuleCall_0_1_0; }
+		public RuleCall getImportedNamespaceEStringParserRuleCall_2_1_0() { return cImportedNamespaceEStringParserRuleCall_2_1_0; }
 		
 		//'entity'
-		public Keyword getEntityKeyword_1() { return cEntityKeyword_1; }
+		public Keyword getEntityKeyword_3() { return cEntityKeyword_3; }
 		
 		//name=EString
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		public RuleCall getNameEStringParserRuleCall_4_0() { return cNameEStringParserRuleCall_4_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 		
 		//(attributes+=Attribute attributes+=Attribute*)?
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//attributes+=Attribute
-		public Assignment getAttributesAssignment_4_0() { return cAttributesAssignment_4_0; }
-		
-		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_4_0_0() { return cAttributesAttributeParserRuleCall_4_0_0; }
-		
-		//attributes+=Attribute*
-		public Assignment getAttributesAssignment_4_1() { return cAttributesAssignment_4_1; }
-		
-		//Attribute
-		public RuleCall getAttributesAttributeParserRuleCall_4_1_0() { return cAttributesAttributeParserRuleCall_4_1_0; }
-		
-		//(fretextAttributes+=FreeText fretextAttributes+=FreeText*)?
-		public Group getGroup_5() { return cGroup_5; }
-		
-		//fretextAttributes+=FreeText
-		public Assignment getFretextAttributesAssignment_5_0() { return cFretextAttributesAssignment_5_0; }
-		
-		//FreeText
-		public RuleCall getFretextAttributesFreeTextParserRuleCall_5_0_0() { return cFretextAttributesFreeTextParserRuleCall_5_0_0; }
-		
-		//fretextAttributes+=FreeText*
-		public Assignment getFretextAttributesAssignment_5_1() { return cFretextAttributesAssignment_5_1; }
-		
-		//FreeText
-		public RuleCall getFretextAttributesFreeTextParserRuleCall_5_1_0() { return cFretextAttributesFreeTextParserRuleCall_5_1_0; }
-		
-		//(relations+=Relation relations+=Relation*)?
 		public Group getGroup_6() { return cGroup_6; }
 		
+		//attributes+=Attribute
+		public Assignment getAttributesAssignment_6_0() { return cAttributesAssignment_6_0; }
+		
+		//Attribute
+		public RuleCall getAttributesAttributeParserRuleCall_6_0_0() { return cAttributesAttributeParserRuleCall_6_0_0; }
+		
+		//attributes+=Attribute*
+		public Assignment getAttributesAssignment_6_1() { return cAttributesAssignment_6_1; }
+		
+		//Attribute
+		public RuleCall getAttributesAttributeParserRuleCall_6_1_0() { return cAttributesAttributeParserRuleCall_6_1_0; }
+		
+		//(fretextAttributes+=FreeText fretextAttributes+=FreeText*)?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//fretextAttributes+=FreeText
+		public Assignment getFretextAttributesAssignment_7_0() { return cFretextAttributesAssignment_7_0; }
+		
+		//FreeText
+		public RuleCall getFretextAttributesFreeTextParserRuleCall_7_0_0() { return cFretextAttributesFreeTextParserRuleCall_7_0_0; }
+		
+		//fretextAttributes+=FreeText*
+		public Assignment getFretextAttributesAssignment_7_1() { return cFretextAttributesAssignment_7_1; }
+		
+		//FreeText
+		public RuleCall getFretextAttributesFreeTextParserRuleCall_7_1_0() { return cFretextAttributesFreeTextParserRuleCall_7_1_0; }
+		
+		//(relations+=Relation relations+=Relation*)?
+		public Group getGroup_8() { return cGroup_8; }
+		
 		//relations+=Relation
-		public Assignment getRelationsAssignment_6_0() { return cRelationsAssignment_6_0; }
+		public Assignment getRelationsAssignment_8_0() { return cRelationsAssignment_8_0; }
 		
 		//Relation
-		public RuleCall getRelationsRelationParserRuleCall_6_0_0() { return cRelationsRelationParserRuleCall_6_0_0; }
+		public RuleCall getRelationsRelationParserRuleCall_8_0_0() { return cRelationsRelationParserRuleCall_8_0_0; }
 		
 		//relations+=Relation*
-		public Assignment getRelationsAssignment_6_1() { return cRelationsAssignment_6_1; }
+		public Assignment getRelationsAssignment_8_1() { return cRelationsAssignment_8_1; }
 		
 		//Relation
-		public RuleCall getRelationsRelationParserRuleCall_6_1_0() { return cRelationsRelationParserRuleCall_6_1_0; }
+		public RuleCall getRelationsRelationParserRuleCall_8_1_0() { return cRelationsRelationParserRuleCall_8_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+	}
+	public class FunctionalTag_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.FunctionalTag_Impl");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//FunctionalTag_Impl FunctionalTag:
+		//	name=EString;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=EString
+		public Assignment getNameAssignment() { return cNameAssignment; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_0() { return cNameEStringParserRuleCall_0; }
+	}
+	public class NFunctionalTag_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.NFunctionalTag_Impl");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameEStringParserRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//NFunctionalTag_Impl NFunctionalTag:
+		//	name=EString;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name=EString
+		public Assignment getNameAssignment() { return cNameAssignment; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_0() { return cNameEStringParserRuleCall_0; }
 	}
 	public class Relation_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Relation_Impl");
@@ -4180,6 +4302,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final NlpTaskElements pNlpTask;
 	private final CustomDataTypeElements pCustomDataType;
 	private final Entity_ImplElements pEntity_Impl;
+	private final FunctionalTag_ImplElements pFunctionalTag_Impl;
+	private final NFunctionalTag_ImplElements pNFunctionalTag_Impl;
 	private final Relation_ImplElements pRelation_Impl;
 	private final CardinalityElements eCardinality;
 	private final NlpTaskTypeElements eNlpTaskType;
@@ -4250,6 +4374,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNlpTask = new NlpTaskElements();
 		this.pCustomDataType = new CustomDataTypeElements();
 		this.pEntity_Impl = new Entity_ImplElements();
+		this.pFunctionalTag_Impl = new FunctionalTag_ImplElements();
+		this.pNFunctionalTag_Impl = new NFunctionalTag_ImplElements();
 		this.pRelation_Impl = new Relation_ImplElements();
 		this.eCardinality = new CardinalityElements();
 		this.eNlpTaskType = new NlpTaskTypeElements();
@@ -4675,6 +4801,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Entity_Impl Entity:
+	//	('@functionalTags' '(' (functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)? ')')?
+	//	('@nFunctionalTags' '(' (nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)? ')')?
 	//	('importedNamespace' importedNamespace=EString)?
 	//	'entity' name=EString '{' (attributes+=Attribute attributes+=Attribute*)? (fretextAttributes+=FreeText
 	//	fretextAttributes+=FreeText*)? (relations+=Relation relations+=Relation*)?
@@ -4685,6 +4813,26 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEntity_ImplRule() {
 		return getEntity_ImplAccess().getRule();
+	}
+	
+	//FunctionalTag_Impl FunctionalTag:
+	//	name=EString;
+	public FunctionalTag_ImplElements getFunctionalTag_ImplAccess() {
+		return pFunctionalTag_Impl;
+	}
+	
+	public ParserRule getFunctionalTag_ImplRule() {
+		return getFunctionalTag_ImplAccess().getRule();
+	}
+	
+	//NFunctionalTag_Impl NFunctionalTag:
+	//	name=EString;
+	public NFunctionalTag_ImplElements getNFunctionalTag_ImplAccess() {
+		return pNFunctionalTag_Impl;
+	}
+	
+	public ParserRule getNFunctionalTag_ImplRule() {
+		return getNFunctionalTag_ImplAccess().getRule();
 	}
 	
 	//Relation_Impl Relation:

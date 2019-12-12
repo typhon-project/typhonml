@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'changeOperators'", "'['", "','", "']'", "'rename'", "'collection'", "'as'", "'extends'", "'tableindex'", "'{'", "'}'", "'reduce'", "'table'", "'drop'", "'create'", "'change'", "'attribute'", "'type'", "'migrate'", "'to'", "'split'", "'entity'", "'vertical'", "'attributes:'", "'horizontal'", "'where'", "'value'", "'merge'", "'entities'", "'relation'", "'remove'", "'containment'", "'cardinality'", "'importedNamespace'", "'datatype'", "':'", "'freetext'", "'customdatatype'", "'elements'", "'->'", "'.'", "'true'", "'false'", "'db'", "'('", "')'", "'node'", "'!'", "'column'", "'attributes'", "'index'", "'references'", "'idSpec'", "'relationaldb'", "'tables'", "'documentdb'", "'collections'", "'keyvaluedb'", "'graphdb'", "'nodes'", "'edges'", "'columndb'", "'columns'", "'edge'", "'from'", "'labels'", "'add'", "'AddGraphEdge'", "'='", "'AddGraphAttribute'", "'relations'", "'0..1'", "'1'", "'0..*'", "'*'", "'ParagraphSegmentation'", "'SentenceSegmentation'", "'Tokenisation'", "'PhraseExtractor'", "'NGramExtractor'", "'POSTagging'", "'Lemmatisation'", "'Stemming'", "'DependencyParsing'", "'Chunking'", "'SentimentAnalysis'", "'TextClassification'", "'TopicModelling'", "'TermExtraction'", "'NamedEntityRecognition'", "'RelationExtraction'", "'EventExtraction'", "'CoreferenceResolution'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'changeOperators'", "'['", "','", "']'", "'rename'", "'collection'", "'as'", "'extends'", "'tableindex'", "'{'", "'}'", "'reduce'", "'table'", "'drop'", "'create'", "'change'", "'attribute'", "'type'", "'migrate'", "'to'", "'split'", "'entity'", "'vertical'", "'attributes:'", "'horizontal'", "'where'", "'value'", "'merge'", "'entities'", "'relation'", "'remove'", "'containment'", "'cardinality'", "'importedNamespace'", "'datatype'", "':'", "'freetext'", "'customdatatype'", "'elements'", "'@functionalTags'", "'('", "')'", "'@nFunctionalTags'", "'->'", "'.'", "'true'", "'false'", "'db'", "'node'", "'!'", "'column'", "'attributes'", "'index'", "'references'", "'idSpec'", "'relationaldb'", "'tables'", "'documentdb'", "'collections'", "'keyvaluedb'", "'graphdb'", "'nodes'", "'edges'", "'columndb'", "'columns'", "'edge'", "'from'", "'labels'", "'add'", "'AddGraphEdge'", "'='", "'AddGraphAttribute'", "'relations'", "'0..1'", "'1'", "'0..*'", "'*'", "'ParagraphSegmentation'", "'SentenceSegmentation'", "'Tokenisation'", "'PhraseExtractor'", "'NGramExtractor'", "'POSTagging'", "'Lemmatisation'", "'Stemming'", "'DependencyParsing'", "'Chunking'", "'SentimentAnalysis'", "'TextClassification'", "'TopicModelling'", "'TermExtraction'", "'NamedEntityRecognition'", "'RelationExtraction'", "'EventExtraction'", "'CoreferenceResolution'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -121,10 +121,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
     public static final int T__88=88;
     public static final int T__89=89;
     public static final int T__84=84;
+    public static final int T__104=104;
     public static final int T__85=85;
     public static final int T__103=103;
     public static final int T__86=86;
     public static final int T__87=87;
+    public static final int T__105=105;
 
     // delegates
     // delegators
@@ -270,7 +272,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
                 }
-                else if ( (LA1_0==32||LA1_0==45||LA1_0==48) ) {
+                else if ( (LA1_0==32||LA1_0==45||LA1_0==48||LA1_0==50||LA1_0==53) ) {
                     alt1=1;
                 }
 
@@ -319,7 +321,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==44||LA2_0==64||LA2_0==66||(LA2_0>=68 && LA2_0<=69)||LA2_0==72) ) {
+                if ( (LA2_0==44||LA2_0==66||LA2_0==68||(LA2_0>=70 && LA2_0<=71)||LA2_0==74) ) {
                     alt2=1;
                 }
 
@@ -567,11 +569,6 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                 if ( (LA5_1==RULE_STRING) ) {
                     switch ( input.LA(3) ) {
-                    case 32:
-                        {
-                        alt5=3;
-                        }
-                        break;
                     case 45:
                         {
                         alt5=1;
@@ -580,6 +577,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     case 48:
                         {
                         alt5=2;
+                        }
+                        break;
+                    case 32:
+                        {
+                        alt5=3;
                         }
                         break;
                     default:
@@ -592,6 +594,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 }
                 else if ( (LA5_1==RULE_ID) ) {
                     switch ( input.LA(3) ) {
+                    case 32:
+                        {
+                        alt5=3;
+                        }
+                        break;
                     case 45:
                         {
                         alt5=1;
@@ -600,11 +607,6 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     case 48:
                         {
                         alt5=2;
-                        }
-                        break;
-                    case 32:
-                        {
-                        alt5=3;
                         }
                         break;
                     default:
@@ -634,6 +636,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case 32:
+            case 50:
+            case 53:
                 {
                 alt5=3;
                 }
@@ -4529,27 +4533,27 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                 if ( (LA12_1==RULE_STRING) ) {
                     switch ( input.LA(3) ) {
-                    case 68:
+                    case 70:
                         {
                         alt12=3;
                         }
                         break;
-                    case 66:
+                    case 68:
                         {
                         alt12=2;
                         }
                         break;
-                    case 72:
+                    case 74:
                         {
                         alt12=5;
                         }
                         break;
-                    case 64:
+                    case 66:
                         {
                         alt12=1;
                         }
                         break;
-                    case 69:
+                    case 71:
                         {
                         alt12=4;
                         }
@@ -4564,29 +4568,29 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 }
                 else if ( (LA12_1==RULE_ID) ) {
                     switch ( input.LA(3) ) {
-                    case 68:
+                    case 71:
+                        {
+                        alt12=4;
+                        }
+                        break;
+                    case 70:
                         {
                         alt12=3;
                         }
                         break;
-                    case 66:
+                    case 68:
                         {
                         alt12=2;
                         }
                         break;
-                    case 72:
+                    case 74:
                         {
                         alt12=5;
                         }
                         break;
-                    case 64:
+                    case 66:
                         {
                         alt12=1;
-                        }
-                        break;
-                    case 69:
-                        {
-                        alt12=4;
                         }
                         break;
                     default:
@@ -4605,27 +4609,27 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 64:
+            case 66:
                 {
                 alt12=1;
                 }
                 break;
-            case 66:
+            case 68:
                 {
                 alt12=2;
                 }
                 break;
-            case 68:
+            case 70:
                 {
                 alt12=3;
                 }
                 break;
-            case 69:
+            case 71:
                 {
                 alt12=4;
                 }
                 break;
-            case 72:
+            case 74:
                 {
                 alt12=5;
                 }
@@ -4816,7 +4820,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     if ( ((LA13_4>=RULE_STRING && LA13_4<=RULE_ID)) ) {
                         alt13=1;
                     }
-                    else if ( (LA13_4==80) ) {
+                    else if ( (LA13_4==82) ) {
                         alt13=2;
                     }
                     else {
@@ -4832,7 +4836,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     if ( ((LA13_5>=RULE_STRING && LA13_5<=RULE_ID)) ) {
                         alt13=1;
                     }
-                    else if ( (LA13_5==80) ) {
+                    else if ( (LA13_5==82) ) {
                         alt13=2;
                     }
                     else {
@@ -4856,7 +4860,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 alt13=1;
                 }
                 break;
-            case 80:
+            case 82:
                 {
                 alt13=2;
                 }
@@ -4990,11 +4994,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 if ( (LA14_1==RULE_STRING) ) {
                     int LA14_4 = input.LA(3);
 
-                    if ( (LA14_4==78) ) {
-                        alt14=2;
-                    }
-                    else if ( (LA14_4==74) ) {
+                    if ( (LA14_4==76) ) {
                         alt14=1;
+                    }
+                    else if ( (LA14_4==80) ) {
+                        alt14=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -5006,11 +5010,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 else if ( (LA14_1==RULE_ID) ) {
                     int LA14_5 = input.LA(3);
 
-                    if ( (LA14_5==74) ) {
-                        alt14=1;
-                    }
-                    else if ( (LA14_5==78) ) {
+                    if ( (LA14_5==80) ) {
                         alt14=2;
+                    }
+                    else if ( (LA14_5==76) ) {
+                        alt14=1;
                     }
                     else {
                         NoViableAltException nvae =
@@ -5027,12 +5031,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 74:
+            case 76:
                 {
                 alt14=1;
                 }
                 break;
-            case 78:
+            case 80:
                 {
                 alt14=2;
                 }
@@ -5869,7 +5873,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( ((LA19_0>=86 && LA19_0<=103)) ) {
+            if ( ((LA19_0>=88 && LA19_0<=105)) ) {
                 alt19=1;
             }
             switch (alt19) {
@@ -6451,67 +6455,355 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity_Impl"
-    // InternalTyphonML.g:2521:1: ruleEntity_Impl returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'entity' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' ( ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )* )? ( ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )* )? otherlv_11= '}' ) ;
+    // InternalTyphonML.g:2521:1: ruleEntity_Impl returns [EObject current=null] : ( (otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')' )? (otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')' )? (otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) ) )? otherlv_14= 'entity' ( (lv_name_15_0= ruleEString ) ) otherlv_16= '{' ( ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )* )? ( ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )* )? otherlv_23= '}' ) ;
     public final EObject ruleEntity_Impl() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
         Token otherlv_11=null;
-        AntlrDatatypeRuleToken lv_importedNamespace_1_0 = null;
+        Token otherlv_12=null;
+        Token otherlv_14=null;
+        Token otherlv_16=null;
+        Token otherlv_23=null;
+        EObject lv_functionalTags_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_name_3_0 = null;
+        EObject lv_functionalTags_4_0 = null;
 
-        EObject lv_attributes_5_0 = null;
+        EObject lv_nfunctionalTags_8_0 = null;
 
-        EObject lv_attributes_6_0 = null;
+        EObject lv_nfunctionalTags_10_0 = null;
 
-        EObject lv_fretextAttributes_7_0 = null;
+        AntlrDatatypeRuleToken lv_importedNamespace_13_0 = null;
 
-        EObject lv_fretextAttributes_8_0 = null;
+        AntlrDatatypeRuleToken lv_name_15_0 = null;
 
-        EObject lv_relations_9_0 = null;
+        EObject lv_attributes_17_0 = null;
 
-        EObject lv_relations_10_0 = null;
+        EObject lv_attributes_18_0 = null;
+
+        EObject lv_fretextAttributes_19_0 = null;
+
+        EObject lv_fretextAttributes_20_0 = null;
+
+        EObject lv_relations_21_0 = null;
+
+        EObject lv_relations_22_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalTyphonML.g:2527:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'entity' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' ( ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )* )? ( ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )* )? otherlv_11= '}' ) )
-            // InternalTyphonML.g:2528:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'entity' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' ( ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )* )? ( ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )* )? otherlv_11= '}' )
+            // InternalTyphonML.g:2527:2: ( ( (otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')' )? (otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')' )? (otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) ) )? otherlv_14= 'entity' ( (lv_name_15_0= ruleEString ) ) otherlv_16= '{' ( ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )* )? ( ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )* )? otherlv_23= '}' ) )
+            // InternalTyphonML.g:2528:2: ( (otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')' )? (otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')' )? (otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) ) )? otherlv_14= 'entity' ( (lv_name_15_0= ruleEString ) ) otherlv_16= '{' ( ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )* )? ( ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )* )? otherlv_23= '}' )
             {
-            // InternalTyphonML.g:2528:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'entity' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' ( ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )* )? ( ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )* )? otherlv_11= '}' )
-            // InternalTyphonML.g:2529:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'entity' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' ( ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )* )? ( ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )* )? otherlv_11= '}'
+            // InternalTyphonML.g:2528:2: ( (otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')' )? (otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')' )? (otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) ) )? otherlv_14= 'entity' ( (lv_name_15_0= ruleEString ) ) otherlv_16= '{' ( ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )* )? ( ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )* )? otherlv_23= '}' )
+            // InternalTyphonML.g:2529:3: (otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')' )? (otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')' )? (otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) ) )? otherlv_14= 'entity' ( (lv_name_15_0= ruleEString ) ) otherlv_16= '{' ( ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )* )? ( ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )* )? ( ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )* )? otherlv_23= '}'
             {
-            // InternalTyphonML.g:2529:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // InternalTyphonML.g:2529:3: (otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')' )?
+            int alt25=2;
+            int LA25_0 = input.LA(1);
 
-            if ( (LA23_0==44) ) {
-                alt23=1;
+            if ( (LA25_0==50) ) {
+                alt25=1;
             }
-            switch (alt23) {
+            switch (alt25) {
                 case 1 :
-                    // InternalTyphonML.g:2530:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:2530:4: otherlv_0= '@functionalTags' otherlv_1= '(' ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )? otherlv_5= ')'
                     {
-                    otherlv_0=(Token)match(input,44,FOLLOW_9); 
+                    otherlv_0=(Token)match(input,50,FOLLOW_42); 
 
-                    				newLeafNode(otherlv_0, grammarAccess.getEntity_ImplAccess().getImportedNamespaceKeyword_0_0());
+                    				newLeafNode(otherlv_0, grammarAccess.getEntity_ImplAccess().getFunctionalTagsKeyword_0_0());
                     			
-                    // InternalTyphonML.g:2534:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:2535:5: (lv_importedNamespace_1_0= ruleEString )
+                    otherlv_1=(Token)match(input,51,FOLLOW_43); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getEntity_ImplAccess().getLeftParenthesisKeyword_0_1());
+                    			
+                    // InternalTyphonML.g:2538:4: ( ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )* )?
+                    int alt24=2;
+                    int LA24_0 = input.LA(1);
+
+                    if ( ((LA24_0>=RULE_STRING && LA24_0<=RULE_ID)) ) {
+                        alt24=1;
+                    }
+                    switch (alt24) {
+                        case 1 :
+                            // InternalTyphonML.g:2539:5: ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) ) (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )*
+                            {
+                            // InternalTyphonML.g:2539:5: ( (lv_functionalTags_2_0= ruleFunctionalTag_Impl ) )
+                            // InternalTyphonML.g:2540:6: (lv_functionalTags_2_0= ruleFunctionalTag_Impl )
+                            {
+                            // InternalTyphonML.g:2540:6: (lv_functionalTags_2_0= ruleFunctionalTag_Impl )
+                            // InternalTyphonML.g:2541:7: lv_functionalTags_2_0= ruleFunctionalTag_Impl
+                            {
+
+                            							newCompositeNode(grammarAccess.getEntity_ImplAccess().getFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_0_0());
+                            						
+                            pushFollow(FOLLOW_44);
+                            lv_functionalTags_2_0=ruleFunctionalTag_Impl();
+
+                            state._fsp--;
+
+
+                            							if (current==null) {
+                            								current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+                            							}
+                            							add(
+                            								current,
+                            								"functionalTags",
+                            								lv_functionalTags_2_0,
+                            								"it.univaq.disim.typhon.TyphonML.FunctionalTag_Impl");
+                            							afterParserOrEnumRuleCall();
+                            						
+
+                            }
+
+
+                            }
+
+                            // InternalTyphonML.g:2558:5: (otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) ) )*
+                            loop23:
+                            do {
+                                int alt23=2;
+                                int LA23_0 = input.LA(1);
+
+                                if ( (LA23_0==13) ) {
+                                    alt23=1;
+                                }
+
+
+                                switch (alt23) {
+                            	case 1 :
+                            	    // InternalTyphonML.g:2559:6: otherlv_3= ',' ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) )
+                            	    {
+                            	    otherlv_3=(Token)match(input,13,FOLLOW_9); 
+
+                            	    						newLeafNode(otherlv_3, grammarAccess.getEntity_ImplAccess().getCommaKeyword_0_2_1_0());
+                            	    					
+                            	    // InternalTyphonML.g:2563:6: ( (lv_functionalTags_4_0= ruleFunctionalTag_Impl ) )
+                            	    // InternalTyphonML.g:2564:7: (lv_functionalTags_4_0= ruleFunctionalTag_Impl )
+                            	    {
+                            	    // InternalTyphonML.g:2564:7: (lv_functionalTags_4_0= ruleFunctionalTag_Impl )
+                            	    // InternalTyphonML.g:2565:8: lv_functionalTags_4_0= ruleFunctionalTag_Impl
+                            	    {
+
+                            	    								newCompositeNode(grammarAccess.getEntity_ImplAccess().getFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_1_1_0());
+                            	    							
+                            	    pushFollow(FOLLOW_44);
+                            	    lv_functionalTags_4_0=ruleFunctionalTag_Impl();
+
+                            	    state._fsp--;
+
+
+                            	    								if (current==null) {
+                            	    									current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+                            	    								}
+                            	    								add(
+                            	    									current,
+                            	    									"functionalTags",
+                            	    									lv_functionalTags_4_0,
+                            	    									"it.univaq.disim.typhon.TyphonML.FunctionalTag_Impl");
+                            	    								afterParserOrEnumRuleCall();
+                            	    							
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop23;
+                                }
+                            } while (true);
+
+
+                            }
+                            break;
+
+                    }
+
+                    otherlv_5=(Token)match(input,52,FOLLOW_45); 
+
+                    				newLeafNode(otherlv_5, grammarAccess.getEntity_ImplAccess().getRightParenthesisKeyword_0_3());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalTyphonML.g:2589:3: (otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')' )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
+
+            if ( (LA28_0==53) ) {
+                alt28=1;
+            }
+            switch (alt28) {
+                case 1 :
+                    // InternalTyphonML.g:2590:4: otherlv_6= '@nFunctionalTags' otherlv_7= '(' ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )? otherlv_11= ')'
                     {
-                    // InternalTyphonML.g:2535:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:2536:6: lv_importedNamespace_1_0= ruleEString
+                    otherlv_6=(Token)match(input,53,FOLLOW_42); 
+
+                    				newLeafNode(otherlv_6, grammarAccess.getEntity_ImplAccess().getNFunctionalTagsKeyword_1_0());
+                    			
+                    otherlv_7=(Token)match(input,51,FOLLOW_43); 
+
+                    				newLeafNode(otherlv_7, grammarAccess.getEntity_ImplAccess().getLeftParenthesisKeyword_1_1());
+                    			
+                    // InternalTyphonML.g:2598:4: ( ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )* )?
+                    int alt27=2;
+                    int LA27_0 = input.LA(1);
+
+                    if ( ((LA27_0>=RULE_STRING && LA27_0<=RULE_ID)) ) {
+                        alt27=1;
+                    }
+                    switch (alt27) {
+                        case 1 :
+                            // InternalTyphonML.g:2599:5: ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) ) (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )*
+                            {
+                            // InternalTyphonML.g:2599:5: ( (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl ) )
+                            // InternalTyphonML.g:2600:6: (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl )
+                            {
+                            // InternalTyphonML.g:2600:6: (lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl )
+                            // InternalTyphonML.g:2601:7: lv_nfunctionalTags_8_0= ruleNFunctionalTag_Impl
+                            {
+
+                            							newCompositeNode(grammarAccess.getEntity_ImplAccess().getNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_0_0());
+                            						
+                            pushFollow(FOLLOW_44);
+                            lv_nfunctionalTags_8_0=ruleNFunctionalTag_Impl();
+
+                            state._fsp--;
+
+
+                            							if (current==null) {
+                            								current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+                            							}
+                            							add(
+                            								current,
+                            								"nfunctionalTags",
+                            								lv_nfunctionalTags_8_0,
+                            								"it.univaq.disim.typhon.TyphonML.NFunctionalTag_Impl");
+                            							afterParserOrEnumRuleCall();
+                            						
+
+                            }
+
+
+                            }
+
+                            // InternalTyphonML.g:2618:5: (otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) ) )*
+                            loop26:
+                            do {
+                                int alt26=2;
+                                int LA26_0 = input.LA(1);
+
+                                if ( (LA26_0==13) ) {
+                                    alt26=1;
+                                }
+
+
+                                switch (alt26) {
+                            	case 1 :
+                            	    // InternalTyphonML.g:2619:6: otherlv_9= ',' ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) )
+                            	    {
+                            	    otherlv_9=(Token)match(input,13,FOLLOW_9); 
+
+                            	    						newLeafNode(otherlv_9, grammarAccess.getEntity_ImplAccess().getCommaKeyword_1_2_1_0());
+                            	    					
+                            	    // InternalTyphonML.g:2623:6: ( (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl ) )
+                            	    // InternalTyphonML.g:2624:7: (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl )
+                            	    {
+                            	    // InternalTyphonML.g:2624:7: (lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl )
+                            	    // InternalTyphonML.g:2625:8: lv_nfunctionalTags_10_0= ruleNFunctionalTag_Impl
+                            	    {
+
+                            	    								newCompositeNode(grammarAccess.getEntity_ImplAccess().getNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_1_1_0());
+                            	    							
+                            	    pushFollow(FOLLOW_44);
+                            	    lv_nfunctionalTags_10_0=ruleNFunctionalTag_Impl();
+
+                            	    state._fsp--;
+
+
+                            	    								if (current==null) {
+                            	    									current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+                            	    								}
+                            	    								add(
+                            	    									current,
+                            	    									"nfunctionalTags",
+                            	    									lv_nfunctionalTags_10_0,
+                            	    									"it.univaq.disim.typhon.TyphonML.NFunctionalTag_Impl");
+                            	    								afterParserOrEnumRuleCall();
+                            	    							
+
+                            	    }
+
+
+                            	    }
+
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop26;
+                                }
+                            } while (true);
+
+
+                            }
+                            break;
+
+                    }
+
+                    otherlv_11=(Token)match(input,52,FOLLOW_46); 
+
+                    				newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getRightParenthesisKeyword_1_3());
+                    			
+
+                    }
+                    break;
+
+            }
+
+            // InternalTyphonML.g:2649:3: (otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) ) )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
+
+            if ( (LA29_0==44) ) {
+                alt29=1;
+            }
+            switch (alt29) {
+                case 1 :
+                    // InternalTyphonML.g:2650:4: otherlv_12= 'importedNamespace' ( (lv_importedNamespace_13_0= ruleEString ) )
+                    {
+                    otherlv_12=(Token)match(input,44,FOLLOW_9); 
+
+                    				newLeafNode(otherlv_12, grammarAccess.getEntity_ImplAccess().getImportedNamespaceKeyword_2_0());
+                    			
+                    // InternalTyphonML.g:2654:4: ( (lv_importedNamespace_13_0= ruleEString ) )
+                    // InternalTyphonML.g:2655:5: (lv_importedNamespace_13_0= ruleEString )
+                    {
+                    // InternalTyphonML.g:2655:5: (lv_importedNamespace_13_0= ruleEString )
+                    // InternalTyphonML.g:2656:6: lv_importedNamespace_13_0= ruleEString
                     {
 
-                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
+                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getImportedNamespaceEStringParserRuleCall_2_1_0());
                     					
                     pushFollow(FOLLOW_19);
-                    lv_importedNamespace_1_0=ruleEString();
+                    lv_importedNamespace_13_0=ruleEString();
 
                     state._fsp--;
 
@@ -6522,7 +6814,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"importedNamespace",
-                    							lv_importedNamespace_1_0,
+                    							lv_importedNamespace_13_0,
                     							"it.univaq.disim.typhon.TyphonML.EString");
                     						afterParserOrEnumRuleCall();
                     					
@@ -6538,21 +6830,21 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,32,FOLLOW_9); 
+            otherlv_14=(Token)match(input,32,FOLLOW_9); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getEntity_ImplAccess().getEntityKeyword_1());
+            			newLeafNode(otherlv_14, grammarAccess.getEntity_ImplAccess().getEntityKeyword_3());
             		
-            // InternalTyphonML.g:2558:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalTyphonML.g:2559:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:2678:3: ( (lv_name_15_0= ruleEString ) )
+            // InternalTyphonML.g:2679:4: (lv_name_15_0= ruleEString )
             {
-            // InternalTyphonML.g:2559:4: (lv_name_3_0= ruleEString )
-            // InternalTyphonML.g:2560:5: lv_name_3_0= ruleEString
+            // InternalTyphonML.g:2679:4: (lv_name_15_0= ruleEString )
+            // InternalTyphonML.g:2680:5: lv_name_15_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getEntity_ImplAccess().getNameEStringParserRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getEntity_ImplAccess().getNameEStringParserRuleCall_4_0());
             				
             pushFollow(FOLLOW_12);
-            lv_name_3_0=ruleEString();
+            lv_name_15_0=ruleEString();
 
             state._fsp--;
 
@@ -6563,7 +6855,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"name",
-            						lv_name_3_0,
+            						lv_name_15_0,
             						"it.univaq.disim.typhon.TyphonML.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -6573,65 +6865,65 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,20,FOLLOW_42); 
+            otherlv_16=(Token)match(input,20,FOLLOW_47); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_3());
+            			newLeafNode(otherlv_16, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_5());
             		
-            // InternalTyphonML.g:2581:3: ( ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )* )?
-            int alt25=2;
+            // InternalTyphonML.g:2701:3: ( ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )* )?
+            int alt31=2;
             switch ( input.LA(1) ) {
                 case 44:
                     {
-                    int LA25_1 = input.LA(2);
+                    int LA31_1 = input.LA(2);
 
-                    if ( (LA25_1==RULE_STRING) ) {
-                        int LA25_5 = input.LA(3);
+                    if ( (LA31_1==RULE_STRING) ) {
+                        int LA31_5 = input.LA(3);
 
-                        if ( (LA25_5==RULE_STRING) ) {
-                            int LA25_2 = input.LA(4);
+                        if ( (LA31_5==RULE_STRING) ) {
+                            int LA31_2 = input.LA(4);
 
-                            if ( (LA25_2==46) ) {
-                                int LA25_7 = input.LA(5);
+                            if ( (LA31_2==46) ) {
+                                int LA31_7 = input.LA(5);
 
-                                if ( ((LA25_7>=RULE_STRING && LA25_7<=RULE_ID)) ) {
-                                    alt25=1;
+                                if ( ((LA31_7>=RULE_STRING && LA31_7<=RULE_ID)) ) {
+                                    alt31=1;
                                 }
                             }
                         }
-                        else if ( (LA25_5==RULE_ID) ) {
-                            int LA25_3 = input.LA(4);
+                        else if ( (LA31_5==RULE_ID) ) {
+                            int LA31_3 = input.LA(4);
 
-                            if ( (LA25_3==46) ) {
-                                int LA25_7 = input.LA(5);
+                            if ( (LA31_3==46) ) {
+                                int LA31_7 = input.LA(5);
 
-                                if ( ((LA25_7>=RULE_STRING && LA25_7<=RULE_ID)) ) {
-                                    alt25=1;
+                                if ( ((LA31_7>=RULE_STRING && LA31_7<=RULE_ID)) ) {
+                                    alt31=1;
                                 }
                             }
                         }
                     }
-                    else if ( (LA25_1==RULE_ID) ) {
-                        int LA25_6 = input.LA(3);
+                    else if ( (LA31_1==RULE_ID) ) {
+                        int LA31_6 = input.LA(3);
 
-                        if ( (LA25_6==RULE_STRING) ) {
-                            int LA25_2 = input.LA(4);
+                        if ( (LA31_6==RULE_STRING) ) {
+                            int LA31_2 = input.LA(4);
 
-                            if ( (LA25_2==46) ) {
-                                int LA25_7 = input.LA(5);
+                            if ( (LA31_2==46) ) {
+                                int LA31_7 = input.LA(5);
 
-                                if ( ((LA25_7>=RULE_STRING && LA25_7<=RULE_ID)) ) {
-                                    alt25=1;
+                                if ( ((LA31_7>=RULE_STRING && LA31_7<=RULE_ID)) ) {
+                                    alt31=1;
                                 }
                             }
                         }
-                        else if ( (LA25_6==RULE_ID) ) {
-                            int LA25_3 = input.LA(4);
+                        else if ( (LA31_6==RULE_ID) ) {
+                            int LA31_3 = input.LA(4);
 
-                            if ( (LA25_3==46) ) {
-                                int LA25_7 = input.LA(5);
+                            if ( (LA31_3==46) ) {
+                                int LA31_7 = input.LA(5);
 
-                                if ( ((LA25_7>=RULE_STRING && LA25_7<=RULE_ID)) ) {
-                                    alt25=1;
+                                if ( ((LA31_7>=RULE_STRING && LA31_7<=RULE_ID)) ) {
+                                    alt31=1;
                                 }
                             }
                         }
@@ -6640,47 +6932,47 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     break;
                 case RULE_STRING:
                     {
-                    int LA25_2 = input.LA(2);
+                    int LA31_2 = input.LA(2);
 
-                    if ( (LA25_2==46) ) {
-                        int LA25_7 = input.LA(3);
+                    if ( (LA31_2==46) ) {
+                        int LA31_7 = input.LA(3);
 
-                        if ( ((LA25_7>=RULE_STRING && LA25_7<=RULE_ID)) ) {
-                            alt25=1;
+                        if ( ((LA31_7>=RULE_STRING && LA31_7<=RULE_ID)) ) {
+                            alt31=1;
                         }
                     }
                     }
                     break;
                 case RULE_ID:
                     {
-                    int LA25_3 = input.LA(2);
+                    int LA31_3 = input.LA(2);
 
-                    if ( (LA25_3==46) ) {
-                        int LA25_7 = input.LA(3);
+                    if ( (LA31_3==46) ) {
+                        int LA31_7 = input.LA(3);
 
-                        if ( ((LA25_7>=RULE_STRING && LA25_7<=RULE_ID)) ) {
-                            alt25=1;
+                        if ( ((LA31_7>=RULE_STRING && LA31_7<=RULE_ID)) ) {
+                            alt31=1;
                         }
                     }
                     }
                     break;
             }
 
-            switch (alt25) {
+            switch (alt31) {
                 case 1 :
-                    // InternalTyphonML.g:2582:4: ( (lv_attributes_5_0= ruleAttribute ) ) ( (lv_attributes_6_0= ruleAttribute ) )*
+                    // InternalTyphonML.g:2702:4: ( (lv_attributes_17_0= ruleAttribute ) ) ( (lv_attributes_18_0= ruleAttribute ) )*
                     {
-                    // InternalTyphonML.g:2582:4: ( (lv_attributes_5_0= ruleAttribute ) )
-                    // InternalTyphonML.g:2583:5: (lv_attributes_5_0= ruleAttribute )
+                    // InternalTyphonML.g:2702:4: ( (lv_attributes_17_0= ruleAttribute ) )
+                    // InternalTyphonML.g:2703:5: (lv_attributes_17_0= ruleAttribute )
                     {
-                    // InternalTyphonML.g:2583:5: (lv_attributes_5_0= ruleAttribute )
-                    // InternalTyphonML.g:2584:6: lv_attributes_5_0= ruleAttribute
+                    // InternalTyphonML.g:2703:5: (lv_attributes_17_0= ruleAttribute )
+                    // InternalTyphonML.g:2704:6: lv_attributes_17_0= ruleAttribute
                     {
 
-                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_4_0_0());
+                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_6_0_0());
                     					
-                    pushFollow(FOLLOW_42);
-                    lv_attributes_5_0=ruleAttribute();
+                    pushFollow(FOLLOW_47);
+                    lv_attributes_17_0=ruleAttribute();
 
                     state._fsp--;
 
@@ -6691,7 +6983,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"attributes",
-                    							lv_attributes_5_0,
+                    							lv_attributes_17_0,
                     							"it.univaq.disim.typhon.TyphonML.Attribute");
                     						afterParserOrEnumRuleCall();
                     					
@@ -6701,26 +6993,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:2601:4: ( (lv_attributes_6_0= ruleAttribute ) )*
-                    loop24:
+                    // InternalTyphonML.g:2721:4: ( (lv_attributes_18_0= ruleAttribute ) )*
+                    loop30:
                     do {
-                        int alt24=2;
+                        int alt30=2;
                         switch ( input.LA(1) ) {
                         case 44:
                             {
-                            int LA24_2 = input.LA(2);
+                            int LA30_2 = input.LA(2);
 
-                            if ( (LA24_2==RULE_STRING) ) {
-                                int LA24_5 = input.LA(3);
+                            if ( (LA30_2==RULE_STRING) ) {
+                                int LA30_5 = input.LA(3);
 
-                                if ( (LA24_5==RULE_STRING) ) {
-                                    int LA24_3 = input.LA(4);
+                                if ( (LA30_5==RULE_STRING) ) {
+                                    int LA30_3 = input.LA(4);
 
-                                    if ( (LA24_3==46) ) {
-                                        int LA24_7 = input.LA(5);
+                                    if ( (LA30_3==46) ) {
+                                        int LA30_7 = input.LA(5);
 
-                                        if ( ((LA24_7>=RULE_STRING && LA24_7<=RULE_ID)) ) {
-                                            alt24=1;
+                                        if ( ((LA30_7>=RULE_STRING && LA30_7<=RULE_ID)) ) {
+                                            alt30=1;
                                         }
 
 
@@ -6728,14 +7020,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
                                 }
-                                else if ( (LA24_5==RULE_ID) ) {
-                                    int LA24_4 = input.LA(4);
+                                else if ( (LA30_5==RULE_ID) ) {
+                                    int LA30_4 = input.LA(4);
 
-                                    if ( (LA24_4==46) ) {
-                                        int LA24_7 = input.LA(5);
+                                    if ( (LA30_4==46) ) {
+                                        int LA30_7 = input.LA(5);
 
-                                        if ( ((LA24_7>=RULE_STRING && LA24_7<=RULE_ID)) ) {
-                                            alt24=1;
+                                        if ( ((LA30_7>=RULE_STRING && LA30_7<=RULE_ID)) ) {
+                                            alt30=1;
                                         }
 
 
@@ -6746,17 +7038,17 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
                             }
-                            else if ( (LA24_2==RULE_ID) ) {
-                                int LA24_6 = input.LA(3);
+                            else if ( (LA30_2==RULE_ID) ) {
+                                int LA30_6 = input.LA(3);
 
-                                if ( (LA24_6==RULE_STRING) ) {
-                                    int LA24_3 = input.LA(4);
+                                if ( (LA30_6==RULE_STRING) ) {
+                                    int LA30_3 = input.LA(4);
 
-                                    if ( (LA24_3==46) ) {
-                                        int LA24_7 = input.LA(5);
+                                    if ( (LA30_3==46) ) {
+                                        int LA30_7 = input.LA(5);
 
-                                        if ( ((LA24_7>=RULE_STRING && LA24_7<=RULE_ID)) ) {
-                                            alt24=1;
+                                        if ( ((LA30_7>=RULE_STRING && LA30_7<=RULE_ID)) ) {
+                                            alt30=1;
                                         }
 
 
@@ -6764,14 +7056,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
                                 }
-                                else if ( (LA24_6==RULE_ID) ) {
-                                    int LA24_4 = input.LA(4);
+                                else if ( (LA30_6==RULE_ID) ) {
+                                    int LA30_4 = input.LA(4);
 
-                                    if ( (LA24_4==46) ) {
-                                        int LA24_7 = input.LA(5);
+                                    if ( (LA30_4==46) ) {
+                                        int LA30_7 = input.LA(5);
 
-                                        if ( ((LA24_7>=RULE_STRING && LA24_7<=RULE_ID)) ) {
-                                            alt24=1;
+                                        if ( ((LA30_7>=RULE_STRING && LA30_7<=RULE_ID)) ) {
+                                            alt30=1;
                                         }
 
 
@@ -6788,13 +7080,13 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                             break;
                         case RULE_STRING:
                             {
-                            int LA24_3 = input.LA(2);
+                            int LA30_3 = input.LA(2);
 
-                            if ( (LA24_3==46) ) {
-                                int LA24_7 = input.LA(3);
+                            if ( (LA30_3==46) ) {
+                                int LA30_7 = input.LA(3);
 
-                                if ( ((LA24_7>=RULE_STRING && LA24_7<=RULE_ID)) ) {
-                                    alt24=1;
+                                if ( ((LA30_7>=RULE_STRING && LA30_7<=RULE_ID)) ) {
+                                    alt30=1;
                                 }
 
 
@@ -6805,13 +7097,13 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                             break;
                         case RULE_ID:
                             {
-                            int LA24_4 = input.LA(2);
+                            int LA30_4 = input.LA(2);
 
-                            if ( (LA24_4==46) ) {
-                                int LA24_7 = input.LA(3);
+                            if ( (LA30_4==46) ) {
+                                int LA30_7 = input.LA(3);
 
-                                if ( ((LA24_7>=RULE_STRING && LA24_7<=RULE_ID)) ) {
-                                    alt24=1;
+                                if ( ((LA30_7>=RULE_STRING && LA30_7<=RULE_ID)) ) {
+                                    alt30=1;
                                 }
 
 
@@ -6823,18 +7115,18 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                         }
 
-                        switch (alt24) {
+                        switch (alt30) {
                     	case 1 :
-                    	    // InternalTyphonML.g:2602:5: (lv_attributes_6_0= ruleAttribute )
+                    	    // InternalTyphonML.g:2722:5: (lv_attributes_18_0= ruleAttribute )
                     	    {
-                    	    // InternalTyphonML.g:2602:5: (lv_attributes_6_0= ruleAttribute )
-                    	    // InternalTyphonML.g:2603:6: lv_attributes_6_0= ruleAttribute
+                    	    // InternalTyphonML.g:2722:5: (lv_attributes_18_0= ruleAttribute )
+                    	    // InternalTyphonML.g:2723:6: lv_attributes_18_0= ruleAttribute
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_4_1_0());
+                    	    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_6_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_42);
-                    	    lv_attributes_6_0=ruleAttribute();
+                    	    pushFollow(FOLLOW_47);
+                    	    lv_attributes_18_0=ruleAttribute();
 
                     	    state._fsp--;
 
@@ -6845,7 +7137,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"attributes",
-                    	    							lv_attributes_6_0,
+                    	    							lv_attributes_18_0,
                     	    							"it.univaq.disim.typhon.TyphonML.Attribute");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -6857,7 +7149,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop24;
+                    	    break loop30;
                         }
                     } while (true);
 
@@ -6867,28 +7159,28 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2621:3: ( ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )* )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalTyphonML.g:2741:3: ( ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )* )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA27_0==47) ) {
-                alt27=1;
+            if ( (LA33_0==47) ) {
+                alt33=1;
             }
-            switch (alt27) {
+            switch (alt33) {
                 case 1 :
-                    // InternalTyphonML.g:2622:4: ( (lv_fretextAttributes_7_0= ruleFreeText ) ) ( (lv_fretextAttributes_8_0= ruleFreeText ) )*
+                    // InternalTyphonML.g:2742:4: ( (lv_fretextAttributes_19_0= ruleFreeText ) ) ( (lv_fretextAttributes_20_0= ruleFreeText ) )*
                     {
-                    // InternalTyphonML.g:2622:4: ( (lv_fretextAttributes_7_0= ruleFreeText ) )
-                    // InternalTyphonML.g:2623:5: (lv_fretextAttributes_7_0= ruleFreeText )
+                    // InternalTyphonML.g:2742:4: ( (lv_fretextAttributes_19_0= ruleFreeText ) )
+                    // InternalTyphonML.g:2743:5: (lv_fretextAttributes_19_0= ruleFreeText )
                     {
-                    // InternalTyphonML.g:2623:5: (lv_fretextAttributes_7_0= ruleFreeText )
-                    // InternalTyphonML.g:2624:6: lv_fretextAttributes_7_0= ruleFreeText
+                    // InternalTyphonML.g:2743:5: (lv_fretextAttributes_19_0= ruleFreeText )
+                    // InternalTyphonML.g:2744:6: lv_fretextAttributes_19_0= ruleFreeText
                     {
 
-                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_5_0_0());
+                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_7_0_0());
                     					
-                    pushFollow(FOLLOW_42);
-                    lv_fretextAttributes_7_0=ruleFreeText();
+                    pushFollow(FOLLOW_47);
+                    lv_fretextAttributes_19_0=ruleFreeText();
 
                     state._fsp--;
 
@@ -6899,7 +7191,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"fretextAttributes",
-                    							lv_fretextAttributes_7_0,
+                    							lv_fretextAttributes_19_0,
                     							"it.univaq.disim.typhon.TyphonML.FreeText");
                     						afterParserOrEnumRuleCall();
                     					
@@ -6909,29 +7201,29 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:2641:4: ( (lv_fretextAttributes_8_0= ruleFreeText ) )*
-                    loop26:
+                    // InternalTyphonML.g:2761:4: ( (lv_fretextAttributes_20_0= ruleFreeText ) )*
+                    loop32:
                     do {
-                        int alt26=2;
-                        int LA26_0 = input.LA(1);
+                        int alt32=2;
+                        int LA32_0 = input.LA(1);
 
-                        if ( (LA26_0==47) ) {
-                            alt26=1;
+                        if ( (LA32_0==47) ) {
+                            alt32=1;
                         }
 
 
-                        switch (alt26) {
+                        switch (alt32) {
                     	case 1 :
-                    	    // InternalTyphonML.g:2642:5: (lv_fretextAttributes_8_0= ruleFreeText )
+                    	    // InternalTyphonML.g:2762:5: (lv_fretextAttributes_20_0= ruleFreeText )
                     	    {
-                    	    // InternalTyphonML.g:2642:5: (lv_fretextAttributes_8_0= ruleFreeText )
-                    	    // InternalTyphonML.g:2643:6: lv_fretextAttributes_8_0= ruleFreeText
+                    	    // InternalTyphonML.g:2762:5: (lv_fretextAttributes_20_0= ruleFreeText )
+                    	    // InternalTyphonML.g:2763:6: lv_fretextAttributes_20_0= ruleFreeText
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_5_1_0());
+                    	    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_7_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_42);
-                    	    lv_fretextAttributes_8_0=ruleFreeText();
+                    	    pushFollow(FOLLOW_47);
+                    	    lv_fretextAttributes_20_0=ruleFreeText();
 
                     	    state._fsp--;
 
@@ -6942,7 +7234,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"fretextAttributes",
-                    	    							lv_fretextAttributes_8_0,
+                    	    							lv_fretextAttributes_20_0,
                     	    							"it.univaq.disim.typhon.TyphonML.FreeText");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -6954,7 +7246,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop26;
+                    	    break loop32;
                         }
                     } while (true);
 
@@ -6964,28 +7256,28 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2661:3: ( ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )* )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+            // InternalTyphonML.g:2781:3: ( ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )* )?
+            int alt35=2;
+            int LA35_0 = input.LA(1);
 
-            if ( ((LA29_0>=RULE_STRING && LA29_0<=RULE_ID)||LA29_0==44) ) {
-                alt29=1;
+            if ( ((LA35_0>=RULE_STRING && LA35_0<=RULE_ID)||LA35_0==44) ) {
+                alt35=1;
             }
-            switch (alt29) {
+            switch (alt35) {
                 case 1 :
-                    // InternalTyphonML.g:2662:4: ( (lv_relations_9_0= ruleRelation ) ) ( (lv_relations_10_0= ruleRelation ) )*
+                    // InternalTyphonML.g:2782:4: ( (lv_relations_21_0= ruleRelation ) ) ( (lv_relations_22_0= ruleRelation ) )*
                     {
-                    // InternalTyphonML.g:2662:4: ( (lv_relations_9_0= ruleRelation ) )
-                    // InternalTyphonML.g:2663:5: (lv_relations_9_0= ruleRelation )
+                    // InternalTyphonML.g:2782:4: ( (lv_relations_21_0= ruleRelation ) )
+                    // InternalTyphonML.g:2783:5: (lv_relations_21_0= ruleRelation )
                     {
-                    // InternalTyphonML.g:2663:5: (lv_relations_9_0= ruleRelation )
-                    // InternalTyphonML.g:2664:6: lv_relations_9_0= ruleRelation
+                    // InternalTyphonML.g:2783:5: (lv_relations_21_0= ruleRelation )
+                    // InternalTyphonML.g:2784:6: lv_relations_21_0= ruleRelation
                     {
 
-                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_6_0_0());
+                    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_8_0_0());
                     					
-                    pushFollow(FOLLOW_43);
-                    lv_relations_9_0=ruleRelation();
+                    pushFollow(FOLLOW_48);
+                    lv_relations_21_0=ruleRelation();
 
                     state._fsp--;
 
@@ -6996,7 +7288,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"relations",
-                    							lv_relations_9_0,
+                    							lv_relations_21_0,
                     							"it.univaq.disim.typhon.TyphonML.Relation");
                     						afterParserOrEnumRuleCall();
                     					
@@ -7006,29 +7298,29 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:2681:4: ( (lv_relations_10_0= ruleRelation ) )*
-                    loop28:
+                    // InternalTyphonML.g:2801:4: ( (lv_relations_22_0= ruleRelation ) )*
+                    loop34:
                     do {
-                        int alt28=2;
-                        int LA28_0 = input.LA(1);
+                        int alt34=2;
+                        int LA34_0 = input.LA(1);
 
-                        if ( ((LA28_0>=RULE_STRING && LA28_0<=RULE_ID)||LA28_0==44) ) {
-                            alt28=1;
+                        if ( ((LA34_0>=RULE_STRING && LA34_0<=RULE_ID)||LA34_0==44) ) {
+                            alt34=1;
                         }
 
 
-                        switch (alt28) {
+                        switch (alt34) {
                     	case 1 :
-                    	    // InternalTyphonML.g:2682:5: (lv_relations_10_0= ruleRelation )
+                    	    // InternalTyphonML.g:2802:5: (lv_relations_22_0= ruleRelation )
                     	    {
-                    	    // InternalTyphonML.g:2682:5: (lv_relations_10_0= ruleRelation )
-                    	    // InternalTyphonML.g:2683:6: lv_relations_10_0= ruleRelation
+                    	    // InternalTyphonML.g:2802:5: (lv_relations_22_0= ruleRelation )
+                    	    // InternalTyphonML.g:2803:6: lv_relations_22_0= ruleRelation
                     	    {
 
-                    	    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_6_1_0());
+                    	    						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_8_1_0());
                     	    					
-                    	    pushFollow(FOLLOW_43);
-                    	    lv_relations_10_0=ruleRelation();
+                    	    pushFollow(FOLLOW_48);
+                    	    lv_relations_22_0=ruleRelation();
 
                     	    state._fsp--;
 
@@ -7039,7 +7331,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    						add(
                     	    							current,
                     	    							"relations",
-                    	    							lv_relations_10_0,
+                    	    							lv_relations_22_0,
                     	    							"it.univaq.disim.typhon.TyphonML.Relation");
                     	    						afterParserOrEnumRuleCall();
                     	    					
@@ -7051,7 +7343,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop28;
+                    	    break loop34;
                         }
                     } while (true);
 
@@ -7061,9 +7353,9 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,21,FOLLOW_2); 
+            otherlv_23=(Token)match(input,21,FOLLOW_2); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_7());
+            			newLeafNode(otherlv_23, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_9());
             		
 
             }
@@ -7087,8 +7379,210 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEntity_Impl"
 
 
+    // $ANTLR start "entryRuleFunctionalTag_Impl"
+    // InternalTyphonML.g:2829:1: entryRuleFunctionalTag_Impl returns [EObject current=null] : iv_ruleFunctionalTag_Impl= ruleFunctionalTag_Impl EOF ;
+    public final EObject entryRuleFunctionalTag_Impl() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleFunctionalTag_Impl = null;
+
+
+        try {
+            // InternalTyphonML.g:2829:59: (iv_ruleFunctionalTag_Impl= ruleFunctionalTag_Impl EOF )
+            // InternalTyphonML.g:2830:2: iv_ruleFunctionalTag_Impl= ruleFunctionalTag_Impl EOF
+            {
+             newCompositeNode(grammarAccess.getFunctionalTag_ImplRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleFunctionalTag_Impl=ruleFunctionalTag_Impl();
+
+            state._fsp--;
+
+             current =iv_ruleFunctionalTag_Impl; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleFunctionalTag_Impl"
+
+
+    // $ANTLR start "ruleFunctionalTag_Impl"
+    // InternalTyphonML.g:2836:1: ruleFunctionalTag_Impl returns [EObject current=null] : ( (lv_name_0_0= ruleEString ) ) ;
+    public final EObject ruleFunctionalTag_Impl() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_name_0_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalTyphonML.g:2842:2: ( ( (lv_name_0_0= ruleEString ) ) )
+            // InternalTyphonML.g:2843:2: ( (lv_name_0_0= ruleEString ) )
+            {
+            // InternalTyphonML.g:2843:2: ( (lv_name_0_0= ruleEString ) )
+            // InternalTyphonML.g:2844:3: (lv_name_0_0= ruleEString )
+            {
+            // InternalTyphonML.g:2844:3: (lv_name_0_0= ruleEString )
+            // InternalTyphonML.g:2845:4: lv_name_0_0= ruleEString
+            {
+
+            				newCompositeNode(grammarAccess.getFunctionalTag_ImplAccess().getNameEStringParserRuleCall_0());
+            			
+            pushFollow(FOLLOW_2);
+            lv_name_0_0=ruleEString();
+
+            state._fsp--;
+
+
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getFunctionalTag_ImplRule());
+            				}
+            				set(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"it.univaq.disim.typhon.TyphonML.EString");
+            				afterParserOrEnumRuleCall();
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleFunctionalTag_Impl"
+
+
+    // $ANTLR start "entryRuleNFunctionalTag_Impl"
+    // InternalTyphonML.g:2865:1: entryRuleNFunctionalTag_Impl returns [EObject current=null] : iv_ruleNFunctionalTag_Impl= ruleNFunctionalTag_Impl EOF ;
+    public final EObject entryRuleNFunctionalTag_Impl() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNFunctionalTag_Impl = null;
+
+
+        try {
+            // InternalTyphonML.g:2865:60: (iv_ruleNFunctionalTag_Impl= ruleNFunctionalTag_Impl EOF )
+            // InternalTyphonML.g:2866:2: iv_ruleNFunctionalTag_Impl= ruleNFunctionalTag_Impl EOF
+            {
+             newCompositeNode(grammarAccess.getNFunctionalTag_ImplRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNFunctionalTag_Impl=ruleNFunctionalTag_Impl();
+
+            state._fsp--;
+
+             current =iv_ruleNFunctionalTag_Impl; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNFunctionalTag_Impl"
+
+
+    // $ANTLR start "ruleNFunctionalTag_Impl"
+    // InternalTyphonML.g:2872:1: ruleNFunctionalTag_Impl returns [EObject current=null] : ( (lv_name_0_0= ruleEString ) ) ;
+    public final EObject ruleNFunctionalTag_Impl() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_name_0_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalTyphonML.g:2878:2: ( ( (lv_name_0_0= ruleEString ) ) )
+            // InternalTyphonML.g:2879:2: ( (lv_name_0_0= ruleEString ) )
+            {
+            // InternalTyphonML.g:2879:2: ( (lv_name_0_0= ruleEString ) )
+            // InternalTyphonML.g:2880:3: (lv_name_0_0= ruleEString )
+            {
+            // InternalTyphonML.g:2880:3: (lv_name_0_0= ruleEString )
+            // InternalTyphonML.g:2881:4: lv_name_0_0= ruleEString
+            {
+
+            				newCompositeNode(grammarAccess.getNFunctionalTag_ImplAccess().getNameEStringParserRuleCall_0());
+            			
+            pushFollow(FOLLOW_2);
+            lv_name_0_0=ruleEString();
+
+            state._fsp--;
+
+
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getNFunctionalTag_ImplRule());
+            				}
+            				set(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"it.univaq.disim.typhon.TyphonML.EString");
+            				afterParserOrEnumRuleCall();
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNFunctionalTag_Impl"
+
+
     // $ANTLR start "entryRuleRelation_Impl"
-    // InternalTyphonML.g:2709:1: entryRuleRelation_Impl returns [EObject current=null] : iv_ruleRelation_Impl= ruleRelation_Impl EOF ;
+    // InternalTyphonML.g:2901:1: entryRuleRelation_Impl returns [EObject current=null] : iv_ruleRelation_Impl= ruleRelation_Impl EOF ;
     public final EObject entryRuleRelation_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -7096,8 +7590,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:2709:54: (iv_ruleRelation_Impl= ruleRelation_Impl EOF )
-            // InternalTyphonML.g:2710:2: iv_ruleRelation_Impl= ruleRelation_Impl EOF
+            // InternalTyphonML.g:2901:54: (iv_ruleRelation_Impl= ruleRelation_Impl EOF )
+            // InternalTyphonML.g:2902:2: iv_ruleRelation_Impl= ruleRelation_Impl EOF
             {
              newCompositeNode(grammarAccess.getRelation_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -7124,7 +7618,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelation_Impl"
-    // InternalTyphonML.g:2716:1: ruleRelation_Impl returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? ) ;
+    // InternalTyphonML.g:2908:1: ruleRelation_Impl returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? ) ;
     public final EObject ruleRelation_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -7145,32 +7639,32 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:2722:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? ) )
-            // InternalTyphonML.g:2723:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? )
+            // InternalTyphonML.g:2914:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? ) )
+            // InternalTyphonML.g:2915:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? )
             {
-            // InternalTyphonML.g:2723:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? )
-            // InternalTyphonML.g:2724:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )?
+            // InternalTyphonML.g:2915:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )? )
+            // InternalTyphonML.g:2916:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) ( (lv_isContainment_3_0= ':' ) )? otherlv_4= '->' ( ( ruleEString ) ) (otherlv_6= '.' ( ( ruleEString ) ) )? (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )?
             {
-            // InternalTyphonML.g:2724:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalTyphonML.g:2916:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            if ( (LA30_0==44) ) {
-                alt30=1;
+            if ( (LA36_0==44) ) {
+                alt36=1;
             }
-            switch (alt30) {
+            switch (alt36) {
                 case 1 :
-                    // InternalTyphonML.g:2725:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:2917:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getRelation_ImplAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:2729:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:2730:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:2921:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:2922:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:2730:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:2731:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:2922:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:2923:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRelation_ImplAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
@@ -7203,16 +7697,16 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2749:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalTyphonML.g:2750:4: (lv_name_2_0= ruleEString )
+            // InternalTyphonML.g:2941:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalTyphonML.g:2942:4: (lv_name_2_0= ruleEString )
             {
-            // InternalTyphonML.g:2750:4: (lv_name_2_0= ruleEString )
-            // InternalTyphonML.g:2751:5: lv_name_2_0= ruleEString
+            // InternalTyphonML.g:2942:4: (lv_name_2_0= ruleEString )
+            // InternalTyphonML.g:2943:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRelation_ImplAccess().getNameEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_49);
             lv_name_2_0=ruleEString();
 
             state._fsp--;
@@ -7234,21 +7728,21 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2768:3: ( (lv_isContainment_3_0= ':' ) )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalTyphonML.g:2960:3: ( (lv_isContainment_3_0= ':' ) )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA31_0==46) ) {
-                alt31=1;
+            if ( (LA37_0==46) ) {
+                alt37=1;
             }
-            switch (alt31) {
+            switch (alt37) {
                 case 1 :
-                    // InternalTyphonML.g:2769:4: (lv_isContainment_3_0= ':' )
+                    // InternalTyphonML.g:2961:4: (lv_isContainment_3_0= ':' )
                     {
-                    // InternalTyphonML.g:2769:4: (lv_isContainment_3_0= ':' )
-                    // InternalTyphonML.g:2770:5: lv_isContainment_3_0= ':'
+                    // InternalTyphonML.g:2961:4: (lv_isContainment_3_0= ':' )
+                    // InternalTyphonML.g:2962:5: lv_isContainment_3_0= ':'
                     {
-                    lv_isContainment_3_0=(Token)match(input,46,FOLLOW_45); 
+                    lv_isContainment_3_0=(Token)match(input,46,FOLLOW_50); 
 
                     					newLeafNode(lv_isContainment_3_0, grammarAccess.getRelation_ImplAccess().getIsContainmentColonKeyword_2_0());
                     				
@@ -7267,15 +7761,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,50,FOLLOW_9); 
+            otherlv_4=(Token)match(input,54,FOLLOW_9); 
 
             			newLeafNode(otherlv_4, grammarAccess.getRelation_ImplAccess().getHyphenMinusGreaterThanSignKeyword_3());
             		
-            // InternalTyphonML.g:2786:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:2787:4: ( ruleEString )
+            // InternalTyphonML.g:2978:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:2979:4: ( ruleEString )
             {
-            // InternalTyphonML.g:2787:4: ( ruleEString )
-            // InternalTyphonML.g:2788:5: ruleEString
+            // InternalTyphonML.g:2979:4: ( ruleEString )
+            // InternalTyphonML.g:2980:5: ruleEString
             {
 
             					if (current==null) {
@@ -7285,7 +7779,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getRelation_ImplAccess().getTypeEntityCrossReference_4_0());
             				
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_51);
             ruleEString();
 
             state._fsp--;
@@ -7299,26 +7793,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2802:3: (otherlv_6= '.' ( ( ruleEString ) ) )?
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalTyphonML.g:2994:3: (otherlv_6= '.' ( ( ruleEString ) ) )?
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA32_0==51) ) {
-                alt32=1;
+            if ( (LA38_0==55) ) {
+                alt38=1;
             }
-            switch (alt32) {
+            switch (alt38) {
                 case 1 :
-                    // InternalTyphonML.g:2803:4: otherlv_6= '.' ( ( ruleEString ) )
+                    // InternalTyphonML.g:2995:4: otherlv_6= '.' ( ( ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,51,FOLLOW_9); 
+                    otherlv_6=(Token)match(input,55,FOLLOW_9); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getRelation_ImplAccess().getFullStopKeyword_5_0());
                     			
-                    // InternalTyphonML.g:2807:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:2808:5: ( ruleEString )
+                    // InternalTyphonML.g:2999:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3000:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:2808:5: ( ruleEString )
-                    // InternalTyphonML.g:2809:6: ruleEString
+                    // InternalTyphonML.g:3000:5: ( ruleEString )
+                    // InternalTyphonML.g:3001:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -7328,7 +7822,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getRelation_ImplAccess().getOppositeRelationCrossReference_5_1_0());
                     					
-                    pushFollow(FOLLOW_47);
+                    pushFollow(FOLLOW_52);
                     ruleEString();
 
                     state._fsp--;
@@ -7348,26 +7842,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2824:3: (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            // InternalTyphonML.g:3016:3: (otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']' )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA33_0==12) ) {
-                alt33=1;
+            if ( (LA39_0==12) ) {
+                alt39=1;
             }
-            switch (alt33) {
+            switch (alt39) {
                 case 1 :
-                    // InternalTyphonML.g:2825:4: otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']'
+                    // InternalTyphonML.g:3017:4: otherlv_8= '[' ( (lv_cardinality_9_0= ruleCardinality ) ) otherlv_10= ']'
                     {
                     otherlv_8=(Token)match(input,12,FOLLOW_33); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getRelation_ImplAccess().getLeftSquareBracketKeyword_6_0());
                     			
-                    // InternalTyphonML.g:2829:4: ( (lv_cardinality_9_0= ruleCardinality ) )
-                    // InternalTyphonML.g:2830:5: (lv_cardinality_9_0= ruleCardinality )
+                    // InternalTyphonML.g:3021:4: ( (lv_cardinality_9_0= ruleCardinality ) )
+                    // InternalTyphonML.g:3022:5: (lv_cardinality_9_0= ruleCardinality )
                     {
-                    // InternalTyphonML.g:2830:5: (lv_cardinality_9_0= ruleCardinality )
-                    // InternalTyphonML.g:2831:6: lv_cardinality_9_0= ruleCardinality
+                    // InternalTyphonML.g:3022:5: (lv_cardinality_9_0= ruleCardinality )
+                    // InternalTyphonML.g:3023:6: lv_cardinality_9_0= ruleCardinality
                     {
 
                     						newCompositeNode(grammarAccess.getRelation_ImplAccess().getCardinalityCardinalityEnumRuleCall_6_1_0());
@@ -7427,7 +7921,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBooleanObject"
-    // InternalTyphonML.g:2857:1: entryRuleEBooleanObject returns [String current=null] : iv_ruleEBooleanObject= ruleEBooleanObject EOF ;
+    // InternalTyphonML.g:3049:1: entryRuleEBooleanObject returns [String current=null] : iv_ruleEBooleanObject= ruleEBooleanObject EOF ;
     public final String entryRuleEBooleanObject() throws RecognitionException {
         String current = null;
 
@@ -7435,8 +7929,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:2857:54: (iv_ruleEBooleanObject= ruleEBooleanObject EOF )
-            // InternalTyphonML.g:2858:2: iv_ruleEBooleanObject= ruleEBooleanObject EOF
+            // InternalTyphonML.g:3049:54: (iv_ruleEBooleanObject= ruleEBooleanObject EOF )
+            // InternalTyphonML.g:3050:2: iv_ruleEBooleanObject= ruleEBooleanObject EOF
             {
              newCompositeNode(grammarAccess.getEBooleanObjectRule()); 
             pushFollow(FOLLOW_1);
@@ -7463,7 +7957,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBooleanObject"
-    // InternalTyphonML.g:2864:1: ruleEBooleanObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // InternalTyphonML.g:3056:1: ruleEBooleanObject returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBooleanObject() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7473,30 +7967,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:2870:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalTyphonML.g:2871:2: (kw= 'true' | kw= 'false' )
+            // InternalTyphonML.g:3062:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalTyphonML.g:3063:2: (kw= 'true' | kw= 'false' )
             {
-            // InternalTyphonML.g:2871:2: (kw= 'true' | kw= 'false' )
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalTyphonML.g:3063:2: (kw= 'true' | kw= 'false' )
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA34_0==52) ) {
-                alt34=1;
+            if ( (LA40_0==56) ) {
+                alt40=1;
             }
-            else if ( (LA34_0==53) ) {
-                alt34=2;
+            else if ( (LA40_0==57) ) {
+                alt40=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 34, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
-            switch (alt34) {
+            switch (alt40) {
                 case 1 :
-                    // InternalTyphonML.g:2872:3: kw= 'true'
+                    // InternalTyphonML.g:3064:3: kw= 'true'
                     {
-                    kw=(Token)match(input,52,FOLLOW_2); 
+                    kw=(Token)match(input,56,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanObjectAccess().getTrueKeyword_0());
@@ -7505,9 +7999,9 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTyphonML.g:2878:3: kw= 'false'
+                    // InternalTyphonML.g:3070:3: kw= 'false'
                     {
-                    kw=(Token)match(input,53,FOLLOW_2); 
+                    kw=(Token)match(input,57,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanObjectAccess().getFalseKeyword_1());
@@ -7538,7 +8032,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTable"
-    // InternalTyphonML.g:2887:1: entryRuleTable returns [EObject current=null] : iv_ruleTable= ruleTable EOF ;
+    // InternalTyphonML.g:3079:1: entryRuleTable returns [EObject current=null] : iv_ruleTable= ruleTable EOF ;
     public final EObject entryRuleTable() throws RecognitionException {
         EObject current = null;
 
@@ -7546,8 +8040,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:2887:46: (iv_ruleTable= ruleTable EOF )
-            // InternalTyphonML.g:2888:2: iv_ruleTable= ruleTable EOF
+            // InternalTyphonML.g:3079:46: (iv_ruleTable= ruleTable EOF )
+            // InternalTyphonML.g:3080:2: iv_ruleTable= ruleTable EOF
             {
              newCompositeNode(grammarAccess.getTableRule()); 
             pushFollow(FOLLOW_1);
@@ -7574,7 +8068,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTable"
-    // InternalTyphonML.g:2894:1: ruleTable returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' ) ;
+    // InternalTyphonML.g:3086:1: ruleTable returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' ) ;
     public final EObject ruleTable() throws RecognitionException {
         EObject current = null;
 
@@ -7597,32 +8091,32 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:2900:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' ) )
-            // InternalTyphonML.g:2901:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' )
+            // InternalTyphonML.g:3092:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' ) )
+            // InternalTyphonML.g:3093:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' )
             {
-            // InternalTyphonML.g:2901:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' )
-            // InternalTyphonML.g:2902:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}'
+            // InternalTyphonML.g:3093:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}' )
+            // InternalTyphonML.g:3094:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'table' otherlv_3= '{' ( (lv_name_4_0= ruleEString ) ) otherlv_5= ':' ( ( ruleEString ) )? (otherlv_7= 'db' ( ( ruleEString ) ) )? ( (lv_indexSpec_9_0= ruleIndexSpec ) )? ( (lv_idSpec_10_0= ruleIdSpec ) )? otherlv_11= '}'
             {
-            // InternalTyphonML.g:2902:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalTyphonML.g:3094:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA35_0==44) ) {
-                alt35=1;
+            if ( (LA41_0==44) ) {
+                alt41=1;
             }
-            switch (alt35) {
+            switch (alt41) {
                 case 1 :
-                    // InternalTyphonML.g:2903:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3095:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getTableAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:2907:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:2908:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3099:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3100:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:2908:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:2909:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:3100:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3101:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getTableAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
@@ -7663,11 +8157,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getTableAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalTyphonML.g:2935:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:2936:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:3127:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:3128:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:2936:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:2937:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:3128:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:3129:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getTableAccess().getNameEStringParserRuleCall_3_0());
@@ -7694,23 +8188,23 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,46,FOLLOW_48); 
+            otherlv_5=(Token)match(input,46,FOLLOW_53); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTableAccess().getColonKeyword_4());
             		
-            // InternalTyphonML.g:2958:3: ( ( ruleEString ) )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // InternalTyphonML.g:3150:3: ( ( ruleEString ) )?
+            int alt42=2;
+            int LA42_0 = input.LA(1);
 
-            if ( ((LA36_0>=RULE_STRING && LA36_0<=RULE_ID)) ) {
-                alt36=1;
+            if ( ((LA42_0>=RULE_STRING && LA42_0<=RULE_ID)) ) {
+                alt42=1;
             }
-            switch (alt36) {
+            switch (alt42) {
                 case 1 :
-                    // InternalTyphonML.g:2959:4: ( ruleEString )
+                    // InternalTyphonML.g:3151:4: ( ruleEString )
                     {
-                    // InternalTyphonML.g:2959:4: ( ruleEString )
-                    // InternalTyphonML.g:2960:5: ruleEString
+                    // InternalTyphonML.g:3151:4: ( ruleEString )
+                    // InternalTyphonML.g:3152:5: ruleEString
                     {
 
                     					if (current==null) {
@@ -7720,7 +8214,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     					newCompositeNode(grammarAccess.getTableAccess().getEntityEntityCrossReference_5_0());
                     				
-                    pushFollow(FOLLOW_49);
+                    pushFollow(FOLLOW_54);
                     ruleEString();
 
                     state._fsp--;
@@ -7737,26 +8231,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2974:3: (otherlv_7= 'db' ( ( ruleEString ) ) )?
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // InternalTyphonML.g:3166:3: (otherlv_7= 'db' ( ( ruleEString ) ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
 
-            if ( (LA37_0==54) ) {
-                alt37=1;
+            if ( (LA43_0==58) ) {
+                alt43=1;
             }
-            switch (alt37) {
+            switch (alt43) {
                 case 1 :
-                    // InternalTyphonML.g:2975:4: otherlv_7= 'db' ( ( ruleEString ) )
+                    // InternalTyphonML.g:3167:4: otherlv_7= 'db' ( ( ruleEString ) )
                     {
-                    otherlv_7=(Token)match(input,54,FOLLOW_9); 
+                    otherlv_7=(Token)match(input,58,FOLLOW_9); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getTableAccess().getDbKeyword_6_0());
                     			
-                    // InternalTyphonML.g:2979:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:2980:5: ( ruleEString )
+                    // InternalTyphonML.g:3171:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3172:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:2980:5: ( ruleEString )
-                    // InternalTyphonML.g:2981:6: ruleEString
+                    // InternalTyphonML.g:3172:5: ( ruleEString )
+                    // InternalTyphonML.g:3173:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -7766,7 +8260,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getTableAccess().getDbDatabaseCrossReference_6_1_0());
                     					
-                    pushFollow(FOLLOW_50);
+                    pushFollow(FOLLOW_55);
                     ruleEString();
 
                     state._fsp--;
@@ -7786,24 +8280,24 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:2996:3: ( (lv_indexSpec_9_0= ruleIndexSpec ) )?
-            int alt38=2;
-            int LA38_0 = input.LA(1);
+            // InternalTyphonML.g:3188:3: ( (lv_indexSpec_9_0= ruleIndexSpec ) )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA38_0==44||LA38_0==61) ) {
-                alt38=1;
+            if ( (LA44_0==44||LA44_0==63) ) {
+                alt44=1;
             }
-            switch (alt38) {
+            switch (alt44) {
                 case 1 :
-                    // InternalTyphonML.g:2997:4: (lv_indexSpec_9_0= ruleIndexSpec )
+                    // InternalTyphonML.g:3189:4: (lv_indexSpec_9_0= ruleIndexSpec )
                     {
-                    // InternalTyphonML.g:2997:4: (lv_indexSpec_9_0= ruleIndexSpec )
-                    // InternalTyphonML.g:2998:5: lv_indexSpec_9_0= ruleIndexSpec
+                    // InternalTyphonML.g:3189:4: (lv_indexSpec_9_0= ruleIndexSpec )
+                    // InternalTyphonML.g:3190:5: lv_indexSpec_9_0= ruleIndexSpec
                     {
 
                     					newCompositeNode(grammarAccess.getTableAccess().getIndexSpecIndexSpecParserRuleCall_7_0());
                     				
-                    pushFollow(FOLLOW_51);
+                    pushFollow(FOLLOW_56);
                     lv_indexSpec_9_0=ruleIndexSpec();
 
                     state._fsp--;
@@ -7828,19 +8322,19 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3015:3: ( (lv_idSpec_10_0= ruleIdSpec ) )?
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            // InternalTyphonML.g:3207:3: ( (lv_idSpec_10_0= ruleIdSpec ) )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA39_0==63) ) {
-                alt39=1;
+            if ( (LA45_0==65) ) {
+                alt45=1;
             }
-            switch (alt39) {
+            switch (alt45) {
                 case 1 :
-                    // InternalTyphonML.g:3016:4: (lv_idSpec_10_0= ruleIdSpec )
+                    // InternalTyphonML.g:3208:4: (lv_idSpec_10_0= ruleIdSpec )
                     {
-                    // InternalTyphonML.g:3016:4: (lv_idSpec_10_0= ruleIdSpec )
-                    // InternalTyphonML.g:3017:5: lv_idSpec_10_0= ruleIdSpec
+                    // InternalTyphonML.g:3208:4: (lv_idSpec_10_0= ruleIdSpec )
+                    // InternalTyphonML.g:3209:5: lv_idSpec_10_0= ruleIdSpec
                     {
 
                     					newCompositeNode(grammarAccess.getTableAccess().getIdSpecIdSpecParserRuleCall_8_0());
@@ -7897,7 +8391,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCollection"
-    // InternalTyphonML.g:3042:1: entryRuleCollection returns [EObject current=null] : iv_ruleCollection= ruleCollection EOF ;
+    // InternalTyphonML.g:3234:1: entryRuleCollection returns [EObject current=null] : iv_ruleCollection= ruleCollection EOF ;
     public final EObject entryRuleCollection() throws RecognitionException {
         EObject current = null;
 
@@ -7905,8 +8399,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3042:51: (iv_ruleCollection= ruleCollection EOF )
-            // InternalTyphonML.g:3043:2: iv_ruleCollection= ruleCollection EOF
+            // InternalTyphonML.g:3234:51: (iv_ruleCollection= ruleCollection EOF )
+            // InternalTyphonML.g:3235:2: iv_ruleCollection= ruleCollection EOF
             {
              newCompositeNode(grammarAccess.getCollectionRule()); 
             pushFollow(FOLLOW_1);
@@ -7933,7 +8427,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCollection"
-    // InternalTyphonML.g:3049:1: ruleCollection returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) ) ;
+    // InternalTyphonML.g:3241:1: ruleCollection returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) ) ;
     public final EObject ruleCollection() throws RecognitionException {
         EObject current = null;
 
@@ -7948,32 +8442,32 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3055:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) ) )
-            // InternalTyphonML.g:3056:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:3247:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) ) )
+            // InternalTyphonML.g:3248:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) )
             {
-            // InternalTyphonML.g:3056:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) )
-            // InternalTyphonML.g:3057:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) )
+            // InternalTyphonML.g:3248:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:3249:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= ':' ( ( ruleEString ) )
             {
-            // InternalTyphonML.g:3057:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // InternalTyphonML.g:3249:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA40_0==44) ) {
-                alt40=1;
+            if ( (LA46_0==44) ) {
+                alt46=1;
             }
-            switch (alt40) {
+            switch (alt46) {
                 case 1 :
-                    // InternalTyphonML.g:3058:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3250:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getCollectionAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:3062:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:3063:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3254:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3255:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3063:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:3064:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:3255:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3256:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getCollectionAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
@@ -8006,11 +8500,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3082:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalTyphonML.g:3083:4: (lv_name_2_0= ruleEString )
+            // InternalTyphonML.g:3274:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalTyphonML.g:3275:4: (lv_name_2_0= ruleEString )
             {
-            // InternalTyphonML.g:3083:4: (lv_name_2_0= ruleEString )
-            // InternalTyphonML.g:3084:5: lv_name_2_0= ruleEString
+            // InternalTyphonML.g:3275:4: (lv_name_2_0= ruleEString )
+            // InternalTyphonML.g:3276:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getCollectionAccess().getNameEStringParserRuleCall_1_0());
@@ -8041,11 +8535,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getCollectionAccess().getColonKeyword_2());
             		
-            // InternalTyphonML.g:3105:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:3106:4: ( ruleEString )
+            // InternalTyphonML.g:3297:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:3298:4: ( ruleEString )
             {
-            // InternalTyphonML.g:3106:4: ( ruleEString )
-            // InternalTyphonML.g:3107:5: ruleEString
+            // InternalTyphonML.g:3298:4: ( ruleEString )
+            // InternalTyphonML.g:3299:5: ruleEString
             {
 
             					if (current==null) {
@@ -8092,7 +8586,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKeyValueElement"
-    // InternalTyphonML.g:3125:1: entryRuleKeyValueElement returns [EObject current=null] : iv_ruleKeyValueElement= ruleKeyValueElement EOF ;
+    // InternalTyphonML.g:3317:1: entryRuleKeyValueElement returns [EObject current=null] : iv_ruleKeyValueElement= ruleKeyValueElement EOF ;
     public final EObject entryRuleKeyValueElement() throws RecognitionException {
         EObject current = null;
 
@@ -8100,8 +8594,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3125:56: (iv_ruleKeyValueElement= ruleKeyValueElement EOF )
-            // InternalTyphonML.g:3126:2: iv_ruleKeyValueElement= ruleKeyValueElement EOF
+            // InternalTyphonML.g:3317:56: (iv_ruleKeyValueElement= ruleKeyValueElement EOF )
+            // InternalTyphonML.g:3318:2: iv_ruleKeyValueElement= ruleKeyValueElement EOF
             {
              newCompositeNode(grammarAccess.getKeyValueElementRule()); 
             pushFollow(FOLLOW_1);
@@ -8128,7 +8622,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKeyValueElement"
-    // InternalTyphonML.g:3132:1: ruleKeyValueElement returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' ) ;
+    // InternalTyphonML.g:3324:1: ruleKeyValueElement returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' ) ;
     public final EObject ruleKeyValueElement() throws RecognitionException {
         EObject current = null;
 
@@ -8150,32 +8644,32 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3138:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' ) )
-            // InternalTyphonML.g:3139:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' )
+            // InternalTyphonML.g:3330:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' ) )
+            // InternalTyphonML.g:3331:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' )
             {
-            // InternalTyphonML.g:3139:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' )
-            // InternalTyphonML.g:3140:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}'
+            // InternalTyphonML.g:3331:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}' )
+            // InternalTyphonML.g:3332:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? ( (lv_name_2_0= ruleEString ) ) otherlv_3= '{' ( (lv_key_4_0= ruleEString ) ) otherlv_5= '->' otherlv_6= '(' ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )? otherlv_10= ')' otherlv_11= '}'
             {
-            // InternalTyphonML.g:3140:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt41=2;
-            int LA41_0 = input.LA(1);
+            // InternalTyphonML.g:3332:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA41_0==44) ) {
-                alt41=1;
+            if ( (LA47_0==44) ) {
+                alt47=1;
             }
-            switch (alt41) {
+            switch (alt47) {
                 case 1 :
-                    // InternalTyphonML.g:3141:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3333:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getKeyValueElementAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:3145:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:3146:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3337:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3338:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3146:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:3147:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:3338:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3339:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getKeyValueElementAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
@@ -8208,11 +8702,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3165:3: ( (lv_name_2_0= ruleEString ) )
-            // InternalTyphonML.g:3166:4: (lv_name_2_0= ruleEString )
+            // InternalTyphonML.g:3357:3: ( (lv_name_2_0= ruleEString ) )
+            // InternalTyphonML.g:3358:4: (lv_name_2_0= ruleEString )
             {
-            // InternalTyphonML.g:3166:4: (lv_name_2_0= ruleEString )
-            // InternalTyphonML.g:3167:5: lv_name_2_0= ruleEString
+            // InternalTyphonML.g:3358:4: (lv_name_2_0= ruleEString )
+            // InternalTyphonML.g:3359:5: lv_name_2_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getKeyValueElementAccess().getNameEStringParserRuleCall_1_0());
@@ -8243,16 +8737,16 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getKeyValueElementAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalTyphonML.g:3188:3: ( (lv_key_4_0= ruleEString ) )
-            // InternalTyphonML.g:3189:4: (lv_key_4_0= ruleEString )
+            // InternalTyphonML.g:3380:3: ( (lv_key_4_0= ruleEString ) )
+            // InternalTyphonML.g:3381:4: (lv_key_4_0= ruleEString )
             {
-            // InternalTyphonML.g:3189:4: (lv_key_4_0= ruleEString )
-            // InternalTyphonML.g:3190:5: lv_key_4_0= ruleEString
+            // InternalTyphonML.g:3381:4: (lv_key_4_0= ruleEString )
+            // InternalTyphonML.g:3382:5: lv_key_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getKeyValueElementAccess().getKeyEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_50);
             lv_key_4_0=ruleEString();
 
             state._fsp--;
@@ -8274,30 +8768,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,50,FOLLOW_52); 
+            otherlv_5=(Token)match(input,54,FOLLOW_42); 
 
             			newLeafNode(otherlv_5, grammarAccess.getKeyValueElementAccess().getHyphenMinusGreaterThanSignKeyword_4());
             		
-            otherlv_6=(Token)match(input,55,FOLLOW_53); 
+            otherlv_6=(Token)match(input,51,FOLLOW_43); 
 
             			newLeafNode(otherlv_6, grammarAccess.getKeyValueElementAccess().getLeftParenthesisKeyword_5());
             		
-            // InternalTyphonML.g:3215:3: ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // InternalTyphonML.g:3407:3: ( ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )* )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( ((LA43_0>=RULE_STRING && LA43_0<=RULE_ID)) ) {
-                alt43=1;
+            if ( ((LA49_0>=RULE_STRING && LA49_0<=RULE_ID)) ) {
+                alt49=1;
             }
-            switch (alt43) {
+            switch (alt49) {
                 case 1 :
-                    // InternalTyphonML.g:3216:4: ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )*
+                    // InternalTyphonML.g:3408:4: ( ( ruleEString ) ) (otherlv_8= ',' ( ( ruleEString ) ) )*
                     {
-                    // InternalTyphonML.g:3216:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:3217:5: ( ruleEString )
+                    // InternalTyphonML.g:3408:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3409:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:3217:5: ( ruleEString )
-                    // InternalTyphonML.g:3218:6: ruleEString
+                    // InternalTyphonML.g:3409:5: ( ruleEString )
+                    // InternalTyphonML.g:3410:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -8307,7 +8801,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getKeyValueElementAccess().getValuesAttributeCrossReference_6_0_0());
                     					
-                    pushFollow(FOLLOW_54);
+                    pushFollow(FOLLOW_44);
                     ruleEString();
 
                     state._fsp--;
@@ -8321,30 +8815,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3232:4: (otherlv_8= ',' ( ( ruleEString ) ) )*
-                    loop42:
+                    // InternalTyphonML.g:3424:4: (otherlv_8= ',' ( ( ruleEString ) ) )*
+                    loop48:
                     do {
-                        int alt42=2;
-                        int LA42_0 = input.LA(1);
+                        int alt48=2;
+                        int LA48_0 = input.LA(1);
 
-                        if ( (LA42_0==13) ) {
-                            alt42=1;
+                        if ( (LA48_0==13) ) {
+                            alt48=1;
                         }
 
 
-                        switch (alt42) {
+                        switch (alt48) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3233:5: otherlv_8= ',' ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3425:5: otherlv_8= ',' ( ( ruleEString ) )
                     	    {
                     	    otherlv_8=(Token)match(input,13,FOLLOW_9); 
 
                     	    					newLeafNode(otherlv_8, grammarAccess.getKeyValueElementAccess().getCommaKeyword_6_1_0());
                     	    				
-                    	    // InternalTyphonML.g:3237:5: ( ( ruleEString ) )
-                    	    // InternalTyphonML.g:3238:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3429:5: ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3430:6: ( ruleEString )
                     	    {
-                    	    // InternalTyphonML.g:3238:6: ( ruleEString )
-                    	    // InternalTyphonML.g:3239:7: ruleEString
+                    	    // InternalTyphonML.g:3430:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3431:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -8354,7 +8848,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getKeyValueElementAccess().getValuesAttributeCrossReference_6_1_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_54);
+                    	    pushFollow(FOLLOW_44);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -8373,7 +8867,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop42;
+                    	    break loop48;
                         }
                     } while (true);
 
@@ -8383,7 +8877,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,56,FOLLOW_14); 
+            otherlv_10=(Token)match(input,52,FOLLOW_14); 
 
             			newLeafNode(otherlv_10, grammarAccess.getKeyValueElementAccess().getRightParenthesisKeyword_7());
             		
@@ -8414,7 +8908,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphNode"
-    // InternalTyphonML.g:3267:1: entryRuleGraphNode returns [EObject current=null] : iv_ruleGraphNode= ruleGraphNode EOF ;
+    // InternalTyphonML.g:3459:1: entryRuleGraphNode returns [EObject current=null] : iv_ruleGraphNode= ruleGraphNode EOF ;
     public final EObject entryRuleGraphNode() throws RecognitionException {
         EObject current = null;
 
@@ -8422,8 +8916,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3267:50: (iv_ruleGraphNode= ruleGraphNode EOF )
-            // InternalTyphonML.g:3268:2: iv_ruleGraphNode= ruleGraphNode EOF
+            // InternalTyphonML.g:3459:50: (iv_ruleGraphNode= ruleGraphNode EOF )
+            // InternalTyphonML.g:3460:2: iv_ruleGraphNode= ruleGraphNode EOF
             {
              newCompositeNode(grammarAccess.getGraphNodeRule()); 
             pushFollow(FOLLOW_1);
@@ -8450,7 +8944,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphNode"
-    // InternalTyphonML.g:3274:1: ruleGraphNode returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' ) ;
+    // InternalTyphonML.g:3466:1: ruleGraphNode returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' ) ;
     public final EObject ruleGraphNode() throws RecognitionException {
         EObject current = null;
 
@@ -8474,37 +8968,37 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3280:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' ) )
-            // InternalTyphonML.g:3281:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' )
+            // InternalTyphonML.g:3472:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' ) )
+            // InternalTyphonML.g:3473:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' )
             {
-            // InternalTyphonML.g:3281:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' )
-            // InternalTyphonML.g:3282:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}'
+            // InternalTyphonML.g:3473:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}' )
+            // InternalTyphonML.g:3474:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'node' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '!' ( ( ruleEString ) ) (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )? otherlv_11= '}'
             {
-            // InternalTyphonML.g:3282:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // InternalTyphonML.g:3474:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA44_0==44) ) {
-                alt44=1;
+            if ( (LA50_0==44) ) {
+                alt50=1;
             }
-            switch (alt44) {
+            switch (alt50) {
                 case 1 :
-                    // InternalTyphonML.g:3283:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3475:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getGraphNodeAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:3287:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:3288:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3479:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3480:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3288:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:3289:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:3480:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3481:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getGraphNodeAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
                     					
-                    pushFollow(FOLLOW_55);
+                    pushFollow(FOLLOW_57);
                     lv_importedNamespace_1_0=ruleEString();
 
                     state._fsp--;
@@ -8532,20 +9026,20 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,57,FOLLOW_9); 
+            otherlv_2=(Token)match(input,59,FOLLOW_9); 
 
             			newLeafNode(otherlv_2, grammarAccess.getGraphNodeAccess().getNodeKeyword_1());
             		
-            // InternalTyphonML.g:3311:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalTyphonML.g:3312:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:3503:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalTyphonML.g:3504:4: (lv_name_3_0= ruleEString )
             {
-            // InternalTyphonML.g:3312:4: (lv_name_3_0= ruleEString )
-            // InternalTyphonML.g:3313:5: lv_name_3_0= ruleEString
+            // InternalTyphonML.g:3504:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:3505:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getGraphNodeAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_58);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -8567,15 +9061,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,58,FOLLOW_9); 
+            otherlv_4=(Token)match(input,60,FOLLOW_9); 
 
             			newLeafNode(otherlv_4, grammarAccess.getGraphNodeAccess().getExclamationMarkKeyword_3());
             		
-            // InternalTyphonML.g:3334:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:3335:4: ( ruleEString )
+            // InternalTyphonML.g:3526:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:3527:4: ( ruleEString )
             {
-            // InternalTyphonML.g:3335:4: ( ruleEString )
-            // InternalTyphonML.g:3336:5: ruleEString
+            // InternalTyphonML.g:3527:4: ( ruleEString )
+            // InternalTyphonML.g:3528:5: ruleEString
             {
 
             					if (current==null) {
@@ -8585,7 +9079,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getGraphNodeAccess().getEntityEntityCrossReference_4_0());
             				
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_59);
             ruleEString();
 
             state._fsp--;
@@ -8599,26 +9093,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3350:3: (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            // InternalTyphonML.g:3542:3: (otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}' )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA46_0==20) ) {
-                alt46=1;
+            if ( (LA52_0==20) ) {
+                alt52=1;
             }
-            switch (alt46) {
+            switch (alt52) {
                 case 1 :
-                    // InternalTyphonML.g:3351:4: otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}'
+                    // InternalTyphonML.g:3543:4: otherlv_6= '{' ( (lv_attributes_7_0= ruleGraphAttribute ) ) (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )* otherlv_10= '}'
                     {
-                    otherlv_6=(Token)match(input,20,FOLLOW_58); 
+                    otherlv_6=(Token)match(input,20,FOLLOW_60); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getGraphNodeAccess().getLeftCurlyBracketKeyword_5_0());
                     			
-                    // InternalTyphonML.g:3355:4: ( (lv_attributes_7_0= ruleGraphAttribute ) )
-                    // InternalTyphonML.g:3356:5: (lv_attributes_7_0= ruleGraphAttribute )
+                    // InternalTyphonML.g:3547:4: ( (lv_attributes_7_0= ruleGraphAttribute ) )
+                    // InternalTyphonML.g:3548:5: (lv_attributes_7_0= ruleGraphAttribute )
                     {
-                    // InternalTyphonML.g:3356:5: (lv_attributes_7_0= ruleGraphAttribute )
-                    // InternalTyphonML.g:3357:6: lv_attributes_7_0= ruleGraphAttribute
+                    // InternalTyphonML.g:3548:5: (lv_attributes_7_0= ruleGraphAttribute )
+                    // InternalTyphonML.g:3549:6: lv_attributes_7_0= ruleGraphAttribute
                     {
 
                     						newCompositeNode(grammarAccess.getGraphNodeAccess().getAttributesGraphAttributeParserRuleCall_5_1_0());
@@ -8645,30 +9139,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3374:4: (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )*
-                    loop45:
+                    // InternalTyphonML.g:3566:4: (otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) ) )*
+                    loop51:
                     do {
-                        int alt45=2;
-                        int LA45_0 = input.LA(1);
+                        int alt51=2;
+                        int LA51_0 = input.LA(1);
 
-                        if ( (LA45_0==13) ) {
-                            alt45=1;
+                        if ( (LA51_0==13) ) {
+                            alt51=1;
                         }
 
 
-                        switch (alt45) {
+                        switch (alt51) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3375:5: otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) )
+                    	    // InternalTyphonML.g:3567:5: otherlv_8= ',' ( (lv_attributes_9_0= ruleGraphAttribute ) )
                     	    {
-                    	    otherlv_8=(Token)match(input,13,FOLLOW_58); 
+                    	    otherlv_8=(Token)match(input,13,FOLLOW_60); 
 
                     	    					newLeafNode(otherlv_8, grammarAccess.getGraphNodeAccess().getCommaKeyword_5_2_0());
                     	    				
-                    	    // InternalTyphonML.g:3379:5: ( (lv_attributes_9_0= ruleGraphAttribute ) )
-                    	    // InternalTyphonML.g:3380:6: (lv_attributes_9_0= ruleGraphAttribute )
+                    	    // InternalTyphonML.g:3571:5: ( (lv_attributes_9_0= ruleGraphAttribute ) )
+                    	    // InternalTyphonML.g:3572:6: (lv_attributes_9_0= ruleGraphAttribute )
                     	    {
-                    	    // InternalTyphonML.g:3380:6: (lv_attributes_9_0= ruleGraphAttribute )
-                    	    // InternalTyphonML.g:3381:7: lv_attributes_9_0= ruleGraphAttribute
+                    	    // InternalTyphonML.g:3572:6: (lv_attributes_9_0= ruleGraphAttribute )
+                    	    // InternalTyphonML.g:3573:7: lv_attributes_9_0= ruleGraphAttribute
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getGraphNodeAccess().getAttributesGraphAttributeParserRuleCall_5_2_1_0());
@@ -8700,7 +9194,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop45;
+                    	    break loop51;
                         }
                     } while (true);
 
@@ -8741,7 +9235,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleColumn"
-    // InternalTyphonML.g:3412:1: entryRuleColumn returns [EObject current=null] : iv_ruleColumn= ruleColumn EOF ;
+    // InternalTyphonML.g:3604:1: entryRuleColumn returns [EObject current=null] : iv_ruleColumn= ruleColumn EOF ;
     public final EObject entryRuleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -8749,8 +9243,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3412:47: (iv_ruleColumn= ruleColumn EOF )
-            // InternalTyphonML.g:3413:2: iv_ruleColumn= ruleColumn EOF
+            // InternalTyphonML.g:3604:47: (iv_ruleColumn= ruleColumn EOF )
+            // InternalTyphonML.g:3605:2: iv_ruleColumn= ruleColumn EOF
             {
              newCompositeNode(grammarAccess.getColumnRule()); 
             pushFollow(FOLLOW_1);
@@ -8777,7 +9271,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColumn"
-    // InternalTyphonML.g:3419:1: ruleColumn returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' ) ;
+    // InternalTyphonML.g:3611:1: ruleColumn returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' ) ;
     public final EObject ruleColumn() throws RecognitionException {
         EObject current = null;
 
@@ -8799,37 +9293,37 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3425:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' ) )
-            // InternalTyphonML.g:3426:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' )
+            // InternalTyphonML.g:3617:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' ) )
+            // InternalTyphonML.g:3618:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' )
             {
-            // InternalTyphonML.g:3426:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' )
-            // InternalTyphonML.g:3427:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}'
+            // InternalTyphonML.g:3618:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}' )
+            // InternalTyphonML.g:3619:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'column' ( (lv_name_3_0= ruleEString ) ) otherlv_4= '{' otherlv_5= 'entity' ( ( ruleEString ) ) (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )? otherlv_13= '}'
             {
-            // InternalTyphonML.g:3427:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // InternalTyphonML.g:3619:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt53=2;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA47_0==44) ) {
-                alt47=1;
+            if ( (LA53_0==44) ) {
+                alt53=1;
             }
-            switch (alt47) {
+            switch (alt53) {
                 case 1 :
-                    // InternalTyphonML.g:3428:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3620:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getColumnAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:3432:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:3433:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3624:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:3625:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3433:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:3434:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:3625:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:3626:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getColumnAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
                     					
-                    pushFollow(FOLLOW_59);
+                    pushFollow(FOLLOW_61);
                     lv_importedNamespace_1_0=ruleEString();
 
                     state._fsp--;
@@ -8857,15 +9351,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,59,FOLLOW_9); 
+            otherlv_2=(Token)match(input,61,FOLLOW_9); 
 
             			newLeafNode(otherlv_2, grammarAccess.getColumnAccess().getColumnKeyword_1());
             		
-            // InternalTyphonML.g:3456:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalTyphonML.g:3457:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:3648:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalTyphonML.g:3649:4: (lv_name_3_0= ruleEString )
             {
-            // InternalTyphonML.g:3457:4: (lv_name_3_0= ruleEString )
-            // InternalTyphonML.g:3458:5: lv_name_3_0= ruleEString
+            // InternalTyphonML.g:3649:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:3650:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getColumnAccess().getNameEStringParserRuleCall_2_0());
@@ -8900,11 +9394,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getColumnAccess().getEntityKeyword_4());
             		
-            // InternalTyphonML.g:3483:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:3484:4: ( ruleEString )
+            // InternalTyphonML.g:3675:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:3676:4: ( ruleEString )
             {
-            // InternalTyphonML.g:3484:4: ( ruleEString )
-            // InternalTyphonML.g:3485:5: ruleEString
+            // InternalTyphonML.g:3676:4: ( ruleEString )
+            // InternalTyphonML.g:3677:5: ruleEString
             {
 
             					if (current==null) {
@@ -8914,7 +9408,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getColumnAccess().getEntityEntityCrossReference_5_0());
             				
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_62);
             ruleEString();
 
             state._fsp--;
@@ -8928,30 +9422,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3499:3: (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            // InternalTyphonML.g:3691:3: (otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')' )?
+            int alt55=2;
+            int LA55_0 = input.LA(1);
 
-            if ( (LA49_0==60) ) {
-                alt49=1;
+            if ( (LA55_0==62) ) {
+                alt55=1;
             }
-            switch (alt49) {
+            switch (alt55) {
                 case 1 :
-                    // InternalTyphonML.g:3500:4: otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')'
+                    // InternalTyphonML.g:3692:4: otherlv_7= 'attributes' otherlv_8= '(' ( ( ruleEString ) ) (otherlv_10= ',' ( ( ruleEString ) ) )* otherlv_12= ')'
                     {
-                    otherlv_7=(Token)match(input,60,FOLLOW_52); 
+                    otherlv_7=(Token)match(input,62,FOLLOW_42); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getColumnAccess().getAttributesKeyword_6_0());
                     			
-                    otherlv_8=(Token)match(input,55,FOLLOW_9); 
+                    otherlv_8=(Token)match(input,51,FOLLOW_9); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getColumnAccess().getLeftParenthesisKeyword_6_1());
                     			
-                    // InternalTyphonML.g:3508:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:3509:5: ( ruleEString )
+                    // InternalTyphonML.g:3700:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3701:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:3509:5: ( ruleEString )
-                    // InternalTyphonML.g:3510:6: ruleEString
+                    // InternalTyphonML.g:3701:5: ( ruleEString )
+                    // InternalTyphonML.g:3702:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -8961,7 +9455,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getColumnAccess().getAttributesAttributeCrossReference_6_2_0());
                     					
-                    pushFollow(FOLLOW_54);
+                    pushFollow(FOLLOW_44);
                     ruleEString();
 
                     state._fsp--;
@@ -8975,30 +9469,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3524:4: (otherlv_10= ',' ( ( ruleEString ) ) )*
-                    loop48:
+                    // InternalTyphonML.g:3716:4: (otherlv_10= ',' ( ( ruleEString ) ) )*
+                    loop54:
                     do {
-                        int alt48=2;
-                        int LA48_0 = input.LA(1);
+                        int alt54=2;
+                        int LA54_0 = input.LA(1);
 
-                        if ( (LA48_0==13) ) {
-                            alt48=1;
+                        if ( (LA54_0==13) ) {
+                            alt54=1;
                         }
 
 
-                        switch (alt48) {
+                        switch (alt54) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3525:5: otherlv_10= ',' ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3717:5: otherlv_10= ',' ( ( ruleEString ) )
                     	    {
                     	    otherlv_10=(Token)match(input,13,FOLLOW_9); 
 
                     	    					newLeafNode(otherlv_10, grammarAccess.getColumnAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalTyphonML.g:3529:5: ( ( ruleEString ) )
-                    	    // InternalTyphonML.g:3530:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3721:5: ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3722:6: ( ruleEString )
                     	    {
-                    	    // InternalTyphonML.g:3530:6: ( ruleEString )
-                    	    // InternalTyphonML.g:3531:7: ruleEString
+                    	    // InternalTyphonML.g:3722:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3723:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -9008,7 +9502,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getColumnAccess().getAttributesAttributeCrossReference_6_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_54);
+                    	    pushFollow(FOLLOW_44);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -9027,11 +9521,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop48;
+                    	    break loop54;
                         }
                     } while (true);
 
-                    otherlv_12=(Token)match(input,56,FOLLOW_14); 
+                    otherlv_12=(Token)match(input,52,FOLLOW_14); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getColumnAccess().getRightParenthesisKeyword_6_4());
                     			
@@ -9068,7 +9562,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIndexSpec"
-    // InternalTyphonML.g:3559:1: entryRuleIndexSpec returns [EObject current=null] : iv_ruleIndexSpec= ruleIndexSpec EOF ;
+    // InternalTyphonML.g:3751:1: entryRuleIndexSpec returns [EObject current=null] : iv_ruleIndexSpec= ruleIndexSpec EOF ;
     public final EObject entryRuleIndexSpec() throws RecognitionException {
         EObject current = null;
 
@@ -9076,8 +9570,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3559:50: (iv_ruleIndexSpec= ruleIndexSpec EOF )
-            // InternalTyphonML.g:3560:2: iv_ruleIndexSpec= ruleIndexSpec EOF
+            // InternalTyphonML.g:3751:50: (iv_ruleIndexSpec= ruleIndexSpec EOF )
+            // InternalTyphonML.g:3752:2: iv_ruleIndexSpec= ruleIndexSpec EOF
             {
              newCompositeNode(grammarAccess.getIndexSpecRule()); 
             pushFollow(FOLLOW_1);
@@ -9104,7 +9598,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIndexSpec"
-    // InternalTyphonML.g:3566:1: ruleIndexSpec returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' ) ;
+    // InternalTyphonML.g:3758:1: ruleIndexSpec returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' ) ;
     public final EObject ruleIndexSpec() throws RecognitionException {
         EObject current = null;
 
@@ -9129,14 +9623,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3572:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' ) )
-            // InternalTyphonML.g:3573:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' )
+            // InternalTyphonML.g:3764:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' ) )
+            // InternalTyphonML.g:3765:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' )
             {
-            // InternalTyphonML.g:3573:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' )
-            // InternalTyphonML.g:3574:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}'
+            // InternalTyphonML.g:3765:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}' )
+            // InternalTyphonML.g:3766:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'index' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )? (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )? otherlv_18= '}'
             {
-            // InternalTyphonML.g:3574:3: ()
-            // InternalTyphonML.g:3575:4: 
+            // InternalTyphonML.g:3766:3: ()
+            // InternalTyphonML.g:3767:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9146,31 +9640,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3581:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            // InternalTyphonML.g:3773:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA50_0==44) ) {
-                alt50=1;
+            if ( (LA56_0==44) ) {
+                alt56=1;
             }
-            switch (alt50) {
+            switch (alt56) {
                 case 1 :
-                    // InternalTyphonML.g:3582:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:3774:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getIndexSpecAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:3586:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:3587:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:3778:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:3779:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3587:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:3588:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:3779:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:3780:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getIndexSpecAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_61);
+                    pushFollow(FOLLOW_63);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -9198,15 +9692,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,61,FOLLOW_9); 
+            otherlv_3=(Token)match(input,63,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getIndexSpecAccess().getIndexKeyword_2());
             		
-            // InternalTyphonML.g:3610:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:3611:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:3802:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:3803:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:3611:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:3612:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:3803:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:3804:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getIndexSpecAccess().getNameEStringParserRuleCall_3_0());
@@ -9233,34 +9727,34 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_62); 
+            otherlv_5=(Token)match(input,20,FOLLOW_64); 
 
             			newLeafNode(otherlv_5, grammarAccess.getIndexSpecAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:3633:3: (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )?
-            int alt52=2;
-            int LA52_0 = input.LA(1);
+            // InternalTyphonML.g:3825:3: (otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')' )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-            if ( (LA52_0==60) ) {
-                alt52=1;
+            if ( (LA58_0==62) ) {
+                alt58=1;
             }
-            switch (alt52) {
+            switch (alt58) {
                 case 1 :
-                    // InternalTyphonML.g:3634:4: otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')'
+                    // InternalTyphonML.g:3826:4: otherlv_6= 'attributes' otherlv_7= '(' ( ( ruleEString ) ) (otherlv_9= ',' ( ( ruleEString ) ) )* otherlv_11= ')'
                     {
-                    otherlv_6=(Token)match(input,60,FOLLOW_52); 
+                    otherlv_6=(Token)match(input,62,FOLLOW_42); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getIndexSpecAccess().getAttributesKeyword_5_0());
                     			
-                    otherlv_7=(Token)match(input,55,FOLLOW_9); 
+                    otherlv_7=(Token)match(input,51,FOLLOW_9); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getIndexSpecAccess().getLeftParenthesisKeyword_5_1());
                     			
-                    // InternalTyphonML.g:3642:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:3643:5: ( ruleEString )
+                    // InternalTyphonML.g:3834:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3835:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:3643:5: ( ruleEString )
-                    // InternalTyphonML.g:3644:6: ruleEString
+                    // InternalTyphonML.g:3835:5: ( ruleEString )
+                    // InternalTyphonML.g:3836:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -9270,7 +9764,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getIndexSpecAccess().getAttributesAttributeCrossReference_5_2_0());
                     					
-                    pushFollow(FOLLOW_54);
+                    pushFollow(FOLLOW_44);
                     ruleEString();
 
                     state._fsp--;
@@ -9284,30 +9778,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3658:4: (otherlv_9= ',' ( ( ruleEString ) ) )*
-                    loop51:
+                    // InternalTyphonML.g:3850:4: (otherlv_9= ',' ( ( ruleEString ) ) )*
+                    loop57:
                     do {
-                        int alt51=2;
-                        int LA51_0 = input.LA(1);
+                        int alt57=2;
+                        int LA57_0 = input.LA(1);
 
-                        if ( (LA51_0==13) ) {
-                            alt51=1;
+                        if ( (LA57_0==13) ) {
+                            alt57=1;
                         }
 
 
-                        switch (alt51) {
+                        switch (alt57) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3659:5: otherlv_9= ',' ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3851:5: otherlv_9= ',' ( ( ruleEString ) )
                     	    {
                     	    otherlv_9=(Token)match(input,13,FOLLOW_9); 
 
                     	    					newLeafNode(otherlv_9, grammarAccess.getIndexSpecAccess().getCommaKeyword_5_3_0());
                     	    				
-                    	    // InternalTyphonML.g:3663:5: ( ( ruleEString ) )
-                    	    // InternalTyphonML.g:3664:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3855:5: ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3856:6: ( ruleEString )
                     	    {
-                    	    // InternalTyphonML.g:3664:6: ( ruleEString )
-                    	    // InternalTyphonML.g:3665:7: ruleEString
+                    	    // InternalTyphonML.g:3856:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3857:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -9317,7 +9811,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getIndexSpecAccess().getAttributesAttributeCrossReference_5_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_54);
+                    	    pushFollow(FOLLOW_44);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -9336,11 +9830,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop51;
+                    	    break loop57;
                         }
                     } while (true);
 
-                    otherlv_11=(Token)match(input,56,FOLLOW_63); 
+                    otherlv_11=(Token)match(input,52,FOLLOW_65); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getIndexSpecAccess().getRightParenthesisKeyword_5_4());
                     			
@@ -9350,30 +9844,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3685:3: (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // InternalTyphonML.g:3877:3: (otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')' )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA54_0==62) ) {
-                alt54=1;
+            if ( (LA60_0==64) ) {
+                alt60=1;
             }
-            switch (alt54) {
+            switch (alt60) {
                 case 1 :
-                    // InternalTyphonML.g:3686:4: otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')'
+                    // InternalTyphonML.g:3878:4: otherlv_12= 'references' otherlv_13= '(' ( ( ruleEString ) ) (otherlv_15= ',' ( ( ruleEString ) ) )* otherlv_17= ')'
                     {
-                    otherlv_12=(Token)match(input,62,FOLLOW_52); 
+                    otherlv_12=(Token)match(input,64,FOLLOW_42); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getIndexSpecAccess().getReferencesKeyword_6_0());
                     			
-                    otherlv_13=(Token)match(input,55,FOLLOW_9); 
+                    otherlv_13=(Token)match(input,51,FOLLOW_9); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getIndexSpecAccess().getLeftParenthesisKeyword_6_1());
                     			
-                    // InternalTyphonML.g:3694:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:3695:5: ( ruleEString )
+                    // InternalTyphonML.g:3886:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3887:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:3695:5: ( ruleEString )
-                    // InternalTyphonML.g:3696:6: ruleEString
+                    // InternalTyphonML.g:3887:5: ( ruleEString )
+                    // InternalTyphonML.g:3888:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -9383,7 +9877,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getIndexSpecAccess().getReferencesRelationCrossReference_6_2_0());
                     					
-                    pushFollow(FOLLOW_54);
+                    pushFollow(FOLLOW_44);
                     ruleEString();
 
                     state._fsp--;
@@ -9397,30 +9891,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3710:4: (otherlv_15= ',' ( ( ruleEString ) ) )*
-                    loop53:
+                    // InternalTyphonML.g:3902:4: (otherlv_15= ',' ( ( ruleEString ) ) )*
+                    loop59:
                     do {
-                        int alt53=2;
-                        int LA53_0 = input.LA(1);
+                        int alt59=2;
+                        int LA59_0 = input.LA(1);
 
-                        if ( (LA53_0==13) ) {
-                            alt53=1;
+                        if ( (LA59_0==13) ) {
+                            alt59=1;
                         }
 
 
-                        switch (alt53) {
+                        switch (alt59) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3711:5: otherlv_15= ',' ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3903:5: otherlv_15= ',' ( ( ruleEString ) )
                     	    {
                     	    otherlv_15=(Token)match(input,13,FOLLOW_9); 
 
                     	    					newLeafNode(otherlv_15, grammarAccess.getIndexSpecAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalTyphonML.g:3715:5: ( ( ruleEString ) )
-                    	    // InternalTyphonML.g:3716:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3907:5: ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3908:6: ( ruleEString )
                     	    {
-                    	    // InternalTyphonML.g:3716:6: ( ruleEString )
-                    	    // InternalTyphonML.g:3717:7: ruleEString
+                    	    // InternalTyphonML.g:3908:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3909:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -9430,7 +9924,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getIndexSpecAccess().getReferencesRelationCrossReference_6_3_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_54);
+                    	    pushFollow(FOLLOW_44);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -9449,11 +9943,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop53;
+                    	    break loop59;
                         }
                     } while (true);
 
-                    otherlv_17=(Token)match(input,56,FOLLOW_14); 
+                    otherlv_17=(Token)match(input,52,FOLLOW_14); 
 
                     				newLeafNode(otherlv_17, grammarAccess.getIndexSpecAccess().getRightParenthesisKeyword_6_4());
                     			
@@ -9490,7 +9984,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIdSpec"
-    // InternalTyphonML.g:3745:1: entryRuleIdSpec returns [EObject current=null] : iv_ruleIdSpec= ruleIdSpec EOF ;
+    // InternalTyphonML.g:3937:1: entryRuleIdSpec returns [EObject current=null] : iv_ruleIdSpec= ruleIdSpec EOF ;
     public final EObject entryRuleIdSpec() throws RecognitionException {
         EObject current = null;
 
@@ -9498,8 +9992,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3745:47: (iv_ruleIdSpec= ruleIdSpec EOF )
-            // InternalTyphonML.g:3746:2: iv_ruleIdSpec= ruleIdSpec EOF
+            // InternalTyphonML.g:3937:47: (iv_ruleIdSpec= ruleIdSpec EOF )
+            // InternalTyphonML.g:3938:2: iv_ruleIdSpec= ruleIdSpec EOF
             {
              newCompositeNode(grammarAccess.getIdSpecRule()); 
             pushFollow(FOLLOW_1);
@@ -9526,7 +10020,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIdSpec"
-    // InternalTyphonML.g:3752:1: ruleIdSpec returns [EObject current=null] : ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? ) ;
+    // InternalTyphonML.g:3944:1: ruleIdSpec returns [EObject current=null] : ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? ) ;
     public final EObject ruleIdSpec() throws RecognitionException {
         EObject current = null;
 
@@ -9539,14 +10033,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3758:2: ( ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? ) )
-            // InternalTyphonML.g:3759:2: ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? )
+            // InternalTyphonML.g:3950:2: ( ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? ) )
+            // InternalTyphonML.g:3951:2: ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? )
             {
-            // InternalTyphonML.g:3759:2: ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? )
-            // InternalTyphonML.g:3760:3: () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )?
+            // InternalTyphonML.g:3951:2: ( () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )? )
+            // InternalTyphonML.g:3952:3: () otherlv_1= 'idSpec' (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )?
             {
-            // InternalTyphonML.g:3760:3: ()
-            // InternalTyphonML.g:3761:4: 
+            // InternalTyphonML.g:3952:3: ()
+            // InternalTyphonML.g:3953:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9556,30 +10050,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,63,FOLLOW_64); 
+            otherlv_1=(Token)match(input,65,FOLLOW_66); 
 
             			newLeafNode(otherlv_1, grammarAccess.getIdSpecAccess().getIdSpecKeyword_1());
             		
-            // InternalTyphonML.g:3771:3: (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )?
-            int alt56=2;
-            int LA56_0 = input.LA(1);
+            // InternalTyphonML.g:3963:3: (otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')' )?
+            int alt62=2;
+            int LA62_0 = input.LA(1);
 
-            if ( (LA56_0==55) ) {
-                alt56=1;
+            if ( (LA62_0==51) ) {
+                alt62=1;
             }
-            switch (alt56) {
+            switch (alt62) {
                 case 1 :
-                    // InternalTyphonML.g:3772:4: otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')'
+                    // InternalTyphonML.g:3964:4: otherlv_2= '(' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* otherlv_6= ')'
                     {
-                    otherlv_2=(Token)match(input,55,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,51,FOLLOW_9); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getIdSpecAccess().getLeftParenthesisKeyword_2_0());
                     			
-                    // InternalTyphonML.g:3776:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:3777:5: ( ruleEString )
+                    // InternalTyphonML.g:3968:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:3969:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:3777:5: ( ruleEString )
-                    // InternalTyphonML.g:3778:6: ruleEString
+                    // InternalTyphonML.g:3969:5: ( ruleEString )
+                    // InternalTyphonML.g:3970:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -9589,7 +10083,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getIdSpecAccess().getAttributesAttributeCrossReference_2_1_0());
                     					
-                    pushFollow(FOLLOW_54);
+                    pushFollow(FOLLOW_44);
                     ruleEString();
 
                     state._fsp--;
@@ -9603,30 +10097,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3792:4: (otherlv_4= ',' ( ( ruleEString ) ) )*
-                    loop55:
+                    // InternalTyphonML.g:3984:4: (otherlv_4= ',' ( ( ruleEString ) ) )*
+                    loop61:
                     do {
-                        int alt55=2;
-                        int LA55_0 = input.LA(1);
+                        int alt61=2;
+                        int LA61_0 = input.LA(1);
 
-                        if ( (LA55_0==13) ) {
-                            alt55=1;
+                        if ( (LA61_0==13) ) {
+                            alt61=1;
                         }
 
 
-                        switch (alt55) {
+                        switch (alt61) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3793:5: otherlv_4= ',' ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3985:5: otherlv_4= ',' ( ( ruleEString ) )
                     	    {
                     	    otherlv_4=(Token)match(input,13,FOLLOW_9); 
 
                     	    					newLeafNode(otherlv_4, grammarAccess.getIdSpecAccess().getCommaKeyword_2_2_0());
                     	    				
-                    	    // InternalTyphonML.g:3797:5: ( ( ruleEString ) )
-                    	    // InternalTyphonML.g:3798:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3989:5: ( ( ruleEString ) )
+                    	    // InternalTyphonML.g:3990:6: ( ruleEString )
                     	    {
-                    	    // InternalTyphonML.g:3798:6: ( ruleEString )
-                    	    // InternalTyphonML.g:3799:7: ruleEString
+                    	    // InternalTyphonML.g:3990:6: ( ruleEString )
+                    	    // InternalTyphonML.g:3991:7: ruleEString
                     	    {
 
                     	    							if (current==null) {
@@ -9636,7 +10130,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    							newCompositeNode(grammarAccess.getIdSpecAccess().getAttributesAttributeCrossReference_2_2_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_54);
+                    	    pushFollow(FOLLOW_44);
                     	    ruleEString();
 
                     	    state._fsp--;
@@ -9655,11 +10149,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop55;
+                    	    break loop61;
                         }
                     } while (true);
 
-                    otherlv_6=(Token)match(input,56,FOLLOW_2); 
+                    otherlv_6=(Token)match(input,52,FOLLOW_2); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getIdSpecAccess().getRightParenthesisKeyword_2_3());
                     			
@@ -9692,7 +10186,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRelationalDB"
-    // InternalTyphonML.g:3823:1: entryRuleRelationalDB returns [EObject current=null] : iv_ruleRelationalDB= ruleRelationalDB EOF ;
+    // InternalTyphonML.g:4015:1: entryRuleRelationalDB returns [EObject current=null] : iv_ruleRelationalDB= ruleRelationalDB EOF ;
     public final EObject entryRuleRelationalDB() throws RecognitionException {
         EObject current = null;
 
@@ -9700,8 +10194,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3823:53: (iv_ruleRelationalDB= ruleRelationalDB EOF )
-            // InternalTyphonML.g:3824:2: iv_ruleRelationalDB= ruleRelationalDB EOF
+            // InternalTyphonML.g:4015:53: (iv_ruleRelationalDB= ruleRelationalDB EOF )
+            // InternalTyphonML.g:4016:2: iv_ruleRelationalDB= ruleRelationalDB EOF
             {
              newCompositeNode(grammarAccess.getRelationalDBRule()); 
             pushFollow(FOLLOW_1);
@@ -9728,7 +10222,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRelationalDB"
-    // InternalTyphonML.g:3830:1: ruleRelationalDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' ) ;
+    // InternalTyphonML.g:4022:1: ruleRelationalDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' ) ;
     public final EObject ruleRelationalDB() throws RecognitionException {
         EObject current = null;
 
@@ -9752,14 +10246,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3836:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' ) )
-            // InternalTyphonML.g:3837:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' )
+            // InternalTyphonML.g:4028:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' ) )
+            // InternalTyphonML.g:4029:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' )
             {
-            // InternalTyphonML.g:3837:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' )
-            // InternalTyphonML.g:3838:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}'
+            // InternalTyphonML.g:4029:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}' )
+            // InternalTyphonML.g:4030:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'relationaldb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )? otherlv_11= '}'
             {
-            // InternalTyphonML.g:3838:3: ()
-            // InternalTyphonML.g:3839:4: 
+            // InternalTyphonML.g:4030:3: ()
+            // InternalTyphonML.g:4031:4: 
             {
 
             				current = forceCreateModelElement(
@@ -9769,31 +10263,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3845:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // InternalTyphonML.g:4037:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA57_0==44) ) {
-                alt57=1;
+            if ( (LA63_0==44) ) {
+                alt63=1;
             }
-            switch (alt57) {
+            switch (alt63) {
                 case 1 :
-                    // InternalTyphonML.g:3846:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4038:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getRelationalDBAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:3850:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:3851:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4042:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4043:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3851:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:3852:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4043:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4044:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getRelationalDBAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_65);
+                    pushFollow(FOLLOW_67);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -9821,15 +10315,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,64,FOLLOW_9); 
+            otherlv_3=(Token)match(input,66,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getRelationalDBAccess().getRelationaldbKeyword_2());
             		
-            // InternalTyphonML.g:3874:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:3875:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4066:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:4067:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:3875:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:3876:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:4067:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4068:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getRelationalDBAccess().getNameEStringParserRuleCall_3_0());
@@ -9856,39 +10350,39 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_66); 
+            otherlv_5=(Token)match(input,20,FOLLOW_68); 
 
             			newLeafNode(otherlv_5, grammarAccess.getRelationalDBAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:3897:3: (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )?
-            int alt59=2;
-            int LA59_0 = input.LA(1);
+            // InternalTyphonML.g:4089:3: (otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}' )?
+            int alt65=2;
+            int LA65_0 = input.LA(1);
 
-            if ( (LA59_0==65) ) {
-                alt59=1;
+            if ( (LA65_0==67) ) {
+                alt65=1;
             }
-            switch (alt59) {
+            switch (alt65) {
                 case 1 :
-                    // InternalTyphonML.g:3898:4: otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}'
+                    // InternalTyphonML.g:4090:4: otherlv_6= 'tables' otherlv_7= '{' ( (lv_tables_8_0= ruleTable ) ) ( (lv_tables_9_0= ruleTable ) )* otherlv_10= '}'
                     {
-                    otherlv_6=(Token)match(input,65,FOLLOW_12); 
+                    otherlv_6=(Token)match(input,67,FOLLOW_12); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getRelationalDBAccess().getTablesKeyword_5_0());
                     			
-                    otherlv_7=(Token)match(input,20,FOLLOW_67); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_69); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getRelationalDBAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalTyphonML.g:3906:4: ( (lv_tables_8_0= ruleTable ) )
-                    // InternalTyphonML.g:3907:5: (lv_tables_8_0= ruleTable )
+                    // InternalTyphonML.g:4098:4: ( (lv_tables_8_0= ruleTable ) )
+                    // InternalTyphonML.g:4099:5: (lv_tables_8_0= ruleTable )
                     {
-                    // InternalTyphonML.g:3907:5: (lv_tables_8_0= ruleTable )
-                    // InternalTyphonML.g:3908:6: lv_tables_8_0= ruleTable
+                    // InternalTyphonML.g:4099:5: (lv_tables_8_0= ruleTable )
+                    // InternalTyphonML.g:4100:6: lv_tables_8_0= ruleTable
                     {
 
                     						newCompositeNode(grammarAccess.getRelationalDBAccess().getTablesTableParserRuleCall_5_2_0());
                     					
-                    pushFollow(FOLLOW_68);
+                    pushFollow(FOLLOW_70);
                     lv_tables_8_0=ruleTable();
 
                     state._fsp--;
@@ -9910,28 +10404,28 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:3925:4: ( (lv_tables_9_0= ruleTable ) )*
-                    loop58:
+                    // InternalTyphonML.g:4117:4: ( (lv_tables_9_0= ruleTable ) )*
+                    loop64:
                     do {
-                        int alt58=2;
-                        int LA58_0 = input.LA(1);
+                        int alt64=2;
+                        int LA64_0 = input.LA(1);
 
-                        if ( (LA58_0==23||LA58_0==44) ) {
-                            alt58=1;
+                        if ( (LA64_0==23||LA64_0==44) ) {
+                            alt64=1;
                         }
 
 
-                        switch (alt58) {
+                        switch (alt64) {
                     	case 1 :
-                    	    // InternalTyphonML.g:3926:5: (lv_tables_9_0= ruleTable )
+                    	    // InternalTyphonML.g:4118:5: (lv_tables_9_0= ruleTable )
                     	    {
-                    	    // InternalTyphonML.g:3926:5: (lv_tables_9_0= ruleTable )
-                    	    // InternalTyphonML.g:3927:6: lv_tables_9_0= ruleTable
+                    	    // InternalTyphonML.g:4118:5: (lv_tables_9_0= ruleTable )
+                    	    // InternalTyphonML.g:4119:6: lv_tables_9_0= ruleTable
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getRelationalDBAccess().getTablesTableParserRuleCall_5_3_0());
                     	    					
-                    	    pushFollow(FOLLOW_68);
+                    	    pushFollow(FOLLOW_70);
                     	    lv_tables_9_0=ruleTable();
 
                     	    state._fsp--;
@@ -9955,7 +10449,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop58;
+                    	    break loop64;
                         }
                     } while (true);
 
@@ -9996,7 +10490,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDocumentDB"
-    // InternalTyphonML.g:3957:1: entryRuleDocumentDB returns [EObject current=null] : iv_ruleDocumentDB= ruleDocumentDB EOF ;
+    // InternalTyphonML.g:4149:1: entryRuleDocumentDB returns [EObject current=null] : iv_ruleDocumentDB= ruleDocumentDB EOF ;
     public final EObject entryRuleDocumentDB() throws RecognitionException {
         EObject current = null;
 
@@ -10004,8 +10498,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:3957:51: (iv_ruleDocumentDB= ruleDocumentDB EOF )
-            // InternalTyphonML.g:3958:2: iv_ruleDocumentDB= ruleDocumentDB EOF
+            // InternalTyphonML.g:4149:51: (iv_ruleDocumentDB= ruleDocumentDB EOF )
+            // InternalTyphonML.g:4150:2: iv_ruleDocumentDB= ruleDocumentDB EOF
             {
              newCompositeNode(grammarAccess.getDocumentDBRule()); 
             pushFollow(FOLLOW_1);
@@ -10032,7 +10526,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDocumentDB"
-    // InternalTyphonML.g:3964:1: ruleDocumentDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' ) ;
+    // InternalTyphonML.g:4156:1: ruleDocumentDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' ) ;
     public final EObject ruleDocumentDB() throws RecognitionException {
         EObject current = null;
 
@@ -10056,14 +10550,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:3970:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' ) )
-            // InternalTyphonML.g:3971:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' )
+            // InternalTyphonML.g:4162:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' ) )
+            // InternalTyphonML.g:4163:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' )
             {
-            // InternalTyphonML.g:3971:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' )
-            // InternalTyphonML.g:3972:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}'
+            // InternalTyphonML.g:4163:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}' )
+            // InternalTyphonML.g:4164:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'documentdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )? otherlv_11= '}'
             {
-            // InternalTyphonML.g:3972:3: ()
-            // InternalTyphonML.g:3973:4: 
+            // InternalTyphonML.g:4164:3: ()
+            // InternalTyphonML.g:4165:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10073,31 +10567,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:3979:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt60=2;
-            int LA60_0 = input.LA(1);
+            // InternalTyphonML.g:4171:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-            if ( (LA60_0==44) ) {
-                alt60=1;
+            if ( (LA66_0==44) ) {
+                alt66=1;
             }
-            switch (alt60) {
+            switch (alt66) {
                 case 1 :
-                    // InternalTyphonML.g:3980:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4172:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getDocumentDBAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:3984:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:3985:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4176:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4177:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:3985:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:3986:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4177:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4178:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getDocumentDBAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_69);
+                    pushFollow(FOLLOW_71);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -10125,15 +10619,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,66,FOLLOW_9); 
+            otherlv_3=(Token)match(input,68,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getDocumentDBAccess().getDocumentdbKeyword_2());
             		
-            // InternalTyphonML.g:4008:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:4009:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4200:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:4201:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:4009:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:4010:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:4201:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4202:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getDocumentDBAccess().getNameEStringParserRuleCall_3_0());
@@ -10160,22 +10654,22 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_70); 
+            otherlv_5=(Token)match(input,20,FOLLOW_72); 
 
             			newLeafNode(otherlv_5, grammarAccess.getDocumentDBAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:4031:3: (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )?
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // InternalTyphonML.g:4223:3: (otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}' )?
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( (LA62_0==67) ) {
-                alt62=1;
+            if ( (LA68_0==69) ) {
+                alt68=1;
             }
-            switch (alt62) {
+            switch (alt68) {
                 case 1 :
-                    // InternalTyphonML.g:4032:4: otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}'
+                    // InternalTyphonML.g:4224:4: otherlv_6= 'collections' otherlv_7= '{' ( (lv_collections_8_0= ruleCollection ) ) ( (lv_collections_9_0= ruleCollection ) )* otherlv_10= '}'
                     {
-                    otherlv_6=(Token)match(input,67,FOLLOW_12); 
+                    otherlv_6=(Token)match(input,69,FOLLOW_12); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getDocumentDBAccess().getCollectionsKeyword_5_0());
                     			
@@ -10183,16 +10677,16 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_7, grammarAccess.getDocumentDBAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalTyphonML.g:4040:4: ( (lv_collections_8_0= ruleCollection ) )
-                    // InternalTyphonML.g:4041:5: (lv_collections_8_0= ruleCollection )
+                    // InternalTyphonML.g:4232:4: ( (lv_collections_8_0= ruleCollection ) )
+                    // InternalTyphonML.g:4233:5: (lv_collections_8_0= ruleCollection )
                     {
-                    // InternalTyphonML.g:4041:5: (lv_collections_8_0= ruleCollection )
-                    // InternalTyphonML.g:4042:6: lv_collections_8_0= ruleCollection
+                    // InternalTyphonML.g:4233:5: (lv_collections_8_0= ruleCollection )
+                    // InternalTyphonML.g:4234:6: lv_collections_8_0= ruleCollection
                     {
 
                     						newCompositeNode(grammarAccess.getDocumentDBAccess().getCollectionsCollectionParserRuleCall_5_2_0());
                     					
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_48);
                     lv_collections_8_0=ruleCollection();
 
                     state._fsp--;
@@ -10214,28 +10708,28 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:4059:4: ( (lv_collections_9_0= ruleCollection ) )*
-                    loop61:
+                    // InternalTyphonML.g:4251:4: ( (lv_collections_9_0= ruleCollection ) )*
+                    loop67:
                     do {
-                        int alt61=2;
-                        int LA61_0 = input.LA(1);
+                        int alt67=2;
+                        int LA67_0 = input.LA(1);
 
-                        if ( ((LA61_0>=RULE_STRING && LA61_0<=RULE_ID)||LA61_0==44) ) {
-                            alt61=1;
+                        if ( ((LA67_0>=RULE_STRING && LA67_0<=RULE_ID)||LA67_0==44) ) {
+                            alt67=1;
                         }
 
 
-                        switch (alt61) {
+                        switch (alt67) {
                     	case 1 :
-                    	    // InternalTyphonML.g:4060:5: (lv_collections_9_0= ruleCollection )
+                    	    // InternalTyphonML.g:4252:5: (lv_collections_9_0= ruleCollection )
                     	    {
-                    	    // InternalTyphonML.g:4060:5: (lv_collections_9_0= ruleCollection )
-                    	    // InternalTyphonML.g:4061:6: lv_collections_9_0= ruleCollection
+                    	    // InternalTyphonML.g:4252:5: (lv_collections_9_0= ruleCollection )
+                    	    // InternalTyphonML.g:4253:6: lv_collections_9_0= ruleCollection
                     	    {
 
                     	    						newCompositeNode(grammarAccess.getDocumentDBAccess().getCollectionsCollectionParserRuleCall_5_3_0());
                     	    					
-                    	    pushFollow(FOLLOW_43);
+                    	    pushFollow(FOLLOW_48);
                     	    lv_collections_9_0=ruleCollection();
 
                     	    state._fsp--;
@@ -10259,7 +10753,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop61;
+                    	    break loop67;
                         }
                     } while (true);
 
@@ -10300,7 +10794,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleKeyValueDB"
-    // InternalTyphonML.g:4091:1: entryRuleKeyValueDB returns [EObject current=null] : iv_ruleKeyValueDB= ruleKeyValueDB EOF ;
+    // InternalTyphonML.g:4283:1: entryRuleKeyValueDB returns [EObject current=null] : iv_ruleKeyValueDB= ruleKeyValueDB EOF ;
     public final EObject entryRuleKeyValueDB() throws RecognitionException {
         EObject current = null;
 
@@ -10308,8 +10802,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4091:51: (iv_ruleKeyValueDB= ruleKeyValueDB EOF )
-            // InternalTyphonML.g:4092:2: iv_ruleKeyValueDB= ruleKeyValueDB EOF
+            // InternalTyphonML.g:4283:51: (iv_ruleKeyValueDB= ruleKeyValueDB EOF )
+            // InternalTyphonML.g:4284:2: iv_ruleKeyValueDB= ruleKeyValueDB EOF
             {
              newCompositeNode(grammarAccess.getKeyValueDBRule()); 
             pushFollow(FOLLOW_1);
@@ -10336,7 +10830,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleKeyValueDB"
-    // InternalTyphonML.g:4098:1: ruleKeyValueDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) ;
+    // InternalTyphonML.g:4290:1: ruleKeyValueDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) ;
     public final EObject ruleKeyValueDB() throws RecognitionException {
         EObject current = null;
 
@@ -10361,14 +10855,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4104:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) )
-            // InternalTyphonML.g:4105:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
+            // InternalTyphonML.g:4296:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) )
+            // InternalTyphonML.g:4297:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
             {
-            // InternalTyphonML.g:4105:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
-            // InternalTyphonML.g:4106:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}'
+            // InternalTyphonML.g:4297:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
+            // InternalTyphonML.g:4298:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'keyvaluedb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )? otherlv_12= '}'
             {
-            // InternalTyphonML.g:4106:3: ()
-            // InternalTyphonML.g:4107:4: 
+            // InternalTyphonML.g:4298:3: ()
+            // InternalTyphonML.g:4299:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10378,31 +10872,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4113:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt63=2;
-            int LA63_0 = input.LA(1);
+            // InternalTyphonML.g:4305:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            if ( (LA63_0==44) ) {
-                alt63=1;
+            if ( (LA69_0==44) ) {
+                alt69=1;
             }
-            switch (alt63) {
+            switch (alt69) {
                 case 1 :
-                    // InternalTyphonML.g:4114:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4306:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getKeyValueDBAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4118:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4119:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4310:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4311:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4119:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4120:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4311:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4312:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getKeyValueDBAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_71);
+                    pushFollow(FOLLOW_73);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -10430,15 +10924,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,68,FOLLOW_9); 
+            otherlv_3=(Token)match(input,70,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getKeyValueDBAccess().getKeyvaluedbKeyword_2());
             		
-            // InternalTyphonML.g:4142:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:4143:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4334:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:4335:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:4143:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:4144:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:4335:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4336:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getKeyValueDBAccess().getNameEStringParserRuleCall_3_0());
@@ -10469,16 +10963,16 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getKeyValueDBAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:4165:3: (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )?
-            int alt65=2;
-            int LA65_0 = input.LA(1);
+            // InternalTyphonML.g:4357:3: (otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}' )?
+            int alt71=2;
+            int LA71_0 = input.LA(1);
 
-            if ( (LA65_0==49) ) {
-                alt65=1;
+            if ( (LA71_0==49) ) {
+                alt71=1;
             }
-            switch (alt65) {
+            switch (alt71) {
                 case 1 :
-                    // InternalTyphonML.g:4166:4: otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}'
+                    // InternalTyphonML.g:4358:4: otherlv_6= 'elements' otherlv_7= '{' ( (lv_elements_8_0= ruleKeyValueElement ) ) (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )* otherlv_11= '}'
                     {
                     otherlv_6=(Token)match(input,49,FOLLOW_12); 
 
@@ -10488,11 +10982,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_7, grammarAccess.getKeyValueDBAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalTyphonML.g:4174:4: ( (lv_elements_8_0= ruleKeyValueElement ) )
-                    // InternalTyphonML.g:4175:5: (lv_elements_8_0= ruleKeyValueElement )
+                    // InternalTyphonML.g:4366:4: ( (lv_elements_8_0= ruleKeyValueElement ) )
+                    // InternalTyphonML.g:4367:5: (lv_elements_8_0= ruleKeyValueElement )
                     {
-                    // InternalTyphonML.g:4175:5: (lv_elements_8_0= ruleKeyValueElement )
-                    // InternalTyphonML.g:4176:6: lv_elements_8_0= ruleKeyValueElement
+                    // InternalTyphonML.g:4367:5: (lv_elements_8_0= ruleKeyValueElement )
+                    // InternalTyphonML.g:4368:6: lv_elements_8_0= ruleKeyValueElement
                     {
 
                     						newCompositeNode(grammarAccess.getKeyValueDBAccess().getElementsKeyValueElementParserRuleCall_5_2_0());
@@ -10519,30 +11013,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:4193:4: (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )*
-                    loop64:
+                    // InternalTyphonML.g:4385:4: (otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) ) )*
+                    loop70:
                     do {
-                        int alt64=2;
-                        int LA64_0 = input.LA(1);
+                        int alt70=2;
+                        int LA70_0 = input.LA(1);
 
-                        if ( (LA64_0==13) ) {
-                            alt64=1;
+                        if ( (LA70_0==13) ) {
+                            alt70=1;
                         }
 
 
-                        switch (alt64) {
+                        switch (alt70) {
                     	case 1 :
-                    	    // InternalTyphonML.g:4194:5: otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) )
+                    	    // InternalTyphonML.g:4386:5: otherlv_9= ',' ( (lv_elements_10_0= ruleKeyValueElement ) )
                     	    {
                     	    otherlv_9=(Token)match(input,13,FOLLOW_41); 
 
                     	    					newLeafNode(otherlv_9, grammarAccess.getKeyValueDBAccess().getCommaKeyword_5_3_0());
                     	    				
-                    	    // InternalTyphonML.g:4198:5: ( (lv_elements_10_0= ruleKeyValueElement ) )
-                    	    // InternalTyphonML.g:4199:6: (lv_elements_10_0= ruleKeyValueElement )
+                    	    // InternalTyphonML.g:4390:5: ( (lv_elements_10_0= ruleKeyValueElement ) )
+                    	    // InternalTyphonML.g:4391:6: (lv_elements_10_0= ruleKeyValueElement )
                     	    {
-                    	    // InternalTyphonML.g:4199:6: (lv_elements_10_0= ruleKeyValueElement )
-                    	    // InternalTyphonML.g:4200:7: lv_elements_10_0= ruleKeyValueElement
+                    	    // InternalTyphonML.g:4391:6: (lv_elements_10_0= ruleKeyValueElement )
+                    	    // InternalTyphonML.g:4392:7: lv_elements_10_0= ruleKeyValueElement
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getKeyValueDBAccess().getElementsKeyValueElementParserRuleCall_5_3_1_0());
@@ -10574,7 +11068,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop64;
+                    	    break loop70;
                         }
                     } while (true);
 
@@ -10615,7 +11109,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphDB"
-    // InternalTyphonML.g:4231:1: entryRuleGraphDB returns [EObject current=null] : iv_ruleGraphDB= ruleGraphDB EOF ;
+    // InternalTyphonML.g:4423:1: entryRuleGraphDB returns [EObject current=null] : iv_ruleGraphDB= ruleGraphDB EOF ;
     public final EObject entryRuleGraphDB() throws RecognitionException {
         EObject current = null;
 
@@ -10623,8 +11117,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4231:48: (iv_ruleGraphDB= ruleGraphDB EOF )
-            // InternalTyphonML.g:4232:2: iv_ruleGraphDB= ruleGraphDB EOF
+            // InternalTyphonML.g:4423:48: (iv_ruleGraphDB= ruleGraphDB EOF )
+            // InternalTyphonML.g:4424:2: iv_ruleGraphDB= ruleGraphDB EOF
             {
              newCompositeNode(grammarAccess.getGraphDBRule()); 
             pushFollow(FOLLOW_1);
@@ -10651,7 +11145,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphDB"
-    // InternalTyphonML.g:4238:1: ruleGraphDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' ) ;
+    // InternalTyphonML.g:4430:1: ruleGraphDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' ) ;
     public final EObject ruleGraphDB() throws RecognitionException {
         EObject current = null;
 
@@ -10684,14 +11178,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4244:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' ) )
-            // InternalTyphonML.g:4245:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' )
+            // InternalTyphonML.g:4436:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' ) )
+            // InternalTyphonML.g:4437:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' )
             {
-            // InternalTyphonML.g:4245:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' )
-            // InternalTyphonML.g:4246:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}'
+            // InternalTyphonML.g:4437:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}' )
+            // InternalTyphonML.g:4438:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'graphdb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )? (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )? otherlv_18= '}'
             {
-            // InternalTyphonML.g:4246:3: ()
-            // InternalTyphonML.g:4247:4: 
+            // InternalTyphonML.g:4438:3: ()
+            // InternalTyphonML.g:4439:4: 
             {
 
             				current = forceCreateModelElement(
@@ -10701,31 +11195,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4253:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt66=2;
-            int LA66_0 = input.LA(1);
+            // InternalTyphonML.g:4445:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA66_0==44) ) {
-                alt66=1;
+            if ( (LA72_0==44) ) {
+                alt72=1;
             }
-            switch (alt66) {
+            switch (alt72) {
                 case 1 :
-                    // InternalTyphonML.g:4254:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4446:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGraphDBAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4258:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4259:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4450:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4451:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4259:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4260:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4451:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4452:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getGraphDBAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_72);
+                    pushFollow(FOLLOW_74);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -10753,15 +11247,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,69,FOLLOW_9); 
+            otherlv_3=(Token)match(input,71,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getGraphDBAccess().getGraphdbKeyword_2());
             		
-            // InternalTyphonML.g:4282:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:4283:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4474:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:4475:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:4283:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:4284:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:4475:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4476:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getGraphDBAccess().getNameEStringParserRuleCall_3_0());
@@ -10788,34 +11282,34 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_73); 
+            otherlv_5=(Token)match(input,20,FOLLOW_75); 
 
             			newLeafNode(otherlv_5, grammarAccess.getGraphDBAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:4305:3: (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )?
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            // InternalTyphonML.g:4497:3: (otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}' )?
+            int alt74=2;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA68_0==70) ) {
-                alt68=1;
+            if ( (LA74_0==72) ) {
+                alt74=1;
             }
-            switch (alt68) {
+            switch (alt74) {
                 case 1 :
-                    // InternalTyphonML.g:4306:4: otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}'
+                    // InternalTyphonML.g:4498:4: otherlv_6= 'nodes' otherlv_7= '{' ( (lv_nodes_8_0= ruleGraphNode ) ) (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )* otherlv_11= '}'
                     {
-                    otherlv_6=(Token)match(input,70,FOLLOW_12); 
+                    otherlv_6=(Token)match(input,72,FOLLOW_12); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getGraphDBAccess().getNodesKeyword_5_0());
                     			
-                    otherlv_7=(Token)match(input,20,FOLLOW_74); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_76); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getGraphDBAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalTyphonML.g:4314:4: ( (lv_nodes_8_0= ruleGraphNode ) )
-                    // InternalTyphonML.g:4315:5: (lv_nodes_8_0= ruleGraphNode )
+                    // InternalTyphonML.g:4506:4: ( (lv_nodes_8_0= ruleGraphNode ) )
+                    // InternalTyphonML.g:4507:5: (lv_nodes_8_0= ruleGraphNode )
                     {
-                    // InternalTyphonML.g:4315:5: (lv_nodes_8_0= ruleGraphNode )
-                    // InternalTyphonML.g:4316:6: lv_nodes_8_0= ruleGraphNode
+                    // InternalTyphonML.g:4507:5: (lv_nodes_8_0= ruleGraphNode )
+                    // InternalTyphonML.g:4508:6: lv_nodes_8_0= ruleGraphNode
                     {
 
                     						newCompositeNode(grammarAccess.getGraphDBAccess().getNodesGraphNodeParserRuleCall_5_2_0());
@@ -10842,30 +11336,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:4333:4: (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )*
-                    loop67:
+                    // InternalTyphonML.g:4525:4: (otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) ) )*
+                    loop73:
                     do {
-                        int alt67=2;
-                        int LA67_0 = input.LA(1);
+                        int alt73=2;
+                        int LA73_0 = input.LA(1);
 
-                        if ( (LA67_0==13) ) {
-                            alt67=1;
+                        if ( (LA73_0==13) ) {
+                            alt73=1;
                         }
 
 
-                        switch (alt67) {
+                        switch (alt73) {
                     	case 1 :
-                    	    // InternalTyphonML.g:4334:5: otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) )
+                    	    // InternalTyphonML.g:4526:5: otherlv_9= ',' ( (lv_nodes_10_0= ruleGraphNode ) )
                     	    {
-                    	    otherlv_9=(Token)match(input,13,FOLLOW_74); 
+                    	    otherlv_9=(Token)match(input,13,FOLLOW_76); 
 
                     	    					newLeafNode(otherlv_9, grammarAccess.getGraphDBAccess().getCommaKeyword_5_3_0());
                     	    				
-                    	    // InternalTyphonML.g:4338:5: ( (lv_nodes_10_0= ruleGraphNode ) )
-                    	    // InternalTyphonML.g:4339:6: (lv_nodes_10_0= ruleGraphNode )
+                    	    // InternalTyphonML.g:4530:5: ( (lv_nodes_10_0= ruleGraphNode ) )
+                    	    // InternalTyphonML.g:4531:6: (lv_nodes_10_0= ruleGraphNode )
                     	    {
-                    	    // InternalTyphonML.g:4339:6: (lv_nodes_10_0= ruleGraphNode )
-                    	    // InternalTyphonML.g:4340:7: lv_nodes_10_0= ruleGraphNode
+                    	    // InternalTyphonML.g:4531:6: (lv_nodes_10_0= ruleGraphNode )
+                    	    // InternalTyphonML.g:4532:7: lv_nodes_10_0= ruleGraphNode
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getGraphDBAccess().getNodesGraphNodeParserRuleCall_5_3_1_0());
@@ -10897,11 +11391,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop67;
+                    	    break loop73;
                         }
                     } while (true);
 
-                    otherlv_11=(Token)match(input,21,FOLLOW_75); 
+                    otherlv_11=(Token)match(input,21,FOLLOW_77); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getGraphDBAccess().getRightCurlyBracketKeyword_5_4());
                     			
@@ -10911,30 +11405,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4363:3: (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )?
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            // InternalTyphonML.g:4555:3: (otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}' )?
+            int alt76=2;
+            int LA76_0 = input.LA(1);
 
-            if ( (LA70_0==71) ) {
-                alt70=1;
+            if ( (LA76_0==73) ) {
+                alt76=1;
             }
-            switch (alt70) {
+            switch (alt76) {
                 case 1 :
-                    // InternalTyphonML.g:4364:4: otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}'
+                    // InternalTyphonML.g:4556:4: otherlv_12= 'edges' otherlv_13= '{' ( (lv_edges_14_0= ruleGraphEdge ) ) (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )* otherlv_17= '}'
                     {
-                    otherlv_12=(Token)match(input,71,FOLLOW_12); 
+                    otherlv_12=(Token)match(input,73,FOLLOW_12); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getGraphDBAccess().getEdgesKeyword_6_0());
                     			
-                    otherlv_13=(Token)match(input,20,FOLLOW_76); 
+                    otherlv_13=(Token)match(input,20,FOLLOW_78); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getGraphDBAccess().getLeftCurlyBracketKeyword_6_1());
                     			
-                    // InternalTyphonML.g:4372:4: ( (lv_edges_14_0= ruleGraphEdge ) )
-                    // InternalTyphonML.g:4373:5: (lv_edges_14_0= ruleGraphEdge )
+                    // InternalTyphonML.g:4564:4: ( (lv_edges_14_0= ruleGraphEdge ) )
+                    // InternalTyphonML.g:4565:5: (lv_edges_14_0= ruleGraphEdge )
                     {
-                    // InternalTyphonML.g:4373:5: (lv_edges_14_0= ruleGraphEdge )
-                    // InternalTyphonML.g:4374:6: lv_edges_14_0= ruleGraphEdge
+                    // InternalTyphonML.g:4565:5: (lv_edges_14_0= ruleGraphEdge )
+                    // InternalTyphonML.g:4566:6: lv_edges_14_0= ruleGraphEdge
                     {
 
                     						newCompositeNode(grammarAccess.getGraphDBAccess().getEdgesGraphEdgeParserRuleCall_6_2_0());
@@ -10961,30 +11455,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:4391:4: (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )*
-                    loop69:
+                    // InternalTyphonML.g:4583:4: (otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) ) )*
+                    loop75:
                     do {
-                        int alt69=2;
-                        int LA69_0 = input.LA(1);
+                        int alt75=2;
+                        int LA75_0 = input.LA(1);
 
-                        if ( (LA69_0==13) ) {
-                            alt69=1;
+                        if ( (LA75_0==13) ) {
+                            alt75=1;
                         }
 
 
-                        switch (alt69) {
+                        switch (alt75) {
                     	case 1 :
-                    	    // InternalTyphonML.g:4392:5: otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) )
+                    	    // InternalTyphonML.g:4584:5: otherlv_15= ',' ( (lv_edges_16_0= ruleGraphEdge ) )
                     	    {
-                    	    otherlv_15=(Token)match(input,13,FOLLOW_76); 
+                    	    otherlv_15=(Token)match(input,13,FOLLOW_78); 
 
                     	    					newLeafNode(otherlv_15, grammarAccess.getGraphDBAccess().getCommaKeyword_6_3_0());
                     	    				
-                    	    // InternalTyphonML.g:4396:5: ( (lv_edges_16_0= ruleGraphEdge ) )
-                    	    // InternalTyphonML.g:4397:6: (lv_edges_16_0= ruleGraphEdge )
+                    	    // InternalTyphonML.g:4588:5: ( (lv_edges_16_0= ruleGraphEdge ) )
+                    	    // InternalTyphonML.g:4589:6: (lv_edges_16_0= ruleGraphEdge )
                     	    {
-                    	    // InternalTyphonML.g:4397:6: (lv_edges_16_0= ruleGraphEdge )
-                    	    // InternalTyphonML.g:4398:7: lv_edges_16_0= ruleGraphEdge
+                    	    // InternalTyphonML.g:4589:6: (lv_edges_16_0= ruleGraphEdge )
+                    	    // InternalTyphonML.g:4590:7: lv_edges_16_0= ruleGraphEdge
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getGraphDBAccess().getEdgesGraphEdgeParserRuleCall_6_3_1_0());
@@ -11016,7 +11510,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop69;
+                    	    break loop75;
                         }
                     } while (true);
 
@@ -11057,7 +11551,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleColumnDB"
-    // InternalTyphonML.g:4429:1: entryRuleColumnDB returns [EObject current=null] : iv_ruleColumnDB= ruleColumnDB EOF ;
+    // InternalTyphonML.g:4621:1: entryRuleColumnDB returns [EObject current=null] : iv_ruleColumnDB= ruleColumnDB EOF ;
     public final EObject entryRuleColumnDB() throws RecognitionException {
         EObject current = null;
 
@@ -11065,8 +11559,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4429:49: (iv_ruleColumnDB= ruleColumnDB EOF )
-            // InternalTyphonML.g:4430:2: iv_ruleColumnDB= ruleColumnDB EOF
+            // InternalTyphonML.g:4621:49: (iv_ruleColumnDB= ruleColumnDB EOF )
+            // InternalTyphonML.g:4622:2: iv_ruleColumnDB= ruleColumnDB EOF
             {
              newCompositeNode(grammarAccess.getColumnDBRule()); 
             pushFollow(FOLLOW_1);
@@ -11093,7 +11587,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleColumnDB"
-    // InternalTyphonML.g:4436:1: ruleColumnDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) ;
+    // InternalTyphonML.g:4628:1: ruleColumnDB returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) ;
     public final EObject ruleColumnDB() throws RecognitionException {
         EObject current = null;
 
@@ -11118,14 +11612,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4442:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) )
-            // InternalTyphonML.g:4443:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
+            // InternalTyphonML.g:4634:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' ) )
+            // InternalTyphonML.g:4635:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
             {
-            // InternalTyphonML.g:4443:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
-            // InternalTyphonML.g:4444:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}'
+            // InternalTyphonML.g:4635:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}' )
+            // InternalTyphonML.g:4636:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'columndb' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )? otherlv_12= '}'
             {
-            // InternalTyphonML.g:4444:3: ()
-            // InternalTyphonML.g:4445:4: 
+            // InternalTyphonML.g:4636:3: ()
+            // InternalTyphonML.g:4637:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11135,31 +11629,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4451:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt71=2;
-            int LA71_0 = input.LA(1);
+            // InternalTyphonML.g:4643:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt77=2;
+            int LA77_0 = input.LA(1);
 
-            if ( (LA71_0==44) ) {
-                alt71=1;
+            if ( (LA77_0==44) ) {
+                alt77=1;
             }
-            switch (alt71) {
+            switch (alt77) {
                 case 1 :
-                    // InternalTyphonML.g:4452:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4644:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getColumnDBAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4456:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4457:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4648:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4649:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4457:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4458:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4649:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4650:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getColumnDBAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_77);
+                    pushFollow(FOLLOW_79);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -11187,15 +11681,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,72,FOLLOW_9); 
+            otherlv_3=(Token)match(input,74,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getColumnDBAccess().getColumndbKeyword_2());
             		
-            // InternalTyphonML.g:4480:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:4481:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4672:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:4673:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:4481:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:4482:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:4673:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4674:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getColumnDBAccess().getNameEStringParserRuleCall_3_0());
@@ -11222,34 +11716,34 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_78); 
+            otherlv_5=(Token)match(input,20,FOLLOW_80); 
 
             			newLeafNode(otherlv_5, grammarAccess.getColumnDBAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:4503:3: (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )?
-            int alt73=2;
-            int LA73_0 = input.LA(1);
+            // InternalTyphonML.g:4695:3: (otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}' )?
+            int alt79=2;
+            int LA79_0 = input.LA(1);
 
-            if ( (LA73_0==73) ) {
-                alt73=1;
+            if ( (LA79_0==75) ) {
+                alt79=1;
             }
-            switch (alt73) {
+            switch (alt79) {
                 case 1 :
-                    // InternalTyphonML.g:4504:4: otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}'
+                    // InternalTyphonML.g:4696:4: otherlv_6= 'columns' otherlv_7= '{' ( (lv_columns_8_0= ruleColumn ) ) (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )* otherlv_11= '}'
                     {
-                    otherlv_6=(Token)match(input,73,FOLLOW_12); 
+                    otherlv_6=(Token)match(input,75,FOLLOW_12); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getColumnDBAccess().getColumnsKeyword_5_0());
                     			
-                    otherlv_7=(Token)match(input,20,FOLLOW_79); 
+                    otherlv_7=(Token)match(input,20,FOLLOW_81); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getColumnDBAccess().getLeftCurlyBracketKeyword_5_1());
                     			
-                    // InternalTyphonML.g:4512:4: ( (lv_columns_8_0= ruleColumn ) )
-                    // InternalTyphonML.g:4513:5: (lv_columns_8_0= ruleColumn )
+                    // InternalTyphonML.g:4704:4: ( (lv_columns_8_0= ruleColumn ) )
+                    // InternalTyphonML.g:4705:5: (lv_columns_8_0= ruleColumn )
                     {
-                    // InternalTyphonML.g:4513:5: (lv_columns_8_0= ruleColumn )
-                    // InternalTyphonML.g:4514:6: lv_columns_8_0= ruleColumn
+                    // InternalTyphonML.g:4705:5: (lv_columns_8_0= ruleColumn )
+                    // InternalTyphonML.g:4706:6: lv_columns_8_0= ruleColumn
                     {
 
                     						newCompositeNode(grammarAccess.getColumnDBAccess().getColumnsColumnParserRuleCall_5_2_0());
@@ -11276,30 +11770,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:4531:4: (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )*
-                    loop72:
+                    // InternalTyphonML.g:4723:4: (otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) ) )*
+                    loop78:
                     do {
-                        int alt72=2;
-                        int LA72_0 = input.LA(1);
+                        int alt78=2;
+                        int LA78_0 = input.LA(1);
 
-                        if ( (LA72_0==13) ) {
-                            alt72=1;
+                        if ( (LA78_0==13) ) {
+                            alt78=1;
                         }
 
 
-                        switch (alt72) {
+                        switch (alt78) {
                     	case 1 :
-                    	    // InternalTyphonML.g:4532:5: otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) )
+                    	    // InternalTyphonML.g:4724:5: otherlv_9= ',' ( (lv_columns_10_0= ruleColumn ) )
                     	    {
-                    	    otherlv_9=(Token)match(input,13,FOLLOW_79); 
+                    	    otherlv_9=(Token)match(input,13,FOLLOW_81); 
 
                     	    					newLeafNode(otherlv_9, grammarAccess.getColumnDBAccess().getCommaKeyword_5_3_0());
                     	    				
-                    	    // InternalTyphonML.g:4536:5: ( (lv_columns_10_0= ruleColumn ) )
-                    	    // InternalTyphonML.g:4537:6: (lv_columns_10_0= ruleColumn )
+                    	    // InternalTyphonML.g:4728:5: ( (lv_columns_10_0= ruleColumn ) )
+                    	    // InternalTyphonML.g:4729:6: (lv_columns_10_0= ruleColumn )
                     	    {
-                    	    // InternalTyphonML.g:4537:6: (lv_columns_10_0= ruleColumn )
-                    	    // InternalTyphonML.g:4538:7: lv_columns_10_0= ruleColumn
+                    	    // InternalTyphonML.g:4729:6: (lv_columns_10_0= ruleColumn )
+                    	    // InternalTyphonML.g:4730:7: lv_columns_10_0= ruleColumn
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getColumnDBAccess().getColumnsColumnParserRuleCall_5_3_1_0());
@@ -11331,7 +11825,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop72;
+                    	    break loop78;
                         }
                     } while (true);
 
@@ -11372,7 +11866,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphEdge_Impl"
-    // InternalTyphonML.g:4569:1: entryRuleGraphEdge_Impl returns [EObject current=null] : iv_ruleGraphEdge_Impl= ruleGraphEdge_Impl EOF ;
+    // InternalTyphonML.g:4761:1: entryRuleGraphEdge_Impl returns [EObject current=null] : iv_ruleGraphEdge_Impl= ruleGraphEdge_Impl EOF ;
     public final EObject entryRuleGraphEdge_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -11380,8 +11874,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4569:55: (iv_ruleGraphEdge_Impl= ruleGraphEdge_Impl EOF )
-            // InternalTyphonML.g:4570:2: iv_ruleGraphEdge_Impl= ruleGraphEdge_Impl EOF
+            // InternalTyphonML.g:4761:55: (iv_ruleGraphEdge_Impl= ruleGraphEdge_Impl EOF )
+            // InternalTyphonML.g:4762:2: iv_ruleGraphEdge_Impl= ruleGraphEdge_Impl EOF
             {
              newCompositeNode(grammarAccess.getGraphEdge_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -11408,7 +11902,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphEdge_Impl"
-    // InternalTyphonML.g:4576:1: ruleGraphEdge_Impl returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
+    // InternalTyphonML.g:4768:1: ruleGraphEdge_Impl returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
     public final EObject ruleGraphEdge_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -11435,14 +11929,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4582:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
-            // InternalTyphonML.g:4583:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalTyphonML.g:4774:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
+            // InternalTyphonML.g:4775:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
             {
-            // InternalTyphonML.g:4583:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
-            // InternalTyphonML.g:4584:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}'
+            // InternalTyphonML.g:4775:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalTyphonML.g:4776:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'edge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}'
             {
-            // InternalTyphonML.g:4584:3: ()
-            // InternalTyphonML.g:4585:4: 
+            // InternalTyphonML.g:4776:3: ()
+            // InternalTyphonML.g:4777:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11452,31 +11946,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4591:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            // InternalTyphonML.g:4783:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt80=2;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA74_0==44) ) {
-                alt74=1;
+            if ( (LA80_0==44) ) {
+                alt80=1;
             }
-            switch (alt74) {
+            switch (alt80) {
                 case 1 :
-                    // InternalTyphonML.g:4592:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4784:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGraphEdge_ImplAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4596:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4597:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4788:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4789:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4597:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4598:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4789:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4790:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getGraphEdge_ImplAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_80);
+                    pushFollow(FOLLOW_82);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -11504,15 +11998,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,74,FOLLOW_9); 
+            otherlv_3=(Token)match(input,76,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getGraphEdge_ImplAccess().getEdgeKeyword_2());
             		
-            // InternalTyphonML.g:4620:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:4621:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4812:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:4813:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:4621:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:4622:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:4813:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:4814:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getGraphEdge_ImplAccess().getNameEStringParserRuleCall_3_0());
@@ -11539,30 +12033,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_81); 
+            otherlv_5=(Token)match(input,20,FOLLOW_83); 
 
             			newLeafNode(otherlv_5, grammarAccess.getGraphEdge_ImplAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:4643:3: (otherlv_6= 'from' ( ( ruleEString ) ) )?
-            int alt75=2;
-            int LA75_0 = input.LA(1);
+            // InternalTyphonML.g:4835:3: (otherlv_6= 'from' ( ( ruleEString ) ) )?
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA75_0==75) ) {
-                alt75=1;
+            if ( (LA81_0==77) ) {
+                alt81=1;
             }
-            switch (alt75) {
+            switch (alt81) {
                 case 1 :
-                    // InternalTyphonML.g:4644:4: otherlv_6= 'from' ( ( ruleEString ) )
+                    // InternalTyphonML.g:4836:4: otherlv_6= 'from' ( ( ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,75,FOLLOW_9); 
+                    otherlv_6=(Token)match(input,77,FOLLOW_9); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getGraphEdge_ImplAccess().getFromKeyword_5_0());
                     			
-                    // InternalTyphonML.g:4648:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:4649:5: ( ruleEString )
+                    // InternalTyphonML.g:4840:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:4841:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:4649:5: ( ruleEString )
-                    // InternalTyphonML.g:4650:6: ruleEString
+                    // InternalTyphonML.g:4841:5: ( ruleEString )
+                    // InternalTyphonML.g:4842:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -11572,7 +12066,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getGraphEdge_ImplAccess().getFromGraphNodeCrossReference_5_1_0());
                     					
-                    pushFollow(FOLLOW_82);
+                    pushFollow(FOLLOW_84);
                     ruleEString();
 
                     state._fsp--;
@@ -11592,26 +12086,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4665:3: (otherlv_8= 'to' ( ( ruleEString ) ) )?
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // InternalTyphonML.g:4857:3: (otherlv_8= 'to' ( ( ruleEString ) ) )?
+            int alt82=2;
+            int LA82_0 = input.LA(1);
 
-            if ( (LA76_0==30) ) {
-                alt76=1;
+            if ( (LA82_0==30) ) {
+                alt82=1;
             }
-            switch (alt76) {
+            switch (alt82) {
                 case 1 :
-                    // InternalTyphonML.g:4666:4: otherlv_8= 'to' ( ( ruleEString ) )
+                    // InternalTyphonML.g:4858:4: otherlv_8= 'to' ( ( ruleEString ) )
                     {
                     otherlv_8=(Token)match(input,30,FOLLOW_9); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getGraphEdge_ImplAccess().getToKeyword_6_0());
                     			
-                    // InternalTyphonML.g:4670:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:4671:5: ( ruleEString )
+                    // InternalTyphonML.g:4862:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:4863:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:4671:5: ( ruleEString )
-                    // InternalTyphonML.g:4672:6: ruleEString
+                    // InternalTyphonML.g:4863:5: ( ruleEString )
+                    // InternalTyphonML.g:4864:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -11621,7 +12115,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getGraphEdge_ImplAccess().getToGraphNodeCrossReference_6_1_0());
                     					
-                    pushFollow(FOLLOW_83);
+                    pushFollow(FOLLOW_85);
                     ruleEString();
 
                     state._fsp--;
@@ -11641,18 +12135,18 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4687:3: (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )?
-            int alt78=2;
-            int LA78_0 = input.LA(1);
+            // InternalTyphonML.g:4879:3: (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )?
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            if ( (LA78_0==76) ) {
-                alt78=1;
+            if ( (LA84_0==78) ) {
+                alt84=1;
             }
-            switch (alt78) {
+            switch (alt84) {
                 case 1 :
-                    // InternalTyphonML.g:4688:4: otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}'
+                    // InternalTyphonML.g:4880:4: otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}'
                     {
-                    otherlv_10=(Token)match(input,76,FOLLOW_12); 
+                    otherlv_10=(Token)match(input,78,FOLLOW_12); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getGraphEdge_ImplAccess().getLabelsKeyword_7_0());
                     			
@@ -11660,11 +12154,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_11, grammarAccess.getGraphEdge_ImplAccess().getLeftCurlyBracketKeyword_7_1());
                     			
-                    // InternalTyphonML.g:4696:4: ( (lv_labels_12_0= ruleGraphEdgeLabel ) )
-                    // InternalTyphonML.g:4697:5: (lv_labels_12_0= ruleGraphEdgeLabel )
+                    // InternalTyphonML.g:4888:4: ( (lv_labels_12_0= ruleGraphEdgeLabel ) )
+                    // InternalTyphonML.g:4889:5: (lv_labels_12_0= ruleGraphEdgeLabel )
                     {
-                    // InternalTyphonML.g:4697:5: (lv_labels_12_0= ruleGraphEdgeLabel )
-                    // InternalTyphonML.g:4698:6: lv_labels_12_0= ruleGraphEdgeLabel
+                    // InternalTyphonML.g:4889:5: (lv_labels_12_0= ruleGraphEdgeLabel )
+                    // InternalTyphonML.g:4890:6: lv_labels_12_0= ruleGraphEdgeLabel
                     {
 
                     						newCompositeNode(grammarAccess.getGraphEdge_ImplAccess().getLabelsGraphEdgeLabelParserRuleCall_7_2_0());
@@ -11691,30 +12185,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:4715:4: (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )*
-                    loop77:
+                    // InternalTyphonML.g:4907:4: (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )*
+                    loop83:
                     do {
-                        int alt77=2;
-                        int LA77_0 = input.LA(1);
+                        int alt83=2;
+                        int LA83_0 = input.LA(1);
 
-                        if ( (LA77_0==13) ) {
-                            alt77=1;
+                        if ( (LA83_0==13) ) {
+                            alt83=1;
                         }
 
 
-                        switch (alt77) {
+                        switch (alt83) {
                     	case 1 :
-                    	    // InternalTyphonML.g:4716:5: otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
+                    	    // InternalTyphonML.g:4908:5: otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
                     	    {
                     	    otherlv_13=(Token)match(input,13,FOLLOW_41); 
 
                     	    					newLeafNode(otherlv_13, grammarAccess.getGraphEdge_ImplAccess().getCommaKeyword_7_3_0());
                     	    				
-                    	    // InternalTyphonML.g:4720:5: ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
-                    	    // InternalTyphonML.g:4721:6: (lv_labels_14_0= ruleGraphEdgeLabel )
+                    	    // InternalTyphonML.g:4912:5: ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
+                    	    // InternalTyphonML.g:4913:6: (lv_labels_14_0= ruleGraphEdgeLabel )
                     	    {
-                    	    // InternalTyphonML.g:4721:6: (lv_labels_14_0= ruleGraphEdgeLabel )
-                    	    // InternalTyphonML.g:4722:7: lv_labels_14_0= ruleGraphEdgeLabel
+                    	    // InternalTyphonML.g:4913:6: (lv_labels_14_0= ruleGraphEdgeLabel )
+                    	    // InternalTyphonML.g:4914:7: lv_labels_14_0= ruleGraphEdgeLabel
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getGraphEdge_ImplAccess().getLabelsGraphEdgeLabelParserRuleCall_7_3_1_0());
@@ -11746,7 +12240,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop77;
+                    	    break loop83;
                         }
                     } while (true);
 
@@ -11787,7 +12281,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphEdgeLabel"
-    // InternalTyphonML.g:4753:1: entryRuleGraphEdgeLabel returns [EObject current=null] : iv_ruleGraphEdgeLabel= ruleGraphEdgeLabel EOF ;
+    // InternalTyphonML.g:4945:1: entryRuleGraphEdgeLabel returns [EObject current=null] : iv_ruleGraphEdgeLabel= ruleGraphEdgeLabel EOF ;
     public final EObject entryRuleGraphEdgeLabel() throws RecognitionException {
         EObject current = null;
 
@@ -11795,8 +12289,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4753:55: (iv_ruleGraphEdgeLabel= ruleGraphEdgeLabel EOF )
-            // InternalTyphonML.g:4754:2: iv_ruleGraphEdgeLabel= ruleGraphEdgeLabel EOF
+            // InternalTyphonML.g:4945:55: (iv_ruleGraphEdgeLabel= ruleGraphEdgeLabel EOF )
+            // InternalTyphonML.g:4946:2: iv_ruleGraphEdgeLabel= ruleGraphEdgeLabel EOF
             {
              newCompositeNode(grammarAccess.getGraphEdgeLabelRule()); 
             pushFollow(FOLLOW_1);
@@ -11823,7 +12317,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphEdgeLabel"
-    // InternalTyphonML.g:4760:1: ruleGraphEdgeLabel returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) ;
+    // InternalTyphonML.g:4952:1: ruleGraphEdgeLabel returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) ;
     public final EObject ruleGraphEdgeLabel() throws RecognitionException {
         EObject current = null;
 
@@ -11838,14 +12332,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4766:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) )
-            // InternalTyphonML.g:4767:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:4958:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) )
+            // InternalTyphonML.g:4959:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
             {
-            // InternalTyphonML.g:4767:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
-            // InternalTyphonML.g:4768:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) )
+            // InternalTyphonML.g:4959:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:4960:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) )
             {
-            // InternalTyphonML.g:4768:3: ()
-            // InternalTyphonML.g:4769:4: 
+            // InternalTyphonML.g:4960:3: ()
+            // InternalTyphonML.g:4961:4: 
             {
 
             				current = forceCreateModelElement(
@@ -11855,26 +12349,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4775:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt79=2;
-            int LA79_0 = input.LA(1);
+            // InternalTyphonML.g:4967:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt85=2;
+            int LA85_0 = input.LA(1);
 
-            if ( (LA79_0==44) ) {
-                alt79=1;
+            if ( (LA85_0==44) ) {
+                alt85=1;
             }
-            switch (alt79) {
+            switch (alt85) {
                 case 1 :
-                    // InternalTyphonML.g:4776:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4968:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGraphEdgeLabelAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4780:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4781:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4972:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:4973:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4781:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4782:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:4973:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:4974:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getGraphEdgeLabelAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
@@ -11907,11 +12401,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4800:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalTyphonML.g:4801:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:4992:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalTyphonML.g:4993:4: (lv_name_3_0= ruleEString )
             {
-            // InternalTyphonML.g:4801:4: (lv_name_3_0= ruleEString )
-            // InternalTyphonML.g:4802:5: lv_name_3_0= ruleEString
+            // InternalTyphonML.g:4993:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:4994:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getGraphEdgeLabelAccess().getNameEStringParserRuleCall_2_0());
@@ -11942,11 +12436,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getGraphEdgeLabelAccess().getColonKeyword_3());
             		
-            // InternalTyphonML.g:4823:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:4824:4: ( ruleEString )
+            // InternalTyphonML.g:5015:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:5016:4: ( ruleEString )
             {
-            // InternalTyphonML.g:4824:4: ( ruleEString )
-            // InternalTyphonML.g:4825:5: ruleEString
+            // InternalTyphonML.g:5016:4: ( ruleEString )
+            // InternalTyphonML.g:5017:5: ruleEString
             {
 
             					if (current==null) {
@@ -11993,7 +12487,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddAttribute"
-    // InternalTyphonML.g:4843:1: entryRuleAddAttribute returns [EObject current=null] : iv_ruleAddAttribute= ruleAddAttribute EOF ;
+    // InternalTyphonML.g:5035:1: entryRuleAddAttribute returns [EObject current=null] : iv_ruleAddAttribute= ruleAddAttribute EOF ;
     public final EObject entryRuleAddAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12001,8 +12495,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4843:53: (iv_ruleAddAttribute= ruleAddAttribute EOF )
-            // InternalTyphonML.g:4844:2: iv_ruleAddAttribute= ruleAddAttribute EOF
+            // InternalTyphonML.g:5035:53: (iv_ruleAddAttribute= ruleAddAttribute EOF )
+            // InternalTyphonML.g:5036:2: iv_ruleAddAttribute= ruleAddAttribute EOF
             {
              newCompositeNode(grammarAccess.getAddAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -12029,7 +12523,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddAttribute"
-    // InternalTyphonML.g:4850:1: ruleAddAttribute returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) ) ;
+    // InternalTyphonML.g:5042:1: ruleAddAttribute returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) ) ;
     public final EObject ruleAddAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12047,14 +12541,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4856:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) ) )
-            // InternalTyphonML.g:4857:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:5048:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) ) )
+            // InternalTyphonML.g:5049:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) )
             {
-            // InternalTyphonML.g:4857:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) )
-            // InternalTyphonML.g:4858:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) )
+            // InternalTyphonML.g:5049:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:5050:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'add' otherlv_4= 'attribute' ( (lv_name_5_0= ruleEString ) ) otherlv_6= ':' ( ( ruleEString ) ) otherlv_8= 'to' ( ( ruleEString ) )
             {
-            // InternalTyphonML.g:4858:3: ()
-            // InternalTyphonML.g:4859:4: 
+            // InternalTyphonML.g:5050:3: ()
+            // InternalTyphonML.g:5051:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12064,31 +12558,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4865:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            // InternalTyphonML.g:5057:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA80_0==44) ) {
-                alt80=1;
+            if ( (LA86_0==44) ) {
+                alt86=1;
             }
-            switch (alt80) {
+            switch (alt86) {
                 case 1 :
-                    // InternalTyphonML.g:4866:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5058:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAddAttributeAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4870:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4871:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5062:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5063:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4871:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4872:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:5063:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5064:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAddAttributeAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_84);
+                    pushFollow(FOLLOW_86);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -12116,7 +12610,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,77,FOLLOW_16); 
+            otherlv_3=(Token)match(input,79,FOLLOW_16); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAddAttributeAccess().getAddKeyword_2());
             		
@@ -12124,11 +12618,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getAddAttributeAccess().getAttributeKeyword_3());
             		
-            // InternalTyphonML.g:4898:3: ( (lv_name_5_0= ruleEString ) )
-            // InternalTyphonML.g:4899:4: (lv_name_5_0= ruleEString )
+            // InternalTyphonML.g:5090:3: ( (lv_name_5_0= ruleEString ) )
+            // InternalTyphonML.g:5091:4: (lv_name_5_0= ruleEString )
             {
-            // InternalTyphonML.g:4899:4: (lv_name_5_0= ruleEString )
-            // InternalTyphonML.g:4900:5: lv_name_5_0= ruleEString
+            // InternalTyphonML.g:5091:4: (lv_name_5_0= ruleEString )
+            // InternalTyphonML.g:5092:5: lv_name_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAddAttributeAccess().getNameEStringParserRuleCall_4_0());
@@ -12159,11 +12653,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getAddAttributeAccess().getColonKeyword_5());
             		
-            // InternalTyphonML.g:4921:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:4922:4: ( ruleEString )
+            // InternalTyphonML.g:5113:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:5114:4: ( ruleEString )
             {
-            // InternalTyphonML.g:4922:4: ( ruleEString )
-            // InternalTyphonML.g:4923:5: ruleEString
+            // InternalTyphonML.g:5114:4: ( ruleEString )
+            // InternalTyphonML.g:5115:5: ruleEString
             {
 
             					if (current==null) {
@@ -12191,11 +12685,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_8, grammarAccess.getAddAttributeAccess().getToKeyword_7());
             		
-            // InternalTyphonML.g:4941:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:4942:4: ( ruleEString )
+            // InternalTyphonML.g:5133:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:5134:4: ( ruleEString )
             {
-            // InternalTyphonML.g:4942:4: ( ruleEString )
-            // InternalTyphonML.g:4943:5: ruleEString
+            // InternalTyphonML.g:5134:4: ( ruleEString )
+            // InternalTyphonML.g:5135:5: ruleEString
             {
 
             					if (current==null) {
@@ -12242,7 +12736,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddGraphEdge"
-    // InternalTyphonML.g:4961:1: entryRuleAddGraphEdge returns [EObject current=null] : iv_ruleAddGraphEdge= ruleAddGraphEdge EOF ;
+    // InternalTyphonML.g:5153:1: entryRuleAddGraphEdge returns [EObject current=null] : iv_ruleAddGraphEdge= ruleAddGraphEdge EOF ;
     public final EObject entryRuleAddGraphEdge() throws RecognitionException {
         EObject current = null;
 
@@ -12250,8 +12744,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:4961:53: (iv_ruleAddGraphEdge= ruleAddGraphEdge EOF )
-            // InternalTyphonML.g:4962:2: iv_ruleAddGraphEdge= ruleAddGraphEdge EOF
+            // InternalTyphonML.g:5153:53: (iv_ruleAddGraphEdge= ruleAddGraphEdge EOF )
+            // InternalTyphonML.g:5154:2: iv_ruleAddGraphEdge= ruleAddGraphEdge EOF
             {
              newCompositeNode(grammarAccess.getAddGraphEdgeRule()); 
             pushFollow(FOLLOW_1);
@@ -12278,7 +12772,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddGraphEdge"
-    // InternalTyphonML.g:4968:1: ruleAddGraphEdge returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
+    // InternalTyphonML.g:5160:1: ruleAddGraphEdge returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) ;
     public final EObject ruleAddGraphEdge() throws RecognitionException {
         EObject current = null;
 
@@ -12305,14 +12799,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:4974:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
-            // InternalTyphonML.g:4975:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalTyphonML.g:5166:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' ) )
+            // InternalTyphonML.g:5167:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
             {
-            // InternalTyphonML.g:4975:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
-            // InternalTyphonML.g:4976:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}'
+            // InternalTyphonML.g:5167:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}' )
+            // InternalTyphonML.g:5168:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphEdge' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'from' ( ( ruleEString ) ) )? (otherlv_8= 'to' ( ( ruleEString ) ) )? (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )? otherlv_16= '}'
             {
-            // InternalTyphonML.g:4976:3: ()
-            // InternalTyphonML.g:4977:4: 
+            // InternalTyphonML.g:5168:3: ()
+            // InternalTyphonML.g:5169:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12322,31 +12816,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:4983:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt81=2;
-            int LA81_0 = input.LA(1);
+            // InternalTyphonML.g:5175:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt87=2;
+            int LA87_0 = input.LA(1);
 
-            if ( (LA81_0==44) ) {
-                alt81=1;
+            if ( (LA87_0==44) ) {
+                alt87=1;
             }
-            switch (alt81) {
+            switch (alt87) {
                 case 1 :
-                    // InternalTyphonML.g:4984:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5176:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAddGraphEdgeAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:4988:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:4989:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5180:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5181:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:4989:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:4990:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:5181:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5182:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAddGraphEdgeAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_85);
+                    pushFollow(FOLLOW_87);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -12374,15 +12868,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,78,FOLLOW_9); 
+            otherlv_3=(Token)match(input,80,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAddGraphEdgeAccess().getAddGraphEdgeKeyword_2());
             		
-            // InternalTyphonML.g:5012:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:5013:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5204:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:5205:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:5013:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:5014:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:5205:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5206:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAddGraphEdgeAccess().getNameEStringParserRuleCall_3_0());
@@ -12409,30 +12903,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_81); 
+            otherlv_5=(Token)match(input,20,FOLLOW_83); 
 
             			newLeafNode(otherlv_5, grammarAccess.getAddGraphEdgeAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:5035:3: (otherlv_6= 'from' ( ( ruleEString ) ) )?
-            int alt82=2;
-            int LA82_0 = input.LA(1);
+            // InternalTyphonML.g:5227:3: (otherlv_6= 'from' ( ( ruleEString ) ) )?
+            int alt88=2;
+            int LA88_0 = input.LA(1);
 
-            if ( (LA82_0==75) ) {
-                alt82=1;
+            if ( (LA88_0==77) ) {
+                alt88=1;
             }
-            switch (alt82) {
+            switch (alt88) {
                 case 1 :
-                    // InternalTyphonML.g:5036:4: otherlv_6= 'from' ( ( ruleEString ) )
+                    // InternalTyphonML.g:5228:4: otherlv_6= 'from' ( ( ruleEString ) )
                     {
-                    otherlv_6=(Token)match(input,75,FOLLOW_9); 
+                    otherlv_6=(Token)match(input,77,FOLLOW_9); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getAddGraphEdgeAccess().getFromKeyword_5_0());
                     			
-                    // InternalTyphonML.g:5040:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:5041:5: ( ruleEString )
+                    // InternalTyphonML.g:5232:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:5233:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:5041:5: ( ruleEString )
-                    // InternalTyphonML.g:5042:6: ruleEString
+                    // InternalTyphonML.g:5233:5: ( ruleEString )
+                    // InternalTyphonML.g:5234:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -12442,7 +12936,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getAddGraphEdgeAccess().getFromGraphNodeCrossReference_5_1_0());
                     					
-                    pushFollow(FOLLOW_82);
+                    pushFollow(FOLLOW_84);
                     ruleEString();
 
                     state._fsp--;
@@ -12462,26 +12956,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5057:3: (otherlv_8= 'to' ( ( ruleEString ) ) )?
-            int alt83=2;
-            int LA83_0 = input.LA(1);
+            // InternalTyphonML.g:5249:3: (otherlv_8= 'to' ( ( ruleEString ) ) )?
+            int alt89=2;
+            int LA89_0 = input.LA(1);
 
-            if ( (LA83_0==30) ) {
-                alt83=1;
+            if ( (LA89_0==30) ) {
+                alt89=1;
             }
-            switch (alt83) {
+            switch (alt89) {
                 case 1 :
-                    // InternalTyphonML.g:5058:4: otherlv_8= 'to' ( ( ruleEString ) )
+                    // InternalTyphonML.g:5250:4: otherlv_8= 'to' ( ( ruleEString ) )
                     {
                     otherlv_8=(Token)match(input,30,FOLLOW_9); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getAddGraphEdgeAccess().getToKeyword_6_0());
                     			
-                    // InternalTyphonML.g:5062:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:5063:5: ( ruleEString )
+                    // InternalTyphonML.g:5254:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:5255:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:5063:5: ( ruleEString )
-                    // InternalTyphonML.g:5064:6: ruleEString
+                    // InternalTyphonML.g:5255:5: ( ruleEString )
+                    // InternalTyphonML.g:5256:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -12491,7 +12985,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getAddGraphEdgeAccess().getToGraphNodeCrossReference_6_1_0());
                     					
-                    pushFollow(FOLLOW_83);
+                    pushFollow(FOLLOW_85);
                     ruleEString();
 
                     state._fsp--;
@@ -12511,18 +13005,18 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5079:3: (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )?
-            int alt85=2;
-            int LA85_0 = input.LA(1);
+            // InternalTyphonML.g:5271:3: (otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}' )?
+            int alt91=2;
+            int LA91_0 = input.LA(1);
 
-            if ( (LA85_0==76) ) {
-                alt85=1;
+            if ( (LA91_0==78) ) {
+                alt91=1;
             }
-            switch (alt85) {
+            switch (alt91) {
                 case 1 :
-                    // InternalTyphonML.g:5080:4: otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}'
+                    // InternalTyphonML.g:5272:4: otherlv_10= 'labels' otherlv_11= '{' ( (lv_labels_12_0= ruleGraphEdgeLabel ) ) (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )* otherlv_15= '}'
                     {
-                    otherlv_10=(Token)match(input,76,FOLLOW_12); 
+                    otherlv_10=(Token)match(input,78,FOLLOW_12); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getAddGraphEdgeAccess().getLabelsKeyword_7_0());
                     			
@@ -12530,11 +13024,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_11, grammarAccess.getAddGraphEdgeAccess().getLeftCurlyBracketKeyword_7_1());
                     			
-                    // InternalTyphonML.g:5088:4: ( (lv_labels_12_0= ruleGraphEdgeLabel ) )
-                    // InternalTyphonML.g:5089:5: (lv_labels_12_0= ruleGraphEdgeLabel )
+                    // InternalTyphonML.g:5280:4: ( (lv_labels_12_0= ruleGraphEdgeLabel ) )
+                    // InternalTyphonML.g:5281:5: (lv_labels_12_0= ruleGraphEdgeLabel )
                     {
-                    // InternalTyphonML.g:5089:5: (lv_labels_12_0= ruleGraphEdgeLabel )
-                    // InternalTyphonML.g:5090:6: lv_labels_12_0= ruleGraphEdgeLabel
+                    // InternalTyphonML.g:5281:5: (lv_labels_12_0= ruleGraphEdgeLabel )
+                    // InternalTyphonML.g:5282:6: lv_labels_12_0= ruleGraphEdgeLabel
                     {
 
                     						newCompositeNode(grammarAccess.getAddGraphEdgeAccess().getLabelsGraphEdgeLabelParserRuleCall_7_2_0());
@@ -12561,30 +13055,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalTyphonML.g:5107:4: (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )*
-                    loop84:
+                    // InternalTyphonML.g:5299:4: (otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) ) )*
+                    loop90:
                     do {
-                        int alt84=2;
-                        int LA84_0 = input.LA(1);
+                        int alt90=2;
+                        int LA90_0 = input.LA(1);
 
-                        if ( (LA84_0==13) ) {
-                            alt84=1;
+                        if ( (LA90_0==13) ) {
+                            alt90=1;
                         }
 
 
-                        switch (alt84) {
+                        switch (alt90) {
                     	case 1 :
-                    	    // InternalTyphonML.g:5108:5: otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
+                    	    // InternalTyphonML.g:5300:5: otherlv_13= ',' ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
                     	    {
                     	    otherlv_13=(Token)match(input,13,FOLLOW_41); 
 
                     	    					newLeafNode(otherlv_13, grammarAccess.getAddGraphEdgeAccess().getCommaKeyword_7_3_0());
                     	    				
-                    	    // InternalTyphonML.g:5112:5: ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
-                    	    // InternalTyphonML.g:5113:6: (lv_labels_14_0= ruleGraphEdgeLabel )
+                    	    // InternalTyphonML.g:5304:5: ( (lv_labels_14_0= ruleGraphEdgeLabel ) )
+                    	    // InternalTyphonML.g:5305:6: (lv_labels_14_0= ruleGraphEdgeLabel )
                     	    {
-                    	    // InternalTyphonML.g:5113:6: (lv_labels_14_0= ruleGraphEdgeLabel )
-                    	    // InternalTyphonML.g:5114:7: lv_labels_14_0= ruleGraphEdgeLabel
+                    	    // InternalTyphonML.g:5305:6: (lv_labels_14_0= ruleGraphEdgeLabel )
+                    	    // InternalTyphonML.g:5306:7: lv_labels_14_0= ruleGraphEdgeLabel
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getAddGraphEdgeAccess().getLabelsGraphEdgeLabelParserRuleCall_7_3_1_0());
@@ -12616,7 +13110,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop84;
+                    	    break loop90;
                         }
                     } while (true);
 
@@ -12657,7 +13151,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGraphAttribute_Impl"
-    // InternalTyphonML.g:5145:1: entryRuleGraphAttribute_Impl returns [EObject current=null] : iv_ruleGraphAttribute_Impl= ruleGraphAttribute_Impl EOF ;
+    // InternalTyphonML.g:5337:1: entryRuleGraphAttribute_Impl returns [EObject current=null] : iv_ruleGraphAttribute_Impl= ruleGraphAttribute_Impl EOF ;
     public final EObject entryRuleGraphAttribute_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -12665,8 +13159,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:5145:60: (iv_ruleGraphAttribute_Impl= ruleGraphAttribute_Impl EOF )
-            // InternalTyphonML.g:5146:2: iv_ruleGraphAttribute_Impl= ruleGraphAttribute_Impl EOF
+            // InternalTyphonML.g:5337:60: (iv_ruleGraphAttribute_Impl= ruleGraphAttribute_Impl EOF )
+            // InternalTyphonML.g:5338:2: iv_ruleGraphAttribute_Impl= ruleGraphAttribute_Impl EOF
             {
              newCompositeNode(grammarAccess.getGraphAttribute_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -12693,7 +13187,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGraphAttribute_Impl"
-    // InternalTyphonML.g:5152:1: ruleGraphAttribute_Impl returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? ) ;
+    // InternalTyphonML.g:5344:1: ruleGraphAttribute_Impl returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? ) ;
     public final EObject ruleGraphAttribute_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -12708,14 +13202,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5158:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? ) )
-            // InternalTyphonML.g:5159:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? )
+            // InternalTyphonML.g:5350:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? ) )
+            // InternalTyphonML.g:5351:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? )
             {
-            // InternalTyphonML.g:5159:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? )
-            // InternalTyphonML.g:5160:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )?
+            // InternalTyphonML.g:5351:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )? )
+            // InternalTyphonML.g:5352:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= '=' ( ( ruleEString ) )?
             {
-            // InternalTyphonML.g:5160:3: ()
-            // InternalTyphonML.g:5161:4: 
+            // InternalTyphonML.g:5352:3: ()
+            // InternalTyphonML.g:5353:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12725,26 +13219,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5167:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            // InternalTyphonML.g:5359:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt92=2;
+            int LA92_0 = input.LA(1);
 
-            if ( (LA86_0==44) ) {
-                alt86=1;
+            if ( (LA92_0==44) ) {
+                alt92=1;
             }
-            switch (alt86) {
+            switch (alt92) {
                 case 1 :
-                    // InternalTyphonML.g:5168:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5360:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getGraphAttribute_ImplAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:5172:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:5173:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5364:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5365:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:5173:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:5174:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:5365:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5366:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getGraphAttribute_ImplAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
@@ -12777,16 +13271,16 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5192:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalTyphonML.g:5193:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:5384:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalTyphonML.g:5385:4: (lv_name_3_0= ruleEString )
             {
-            // InternalTyphonML.g:5193:4: (lv_name_3_0= ruleEString )
-            // InternalTyphonML.g:5194:5: lv_name_3_0= ruleEString
+            // InternalTyphonML.g:5385:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:5386:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getGraphAttribute_ImplAccess().getNameEStringParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_86);
+            pushFollow(FOLLOW_88);
             lv_name_3_0=ruleEString();
 
             state._fsp--;
@@ -12808,23 +13302,23 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,79,FOLLOW_87); 
+            otherlv_4=(Token)match(input,81,FOLLOW_89); 
 
             			newLeafNode(otherlv_4, grammarAccess.getGraphAttribute_ImplAccess().getEqualsSignKeyword_3());
             		
-            // InternalTyphonML.g:5215:3: ( ( ruleEString ) )?
-            int alt87=2;
-            int LA87_0 = input.LA(1);
+            // InternalTyphonML.g:5407:3: ( ( ruleEString ) )?
+            int alt93=2;
+            int LA93_0 = input.LA(1);
 
-            if ( ((LA87_0>=RULE_STRING && LA87_0<=RULE_ID)) ) {
-                alt87=1;
+            if ( ((LA93_0>=RULE_STRING && LA93_0<=RULE_ID)) ) {
+                alt93=1;
             }
-            switch (alt87) {
+            switch (alt93) {
                 case 1 :
-                    // InternalTyphonML.g:5216:4: ( ruleEString )
+                    // InternalTyphonML.g:5408:4: ( ruleEString )
                     {
-                    // InternalTyphonML.g:5216:4: ( ruleEString )
-                    // InternalTyphonML.g:5217:5: ruleEString
+                    // InternalTyphonML.g:5408:4: ( ruleEString )
+                    // InternalTyphonML.g:5409:5: ruleEString
                     {
 
                     					if (current==null) {
@@ -12874,7 +13368,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddGraphAttribute"
-    // InternalTyphonML.g:5235:1: entryRuleAddGraphAttribute returns [EObject current=null] : iv_ruleAddGraphAttribute= ruleAddGraphAttribute EOF ;
+    // InternalTyphonML.g:5427:1: entryRuleAddGraphAttribute returns [EObject current=null] : iv_ruleAddGraphAttribute= ruleAddGraphAttribute EOF ;
     public final EObject entryRuleAddGraphAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12882,8 +13376,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:5235:58: (iv_ruleAddGraphAttribute= ruleAddGraphAttribute EOF )
-            // InternalTyphonML.g:5236:2: iv_ruleAddGraphAttribute= ruleAddGraphAttribute EOF
+            // InternalTyphonML.g:5427:58: (iv_ruleAddGraphAttribute= ruleAddGraphAttribute EOF )
+            // InternalTyphonML.g:5428:2: iv_ruleAddGraphAttribute= ruleAddGraphAttribute EOF
             {
              newCompositeNode(grammarAccess.getAddGraphAttributeRule()); 
             pushFollow(FOLLOW_1);
@@ -12910,7 +13404,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddGraphAttribute"
-    // InternalTyphonML.g:5242:1: ruleAddGraphAttribute returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' ) ;
+    // InternalTyphonML.g:5434:1: ruleAddGraphAttribute returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' ) ;
     public final EObject ruleAddGraphAttribute() throws RecognitionException {
         EObject current = null;
 
@@ -12928,14 +13422,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5248:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' ) )
-            // InternalTyphonML.g:5249:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' )
+            // InternalTyphonML.g:5440:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' ) )
+            // InternalTyphonML.g:5441:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' )
             {
-            // InternalTyphonML.g:5249:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' )
-            // InternalTyphonML.g:5250:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}'
+            // InternalTyphonML.g:5441:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}' )
+            // InternalTyphonML.g:5442:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? otherlv_3= 'AddGraphAttribute' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'value' ( ( ruleEString ) ) )? otherlv_8= '}'
             {
-            // InternalTyphonML.g:5250:3: ()
-            // InternalTyphonML.g:5251:4: 
+            // InternalTyphonML.g:5442:3: ()
+            // InternalTyphonML.g:5443:4: 
             {
 
             				current = forceCreateModelElement(
@@ -12945,31 +13439,31 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5257:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt88=2;
-            int LA88_0 = input.LA(1);
+            // InternalTyphonML.g:5449:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt94=2;
+            int LA94_0 = input.LA(1);
 
-            if ( (LA88_0==44) ) {
-                alt88=1;
+            if ( (LA94_0==44) ) {
+                alt94=1;
             }
-            switch (alt88) {
+            switch (alt94) {
                 case 1 :
-                    // InternalTyphonML.g:5258:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5450:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAddGraphAttributeAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:5262:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:5263:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5454:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5455:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:5263:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:5264:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:5455:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5456:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAddGraphAttributeAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
                     					
-                    pushFollow(FOLLOW_88);
+                    pushFollow(FOLLOW_90);
                     lv_importedNamespace_2_0=ruleEString();
 
                     state._fsp--;
@@ -12997,15 +13491,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,80,FOLLOW_9); 
+            otherlv_3=(Token)match(input,82,FOLLOW_9); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAddGraphAttributeAccess().getAddGraphAttributeKeyword_2());
             		
-            // InternalTyphonML.g:5286:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:5287:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5478:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:5479:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:5287:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:5288:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:5479:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5480:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAddGraphAttributeAccess().getNameEStringParserRuleCall_3_0());
@@ -13032,30 +13526,30 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_89); 
+            otherlv_5=(Token)match(input,20,FOLLOW_91); 
 
             			newLeafNode(otherlv_5, grammarAccess.getAddGraphAttributeAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:5309:3: (otherlv_6= 'value' ( ( ruleEString ) ) )?
-            int alt89=2;
-            int LA89_0 = input.LA(1);
+            // InternalTyphonML.g:5501:3: (otherlv_6= 'value' ( ( ruleEString ) ) )?
+            int alt95=2;
+            int LA95_0 = input.LA(1);
 
-            if ( (LA89_0==37) ) {
-                alt89=1;
+            if ( (LA95_0==37) ) {
+                alt95=1;
             }
-            switch (alt89) {
+            switch (alt95) {
                 case 1 :
-                    // InternalTyphonML.g:5310:4: otherlv_6= 'value' ( ( ruleEString ) )
+                    // InternalTyphonML.g:5502:4: otherlv_6= 'value' ( ( ruleEString ) )
                     {
                     otherlv_6=(Token)match(input,37,FOLLOW_9); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getAddGraphAttributeAccess().getValueKeyword_5_0());
                     			
-                    // InternalTyphonML.g:5314:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:5315:5: ( ruleEString )
+                    // InternalTyphonML.g:5506:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:5507:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:5315:5: ( ruleEString )
-                    // InternalTyphonML.g:5316:6: ruleEString
+                    // InternalTyphonML.g:5507:5: ( ruleEString )
+                    // InternalTyphonML.g:5508:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -13112,7 +13606,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddEntity"
-    // InternalTyphonML.g:5339:1: entryRuleAddEntity returns [EObject current=null] : iv_ruleAddEntity= ruleAddEntity EOF ;
+    // InternalTyphonML.g:5531:1: entryRuleAddEntity returns [EObject current=null] : iv_ruleAddEntity= ruleAddEntity EOF ;
     public final EObject entryRuleAddEntity() throws RecognitionException {
         EObject current = null;
 
@@ -13120,8 +13614,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:5339:50: (iv_ruleAddEntity= ruleAddEntity EOF )
-            // InternalTyphonML.g:5340:2: iv_ruleAddEntity= ruleAddEntity EOF
+            // InternalTyphonML.g:5531:50: (iv_ruleAddEntity= ruleAddEntity EOF )
+            // InternalTyphonML.g:5532:2: iv_ruleAddEntity= ruleAddEntity EOF
             {
              newCompositeNode(grammarAccess.getAddEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -13148,7 +13642,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddEntity"
-    // InternalTyphonML.g:5346:1: ruleAddEntity returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' ) ;
+    // InternalTyphonML.g:5538:1: ruleAddEntity returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' ) ;
     public final EObject ruleAddEntity() throws RecognitionException {
         EObject current = null;
 
@@ -13182,37 +13676,37 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5352:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' ) )
-            // InternalTyphonML.g:5353:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' )
+            // InternalTyphonML.g:5544:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' ) )
+            // InternalTyphonML.g:5545:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' )
             {
-            // InternalTyphonML.g:5353:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' )
-            // InternalTyphonML.g:5354:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}'
+            // InternalTyphonML.g:5545:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}' )
+            // InternalTyphonML.g:5546:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'entity' ( (lv_name_4_0= ruleEString ) ) otherlv_5= '{' (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )? (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )? otherlv_18= '}'
             {
-            // InternalTyphonML.g:5354:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt90=2;
-            int LA90_0 = input.LA(1);
+            // InternalTyphonML.g:5546:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt96=2;
+            int LA96_0 = input.LA(1);
 
-            if ( (LA90_0==44) ) {
-                alt90=1;
+            if ( (LA96_0==44) ) {
+                alt96=1;
             }
-            switch (alt90) {
+            switch (alt96) {
                 case 1 :
-                    // InternalTyphonML.g:5355:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:5547:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getAddEntityAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:5359:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:5360:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:5551:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:5552:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:5360:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:5361:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:5552:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:5553:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAddEntityAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
                     					
-                    pushFollow(FOLLOW_84);
+                    pushFollow(FOLLOW_86);
                     lv_importedNamespace_1_0=ruleEString();
 
                     state._fsp--;
@@ -13240,7 +13734,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,77,FOLLOW_19); 
+            otherlv_2=(Token)match(input,79,FOLLOW_19); 
 
             			newLeafNode(otherlv_2, grammarAccess.getAddEntityAccess().getAddKeyword_1());
             		
@@ -13248,11 +13742,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getAddEntityAccess().getEntityKeyword_2());
             		
-            // InternalTyphonML.g:5387:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:5388:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5579:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:5580:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:5388:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:5389:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:5580:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5581:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAddEntityAccess().getNameEStringParserRuleCall_3_0());
@@ -13279,54 +13773,54 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,20,FOLLOW_90); 
+            otherlv_5=(Token)match(input,20,FOLLOW_92); 
 
             			newLeafNode(otherlv_5, grammarAccess.getAddEntityAccess().getLeftCurlyBracketKeyword_4());
             		
-            // InternalTyphonML.g:5410:3: (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )?
-            int alt93=2;
-            int LA93_0 = input.LA(1);
+            // InternalTyphonML.g:5602:3: (otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']' )?
+            int alt99=2;
+            int LA99_0 = input.LA(1);
 
-            if ( (LA93_0==60) ) {
-                alt93=1;
+            if ( (LA99_0==62) ) {
+                alt99=1;
             }
-            switch (alt93) {
+            switch (alt99) {
                 case 1 :
-                    // InternalTyphonML.g:5411:4: otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']'
+                    // InternalTyphonML.g:5603:4: otherlv_6= 'attributes' otherlv_7= '[' ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )* otherlv_11= ']'
                     {
-                    otherlv_6=(Token)match(input,60,FOLLOW_5); 
+                    otherlv_6=(Token)match(input,62,FOLLOW_5); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getAddEntityAccess().getAttributesKeyword_5_0());
                     			
-                    otherlv_7=(Token)match(input,12,FOLLOW_91); 
+                    otherlv_7=(Token)match(input,12,FOLLOW_93); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getAddEntityAccess().getLeftSquareBracketKeyword_5_1());
                     			
-                    // InternalTyphonML.g:5419:4: ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )*
-                    loop92:
+                    // InternalTyphonML.g:5611:4: ( ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )* )*
+                    loop98:
                     do {
-                        int alt92=2;
-                        int LA92_0 = input.LA(1);
+                        int alt98=2;
+                        int LA98_0 = input.LA(1);
 
-                        if ( (LA92_0==44||LA92_0==77) ) {
-                            alt92=1;
+                        if ( (LA98_0==44||LA98_0==79) ) {
+                            alt98=1;
                         }
 
 
-                        switch (alt92) {
+                        switch (alt98) {
                     	case 1 :
-                    	    // InternalTyphonML.g:5420:5: ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )*
+                    	    // InternalTyphonML.g:5612:5: ( (lv_attributes_8_0= ruleAddAttribute ) ) (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )*
                     	    {
-                    	    // InternalTyphonML.g:5420:5: ( (lv_attributes_8_0= ruleAddAttribute ) )
-                    	    // InternalTyphonML.g:5421:6: (lv_attributes_8_0= ruleAddAttribute )
+                    	    // InternalTyphonML.g:5612:5: ( (lv_attributes_8_0= ruleAddAttribute ) )
+                    	    // InternalTyphonML.g:5613:6: (lv_attributes_8_0= ruleAddAttribute )
                     	    {
-                    	    // InternalTyphonML.g:5421:6: (lv_attributes_8_0= ruleAddAttribute )
-                    	    // InternalTyphonML.g:5422:7: lv_attributes_8_0= ruleAddAttribute
+                    	    // InternalTyphonML.g:5613:6: (lv_attributes_8_0= ruleAddAttribute )
+                    	    // InternalTyphonML.g:5614:7: lv_attributes_8_0= ruleAddAttribute
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getAddEntityAccess().getAttributesAddAttributeParserRuleCall_5_2_0_0());
                     	    						
-                    	    pushFollow(FOLLOW_92);
+                    	    pushFollow(FOLLOW_94);
                     	    lv_attributes_8_0=ruleAddAttribute();
 
                     	    state._fsp--;
@@ -13348,35 +13842,35 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // InternalTyphonML.g:5439:5: (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )*
-                    	    loop91:
+                    	    // InternalTyphonML.g:5631:5: (otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) ) )*
+                    	    loop97:
                     	    do {
-                    	        int alt91=2;
-                    	        int LA91_0 = input.LA(1);
+                    	        int alt97=2;
+                    	        int LA97_0 = input.LA(1);
 
-                    	        if ( (LA91_0==13) ) {
-                    	            alt91=1;
+                    	        if ( (LA97_0==13) ) {
+                    	            alt97=1;
                     	        }
 
 
-                    	        switch (alt91) {
+                    	        switch (alt97) {
                     	    	case 1 :
-                    	    	    // InternalTyphonML.g:5440:6: otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) )
+                    	    	    // InternalTyphonML.g:5632:6: otherlv_9= ',' ( (lv_attributes_10_0= ruleAddAttribute ) )
                     	    	    {
-                    	    	    otherlv_9=(Token)match(input,13,FOLLOW_93); 
+                    	    	    otherlv_9=(Token)match(input,13,FOLLOW_95); 
 
                     	    	    						newLeafNode(otherlv_9, grammarAccess.getAddEntityAccess().getCommaKeyword_5_2_1_0());
                     	    	    					
-                    	    	    // InternalTyphonML.g:5444:6: ( (lv_attributes_10_0= ruleAddAttribute ) )
-                    	    	    // InternalTyphonML.g:5445:7: (lv_attributes_10_0= ruleAddAttribute )
+                    	    	    // InternalTyphonML.g:5636:6: ( (lv_attributes_10_0= ruleAddAttribute ) )
+                    	    	    // InternalTyphonML.g:5637:7: (lv_attributes_10_0= ruleAddAttribute )
                     	    	    {
-                    	    	    // InternalTyphonML.g:5445:7: (lv_attributes_10_0= ruleAddAttribute )
-                    	    	    // InternalTyphonML.g:5446:8: lv_attributes_10_0= ruleAddAttribute
+                    	    	    // InternalTyphonML.g:5637:7: (lv_attributes_10_0= ruleAddAttribute )
+                    	    	    // InternalTyphonML.g:5638:8: lv_attributes_10_0= ruleAddAttribute
                     	    	    {
 
                     	    	    								newCompositeNode(grammarAccess.getAddEntityAccess().getAttributesAddAttributeParserRuleCall_5_2_1_1_0());
                     	    	    							
-                    	    	    pushFollow(FOLLOW_92);
+                    	    	    pushFollow(FOLLOW_94);
                     	    	    lv_attributes_10_0=ruleAddAttribute();
 
                     	    	    state._fsp--;
@@ -13403,7 +13897,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    break loop91;
+                    	    	    break loop97;
                     	        }
                     	    } while (true);
 
@@ -13412,11 +13906,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop92;
+                    	    break loop98;
                         }
                     } while (true);
 
-                    otherlv_11=(Token)match(input,14,FOLLOW_94); 
+                    otherlv_11=(Token)match(input,14,FOLLOW_96); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getAddEntityAccess().getRightSquareBracketKeyword_5_3());
                     			
@@ -13426,50 +13920,50 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5470:3: (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )?
-            int alt96=2;
-            int LA96_0 = input.LA(1);
+            // InternalTyphonML.g:5662:3: (otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']' )?
+            int alt102=2;
+            int LA102_0 = input.LA(1);
 
-            if ( (LA96_0==81) ) {
-                alt96=1;
+            if ( (LA102_0==83) ) {
+                alt102=1;
             }
-            switch (alt96) {
+            switch (alt102) {
                 case 1 :
-                    // InternalTyphonML.g:5471:4: otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']'
+                    // InternalTyphonML.g:5663:4: otherlv_12= 'relations' otherlv_13= '[' ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )* otherlv_17= ']'
                     {
-                    otherlv_12=(Token)match(input,81,FOLLOW_5); 
+                    otherlv_12=(Token)match(input,83,FOLLOW_5); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getAddEntityAccess().getRelationsKeyword_6_0());
                     			
-                    otherlv_13=(Token)match(input,12,FOLLOW_91); 
+                    otherlv_13=(Token)match(input,12,FOLLOW_93); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getAddEntityAccess().getLeftSquareBracketKeyword_6_1());
                     			
-                    // InternalTyphonML.g:5479:4: ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )*
-                    loop95:
+                    // InternalTyphonML.g:5671:4: ( ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )* )*
+                    loop101:
                     do {
-                        int alt95=2;
-                        int LA95_0 = input.LA(1);
+                        int alt101=2;
+                        int LA101_0 = input.LA(1);
 
-                        if ( (LA95_0==44||LA95_0==77) ) {
-                            alt95=1;
+                        if ( (LA101_0==44||LA101_0==79) ) {
+                            alt101=1;
                         }
 
 
-                        switch (alt95) {
+                        switch (alt101) {
                     	case 1 :
-                    	    // InternalTyphonML.g:5480:5: ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )*
+                    	    // InternalTyphonML.g:5672:5: ( (lv_relations_14_0= ruleAddRelation ) ) (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )*
                     	    {
-                    	    // InternalTyphonML.g:5480:5: ( (lv_relations_14_0= ruleAddRelation ) )
-                    	    // InternalTyphonML.g:5481:6: (lv_relations_14_0= ruleAddRelation )
+                    	    // InternalTyphonML.g:5672:5: ( (lv_relations_14_0= ruleAddRelation ) )
+                    	    // InternalTyphonML.g:5673:6: (lv_relations_14_0= ruleAddRelation )
                     	    {
-                    	    // InternalTyphonML.g:5481:6: (lv_relations_14_0= ruleAddRelation )
-                    	    // InternalTyphonML.g:5482:7: lv_relations_14_0= ruleAddRelation
+                    	    // InternalTyphonML.g:5673:6: (lv_relations_14_0= ruleAddRelation )
+                    	    // InternalTyphonML.g:5674:7: lv_relations_14_0= ruleAddRelation
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getAddEntityAccess().getRelationsAddRelationParserRuleCall_6_2_0_0());
                     	    						
-                    	    pushFollow(FOLLOW_92);
+                    	    pushFollow(FOLLOW_94);
                     	    lv_relations_14_0=ruleAddRelation();
 
                     	    state._fsp--;
@@ -13491,35 +13985,35 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     	    }
 
-                    	    // InternalTyphonML.g:5499:5: (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )*
-                    	    loop94:
+                    	    // InternalTyphonML.g:5691:5: (otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) ) )*
+                    	    loop100:
                     	    do {
-                    	        int alt94=2;
-                    	        int LA94_0 = input.LA(1);
+                    	        int alt100=2;
+                    	        int LA100_0 = input.LA(1);
 
-                    	        if ( (LA94_0==13) ) {
-                    	            alt94=1;
+                    	        if ( (LA100_0==13) ) {
+                    	            alt100=1;
                     	        }
 
 
-                    	        switch (alt94) {
+                    	        switch (alt100) {
                     	    	case 1 :
-                    	    	    // InternalTyphonML.g:5500:6: otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) )
+                    	    	    // InternalTyphonML.g:5692:6: otherlv_15= ',' ( (lv_relations_16_0= ruleAddRelation ) )
                     	    	    {
-                    	    	    otherlv_15=(Token)match(input,13,FOLLOW_93); 
+                    	    	    otherlv_15=(Token)match(input,13,FOLLOW_95); 
 
                     	    	    						newLeafNode(otherlv_15, grammarAccess.getAddEntityAccess().getCommaKeyword_6_2_1_0());
                     	    	    					
-                    	    	    // InternalTyphonML.g:5504:6: ( (lv_relations_16_0= ruleAddRelation ) )
-                    	    	    // InternalTyphonML.g:5505:7: (lv_relations_16_0= ruleAddRelation )
+                    	    	    // InternalTyphonML.g:5696:6: ( (lv_relations_16_0= ruleAddRelation ) )
+                    	    	    // InternalTyphonML.g:5697:7: (lv_relations_16_0= ruleAddRelation )
                     	    	    {
-                    	    	    // InternalTyphonML.g:5505:7: (lv_relations_16_0= ruleAddRelation )
-                    	    	    // InternalTyphonML.g:5506:8: lv_relations_16_0= ruleAddRelation
+                    	    	    // InternalTyphonML.g:5697:7: (lv_relations_16_0= ruleAddRelation )
+                    	    	    // InternalTyphonML.g:5698:8: lv_relations_16_0= ruleAddRelation
                     	    	    {
 
                     	    	    								newCompositeNode(grammarAccess.getAddEntityAccess().getRelationsAddRelationParserRuleCall_6_2_1_1_0());
                     	    	    							
-                    	    	    pushFollow(FOLLOW_92);
+                    	    	    pushFollow(FOLLOW_94);
                     	    	    lv_relations_16_0=ruleAddRelation();
 
                     	    	    state._fsp--;
@@ -13546,7 +14040,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    	    break;
 
                     	    	default :
-                    	    	    break loop94;
+                    	    	    break loop100;
                     	        }
                     	    } while (true);
 
@@ -13555,7 +14049,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop95;
+                    	    break loop101;
                         }
                     } while (true);
 
@@ -13596,7 +14090,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAttribute_Impl"
-    // InternalTyphonML.g:5538:1: entryRuleAttribute_Impl returns [EObject current=null] : iv_ruleAttribute_Impl= ruleAttribute_Impl EOF ;
+    // InternalTyphonML.g:5730:1: entryRuleAttribute_Impl returns [EObject current=null] : iv_ruleAttribute_Impl= ruleAttribute_Impl EOF ;
     public final EObject entryRuleAttribute_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -13604,8 +14098,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:5538:55: (iv_ruleAttribute_Impl= ruleAttribute_Impl EOF )
-            // InternalTyphonML.g:5539:2: iv_ruleAttribute_Impl= ruleAttribute_Impl EOF
+            // InternalTyphonML.g:5730:55: (iv_ruleAttribute_Impl= ruleAttribute_Impl EOF )
+            // InternalTyphonML.g:5731:2: iv_ruleAttribute_Impl= ruleAttribute_Impl EOF
             {
              newCompositeNode(grammarAccess.getAttribute_ImplRule()); 
             pushFollow(FOLLOW_1);
@@ -13632,7 +14126,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute_Impl"
-    // InternalTyphonML.g:5545:1: ruleAttribute_Impl returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) ;
+    // InternalTyphonML.g:5737:1: ruleAttribute_Impl returns [EObject current=null] : ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) ;
     public final EObject ruleAttribute_Impl() throws RecognitionException {
         EObject current = null;
 
@@ -13647,14 +14141,14 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5551:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) )
-            // InternalTyphonML.g:5552:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:5743:2: ( ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) ) )
+            // InternalTyphonML.g:5744:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
             {
-            // InternalTyphonML.g:5552:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
-            // InternalTyphonML.g:5553:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) )
+            // InternalTyphonML.g:5744:2: ( () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) ) )
+            // InternalTyphonML.g:5745:3: () (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )? ( (lv_name_3_0= ruleEString ) ) otherlv_4= ':' ( ( ruleEString ) )
             {
-            // InternalTyphonML.g:5553:3: ()
-            // InternalTyphonML.g:5554:4: 
+            // InternalTyphonML.g:5745:3: ()
+            // InternalTyphonML.g:5746:4: 
             {
 
             				current = forceCreateModelElement(
@@ -13664,26 +14158,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5560:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
-            int alt97=2;
-            int LA97_0 = input.LA(1);
+            // InternalTyphonML.g:5752:3: (otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) ) )?
+            int alt103=2;
+            int LA103_0 = input.LA(1);
 
-            if ( (LA97_0==44) ) {
-                alt97=1;
+            if ( (LA103_0==44) ) {
+                alt103=1;
             }
-            switch (alt97) {
+            switch (alt103) {
                 case 1 :
-                    // InternalTyphonML.g:5561:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5753:4: otherlv_1= 'importedNamespace' ( (lv_importedNamespace_2_0= ruleEString ) )
                     {
                     otherlv_1=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAttribute_ImplAccess().getImportedNamespaceKeyword_1_0());
                     			
-                    // InternalTyphonML.g:5565:4: ( (lv_importedNamespace_2_0= ruleEString ) )
-                    // InternalTyphonML.g:5566:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5757:4: ( (lv_importedNamespace_2_0= ruleEString ) )
+                    // InternalTyphonML.g:5758:5: (lv_importedNamespace_2_0= ruleEString )
                     {
-                    // InternalTyphonML.g:5566:5: (lv_importedNamespace_2_0= ruleEString )
-                    // InternalTyphonML.g:5567:6: lv_importedNamespace_2_0= ruleEString
+                    // InternalTyphonML.g:5758:5: (lv_importedNamespace_2_0= ruleEString )
+                    // InternalTyphonML.g:5759:6: lv_importedNamespace_2_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAttribute_ImplAccess().getImportedNamespaceEStringParserRuleCall_1_1_0());
@@ -13716,11 +14210,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5585:3: ( (lv_name_3_0= ruleEString ) )
-            // InternalTyphonML.g:5586:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:5777:3: ( (lv_name_3_0= ruleEString ) )
+            // InternalTyphonML.g:5778:4: (lv_name_3_0= ruleEString )
             {
-            // InternalTyphonML.g:5586:4: (lv_name_3_0= ruleEString )
-            // InternalTyphonML.g:5587:5: lv_name_3_0= ruleEString
+            // InternalTyphonML.g:5778:4: (lv_name_3_0= ruleEString )
+            // InternalTyphonML.g:5779:5: lv_name_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAttribute_ImplAccess().getNameEStringParserRuleCall_2_0());
@@ -13751,11 +14245,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getAttribute_ImplAccess().getColonKeyword_3());
             		
-            // InternalTyphonML.g:5608:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:5609:4: ( ruleEString )
+            // InternalTyphonML.g:5800:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:5801:4: ( ruleEString )
             {
-            // InternalTyphonML.g:5609:4: ( ruleEString )
-            // InternalTyphonML.g:5610:5: ruleEString
+            // InternalTyphonML.g:5801:4: ( ruleEString )
+            // InternalTyphonML.g:5802:5: ruleEString
             {
 
             					if (current==null) {
@@ -13802,7 +14296,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAddRelation"
-    // InternalTyphonML.g:5628:1: entryRuleAddRelation returns [EObject current=null] : iv_ruleAddRelation= ruleAddRelation EOF ;
+    // InternalTyphonML.g:5820:1: entryRuleAddRelation returns [EObject current=null] : iv_ruleAddRelation= ruleAddRelation EOF ;
     public final EObject entryRuleAddRelation() throws RecognitionException {
         EObject current = null;
 
@@ -13810,8 +14304,8 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalTyphonML.g:5628:52: (iv_ruleAddRelation= ruleAddRelation EOF )
-            // InternalTyphonML.g:5629:2: iv_ruleAddRelation= ruleAddRelation EOF
+            // InternalTyphonML.g:5820:52: (iv_ruleAddRelation= ruleAddRelation EOF )
+            // InternalTyphonML.g:5821:2: iv_ruleAddRelation= ruleAddRelation EOF
             {
              newCompositeNode(grammarAccess.getAddRelationRule()); 
             pushFollow(FOLLOW_1);
@@ -13838,7 +14332,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAddRelation"
-    // InternalTyphonML.g:5635:1: ruleAddRelation returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? ) ;
+    // InternalTyphonML.g:5827:1: ruleAddRelation returns [EObject current=null] : ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? ) ;
     public final EObject ruleAddRelation() throws RecognitionException {
         EObject current = null;
 
@@ -13862,37 +14356,37 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5641:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? ) )
-            // InternalTyphonML.g:5642:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? )
+            // InternalTyphonML.g:5833:2: ( ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? ) )
+            // InternalTyphonML.g:5834:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? )
             {
-            // InternalTyphonML.g:5642:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? )
-            // InternalTyphonML.g:5643:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )?
+            // InternalTyphonML.g:5834:2: ( (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )? )
+            // InternalTyphonML.g:5835:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )? otherlv_2= 'add' otherlv_3= 'relation' ( (lv_name_4_0= ruleEString ) ) otherlv_5= 'to' ( ( ruleEString ) ) ( (lv_isContainment_7_0= ':' ) )? otherlv_8= '->' ( ( ruleEString ) ) (otherlv_10= '.' ( ( ruleEString ) ) )? (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )?
             {
-            // InternalTyphonML.g:5643:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
-            int alt98=2;
-            int LA98_0 = input.LA(1);
+            // InternalTyphonML.g:5835:3: (otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) ) )?
+            int alt104=2;
+            int LA104_0 = input.LA(1);
 
-            if ( (LA98_0==44) ) {
-                alt98=1;
+            if ( (LA104_0==44) ) {
+                alt104=1;
             }
-            switch (alt98) {
+            switch (alt104) {
                 case 1 :
-                    // InternalTyphonML.g:5644:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:5836:4: otherlv_0= 'importedNamespace' ( (lv_importedNamespace_1_0= ruleEString ) )
                     {
                     otherlv_0=(Token)match(input,44,FOLLOW_9); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getAddRelationAccess().getImportedNamespaceKeyword_0_0());
                     			
-                    // InternalTyphonML.g:5648:4: ( (lv_importedNamespace_1_0= ruleEString ) )
-                    // InternalTyphonML.g:5649:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:5840:4: ( (lv_importedNamespace_1_0= ruleEString ) )
+                    // InternalTyphonML.g:5841:5: (lv_importedNamespace_1_0= ruleEString )
                     {
-                    // InternalTyphonML.g:5649:5: (lv_importedNamespace_1_0= ruleEString )
-                    // InternalTyphonML.g:5650:6: lv_importedNamespace_1_0= ruleEString
+                    // InternalTyphonML.g:5841:5: (lv_importedNamespace_1_0= ruleEString )
+                    // InternalTyphonML.g:5842:6: lv_importedNamespace_1_0= ruleEString
                     {
 
                     						newCompositeNode(grammarAccess.getAddRelationAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
                     					
-                    pushFollow(FOLLOW_84);
+                    pushFollow(FOLLOW_86);
                     lv_importedNamespace_1_0=ruleEString();
 
                     state._fsp--;
@@ -13920,7 +14414,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,77,FOLLOW_29); 
+            otherlv_2=(Token)match(input,79,FOLLOW_29); 
 
             			newLeafNode(otherlv_2, grammarAccess.getAddRelationAccess().getAddKeyword_1());
             		
@@ -13928,11 +14422,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getAddRelationAccess().getRelationKeyword_2());
             		
-            // InternalTyphonML.g:5676:3: ( (lv_name_4_0= ruleEString ) )
-            // InternalTyphonML.g:5677:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5868:3: ( (lv_name_4_0= ruleEString ) )
+            // InternalTyphonML.g:5869:4: (lv_name_4_0= ruleEString )
             {
-            // InternalTyphonML.g:5677:4: (lv_name_4_0= ruleEString )
-            // InternalTyphonML.g:5678:5: lv_name_4_0= ruleEString
+            // InternalTyphonML.g:5869:4: (lv_name_4_0= ruleEString )
+            // InternalTyphonML.g:5870:5: lv_name_4_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getAddRelationAccess().getNameEStringParserRuleCall_3_0());
@@ -13963,11 +14457,11 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getAddRelationAccess().getToKeyword_4());
             		
-            // InternalTyphonML.g:5699:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:5700:4: ( ruleEString )
+            // InternalTyphonML.g:5891:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:5892:4: ( ruleEString )
             {
-            // InternalTyphonML.g:5700:4: ( ruleEString )
-            // InternalTyphonML.g:5701:5: ruleEString
+            // InternalTyphonML.g:5892:4: ( ruleEString )
+            // InternalTyphonML.g:5893:5: ruleEString
             {
 
             					if (current==null) {
@@ -13977,7 +14471,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getAddRelationAccess().getOwnerEntityEntityCrossReference_5_0());
             				
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_49);
             ruleEString();
 
             state._fsp--;
@@ -13991,21 +14485,21 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5715:3: ( (lv_isContainment_7_0= ':' ) )?
-            int alt99=2;
-            int LA99_0 = input.LA(1);
+            // InternalTyphonML.g:5907:3: ( (lv_isContainment_7_0= ':' ) )?
+            int alt105=2;
+            int LA105_0 = input.LA(1);
 
-            if ( (LA99_0==46) ) {
-                alt99=1;
+            if ( (LA105_0==46) ) {
+                alt105=1;
             }
-            switch (alt99) {
+            switch (alt105) {
                 case 1 :
-                    // InternalTyphonML.g:5716:4: (lv_isContainment_7_0= ':' )
+                    // InternalTyphonML.g:5908:4: (lv_isContainment_7_0= ':' )
                     {
-                    // InternalTyphonML.g:5716:4: (lv_isContainment_7_0= ':' )
-                    // InternalTyphonML.g:5717:5: lv_isContainment_7_0= ':'
+                    // InternalTyphonML.g:5908:4: (lv_isContainment_7_0= ':' )
+                    // InternalTyphonML.g:5909:5: lv_isContainment_7_0= ':'
                     {
-                    lv_isContainment_7_0=(Token)match(input,46,FOLLOW_45); 
+                    lv_isContainment_7_0=(Token)match(input,46,FOLLOW_50); 
 
                     					newLeafNode(lv_isContainment_7_0, grammarAccess.getAddRelationAccess().getIsContainmentColonKeyword_6_0());
                     				
@@ -14024,15 +14518,15 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,50,FOLLOW_9); 
+            otherlv_8=(Token)match(input,54,FOLLOW_9); 
 
             			newLeafNode(otherlv_8, grammarAccess.getAddRelationAccess().getHyphenMinusGreaterThanSignKeyword_7());
             		
-            // InternalTyphonML.g:5733:3: ( ( ruleEString ) )
-            // InternalTyphonML.g:5734:4: ( ruleEString )
+            // InternalTyphonML.g:5925:3: ( ( ruleEString ) )
+            // InternalTyphonML.g:5926:4: ( ruleEString )
             {
-            // InternalTyphonML.g:5734:4: ( ruleEString )
-            // InternalTyphonML.g:5735:5: ruleEString
+            // InternalTyphonML.g:5926:4: ( ruleEString )
+            // InternalTyphonML.g:5927:5: ruleEString
             {
 
             					if (current==null) {
@@ -14042,7 +14536,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getAddRelationAccess().getTypeEntityCrossReference_8_0());
             				
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_51);
             ruleEString();
 
             state._fsp--;
@@ -14056,26 +14550,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5749:3: (otherlv_10= '.' ( ( ruleEString ) ) )?
-            int alt100=2;
-            int LA100_0 = input.LA(1);
+            // InternalTyphonML.g:5941:3: (otherlv_10= '.' ( ( ruleEString ) ) )?
+            int alt106=2;
+            int LA106_0 = input.LA(1);
 
-            if ( (LA100_0==51) ) {
-                alt100=1;
+            if ( (LA106_0==55) ) {
+                alt106=1;
             }
-            switch (alt100) {
+            switch (alt106) {
                 case 1 :
-                    // InternalTyphonML.g:5750:4: otherlv_10= '.' ( ( ruleEString ) )
+                    // InternalTyphonML.g:5942:4: otherlv_10= '.' ( ( ruleEString ) )
                     {
-                    otherlv_10=(Token)match(input,51,FOLLOW_9); 
+                    otherlv_10=(Token)match(input,55,FOLLOW_9); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getAddRelationAccess().getFullStopKeyword_9_0());
                     			
-                    // InternalTyphonML.g:5754:4: ( ( ruleEString ) )
-                    // InternalTyphonML.g:5755:5: ( ruleEString )
+                    // InternalTyphonML.g:5946:4: ( ( ruleEString ) )
+                    // InternalTyphonML.g:5947:5: ( ruleEString )
                     {
-                    // InternalTyphonML.g:5755:5: ( ruleEString )
-                    // InternalTyphonML.g:5756:6: ruleEString
+                    // InternalTyphonML.g:5947:5: ( ruleEString )
+                    // InternalTyphonML.g:5948:6: ruleEString
                     {
 
                     						if (current==null) {
@@ -14085,7 +14579,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getAddRelationAccess().getOppositeRelationCrossReference_9_1_0());
                     					
-                    pushFollow(FOLLOW_47);
+                    pushFollow(FOLLOW_52);
                     ruleEString();
 
                     state._fsp--;
@@ -14105,26 +14599,26 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalTyphonML.g:5771:3: (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )?
-            int alt101=2;
-            int LA101_0 = input.LA(1);
+            // InternalTyphonML.g:5963:3: (otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']' )?
+            int alt107=2;
+            int LA107_0 = input.LA(1);
 
-            if ( (LA101_0==12) ) {
-                alt101=1;
+            if ( (LA107_0==12) ) {
+                alt107=1;
             }
-            switch (alt101) {
+            switch (alt107) {
                 case 1 :
-                    // InternalTyphonML.g:5772:4: otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']'
+                    // InternalTyphonML.g:5964:4: otherlv_12= '[' ( (lv_cardinality_13_0= ruleCardinality ) ) otherlv_14= ']'
                     {
                     otherlv_12=(Token)match(input,12,FOLLOW_33); 
 
                     				newLeafNode(otherlv_12, grammarAccess.getAddRelationAccess().getLeftSquareBracketKeyword_10_0());
                     			
-                    // InternalTyphonML.g:5776:4: ( (lv_cardinality_13_0= ruleCardinality ) )
-                    // InternalTyphonML.g:5777:5: (lv_cardinality_13_0= ruleCardinality )
+                    // InternalTyphonML.g:5968:4: ( (lv_cardinality_13_0= ruleCardinality ) )
+                    // InternalTyphonML.g:5969:5: (lv_cardinality_13_0= ruleCardinality )
                     {
-                    // InternalTyphonML.g:5777:5: (lv_cardinality_13_0= ruleCardinality )
-                    // InternalTyphonML.g:5778:6: lv_cardinality_13_0= ruleCardinality
+                    // InternalTyphonML.g:5969:5: (lv_cardinality_13_0= ruleCardinality )
+                    // InternalTyphonML.g:5970:6: lv_cardinality_13_0= ruleCardinality
                     {
 
                     						newCompositeNode(grammarAccess.getAddRelationAccess().getCardinalityCardinalityEnumRuleCall_10_1_0());
@@ -14184,7 +14678,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCardinality"
-    // InternalTyphonML.g:5804:1: ruleCardinality returns [Enumerator current=null] : ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) ) ;
+    // InternalTyphonML.g:5996:1: ruleCardinality returns [Enumerator current=null] : ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) ) ;
     public final Enumerator ruleCardinality() throws RecognitionException {
         Enumerator current = null;
 
@@ -14197,47 +14691,47 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5810:2: ( ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) ) )
-            // InternalTyphonML.g:5811:2: ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) )
+            // InternalTyphonML.g:6002:2: ( ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) ) )
+            // InternalTyphonML.g:6003:2: ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) )
             {
-            // InternalTyphonML.g:5811:2: ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) )
-            int alt102=4;
+            // InternalTyphonML.g:6003:2: ( (enumLiteral_0= '0..1' ) | (enumLiteral_1= '1' ) | (enumLiteral_2= '0..*' ) | (enumLiteral_3= '*' ) )
+            int alt108=4;
             switch ( input.LA(1) ) {
-            case 82:
-                {
-                alt102=1;
-                }
-                break;
-            case 83:
-                {
-                alt102=2;
-                }
-                break;
             case 84:
                 {
-                alt102=3;
+                alt108=1;
                 }
                 break;
             case 85:
                 {
-                alt102=4;
+                alt108=2;
+                }
+                break;
+            case 86:
+                {
+                alt108=3;
+                }
+                break;
+            case 87:
+                {
+                alt108=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 102, 0, input);
+                    new NoViableAltException("", 108, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt102) {
+            switch (alt108) {
                 case 1 :
-                    // InternalTyphonML.g:5812:3: (enumLiteral_0= '0..1' )
+                    // InternalTyphonML.g:6004:3: (enumLiteral_0= '0..1' )
                     {
-                    // InternalTyphonML.g:5812:3: (enumLiteral_0= '0..1' )
-                    // InternalTyphonML.g:5813:4: enumLiteral_0= '0..1'
+                    // InternalTyphonML.g:6004:3: (enumLiteral_0= '0..1' )
+                    // InternalTyphonML.g:6005:4: enumLiteral_0= '0..1'
                     {
-                    enumLiteral_0=(Token)match(input,82,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,84,FOLLOW_2); 
 
                     				current = grammarAccess.getCardinalityAccess().getZero_oneEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getCardinalityAccess().getZero_oneEnumLiteralDeclaration_0());
@@ -14249,12 +14743,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTyphonML.g:5820:3: (enumLiteral_1= '1' )
+                    // InternalTyphonML.g:6012:3: (enumLiteral_1= '1' )
                     {
-                    // InternalTyphonML.g:5820:3: (enumLiteral_1= '1' )
-                    // InternalTyphonML.g:5821:4: enumLiteral_1= '1'
+                    // InternalTyphonML.g:6012:3: (enumLiteral_1= '1' )
+                    // InternalTyphonML.g:6013:4: enumLiteral_1= '1'
                     {
-                    enumLiteral_1=(Token)match(input,83,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,85,FOLLOW_2); 
 
                     				current = grammarAccess.getCardinalityAccess().getOneEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getCardinalityAccess().getOneEnumLiteralDeclaration_1());
@@ -14266,12 +14760,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalTyphonML.g:5828:3: (enumLiteral_2= '0..*' )
+                    // InternalTyphonML.g:6020:3: (enumLiteral_2= '0..*' )
                     {
-                    // InternalTyphonML.g:5828:3: (enumLiteral_2= '0..*' )
-                    // InternalTyphonML.g:5829:4: enumLiteral_2= '0..*'
+                    // InternalTyphonML.g:6020:3: (enumLiteral_2= '0..*' )
+                    // InternalTyphonML.g:6021:4: enumLiteral_2= '0..*'
                     {
-                    enumLiteral_2=(Token)match(input,84,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,86,FOLLOW_2); 
 
                     				current = grammarAccess.getCardinalityAccess().getZero_manyEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getCardinalityAccess().getZero_manyEnumLiteralDeclaration_2());
@@ -14283,12 +14777,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalTyphonML.g:5836:3: (enumLiteral_3= '*' )
+                    // InternalTyphonML.g:6028:3: (enumLiteral_3= '*' )
                     {
-                    // InternalTyphonML.g:5836:3: (enumLiteral_3= '*' )
-                    // InternalTyphonML.g:5837:4: enumLiteral_3= '*'
+                    // InternalTyphonML.g:6028:3: (enumLiteral_3= '*' )
+                    // InternalTyphonML.g:6029:4: enumLiteral_3= '*'
                     {
-                    enumLiteral_3=(Token)match(input,85,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,87,FOLLOW_2); 
 
                     				current = grammarAccess.getCardinalityAccess().getOne_manyEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getCardinalityAccess().getOne_manyEnumLiteralDeclaration_3());
@@ -14322,7 +14816,7 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNlpTaskType"
-    // InternalTyphonML.g:5847:1: ruleNlpTaskType returns [Enumerator current=null] : ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) ) ;
+    // InternalTyphonML.g:6039:1: ruleNlpTaskType returns [Enumerator current=null] : ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) ) ;
     public final Enumerator ruleNlpTaskType() throws RecognitionException {
         Enumerator current = null;
 
@@ -14349,117 +14843,117 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalTyphonML.g:5853:2: ( ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) ) )
-            // InternalTyphonML.g:5854:2: ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) )
+            // InternalTyphonML.g:6045:2: ( ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) ) )
+            // InternalTyphonML.g:6046:2: ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) )
             {
-            // InternalTyphonML.g:5854:2: ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) )
-            int alt103=18;
+            // InternalTyphonML.g:6046:2: ( (enumLiteral_0= 'ParagraphSegmentation' ) | (enumLiteral_1= 'SentenceSegmentation' ) | (enumLiteral_2= 'Tokenisation' ) | (enumLiteral_3= 'PhraseExtractor' ) | (enumLiteral_4= 'NGramExtractor' ) | (enumLiteral_5= 'POSTagging' ) | (enumLiteral_6= 'Lemmatisation' ) | (enumLiteral_7= 'Stemming' ) | (enumLiteral_8= 'DependencyParsing' ) | (enumLiteral_9= 'Chunking' ) | (enumLiteral_10= 'SentimentAnalysis' ) | (enumLiteral_11= 'TextClassification' ) | (enumLiteral_12= 'TopicModelling' ) | (enumLiteral_13= 'TermExtraction' ) | (enumLiteral_14= 'NamedEntityRecognition' ) | (enumLiteral_15= 'RelationExtraction' ) | (enumLiteral_16= 'EventExtraction' ) | (enumLiteral_17= 'CoreferenceResolution' ) )
+            int alt109=18;
             switch ( input.LA(1) ) {
-            case 86:
-                {
-                alt103=1;
-                }
-                break;
-            case 87:
-                {
-                alt103=2;
-                }
-                break;
             case 88:
                 {
-                alt103=3;
+                alt109=1;
                 }
                 break;
             case 89:
                 {
-                alt103=4;
+                alt109=2;
                 }
                 break;
             case 90:
                 {
-                alt103=5;
+                alt109=3;
                 }
                 break;
             case 91:
                 {
-                alt103=6;
+                alt109=4;
                 }
                 break;
             case 92:
                 {
-                alt103=7;
+                alt109=5;
                 }
                 break;
             case 93:
                 {
-                alt103=8;
+                alt109=6;
                 }
                 break;
             case 94:
                 {
-                alt103=9;
+                alt109=7;
                 }
                 break;
             case 95:
                 {
-                alt103=10;
+                alt109=8;
                 }
                 break;
             case 96:
                 {
-                alt103=11;
+                alt109=9;
                 }
                 break;
             case 97:
                 {
-                alt103=12;
+                alt109=10;
                 }
                 break;
             case 98:
                 {
-                alt103=13;
+                alt109=11;
                 }
                 break;
             case 99:
                 {
-                alt103=14;
+                alt109=12;
                 }
                 break;
             case 100:
                 {
-                alt103=15;
+                alt109=13;
                 }
                 break;
             case 101:
                 {
-                alt103=16;
+                alt109=14;
                 }
                 break;
             case 102:
                 {
-                alt103=17;
+                alt109=15;
                 }
                 break;
             case 103:
                 {
-                alt103=18;
+                alt109=16;
+                }
+                break;
+            case 104:
+                {
+                alt109=17;
+                }
+                break;
+            case 105:
+                {
+                alt109=18;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 103, 0, input);
+                    new NoViableAltException("", 109, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt103) {
+            switch (alt109) {
                 case 1 :
-                    // InternalTyphonML.g:5855:3: (enumLiteral_0= 'ParagraphSegmentation' )
+                    // InternalTyphonML.g:6047:3: (enumLiteral_0= 'ParagraphSegmentation' )
                     {
-                    // InternalTyphonML.g:5855:3: (enumLiteral_0= 'ParagraphSegmentation' )
-                    // InternalTyphonML.g:5856:4: enumLiteral_0= 'ParagraphSegmentation'
+                    // InternalTyphonML.g:6047:3: (enumLiteral_0= 'ParagraphSegmentation' )
+                    // InternalTyphonML.g:6048:4: enumLiteral_0= 'ParagraphSegmentation'
                     {
-                    enumLiteral_0=(Token)match(input,86,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,88,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getParagraphSegmentationEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getNlpTaskTypeAccess().getParagraphSegmentationEnumLiteralDeclaration_0());
@@ -14471,12 +14965,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalTyphonML.g:5863:3: (enumLiteral_1= 'SentenceSegmentation' )
+                    // InternalTyphonML.g:6055:3: (enumLiteral_1= 'SentenceSegmentation' )
                     {
-                    // InternalTyphonML.g:5863:3: (enumLiteral_1= 'SentenceSegmentation' )
-                    // InternalTyphonML.g:5864:4: enumLiteral_1= 'SentenceSegmentation'
+                    // InternalTyphonML.g:6055:3: (enumLiteral_1= 'SentenceSegmentation' )
+                    // InternalTyphonML.g:6056:4: enumLiteral_1= 'SentenceSegmentation'
                     {
-                    enumLiteral_1=(Token)match(input,87,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,89,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getSentenceSegmentationEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getNlpTaskTypeAccess().getSentenceSegmentationEnumLiteralDeclaration_1());
@@ -14488,12 +14982,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalTyphonML.g:5871:3: (enumLiteral_2= 'Tokenisation' )
+                    // InternalTyphonML.g:6063:3: (enumLiteral_2= 'Tokenisation' )
                     {
-                    // InternalTyphonML.g:5871:3: (enumLiteral_2= 'Tokenisation' )
-                    // InternalTyphonML.g:5872:4: enumLiteral_2= 'Tokenisation'
+                    // InternalTyphonML.g:6063:3: (enumLiteral_2= 'Tokenisation' )
+                    // InternalTyphonML.g:6064:4: enumLiteral_2= 'Tokenisation'
                     {
-                    enumLiteral_2=(Token)match(input,88,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,90,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getTokenisationEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getNlpTaskTypeAccess().getTokenisationEnumLiteralDeclaration_2());
@@ -14505,12 +14999,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalTyphonML.g:5879:3: (enumLiteral_3= 'PhraseExtractor' )
+                    // InternalTyphonML.g:6071:3: (enumLiteral_3= 'PhraseExtractor' )
                     {
-                    // InternalTyphonML.g:5879:3: (enumLiteral_3= 'PhraseExtractor' )
-                    // InternalTyphonML.g:5880:4: enumLiteral_3= 'PhraseExtractor'
+                    // InternalTyphonML.g:6071:3: (enumLiteral_3= 'PhraseExtractor' )
+                    // InternalTyphonML.g:6072:4: enumLiteral_3= 'PhraseExtractor'
                     {
-                    enumLiteral_3=(Token)match(input,89,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,91,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getPhraseExtractorEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getNlpTaskTypeAccess().getPhraseExtractorEnumLiteralDeclaration_3());
@@ -14522,12 +15016,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalTyphonML.g:5887:3: (enumLiteral_4= 'NGramExtractor' )
+                    // InternalTyphonML.g:6079:3: (enumLiteral_4= 'NGramExtractor' )
                     {
-                    // InternalTyphonML.g:5887:3: (enumLiteral_4= 'NGramExtractor' )
-                    // InternalTyphonML.g:5888:4: enumLiteral_4= 'NGramExtractor'
+                    // InternalTyphonML.g:6079:3: (enumLiteral_4= 'NGramExtractor' )
+                    // InternalTyphonML.g:6080:4: enumLiteral_4= 'NGramExtractor'
                     {
-                    enumLiteral_4=(Token)match(input,90,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,92,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getNGramExtractorEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getNlpTaskTypeAccess().getNGramExtractorEnumLiteralDeclaration_4());
@@ -14539,12 +15033,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalTyphonML.g:5895:3: (enumLiteral_5= 'POSTagging' )
+                    // InternalTyphonML.g:6087:3: (enumLiteral_5= 'POSTagging' )
                     {
-                    // InternalTyphonML.g:5895:3: (enumLiteral_5= 'POSTagging' )
-                    // InternalTyphonML.g:5896:4: enumLiteral_5= 'POSTagging'
+                    // InternalTyphonML.g:6087:3: (enumLiteral_5= 'POSTagging' )
+                    // InternalTyphonML.g:6088:4: enumLiteral_5= 'POSTagging'
                     {
-                    enumLiteral_5=(Token)match(input,91,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,93,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getPOSTaggingEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getNlpTaskTypeAccess().getPOSTaggingEnumLiteralDeclaration_5());
@@ -14556,12 +15050,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalTyphonML.g:5903:3: (enumLiteral_6= 'Lemmatisation' )
+                    // InternalTyphonML.g:6095:3: (enumLiteral_6= 'Lemmatisation' )
                     {
-                    // InternalTyphonML.g:5903:3: (enumLiteral_6= 'Lemmatisation' )
-                    // InternalTyphonML.g:5904:4: enumLiteral_6= 'Lemmatisation'
+                    // InternalTyphonML.g:6095:3: (enumLiteral_6= 'Lemmatisation' )
+                    // InternalTyphonML.g:6096:4: enumLiteral_6= 'Lemmatisation'
                     {
-                    enumLiteral_6=(Token)match(input,92,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,94,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getLemmatisationEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getNlpTaskTypeAccess().getLemmatisationEnumLiteralDeclaration_6());
@@ -14573,12 +15067,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalTyphonML.g:5911:3: (enumLiteral_7= 'Stemming' )
+                    // InternalTyphonML.g:6103:3: (enumLiteral_7= 'Stemming' )
                     {
-                    // InternalTyphonML.g:5911:3: (enumLiteral_7= 'Stemming' )
-                    // InternalTyphonML.g:5912:4: enumLiteral_7= 'Stemming'
+                    // InternalTyphonML.g:6103:3: (enumLiteral_7= 'Stemming' )
+                    // InternalTyphonML.g:6104:4: enumLiteral_7= 'Stemming'
                     {
-                    enumLiteral_7=(Token)match(input,93,FOLLOW_2); 
+                    enumLiteral_7=(Token)match(input,95,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getStemmingEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_7, grammarAccess.getNlpTaskTypeAccess().getStemmingEnumLiteralDeclaration_7());
@@ -14590,12 +15084,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalTyphonML.g:5919:3: (enumLiteral_8= 'DependencyParsing' )
+                    // InternalTyphonML.g:6111:3: (enumLiteral_8= 'DependencyParsing' )
                     {
-                    // InternalTyphonML.g:5919:3: (enumLiteral_8= 'DependencyParsing' )
-                    // InternalTyphonML.g:5920:4: enumLiteral_8= 'DependencyParsing'
+                    // InternalTyphonML.g:6111:3: (enumLiteral_8= 'DependencyParsing' )
+                    // InternalTyphonML.g:6112:4: enumLiteral_8= 'DependencyParsing'
                     {
-                    enumLiteral_8=(Token)match(input,94,FOLLOW_2); 
+                    enumLiteral_8=(Token)match(input,96,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getDependencyParsingEnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_8, grammarAccess.getNlpTaskTypeAccess().getDependencyParsingEnumLiteralDeclaration_8());
@@ -14607,12 +15101,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 10 :
-                    // InternalTyphonML.g:5927:3: (enumLiteral_9= 'Chunking' )
+                    // InternalTyphonML.g:6119:3: (enumLiteral_9= 'Chunking' )
                     {
-                    // InternalTyphonML.g:5927:3: (enumLiteral_9= 'Chunking' )
-                    // InternalTyphonML.g:5928:4: enumLiteral_9= 'Chunking'
+                    // InternalTyphonML.g:6119:3: (enumLiteral_9= 'Chunking' )
+                    // InternalTyphonML.g:6120:4: enumLiteral_9= 'Chunking'
                     {
-                    enumLiteral_9=(Token)match(input,95,FOLLOW_2); 
+                    enumLiteral_9=(Token)match(input,97,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getChunkingEnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_9, grammarAccess.getNlpTaskTypeAccess().getChunkingEnumLiteralDeclaration_9());
@@ -14624,12 +15118,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 11 :
-                    // InternalTyphonML.g:5935:3: (enumLiteral_10= 'SentimentAnalysis' )
+                    // InternalTyphonML.g:6127:3: (enumLiteral_10= 'SentimentAnalysis' )
                     {
-                    // InternalTyphonML.g:5935:3: (enumLiteral_10= 'SentimentAnalysis' )
-                    // InternalTyphonML.g:5936:4: enumLiteral_10= 'SentimentAnalysis'
+                    // InternalTyphonML.g:6127:3: (enumLiteral_10= 'SentimentAnalysis' )
+                    // InternalTyphonML.g:6128:4: enumLiteral_10= 'SentimentAnalysis'
                     {
-                    enumLiteral_10=(Token)match(input,96,FOLLOW_2); 
+                    enumLiteral_10=(Token)match(input,98,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getSentimentAnalysisEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_10, grammarAccess.getNlpTaskTypeAccess().getSentimentAnalysisEnumLiteralDeclaration_10());
@@ -14641,12 +15135,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 12 :
-                    // InternalTyphonML.g:5943:3: (enumLiteral_11= 'TextClassification' )
+                    // InternalTyphonML.g:6135:3: (enumLiteral_11= 'TextClassification' )
                     {
-                    // InternalTyphonML.g:5943:3: (enumLiteral_11= 'TextClassification' )
-                    // InternalTyphonML.g:5944:4: enumLiteral_11= 'TextClassification'
+                    // InternalTyphonML.g:6135:3: (enumLiteral_11= 'TextClassification' )
+                    // InternalTyphonML.g:6136:4: enumLiteral_11= 'TextClassification'
                     {
-                    enumLiteral_11=(Token)match(input,97,FOLLOW_2); 
+                    enumLiteral_11=(Token)match(input,99,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getTextClassificationEnumLiteralDeclaration_11().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_11, grammarAccess.getNlpTaskTypeAccess().getTextClassificationEnumLiteralDeclaration_11());
@@ -14658,12 +15152,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 13 :
-                    // InternalTyphonML.g:5951:3: (enumLiteral_12= 'TopicModelling' )
+                    // InternalTyphonML.g:6143:3: (enumLiteral_12= 'TopicModelling' )
                     {
-                    // InternalTyphonML.g:5951:3: (enumLiteral_12= 'TopicModelling' )
-                    // InternalTyphonML.g:5952:4: enumLiteral_12= 'TopicModelling'
+                    // InternalTyphonML.g:6143:3: (enumLiteral_12= 'TopicModelling' )
+                    // InternalTyphonML.g:6144:4: enumLiteral_12= 'TopicModelling'
                     {
-                    enumLiteral_12=(Token)match(input,98,FOLLOW_2); 
+                    enumLiteral_12=(Token)match(input,100,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getTopicModellingEnumLiteralDeclaration_12().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_12, grammarAccess.getNlpTaskTypeAccess().getTopicModellingEnumLiteralDeclaration_12());
@@ -14675,12 +15169,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 14 :
-                    // InternalTyphonML.g:5959:3: (enumLiteral_13= 'TermExtraction' )
+                    // InternalTyphonML.g:6151:3: (enumLiteral_13= 'TermExtraction' )
                     {
-                    // InternalTyphonML.g:5959:3: (enumLiteral_13= 'TermExtraction' )
-                    // InternalTyphonML.g:5960:4: enumLiteral_13= 'TermExtraction'
+                    // InternalTyphonML.g:6151:3: (enumLiteral_13= 'TermExtraction' )
+                    // InternalTyphonML.g:6152:4: enumLiteral_13= 'TermExtraction'
                     {
-                    enumLiteral_13=(Token)match(input,99,FOLLOW_2); 
+                    enumLiteral_13=(Token)match(input,101,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getTermExtractionEnumLiteralDeclaration_13().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_13, grammarAccess.getNlpTaskTypeAccess().getTermExtractionEnumLiteralDeclaration_13());
@@ -14692,12 +15186,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 15 :
-                    // InternalTyphonML.g:5967:3: (enumLiteral_14= 'NamedEntityRecognition' )
+                    // InternalTyphonML.g:6159:3: (enumLiteral_14= 'NamedEntityRecognition' )
                     {
-                    // InternalTyphonML.g:5967:3: (enumLiteral_14= 'NamedEntityRecognition' )
-                    // InternalTyphonML.g:5968:4: enumLiteral_14= 'NamedEntityRecognition'
+                    // InternalTyphonML.g:6159:3: (enumLiteral_14= 'NamedEntityRecognition' )
+                    // InternalTyphonML.g:6160:4: enumLiteral_14= 'NamedEntityRecognition'
                     {
-                    enumLiteral_14=(Token)match(input,100,FOLLOW_2); 
+                    enumLiteral_14=(Token)match(input,102,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getNamedEntityRecognitionEnumLiteralDeclaration_14().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_14, grammarAccess.getNlpTaskTypeAccess().getNamedEntityRecognitionEnumLiteralDeclaration_14());
@@ -14709,12 +15203,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 16 :
-                    // InternalTyphonML.g:5975:3: (enumLiteral_15= 'RelationExtraction' )
+                    // InternalTyphonML.g:6167:3: (enumLiteral_15= 'RelationExtraction' )
                     {
-                    // InternalTyphonML.g:5975:3: (enumLiteral_15= 'RelationExtraction' )
-                    // InternalTyphonML.g:5976:4: enumLiteral_15= 'RelationExtraction'
+                    // InternalTyphonML.g:6167:3: (enumLiteral_15= 'RelationExtraction' )
+                    // InternalTyphonML.g:6168:4: enumLiteral_15= 'RelationExtraction'
                     {
-                    enumLiteral_15=(Token)match(input,101,FOLLOW_2); 
+                    enumLiteral_15=(Token)match(input,103,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getRelationExtractionEnumLiteralDeclaration_15().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_15, grammarAccess.getNlpTaskTypeAccess().getRelationExtractionEnumLiteralDeclaration_15());
@@ -14726,12 +15220,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 17 :
-                    // InternalTyphonML.g:5983:3: (enumLiteral_16= 'EventExtraction' )
+                    // InternalTyphonML.g:6175:3: (enumLiteral_16= 'EventExtraction' )
                     {
-                    // InternalTyphonML.g:5983:3: (enumLiteral_16= 'EventExtraction' )
-                    // InternalTyphonML.g:5984:4: enumLiteral_16= 'EventExtraction'
+                    // InternalTyphonML.g:6175:3: (enumLiteral_16= 'EventExtraction' )
+                    // InternalTyphonML.g:6176:4: enumLiteral_16= 'EventExtraction'
                     {
-                    enumLiteral_16=(Token)match(input,102,FOLLOW_2); 
+                    enumLiteral_16=(Token)match(input,104,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getEventExtractionEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_16, grammarAccess.getNlpTaskTypeAccess().getEventExtractionEnumLiteralDeclaration_16());
@@ -14743,12 +15237,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 18 :
-                    // InternalTyphonML.g:5991:3: (enumLiteral_17= 'CoreferenceResolution' )
+                    // InternalTyphonML.g:6183:3: (enumLiteral_17= 'CoreferenceResolution' )
                     {
-                    // InternalTyphonML.g:5991:3: (enumLiteral_17= 'CoreferenceResolution' )
-                    // InternalTyphonML.g:5992:4: enumLiteral_17= 'CoreferenceResolution'
+                    // InternalTyphonML.g:6183:3: (enumLiteral_17= 'CoreferenceResolution' )
+                    // InternalTyphonML.g:6184:4: enumLiteral_17= 'CoreferenceResolution'
                     {
-                    enumLiteral_17=(Token)match(input,103,FOLLOW_2); 
+                    enumLiteral_17=(Token)match(input,105,FOLLOW_2); 
 
                     				current = grammarAccess.getNlpTaskTypeAccess().getCoreferenceResolutionEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_17, grammarAccess.getNlpTaskTypeAccess().getCoreferenceResolutionEnumLiteralDeclaration_17());
@@ -14785,12 +15279,12 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
     protected DFA6 dfa6 = new DFA6(this);
     static final String dfa_1s = "\40\uffff";
-    static final String dfa_2s = "\1\17\1\4\2\33\1\20\1\uffff\1\40\1\uffff\1\33\4\uffff\2\115\13\uffff\1\41\5\uffff";
-    static final String dfa_3s = "\1\115\1\5\3\50\1\uffff\1\40\1\uffff\1\53\4\uffff\2\115\13\uffff\1\43\5\uffff";
+    static final String dfa_2s = "\1\17\1\4\2\33\1\20\1\uffff\1\40\1\uffff\1\33\4\uffff\2\117\13\uffff\1\41\5\uffff";
+    static final String dfa_3s = "\1\117\1\5\3\50\1\uffff\1\40\1\uffff\1\53\4\uffff\2\117\13\uffff\1\43\5\uffff";
     static final String dfa_4s = "\5\uffff\1\4\1\uffff\1\7\1\uffff\1\21\1\22\1\24\1\25\2\uffff\1\10\1\1\1\11\1\15\1\2\1\14\1\23\1\26\1\3\1\13\1\12\1\uffff\1\16\1\17\1\20\1\5\1\6";
     static final String dfa_5s = "\40\uffff}>";
     static final String[] dfa_6s = {
-            "\1\4\2\uffff\1\13\3\uffff\1\14\1\uffff\1\12\1\11\1\10\2\uffff\1\5\1\uffff\1\6\6\uffff\1\7\2\uffff\1\3\2\uffff\1\1\40\uffff\1\2",
+            "\1\4\2\uffff\1\13\3\uffff\1\14\1\uffff\1\12\1\11\1\10\2\uffff\1\5\1\uffff\1\6\6\uffff\1\7\2\uffff\1\3\2\uffff\1\1\42\uffff\1\2",
             "\1\15\1\16",
             "\1\17\4\uffff\1\20\7\uffff\1\21",
             "\1\24\4\uffff\1\23\7\uffff\1\22",
@@ -14852,10 +15346,10 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0001300100000802L,0x0000000000000135L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000100000000802L,0x0000000000000135L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0025300100000802L,0x00000000000004D4L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000100000000802L,0x00000000000004D4L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00001240A7448000L,0x0000000000002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x00001240A7448000L,0x0000000000008000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000006000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000030L});
@@ -14880,69 +15374,71 @@ public class InternalTyphonMLParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0030000000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0300000000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x00000000003C0000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000000000F00000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000200000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000002L,0x000000FFFFC00000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x000000FFFFC00000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000002L,0x000003FFFF000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x000003FFFF000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0001000000000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0002000000200000L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000100000000030L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000900000200030L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000100000200030L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0004400000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0008000000001002L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000001002L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0xA040100000200030L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0xA040100000200000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0xA000100000200000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x8000000000200000L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0100000000000030L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0100000000002000L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000300000L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000100000000030L,0x0000000000010000L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x1000000000200000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0010000000000030L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0010000000002000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0020100100000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000100100000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000900000200030L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000100000200030L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0040400000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0080000000001002L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000001002L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x8400100000200030L,0x0000000000000002L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x8400100000200000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x8000100000200000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000300000L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000100000000030L,0x0000000000040000L});
     public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x5000000000200000L});
-    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x4000000000200000L});
-    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x0080000000000002L});
-    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000100000800000L});
-    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000100000A00000L});
-    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x4000000000200000L});
+    public static final BitSet FOLLOW_63 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_64 = new BitSet(new long[]{0x4000000000200000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_65 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000001L});
+    public static final BitSet FOLLOW_66 = new BitSet(new long[]{0x0008000000000002L});
+    public static final BitSet FOLLOW_67 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_68 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_69 = new BitSet(new long[]{0x0000100000800000L});
+    public static final BitSet FOLLOW_70 = new BitSet(new long[]{0x0000100000A00000L});
     public static final BitSet FOLLOW_71 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000200000L,0x00000000000000C0L});
-    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0200100000000000L});
-    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000080L});
-    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0000100000000000L,0x0000000000004400L});
-    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
-    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0800100000000000L});
-    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x0000000040200000L,0x0000000000001800L});
-    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000040200000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000000200000L,0x0000000000001000L});
-    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_72 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000020L});
+    public static final BitSet FOLLOW_73 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_74 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_75 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000300L});
+    public static final BitSet FOLLOW_76 = new BitSet(new long[]{0x0800100000000000L});
+    public static final BitSet FOLLOW_77 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_78 = new BitSet(new long[]{0x0000100000000000L,0x0000000000011000L});
+    public static final BitSet FOLLOW_79 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_80 = new BitSet(new long[]{0x0000000000200000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_81 = new BitSet(new long[]{0x2000100000000000L});
+    public static final BitSet FOLLOW_82 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
+    public static final BitSet FOLLOW_83 = new BitSet(new long[]{0x0000000040200000L,0x0000000000006000L});
+    public static final BitSet FOLLOW_84 = new BitSet(new long[]{0x0000000040200000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_85 = new BitSet(new long[]{0x0000000000200000L,0x0000000000004000L});
     public static final BitSet FOLLOW_86 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
-    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000002000200000L});
-    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x1000000000200000L,0x0000000000020000L});
-    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000100000004000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x0000100000006000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000100000000000L,0x0000000000002000L});
-    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000000000200000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_87 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
+    public static final BitSet FOLLOW_88 = new BitSet(new long[]{0x0000000000000000L,0x0000000000020000L});
+    public static final BitSet FOLLOW_89 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_90 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_91 = new BitSet(new long[]{0x0000002000200000L});
+    public static final BitSet FOLLOW_92 = new BitSet(new long[]{0x4000000000200000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_93 = new BitSet(new long[]{0x0000100000004000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_94 = new BitSet(new long[]{0x0000100000006000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_95 = new BitSet(new long[]{0x0000100000000000L,0x0000000000008000L});
+    public static final BitSet FOLLOW_96 = new BitSet(new long[]{0x0000000000200000L,0x0000000000080000L});
 
 }

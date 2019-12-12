@@ -2527,16 +2527,136 @@ ruleEntity_Impl returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='importedNamespace'
+			otherlv_0='@functionalTags'
 			{
-				newLeafNode(otherlv_0, grammarAccess.getEntity_ImplAccess().getImportedNamespaceKeyword_0_0());
+				newLeafNode(otherlv_0, grammarAccess.getEntity_ImplAccess().getFunctionalTagsKeyword_0_0());
+			}
+			otherlv_1='('
+			{
+				newLeafNode(otherlv_1, grammarAccess.getEntity_ImplAccess().getLeftParenthesisKeyword_0_1());
+			}
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getEntity_ImplAccess().getFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_0_0());
+						}
+						lv_functionalTags_2_0=ruleFunctionalTag_Impl
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+							}
+							add(
+								$current,
+								"functionalTags",
+								lv_functionalTags_2_0,
+								"it.univaq.disim.typhon.TyphonML.FunctionalTag_Impl");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					otherlv_3=','
+					{
+						newLeafNode(otherlv_3, grammarAccess.getEntity_ImplAccess().getCommaKeyword_0_2_1_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getEntity_ImplAccess().getFunctionalTagsFunctionalTag_ImplParserRuleCall_0_2_1_1_0());
+							}
+							lv_functionalTags_4_0=ruleFunctionalTag_Impl
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+								}
+								add(
+									$current,
+									"functionalTags",
+									lv_functionalTags_4_0,
+									"it.univaq.disim.typhon.TyphonML.FunctionalTag_Impl");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+			)?
+			otherlv_5=')'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getEntity_ImplAccess().getRightParenthesisKeyword_0_3());
+			}
+		)?
+		(
+			otherlv_6='@nFunctionalTags'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getEntity_ImplAccess().getNFunctionalTagsKeyword_1_0());
+			}
+			otherlv_7='('
+			{
+				newLeafNode(otherlv_7, grammarAccess.getEntity_ImplAccess().getLeftParenthesisKeyword_1_1());
+			}
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getEntity_ImplAccess().getNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_0_0());
+						}
+						lv_nfunctionalTags_8_0=ruleNFunctionalTag_Impl
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+							}
+							add(
+								$current,
+								"nfunctionalTags",
+								lv_nfunctionalTags_8_0,
+								"it.univaq.disim.typhon.TyphonML.NFunctionalTag_Impl");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					otherlv_9=','
+					{
+						newLeafNode(otherlv_9, grammarAccess.getEntity_ImplAccess().getCommaKeyword_1_2_1_0());
+					}
+					(
+						(
+							{
+								newCompositeNode(grammarAccess.getEntity_ImplAccess().getNfunctionalTagsNFunctionalTag_ImplParserRuleCall_1_2_1_1_0());
+							}
+							lv_nfunctionalTags_10_0=ruleNFunctionalTag_Impl
+							{
+								if ($current==null) {
+									$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
+								}
+								add(
+									$current,
+									"nfunctionalTags",
+									lv_nfunctionalTags_10_0,
+									"it.univaq.disim.typhon.TyphonML.NFunctionalTag_Impl");
+								afterParserOrEnumRuleCall();
+							}
+						)
+					)
+				)*
+			)?
+			otherlv_11=')'
+			{
+				newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getRightParenthesisKeyword_1_3());
+			}
+		)?
+		(
+			otherlv_12='importedNamespace'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getEntity_ImplAccess().getImportedNamespaceKeyword_2_0());
 			}
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getImportedNamespaceEStringParserRuleCall_0_1_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getImportedNamespaceEStringParserRuleCall_2_1_0());
 					}
-					lv_importedNamespace_1_0=ruleEString
+					lv_importedNamespace_13_0=ruleEString
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2544,23 +2664,23 @@ ruleEntity_Impl returns [EObject current=null]
 						set(
 							$current,
 							"importedNamespace",
-							lv_importedNamespace_1_0,
+							lv_importedNamespace_13_0,
 							"it.univaq.disim.typhon.TyphonML.EString");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
 		)?
-		otherlv_2='entity'
+		otherlv_14='entity'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getEntity_ImplAccess().getEntityKeyword_1());
+			newLeafNode(otherlv_14, grammarAccess.getEntity_ImplAccess().getEntityKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getEntity_ImplAccess().getNameEStringParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getEntity_ImplAccess().getNameEStringParserRuleCall_4_0());
 				}
-				lv_name_3_0=ruleEString
+				lv_name_15_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2568,23 +2688,23 @@ ruleEntity_Impl returns [EObject current=null]
 					set(
 						$current,
 						"name",
-						lv_name_3_0,
+						lv_name_15_0,
 						"it.univaq.disim.typhon.TyphonML.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='{'
+		otherlv_16='{'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_3());
+			newLeafNode(otherlv_16, grammarAccess.getEntity_ImplAccess().getLeftCurlyBracketKeyword_5());
 		}
 		(
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_4_0_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_6_0_0());
 					}
-					lv_attributes_5_0=ruleAttribute
+					lv_attributes_17_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2592,7 +2712,7 @@ ruleEntity_Impl returns [EObject current=null]
 						add(
 							$current,
 							"attributes",
-							lv_attributes_5_0,
+							lv_attributes_17_0,
 							"it.univaq.disim.typhon.TyphonML.Attribute");
 						afterParserOrEnumRuleCall();
 					}
@@ -2601,9 +2721,9 @@ ruleEntity_Impl returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_4_1_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getAttributesAttributeParserRuleCall_6_1_0());
 					}
-					lv_attributes_6_0=ruleAttribute
+					lv_attributes_18_0=ruleAttribute
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2611,7 +2731,7 @@ ruleEntity_Impl returns [EObject current=null]
 						add(
 							$current,
 							"attributes",
-							lv_attributes_6_0,
+							lv_attributes_18_0,
 							"it.univaq.disim.typhon.TyphonML.Attribute");
 						afterParserOrEnumRuleCall();
 					}
@@ -2622,9 +2742,9 @@ ruleEntity_Impl returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_5_0_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_7_0_0());
 					}
-					lv_fretextAttributes_7_0=ruleFreeText
+					lv_fretextAttributes_19_0=ruleFreeText
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2632,7 +2752,7 @@ ruleEntity_Impl returns [EObject current=null]
 						add(
 							$current,
 							"fretextAttributes",
-							lv_fretextAttributes_7_0,
+							lv_fretextAttributes_19_0,
 							"it.univaq.disim.typhon.TyphonML.FreeText");
 						afterParserOrEnumRuleCall();
 					}
@@ -2641,9 +2761,9 @@ ruleEntity_Impl returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_5_1_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getFretextAttributesFreeTextParserRuleCall_7_1_0());
 					}
-					lv_fretextAttributes_8_0=ruleFreeText
+					lv_fretextAttributes_20_0=ruleFreeText
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2651,7 +2771,7 @@ ruleEntity_Impl returns [EObject current=null]
 						add(
 							$current,
 							"fretextAttributes",
-							lv_fretextAttributes_8_0,
+							lv_fretextAttributes_20_0,
 							"it.univaq.disim.typhon.TyphonML.FreeText");
 						afterParserOrEnumRuleCall();
 					}
@@ -2662,9 +2782,9 @@ ruleEntity_Impl returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_6_0_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_8_0_0());
 					}
-					lv_relations_9_0=ruleRelation
+					lv_relations_21_0=ruleRelation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2672,7 +2792,7 @@ ruleEntity_Impl returns [EObject current=null]
 						add(
 							$current,
 							"relations",
-							lv_relations_9_0,
+							lv_relations_21_0,
 							"it.univaq.disim.typhon.TyphonML.Relation");
 						afterParserOrEnumRuleCall();
 					}
@@ -2681,9 +2801,9 @@ ruleEntity_Impl returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_6_1_0());
+						newCompositeNode(grammarAccess.getEntity_ImplAccess().getRelationsRelationParserRuleCall_8_1_0());
 					}
-					lv_relations_10_0=ruleRelation
+					lv_relations_22_0=ruleRelation
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getEntity_ImplRule());
@@ -2691,17 +2811,89 @@ ruleEntity_Impl returns [EObject current=null]
 						add(
 							$current,
 							"relations",
-							lv_relations_10_0,
+							lv_relations_22_0,
 							"it.univaq.disim.typhon.TyphonML.Relation");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)*
 		)?
-		otherlv_11='}'
+		otherlv_23='}'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_7());
+			newLeafNode(otherlv_23, grammarAccess.getEntity_ImplAccess().getRightCurlyBracketKeyword_9());
 		}
+	)
+;
+
+// Entry rule entryRuleFunctionalTag_Impl
+entryRuleFunctionalTag_Impl returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getFunctionalTag_ImplRule()); }
+	iv_ruleFunctionalTag_Impl=ruleFunctionalTag_Impl
+	{ $current=$iv_ruleFunctionalTag_Impl.current; }
+	EOF;
+
+// Rule FunctionalTag_Impl
+ruleFunctionalTag_Impl returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getFunctionalTag_ImplAccess().getNameEStringParserRuleCall_0());
+			}
+			lv_name_0_0=ruleEString
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getFunctionalTag_ImplRule());
+				}
+				set(
+					$current,
+					"name",
+					lv_name_0_0,
+					"it.univaq.disim.typhon.TyphonML.EString");
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleNFunctionalTag_Impl
+entryRuleNFunctionalTag_Impl returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getNFunctionalTag_ImplRule()); }
+	iv_ruleNFunctionalTag_Impl=ruleNFunctionalTag_Impl
+	{ $current=$iv_ruleNFunctionalTag_Impl.current; }
+	EOF;
+
+// Rule NFunctionalTag_Impl
+ruleNFunctionalTag_Impl returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			{
+				newCompositeNode(grammarAccess.getNFunctionalTag_ImplAccess().getNameEStringParserRuleCall_0());
+			}
+			lv_name_0_0=ruleEString
+			{
+				if ($current==null) {
+					$current = createModelElementForParent(grammarAccess.getNFunctionalTag_ImplRule());
+				}
+				set(
+					$current,
+					"name",
+					lv_name_0_0,
+					"it.univaq.disim.typhon.TyphonML.EString");
+				afterParserOrEnumRuleCall();
+			}
+		)
 	)
 ;
 
