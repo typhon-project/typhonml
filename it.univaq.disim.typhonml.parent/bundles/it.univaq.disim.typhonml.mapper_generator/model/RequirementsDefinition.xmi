@@ -3,29 +3,238 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:typhonmlreq="http://org.typhon.dsls.typhonml.req">
-  <dbTypes name="mariadb">
+  <dbTypes name="MariaDB">
     <frequirements
-        name="join"/>
+        name="scanqueries"/>
+    <frequirements
+        name="acid"/>
     <frequirements
         name="sorting"/>
     <frequirements
-        name="acid"/>
+        name="joins"/>
+    <frequirements
+        name="filterqueries"/>
+    <frequirements
+        name="fulltextsearch"/>
+    <frequirements
+        name="analytics"/>
+    <frequirements
+        name="conditionalwrites"/>
+    <nfrequirements
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="consistency"
+        description=""/>
     <nfrequirements
         name="durability"
         description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
   </dbTypes>
-  <dbTypes name="mongodb"
-      dbType="DocumentDB">
+  <dbTypes name="MySQL">
+    <frequirements
+        name="scanqueries"/>
+    <frequirements
+        name="acid"/>
     <frequirements
         name="sorting"/>
+    <frequirements
+        name="joins"/>
+    <frequirements
+        name="filterqueries"/>
+    <frequirements
+        name="fulltextsearch"/>
+    <frequirements
+        name="analytics"/>
+    <frequirements
+        name="conditionalwrites"/>
     <nfrequirements
-        name="datascalability"
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="consistency"
         description=""/>
     <nfrequirements
         name="durability"
         description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+  </dbTypes>
+  <dbTypes name="MongoDB"
+      dbType="DocumentDB">
+    <frequirements
+        name="scanqueries"/>
+    <frequirements
+        name="sorting"/>
+    <frequirements
+        name="filterqueries"/>
+    <frequirements
+        name="fulltextsearch"/>
+    <frequirements
+        name="analytics"/>
+    <frequirements
+        name="conditionalwrites"/>
+    <nfrequirements
+        name="datascalability"
+        description=""/>
+    <nfrequirements
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="writescalability"
+        description=""/>
+    <nfrequirements
+        name="consistency"
+        description=""/>
     <nfrequirements
         name="readlatency"
         description=""/>
+    <nfrequirements
+        name="writelatency"
+        description=""/>
+    <nfrequirements
+        name="writethroughput"
+        description=""/>
+    <nfrequirements
+        name="readavailability"
+        description=""/>
+    <nfrequirements
+        name="durability"
+        description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+  </dbTypes>
+  <dbTypes name="Redis"
+      dbType="KeyValueDB">
+    <frequirements
+        name="scanqueries"/>
+    <frequirements
+        name="acid"/>
+    <frequirements
+        name="conditionalwrites"/>
+    <nfrequirements
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="consistency"
+        description=""/>
+    <nfrequirements
+        name="writelatency"
+        description=""/>
+    <nfrequirements
+        name="readlatency"
+        description=""/>
+    <nfrequirements
+        name="writethroughput"
+        description=""/>
+    <nfrequirements
+        name="readavailability"
+        description=""/>
+    <nfrequirements
+        name="durability"
+        description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+  </dbTypes>
+  <dbTypes name="HBase"
+      dbType="ColumnDB">
+    <frequirements
+        name="scanqueries"/>
+    <frequirements
+        name="conditionalwrites"/>
+    <frequirements
+        name="sorting"/>
+    <frequirements
+        name="analytics"/>
+    <nfrequirements
+        name="datascalability"
+        description=""/>
+    <nfrequirements
+        name="writescalability"
+        description=""/>
+    <nfrequirements
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="elasticity"/>
+    <nfrequirements
+        name="consistency"
+        description=""/>
+    <nfrequirements
+        name="writelatency"
+        description=""/>
+    <nfrequirements
+        name="writethroughput"
+        description=""/>
+    <nfrequirements
+        name="durability"
+        description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+  </dbTypes>
+  <dbTypes name="Riak">
+    <frequirements
+        name="fulltextsearch"/>
+    <frequirements
+        name="analytics"/>
+    <nfrequirements
+        name="datascalability"
+        description=""/>
+    <nfrequirements
+        name="writescalability"
+        description=""/>
+    <nfrequirements
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="elasticity"/>
+    <nfrequirements
+        name="writelatency"
+        description=""/>
+    <nfrequirements
+        name="readlatency"
+        description=""/>
+    <nfrequirements
+        name="writethroughput"
+        description=""/>
+    <nfrequirements
+        name="readavailability"
+        description=""/>
+    <nfrequirements
+        name="writeavailability"
+        description=""/>
+    <nfrequirements
+        name="durability"
+        description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
+  </dbTypes>
+  <dbTypes name="Cassandra"
+      dbType="ColumnDB">
+    <frequirements
+        name="scanqueries"/>
+    <frequirements
+        name="conditionalwrites"/>
+    <frequirements
+        name="sorting"/>
+    <frequirements
+        name="fulltextsearch"/>
+    <frequirements
+        name="analytics"/>
+    <nfrequirements
+        name="datascalability"
+        description=""/>
+    <nfrequirements
+        name="writescalability"
+        description=""/>
+    <nfrequirements
+        name="readscalability"
+        description=""/>
+    <nfrequirements
+        name="elasticity"/>
+    <nfrequirements
+        name="writelatency"
+        description=""/>
+    <nfrequirements
+        name="writethroughput"
+        description=""/>
+    <nfrequirements
+        name="readavailability"
+        description=""/>
+    <nfrequirements
+        name="writeavailability"
+        description=""/>
+    <nfrequirements
+        name="durability"
+        description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
   </dbTypes>
 </typhonmlreq:ModelReq>

@@ -2,7 +2,6 @@ import "typhonmlreq.eol";
 
 pre{
 	//Create stubs of all databases in the TyphonMLReq
-	
 }
 
 
@@ -16,7 +15,7 @@ context TyphonML!Entity {
 	 	fix {
 	 		title: "Generate Database for "+self.name
 	 		do {
-	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck(), new List<TyphonMLReq!DBType>);
+	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck(), new List<String>);
 	 			self.generateDatabaseForEntity(selectedDatabase);
 	 		}
 	 	}

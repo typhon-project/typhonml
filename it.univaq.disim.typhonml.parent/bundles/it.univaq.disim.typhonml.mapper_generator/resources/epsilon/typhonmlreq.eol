@@ -4,49 +4,62 @@ operation TyphonML!Entity hasTags(): Boolean{
 }
 
 
-operation TyphonML!Entity feasabilityCheck(): List<TyphonMLReq!DBType>{
-	//get all Entities with tag
+operation TyphonML!Entity feasabilityCheck(): List<Map>{
+	//MySQL: 2 fr [acid,sorting], 0 nfr []
 	
-	//get all DBType with requirements
-	
-	var result = TyphonMLReq!DBType.allInstances();
-	return result;
-}
+	//var mapRank = new Map<Integer, mapDBWithFNF>;
+	var mapRank = new List<Map>;
 
-operation getEntitiesTag(): String{
-	for(tag in TyphonML!Entity.allInstances()){
-		tag.name.println();
-		for(f in tag.functionalTags){
-			("\t"+f.name).println();
+	//For each DBType
+	for(dbType in TyphonMLReq!DBType.allInstances()){
+		var mapDBWithFNF = new Map<TyphonMLReq!DBType, mapFNFRequirements>;
+		var mapFNFRequirements = new Map<functionalList, nFunctionalList>;
+		var functionalList = new Map<Integer, List<String>>;
+		var nfunctionalList = new Map<Integer, List<String>>;
+		//Check Entity Functional Tags
+		for(fr in self.functionalTags){
+			var fCount = 0;
+			var functionalStringList = new List<String>;
+			for(fRname in dbType.frequirements){
+				if(fRname.name = fr.name){
+					functionalStringList.add(fr.name);
+					fCount++;
+				}
+			}
+			functionalList.put(fCount, functionalStringList);
 		}
-		for(nf in tag.nfunctionalTags){
-			("\t"+nf.name).println();
+		//Check Entity Not Functional Tags
+		for(nfr in self.nfunctionalTags){
+			var nfCount = 0;
+			var nfunctionalStringList = new List<String>;
+			for(nfRname in dbType.nfrequirements){
+				if(nfRname.name = nfr.name){
+					nfunctionalStringList.add(nfr.name);
+					nfCount++;
+				}
+			}
+			nfunctionalList.put(nfCount, nfunctionalStringList);
+		}
+		//Suggest DBType only if there are some functional or non functional matches
+		if(not functionalList.isEmpty and not nfunctionalList.isEmpty){
+			mapFNFRequirements.put(functionalList, nfunctionalList);
+			mapDBWithFNF.put(dbType,mapFNFRequirements);
+			mapRank.add(mapDBWithFNF);
 		}
 	}
-	return "Done";
-}
-
-operation getDBRequirements(): String{
-	for(db in TyphonMLReq!DBType.allInstances()){
-		db.name.println();
-		for(f in db.frequirements){
-			("\t"+f.name).println();
-		}
-		for(nf in db.nfrequirements){
-			("\t"+nf.name).println();
-		}
-	}
-	return "Done";
+	
+	return mapRank;
 }
 
 
-operation TyphonML!Entity generateDatabaseForEntity(selectedDatabase : TyphonMLReq!DBType): Boolean{
-	switch(selectedDatabase.dbType.name){
-		case "RelationalDB" : createRelationalDB(self, selectedDatabase.name);
-		case "DocumentDB" : createDocumentDB(self);
-		case "KeyValueDB" : createKeyValueDB(self);
-		case "GraphDB" : createGraphDB(self);
-		case "ColumnDB" : createColumnDB(self);
+operation TyphonML!Entity generateDatabaseForEntity(selectedDatabase : Map<TyphonMLReq!DBType, mapFNFRequirements>): Boolean{
+	var databaseName = selectedDatabase.get("dbType").dbType.name;
+	switch(databaseName){
+		case "RelationalDB" : createRelationalDB(self, databaseName);
+		case "DocumentDB" : createDocumentDB(self, databaseName);
+		case "KeyValueDB" : createKeyValueDB(self, databaseName);
+		case "GraphDB" : createGraphDB(self, databaseName);
+		case "ColumnDB" : createColumnDB(self, databaseName);
 		default : "No Databases Available.";
 	}
 	return true;
@@ -57,28 +70,44 @@ operation createRelationalDB(entity : TyphonML!Entity, dbName: String){
 	var db = new TyphonML!RelationalDB;
 	db.name = dbName;
 	var table = new TyphonML!Table;
-	table.name = entity.name + "Table";
+	table.name = entity.name.firstToLowerCase() + "Table";
 	table.entity = entity;
 	table.db = db;
 	db.tables.add(table);
 	entity.eContainer().databases.add(db);
-	"RelationalDB creation".println();
+	(dbName+" [RelationalDB] created for "+entity.name+ " entity.").println();
 }
 
-operation createDocumentDB(entity : TyphonML!Entity){
-	"DocumentDB creation".println();
+operation createDocumentDB(entity : TyphonML!Entity, dbName: String){
+	var db = new TyphonML!DocumentDB;
+	db.name = dbName;
+	var newCollection = new TyphonML!`Collection`;
+	newCollection.name = entity.name.firstToLowerCase() + "Collection";
+	newCollection.entity = entity;
+	db.collections.add(newCollection);
+	entity.eContainer().databases.add(db);
+	(dbName+" [DocumentDB] created for "+entity.name+ " entity.").println();
 }
 
-operation createKeyValueDB(entity : TyphonML!Entity){
-	"KeyValueDB creation".println();
+operation createKeyValueDB(entity : TyphonML!Entity, dbName: String){
+	var db = new TyphonML!KeyValueDB;
+	db.name = dbName;
+	
+	(dbName+" [KeyValueDB] created for "+entity.name+ " entity.").println();
 }
 
-operation createGraphDB(entity : TyphonML!Entity){
-	"GraphDB creation".println();
+operation createGraphDB(entity : TyphonML!Entity, dbName: String){
+	var db = new TyphonML!GraphDB;
+	db.name = dbName;
+	
+	(dbName+" [GraphDB] created for "+entity.name+ " entity.").println();
 }
 
-operation createColumnDB(entity : TyphonML!Entity){
-	"ColumnDB creation".println();	
+operation createColumnDB(entity : TyphonML!Entity, dbName: String){
+	var db = new TyphonML!ColumnDB;
+	db.name = dbName;
+	
+	(dbName+" [ColumnDB] created for "+entity.name+ " entity.").println();
 }
 
 
