@@ -4,16 +4,16 @@ package typhonml.tests;
 
 import junit.textui.TestRunner;
 
-import typhonml.AddGraphEdge;
+import typhonml.NFunctionalTag;
 import typhonml.TyphonmlFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Add Graph Edge</b></em>'.
+ * A test case for the model object '<em><b>NFunctional Tag</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class AddGraphEdgeTest extends ChangeOperatorTest {
+public class NFunctionalTagTest extends NamedElementTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -21,28 +21,28 @@ public class AddGraphEdgeTest extends ChangeOperatorTest {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(AddGraphEdgeTest.class);
+		TestRunner.run(NFunctionalTagTest.class);
 	}
 
 	/**
-	 * Constructs a new Add Graph Edge test case with the given name.
+	 * Constructs a new NFunctional Tag test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AddGraphEdgeTest(String name) {
+	public NFunctionalTagTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Returns the fixture for this Add Graph Edge test case.
+	 * Returns the fixture for this NFunctional Tag test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	protected AddGraphEdge getFixture() {
-		return (AddGraphEdge)fixture;
+	protected NFunctionalTag getFixture() {
+		return (NFunctionalTag)fixture;
 	}
 
 	/**
@@ -53,7 +53,7 @@ public class AddGraphEdgeTest extends ChangeOperatorTest {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(TyphonmlFactory.eINSTANCE.createAddGraphEdge());
+		setFixture(TyphonmlFactory.eINSTANCE.createNFunctionalTag());
 	}
 
 	/**
@@ -67,4 +67,4 @@ public class AddGraphEdgeTest extends ChangeOperatorTest {
 		setFixture(null);
 	}
 
-} //AddGraphEdgeTest
+} //NFunctionalTagTest
