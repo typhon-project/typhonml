@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius" xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius ../../it.univaq.disim.typhonml/model/typhonml.ecore">
+  <typhonml:Model>
+    <dataTypes xsi:type="typhonml:Entity" name="User">
+      <attributes name="name" type="/0/@dataTypes.0"/>
+      <attributes name="surname" type="/0/@dataTypes.0"/>
+      <functionalTags name="sorting"/>
+      <functionalTags name="acid"/>
+      <nfunctionalTags name="consistency"/>
+    </dataTypes>
+    <dataTypes xsi:type="typhonml:Entity" name="Order">
+      <attributes name="date" type="/0/@dataTypes.1"/>
+      <attributes name="totalAmount" type="/0/@dataTypes.1"/>
+      <functionalTags name="acid"/>
+      <nfunctionalTags name="consistency"/>
+    </dataTypes>
+    <dataTypes xsi:type="typhonml:Entity" name="Review">
+      <attributes name="rating" type="/0/@dataTypes.2"/>
+      <attributes name="title" type="/0/@dataTypes.2"/>
+      <functionalTags name="fulltextsearch"/>
+      <nfunctionalTags name="readscalability"/>
+      <nfunctionalTags name="readavailability"/>
+    </dataTypes>
+    <dataTypes xsi:type="typhonml:Entity" name="Comment">
+      <attributes name="content" type="/0/@dataTypes.3"/>
+      <functionalTags name="fulltextsearch"/>
+      <nfunctionalTags name="readscalability"/>
+      <nfunctionalTags name="readavailability"/>
+    </dataTypes>
+    <dataTypes xsi:type="typhonml:Entity" name="CreditCard">
+      <attributes name="number" type="/0/@dataTypes.4"/>
+      <attributes name="expiryDate" type="/0/@dataTypes.4"/>
+      <functionalTags name="acid"/>
+      <nfunctionalTags name="consistency"/>
+    </dataTypes>
+  </typhonml:Model>
+  <typhonml:Collection name="CommentCollection" entity="/0/@dataTypes.3"/>
+  <typhonml:KeyValueDB name="Redis"/>
+  <typhonml:KeyValueDB name="Redis"/>
+  <typhonml:ColumnDB name="Cassandra"/>
+  <typhonml:KeyValueDB name="Redis"/>
+  <typhonml:KeyValueDB name="Redis"/>
+  <typhonml:ColumnDB name="HBase"/>
+</xmi:XMI>

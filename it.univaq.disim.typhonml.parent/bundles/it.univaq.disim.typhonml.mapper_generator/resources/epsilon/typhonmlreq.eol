@@ -5,8 +5,6 @@ operation TyphonML!Entity hasTags(): Boolean{
 
 
 operation TyphonML!Entity feasabilityCheck(): List<Map>{
-	//MySQL: 2 fr [acid,sorting], 0 nfr []
-	
 	//var mapRank = new Map<Integer, mapDBWithFNF>;
 	var mapRank = new List<Map>;
 

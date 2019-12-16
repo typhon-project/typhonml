@@ -3,33 +3,6 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:typhonmlreq="http://org.typhon.dsls.typhonml.req">
-  <dbTypes name="MariaDB">
-    <frequirements
-        name="scanqueries"/>
-    <frequirements
-        name="acid"/>
-    <frequirements
-        name="sorting"/>
-    <frequirements
-        name="joins"/>
-    <frequirements
-        name="filterqueries"/>
-    <frequirements
-        name="fulltextsearch"/>
-    <frequirements
-        name="analytics"/>
-    <frequirements
-        name="conditionalwrites"/>
-    <nfrequirements
-        name="readscalability"
-        description=""/>
-    <nfrequirements
-        name="consistency"
-        description=""/>
-    <nfrequirements
-        name="durability"
-        description="A durability guarantee is related to how strongly persistent your data is in the event of some kind of catastrophic failure within the store. (Examples of a catastrophic failure are power outages, disk crashes, physical memory corruption, or even fatal application programming errors."/>
-  </dbTypes>
   <dbTypes name="MySQL">
     <frequirements
         name="scanqueries"/>
@@ -144,9 +117,6 @@
         description=""/>
     <nfrequirements
         name="writescalability"
-        description=""/>
-    <nfrequirements
-        name="readscalability"
         description=""/>
     <nfrequirements
         name="elasticity"/>
