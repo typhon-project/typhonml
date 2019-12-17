@@ -30,10 +30,8 @@ operation Entity checkMeaninglessName() : Boolean{
 		confusion and could lead to subtle bugs in queries.
 */
 operation getOverloadedAttributeName() : Map{
-	
 	var returnMap: Map;
 	return returnMap;
-	
 }
 
 operation Entity checkOverloadedAttributeName() : String{
@@ -44,7 +42,6 @@ operation Entity checkOverloadedAttributeName() : String{
 			for(attribute in entity.attributes){
 				if(selfAttribute.name == attribute.name){
 					if(selfAttribute.type.name <> attribute.type.name){
-						//(selfAttribute.name +"=="+attribute.name+"@@@@ "+selfAttribute.type.name +"<>"+ attribute.type.name).println(); 
 						return selfAttribute.name;
 					}
 				}
