@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Evaluator
-Bundle-SymbolicName: it.univaq.disim.typhonml.evaluator
+Bundle-SymbolicName: it.univaq.disim.typhonml.evaluator;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: it.univaq.disim.typhonml.evaluator
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

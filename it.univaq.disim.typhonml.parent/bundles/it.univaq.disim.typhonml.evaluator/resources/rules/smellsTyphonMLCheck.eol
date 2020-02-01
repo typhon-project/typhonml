@@ -1,3 +1,4 @@
+
 /*
  	God Table
 	This smell arises when a table contains excessive number of attributes. 
@@ -13,14 +14,6 @@ operation Entity checkGodTable(maxNumberOfAttributes : Integer) : Boolean{
 	}
 }
 
-/*
- 	Meaningless name 
-	This smell occurs when a table or an attribute name is cryptic or meaningless 
-	Rationale: Meaningless or cryptic names hamper readability of the database’s schema. 
-*/
-operation Entity checkMeaninglessName() : Boolean{
-	return true;
-}
 
 /*
  	Overloaded attribute names 
@@ -51,4 +44,91 @@ operation Entity checkOverloadedAttributeName() : String{
 	return null;
 }
 
+
+
+
+
+/*
+ 	Meaningless name 
+	This smell occurs when a table or an attribute name is cryptic or meaningless 
+	Rationale: Meaningless or cryptic names hamper readability of the database’s schema. 
+*/
+operation Entity checkMeaninglessName(): String{
+	var wordNet = new Native("typhonmlwordnetutility.WordNet");
+	if(not wordNet.checkifWordExists(self.name)){
+		return self.name;
+	}else{
+		for(attr in self.attributes){
+			if(not wordNet.checkifWordExists(attr.name)){
+				return attr.name;
+			}
+		}
+	}
+	return null;
+}
+
+
+operation Entity checkPluralName(): String{
+	var wordNet = new Native("typhonmlwordnetutility.WordNet");
+	if(wordNet.checkIfWordPlural(self.name)){
+		return self.name;
+	}else{
+		for(attr in self.attributes){
+			if(wordNet.checkIfWordPlural(attr.name)){
+				return attr.name;
+			}
+		}
+	}
+	return null;
+}
+
+operation Entity checkUseSpacesforTableNames(): String{
+	if(" ".isSubstringOf(self.name)){
+		return self.name;
+	}else{
+		for(attr in self.attributes){
+			if(" ".isSubstringOf(attr.name)){
+				attr.name.println();
+				return attr.name;
+			}
+		}
+	}
+	return null;
+}
+
+operation Entity checkUseOfUnnecessaryPrefixOrSuffixForTableNames(): String{
+    var wordNet = new Native("typhonmlwordnetutility.WordNet");
+    var filteredEntities = TyphonML!Entity.allInstances()->select(e|e <> self);
+    //For all the other entities different for sel check the name suffix
+    for(s in filteredEntities){
+	    if(wordNet.isSuffix(self.name, s.name) or wordNet.isPrefix(self.name, s.name)){
+			return self.name;
+		}
+    }
+	return null;
+}
+
+
+
+operation TyphonML!Table checkIDFieldsForTablesAreMissing() : Boolean{
+	if(self.idSpec <> null){
+		if(self.idSpec.attributes <> null){
+			return true;
+		}
+	}
+	return false;
+}
+
+operation TyphonML!Table checkUseOfVarcharDataTypesForIndexing() : Boolean{
+	if(self.indexSpec <> null){
+		if(self.indexSpec.attributes <> null){
+			for(attr in self.indexSpec.attributes){
+				if(attr.type.name.toLowerCase() == "string"){
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
 

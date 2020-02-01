@@ -2,28 +2,28 @@ import "smellsTyphonMLCheck.eol";
 
 
 pre{
-	"".println();
 	"Smells TyphonML Checks...".println();
 	
 	var maxNumberOfAttributesForGodTable = 2;
 	var attributeOverloaded: String;
+	var attributeWithWhiteSpace: String;
+	var meaningName: String;
+	var pluralName: String;
+	var suffixPrefixName: String;
 }
 
 
 context Entity {
 	//GOD TABLE Smell
 	critique hasGodTable{
-	 	check:
-			  not self.checkGodTable(maxNumberOfAttributesForGodTable)
+	 	check: not self.checkGodTable(maxNumberOfAttributesForGodTable)
 		message: "God Table in " + self.name + "; "
 			+ "\n\t Excessive number of attributes ("+maxNumberOfAttributesForGodTable+") tend to violate the principles of normalization which in turn introduce a variety of problems."  
 			+ "\n\t Additionally, it impacts maintainability of the database."
 	 } 
 	 
-	 
 	 //OVERLOADED ATTRIBUTE NAME Smell
 	 critique hasOverloadedAttributeName{
-	 	
 	 	check{
 	 		attributeOverloaded = self.checkOverloadedAttributeName();
 	 		if(attributeOverloaded <> null){
@@ -35,12 +35,73 @@ context Entity {
 			+ "\n\t Identical names with different data types create confusion and could lead to subtle bugs in queries. "
 	 } 
 	 
+	//USE SPACES FOR TABLES NAME Smell
+	critique hasUseSpacesforTableNames{
+	 	check{
+	 			attributeWithWhiteSpace = self.checkUseSpacesforTableNames();
+	 			if(attributeWithWhiteSpace <> null){
+	 				return false;
+	 			}else{
+	 				return true;
+	 			}
+	 		}
+		message: "White space in entity name or attributes in " + self.name + ". ["+attributeWithWhiteSpace+"]."
+	 } 
 	 
-	 constraint Error{
-	 	check: 
-	 		true
-	 	message: "ERROR --> " + self.name
-	 }
+	//MEANINGLESS NAMES Smell
+	critique hasMeaninglessNames{
+	 	check{
+	 			meaningName = self.checkMeaninglessName();
+	 			if(meaningName <> null){
+	 				return false;
+	 			}else{
+	 				return true;
+	 			}
+	 		}
+		message: "Meaningless entity name or attributes in " + self.name + ". ["+meaningName+"]."
+	 } 
+	 
+	//PLURAL NAMES Smell
+	critique hasPluralNames{
+	 	check{
+	 			pluralName = self.checkPluralName();
+	 			if(pluralName <> null){
+	 				return true;
+	 			}else{
+	 				return true;
+	 			}
+	 		}
+		message: "Use of plural entity name or attributes in " + self.name + ". ["+pluralName+"]."
+	 } 
+	 
+	//USE OF UNNECESSARY PREFIX OR SUFFIX FOR TABEL NAME Smell
+	critique hasUseOfUnnecessaryPrefixOrSuffixForTableNames{
+	 	check{
+	 			suffixPrefixName = self.checkUseOfUnnecessaryPrefixOrSuffixForTableNames();
+	 			if(suffixPrefixName <> null){
+	 				return false;
+	 			}else{
+	 				return true;
+	 			}
+	 		}
+		message: "The entity " + self.name + " has a prefix or suffix or another ["+suffixPrefixName+"]."
+	 } 
+	
+}
+
+
+context Table {
+ 	 //ID Fileds For Tables Are Missing Smell
+	 critique hasIDFieldsForTablesAreMissingTable{
+	 	check: self.checkIDFieldsForTablesAreMissing()
+		message: "ID Fields for Table in " + self.name +" is missing."
+	 } 
+	 
+	 //Use of Varchar Data Types for Indexing Smell
+	 critique hasUseOfVarcharDataTypesForIndexing{
+	 	check: self.checkUseOfVarcharDataTypesForIndexing()
+		message: "Use of Varchar Data Types for Indexing for Table in " + self.name +"."
+	 } 
 }
 
 
