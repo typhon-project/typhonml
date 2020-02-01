@@ -1,4 +1,4 @@
-package it.univaq.disim.typhonml.evaluator;
+package it.univaq.disim.typhonml.model_analysis;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -16,7 +16,7 @@ import org.eclipse.epsilon.eol.models.IRelativePathResolver;
 import org.eclipse.epsilon.evl.EvlModule;
 import org.eclipse.epsilon.evl.execute.UnsatisfiedConstraint;
 
-import it.univaq.disim.typhonml.evaluator.utility.Utility;
+import it.univaq.disim.typhonml.model_analysis.utility.Utility;
 import typhonml.TyphonmlPackage;
 
 public class TyphonEvaluator {
