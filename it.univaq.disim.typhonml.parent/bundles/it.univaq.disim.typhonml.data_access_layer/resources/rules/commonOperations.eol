@@ -1,0 +1,4 @@
+/* Get all TyphonML Entities Ordered by Name*/
+operation getOrderedEntities(): List<TyphonML!Entity> {
+	return TyphonML!Entity.allInstances().sortBy(c | c.name);
+}

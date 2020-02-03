@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DataAccessLayer
+Bundle-SymbolicName: it.univaq.disim.typhonml.data_access_layer
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: it.univaq.disim.typhonml.data_access_layer.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.epsilon.egl.engine;bundle-version="1.5.1",
+ org.eclipse.epsilon.eol.engine;bundle-version="1.5.1",
+ org.eclipse.epsilon.emc.emf;bundle-version="1.5.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: it.univaq.disim.typhonml.data_access_layer
+Bundle-ActivationPolicy: lazy

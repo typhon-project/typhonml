@@ -24,7 +24,9 @@
 		<module>it.univaq.disim.typhonml.xtext.ui.tests</module>-->
 		<module>it.univaq.disim.typhonml.xtext.ui</module>
 		<module>it.univaq.disim.typhon.acceleo</module>
-		<module>it.univaq.disim.typhonml.evaluator</module>
+		<module>it.univaq.disim.typhonml.model_analysis</module>
+		<module>it.univaq.disim.typhonml.mapping_generation</module>
+		<module>it.univaq.disim.typhonml.data_access_layer</module>
 		<module>it.univaq.disim.typhonml.ui</module>
 		<module>it.univaq.disim.typhonml.usage</module>
 	</modules>
