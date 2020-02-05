@@ -1,0 +1,6 @@
+[%import "databaseOperations.eol";%]
+package org.typhon.[%=entity.name.toLowerCase()%].model;
+
+import java.util.*;
+
+[%=entity.getDatabaseBean()%]

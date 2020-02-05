@@ -9,19 +9,18 @@ import org.eclipse.epsilon.egl.EgxModule;
 import org.eclipse.epsilon.eol.IEolModule;
 import org.eclipse.epsilon.eol.models.IModel;
 
+import it.univaq.disim.typhonml.data_access_layer.utility.Utility;
+
+
 public class EGXXMIStandalone extends EpsilonStandalone{
 	
 	private String OUTPUT_PATH = "output/";
-	private String RULES_PATH = "resources/rules/";
+	private String RULES_PATH = "resources/generator/";
 	
 	private String TYPHONML_METAMODEL_NAME = "TyphonML";
 	private String TYPHONML_METAMODEL_PATH = "resources/model/typhonml.ecore";
 	private String TYPHONML_MODEL_PATH = "resources/model/TyphonECommerceExample.xmi";
 	
-	private String TYPHONDL_METAMODEL_NAME = "TyphonDL";
-	private String TYPHONDL_METAMODEL_PATH = "";
-	private String TYPHONDL_MODEL_PATH = "";
-
 	public static void main(String[] args) throws Exception {
 		new EGXXMIStandalone().execute();
 	}
@@ -45,7 +44,10 @@ public class EGXXMIStandalone extends EpsilonStandalone{
 	}
 
 	@Override
-	public String getSource() throws Exception {
-		return RULES_PATH + "apigatewayGenerator.egx";
+	public List<File> getSources() throws Exception {
+		final File rootFolder = Utility.getFileFromPath(RULES_PATH);
+		List<File> allEGXFilesPath = new ArrayList<File>();
+		Utility.search(".*\\.egx", rootFolder, allEGXFilesPath);
+		return allEGXFilesPath;
 	}
 }

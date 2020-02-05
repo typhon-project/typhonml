@@ -1,0 +1,57 @@
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
+public class [%=entity.name.firstToUpperCase()%] {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+
+[%for (attribute in entity.attributes) { %]
+	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
+		[%if (attribute.name <> 'id') {%]
+	private [%=attribute.type.name%] [%=attribute.name%]; 
+		[%}%]
+	[%}%]
+[%}%]
+
+[%for (relation in entity.relations) { %]
+	@ElementCollection
+	private List<String> [%=relation.name%]; 
+[%}%]
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+		
+[%for (attribute in entity.attributes) { %]
+	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
+		[%if (attribute.name <> 'id') {%]
+	public void set[%=attribute.name.firstToUpperCase()%]([%if (attribute.type.isTypeOf(TyphonML!PrimitiveDataType)){%][%=attribute.type.name%] [%=attribute.name%][%}%][%else if (attribute.type.isTypeOf(TyphonML!CustomDataType)){%] List<[%=attribute.type.name%]> [%=attribute.name.toLowerCase()%] [%}%]){
+		this.[%=attribute.name%] = [%=attribute.name%];
+	}
+
+	public [%if (attribute.type.isTypeOf(TyphonML!PrimitiveDataType)){%][%=attribute.type.name%][%}%] [%else if (attribute.type.isTypeOf(TyphonML!CustomDataType)){%]List<[%=attribute.type.name%]> [%=attribute.name.toLowerCase()%][%}%] get[%=attribute.name.firstToUpperCase()%] (){
+		return [%=attribute.name%];
+	}
+		[%}%]
+	[%}%]
+[%}%]
+
+[%for (relation in entity.relations) { %]
+	public void set[%=relation.name.firstToUpperCase()%](List<String> [%=relation.name%]){
+		this.[%=relation.name%] = [%=relation.name%];
+	}
+
+	public List<String> get[%=relation.name.firstToUpperCase()%](){
+		return [%=relation.name%];
+	}
+[%}%]
+}

@@ -1,0 +1,4 @@
+server.port=[%=serverPort%]
+spring.data.mongodb.host=localhost 
+spring.data.mongodb.port=[getDocumentDBServerPort()/]
+spring.data.mongodb.database=[e.getCollections().name.toLowerCase()/]

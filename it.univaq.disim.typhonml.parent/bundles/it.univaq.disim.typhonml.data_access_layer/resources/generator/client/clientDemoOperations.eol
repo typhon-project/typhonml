@@ -1,0 +1,63 @@
+import "../commonOperations.eol";
+
+operation Entity getTypeValueForDifferentDatabase(): String{
+	if(self.isTable()){
+		return "int";
+	}else if(self.isKeyValueElement()){
+		return "";
+	}else if(self.isGraphNode()){
+		return "";
+	}else if(self.isColumn()){
+		return "";
+	}else if(self.isCollection()){
+		return "String";
+	}
+}
+
+
+//It apply on the Relation Type that is an Entity
+operation Entity getVariableTypeBasedOnDatabaseType(): String {
+	if(self.isTable()){
+		return "Integer";
+	}else if(self.isKeyValueElement()){
+		return "";
+	}else if(self.isGraphNode()){
+		return "";
+	}else if(self.isColumn()){
+		return "";
+	}else if(self.isCollection()){
+		return "String";
+	}
+}
+
+operation Entity getTestValueBasedOnDatabaseType(): String {
+	if(self.isTable()){
+		return "1";
+	}else if(self.isKeyValueElement()){
+		return "";
+	}else if(self.isGraphNode()){
+		return "";
+	}else if(self.isColumn()){
+		return "";
+	}else if(self.isCollection()){
+		return "1";
+	}
+}
+
+
+operation Entity calculateEntityPortByEntity(apigatewayBasePort : Integer): Integer{
+	var calculatedPort;
+	calculatedPort = apigatewayBasePort + getOrderedEntities()->indexOf(self);
+	return calculatedPort;
+}
+
+operation Relation calculateEntityPortByRelation(apigatewayBasePort : Integer): Integer{
+	var calculatedPort;
+	for(entity in getOrderedEntities()){
+		if(entity.name == self.type.name){
+			calculatedPort = apigatewayBasePort + TyphonML!DataType.allInstances().sortBy(c | c.name)->indexOf(entity);
+		}
+	}
+	return calculatedPort;
+}
+

@@ -1,5 +1,6 @@
 package it.univaq.disim.typhonml.data_access_layer.epsilon;
 
+import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ public abstract class EpsilonStandalone {
 
 	public abstract IEolModule createModule();
 
-	public abstract String getSource() throws Exception;
+	public abstract List<File> getSources() throws Exception;
 
 	public abstract List<IModel> getModels() throws Exception;
 
@@ -38,30 +39,32 @@ public abstract class EpsilonStandalone {
 
 	public void execute() throws Exception {
 
-		module = createModule();
-		module.parse(Utility.getFileFromPath(getSource()));
-
-		if (module.getParseProblems().size() > 0) {
-			System.err.println("Parse errors occured...");
-			for (ParseProblem problem : module.getParseProblems()) {
-				System.err.println(problem.toString());
+		for (File moduleFile : getSources()) {
+			module = createModule();
+			module.parse(Utility.getFileFromPath(moduleFile.getAbsolutePath()));
+	
+			if (module.getParseProblems().size() > 0) {
+				System.err.println("Parse errors occured...");
+				for (ParseProblem problem : module.getParseProblems()) {
+					System.err.println(problem.toString());
+				}
+	//			return;
 			}
-//			return;
+	
+			for (IModel model : getModels()) {
+				module.getContext().getModelRepository().addModel(model);
+			}
+	
+			for (Variable parameter : parameters) {
+				module.getContext().getFrameStack().put(parameter);
+			}
+	
+			preProcess();
+			result = execute(module);
+			postProcess();
+	
+			module.getContext().getModelRepository().dispose();
 		}
-
-		for (IModel model : getModels()) {
-			module.getContext().getModelRepository().addModel(model);
-		}
-
-		for (Variable parameter : parameters) {
-			module.getContext().getFrameStack().put(parameter);
-		}
-
-		preProcess();
-		result = execute(module);
-		postProcess();
-
-		module.getContext().getModelRepository().dispose();
 	}
 
 	public List<Variable> getParameters() {

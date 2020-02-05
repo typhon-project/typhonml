@@ -1,0 +1,130 @@
+import "commonOperations.eol";
+
+/*******************
+   Initialization
+********************/
+pre {
+	"Generating databases projects...".println();
+	
+	/* Properties */
+	var apigatewayBasePort = 8090;
+	
+	/*Relation Database*/
+	var databaseRelationalPort=3306;
+	var databaseRelationalServer="localhost";
+	
+	/*Document Database*/
+	var databaseDocumentPort=27017;
+	var databaseDocumentServer="localhost";
+	
+}
+
+
+// comment/src/main/java/org/typhon/comment/CommentApplication.java
+rule databaseApplication
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databaseApplicationGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/"+entity.name.toLowerCase()+"/"+entity.name.firstToUpperCase()+"Application.java"
+ }
+ 
+// comment/src/main/java/org/typhon/comment/configuration/SwaggerConfig.java
+rule databaseSwagger
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databaseSwaggerGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/"+entity.name.toLowerCase()+"/configuration/SwaggerConfig.java"
+ }
+ 
+// comment/src/main/java/org/typhon/comment/configuration/RepositoryConfig.java
+rule databaseRepositoryConfig
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databaseRepositoryConfigGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/"+entity.name.toLowerCase()+"/configuration/RepositoryConfig.java"
+ }
+ 
+// comment/src/test/java/org/typhon/comment/tests/CommentTest.java
+rule databaseTest
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databaseTestGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/"+entity.name.toLowerCase()+"/tests/"+entity.name.firstToUpperCase()+"Test.java"
+ }
+
+
+// comment/src/main/java/org/typhon/comment/model/Comment.java
+rule databaseClass
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databaseClassGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/" + entity.name.toLowerCase() + "/model/"+entity.name.firstToUpperCase()+".java"
+ }
+ 
+ 
+// comment/src/main/java/org/typhon/comment/model/repository/CommentRepository.java
+rule databaseRepository
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databaseRepositoryGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/" + entity.name.toLowerCase() + "/model/repository/"+entity.name.firstToUpperCase()+"Repository.java"
+ }
+ 
+ 
+// comment/src/main/java/org/typhon/comment/model/repository/CommentRepository.java
+rule databaseProperty
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databasePropertyGenerate.egl"
+  	
+  	parameters : Map{
+  		"apigatewayBasePort" = apigatewayBasePort,
+  		"databaseRelationalPort" = databaseRelationalPort,
+  		"databaseRelationalServer" = databaseRelationalServer,
+		"databaseDocumentPort" = databaseDocumentPort,
+		"databaseDocumentServer" = databaseDocumentServer
+  	}
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/src/main/resources/application.properties"
+ }
+ 
+ 
+// comment/pom.xml
+rule databasePom
+	transform entity : Entity{
+	
+	// The EGL template to be invoked
+  	template : "database/databasePomGenerate.egl"
+  	
+  	// Output file
+  	target : entity.name.toLowerCase() + "/pom.xml"
+ }
+ 
+
+
+/*****************
+   Finalization
+******************/
+post {
+	"Databases projects generation completed.".println();
+}

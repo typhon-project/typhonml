@@ -1,0 +1,25 @@
+package org.typhon.[%=entity.name.toLowerCase()%].model.repository;
+
+import org.typhon.[%=entity.name.toLowerCase()%].model.[%=entity.name.firstToUpperCase()%];
+
+import java.util.List;
+
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
+@Api
+@RepositoryRestResource(collectionResourceRel = "[%=entity.name.toLowerCase()%]", path = "[%=entity.name.toLowerCase()%]")
+public interface [%=entity.name.firstToUpperCase()%]Repository extends PagingAndSortingRepository<[%=entity.name.firstToUpperCase()%], Long> {
+	
+[%for (attribute in entity.attributes) { %]
+	@ApiOperation("Get [%=entity.name.toLowerCase()%] by [%=attribute.name%]")
+	List<[%=entity.name.firstToUpperCase()%]> findBy[%=relation.name.firstToUpperCase()%](@Param("[%=attribute.name%]") 
+								@ApiParam(value="[%=relation.name.firstToUpperCase()%]")String [%=attribute.name%]);
+
+[%}%]
+}

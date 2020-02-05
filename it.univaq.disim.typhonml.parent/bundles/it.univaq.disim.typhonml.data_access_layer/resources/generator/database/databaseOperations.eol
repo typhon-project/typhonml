@@ -1,0 +1,120 @@
+import "../commonOperations.eol";
+
+operation Entity getDatabaseName():String{
+	var resultDatabaseName = "";
+	if(self.isTable()){
+		resultDatabaseName = self.getTables()->first().name;
+	}else if(self.isKeyValueElement()){
+		resultDatabaseName = self.getKeyValueElements()->first().name;
+	}else if(self.isGraphNode()){
+		resultDatabaseName = self.getGraphNodes()->first().name;
+	}else if(self.isColumn()){
+		resultDatabaseName = self.getColumns()->first().name;
+	}else if(self.isCollection()){
+		resultDatabaseName = self.getCollections()->first().name;
+	}
+	return resultDatabaseName;
+}
+
+operation Entity getPOMInformation(): String{
+	var resultPom = "";
+	if(self.isTable()){
+		var t = TemplateFactory.load("database/templates/pom/tablePom.egl");
+		resultPom = t.process();
+	}else if(self.isKeyValueElement()){
+		var t = TemplateFactory.load("database/templates/pom/keyValuePom.egl");
+		resultPom = t.process();
+	}else if(self.isGraphNode()){
+		var t = TemplateFactory.load("database/templates/pom/graphNodePom.egl");
+		resultPom = t.process();
+	}else if(self.isColumn()){
+		var t = TemplateFactory.load("database/templates/pom/columnPom.egl");
+		resultPom = t.process();
+	}else if(self.isCollection()){
+		var t = TemplateFactory.load("database/templates/pom/collectionPom.egl");
+		resultPom = t.process();
+	}
+	return resultPom;
+}
+
+
+
+operation Entity getDatabaseBean(): String{
+	var resultBean = "";
+	if(self.isTable()){
+		var t = TemplateFactory.load("database/templates/bean/tableBean.egl");
+		t.populate("entity", self); //in this way it is passed the value for the placeholder in tableBean.egl
+		resultBean = t.process();
+	}else if(self.isKeyValueElement()){
+		var t = TemplateFactory.load("database/templates/bean/keyValueBean.egl");
+		t.populate("entity", self);
+		resultBean = t.process();
+	}else if(self.isGraphNode()){
+		var t = TemplateFactory.load("database/templates/bean/graphNodeBean.egl");
+		t.populate("entity", self);
+		resultBean = t.process();
+	}else if(self.isColumn()){
+		var t = TemplateFactory.load("database/templates/bean/columnBean.egl");
+		t.populate("entity", self);
+		resultBean = t.process();
+	}else if(self.isCollection()){
+		var t = TemplateFactory.load("database/templates/bean/collectionBean.egl");
+		t.populate("entity", self);
+		resultBean = t.process();
+	}
+	return resultBean;
+}
+
+operation Entity getDatabaseRepositoryInformation(): String{
+	var resultRepository = "";
+	if(self.isTable()){
+		var t = TemplateFactory.load("database/templates/repository/tableRepository.egl");
+		t.populate("entity", self); //in this way it is passed the value for the placeholder in tableBean.egl
+		resultRepository = t.process();
+	}else if(self.isKeyValueElement()){
+		var t = TemplateFactory.load("database/templates/repository/keyValueRepository.egl");
+		t.populate("entity", self);
+		resultRepository = t.process();
+	}else if(self.isGraphNode()){
+		var t = TemplateFactory.load("database/templates/repository/graphNodeRepository.egl");
+		t.populate("entity", self);
+		resultRepository = t.process();
+	}else if(self.isColumn()){
+		var t = TemplateFactory.load("database/templates/repository/columnRepository.egl");
+		t.populate("entity", self);
+		resultRepository = t.process();
+	}else if(self.isCollection()){
+		var t = TemplateFactory.load("database/templates/repository/collectionRepository.egl");
+		t.populate("entity", self);
+		resultRepository = t.process();
+	}
+	return resultRepository;
+}
+
+operation Entity getDatabaseProperties(apigatewayBasePort : Integer): String{
+	var resultProperty = "";
+	var calculatedPort = apigatewayBasePort + getOrderedEntities()->indexOf(self);
+	if(self.isTable()){
+		var t = TemplateFactory.load("database/templates/property/tableProperty.egl");
+		t.populate("serverPort", calculatedPort);
+		t.populate("entity", self); 
+		resultProperty = t.process();
+	}else if(self.isKeyValueElement()){
+		var t = TemplateFactory.load("database/templates/property/keyValueProperty.egl");
+		t.populate("entity", self);
+		resultProperty = t.process();
+	}else if(self.isGraphNode()){
+		var t = TemplateFactory.load("database/templates/property/graphNodeProperty.egl");
+		t.populate("entity", self);
+		resultProperty = t.process();
+	}else if(self.isColumn()){
+		var t = TemplateFactory.load("database/templates/property/columnProperty.egl");
+		t.populate("entity", self);
+		resultProperty = t.process();
+	}else if(self.isCollection()){
+		var t = TemplateFactory.load("database/templates/property/collectionProperty.egl");
+		t.populate("entity", self);
+		resultProperty = t.process();
+	}
+	return resultProperty;
+}
