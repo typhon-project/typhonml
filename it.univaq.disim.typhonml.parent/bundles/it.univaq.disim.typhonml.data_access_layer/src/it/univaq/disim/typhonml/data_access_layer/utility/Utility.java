@@ -5,7 +5,11 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
+
+import org.apache.commons.io.FilenameUtils;
 
 public class Utility {
 
@@ -78,6 +82,11 @@ public class Utility {
 			e.printStackTrace();
 		} // if file already exists will do nothing 
 		return file;
+	}
+	
+	public static String getNameFromPathWithoutExtension(String path){
+		Path p = Paths.get(path);
+		return FilenameUtils.removeExtension(p.getFileName().toString());
 	}
 
 }

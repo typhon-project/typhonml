@@ -29,7 +29,8 @@ public class EGXXMIStandalone extends EpsilonStandalone{
 	public IEolModule createModule() {
 		try {
 			EglFileGeneratingTemplateFactory templateFactory = new EglFileGeneratingTemplateFactory();
-			templateFactory.setOutputRoot(new File(OUTPUT_PATH).getAbsolutePath()); // THE ROOT of the generated files
+			String rootGenerated = OUTPUT_PATH + Utility.getNameFromPathWithoutExtension(TYPHONML_MODEL_PATH);
+			templateFactory.setOutputRoot(new File(rootGenerated).getAbsolutePath()); // THE ROOT of the generated files
 			return new EgxModule(templateFactory);
 		} catch (Exception ex) {
 			throw new RuntimeException(ex);
