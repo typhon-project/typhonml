@@ -1,0 +1,117 @@
+datatype Date
+datatype String
+datatype int
+datatype Real
+datatype Blob
+datatype natural_language
+
+
+customdatatype jpeg {
+	elements{
+		 	date : Date ['it.univaq.disim.Date'],
+		 	thumbnail : Blob ['it.univaq.disim.Blob']
+	}
+}
+
+
+entity Review{
+	id : String 
+	content : String 
+	product -> Product[1]
+}
+
+entity Product{
+	id : String
+	name : String
+	description : String
+		
+	review :-> Review."Review.product"[0..*]
+	orders -> OrderProduct[0..*]
+}
+
+entity OrderProduct{
+	id : String
+	date : Date
+	totalAmount : int
+	
+	products -> Product.products[0..*]
+	users -> User."User.orders"[1]
+	paidWith -> CreditCard[1]
+}
+
+entity User{
+	id : String
+	name : String
+	
+	comments :-> Comment[0..*]
+	paymentsDetails :-> CreditCard[0..*]
+	orders -> OrderProduct[0..*]
+}
+
+entity Comment{
+	id : String
+	content : String
+	
+	responses :-> Comment[0..*]
+}
+
+entity CreditCard{
+	id : String
+	number : String
+	expiryDate : Date
+} 
+
+
+
+ 
+
+
+relationaldb RelationalDatabase{
+	tables{
+		table {
+			OrderDB : OrderProduct
+			index orderIndex {
+				attributes ("OrderProduct.id")
+			}
+			idSpec ("OrderProduct.id")
+		}
+		table {
+			UserDB : User
+			index  userIndex{
+				attributes ('User.name')
+				}
+			idSpec ('User.name')
+		}
+		table {
+			ProductDB : Product
+			index productIndex{
+				attributes ('Product.name')
+			}
+			idSpec ('Product.name')
+		}
+		table {
+			CreditCardDB : CreditCard
+			index creditCardIndex{
+				attributes ("CreditCard.number")
+			}
+			idSpec ("CreditCard.number")
+		}
+	}
+}
+
+documentdb DocumentDatabase{
+	collections{
+			ReviewsDB : Review
+			CommentsDB : Comment
+	}
+}
+
+
+
+changeOperators [ 
+	rename entity 
+	User as newValue 
+	rename attribute "OrderProduct.totalAmount" as mnbvjmghv 
+	rename relation "User.orders" as asdas 
+	change cardinality "OrderProduct.paidWith" as 0..1
+]
