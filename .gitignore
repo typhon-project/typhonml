@@ -26,6 +26,5 @@ hs_err_pid*
 .settings/
 .metadata/
 .classpath
-.project
 
 .DS_Store
