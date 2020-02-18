@@ -1,0 +1,2 @@
+[%import "databaseOperations.eol";%]
+[%=entity.getDatabaseRepositoryInformation()%]

@@ -54,7 +54,7 @@ operation Entity checkOverloadedAttributeName() : String{
 	Rationale: Meaningless or cryptic names hamper readability of the database’s schema. 
 */
 operation Entity checkMeaninglessName(): String{
-	var wordNet = new Native("typhonmlwordnetutility.WordNet");
+	var wordNet = new Native("it.univaq.disim.typhonml.model_analysis.wordnet.WordNet");
 	if(not wordNet.checkifWordExists(self.name)){
 		return self.name;
 	}else{
@@ -69,7 +69,7 @@ operation Entity checkMeaninglessName(): String{
 
 
 operation Entity checkPluralName(): String{
-	var wordNet = new Native("typhonmlwordnetutility.WordNet");
+	var wordNet = new Native("it.univaq.disim.typhonml.model_analysis.wordnet.WordNet");
 	if(wordNet.checkIfWordPlural(self.name)){
 		return self.name;
 	}else{
@@ -97,7 +97,7 @@ operation Entity checkUseSpacesforTableNames(): String{
 }
 
 operation Entity checkUseOfUnnecessaryPrefixOrSuffixForTableNames(): String{
-    var wordNet = new Native("typhonmlwordnetutility.WordNet");
+    var wordNet = new Native("it.univaq.disim.typhonml.model_analysis.wordnet.WordNet");
     var filteredEntities = TyphonML!Entity.allInstances()->select(e|e <> self);
     //For all the other entities different for sel check the name suffix
     for(s in filteredEntities){

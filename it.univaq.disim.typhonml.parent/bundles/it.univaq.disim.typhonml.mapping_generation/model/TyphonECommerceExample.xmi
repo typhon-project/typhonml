@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius" xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius ../../it.univaq.disim.typhonml/model/typhonml.ecore">
+<typhonml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius">
   <dataTypes xsi:type="typhonml:PrimitiveDataType" name="Date"/>
   <dataTypes xsi:type="typhonml:PrimitiveDataType" name="String"/>
   <dataTypes xsi:type="typhonml:PrimitiveDataType" name="int"/>

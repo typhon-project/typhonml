@@ -15,6 +15,7 @@
 package org.typhon.client.model.dto;
 
 import java.util.*;
+import java.sql.Timestamp;
 	
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 	
@@ -73,6 +74,7 @@ public class [e.name.toUpperFirst()/]DTO {
 package org.typhon.client.model;
 
 import java.util.*;
+import java.sql.Timestamp;
 	
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

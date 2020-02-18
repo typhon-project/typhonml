@@ -1,0 +1,40 @@
+[%import "clientDemoOperations.eol";%]
+[%import "../commonOperations.eol";%]
+package org.typhon.client.test;
+
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.typhon.client.model.*;
+import org.typhon.client.service.*;
+
+public class RelationTest {
+
+	[%for (entityForRelation in getOrderedEntities()) { %]
+	[%=entityForRelation.name.firstToUpperCase()%]Service [%=entityForRelation.name.toLowerCase()%]Service;
+	[%}%]
+
+	@Before
+	public void init() {
+	[%for (entityForRelation in getOrderedEntities()) { %]
+		[%=entityForRelation.name.toLowerCase()%]Service  = new [%=entityForRelation.name.firstToUpperCase()%]Service("http://localhost:[%=entityForRelation.calculateEntityPortByEntity(apigatewayBasePort)%]");
+	[%}%]	
+	}
+	
+	[%for (entityForRelation in getOrderedEntities()) { %]
+	@Test
+	public void testFind[%=entityForRelation.name.firstToUpperCase()%]ById() {
+		[%=entityForRelation.name.firstToUpperCase()%] p = [%=entityForRelation.name.toLowerCase()%]Service.findById([%=entityForRelation.getTestValueBasedOnDatabaseType()%]);
+		[%for (relation in entityForRelation.relations) { %]
+		List<[%=relation.type.name.firstToUpperCase()%]> [%=relation.name%] = p.get[%=relation.type.name.firstToUpperCase()%]Obj();
+		System.out.println(String.format("The [%=entityForRelation.name.firstToUpperCase()%] is related with [%=relation.type.name.firstToUpperCase()%]:"));
+		for ([%=relation.type.name.firstToUpperCase()%] iter : [%=relation.name%]) {
+			[%for (attribute in relation.type.attributes) { %]
+				System.out.println("\t- " + iter.get[%=attribute.name.firstToUpperCase()%]());
+			[%}%]
+		}	
+		[%}%]	
+	}
+	[%}%]	
+}

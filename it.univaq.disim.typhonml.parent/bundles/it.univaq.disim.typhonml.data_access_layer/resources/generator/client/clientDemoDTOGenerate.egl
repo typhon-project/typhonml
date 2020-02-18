@@ -1,0 +1,55 @@
+[%import "clientDemoOperations.eol";%]
+package org.typhon.client.model.dto;
+
+import java.util.*;
+import java.sql.Timestamp;
+	
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+	
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class [%=entity.name.firstToUpperCase()%]DTO {
+
+[%for (attribute in entity.attributes) { %]
+	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
+		[%if (attribute.name <> 'id') {%]
+	private [%=attribute.type.name%] [%=attribute.name%];
+		[%} else {%]
+	private [%=entity.getTypeValueForDifferentDatabase()%] id;	
+		[%}%]
+	[%}%]
+[%}%]
+
+[%for (relation in entity.relations) { %]
+	private List<[%=relation.type.getVariableTypeBasedOnDatabaseType()%]> [%=relation.name%]Obj; 
+[%}%]
+
+[%for (attribute in entity.attributes) { %]
+	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
+		[%if (attribute.name <> 'id') {%]
+	public void set[%=attribute.name.firstToUpperCase()%] ([%=attribute.type.name%] [%=attribute.name%]){
+		this.[%=attribute.name%] = [%=attribute.name%];
+	}
+
+	public [%=attribute.type.name%] get[%=attribute.name.firstToUpperCase()%](){
+		return [%=attribute.name%];
+	}
+		[%} else {%]
+	public void setId ([%=entity.getTypeValueForDifferentDatabase()%] id){
+		this.id = id;
+	}
+	public [%=entity.getTypeValueForDifferentDatabase()%] getId(){
+		return id;
+	}
+		[%}%]
+	[%}%]
+[%}%]
+
+[%for (relation in entity.relations) { %]
+	public List<[%=relation.type.getVariableTypeBasedOnDatabaseType()%]> get[%=relation.name.firstToUpperCase()%](){
+		return [%=relation.name%]Obj;
+	}
+	public void set[%=relation.name.firstToUpperCase()%](List<[%=relation.type.getVariableTypeBasedOnDatabaseType()%]> [%=relation.name%]Obj){
+		this.[%=relation.name%]Obj = [%=relation.name%]Obj;
+	}
+[%}%]
+}

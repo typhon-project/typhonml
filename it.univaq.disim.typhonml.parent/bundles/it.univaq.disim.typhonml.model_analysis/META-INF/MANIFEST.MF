@@ -14,9 +14,13 @@ Require-Bundle: org.eclipse.epsilon.emc.emf;bundle-version="1.5.1",
  org.eclipse.epsilon.common.dt,
  org.eclipse.epsilon.eol.engine
 Import-Package: typhonml
-Export-Package: it.univaq.disim.typhonml.model_analysis,
- it.univaq.disim.typhonml.model_analysis.utility,
- it.univaq.disim.typhonml.model_analysis.wordnet
+Export-Package: it.univaq.disim.typhonml.model_analysis;
+  uses:="org.osgi.framework,
+   it.univaq.disim.typhonml.model_analysis.utility,
+   org.eclipse.epsilon.eol,
+   org.eclipse.ui.plugin",
+ it.univaq.disim.typhonml.model_analysis.utility;uses:="org.eclipse.epsilon.emc.emf,org.eclipse.epsilon.eol",
+ it.univaq.disim.typhonml.model_analysis.wordnet;uses:="net.sf.extjwnl.data"
 Bundle-ClassPath: .,
  lib/extjwnl-2.0.2.jar,
  lib/extjwnl-data-wn31-1.2.jar,

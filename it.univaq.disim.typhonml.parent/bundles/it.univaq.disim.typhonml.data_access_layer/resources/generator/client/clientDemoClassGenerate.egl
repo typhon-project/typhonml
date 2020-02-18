@@ -1,0 +1,77 @@
+[%import "clientDemoOperations.eol";%]
+package org.typhon.client.model;
+
+import java.util.*;
+import java.sql.Timestamp;
+	
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.typhon.client.service.*;
+
+	
+public class [%=entity.name.firstToUpperCase()%] {
+	
+private static final Logger logger = LoggerFactory.getLogger([%=entity.name.firstToUpperCase()%].class);
+
+[%for (attribute in entity.attributes) { %]
+	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
+		[%if (attribute.name <> 'id') {%]
+	private [%=attribute.type.name%] [%=attribute.name%];
+		[%} else {%]
+	private [%=entity.getTypeValueForDifferentDatabase()%] id;	
+		[%}%]
+	[%}%]
+[%}%]
+
+[%for (relation in entity.relations) { %]
+	private List<[%=relation.type.name%]> [%=relation.name%]Obj; 
+	private List<[%=relation.type.getVariableTypeBasedOnDatabaseType()%]> [%=relation.name%]; 
+[%}%]
+
+[%for (attribute in entity.attributes) { %]
+	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
+		[%if (attribute.name <> 'id') {%]
+	public void set[%=attribute.name.firstToUpperCase()%] ([%=attribute.type.name%] [%=attribute.name%]){
+		this.[%=attribute.name%] = [%=attribute.name%];
+	}
+
+	public [%=attribute.type.name%] get[%=attribute.name.firstToUpperCase()%](){
+		return [%=attribute.name%];
+	}
+		[%} else {%]
+	public void setId ([%=entity.getTypeValueForDifferentDatabase()%] id){
+		this.id = id;
+	}
+	public [%=entity.getTypeValueForDifferentDatabase()%] getId(){
+		return id;
+	}	
+		[%}%]
+	[%}%]
+[%}%]		
+
+[%for (relation in entity.relations) { %]
+	public List<[%=relation.type.getVariableTypeBasedOnDatabaseType()%]> get[%=relation.name.firstToUpperCase()%](){
+		return [%=relation.name%];
+	}
+	public void set[%=relation.name.firstToUpperCase()%](List<[%=relation.type.getVariableTypeBasedOnDatabaseType()%]> [%=relation.name%]){
+		this.[%=relation.name%] = [%=relation.name%];
+	}
+[%}%]
+
+[%for (relation in entity.relations) { %]
+	public List<[%=relation.type.name.firstToUpperCase()%]> get[%=relation.type.name.firstToUpperCase()%]Obj() {
+		[%=relation.type.name.firstToUpperCase()%]Service [%=relation.type.name.toLowerCase()%]Service = new [%=relation.type.name.firstToUpperCase()%]Service("http://localhost:[%=relation.calculateEntityPortByRelation(apigatewayBasePort)%]");
+		List<[%=relation.type.name.firstToUpperCase()%]> result = new ArrayList<[%=relation.type.name.firstToUpperCase()%]>();
+		for ([%=relation.type.getVariableTypeBasedOnDatabaseType()%] typeObj : [%=relation.name%]) {
+			try {
+				result.add([%=relation.type.name.toLowerCase()%]Service.findById(typeObj));
+			}
+			catch (Exception e) {
+				logger.error(e.getMessage());
+			}
+		}
+		return result;
+	}
+	
+[%}%]
+}
