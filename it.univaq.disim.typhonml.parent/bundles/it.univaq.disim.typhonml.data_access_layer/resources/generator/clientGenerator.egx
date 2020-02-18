@@ -50,7 +50,7 @@ rule clientDemoService
   	
   	
   	// Output file
-  	target : rootFolderName + "/src/main/java/org/typhon/client/service/"+entity.name.firstToUpperCase()+".java"
+  	target : rootFolderName + "/src/main/java/org/typhon/client/service/"+entity.name.firstToUpperCase()+"Service.java"
  }
  
 // client-demo/src/test/java/org/typhon/client/test/OrderServiceTest.java

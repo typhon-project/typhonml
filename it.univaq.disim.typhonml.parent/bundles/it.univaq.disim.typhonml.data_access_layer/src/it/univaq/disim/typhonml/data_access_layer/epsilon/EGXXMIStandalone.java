@@ -10,6 +10,7 @@ import org.eclipse.epsilon.eol.IEolModule;
 import org.eclipse.epsilon.eol.models.IModel;
 
 import it.univaq.disim.typhonml.data_access_layer.utility.Utility;
+import typhonml.TyphonmlPackage;
 
 
 public class EGXXMIStandalone extends EpsilonStandalone{
@@ -41,6 +42,7 @@ public class EGXXMIStandalone extends EpsilonStandalone{
 	public List<IModel> getModels() throws Exception {
 		List<IModel> models = new ArrayList<IModel>();
 		models.add(createEmfModel(TYPHONML_METAMODEL_NAME, TYPHONML_MODEL_PATH, TYPHONML_METAMODEL_PATH, true, false));
+//		models.add(createEmfModelByURI(TYPHONML_METAMODEL_NAME, TYPHONML_MODEL_PATH, TyphonmlPackage.eINSTANCE.getNsURI(), true, false));
 		return models;
 	}
 

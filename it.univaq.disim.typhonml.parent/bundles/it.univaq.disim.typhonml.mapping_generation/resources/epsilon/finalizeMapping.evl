@@ -2,6 +2,7 @@ import "typhonmlreq.eol";
 
 pre{
 	//Create stubs of all databases in the TyphonMLReq
+	"Checking requirements...".println();
 }
 
 
@@ -43,5 +44,5 @@ context TyphonML!Entity {
 
 post{
 	//Delete all stubs of unused/empty databases
-	
+	"Requirement checked!".println();
 }

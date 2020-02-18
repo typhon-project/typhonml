@@ -61,7 +61,7 @@ rule databaseTest
   	template : "database/databaseTestGenerate.egl"
   	
   	// Output file
-  	target : entity.name.toLowerCase() + "/src/main/java/org/typhon/"+entity.name.toLowerCase()+"/tests/"+entity.name.firstToUpperCase()+"Test.java"
+  	target : entity.name.toLowerCase() + "/src/test/java/org/typhon/"+entity.name.toLowerCase()+"/tests/"+entity.name.firstToUpperCase()+"Test.java"
  }
 
 

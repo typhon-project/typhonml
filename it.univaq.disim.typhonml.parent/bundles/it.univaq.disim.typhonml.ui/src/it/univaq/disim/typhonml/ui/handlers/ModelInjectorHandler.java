@@ -34,7 +34,7 @@ public class ModelInjectorHandler extends AbstractHandler {
         	IFile f = (IFile) object;
         	Model model = Services.loadXtextModel(f.getFullPath().toString());
         	
-        	Services.serialize(model, f.getFullPath().toString().replace(".tml", ".tmlx"));
+        	Services.serialize(model, f.getFullPath().toString().replace(".tml", ".xmi"));
         	for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
         	    try {
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());

@@ -1,10 +1,16 @@
 package it.univaq.disim.typhonml.data_access_layer.epsilon;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.ObjectInputStream.GetField;
+import java.net.URI;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.epsilon.common.parse.problem.ParseProblem;
 import org.eclipse.epsilon.common.util.StringProperties;
 import org.eclipse.epsilon.emc.emf.EmfModel;
@@ -14,8 +20,10 @@ import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
 import org.eclipse.epsilon.eol.execute.context.Variable;
 import org.eclipse.epsilon.eol.models.IModel;
 import org.eclipse.epsilon.eol.models.IRelativePathResolver;
+import org.osgi.framework.Bundle;
 
 import it.univaq.disim.typhonml.data_access_layer.utility.Utility;
+import it.univaq.disim.typhonml.utility.TyphonMLUtility;
 
 
 public abstract class EpsilonStandalone {
@@ -38,6 +46,8 @@ public abstract class EpsilonStandalone {
 	};
 
 	public void execute() throws Exception {
+		
+//		TyphonMLUtility.registerTyphonMM();
 
 		for (File moduleFile : getSources()) {
 			module = createModule();
@@ -93,6 +103,19 @@ public abstract class EpsilonStandalone {
 		}
 		return emfModel;
 	}
+	
+	protected EmfModel createEmfModelByURI(String name, String model, String metamodel, boolean readOnLoad,
+			boolean storeOnDisposal) throws EolModelLoadingException, URISyntaxException {
+		EmfModel emfModel = new EmfModel();
+		StringProperties properties = new StringProperties();
+		properties.put(EmfModel.PROPERTY_NAME, name);
+		properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodel);
+		properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.getFileFromPath(model).toString());
+		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
+		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
+		emfModel.load(properties, (IRelativePathResolver) null);
+		return emfModel;
+	}
 
 	public EmfModel createOutputEmfModel(String name, String model, String metamodel, boolean readOnLoad,
 			boolean storeOnDisposal) {
@@ -110,19 +133,6 @@ public abstract class EpsilonStandalone {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return emfModel;
-	}
-
-	protected EmfModel createEmfModelByURI(String name, String model, String metamodel, boolean readOnLoad,
-			boolean storeOnDisposal) throws EolModelLoadingException, URISyntaxException {
-		EmfModel emfModel = new EmfModel();
-		StringProperties properties = new StringProperties();
-		properties.put(EmfModel.PROPERTY_NAME, name);
-		properties.put(EmfModel.PROPERTY_METAMODEL_URI, metamodel);
-		properties.put(EmfModel.PROPERTY_MODEL_URI, Utility.getURIFromResource(model).toString());
-		properties.put(EmfModel.PROPERTY_READONLOAD, readOnLoad + "");
-		properties.put(EmfModel.PROPERTY_STOREONDISPOSAL, storeOnDisposal + "");
-		emfModel.load(properties, (IRelativePathResolver) null);
 		return emfModel;
 	}
 

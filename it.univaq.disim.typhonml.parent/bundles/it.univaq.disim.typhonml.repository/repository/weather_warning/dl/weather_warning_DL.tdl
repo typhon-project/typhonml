@@ -1,0 +1,27 @@
+import weather_warning_ML.xmi
+import AppData.tdl
+import TextWarningData.tdl
+import dbTypes.tdl
+platformtype local
+containertype Docker
+clustertype DockerCompose
+platform platformName : local {
+	cluster clusterName : DockerCompose {
+		application Polystore {
+			container AppData : Docker {
+				deploys AppData
+				ports {
+					target = 3306 ;
+					published = 3306 ;
+				}
+			}
+			container TextWarningData : Docker {
+				deploys TextWarningData
+				ports {
+					target = 27017 ;
+					published = 27018 ;
+				}
+			}
+		}
+	}
+}

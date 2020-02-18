@@ -32,11 +32,11 @@ public class [%=entity.name.firstToUpperCase()%] {
 	[%if (attribute.isTypeOf(TyphonML!Attribute)) {%]
 		[%if (attribute.name <> 'id') {%]
 	public void set[%=attribute.name.firstToUpperCase()%]([%if (attribute.type.isTypeOf(TyphonML!PrimitiveDataType)){%][%=attribute.type.name%] [%=attribute.name%][%}%] [%else if (attribute.type.isTypeOf(TyphonML!CustomDataType)){%]List<[%=attribute.type.name%]> [%=attribute.name.toLowerCase()%] [%}%]){
-		this.[attribute.name/] = [attribute.name/];
+		this.[%=attribute.name%] = [%=attribute.name%];
 	}
 
 	public [%if (attribute.type.isTypeOf(TyphonML!PrimitiveDataType)){%][%=attribute.type.name%][%}%] [%else if (attribute.type.isTypeOf(TyphonML!CustomDataType)){%]List<[%=attribute.type.name%]> [%=attribute.name.toLowerCase()%][%}%] get[%=attribute.name.firstToUpperCase()%](){
-		return [attribute.name/];
+		return [%=attribute.name%];
 	}
 		[%}%]
 	[%}%]

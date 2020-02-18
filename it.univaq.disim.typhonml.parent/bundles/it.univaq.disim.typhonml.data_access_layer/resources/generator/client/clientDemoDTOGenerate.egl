@@ -2,6 +2,7 @@
 package org.typhon.client.model.dto;
 
 import java.util.*;
+import java.sql.Timestamp;
 	
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 	

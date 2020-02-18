@@ -18,8 +18,8 @@ public interface [%=entity.name.firstToUpperCase()%]Repository extends PagingAnd
 	
 [%for (attribute in entity.attributes) { %]
 	@ApiOperation("Get [%=entity.name.toLowerCase()%] by [%=attribute.name%]")
-	List<[%=entity.name.firstToUpperCase()%]> findBy[%=relation.name.firstToUpperCase()%](@Param("[%=attribute.name%]") 
-								@ApiParam(value="[%=relation.name.firstToUpperCase()%]")String [%=attribute.name%]);
+	List<[%=entity.name.firstToUpperCase()%]> findBy[%=attribute.name.firstToUpperCase()%](@Param("[%=attribute.name%]") 
+								@ApiParam(value="[%=attribute.name.firstToUpperCase()%]")String [%=attribute.name%]);
 
 [%}%]
 }

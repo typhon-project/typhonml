@@ -30,9 +30,9 @@ operation Entity getVariableTypeBasedOnDatabaseType(): String {
 	}
 }
 
-operation Entity getTestValueBasedOnDatabaseType(): String {
+operation Entity getTestValueBasedOnDatabaseType(): Any {
 	if(self.isTable()){
-		return "1";
+		return 1;
 	}else if(self.isKeyValueElement()){
 		return "";
 	}else if(self.isGraphNode()){
@@ -40,7 +40,7 @@ operation Entity getTestValueBasedOnDatabaseType(): String {
 	}else if(self.isColumn()){
 		return "";
 	}else if(self.isCollection()){
-		return "1";
+		return "\"1\"";
 	}
 }
 
