@@ -1,0 +1,80 @@
+import "commonOperations.eol";
+
+/*******************
+   Initialization
+********************/
+pre {
+	"Generating Apigateway...".println();
+	
+	/* Properties */
+	var apigatewayBasePort = 8090;
+	var baseServerPort = 8080;
+	
+	/* Paths */
+	var rootFolderName = "apigateway";
+}
+
+
+//org.typhon.apigateway.ApigatewayApplication.java
+rule apigatewayApplicationGenerator
+	transform entities : Entity{
+	
+	// The EGL template to be invoked
+  	template : "apigateway/apigatewayApplicationGenerate.egl"
+  	
+  	parameters : Map{
+  		"apigatewayBasePort" = apigatewayBasePort,
+  		"allEntities" = getOrderedEntities()
+	}
+  
+  	// Output file
+  	target : rootFolderName + "/src/main/java/org/typhon/apigateway/ApigatewayApplication.java"
+ }
+ 
+ 
+ 
+ //org.typhon.apigateway.ApigatewayApplication.java
+ rule apigatewayProperties
+ 	transform t : Model{
+ 	
+  	template : "apigateway/apigatewayPropertyGenerate.egl"
+
+  	parameters : Map{
+  		"baseServerPort" = baseServerPort
+	}
+  	
+  	// Output file
+  	target : rootFolderName + "/src/main/resources/application.properties"
+ }
+ 
+ 
+ // /src/test/java/org/typhon/apigateway/ApigatewayApplicationTests.java
+ rule apigatewayApplicationTests
+ 	transform t : Model{
+ 	
+  	template : "apigateway/apigatewayApplicationTestsGenerate.egl"
+
+  	// Output file
+  	target : rootFolderName + "/src/test/java/org/typhon/apigateway/ApigatewayApplicationTests.java"
+ }
+
+ // /pom.xml
+ rule apigatewayPom
+ 	transform t : Model{
+ 	
+  	template : "apigateway/apigatewayPomGenerate.egl"
+
+  	// Output file
+  	target : rootFolderName + "/pom.xml"
+ }
+ 
+ 
+ 
+ 
+ 
+/*****************
+   Finalization
+******************/
+post {
+	"Apigateway generation completed.".println();
+}

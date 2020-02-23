@@ -14,4 +14,12 @@
             genModel="model/typhonml.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated typhonmlreq -->
+      <package
+            uri="http://org.typhon.dsls.typhonml.req"
+            class="typhonmlreq.TyphonmlreqPackage"
+            genModel="model/typhonmlreq.genmodel"/>
+   </extension>
+
 </plugin>

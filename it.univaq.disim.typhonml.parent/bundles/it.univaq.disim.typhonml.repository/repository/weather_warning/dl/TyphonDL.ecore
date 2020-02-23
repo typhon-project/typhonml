@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="typhonDL" nsURI="http://www.typhon.org/dsls/xtext/TyphonDL"
+    nsPrefix="typhonDL">
+  <eClassifiers xsi:type="ecore:EClass" name="DeploymentModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guiMetaInformation" upperBound="-1"
+        eType="#//MetaModel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Model" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaModel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//MetaModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="relativePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Services" eSuperTypes="#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="image" eType="#//IMAGE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Software" eSuperTypes="#//Services"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//Model"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DB" eSuperTypes="#//Services">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DBType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlatformType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClusterType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ContainerType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DBType" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="image" eType="#//IMAGE"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="images" upperBound="-1"
+        eType="#//IMAGE" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IMAGE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Platform" eSuperTypes="#//Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//PlatformType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clusters" upperBound="-1"
+        eType="#//Cluster" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cluster">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ClusterType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networks" upperBound="-1"
+        eType="#//Cluster_Network" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applications" upperBound="-1"
+        eType="#//Application" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Cluster_Network">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key_values" upperBound="-1"
+        eType="#//Key_Values" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container_Network">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="#//Cluster_Network"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containers" upperBound="-1"
+        eType="#//Container" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//ContainerType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="deploys" eType="#//Reference"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depends_on" upperBound="-1"
+        eType="#//Dependency" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networks" eType="#//Container_Network"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" eType="#//Ports"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ports">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key_values" upperBound="-1"
+        eType="#//Key_Values" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Container"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="#//Services"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Key_Values" eSuperTypes="#//Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Key_KeyValueList" eSuperTypes="#//Property">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key_Values" upperBound="-1"
+        eType="#//Key_Values" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Key_ValueArray" eSuperTypes="#//Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,48 @@
+import "typhonmlreq.eol";
+
+pre{
+	//Create stubs of all databases in the TyphonMLReq
+	"Checking requirements...".println();
+}
+
+
+
+context TyphonML!Entity {
+
+		guard: not self.hasTags() //If there are entities with no tags
+		
+	  	critique generateDatabaseForEntityWithNoTags{
+	 	check{
+	 		return self.feasabilityCheck().isEmpty();
+	 	}
+		message: "Generate Database for "+self.name
+	 	fix {
+	 		title: "Generate Database for "+self.name
+	 		do {
+	 			var selectedDatabase = System.user.choose("Select Database Type: ", TyphonMLReq!DBType.allInstances(), new List<TyphonMLReq!DBType>);
+	 			self.generateDatabaseForEntity(selectedDatabase);
+	 			}
+	 		}
+	 	}
+	 
+	 	critique generateDatabaseForEntity{
+	 	check{
+	 		return self.feasabilityCheck().isEmpty();
+	 	}
+		message: "Generate Database for "+self.name
+	 	fix {
+	 		title: "Generate Database for "+self.name
+	 		do {
+	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck(), new List<String>);
+	 			self.generateDatabaseForEntity(selectedDatabase);
+	 			}
+	 		}
+	 	}
+	 
+}
+
+
+post{
+	//Delete all stubs of unused/empty databases
+	"Requirement checked!".println();
+}

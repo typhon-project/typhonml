@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -65,6 +64,8 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__FRETEXT_ATTRIBUTES);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__RELATIONS);
+			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__FUNCTIONAL_TAGS);
+			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__NFUNCTIONAL_TAGS);
 		}
 		return childrenFeatures;
 	}
@@ -123,6 +124,8 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
 			case TyphonmlPackage.ENTITY__RELATIONS:
+			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
+			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -164,6 +167,16 @@ public class EntityItemProvider extends DataTypeItemProvider {
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__RELATIONS,
 				 TyphonmlFactory.eINSTANCE.createAddRelation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__FUNCTIONAL_TAGS,
+				 TyphonmlFactory.eINSTANCE.createFunctionalTag()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__NFUNCTIONAL_TAGS,
+				 TyphonmlFactory.eINSTANCE.createNFunctionalTag()));
 	}
 
 }

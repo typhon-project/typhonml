@@ -10,8 +10,8 @@
       name="MySQL">
     <tables
         name="clientsTable"
-        entity="//@dataTypes.0"
-        db="//@databases.0"/>
+        db="//@databases.0"
+        entity="//@dataTypes.0"/>
   </databases>
   <databases
       xsi:type="typhonml:DocumentDB"
@@ -29,6 +29,8 @@
     <attributes
         name="surname"
         type="//@dataTypes.0"/>
+    <functionalTags
+        name="sort"/>
   </dataTypes>
   <dataTypes
       xsi:type="typhonml:Entity"

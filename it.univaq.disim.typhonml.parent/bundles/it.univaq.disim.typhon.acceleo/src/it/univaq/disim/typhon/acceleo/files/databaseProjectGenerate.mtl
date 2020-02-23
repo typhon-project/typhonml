@@ -294,6 +294,7 @@ public class [e.name.toUpperFirst()/]Test {
 package org.typhon.[e.name.toLowerCase()/].model;
 
 import java.util.*;
+import java.sql.Timestamp;
 
 [e.getDatabaseBean()/]
 [/file]

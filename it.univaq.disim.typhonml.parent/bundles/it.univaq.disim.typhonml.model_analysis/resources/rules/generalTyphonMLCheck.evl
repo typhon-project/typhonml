@@ -1,0 +1,51 @@
+import "generalTyphonMLCheck.eol";
+
+pre{
+	"General TyphonML Checks...".println();
+}
+
+
+
+  
+
+context TyphonML!NamedElement {
+	  // Every NamedElement must define a name
+	  constraint HasName {
+	    check : self.name <> ""
+	    message : "Element " + self + " must define a name"
+  }
+} 
+
+
+context Entity {
+	  critique hasContainmentInER{
+	 	check:
+			 not self.checkIsContainmentER()
+		message: self.name+" entity, mapped in Relational Database, " + 
+					"has a containment. Consider to move it to Document Database."
+	 	fix {
+	 		title: "Fix Containment changing " + 
+	 				" database from Relational to Document"
+	 		do {
+	 			"Refactoring".println();
+	 			self.changeDBFromRelationalToDocument();
+	 		}
+	 	}
+	 }
+}
+
+
+
+context Database {
+	 	constraint hasCycles{
+	 	check: 
+	 		not self.checkCycles()
+		message: "Database cycle detected in " + self.name
+	 } 
+}
+
+
+
+
+
+

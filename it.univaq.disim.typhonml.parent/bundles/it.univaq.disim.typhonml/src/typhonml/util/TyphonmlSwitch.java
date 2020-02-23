@@ -285,8 +285,8 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.ADD_GRAPH_EDGE: {
 				AddGraphEdge addGraphEdge = (AddGraphEdge)theEObject;
 				T result = caseAddGraphEdge(addGraphEdge);
-				if (result == null) result = caseGraphEdge(addGraphEdge);
 				if (result == null) result = caseChangeOperator(addGraphEdge);
+				if (result == null) result = caseGraphEdge(addGraphEdge);
 				if (result == null) result = caseNamedElement(addGraphEdge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -503,6 +503,34 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				ChangeRelationContainement changeRelationContainement = (ChangeRelationContainement)theEObject;
 				T result = caseChangeRelationContainement(changeRelationContainement);
 				if (result == null) result = caseChangeOperator(changeRelationContainement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.SPLIT_ENTITY_VERTICAL: {
+				SplitEntityVertical splitEntityVertical = (SplitEntityVertical)theEObject;
+				T result = caseSplitEntityVertical(splitEntityVertical);
+				if (result == null) result = caseChangeOperator(splitEntityVertical);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL: {
+				SplitEntityHorizontal splitEntityHorizontal = (SplitEntityHorizontal)theEObject;
+				T result = caseSplitEntityHorizontal(splitEntityHorizontal);
+				if (result == null) result = caseChangeOperator(splitEntityHorizontal);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.FUNCTIONAL_TAG: {
+				FunctionalTag functionalTag = (FunctionalTag)theEObject;
+				T result = caseFunctionalTag(functionalTag);
+				if (result == null) result = caseNamedElement(functionalTag);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.NFUNCTIONAL_TAG: {
+				NFunctionalTag nFunctionalTag = (NFunctionalTag)theEObject;
+				T result = caseNFunctionalTag(nFunctionalTag);
+				if (result == null) result = caseNamedElement(nFunctionalTag);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1422,6 +1450,66 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseChangeRelationContainement(ChangeRelationContainement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Split Entity Vertical</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Split Entity Vertical</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSplitEntityVertical(SplitEntityVertical object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Split Entity Horizontal</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Split Entity Horizontal</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSplitEntityHorizontal(SplitEntityHorizontal object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Functional Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Functional Tag</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionalTag(FunctionalTag object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>NFunctional Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>NFunctional Tag</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNFunctionalTag(NFunctionalTag object) {
 		return null;
 	}
 

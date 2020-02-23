@@ -42,6 +42,7 @@ import typhonml.EnableBidirectionalRelation;
 import typhonml.EnableRelationContainment;
 import typhonml.Entity;
 import typhonml.FreeText;
+import typhonml.FunctionalTag;
 import typhonml.GraphAttribute;
 import typhonml.GraphDB;
 import typhonml.GraphEdge;
@@ -54,6 +55,7 @@ import typhonml.KeyValueElement;
 import typhonml.MergeEntity;
 import typhonml.MigrateEntity;
 import typhonml.Model;
+import typhonml.NFunctionalTag;
 import typhonml.NamedElement;
 import typhonml.NlpTask;
 import typhonml.NlpTaskType;
@@ -73,6 +75,8 @@ import typhonml.RenameEntity;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
 import typhonml.SplitEntity;
+import typhonml.SplitEntityHorizontal;
+import typhonml.SplitEntityVertical;
 import typhonml.Table;
 import typhonml.TyphonmlFactory;
 import typhonml.TyphonmlPackage;
@@ -510,6 +514,34 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass changeRelationContainementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass splitEntityVerticalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass splitEntityHorizontalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionalTagEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nFunctionalTagEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1582,6 +1614,26 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getEntity_FunctionalTags() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEntity_NfunctionalTags() {
+		return (EReference)entityEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getEntity__GetCollections() {
 		return entityEClass.getEOperations().get(0);
 	}
@@ -2192,6 +2244,126 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getSplitEntityVertical() {
+		return splitEntityVerticalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntityVertical_Entity1() {
+		return (EReference)splitEntityVerticalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSplitEntityVertical_Entity2name() {
+		return (EAttribute)splitEntityVerticalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntityVertical_AttributeList() {
+		return (EReference)splitEntityVerticalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntityVertical_RelationList() {
+		return (EReference)splitEntityVerticalEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSplitEntityHorizontal() {
+		return splitEntityHorizontalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntityHorizontal_Entity1() {
+		return (EReference)splitEntityHorizontalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSplitEntityHorizontal_Entity2name() {
+		return (EAttribute)splitEntityHorizontalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntityHorizontal_Attribute() {
+		return (EReference)splitEntityHorizontalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSplitEntityHorizontal_Expression() {
+		return (EAttribute)splitEntityHorizontalEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFunctionalTag() {
+		return functionalTagEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getNFunctionalTag() {
+		return nFunctionalTagEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getCardinality() {
 		return cardinalityEEnum;
 	}
@@ -2375,6 +2547,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__FRETEXT_ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__RELATIONS);
+		createEReference(entityEClass, ENTITY__FUNCTIONAL_TAGS);
+		createEReference(entityEClass, ENTITY__NFUNCTIONAL_TAGS);
 		createEOperation(entityEClass, ENTITY___GET_COLLECTIONS);
 		createEOperation(entityEClass, ENTITY___GET_TABLES);
 		createEOperation(entityEClass, ENTITY___GET_KEY_VALUE_ELEMENTS);
@@ -2456,6 +2630,22 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(changeRelationContainementEClass, CHANGE_RELATION_CONTAINEMENT__RELATION);
 		createEAttribute(changeRelationContainementEClass, CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT);
 
+		splitEntityVerticalEClass = createEClass(SPLIT_ENTITY_VERTICAL);
+		createEReference(splitEntityVerticalEClass, SPLIT_ENTITY_VERTICAL__ENTITY1);
+		createEAttribute(splitEntityVerticalEClass, SPLIT_ENTITY_VERTICAL__ENTITY2NAME);
+		createEReference(splitEntityVerticalEClass, SPLIT_ENTITY_VERTICAL__ATTRIBUTE_LIST);
+		createEReference(splitEntityVerticalEClass, SPLIT_ENTITY_VERTICAL__RELATION_LIST);
+
+		splitEntityHorizontalEClass = createEClass(SPLIT_ENTITY_HORIZONTAL);
+		createEReference(splitEntityHorizontalEClass, SPLIT_ENTITY_HORIZONTAL__ENTITY1);
+		createEAttribute(splitEntityHorizontalEClass, SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME);
+		createEReference(splitEntityHorizontalEClass, SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE);
+		createEAttribute(splitEntityHorizontalEClass, SPLIT_ENTITY_HORIZONTAL__EXPRESSION);
+
+		functionalTagEClass = createEClass(FUNCTIONAL_TAG);
+
+		nFunctionalTagEClass = createEClass(NFUNCTIONAL_TAG);
+
 		// Create enums
 		cardinalityEEnum = createEEnum(CARDINALITY);
 		nlpTaskTypeEEnum = createEEnum(NLP_TASK_TYPE);
@@ -2520,8 +2710,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addGraphAttributeEClass.getESuperTypes().add(this.getGraphAttribute());
 		addGraphAttributeEClass.getESuperTypes().add(this.getChangeOperator());
 		removeGraphAttributeEClass.getESuperTypes().add(this.getChangeOperator());
-		addGraphEdgeEClass.getESuperTypes().add(this.getGraphEdge());
 		addGraphEdgeEClass.getESuperTypes().add(this.getChangeOperator());
+		addGraphEdgeEClass.getESuperTypes().add(this.getGraphEdge());
 		removeGraphEdgeEClass.getESuperTypes().add(this.getChangeOperator());
 		renabeGraphEdgeLabelEClass.getESuperTypes().add(this.getChangeOperator());
 		databaseEClass.getESuperTypes().add(this.getNamedElement());
@@ -2549,6 +2739,10 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		columnEClass.getESuperTypes().add(this.getNamedElement());
 		renameEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		changeRelationContainementEClass.getESuperTypes().add(this.getChangeOperator());
+		splitEntityVerticalEClass.getESuperTypes().add(this.getChangeOperator());
+		splitEntityHorizontalEClass.getESuperTypes().add(this.getChangeOperator());
+		functionalTagEClass.getESuperTypes().add(this.getNamedElement());
+		nFunctionalTagEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2691,6 +2885,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_FretextAttributes(), this.getFreeText(), null, "fretextAttributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_FunctionalTags(), this.getFunctionalTag(), null, "functionalTags", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_NfunctionalTags(), this.getNFunctionalTag(), null, "nfunctionalTags", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEOperation(getEntity__GetCollections(), this.getCollection(), "getCollections", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
@@ -2776,6 +2972,22 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(changeRelationContainementEClass, ChangeRelationContainement.class, "ChangeRelationContainement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeRelationContainement_Relation(), this.getRelation(), null, "relation", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChangeRelationContainement_NewContainment(), ecorePackage.getEBooleanObject(), "newContainment", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(splitEntityVerticalEClass, SplitEntityVertical.class, "SplitEntityVertical", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSplitEntityVertical_Entity1(), this.getEntity(), null, "entity1", null, 1, 1, SplitEntityVertical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSplitEntityVertical_Entity2name(), ecorePackage.getEString(), "entity2name", null, 1, 1, SplitEntityVertical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSplitEntityVertical_AttributeList(), this.getAttribute(), null, "attributeList", null, 0, -1, SplitEntityVertical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSplitEntityVertical_RelationList(), this.getRelation(), null, "relationList", null, 0, -1, SplitEntityVertical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(splitEntityHorizontalEClass, SplitEntityHorizontal.class, "SplitEntityHorizontal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSplitEntityHorizontal_Entity1(), this.getEntity(), null, "entity1", null, 1, 1, SplitEntityHorizontal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSplitEntityHorizontal_Entity2name(), ecorePackage.getEString(), "entity2name", null, 1, 1, SplitEntityHorizontal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSplitEntityHorizontal_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, SplitEntityHorizontal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSplitEntityHorizontal_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, SplitEntityHorizontal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(functionalTagEClass, FunctionalTag.class, "FunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nFunctionalTagEClass, NFunctionalTag.class, "NFunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(cardinalityEEnum, Cardinality.class, "Cardinality");

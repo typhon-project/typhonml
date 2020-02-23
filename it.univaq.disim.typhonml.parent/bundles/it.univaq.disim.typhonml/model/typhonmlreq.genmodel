@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/it.univaq.disim.typhonml/src" modelPluginID="it.univaq.disim.typhonml"
+    modelName="Typhonmlreq" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>typhonmlreq.ecore</foreignModel>
+  <genPackages prefix="Typhonmlreq" disposableProviderFactory="true" ecorePackage="typhonmlreq.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="typhonmlreq.ecore#//databaseType">
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/RelationalDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/DocumentDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/KeyValueDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/GraphDB"/>
+      <genEnumLiterals ecoreEnumLiteral="typhonmlreq.ecore#//databaseType/ColumnDB"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="typhonmlreq.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//NamedElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//NamedElement/importedNamespace"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonmlreq.ecore#//ModelReq">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonmlreq.ecore#//ModelReq/dbTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonmlreq.ecore#//DBType">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonmlreq.ecore#//DBType/frequirements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonmlreq.ecore#//DBType/nfrequirements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//DBType/dbType"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonmlreq.ecore#//FRequirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//FRequirement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonmlreq.ecore#//NFRequirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonmlreq.ecore#//NFRequirement/description"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

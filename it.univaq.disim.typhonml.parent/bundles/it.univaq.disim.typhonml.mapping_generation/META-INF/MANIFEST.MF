@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Mapper_generator
+Bundle-SymbolicName: it.univaq.disim.typhonml.mapping_generation;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: it.univaq.disim.typhonml.mapper_generator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.epsilon.common;bundle-version="1.5.1",
+ org.eclipse.epsilon.eol.engine;bundle-version="1.5.1",
+ org.eclipse.epsilon.emc.emf;bundle-version="1.5.1",
+ org.eclipse.epsilon.emc.plainxml;bundle-version="1.5.1",
+ org.eclipse.epsilon.egl.engine;bundle-version="1.5.1",
+ org.eclipse.epsilon.evl.engine;bundle-version="1.5.1",
+ it.univaq.disim.typhonml;bundle-version="1.0.0"

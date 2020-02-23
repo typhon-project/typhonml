@@ -1,0 +1,12 @@
+package org.typhon.[%=entity.name.toLowerCase()%];
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class [%=entity.name.firstToUpperCase()%]Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run([%=entity.name.firstToUpperCase()%]Application.class, args);
+	}
+}

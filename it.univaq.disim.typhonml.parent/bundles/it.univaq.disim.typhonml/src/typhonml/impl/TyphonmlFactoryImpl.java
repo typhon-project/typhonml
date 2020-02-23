@@ -114,6 +114,10 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.COLUMN: return createColumn();
 			case TyphonmlPackage.RENAME_ENTITY: return createRenameEntity();
 			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT: return createChangeRelationContainement();
+			case TyphonmlPackage.SPLIT_ENTITY_VERTICAL: return createSplitEntityVertical();
+			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL: return createSplitEntityHorizontal();
+			case TyphonmlPackage.FUNCTIONAL_TAG: return createFunctionalTag();
+			case TyphonmlPackage.NFUNCTIONAL_TAG: return createNFunctionalTag();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -778,6 +782,50 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public ChangeRelationContainement createChangeRelationContainement() {
 		ChangeRelationContainementImpl changeRelationContainement = new ChangeRelationContainementImpl();
 		return changeRelationContainement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SplitEntityVertical createSplitEntityVertical() {
+		SplitEntityVerticalImpl splitEntityVertical = new SplitEntityVerticalImpl();
+		return splitEntityVertical;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SplitEntityHorizontal createSplitEntityHorizontal() {
+		SplitEntityHorizontalImpl splitEntityHorizontal = new SplitEntityHorizontalImpl();
+		return splitEntityHorizontal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FunctionalTag createFunctionalTag() {
+		FunctionalTagImpl functionalTag = new FunctionalTagImpl();
+		return functionalTag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NFunctionalTag createNFunctionalTag() {
+		NFunctionalTagImpl nFunctionalTag = new NFunctionalTagImpl();
+		return nFunctionalTag;
 	}
 
 	/**

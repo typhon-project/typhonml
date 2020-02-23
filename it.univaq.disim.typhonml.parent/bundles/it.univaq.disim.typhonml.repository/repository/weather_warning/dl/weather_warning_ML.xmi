@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ASCII"?>
+<typhonml:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius">
+  <databases xsi:type="typhonml:RelationalDB" name="AppData">
+    <tables name="AppDB" entity="//@dataTypes.3">
+      <indexSpec name="appIndex" attributes="//@dataTypes.3/@attributes.1"/>
+    </tables>
+    <tables name="WarningDB" entity="//@dataTypes.4">
+      <indexSpec name="warningIndex" attributes="//@dataTypes.4/@attributes.1"/>
+    </tables>
+  </databases>
+  <databases xsi:type="typhonml:DocumentDB" name="TextWarningData">
+    <collections name="TextWarningDB" entity="//@dataTypes.5"/>
+  </databases>
+  <dataTypes xsi:type="typhonml:PrimitiveDataType" name="Date"/>
+  <dataTypes xsi:type="typhonml:PrimitiveDataType" name="String"/>
+  <dataTypes xsi:type="typhonml:PrimitiveDataType" name="int"/>
+  <dataTypes xsi:type="typhonml:Entity" name="App">
+    <attributes name="timeStamp" type="//@dataTypes.0"/>
+    <attributes name="vehicle_id" type="//@dataTypes.1"/>
+    <attributes name="vehicle_position" type="//@dataTypes.2"/>
+    <relations name="warnings" type="//@dataTypes.4" cardinality="zero_many" isContainment="true"/>
+    <relations name="textwarnings" type="//@dataTypes.5" cardinality="zero_many" isContainment="true"/>
+  </dataTypes>
+  <dataTypes xsi:type="typhonml:Entity" name="Warning">
+    <attributes name="time" type="//@dataTypes.0"/>
+    <attributes name="warning_id" type="//@dataTypes.1"/>
+    <attributes name="warningType" type="//@dataTypes.1"/>
+    <attributes name="severity" type="//@dataTypes.2"/>
+    <attributes name="area" type="//@dataTypes.2"/>
+  </dataTypes>
+  <dataTypes xsi:type="typhonml:Entity" name="TextWarning">
+    <attributes name="timeStamp" type="//@dataTypes.0"/>
+    <attributes name="textWarning_id" type="//@dataTypes.1"/>
+    <attributes name="text" type="//@dataTypes.1"/>
+  </dataTypes>
+</typhonml:Model>

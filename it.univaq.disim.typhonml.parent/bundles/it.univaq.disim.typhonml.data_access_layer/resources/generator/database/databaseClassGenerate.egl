@@ -1,0 +1,7 @@
+[%import "databaseOperations.eol";%]
+package org.typhon.[%=entity.name.toLowerCase()%].model;
+
+import java.util.*;
+import java.sql.Timestamp;
+
+[%=entity.getDatabaseBean()%]

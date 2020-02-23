@@ -20,7 +20,8 @@ ChangeOperator returns ChangeOperator:
 	RemoveEntity | 
 	RenameEntity |
 	MigrateEntity |
-	SplitEntity |
+	SplitEntityVertical |
+	SplitEntityHorizontal |
 	MergeEntity |
 	AddAttribute |
 	AddRelation | 
@@ -85,11 +86,15 @@ MigrateEntity returns MigrateEntity:
 	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
 ;
 
-SplitEntity returns SplitEntity:
-	'split' 'entity' entityToBeSplit=[Entity|EString] '{'
-		'left'  firstNewEntity=Entity_Impl
-		'right' secondNewEntity=Entity_Impl
-	'}'
+SplitEntityVertical returns SplitEntityVertical:
+	'split' 'entity' 'vertical' entity1=[Entity|EString] 'to' entity2name=EString
+	'attributes:' '['
+		(attributeList+=[Attribute|EString] (',' attributeList+=[Attribute|EString])*)*	
+	']'
+;
+
+SplitEntityHorizontal returns SplitEntityHorizontal:
+	'split' 'entity' 'horizontal' entity1=[Entity|EString] 'to' entity2name=EString 'where'attribute=[Attribute|EString] 'value' expression=STRING
 ;
 
 MergeEntity returns MergeEntity:
@@ -129,10 +134,10 @@ ChangeRelationCardinality returns ChangeRelationCardinality:
 
 
 Attribute returns Attribute:
-	Attribute_Impl | AddAttribute;
+	Attribute_Impl;
 
 Relation returns Relation:
-	Relation_Impl | AddRelation;
+	Relation_Impl;
 
 
 
@@ -184,14 +189,20 @@ CustomDataType returns CustomDataType:
 	'}';
 
 Entity_Impl returns Entity:
+	('@functionalTags' '('(functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)?')')?
+	('@nFunctionalTags' '('(nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)?')')?
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
 		(attributes+=Attribute (attributes+=Attribute)*)?
 		(fretextAttributes+=FreeText (fretextAttributes+=FreeText)*)?
 		(relations+=Relation (relations+=Relation)*)?
 	'}';
-	
-
+FunctionalTag_Impl returns FunctionalTag:
+	name=EString
+;	
+NFunctionalTag_Impl returns NFunctionalTag:
+	name=EString
+;
 Relation_Impl returns Relation:
 	('importedNamespace' importedNamespace=EString)?
 	name=EString
@@ -234,7 +245,7 @@ Table returns Table:
 	('importedNamespace' importedNamespace=EString)?
 	'table'
 	'{'
-		name=EString ':' entity=[Entity|EString]
+		name=EString ':' entity=[Entity|EString]?
 		('db' db=[Database|EString])?
 		(indexSpec=IndexSpec)?
 		(idSpec=IdSpec)?
@@ -367,9 +378,12 @@ AddEntity returns AddEntity:
 	'add' 'entity'
 	name=EString
 	'{'
-		
-		('attributes' '{' attributes+=AddAttribute ( "," attributes+=Attribute)* '}' )?
-		('relations' '{' relations+=AddRelation ( "," relations+=Relation)* '}' )?
+		('attributes' '[' 
+			(attributes+=AddAttribute ( ',' attributes+=AddAttribute)*)*
+			']')?
+		('relations' '[' 
+			(relations+=AddRelation (',' relations+=AddRelation)*)*
+			']')?
 	'}';
 
 Attribute_Impl returns Attribute:

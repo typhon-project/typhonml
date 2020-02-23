@@ -146,12 +146,12 @@ public class GraphDBItemProvider extends DatabaseItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.GRAPH_DB__EDGES,
-				 TyphonmlFactory.eINSTANCE.createGraphEdge()));
+				 TyphonmlFactory.eINSTANCE.createAddGraphEdge()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.GRAPH_DB__EDGES,
-				 TyphonmlFactory.eINSTANCE.createAddGraphEdge()));
+				 TyphonmlFactory.eINSTANCE.createGraphEdge()));
 	}
 
 }

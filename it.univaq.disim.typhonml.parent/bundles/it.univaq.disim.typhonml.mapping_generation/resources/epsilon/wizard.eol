@@ -1,0 +1,28 @@
+ 
+ operation Entity hasFunctionals(): Boolean{
+ 	return self.functionalTags.notEmpty();
+ }
+ 
+ 
+  operation Entity hasNFunctionals(): Boolean{
+ 	return self.nfunctionalTags.notEmpty();
+ }
+ 
+ 
+ 
+ operation Entity selectBestDatabaseMatch(){
+ 	
+ 	for(f in self.functionalTags){
+ 		f.name.println();
+ 	}
+ 	
+ 	for(nf in self.nfunctionalTags){
+ 		nf.name.println();
+ 	}
+ 	
+ 	for(db in DBType.allInstances){
+ 		db.name.println();
+ 	}
+ 	
+ 	
+ }

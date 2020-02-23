@@ -535,6 +535,42 @@ public interface TyphonmlFactory extends EFactory {
 	ChangeRelationContainement createChangeRelationContainement();
 
 	/**
+	 * Returns a new object of class '<em>Split Entity Vertical</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Split Entity Vertical</em>'.
+	 * @generated
+	 */
+	SplitEntityVertical createSplitEntityVertical();
+
+	/**
+	 * Returns a new object of class '<em>Split Entity Horizontal</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Split Entity Horizontal</em>'.
+	 * @generated
+	 */
+	SplitEntityHorizontal createSplitEntityHorizontal();
+
+	/**
+	 * Returns a new object of class '<em>Functional Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Functional Tag</em>'.
+	 * @generated
+	 */
+	FunctionalTag createFunctionalTag();
+
+	/**
+	 * Returns a new object of class '<em>NFunctional Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>NFunctional Tag</em>'.
+	 * @generated
+	 */
+	NFunctionalTag createNFunctionalTag();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

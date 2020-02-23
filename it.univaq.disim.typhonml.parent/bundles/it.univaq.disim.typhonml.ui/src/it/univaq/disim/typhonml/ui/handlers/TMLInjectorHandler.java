@@ -34,7 +34,7 @@ public class TMLInjectorHandler extends AbstractHandler {
         	IFile f = (IFile) object;
         	Model model = Services.loadModel(f.getFullPath().toString());
         	
-        	Services.serializeTML(model, f.getFullPath().toString().replace(".tml", ".xmi"));
+        	Services.serializeTML(model, f.getFullPath().toString() + ".tml");
         	for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
         	    try {
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());

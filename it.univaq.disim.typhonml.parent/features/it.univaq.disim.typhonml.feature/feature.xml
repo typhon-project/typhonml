@@ -53,21 +53,7 @@
          unpack="false"/>
 
    <plugin
-         id="it.univaq.disim.typhonml.evaluator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="it.univaq.disim.typhonml.ui"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="it.univaq.disim.typhonml.usage"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -89,6 +75,40 @@
 
    <plugin
          id="it.univaq.disim.typhonml.xtext.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="it.univaq.disim.typhonml.data_access_layer"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="it.univaq.disim.typhonml.mapping_generation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="it.univaq.disim.typhonml.maven_dep"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="it.univaq.disim.typhonml.model_analysis"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="it.univaq.disim.typhonml.repository"
          download-size="0"
          install-size="0"
          version="0.0.0"

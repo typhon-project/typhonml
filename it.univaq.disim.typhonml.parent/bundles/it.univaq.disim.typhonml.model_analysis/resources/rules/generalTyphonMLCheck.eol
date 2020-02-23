@@ -1,0 +1,47 @@
+operation Entity checkIsContainmentER() : Boolean{
+	return self.getAllIsContainmentER().notEmpty();
+}
+
+operation Entity getAllIsContainmentER() : List<Entity>{
+	var er_containmentEntities : List<Entity>; 
+	for(rel in self.relations){
+		if(rel.isContainment <> null and rel.isContainment == true){
+			if(not TyphonML!Table.allInstances()->select(tab|tab.entity = rel.type).isEmpty()){
+				(self.name + " has "+rel.type.name+" (with reference "+rel.name+") " +
+				"as containment and mapped in ER").println();
+				er_containmentEntities.add(rel.type);
+			}
+		}
+	}
+	return er_containmentEntities;
+}
+
+operation Entity changeDBFromRelationalToDocument(){
+	for(ent in self.getAllIsContainmentER()){
+		for(db in self.eContainer().databases){
+			if(db.isTypeOf(RelationalDB)){
+				var tableToDelete = db.tables.selectOne(tb : Table | tb.entity == ent);
+				var nameOfTheDatabaseToTransfer := tableToDelete.name;
+				delete tableToDelete;
+				db.addCollectionToDocumentDB(nameOfTheDatabaseToTransfer, ent);
+			}
+		}
+	}
+}
+
+operation Database addCollectionToDocumentDB(inputName : String, ent : Entity){
+	for(db in self.eContainer().databases){
+		if(db.isTypeOf(DocumentDB)){
+			var newCollection := new TyphonML!`Collection`;
+			newCollection.name = inputName;
+			newCollection.entity = ent;
+			db.collections.add(newCollection);
+		}
+	}
+}
+
+
+operation Database checkCycles() : Boolean{
+	return false;
+}
+

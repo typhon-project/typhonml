@@ -1,0 +1,19 @@
+operation TyphonML!Entity getRank():  List<String>{
+
+	var mapRank = new List<String>;
+	
+	var db2 = "1, MongoDB: 	3, 1 fr [fulltextsearch], 2 nfr [readscalability, readavailability]";
+	mapRank.add(db2);
+	var db4 = "2, Riak: 		3, 1 fr [fulltextsearch], 2 nfr [readscalability, readavailability]";
+	mapRank.add(db4);
+	var db5 = "3, Cassandra: 	3, 1 fr [fulltextsearch], 2 nfr [readscalability, readavailability]";
+	mapRank.add(db5);
+	var db1 = "4, MySQL: 		2, 1 fr [fulltextsearch], 1 nfr []";
+	mapRank.add(db1);
+	var db6 = "5, Redis: 		2, 0 fr [], 2 nfr [readscalability, readavailability]";
+	mapRank.add(db6);
+	var db3 = "6, HBase: 		0, 0 fr [], 0 nfr []";
+	mapRank.add(db3);
+	
+	return mapRank;
+}

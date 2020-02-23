@@ -291,13 +291,31 @@ public interface TyphonmlPackage extends EPackage {
 	int ENTITY__RELATIONS = DATA_TYPE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Functional Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__FUNCTIONAL_TAGS = DATA_TYPE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Nfunctional Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENTITY__NFUNCTIONAL_TAGS = DATA_TYPE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Entity</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
+	int ENTITY_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 5;
 
 	/**
 	 * The operation id for the '<em>Get Collections</em>' operation.
@@ -407,6 +425,24 @@ public interface TyphonmlPackage extends EPackage {
 	 * @ordered
 	 */
 	int ADD_ENTITY__RELATIONS = ENTITY__RELATIONS;
+
+	/**
+	 * The feature id for the '<em><b>Functional Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY__FUNCTIONAL_TAGS = ENTITY__FUNCTIONAL_TAGS;
+
+	/**
+	 * The feature id for the '<em><b>Nfunctional Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_ENTITY__NFUNCTIONAL_TAGS = ENTITY__NFUNCTIONAL_TAGS;
 
 	/**
 	 * The number of structural features of the '<em>Add Entity</em>' class.
@@ -1870,69 +1906,6 @@ public interface TyphonmlPackage extends EPackage {
 	int GRAPH_EDGE = 55;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>From</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__FROM = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>To</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__TO = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__LABELS = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Graph Edge</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Graph Edge</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.AddGraphEdgeImpl <em>Add Graph Edge</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1949,7 +1922,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__NAME = GRAPH_EDGE__NAME;
+	int ADD_GRAPH_EDGE__NAME = CHANGE_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -1958,7 +1931,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__IMPORTED_NAMESPACE = GRAPH_EDGE__IMPORTED_NAMESPACE;
+	int ADD_GRAPH_EDGE__IMPORTED_NAMESPACE = CHANGE_OPERATOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
@@ -1967,7 +1940,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__FROM = GRAPH_EDGE__FROM;
+	int ADD_GRAPH_EDGE__FROM = CHANGE_OPERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -1976,7 +1949,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__TO = GRAPH_EDGE__TO;
+	int ADD_GRAPH_EDGE__TO = CHANGE_OPERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -1985,7 +1958,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__LABELS = GRAPH_EDGE__LABELS;
+	int ADD_GRAPH_EDGE__LABELS = CHANGE_OPERATOR_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Add Graph Edge</em>' class.
@@ -1994,7 +1967,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE_FEATURE_COUNT = GRAPH_EDGE_FEATURE_COUNT + 0;
+	int ADD_GRAPH_EDGE_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Add Graph Edge</em>' class.
@@ -2003,7 +1976,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE_OPERATION_COUNT = GRAPH_EDGE_OPERATION_COUNT + 0;
+	int ADD_GRAPH_EDGE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.RemoveGraphEdgeImpl <em>Remove Graph Edge</em>}' class.
@@ -3051,6 +3024,69 @@ public interface TyphonmlPackage extends EPackage {
 	int GRAPH_NODE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE__FROM = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE__TO = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE__LABELS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Graph Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Graph Edge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link typhonml.impl.GraphEdgeLabelImpl <em>Graph Edge Label</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3317,6 +3353,226 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_RELATION_CONTAINEMENT_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.SplitEntityVerticalImpl <em>Split Entity Vertical</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.SplitEntityVerticalImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityVertical()
+	 * @generated
+	 */
+	int SPLIT_ENTITY_VERTICAL = 61;
+
+	/**
+	 * The feature id for the '<em><b>Entity1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__ENTITY1 = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity2name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__ENTITY2NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Attribute List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__ATTRIBUTE_LIST = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Relation List</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL__RELATION_LIST = CHANGE_OPERATOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Split Entity Vertical</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Split Entity Vertical</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_VERTICAL_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.SplitEntityHorizontalImpl <em>Split Entity Horizontal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.SplitEntityHorizontalImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityHorizontal()
+	 * @generated
+	 */
+	int SPLIT_ENTITY_HORIZONTAL = 62;
+
+	/**
+	 * The feature id for the '<em><b>Entity1</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__ENTITY1 = CHANGE_OPERATOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Entity2name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME = CHANGE_OPERATOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL__EXPRESSION = CHANGE_OPERATOR_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Split Entity Horizontal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Split Entity Horizontal</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SPLIT_ENTITY_HORIZONTAL_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.FunctionalTagImpl <em>Functional Tag</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.FunctionalTagImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getFunctionalTag()
+	 * @generated
+	 */
+	int FUNCTIONAL_TAG = 63;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_TAG__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_TAG__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
+	 * The number of structural features of the '<em>Functional Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_TAG_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Functional Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTIONAL_TAG_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.NFunctionalTagImpl <em>NFunctional Tag</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.NFunctionalTagImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getNFunctionalTag()
+	 * @generated
+	 */
+	int NFUNCTIONAL_TAG = 64;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NFUNCTIONAL_TAG__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NFUNCTIONAL_TAG__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
+	 * The number of structural features of the '<em>NFunctional Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NFUNCTIONAL_TAG_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>NFunctional Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NFUNCTIONAL_TAG_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3324,7 +3580,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 61;
+	int CARDINALITY = 65;
 
 	/**
 	 * The meta object id for the '{@link typhonml.NlpTaskType <em>Nlp Task Type</em>}' enum.
@@ -3334,7 +3590,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTaskType()
 	 * @generated
 	 */
-	int NLP_TASK_TYPE = 62;
+	int NLP_TASK_TYPE = 66;
 
 
 	/**
@@ -4385,6 +4641,28 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getEntity_Relations();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link typhonml.Entity#getFunctionalTags <em>Functional Tags</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Functional Tags</em>'.
+	 * @see typhonml.Entity#getFunctionalTags()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_FunctionalTags();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link typhonml.Entity#getNfunctionalTags <em>Nfunctional Tags</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Nfunctional Tags</em>'.
+	 * @see typhonml.Entity#getNfunctionalTags()
+	 * @see #getEntity()
+	 * @generated
+	 */
+	EReference getEntity_NfunctionalTags();
+
+	/**
 	 * Returns the meta object for the '{@link typhonml.Entity#getCollections() <em>Get Collections</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5030,6 +5308,134 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getChangeRelationContainement_NewContainment();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.SplitEntityVertical <em>Split Entity Vertical</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Split Entity Vertical</em>'.
+	 * @see typhonml.SplitEntityVertical
+	 * @generated
+	 */
+	EClass getSplitEntityVertical();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.SplitEntityVertical#getEntity1 <em>Entity1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity1</em>'.
+	 * @see typhonml.SplitEntityVertical#getEntity1()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EReference getSplitEntityVertical_Entity1();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.SplitEntityVertical#getEntity2name <em>Entity2name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Entity2name</em>'.
+	 * @see typhonml.SplitEntityVertical#getEntity2name()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EAttribute getSplitEntityVertical_Entity2name();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.SplitEntityVertical#getAttributeList <em>Attribute List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Attribute List</em>'.
+	 * @see typhonml.SplitEntityVertical#getAttributeList()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EReference getSplitEntityVertical_AttributeList();
+
+	/**
+	 * Returns the meta object for the reference list '{@link typhonml.SplitEntityVertical#getRelationList <em>Relation List</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Relation List</em>'.
+	 * @see typhonml.SplitEntityVertical#getRelationList()
+	 * @see #getSplitEntityVertical()
+	 * @generated
+	 */
+	EReference getSplitEntityVertical_RelationList();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.SplitEntityHorizontal <em>Split Entity Horizontal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Split Entity Horizontal</em>'.
+	 * @see typhonml.SplitEntityHorizontal
+	 * @generated
+	 */
+	EClass getSplitEntityHorizontal();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.SplitEntityHorizontal#getEntity1 <em>Entity1</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity1</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getEntity1()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EReference getSplitEntityHorizontal_Entity1();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.SplitEntityHorizontal#getEntity2name <em>Entity2name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Entity2name</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getEntity2name()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EAttribute getSplitEntityHorizontal_Entity2name();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.SplitEntityHorizontal#getAttribute <em>Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Attribute</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getAttribute()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EReference getSplitEntityHorizontal_Attribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.SplitEntityHorizontal#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Expression</em>'.
+	 * @see typhonml.SplitEntityHorizontal#getExpression()
+	 * @see #getSplitEntityHorizontal()
+	 * @generated
+	 */
+	EAttribute getSplitEntityHorizontal_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.FunctionalTag <em>Functional Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Functional Tag</em>'.
+	 * @see typhonml.FunctionalTag
+	 * @generated
+	 */
+	EClass getFunctionalTag();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.NFunctionalTag <em>NFunctional Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>NFunctional Tag</em>'.
+	 * @see typhonml.NFunctionalTag
+	 * @generated
+	 */
+	EClass getNFunctionalTag();
 
 	/**
 	 * Returns the meta object for enum '{@link typhonml.Cardinality <em>Cardinality</em>}'.
@@ -5951,6 +6357,22 @@ public interface TyphonmlPackage extends EPackage {
 		EReference ENTITY__RELATIONS = eINSTANCE.getEntity_Relations();
 
 		/**
+		 * The meta object literal for the '<em><b>Functional Tags</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__FUNCTIONAL_TAGS = eINSTANCE.getEntity_FunctionalTags();
+
+		/**
+		 * The meta object literal for the '<em><b>Nfunctional Tags</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ENTITY__NFUNCTIONAL_TAGS = eINSTANCE.getEntity_NfunctionalTags();
+
+		/**
 		 * The meta object literal for the '<em><b>Get Collections</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6475,6 +6897,110 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT = eINSTANCE.getChangeRelationContainement_NewContainment();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.SplitEntityVerticalImpl <em>Split Entity Vertical</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.SplitEntityVerticalImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityVertical()
+		 * @generated
+		 */
+		EClass SPLIT_ENTITY_VERTICAL = eINSTANCE.getSplitEntityVertical();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_VERTICAL__ENTITY1 = eINSTANCE.getSplitEntityVertical_Entity1();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity2name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPLIT_ENTITY_VERTICAL__ENTITY2NAME = eINSTANCE.getSplitEntityVertical_Entity2name();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute List</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_VERTICAL__ATTRIBUTE_LIST = eINSTANCE.getSplitEntityVertical_AttributeList();
+
+		/**
+		 * The meta object literal for the '<em><b>Relation List</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_VERTICAL__RELATION_LIST = eINSTANCE.getSplitEntityVertical_RelationList();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.SplitEntityHorizontalImpl <em>Split Entity Horizontal</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.SplitEntityHorizontalImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityHorizontal()
+		 * @generated
+		 */
+		EClass SPLIT_ENTITY_HORIZONTAL = eINSTANCE.getSplitEntityHorizontal();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity1</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_HORIZONTAL__ENTITY1 = eINSTANCE.getSplitEntityHorizontal_Entity1();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity2name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPLIT_ENTITY_HORIZONTAL__ENTITY2NAME = eINSTANCE.getSplitEntityHorizontal_Entity2name();
+
+		/**
+		 * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE = eINSTANCE.getSplitEntityHorizontal_Attribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SPLIT_ENTITY_HORIZONTAL__EXPRESSION = eINSTANCE.getSplitEntityHorizontal_Expression();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.FunctionalTagImpl <em>Functional Tag</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.FunctionalTagImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getFunctionalTag()
+		 * @generated
+		 */
+		EClass FUNCTIONAL_TAG = eINSTANCE.getFunctionalTag();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.NFunctionalTagImpl <em>NFunctional Tag</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.NFunctionalTagImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getNFunctionalTag()
+		 * @generated
+		 */
+		EClass NFUNCTIONAL_TAG = eINSTANCE.getNFunctionalTag();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.
