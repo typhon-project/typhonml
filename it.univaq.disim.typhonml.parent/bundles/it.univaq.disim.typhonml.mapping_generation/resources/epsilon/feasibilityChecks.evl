@@ -2,21 +2,55 @@ import "typhonmlreq.eol";
 
 pre{
 	//Create stubs of all databases in the TyphonMLReq
+	"Checking requirements...".println();
 }
 
 
 context TyphonML!Entity {
 		guard: self.hasTags() //It get only Entities with Requirements
+		
+		/*
 	  	critique generateDatabaseForEntity{
 	 	check{
 	 		return self.feasabilityCheck().isEmpty();
 	 	}
 		message: "Generate Database for "+self.name
 	 	fix {
-	 		title: "Generate Database for "+self.name
+	 		//guard: true
+	 		title: "Generate Database Based on Requirement Best Metch for "+self.name
 	 		do {
-	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck(), new List<String>);
+	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck());
 	 			self.generateDatabaseForEntity(selectedDatabase);
+	 			}
+	 		}
+	 	fix {
+	 		//guard: true
+	 		title: "Generate database based on best metch for "+self.name
+	 		do {
+	 			self.createRelationalDB();
+	 			}
+	 		}
+	 	}
+	 	*/
+	 	
+	 	critique generateDatabaseForEntity{
+	 	check{
+	 		return self.feasabilityCheck().isEmpty();
+	 	}
+		message: "Generate Database for "+self.name
+	 	fix {
+	 		//guard: true
+	 		title: "Generate Database Based on Requirement Best Metch for "+self.name
+	 		do {
+	 			var selectedDatabase = System.user.choose("Select Best Match Database Type: ", self.feasabilityCheck());
+	 			self.generateDatabaseForEntity(selectedDatabase);
+	 			}
+	 		}
+	 	fix {
+	 		//guard: true
+	 		title: "Generate database based on best metch for "+self.name
+	 		do {
+	 			self.createRelationalDB();
 	 			}
 	 		}
 	 	}
@@ -27,5 +61,5 @@ context TyphonML!Entity {
 
 post{
 	//Delete all stubs of unused/empty databases
-	
+	"Requirement checked!".println();
 }
