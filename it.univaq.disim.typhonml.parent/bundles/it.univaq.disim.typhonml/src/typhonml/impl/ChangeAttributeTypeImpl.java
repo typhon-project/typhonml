@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import typhonml.Attribute;
 import typhonml.ChangeAttributeType;
-import typhonml.DataType;
+import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -40,14 +40,24 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	protected Attribute attributeToChange;
 
 	/**
-	 * The cached value of the '{@link #getNewType() <em>New Type</em>}' reference.
+	 * The default value of the '{@link #getNewType() <em>New Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNewType()
 	 * @generated
 	 * @ordered
 	 */
-	protected DataType newType;
+	protected static final PrimitiveDataType NEW_TYPE_EDEFAULT = PrimitiveDataType.BIGINT;
+
+	/**
+	 * The cached value of the '{@link #getNewType() <em>New Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNewType()
+	 * @generated
+	 * @ordered
+	 */
+	protected PrimitiveDataType newType = NEW_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -114,24 +124,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	 * @generated
 	 */
 	@Override
-	public DataType getNewType() {
-		if (newType != null && newType.eIsProxy()) {
-			InternalEObject oldNewType = (InternalEObject)newType;
-			newType = (DataType)eResolveProxy(oldNewType);
-			if (newType != oldNewType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE, oldNewType, newType));
-			}
-		}
-		return newType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataType basicGetNewType() {
+	public PrimitiveDataType getNewType() {
 		return newType;
 	}
 
@@ -141,9 +134,9 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 	 * @generated
 	 */
 	@Override
-	public void setNewType(DataType newNewType) {
-		DataType oldNewType = newType;
-		newType = newNewType;
+	public void setNewType(PrimitiveDataType newNewType) {
+		PrimitiveDataType oldNewType = newType;
+		newType = newNewType == null ? NEW_TYPE_EDEFAULT : newNewType;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE, oldNewType, newType));
 	}
@@ -160,8 +153,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 				if (resolve) return getAttributeToChange();
 				return basicGetAttributeToChange();
 			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE:
-				if (resolve) return getNewType();
-				return basicGetNewType();
+				return getNewType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -178,7 +170,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 				setAttributeToChange((Attribute)newValue);
 				return;
 			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE:
-				setNewType((DataType)newValue);
+				setNewType((PrimitiveDataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -196,7 +188,7 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 				setAttributeToChange((Attribute)null);
 				return;
 			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE:
-				setNewType((DataType)null);
+				setNewType(NEW_TYPE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -213,9 +205,25 @@ public class ChangeAttributeTypeImpl extends ChangeOperatorImpl implements Chang
 			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE:
 				return attributeToChange != null;
 			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE:
-				return newType != null;
+				return newType != NEW_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (newType: ");
+		result.append(newType);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ChangeAttributeTypeImpl

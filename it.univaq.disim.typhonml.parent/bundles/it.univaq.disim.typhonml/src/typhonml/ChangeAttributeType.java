@@ -48,29 +48,32 @@ public interface ChangeAttributeType extends ChangeOperator {
 	void setAttributeToChange(Attribute value);
 
 	/**
-	 * Returns the value of the '<em><b>New Type</b></em>' reference.
+	 * Returns the value of the '<em><b>New Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link typhonml.PrimitiveDataType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>New Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>New Type</em>' reference.
-	 * @see #setNewType(DataType)
+	 * @return the value of the '<em>New Type</em>' attribute.
+	 * @see typhonml.PrimitiveDataType
+	 * @see #setNewType(PrimitiveDataType)
 	 * @see typhonml.TyphonmlPackage#getChangeAttributeType_NewType()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	DataType getNewType();
+	PrimitiveDataType getNewType();
 
 	/**
-	 * Sets the value of the '{@link typhonml.ChangeAttributeType#getNewType <em>New Type</em>}' reference.
+	 * Sets the value of the '{@link typhonml.ChangeAttributeType#getNewType <em>New Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>New Type</em>' reference.
+	 * @param value the new value of the '<em>New Type</em>' attribute.
+	 * @see typhonml.PrimitiveDataType
 	 * @see #getNewType()
 	 * @generated
 	 */
-	void setNewType(DataType value);
+	void setNewType(PrimitiveDataType value);
 
 } // ChangeAttributeType

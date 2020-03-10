@@ -301,15 +301,6 @@ public interface TyphonmlFactory extends EFactory {
 	RenabeGraphEdgeLabel createRenabeGraphEdgeLabel();
 
 	/**
-	 * Returns a new object of class '<em>Primitive Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Primitive Data Type</em>'.
-	 * @generated
-	 */
-	PrimitiveDataType createPrimitiveDataType();
-
-	/**
 	 * Returns a new object of class '<em>Custom Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

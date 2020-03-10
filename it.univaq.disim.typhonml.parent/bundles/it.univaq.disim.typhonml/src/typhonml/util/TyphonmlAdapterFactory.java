@@ -208,10 +208,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createDataTypeAdapter();
 			}
 			@Override
-			public Adapter casePrimitiveDataType(PrimitiveDataType object) {
-				return createPrimitiveDataTypeAdapter();
-			}
-			@Override
 			public Adapter caseCustomDataType(CustomDataType object) {
 				return createCustomDataTypeAdapter();
 			}
@@ -834,20 +830,6 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDataTypeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link typhonml.PrimitiveDataType <em>Primitive Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see typhonml.PrimitiveDataType
-	 * @generated
-	 */
-	public Adapter createPrimitiveDataTypeAdapter() {
 		return null;
 	}
 

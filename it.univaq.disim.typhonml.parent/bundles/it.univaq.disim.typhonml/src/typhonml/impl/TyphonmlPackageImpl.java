@@ -338,13 +338,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass primitiveDataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass customDataTypeEClass = null;
 
 	/**
@@ -556,6 +549,13 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EEnum nlpTaskTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum primitiveDataTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1064,8 +1064,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getChangeAttributeType_NewType() {
-		return (EReference)changeAttributeTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getChangeAttributeType_NewType() {
+		return (EAttribute)changeAttributeTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1454,8 +1454,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getPrimitiveDataType() {
-		return primitiveDataTypeEClass;
+	public EEnum getPrimitiveDataType() {
+		return primitiveDataTypeEEnum;
 	}
 
 	/**
@@ -1694,8 +1694,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getAttribute_Type() {
-		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getAttribute_Type() {
+		return (EAttribute)attributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2468,7 +2468,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		changeAttributeTypeEClass = createEClass(CHANGE_ATTRIBUTE_TYPE);
 		createEReference(changeAttributeTypeEClass, CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE);
-		createEReference(changeAttributeTypeEClass, CHANGE_ATTRIBUTE_TYPE__NEW_TYPE);
+		createEAttribute(changeAttributeTypeEClass, CHANGE_ATTRIBUTE_TYPE__NEW_TYPE);
 
 		removeAttributeEClass = createEClass(REMOVE_ATTRIBUTE);
 		createEReference(removeAttributeEClass, REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE);
@@ -2525,8 +2525,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
-		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
-
 		customDataTypeEClass = createEClass(CUSTOM_DATA_TYPE);
 		createEReference(customDataTypeEClass, CUSTOM_DATA_TYPE__ELEMENTS);
 
@@ -2556,7 +2554,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEOperation(entityEClass, ENTITY___GET_COLUMNS);
 
 		attributeEClass = createEClass(ATTRIBUTE);
-		createEReference(attributeEClass, ATTRIBUTE__TYPE);
+		createEAttribute(attributeEClass, ATTRIBUTE__TYPE);
 
 		relationEClass = createEClass(RELATION);
 		createEReference(relationEClass, RELATION__TYPE);
@@ -2649,6 +2647,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		// Create enums
 		cardinalityEEnum = createEEnum(CARDINALITY);
 		nlpTaskTypeEEnum = createEEnum(NLP_TASK_TYPE);
+		primitiveDataTypeEEnum = createEEnum(PRIMITIVE_DATA_TYPE);
 	}
 
 	/**
@@ -2716,7 +2715,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		renabeGraphEdgeLabelEClass.getESuperTypes().add(this.getChangeOperator());
 		databaseEClass.getESuperTypes().add(this.getNamedElement());
 		dataTypeEClass.getESuperTypes().add(this.getNamedElement());
-		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
 		customDataTypeEClass.getESuperTypes().add(this.getDataType());
 		dataTypeItemEClass.getESuperTypes().add(this.getNamedElement());
 		freeTextEClass.getESuperTypes().add(this.getNamedElement());
@@ -2806,7 +2804,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(changeAttributeTypeEClass, ChangeAttributeType.class, "ChangeAttributeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeAttributeType_AttributeToChange(), this.getAttribute(), null, "attributeToChange", null, 1, 1, ChangeAttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getChangeAttributeType_NewType(), this.getDataType(), null, "newType", null, 0, 1, ChangeAttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangeAttributeType_NewType(), this.getPrimitiveDataType(), "newType", null, 1, 1, ChangeAttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(removeAttributeEClass, RemoveAttribute.class, "RemoveAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRemoveAttribute_AttributeToRemove(), this.getAttribute(), null, "attributeToRemove", null, 1, 1, RemoveAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2863,8 +2861,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(customDataTypeEClass, CustomDataType.class, "CustomDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCustomDataType_Elements(), this.getDataTypeItem(), null, "elements", null, 0, -1, CustomDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2899,7 +2895,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEOperation(getEntity__GetColumns(), this.getColumn(), "getColumns", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAttribute_Type(), this.getPrimitiveDataType(), "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelation_Type(), this.getEntity(), null, "type", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3015,6 +3011,19 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.RELATION_EXTRACTION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.EVENT_EXTRACTION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.COREFERENCE_RESOLUTION);
+
+		initEEnum(primitiveDataTypeEEnum, PrimitiveDataType.class, "PrimitiveDataType");
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.BIGINT);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.STRING);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.TEXT);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.POINT);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.POLYGON);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.BOOL);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.FLOAT);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.INT);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.BLOB);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.DATE);
+		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.DATETIME);
 
 		// Create resource
 		createResource(eNS_URI);

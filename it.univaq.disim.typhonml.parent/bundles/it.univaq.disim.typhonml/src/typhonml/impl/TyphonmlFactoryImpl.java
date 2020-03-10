@@ -88,7 +88,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.ADD_GRAPH_EDGE: return createAddGraphEdge();
 			case TyphonmlPackage.REMOVE_GRAPH_EDGE: return createRemoveGraphEdge();
 			case TyphonmlPackage.RENABE_GRAPH_EDGE_LABEL: return createRenabeGraphEdgeLabel();
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE: return createPrimitiveDataType();
 			case TyphonmlPackage.CUSTOM_DATA_TYPE: return createCustomDataType();
 			case TyphonmlPackage.DATA_TYPE_ITEM: return createDataTypeItem();
 			case TyphonmlPackage.FREE_TEXT: return createFreeText();
@@ -135,6 +134,8 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 				return createCardinalityFromString(eDataType, initialValue);
 			case TyphonmlPackage.NLP_TASK_TYPE:
 				return createNlpTaskTypeFromString(eDataType, initialValue);
+			case TyphonmlPackage.PRIMITIVE_DATA_TYPE:
+				return createPrimitiveDataTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -152,6 +153,8 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 				return convertCardinalityToString(eDataType, instanceValue);
 			case TyphonmlPackage.NLP_TASK_TYPE:
 				return convertNlpTaskTypeToString(eDataType, instanceValue);
+			case TyphonmlPackage.PRIMITIVE_DATA_TYPE:
+				return convertPrimitiveDataTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -496,17 +499,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public RenabeGraphEdgeLabel createRenabeGraphEdgeLabel() {
 		RenabeGraphEdgeLabelImpl renabeGraphEdgeLabel = new RenabeGraphEdgeLabelImpl();
 		return renabeGraphEdgeLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public PrimitiveDataType createPrimitiveDataType() {
-		PrimitiveDataTypeImpl primitiveDataType = new PrimitiveDataTypeImpl();
-		return primitiveDataType;
 	}
 
 	/**
@@ -865,6 +857,26 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	public String convertNlpTaskTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PrimitiveDataType createPrimitiveDataTypeFromString(EDataType eDataType, String initialValue) {
+		PrimitiveDataType result = PrimitiveDataType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertPrimitiveDataTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

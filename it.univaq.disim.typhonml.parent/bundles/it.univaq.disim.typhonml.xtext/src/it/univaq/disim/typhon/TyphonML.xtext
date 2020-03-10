@@ -13,7 +13,7 @@ Model returns Model:
 		;  
 
 DataType returns DataType:
-	PrimitiveDataType_Impl | CustomDataType | Entity_Impl;
+	CustomDataType | Entity_Impl;
 
 ChangeOperator returns ChangeOperator:
 	AddEntity | 
@@ -80,7 +80,7 @@ AddIndexTable returns AddIndex:
 
 
 ChangeAttributeType returns ChangeAttributeType:
-	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[DataType|EString];
+	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
 
 MigrateEntity returns MigrateEntity:
 	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
@@ -156,11 +156,7 @@ GraphEdge returns GraphEdge:
 EString returns ecore::EString:
 	STRING | ID;
 
-PrimitiveDataType_Impl returns PrimitiveDataType:
-	{PrimitiveDataType}
-	('importedNamespace' importedNamespace=EString)?
-	'datatype' name=EString
-	;
+
 
 DataTypeItem returns DataTypeItem:
 	('importedNamespace' importedNamespace=EString)?
@@ -216,6 +212,21 @@ Relation_Impl returns Relation:
 
 enum Cardinality returns Cardinality:
 				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
+				
+enum PrimitiveDataType returns PrimitiveDataType:
+				int = 'int' | 
+				bigint = 'bigint' | 
+				string = 'string' | 
+				text = 'text'|
+				point = "point" |
+				polygon = "polygon"|
+				bool = "bool"|
+				float = "float"|
+				blob = "blob"|
+				//freetext = "freetext"|
+				date = "date" |
+				datetime = "datetime";
+				
 				
 enum NlpTaskType returns NlpTaskType:
 		ParagraphSegmentation = 'ParagraphSegmentation' |
@@ -346,7 +357,7 @@ AddAttribute returns AddAttribute:
 	{AddAttribute}
 	('importedNamespace' importedNamespace=EString)?
 	'add' 'attribute'
-	name=EString ':' type=[DataType|EString] 'to' ownerEntity=[Entity|EString]
+	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
 	;
 
 AddGraphEdge returns AddGraphEdge:
@@ -389,7 +400,7 @@ AddEntity returns AddEntity:
 Attribute_Impl returns Attribute:
 	{Attribute}
 	('importedNamespace' importedNamespace=EString)?
-	name=EString ':' type=[DataType|EString]
+	name=EString ':' type=PrimitiveDataType
 	;
 
 AddRelation returns AddRelation:

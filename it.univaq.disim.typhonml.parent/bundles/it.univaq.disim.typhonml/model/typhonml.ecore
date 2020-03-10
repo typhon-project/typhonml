@@ -90,7 +90,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToChange" lowerBound="1"
         eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="newType" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newType" lowerBound="1"
+        eType="#//PrimitiveDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveAttribute" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToRemove" lowerBound="1"
@@ -154,7 +155,6 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="CustomDataType" eSuperTypes="#//DataType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
         eType="#//DataTypeItem" containment="true"/>
@@ -227,7 +227,7 @@
         eType="#//NFunctionalTag" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PrimitiveDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Entity"/>
@@ -368,4 +368,17 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalTag" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NFunctionalTag" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveDataType">
+    <eLiterals name="bigint"/>
+    <eLiterals name="string" value="1"/>
+    <eLiterals name="text" value="2"/>
+    <eLiterals name="point" value="3"/>
+    <eLiterals name="polygon" value="4"/>
+    <eLiterals name="bool" value="5"/>
+    <eLiterals name="float" value="6"/>
+    <eLiterals name="int" value="7"/>
+    <eLiterals name="blob" value="8"/>
+    <eLiterals name="date" value="9"/>
+    <eLiterals name="datetime" value="10"/>
+  </eClassifiers>
 </ecore:EPackage>

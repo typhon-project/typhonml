@@ -12,6 +12,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import typhonml.ChangeAttributeType;
+import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -87,7 +90,7 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 				 true,
 				 false,
 				 true,
-				 null,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -111,7 +114,11 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_ChangeAttributeType_type");
+		PrimitiveDataType labelValue = ((ChangeAttributeType)object).getNewType();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_ChangeAttributeType_type") :
+			getString("_UI_ChangeAttributeType_type") + " " + label;
 	}
 
 

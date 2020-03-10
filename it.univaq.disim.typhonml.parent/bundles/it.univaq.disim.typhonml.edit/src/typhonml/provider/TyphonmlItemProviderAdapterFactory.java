@@ -785,29 +785,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.PrimitiveDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrimitiveDataTypeItemProvider primitiveDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.PrimitiveDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPrimitiveDataTypeAdapter() {
-		if (primitiveDataTypeItemProvider == null) {
-			primitiveDataTypeItemProvider = new PrimitiveDataTypeItemProvider(this);
-		}
-
-		return primitiveDataTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1610,7 +1587,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (addGraphEdgeItemProvider != null) addGraphEdgeItemProvider.dispose();
 		if (removeGraphEdgeItemProvider != null) removeGraphEdgeItemProvider.dispose();
 		if (renabeGraphEdgeLabelItemProvider != null) renabeGraphEdgeLabelItemProvider.dispose();
-		if (primitiveDataTypeItemProvider != null) primitiveDataTypeItemProvider.dispose();
 		if (customDataTypeItemProvider != null) customDataTypeItemProvider.dispose();
 		if (dataTypeItemItemProvider != null) dataTypeItemItemProvider.dispose();
 		if (freeTextItemProvider != null) freeTextItemProvider.dispose();

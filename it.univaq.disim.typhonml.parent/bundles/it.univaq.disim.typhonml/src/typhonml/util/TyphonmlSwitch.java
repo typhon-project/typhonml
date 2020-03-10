@@ -319,14 +319,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE: {
-				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
-				T result = casePrimitiveDataType(primitiveDataType);
-				if (result == null) result = caseDataType(primitiveDataType);
-				if (result == null) result = caseNamedElement(primitiveDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TyphonmlPackage.CUSTOM_DATA_TYPE: {
 				CustomDataType customDataType = (CustomDataType)theEObject;
 				T result = caseCustomDataType(customDataType);
@@ -1060,21 +1052,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePrimitiveDataType(PrimitiveDataType object) {
 		return null;
 	}
 
