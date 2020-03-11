@@ -15,7 +15,7 @@ or to deliverables:
 - TyphonML enables the specification of data entities and relationships that will be stored in different and heterogeneous databases.
 - TyphonML enables the specification of data models by means of both textual and graphical syntaxes.
 - Facilities for generating CRUD APIs from data models specified in TyphonML is provided.
-- Specification of data types that are needed for applying text-specific analysis are supported.
+- Specification of data types that are needed for applying text-specific analysis is supported.
 - The specification of functional and non-functional requirements that will instruct the
 deployment and querying of the modelled data models are supported.
 - TyphonML supporting tools detect inconsistent data models (e.g. data entities in relational databases that refer to inexistent collections in document-based data models).
