@@ -13,6 +13,7 @@ package typhonml;
  * </p>
  * <ul>
  *   <li>{@link typhonml.PrimitiveDataTypeAttribute#getType <em>Type</em>}</li>
+ *   <li>{@link typhonml.PrimitiveDataTypeAttribute#getMaxSize <em>Max Size</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getPrimitiveDataTypeAttribute()
@@ -44,5 +45,27 @@ public interface PrimitiveDataTypeAttribute extends Attribute {
 	 * @generated
 	 */
 	void setType(PrimitiveDataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Max Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Max Size</em>' attribute.
+	 * @see #setMaxSize(int)
+	 * @see typhonml.TyphonmlPackage#getPrimitiveDataTypeAttribute_MaxSize()
+	 * @model
+	 * @generated
+	 */
+	int getMaxSize();
+
+	/**
+	 * Sets the value of the '{@link typhonml.PrimitiveDataTypeAttribute#getMaxSize <em>Max Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Max Size</em>' attribute.
+	 * @see #getMaxSize()
+	 * @generated
+	 */
+	void setMaxSize(int value);
 
 } // PrimitiveDataTypeAttribute

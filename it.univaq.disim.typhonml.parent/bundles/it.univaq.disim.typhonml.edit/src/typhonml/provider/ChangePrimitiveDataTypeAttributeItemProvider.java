@@ -15,7 +15,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import typhonml.ChangePrimitiveDataTypeAttribute;
-import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -46,9 +45,32 @@ public class ChangePrimitiveDataTypeAttributeItemProvider extends ChangeAttribut
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMaxSizePropertyDescriptor(object);
 			addNewTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Max Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ChangePrimitiveDataTypeAttribute_maxSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ChangePrimitiveDataTypeAttribute_maxSize_feature", "_UI_ChangePrimitiveDataTypeAttribute_type"),
+				 TyphonmlPackage.Literals.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -92,11 +114,8 @@ public class ChangePrimitiveDataTypeAttributeItemProvider extends ChangeAttribut
 	 */
 	@Override
 	public String getText(Object object) {
-		PrimitiveDataType labelValue = ((ChangePrimitiveDataTypeAttribute)object).getNewType();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ChangePrimitiveDataTypeAttribute_type") :
-			getString("_UI_ChangePrimitiveDataTypeAttribute_type") + " " + label;
+		ChangePrimitiveDataTypeAttribute changePrimitiveDataTypeAttribute = (ChangePrimitiveDataTypeAttribute)object;
+		return getString("_UI_ChangePrimitiveDataTypeAttribute_type") + " " + changePrimitiveDataTypeAttribute.getMaxSize();
 	}
 
 
@@ -112,6 +131,7 @@ public class ChangePrimitiveDataTypeAttributeItemProvider extends ChangeAttribut
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ChangePrimitiveDataTypeAttribute.class)) {
+			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

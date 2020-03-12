@@ -88,7 +88,7 @@ ChangeAttributeType returns ChangeAttributeType:
 
 ChangePrimitiveDataTypeAttribute_Impl returns ChangePrimitiveDataTypeAttribute:
 	{ChangePrimitiveDataTypeAttribute}
-	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType	
+	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType	('('maxSize=INT')')?
 ;
 
 ChangeCustomDataTypeAttribute_Impl returns ChangeCustomDataTypeAttribute:
@@ -383,7 +383,7 @@ AddPrimitiveDataTypeAttribute_Impl returns AddPrimitiveDataTypeAttribute:
 	{AddPrimitiveDataTypeAttribute}
 	('importedNamespace' importedNamespace=EString)?
 	'add' 'attribute'
-	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]	
+	name=EString ':' type=PrimitiveDataType ('('maxSize=INT')')? 'to' ownerEntity=[Entity|EString]	
 ;
 
 AddCustomDataTypeAttribute_Impl returns AddCustomDataTypeAttribute:
@@ -442,7 +442,7 @@ CustomDataTypeAttribute_Impl returns Attribute:
 PrimitiveDataTypeAttribute_Impl returns Attribute:
 	{PrimitiveDataTypeAttribute}
 	('importedNamespace' importedNamespace=EString)?
-	name=EString ':' type=PrimitiveDataType
+	name=EString ':' type=PrimitiveDataType ('('maxSize=INT')')?
 	;
 
 AddRelation returns AddRelation:

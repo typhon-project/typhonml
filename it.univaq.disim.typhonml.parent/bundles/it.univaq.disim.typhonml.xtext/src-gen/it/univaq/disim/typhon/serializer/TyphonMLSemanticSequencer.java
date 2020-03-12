@@ -334,7 +334,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddPrimitiveDataTypeAttribute_Impl returns AddPrimitiveDataTypeAttribute
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString type=PrimitiveDataType ownerEntity=[Entity|EString])
+	 *     (importedNamespace=EString? name=EString type=PrimitiveDataType maxSize=INT? ownerEntity=[Entity|EString])
 	 */
 	protected void sequence_AddPrimitiveDataTypeAttribute_Impl(ISerializationContext context, AddPrimitiveDataTypeAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -392,19 +392,10 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ChangePrimitiveDataTypeAttribute_Impl returns ChangePrimitiveDataTypeAttribute
 	 *
 	 * Constraint:
-	 *     (attributeToChange=[Attribute|EString] newType=PrimitiveDataType)
+	 *     (attributeToChange=[Attribute|EString] newType=PrimitiveDataType maxSize=INT?)
 	 */
 	protected void sequence_ChangePrimitiveDataTypeAttribute_Impl(ISerializationContext context, ChangePrimitiveDataTypeAttribute semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE));
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getAttributeToChangeAttributeEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE, false));
-		feeder.accept(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getNewTypePrimitiveDataTypeEnumRuleCall_5_0(), semanticObject.getNewType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -852,7 +843,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     PrimitiveDataTypeAttribute_Impl returns PrimitiveDataTypeAttribute
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString type=PrimitiveDataType)
+	 *     (importedNamespace=EString? name=EString type=PrimitiveDataType maxSize=INT?)
 	 */
 	protected void sequence_PrimitiveDataTypeAttribute_Impl(ISerializationContext context, PrimitiveDataTypeAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

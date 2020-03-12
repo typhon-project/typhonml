@@ -22,6 +22,7 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.AddPrimitiveDataTypeAttributeImpl#getType <em>Type</em>}</li>
+ *   <li>{@link typhonml.impl.AddPrimitiveDataTypeAttributeImpl#getMaxSize <em>Max Size</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +47,26 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 	 * @ordered
 	 */
 	protected PrimitiveDataType type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int MAX_SIZE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMaxSize()
+	 * @generated
+	 * @ordered
+	 */
+	protected int maxSize = MAX_SIZE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,10 +116,35 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 	 * @generated
 	 */
 	@Override
+	public int getMaxSize() {
+		return maxSize;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setMaxSize(int newMaxSize) {
+		int oldMaxSize = maxSize;
+		maxSize = newMaxSize;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE, oldMaxSize, maxSize));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE:
 				return getType();
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
+				return getMaxSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,6 +159,9 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 		switch (featureID) {
 			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE:
 				setType((PrimitiveDataType)newValue);
+				return;
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
+				setMaxSize((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +178,9 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
+				setMaxSize(MAX_SIZE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +195,8 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 		switch (featureID) {
 			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE:
 				return type != TYPE_EDEFAULT;
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
+				return maxSize != MAX_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,6 +211,7 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 		if (baseClass == PrimitiveDataTypeAttribute.class) {
 			switch (derivedFeatureID) {
 				case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE: return TyphonmlPackage.PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE;
+				case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE: return TyphonmlPackage.PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE;
 				default: return -1;
 			}
 		}
@@ -173,6 +228,7 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 		if (baseClass == PrimitiveDataTypeAttribute.class) {
 			switch (baseFeatureID) {
 				case TyphonmlPackage.PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE: return TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE;
+				case TyphonmlPackage.PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE: return TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE;
 				default: return -1;
 			}
 		}
@@ -191,6 +247,8 @@ public class AddPrimitiveDataTypeAttributeImpl extends AddAttributeImpl implemen
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
+		result.append(", maxSize: ");
+		result.append(maxSize);
 		result.append(')');
 		return result.toString();
 	}

@@ -276,6 +276,7 @@
     <genClasses ecoreClass="typhonml.ecore#//NFunctionalTag"/>
     <genClasses ecoreClass="typhonml.ecore#//PrimitiveDataTypeAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//PrimitiveDataTypeAttribute/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//PrimitiveDataTypeAttribute/maxSize"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//CustomDataTypeAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//CustomDataTypeAttribute/type"/>
@@ -283,6 +284,7 @@
     <genClasses ecoreClass="typhonml.ecore#//AddCustomDataTypeAttribute"/>
     <genClasses ecoreClass="typhonml.ecore#//AddPrimitiveDataTypeAttribute"/>
     <genClasses ecoreClass="typhonml.ecore#//ChangePrimitiveDataTypeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangePrimitiveDataTypeAttribute/maxSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangePrimitiveDataTypeAttribute/newType"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//ChangeCustomDataTypeAttribute">

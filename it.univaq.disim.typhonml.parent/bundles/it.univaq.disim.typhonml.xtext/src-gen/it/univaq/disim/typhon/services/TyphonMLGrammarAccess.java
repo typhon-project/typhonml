@@ -605,14 +605,19 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cNewTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cNewTypePrimitiveDataTypeEnumRuleCall_5_0 = (RuleCall)cNewTypeAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cLeftParenthesisKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cMaxSizeAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cMaxSizeINTTerminalRuleCall_6_1_0 = (RuleCall)cMaxSizeAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6_2 = (Keyword)cGroup_6.eContents().get(2);
 		
 		//ChangePrimitiveDataTypeAttribute_Impl ChangePrimitiveDataTypeAttribute:
 		//	{ChangePrimitiveDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
-		//	newType=PrimitiveDataType;
+		//	newType=PrimitiveDataType ('(' maxSize=INT ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{ChangePrimitiveDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
-		//newType=PrimitiveDataType
+		//newType=PrimitiveDataType ('(' maxSize=INT ')')?
 		public Group getGroup() { return cGroup; }
 		
 		//{ChangePrimitiveDataTypeAttribute}
@@ -641,6 +646,21 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PrimitiveDataType
 		public RuleCall getNewTypePrimitiveDataTypeEnumRuleCall_5_0() { return cNewTypePrimitiveDataTypeEnumRuleCall_5_0; }
+		
+		//('(' maxSize=INT ')')?
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_6_0() { return cLeftParenthesisKeyword_6_0; }
+		
+		//maxSize=INT
+		public Assignment getMaxSizeAssignment_6_1() { return cMaxSizeAssignment_6_1; }
+		
+		//INT
+		public RuleCall getMaxSizeINTTerminalRuleCall_6_1_0() { return cMaxSizeINTTerminalRuleCall_6_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_6_2() { return cRightParenthesisKeyword_6_2; }
 	}
 	public class ChangeCustomDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ChangeCustomDataTypeAttribute_Impl");
@@ -3460,19 +3480,24 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cTypePrimitiveDataTypeEnumRuleCall_6_0 = (RuleCall)cTypeAssignment_6.eContents().get(0);
-		private final Keyword cToKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cOwnerEntityAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final CrossReference cOwnerEntityEntityCrossReference_8_0 = (CrossReference)cOwnerEntityAssignment_8.eContents().get(0);
-		private final RuleCall cOwnerEntityEntityEStringParserRuleCall_8_0_1 = (RuleCall)cOwnerEntityEntityCrossReference_8_0.eContents().get(1);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cLeftParenthesisKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cMaxSizeAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cMaxSizeINTTerminalRuleCall_7_1_0 = (RuleCall)cMaxSizeAssignment_7_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Keyword cToKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cOwnerEntityAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final CrossReference cOwnerEntityEntityCrossReference_9_0 = (CrossReference)cOwnerEntityAssignment_9.eContents().get(0);
+		private final RuleCall cOwnerEntityEntityEStringParserRuleCall_9_0_1 = (RuleCall)cOwnerEntityEntityCrossReference_9_0.eContents().get(1);
 		
 		//AddPrimitiveDataTypeAttribute_Impl AddPrimitiveDataTypeAttribute:
 		//	{AddPrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
 		//	'add' 'attribute'
-		//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString];
+		//	name=EString ':' type=PrimitiveDataType ('(' maxSize=INT ')')? 'to' ownerEntity=[Entity|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{AddPrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)? 'add' 'attribute' name=EString ':'
-		//type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
+		//type=PrimitiveDataType ('(' maxSize=INT ')')? 'to' ownerEntity=[Entity|EString]
 		public Group getGroup() { return cGroup; }
 		
 		//{AddPrimitiveDataTypeAttribute}
@@ -3511,17 +3536,32 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//PrimitiveDataType
 		public RuleCall getTypePrimitiveDataTypeEnumRuleCall_6_0() { return cTypePrimitiveDataTypeEnumRuleCall_6_0; }
 		
+		//('(' maxSize=INT ')')?
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_7_0() { return cLeftParenthesisKeyword_7_0; }
+		
+		//maxSize=INT
+		public Assignment getMaxSizeAssignment_7_1() { return cMaxSizeAssignment_7_1; }
+		
+		//INT
+		public RuleCall getMaxSizeINTTerminalRuleCall_7_1_0() { return cMaxSizeINTTerminalRuleCall_7_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7_2() { return cRightParenthesisKeyword_7_2; }
+		
 		//'to'
-		public Keyword getToKeyword_7() { return cToKeyword_7; }
+		public Keyword getToKeyword_8() { return cToKeyword_8; }
 		
 		//ownerEntity=[Entity|EString]
-		public Assignment getOwnerEntityAssignment_8() { return cOwnerEntityAssignment_8; }
+		public Assignment getOwnerEntityAssignment_9() { return cOwnerEntityAssignment_9; }
 		
 		//[Entity|EString]
-		public CrossReference getOwnerEntityEntityCrossReference_8_0() { return cOwnerEntityEntityCrossReference_8_0; }
+		public CrossReference getOwnerEntityEntityCrossReference_9_0() { return cOwnerEntityEntityCrossReference_9_0; }
 		
 		//EString
-		public RuleCall getOwnerEntityEntityEStringParserRuleCall_8_0_1() { return cOwnerEntityEntityEStringParserRuleCall_8_0_1; }
+		public RuleCall getOwnerEntityEntityEStringParserRuleCall_9_0_1() { return cOwnerEntityEntityEStringParserRuleCall_9_0_1; }
 	}
 	public class AddCustomDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddCustomDataTypeAttribute_Impl");
@@ -4089,13 +4129,19 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cTypePrimitiveDataTypeEnumRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cLeftParenthesisKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cMaxSizeAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cMaxSizeINTTerminalRuleCall_5_1_0 = (RuleCall)cMaxSizeAssignment_5_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5_2 = (Keyword)cGroup_5.eContents().get(2);
 		
 		//PrimitiveDataTypeAttribute_Impl Attribute:
 		//	{PrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
-		//	name=EString ':' type=PrimitiveDataType;
+		//	name=EString ':' type=PrimitiveDataType ('(' maxSize=INT ')')?;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{PrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)? name=EString ':' type=PrimitiveDataType
+		//('(' maxSize=INT ')')?
 		public Group getGroup() { return cGroup; }
 		
 		//{PrimitiveDataTypeAttribute}
@@ -4127,6 +4173,21 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PrimitiveDataType
 		public RuleCall getTypePrimitiveDataTypeEnumRuleCall_4_0() { return cTypePrimitiveDataTypeEnumRuleCall_4_0; }
+		
+		//('(' maxSize=INT ')')?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_5_0() { return cLeftParenthesisKeyword_5_0; }
+		
+		//maxSize=INT
+		public Assignment getMaxSizeAssignment_5_1() { return cMaxSizeAssignment_5_1; }
+		
+		//INT
+		public RuleCall getMaxSizeINTTerminalRuleCall_5_1_0() { return cMaxSizeINTTerminalRuleCall_5_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5_2() { return cRightParenthesisKeyword_5_2; }
 	}
 	public class AddRelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddRelation");
@@ -4880,7 +4941,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ChangePrimitiveDataTypeAttribute_Impl ChangePrimitiveDataTypeAttribute:
 	//	{ChangePrimitiveDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
-	//	newType=PrimitiveDataType;
+	//	newType=PrimitiveDataType ('(' maxSize=INT ')')?;
 	public ChangePrimitiveDataTypeAttribute_ImplElements getChangePrimitiveDataTypeAttribute_ImplAccess() {
 		return pChangePrimitiveDataTypeAttribute_Impl;
 	}
@@ -5454,7 +5515,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	//AddPrimitiveDataTypeAttribute_Impl AddPrimitiveDataTypeAttribute:
 	//	{AddPrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
 	//	'add' 'attribute'
-	//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString];
+	//	name=EString ':' type=PrimitiveDataType ('(' maxSize=INT ')')? 'to' ownerEntity=[Entity|EString];
 	public AddPrimitiveDataTypeAttribute_ImplElements getAddPrimitiveDataTypeAttribute_ImplAccess() {
 		return pAddPrimitiveDataTypeAttribute_Impl;
 	}
@@ -5542,7 +5603,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//PrimitiveDataTypeAttribute_Impl Attribute:
 	//	{PrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
-	//	name=EString ':' type=PrimitiveDataType;
+	//	name=EString ':' type=PrimitiveDataType ('(' maxSize=INT ')')?;
 	public PrimitiveDataTypeAttribute_ImplElements getPrimitiveDataTypeAttribute_ImplAccess() {
 		return pPrimitiveDataTypeAttribute_Impl;
 	}

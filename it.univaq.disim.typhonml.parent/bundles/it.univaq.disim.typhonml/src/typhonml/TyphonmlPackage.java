@@ -3565,13 +3565,22 @@ public interface TyphonmlPackage extends EPackage {
 	int PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE = ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Max Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Primitive Data Type Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
+	int PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Primitive Data Type Attribute</em>' class.
@@ -3748,13 +3757,22 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE = ADD_ATTRIBUTE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Max Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = ADD_ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Add Primitive Data Type Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ADD_ATTRIBUTE_FEATURE_COUNT + 1;
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ADD_ATTRIBUTE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Add Primitive Data Type Attribute</em>' class.
@@ -3785,13 +3803,22 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__ATTRIBUTE_TO_CHANGE = CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE;
 
 	/**
+	 * The feature id for the '<em><b>Max Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>New Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 0;
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Change Primitive Data Type Attribute</em>' class.
@@ -3800,7 +3827,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Change Primitive Data Type Attribute</em>' class.
@@ -5744,6 +5771,17 @@ public interface TyphonmlPackage extends EPackage {
 	EAttribute getPrimitiveDataTypeAttribute_Type();
 
 	/**
+	 * Returns the meta object for the attribute '{@link typhonml.PrimitiveDataTypeAttribute#getMaxSize <em>Max Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Size</em>'.
+	 * @see typhonml.PrimitiveDataTypeAttribute#getMaxSize()
+	 * @see #getPrimitiveDataTypeAttribute()
+	 * @generated
+	 */
+	EAttribute getPrimitiveDataTypeAttribute_MaxSize();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.CustomDataTypeAttribute <em>Custom Data Type Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5793,6 +5831,17 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getChangePrimitiveDataTypeAttribute();
+
+	/**
+	 * Returns the meta object for the attribute '{@link typhonml.ChangePrimitiveDataTypeAttribute#getMaxSize <em>Max Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Max Size</em>'.
+	 * @see typhonml.ChangePrimitiveDataTypeAttribute#getMaxSize()
+	 * @see #getChangePrimitiveDataTypeAttribute()
+	 * @generated
+	 */
+	EAttribute getChangePrimitiveDataTypeAttribute_MaxSize();
 
 	/**
 	 * Returns the meta object for the attribute '{@link typhonml.ChangePrimitiveDataTypeAttribute#getNewType <em>New Type</em>}'.
@@ -7410,6 +7459,14 @@ public interface TyphonmlPackage extends EPackage {
 		EAttribute PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE = eINSTANCE.getPrimitiveDataTypeAttribute_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Max Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = eINSTANCE.getPrimitiveDataTypeAttribute_MaxSize();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.CustomDataTypeAttributeImpl <em>Custom Data Type Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -7456,6 +7513,14 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE = eINSTANCE.getChangePrimitiveDataTypeAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Max Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = eINSTANCE.getChangePrimitiveDataTypeAttribute_MaxSize();
 
 		/**
 		 * The meta object literal for the '<em><b>New Type</b></em>' attribute feature.

@@ -57,6 +57,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAddIndexTableAccess().getGroup(), "rule__AddIndexTable__Group__0");
 			builder.put(grammarAccess.getAddIndexTableAccess().getGroup_5(), "rule__AddIndexTable__Group_5__0");
 			builder.put(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getGroup(), "rule__ChangePrimitiveDataTypeAttribute_Impl__Group__0");
+			builder.put(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getGroup_6(), "rule__ChangePrimitiveDataTypeAttribute_Impl__Group_6__0");
 			builder.put(grammarAccess.getChangeCustomDataTypeAttribute_ImplAccess().getGroup(), "rule__ChangeCustomDataTypeAttribute_Impl__Group__0");
 			builder.put(grammarAccess.getMigrateEntityAccess().getGroup(), "rule__MigrateEntity__Group__0");
 			builder.put(grammarAccess.getSplitEntityVerticalAccess().getGroup(), "rule__SplitEntityVertical__Group__0");
@@ -152,6 +153,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getGraphEdgeLabelAccess().getGroup_1(), "rule__GraphEdgeLabel__Group_1__0");
 			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getGroup(), "rule__AddPrimitiveDataTypeAttribute_Impl__Group__0");
 			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getGroup_1(), "rule__AddPrimitiveDataTypeAttribute_Impl__Group_1__0");
+			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getGroup_7(), "rule__AddPrimitiveDataTypeAttribute_Impl__Group_7__0");
 			builder.put(grammarAccess.getAddCustomDataTypeAttribute_ImplAccess().getGroup(), "rule__AddCustomDataTypeAttribute_Impl__Group__0");
 			builder.put(grammarAccess.getAddCustomDataTypeAttribute_ImplAccess().getGroup_1(), "rule__AddCustomDataTypeAttribute_Impl__Group_1__0");
 			builder.put(grammarAccess.getAddGraphEdgeAccess().getGroup(), "rule__AddGraphEdge__Group__0");
@@ -177,6 +179,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCustomDataTypeAttribute_ImplAccess().getGroup_1(), "rule__CustomDataTypeAttribute_Impl__Group_1__0");
 			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getGroup(), "rule__PrimitiveDataTypeAttribute_Impl__Group__0");
 			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getGroup_1(), "rule__PrimitiveDataTypeAttribute_Impl__Group_1__0");
+			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getGroup_5(), "rule__PrimitiveDataTypeAttribute_Impl__Group_5__0");
 			builder.put(grammarAccess.getAddRelationAccess().getGroup(), "rule__AddRelation__Group__0");
 			builder.put(grammarAccess.getAddRelationAccess().getGroup_0(), "rule__AddRelation__Group_0__0");
 			builder.put(grammarAccess.getAddRelationAccess().getGroup_9(), "rule__AddRelation__Group_9__0");
@@ -201,6 +204,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAddIndexTableAccess().getAttributesAssignment_5_1(), "rule__AddIndexTable__AttributesAssignment_5_1");
 			builder.put(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getAttributeToChangeAssignment_3(), "rule__ChangePrimitiveDataTypeAttribute_Impl__AttributeToChangeAssignment_3");
 			builder.put(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getNewTypeAssignment_5(), "rule__ChangePrimitiveDataTypeAttribute_Impl__NewTypeAssignment_5");
+			builder.put(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getMaxSizeAssignment_6_1(), "rule__ChangePrimitiveDataTypeAttribute_Impl__MaxSizeAssignment_6_1");
 			builder.put(grammarAccess.getChangeCustomDataTypeAttribute_ImplAccess().getAttributeToChangeAssignment_3(), "rule__ChangeCustomDataTypeAttribute_Impl__AttributeToChangeAssignment_3");
 			builder.put(grammarAccess.getChangeCustomDataTypeAttribute_ImplAccess().getNewTypeAssignment_5(), "rule__ChangeCustomDataTypeAttribute_Impl__NewTypeAssignment_5");
 			builder.put(grammarAccess.getMigrateEntityAccess().getEntityAssignment_1(), "rule__MigrateEntity__EntityAssignment_1");
@@ -329,7 +333,8 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getImportedNamespaceAssignment_1_1(), "rule__AddPrimitiveDataTypeAttribute_Impl__ImportedNamespaceAssignment_1_1");
 			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getNameAssignment_4(), "rule__AddPrimitiveDataTypeAttribute_Impl__NameAssignment_4");
 			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getTypeAssignment_6(), "rule__AddPrimitiveDataTypeAttribute_Impl__TypeAssignment_6");
-			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getOwnerEntityAssignment_8(), "rule__AddPrimitiveDataTypeAttribute_Impl__OwnerEntityAssignment_8");
+			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getMaxSizeAssignment_7_1(), "rule__AddPrimitiveDataTypeAttribute_Impl__MaxSizeAssignment_7_1");
+			builder.put(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getOwnerEntityAssignment_9(), "rule__AddPrimitiveDataTypeAttribute_Impl__OwnerEntityAssignment_9");
 			builder.put(grammarAccess.getAddCustomDataTypeAttribute_ImplAccess().getImportedNamespaceAssignment_1_1(), "rule__AddCustomDataTypeAttribute_Impl__ImportedNamespaceAssignment_1_1");
 			builder.put(grammarAccess.getAddCustomDataTypeAttribute_ImplAccess().getNameAssignment_4(), "rule__AddCustomDataTypeAttribute_Impl__NameAssignment_4");
 			builder.put(grammarAccess.getAddCustomDataTypeAttribute_ImplAccess().getTypeAssignment_6(), "rule__AddCustomDataTypeAttribute_Impl__TypeAssignment_6");
@@ -358,6 +363,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getImportedNamespaceAssignment_1_1(), "rule__PrimitiveDataTypeAttribute_Impl__ImportedNamespaceAssignment_1_1");
 			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getNameAssignment_2(), "rule__PrimitiveDataTypeAttribute_Impl__NameAssignment_2");
 			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getTypeAssignment_4(), "rule__PrimitiveDataTypeAttribute_Impl__TypeAssignment_4");
+			builder.put(grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getMaxSizeAssignment_5_1(), "rule__PrimitiveDataTypeAttribute_Impl__MaxSizeAssignment_5_1");
 			builder.put(grammarAccess.getAddRelationAccess().getImportedNamespaceAssignment_0_1(), "rule__AddRelation__ImportedNamespaceAssignment_0_1");
 			builder.put(grammarAccess.getAddRelationAccess().getNameAssignment_3(), "rule__AddRelation__NameAssignment_3");
 			builder.put(grammarAccess.getAddRelationAccess().getOwnerEntityAssignment_5(), "rule__AddRelation__OwnerEntityAssignment_5");

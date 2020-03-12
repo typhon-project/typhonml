@@ -2432,6 +2432,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getPrimitiveDataTypeAttribute_MaxSize() {
+		return (EAttribute)primitiveDataTypeAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCustomDataTypeAttribute() {
 		return customDataTypeAttributeEClass;
 	}
@@ -2482,8 +2492,18 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getChangePrimitiveDataTypeAttribute_NewType() {
+	public EAttribute getChangePrimitiveDataTypeAttribute_MaxSize() {
 		return (EAttribute)changePrimitiveDataTypeAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getChangePrimitiveDataTypeAttribute_NewType() {
+		return (EAttribute)changePrimitiveDataTypeAttributeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2794,6 +2814,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		primitiveDataTypeAttributeEClass = createEClass(PRIMITIVE_DATA_TYPE_ATTRIBUTE);
 		createEAttribute(primitiveDataTypeAttributeEClass, PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE);
+		createEAttribute(primitiveDataTypeAttributeEClass, PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE);
 
 		customDataTypeAttributeEClass = createEClass(CUSTOM_DATA_TYPE_ATTRIBUTE);
 		createEReference(customDataTypeAttributeEClass, CUSTOM_DATA_TYPE_ATTRIBUTE__TYPE);
@@ -2803,6 +2824,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addPrimitiveDataTypeAttributeEClass = createEClass(ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE);
 
 		changePrimitiveDataTypeAttributeEClass = createEClass(CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE);
+		createEAttribute(changePrimitiveDataTypeAttributeEClass, CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE);
 		createEAttribute(changePrimitiveDataTypeAttributeEClass, CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE);
 
 		changeCustomDataTypeAttributeEClass = createEClass(CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE);
@@ -3159,6 +3181,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(primitiveDataTypeAttributeEClass, PrimitiveDataTypeAttribute.class, "PrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPrimitiveDataTypeAttribute_Type(), this.getPrimitiveDataType(), "type", null, 1, 1, PrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, PrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(customDataTypeAttributeEClass, CustomDataTypeAttribute.class, "CustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCustomDataTypeAttribute_Type(), this.getCustomDataType(), null, "type", null, 1, 1, CustomDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3168,6 +3191,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(addPrimitiveDataTypeAttributeEClass, AddPrimitiveDataTypeAttribute.class, "AddPrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(changePrimitiveDataTypeAttributeEClass, ChangePrimitiveDataTypeAttribute.class, "ChangePrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getChangePrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChangePrimitiveDataTypeAttribute_NewType(), this.getPrimitiveDataType(), "newType", null, 1, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(changeCustomDataTypeAttributeEClass, ChangeCustomDataTypeAttribute.class, "ChangeCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

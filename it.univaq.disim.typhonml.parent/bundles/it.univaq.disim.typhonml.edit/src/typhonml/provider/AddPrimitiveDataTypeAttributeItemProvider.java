@@ -46,6 +46,7 @@ public class AddPrimitiveDataTypeAttributeItemProvider extends AddAttributeItemP
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addMaxSizePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -68,6 +69,28 @@ public class AddPrimitiveDataTypeAttributeItemProvider extends AddAttributeItemP
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Max Size feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMaxSizePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PrimitiveDataTypeAttribute_maxSize_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PrimitiveDataTypeAttribute_maxSize_feature", "_UI_PrimitiveDataTypeAttribute_type"),
+				 TyphonmlPackage.Literals.PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -111,6 +134,7 @@ public class AddPrimitiveDataTypeAttributeItemProvider extends AddAttributeItemP
 
 		switch (notification.getFeatureID(AddPrimitiveDataTypeAttribute.class)) {
 			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE:
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

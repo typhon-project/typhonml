@@ -983,6 +983,34 @@ ruleChangePrimitiveDataTypeAttribute_Impl returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_6='('
+			{
+				newLeafNode(otherlv_6, grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getLeftParenthesisKeyword_6_0());
+			}
+			(
+				(
+					lv_maxSize_7_0=RULE_INT
+					{
+						newLeafNode(lv_maxSize_7_0, grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getMaxSizeINTTerminalRuleCall_6_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getChangePrimitiveDataTypeAttribute_ImplRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"maxSize",
+							lv_maxSize_7_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_8=')'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getChangePrimitiveDataTypeAttribute_ImplAccess().getRightParenthesisKeyword_6_2());
+			}
+		)?
 	)
 ;
 
@@ -5238,9 +5266,37 @@ ruleAddPrimitiveDataTypeAttribute_Impl returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_8='to'
+		(
+			otherlv_8='('
+			{
+				newLeafNode(otherlv_8, grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getLeftParenthesisKeyword_7_0());
+			}
+			(
+				(
+					lv_maxSize_9_0=RULE_INT
+					{
+						newLeafNode(lv_maxSize_9_0, grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getMaxSizeINTTerminalRuleCall_7_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"maxSize",
+							lv_maxSize_9_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_10=')'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getRightParenthesisKeyword_7_2());
+			}
+		)?
+		otherlv_11='to'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getToKeyword_7());
+			newLeafNode(otherlv_11, grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getToKeyword_8());
 		}
 		(
 			(
@@ -5250,7 +5306,7 @@ ruleAddPrimitiveDataTypeAttribute_Impl returns [EObject current=null]
 					}
 				}
 				{
-					newCompositeNode(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getOwnerEntityEntityCrossReference_8_0());
+					newCompositeNode(grammarAccess.getAddPrimitiveDataTypeAttribute_ImplAccess().getOwnerEntityEntityCrossReference_9_0());
 				}
 				ruleEString
 				{
@@ -6130,6 +6186,34 @@ rulePrimitiveDataTypeAttribute_Impl returns [EObject current=null]
 				}
 			)
 		)
+		(
+			otherlv_6='('
+			{
+				newLeafNode(otherlv_6, grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getLeftParenthesisKeyword_5_0());
+			}
+			(
+				(
+					lv_maxSize_7_0=RULE_INT
+					{
+						newLeafNode(lv_maxSize_7_0, grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getMaxSizeINTTerminalRuleCall_5_1_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getPrimitiveDataTypeAttribute_ImplRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"maxSize",
+							lv_maxSize_7_0,
+							"org.eclipse.xtext.common.Terminals.INT");
+					}
+				)
+			)
+			otherlv_8=')'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getPrimitiveDataTypeAttribute_ImplAccess().getRightParenthesisKeyword_5_2());
+			}
+		)?
 	)
 ;
 

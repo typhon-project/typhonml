@@ -383,6 +383,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataTypeAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PrimitiveDataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CustomDataTypeAttribute" eSuperTypes="#//Attribute">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CustomDataType"/>
@@ -390,6 +391,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute #//CustomDataTypeAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="AddPrimitiveDataTypeAttribute" eSuperTypes="#//AddAttribute #//PrimitiveDataTypeAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChangePrimitiveDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newType" lowerBound="1"
         eType="#//PrimitiveDataType"/>
   </eClassifiers>
