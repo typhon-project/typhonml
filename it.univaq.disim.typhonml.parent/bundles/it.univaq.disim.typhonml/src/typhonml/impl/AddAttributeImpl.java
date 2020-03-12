@@ -26,7 +26,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class AddAttributeImpl extends AttributeImpl implements AddAttribute {
+public abstract class AddAttributeImpl extends AttributeImpl implements AddAttribute {
 	/**
 	 * The cached value of the '{@link #getOwnerEntity() <em>Owner Entity</em>}' reference.
 	 * <!-- begin-user-doc -->

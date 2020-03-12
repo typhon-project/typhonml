@@ -2,18 +2,12 @@
  */
 package typhonml.impl;
 
-import java.util.Collection;
-
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import typhonml.FreeText;
 import typhonml.NlpTask;
 import typhonml.TyphonmlPackage;
@@ -27,20 +21,40 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.FreeTextImpl#getTasks <em>Tasks</em>}</li>
+ *   <li>{@link typhonml.impl.FreeTextImpl#getWorkflowName <em>Workflow Name</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	/**
-	 * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference list.
+	 * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTasks()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<NlpTask> tasks;
+	protected NlpTask tasks;
+
+	/**
+	 * The default value of the '{@link #getWorkflowName() <em>Workflow Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkflowName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String WORKFLOW_NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getWorkflowName() <em>Workflow Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWorkflowName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String workflowName = WORKFLOW_NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,11 +81,66 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	 * @generated
 	 */
 	@Override
-	public EList<NlpTask> getTasks() {
-		if (tasks == null) {
-			tasks = new EObjectContainmentEList<NlpTask>(NlpTask.class, this, TyphonmlPackage.FREE_TEXT__TASKS);
-		}
+	public NlpTask getTasks() {
 		return tasks;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTasks(NlpTask newTasks, NotificationChain msgs) {
+		NlpTask oldTasks = tasks;
+		tasks = newTasks;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TyphonmlPackage.FREE_TEXT__TASKS, oldTasks, newTasks);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTasks(NlpTask newTasks) {
+		if (newTasks != tasks) {
+			NotificationChain msgs = null;
+			if (tasks != null)
+				msgs = ((InternalEObject)tasks).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.FREE_TEXT__TASKS, null, msgs);
+			if (newTasks != null)
+				msgs = ((InternalEObject)newTasks).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.FREE_TEXT__TASKS, null, msgs);
+			msgs = basicSetTasks(newTasks, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.FREE_TEXT__TASKS, newTasks, newTasks));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getWorkflowName() {
+		return workflowName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWorkflowName(String newWorkflowName) {
+		String oldWorkflowName = workflowName;
+		workflowName = newWorkflowName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.FREE_TEXT__WORKFLOW_NAME, oldWorkflowName, workflowName));
 	}
 
 	/**
@@ -83,7 +152,7 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TyphonmlPackage.FREE_TEXT__TASKS:
-				return ((InternalEList<?>)getTasks()).basicRemove(otherEnd, msgs);
+				return basicSetTasks(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,6 +167,8 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 		switch (featureID) {
 			case TyphonmlPackage.FREE_TEXT__TASKS:
 				return getTasks();
+			case TyphonmlPackage.FREE_TEXT__WORKFLOW_NAME:
+				return getWorkflowName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,8 +183,10 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TyphonmlPackage.FREE_TEXT__TASKS:
-				getTasks().clear();
-				getTasks().addAll((Collection<? extends NlpTask>)newValue);
+				setTasks((NlpTask)newValue);
+				return;
+			case TyphonmlPackage.FREE_TEXT__WORKFLOW_NAME:
+				setWorkflowName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,7 +201,10 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TyphonmlPackage.FREE_TEXT__TASKS:
-				getTasks().clear();
+				setTasks((NlpTask)null);
+				return;
+			case TyphonmlPackage.FREE_TEXT__WORKFLOW_NAME:
+				setWorkflowName(WORKFLOW_NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -143,9 +219,27 @@ public class FreeTextImpl extends NamedElementImpl implements FreeText {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case TyphonmlPackage.FREE_TEXT__TASKS:
-				return tasks != null && !tasks.isEmpty();
+				return tasks != null;
+			case TyphonmlPackage.FREE_TEXT__WORKFLOW_NAME:
+				return WORKFLOW_NAME_EDEFAULT == null ? workflowName != null : !WORKFLOW_NAME_EDEFAULT.equals(workflowName);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (workflowName: ");
+		result.append(workflowName);
+		result.append(')');
+		return result.toString();
 	}
 
 } //FreeTextImpl

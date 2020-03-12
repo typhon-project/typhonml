@@ -324,6 +324,30 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 				return createNFunctionalTagAdapter();
 			}
 			@Override
+			public Adapter casePrimitiveDataTypeAttribute(PrimitiveDataTypeAttribute object) {
+				return createPrimitiveDataTypeAttributeAdapter();
+			}
+			@Override
+			public Adapter caseCustomDataTypeAttribute(CustomDataTypeAttribute object) {
+				return createCustomDataTypeAttributeAdapter();
+			}
+			@Override
+			public Adapter caseAddCustomDataTypeAttribute(AddCustomDataTypeAttribute object) {
+				return createAddCustomDataTypeAttributeAdapter();
+			}
+			@Override
+			public Adapter caseAddPrimitiveDataTypeAttribute(AddPrimitiveDataTypeAttribute object) {
+				return createAddPrimitiveDataTypeAttributeAdapter();
+			}
+			@Override
+			public Adapter caseChangePrimitiveDataTypeAttribute(ChangePrimitiveDataTypeAttribute object) {
+				return createChangePrimitiveDataTypeAttributeAdapter();
+			}
+			@Override
+			public Adapter caseChangeCustomDataTypeAttribute(ChangeCustomDataTypeAttribute object) {
+				return createChangeCustomDataTypeAttributeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -1236,6 +1260,90 @@ public class TyphonmlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNFunctionalTagAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.PrimitiveDataTypeAttribute <em>Primitive Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.PrimitiveDataTypeAttribute
+	 * @generated
+	 */
+	public Adapter createPrimitiveDataTypeAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.CustomDataTypeAttribute <em>Custom Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.CustomDataTypeAttribute
+	 * @generated
+	 */
+	public Adapter createCustomDataTypeAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.AddCustomDataTypeAttribute <em>Add Custom Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.AddCustomDataTypeAttribute
+	 * @generated
+	 */
+	public Adapter createAddCustomDataTypeAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.AddPrimitiveDataTypeAttribute <em>Add Primitive Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.AddPrimitiveDataTypeAttribute
+	 * @generated
+	 */
+	public Adapter createAddPrimitiveDataTypeAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.ChangePrimitiveDataTypeAttribute <em>Change Primitive Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.ChangePrimitiveDataTypeAttribute
+	 * @generated
+	 */
+	public Adapter createChangePrimitiveDataTypeAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link typhonml.ChangeCustomDataTypeAttribute <em>Change Custom Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see typhonml.ChangeCustomDataTypeAttribute
+	 * @generated
+	 */
+	public Adapter createChangeCustomDataTypeAttributeAdapter() {
 		return null;
 	}
 

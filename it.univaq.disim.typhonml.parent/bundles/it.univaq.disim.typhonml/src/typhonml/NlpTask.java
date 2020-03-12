@@ -2,6 +2,7 @@
  */
 package typhonml;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link typhonml.NlpTask#getType <em>Type</em>}</li>
+ *   <li>{@link typhonml.NlpTask#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getNlpTask()
@@ -49,5 +51,17 @@ public interface NlpTask extends EObject {
 	 * @generated
 	 */
 	void setType(NlpTaskType value);
+
+	/**
+	 * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
+	 * The list contents are of type {@link java.lang.String}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parameters</em>' attribute list.
+	 * @see typhonml.TyphonmlPackage#getNlpTask_Parameters()
+	 * @model
+	 * @generated
+	 */
+	EList<String> getParameters();
 
 } // NlpTask

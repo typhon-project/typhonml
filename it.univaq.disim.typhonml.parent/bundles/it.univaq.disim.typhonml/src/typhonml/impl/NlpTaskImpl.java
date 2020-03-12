@@ -2,13 +2,16 @@
  */
 package typhonml.impl;
 
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import typhonml.NlpTask;
 import typhonml.NlpTaskType;
 import typhonml.TyphonmlPackage;
@@ -22,6 +25,7 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.NlpTaskImpl#getType <em>Type</em>}</li>
+ *   <li>{@link typhonml.impl.NlpTaskImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +50,16 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 	 * @ordered
 	 */
 	protected NlpTaskType type = TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParameters()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,10 +109,25 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 	 * @generated
 	 */
 	@Override
+	public EList<String> getParameters() {
+		if (parameters == null) {
+			parameters = new EDataTypeUniqueEList<String>(String.class, this, TyphonmlPackage.NLP_TASK__PARAMETERS);
+		}
+		return parameters;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TyphonmlPackage.NLP_TASK__TYPE:
 				return getType();
+			case TyphonmlPackage.NLP_TASK__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -108,11 +137,16 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TyphonmlPackage.NLP_TASK__TYPE:
 				setType((NlpTaskType)newValue);
+				return;
+			case TyphonmlPackage.NLP_TASK__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,6 +163,9 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 			case TyphonmlPackage.NLP_TASK__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case TyphonmlPackage.NLP_TASK__PARAMETERS:
+				getParameters().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -143,6 +180,8 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 		switch (featureID) {
 			case TyphonmlPackage.NLP_TASK__TYPE:
 				return type != TYPE_EDEFAULT;
+			case TyphonmlPackage.NLP_TASK__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -159,6 +198,8 @@ public class NlpTaskImpl extends MinimalEObjectImpl.Container implements NlpTask
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
+		result.append(", parameters: ");
+		result.append(parameters);
 		result.append(')');
 		return result.toString();
 	}

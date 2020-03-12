@@ -105,7 +105,6 @@
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//ChangeAttributeType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeAttributeType/attributeToChange"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangeAttributeType/newType"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//RemoveAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RemoveAttribute/attributeToRemove"/>
@@ -167,9 +166,11 @@
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//FreeText">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//FreeText/tasks"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//FreeText/workflowName"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//NlpTask">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NlpTask/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NlpTask/parameters"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//DataTypeImplementationPackage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//DataTypeImplementationPackage/location"/>
@@ -186,9 +187,7 @@
       <genOperations ecoreOperation="typhonml.ecore#//Entity/getGraphNodes"/>
       <genOperations ecoreOperation="typhonml.ecore#//Entity/getColumns"/>
     </genClasses>
-    <genClasses ecoreClass="typhonml.ecore#//Attribute">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EAttribute typhonml.ecore#//Attribute/type"/>
-    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//Attribute"/>
     <genClasses ecoreClass="typhonml.ecore#//Relation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Relation/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//Relation/cardinality"/>
@@ -275,5 +274,19 @@
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//FunctionalTag"/>
     <genClasses ecoreClass="typhonml.ecore#//NFunctionalTag"/>
+    <genClasses ecoreClass="typhonml.ecore#//PrimitiveDataTypeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//PrimitiveDataTypeAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//CustomDataTypeAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//CustomDataTypeAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddCustomDataTypeAttribute"/>
+    <genClasses ecoreClass="typhonml.ecore#//AddPrimitiveDataTypeAttribute"/>
+    <genClasses ecoreClass="typhonml.ecore#//ChangePrimitiveDataTypeAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangePrimitiveDataTypeAttribute/newType"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//ChangeCustomDataTypeAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeCustomDataTypeAttribute/newType"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -71,8 +71,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.ENABLE_BIDIRECTIONAL_RELATION: return createEnableBidirectionalRelation();
 			case TyphonmlPackage.DISABLE_BIDIRECTIONAL_RELATION: return createDisableBidirectionalRelation();
 			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY: return createChangeRelationCardinality();
-			case TyphonmlPackage.ADD_ATTRIBUTE: return createAddAttribute();
-			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE: return createChangeAttributeType();
 			case TyphonmlPackage.REMOVE_ATTRIBUTE: return createRemoveAttribute();
 			case TyphonmlPackage.RENAME_ATTRIBUTE: return createRenameAttribute();
 			case TyphonmlPackage.RENAME_TABLE: return createRenameTable();
@@ -94,7 +92,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.NLP_TASK: return createNlpTask();
 			case TyphonmlPackage.DATA_TYPE_IMPLEMENTATION_PACKAGE: return createDataTypeImplementationPackage();
 			case TyphonmlPackage.ENTITY: return createEntity();
-			case TyphonmlPackage.ATTRIBUTE: return createAttribute();
 			case TyphonmlPackage.RELATION: return createRelation();
 			case TyphonmlPackage.RELATIONAL_DB: return createRelationalDB();
 			case TyphonmlPackage.TABLE: return createTable();
@@ -117,6 +114,12 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL: return createSplitEntityHorizontal();
 			case TyphonmlPackage.FUNCTIONAL_TAG: return createFunctionalTag();
 			case TyphonmlPackage.NFUNCTIONAL_TAG: return createNFunctionalTag();
+			case TyphonmlPackage.PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createPrimitiveDataTypeAttribute();
+			case TyphonmlPackage.CUSTOM_DATA_TYPE_ATTRIBUTE: return createCustomDataTypeAttribute();
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE: return createAddCustomDataTypeAttribute();
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createAddPrimitiveDataTypeAttribute();
+			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createChangePrimitiveDataTypeAttribute();
+			case TyphonmlPackage.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE: return createChangeCustomDataTypeAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -312,28 +315,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public ChangeRelationCardinality createChangeRelationCardinality() {
 		ChangeRelationCardinalityImpl changeRelationCardinality = new ChangeRelationCardinalityImpl();
 		return changeRelationCardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddAttribute createAddAttribute() {
-		AddAttributeImpl addAttribute = new AddAttributeImpl();
-		return addAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ChangeAttributeType createChangeAttributeType() {
-		ChangeAttributeTypeImpl changeAttributeType = new ChangeAttributeTypeImpl();
-		return changeAttributeType;
 	}
 
 	/**
@@ -565,17 +546,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Attribute createAttribute() {
-		AttributeImpl attribute = new AttributeImpl();
-		return attribute;
 	}
 
 	/**
@@ -818,6 +788,72 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public NFunctionalTag createNFunctionalTag() {
 		NFunctionalTagImpl nFunctionalTag = new NFunctionalTagImpl();
 		return nFunctionalTag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public PrimitiveDataTypeAttribute createPrimitiveDataTypeAttribute() {
+		PrimitiveDataTypeAttributeImpl primitiveDataTypeAttribute = new PrimitiveDataTypeAttributeImpl();
+		return primitiveDataTypeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CustomDataTypeAttribute createCustomDataTypeAttribute() {
+		CustomDataTypeAttributeImpl customDataTypeAttribute = new CustomDataTypeAttributeImpl();
+		return customDataTypeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddCustomDataTypeAttribute createAddCustomDataTypeAttribute() {
+		AddCustomDataTypeAttributeImpl addCustomDataTypeAttribute = new AddCustomDataTypeAttributeImpl();
+		return addCustomDataTypeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddPrimitiveDataTypeAttribute createAddPrimitiveDataTypeAttribute() {
+		AddPrimitiveDataTypeAttributeImpl addPrimitiveDataTypeAttribute = new AddPrimitiveDataTypeAttributeImpl();
+		return addPrimitiveDataTypeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ChangePrimitiveDataTypeAttribute createChangePrimitiveDataTypeAttribute() {
+		ChangePrimitiveDataTypeAttributeImpl changePrimitiveDataTypeAttribute = new ChangePrimitiveDataTypeAttributeImpl();
+		return changePrimitiveDataTypeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ChangeCustomDataTypeAttribute createChangeCustomDataTypeAttribute() {
+		ChangeCustomDataTypeAttributeImpl changeCustomDataTypeAttribute = new ChangeCustomDataTypeAttributeImpl();
+		return changeCustomDataTypeAttribute;
 	}
 
 	/**

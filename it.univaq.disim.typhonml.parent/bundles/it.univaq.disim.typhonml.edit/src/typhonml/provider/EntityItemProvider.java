@@ -146,12 +146,22 @@ public class EntityItemProvider extends DataTypeItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
-				 TyphonmlFactory.eINSTANCE.createAttribute()));
+				 TyphonmlFactory.eINSTANCE.createPrimitiveDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
-				 TyphonmlFactory.eINSTANCE.createAddAttribute()));
+				 TyphonmlFactory.eINSTANCE.createCustomDataTypeAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createAddCustomDataTypeAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createAddPrimitiveDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

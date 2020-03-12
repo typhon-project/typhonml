@@ -83,15 +83,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newCardinality" lowerBound="1"
         eType="#//Cardinality"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" eSuperTypes="#//Attribute #//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" abstract="true" eSuperTypes="#//Attribute #//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
         eType="#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" eSuperTypes="#//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeAttributeType" abstract="true"
+      eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToChange" lowerBound="1"
         eType="#//Attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newType" lowerBound="1"
-        eType="#//PrimitiveDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RemoveAttribute" eSuperTypes="#//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributeToRemove" lowerBound="1"
@@ -165,11 +164,14 @@
         eType="#//DataTypeImplementationPackage" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FreeText" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
-        eType="#//NlpTask" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" eType="#//NlpTask"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workflowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NlpTask">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NlpTaskType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataTypeImplementationPackage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -226,9 +228,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="nfunctionalTags" upperBound="-1"
         eType="#//NFunctionalTag" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PrimitiveDataType"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
@@ -380,5 +380,21 @@
     <eLiterals name="blob" value="8"/>
     <eLiterals name="date" value="9"/>
     <eLiterals name="datetime" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataTypeAttribute" eSuperTypes="#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//PrimitiveDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDataTypeAttribute" eSuperTypes="#//Attribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CustomDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute #//CustomDataTypeAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddPrimitiveDataTypeAttribute" eSuperTypes="#//AddAttribute #//PrimitiveDataTypeAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangePrimitiveDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newType" lowerBound="1"
+        eType="#//PrimitiveDataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeCustomDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newType" lowerBound="1"
+        eType="#//CustomDataType"/>
   </eClassifiers>
 </ecore:EPackage>

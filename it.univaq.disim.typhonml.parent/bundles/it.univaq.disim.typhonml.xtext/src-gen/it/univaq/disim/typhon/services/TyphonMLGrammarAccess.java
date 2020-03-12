@@ -574,46 +574,126 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ChangeAttributeTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ChangeAttributeType");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cChangeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cAttributeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAttributeToChangeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cAttributeToChangeAttributeCrossReference_2_0 = (CrossReference)cAttributeToChangeAssignment_2.eContents().get(0);
-		private final RuleCall cAttributeToChangeAttributeEStringParserRuleCall_2_0_1 = (RuleCall)cAttributeToChangeAttributeCrossReference_2_0.eContents().get(1);
-		private final Keyword cTypeKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cNewTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cNewTypePrimitiveDataTypeEnumRuleCall_4_0 = (RuleCall)cNewTypeAssignment_4.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cChangeCustomDataTypeAttribute_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cChangePrimitiveDataTypeAttribute_ImplParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//ChangeAttributeType:
-		//	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
+		////ChangeAttributeType returns ChangeAttributeType:
+		////	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
+		// ChangeAttributeType:
+		//	ChangeCustomDataTypeAttribute_Impl | ChangePrimitiveDataTypeAttribute_Impl;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType
+		//ChangeCustomDataTypeAttribute_Impl | ChangePrimitiveDataTypeAttribute_Impl
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//ChangeCustomDataTypeAttribute_Impl
+		public RuleCall getChangeCustomDataTypeAttribute_ImplParserRuleCall_0() { return cChangeCustomDataTypeAttribute_ImplParserRuleCall_0; }
+		
+		//ChangePrimitiveDataTypeAttribute_Impl
+		public RuleCall getChangePrimitiveDataTypeAttribute_ImplParserRuleCall_1() { return cChangePrimitiveDataTypeAttribute_ImplParserRuleCall_1; }
+	}
+	public class ChangePrimitiveDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ChangePrimitiveDataTypeAttribute_Impl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cChangePrimitiveDataTypeAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cChangeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cAttributeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAttributeToChangeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cAttributeToChangeAttributeCrossReference_3_0 = (CrossReference)cAttributeToChangeAssignment_3.eContents().get(0);
+		private final RuleCall cAttributeToChangeAttributeEStringParserRuleCall_3_0_1 = (RuleCall)cAttributeToChangeAttributeCrossReference_3_0.eContents().get(1);
+		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNewTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNewTypePrimitiveDataTypeEnumRuleCall_5_0 = (RuleCall)cNewTypeAssignment_5.eContents().get(0);
+		
+		//ChangePrimitiveDataTypeAttribute_Impl ChangePrimitiveDataTypeAttribute:
+		//	{ChangePrimitiveDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
+		//	newType=PrimitiveDataType;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ChangePrimitiveDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
+		//newType=PrimitiveDataType
 		public Group getGroup() { return cGroup; }
 		
+		//{ChangePrimitiveDataTypeAttribute}
+		public Action getChangePrimitiveDataTypeAttributeAction_0() { return cChangePrimitiveDataTypeAttributeAction_0; }
+		
 		//'change'
-		public Keyword getChangeKeyword_0() { return cChangeKeyword_0; }
+		public Keyword getChangeKeyword_1() { return cChangeKeyword_1; }
 		
 		//'attribute'
-		public Keyword getAttributeKeyword_1() { return cAttributeKeyword_1; }
+		public Keyword getAttributeKeyword_2() { return cAttributeKeyword_2; }
 		
 		//attributeToChange=[Attribute|EString]
-		public Assignment getAttributeToChangeAssignment_2() { return cAttributeToChangeAssignment_2; }
+		public Assignment getAttributeToChangeAssignment_3() { return cAttributeToChangeAssignment_3; }
 		
 		//[Attribute|EString]
-		public CrossReference getAttributeToChangeAttributeCrossReference_2_0() { return cAttributeToChangeAttributeCrossReference_2_0; }
+		public CrossReference getAttributeToChangeAttributeCrossReference_3_0() { return cAttributeToChangeAttributeCrossReference_3_0; }
 		
 		//EString
-		public RuleCall getAttributeToChangeAttributeEStringParserRuleCall_2_0_1() { return cAttributeToChangeAttributeEStringParserRuleCall_2_0_1; }
+		public RuleCall getAttributeToChangeAttributeEStringParserRuleCall_3_0_1() { return cAttributeToChangeAttributeEStringParserRuleCall_3_0_1; }
 		
 		//'type'
-		public Keyword getTypeKeyword_3() { return cTypeKeyword_3; }
+		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
 		
 		//newType=PrimitiveDataType
-		public Assignment getNewTypeAssignment_4() { return cNewTypeAssignment_4; }
+		public Assignment getNewTypeAssignment_5() { return cNewTypeAssignment_5; }
 		
 		//PrimitiveDataType
-		public RuleCall getNewTypePrimitiveDataTypeEnumRuleCall_4_0() { return cNewTypePrimitiveDataTypeEnumRuleCall_4_0; }
+		public RuleCall getNewTypePrimitiveDataTypeEnumRuleCall_5_0() { return cNewTypePrimitiveDataTypeEnumRuleCall_5_0; }
+	}
+	public class ChangeCustomDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ChangeCustomDataTypeAttribute_Impl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cChangeCustomDataTypeAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cChangeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cAttributeKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cAttributeToChangeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cAttributeToChangeAttributeCrossReference_3_0 = (CrossReference)cAttributeToChangeAssignment_3.eContents().get(0);
+		private final RuleCall cAttributeToChangeAttributeEStringParserRuleCall_3_0_1 = (RuleCall)cAttributeToChangeAttributeCrossReference_3_0.eContents().get(1);
+		private final Keyword cTypeKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNewTypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final CrossReference cNewTypeCustomDataTypeCrossReference_5_0 = (CrossReference)cNewTypeAssignment_5.eContents().get(0);
+		private final RuleCall cNewTypeCustomDataTypeEStringParserRuleCall_5_0_1 = (RuleCall)cNewTypeCustomDataTypeCrossReference_5_0.eContents().get(1);
+		
+		//ChangeCustomDataTypeAttribute_Impl ChangeCustomDataTypeAttribute:
+		//	{ChangeCustomDataTypeAttribute}
+		//	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[CustomDataType|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ChangeCustomDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
+		//newType=[CustomDataType|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{ChangeCustomDataTypeAttribute}
+		public Action getChangeCustomDataTypeAttributeAction_0() { return cChangeCustomDataTypeAttributeAction_0; }
+		
+		//'change'
+		public Keyword getChangeKeyword_1() { return cChangeKeyword_1; }
+		
+		//'attribute'
+		public Keyword getAttributeKeyword_2() { return cAttributeKeyword_2; }
+		
+		//attributeToChange=[Attribute|EString]
+		public Assignment getAttributeToChangeAssignment_3() { return cAttributeToChangeAssignment_3; }
+		
+		//[Attribute|EString]
+		public CrossReference getAttributeToChangeAttributeCrossReference_3_0() { return cAttributeToChangeAttributeCrossReference_3_0; }
+		
+		//EString
+		public RuleCall getAttributeToChangeAttributeEStringParserRuleCall_3_0_1() { return cAttributeToChangeAttributeEStringParserRuleCall_3_0_1; }
+		
+		//'type'
+		public Keyword getTypeKeyword_4() { return cTypeKeyword_4; }
+		
+		//newType=[CustomDataType|EString]
+		public Assignment getNewTypeAssignment_5() { return cNewTypeAssignment_5; }
+		
+		//[CustomDataType|EString]
+		public CrossReference getNewTypeCustomDataTypeCrossReference_5_0() { return cNewTypeCustomDataTypeCrossReference_5_0; }
+		
+		//EString
+		public RuleCall getNewTypeCustomDataTypeEStringParserRuleCall_5_0_1() { return cNewTypeCustomDataTypeEStringParserRuleCall_5_0_1; }
 	}
 	public class MigrateEntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.MigrateEntity");
@@ -1199,14 +1279,22 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Attribute");
-		private final RuleCall cAttribute_ImplParserRuleCall = (RuleCall)rule.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cCustomDataTypeAttribute_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cPrimitiveDataTypeAttribute_ImplParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Attribute:
-		//	Attribute_Impl;
+		//	CustomDataTypeAttribute_Impl | PrimitiveDataTypeAttribute_Impl;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Attribute_Impl
-		public RuleCall getAttribute_ImplParserRuleCall() { return cAttribute_ImplParserRuleCall; }
+		//CustomDataTypeAttribute_Impl | PrimitiveDataTypeAttribute_Impl
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//CustomDataTypeAttribute_Impl
+		public RuleCall getCustomDataTypeAttribute_ImplParserRuleCall_0() { return cCustomDataTypeAttribute_ImplParserRuleCall_0; }
+		
+		//PrimitiveDataTypeAttribute_Impl
+		public RuleCall getPrimitiveDataTypeAttribute_ImplParserRuleCall_1() { return cPrimitiveDataTypeAttribute_ImplParserRuleCall_1; }
 	}
 	public class RelationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Relation");
@@ -1409,21 +1497,22 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cLeftSquareBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cTasksAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cTasksNlpTaskParserRuleCall_4_0_0 = (RuleCall)cTasksAssignment_4_0.eContents().get(0);
-		private final Group cGroup_4_1 = (Group)cGroup_4.eContents().get(1);
-		private final Keyword cCommaKeyword_4_1_0 = (Keyword)cGroup_4_1.eContents().get(0);
-		private final Assignment cTasksAssignment_4_1_1 = (Assignment)cGroup_4_1.eContents().get(1);
-		private final RuleCall cTasksNlpTaskParserRuleCall_4_1_1_0 = (RuleCall)cTasksAssignment_4_1_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
+		private final Keyword cNLPKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cLeftSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cWorkflowNameAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cWorkflowNameEStringParserRuleCall_6_0 = (RuleCall)cWorkflowNameAssignment_6.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cTasksAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cTasksNlpTaskParserRuleCall_9_0 = (RuleCall)cTasksAssignment_9.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//FreeText:
 		//	{FreeText}
-		//	'freetext' name=EString '[' (tasks+=NlpTask ("," tasks+=NlpTask)* ']')?;
+		//	'freetext' name=EString '[' 'NLP' '[' workflowName=EString ']' ',' tasks=NlpTask ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FreeText} 'freetext' name=EString '[' (tasks+=NlpTask ("," tasks+=NlpTask)* ']')?
+		//{FreeText} 'freetext' name=EString '[' 'NLP' '[' workflowName=EString ']' ',' tasks=NlpTask ']'
 		public Group getGroup() { return cGroup; }
 		
 		//{FreeText}
@@ -1441,44 +1530,60 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'['
 		public Keyword getLeftSquareBracketKeyword_3() { return cLeftSquareBracketKeyword_3; }
 		
-		//(tasks+=NlpTask ("," tasks+=NlpTask)* ']')?
-		public Group getGroup_4() { return cGroup_4; }
+		//'NLP'
+		public Keyword getNLPKeyword_4() { return cNLPKeyword_4; }
 		
-		//tasks+=NlpTask
-		public Assignment getTasksAssignment_4_0() { return cTasksAssignment_4_0; }
+		//'['
+		public Keyword getLeftSquareBracketKeyword_5() { return cLeftSquareBracketKeyword_5; }
 		
-		//NlpTask
-		public RuleCall getTasksNlpTaskParserRuleCall_4_0_0() { return cTasksNlpTaskParserRuleCall_4_0_0; }
+		//workflowName=EString
+		public Assignment getWorkflowNameAssignment_6() { return cWorkflowNameAssignment_6; }
 		
-		//("," tasks+=NlpTask)*
-		public Group getGroup_4_1() { return cGroup_4_1; }
-		
-		//","
-		public Keyword getCommaKeyword_4_1_0() { return cCommaKeyword_4_1_0; }
-		
-		//tasks+=NlpTask
-		public Assignment getTasksAssignment_4_1_1() { return cTasksAssignment_4_1_1; }
-		
-		//NlpTask
-		public RuleCall getTasksNlpTaskParserRuleCall_4_1_1_0() { return cTasksNlpTaskParserRuleCall_4_1_1_0; }
+		//EString
+		public RuleCall getWorkflowNameEStringParserRuleCall_6_0() { return cWorkflowNameEStringParserRuleCall_6_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_4_2() { return cRightSquareBracketKeyword_4_2; }
+		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
+		
+		//','
+		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		
+		//tasks=NlpTask
+		public Assignment getTasksAssignment_9() { return cTasksAssignment_9; }
+		
+		//NlpTask
+		public RuleCall getTasksNlpTaskParserRuleCall_9_0() { return cTasksNlpTaskParserRuleCall_9_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_10() { return cRightSquareBracketKeyword_10; }
 	}
 	public class NlpTaskElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.NlpTask");
-		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cTypeNlpTaskTypeEnumRuleCall_0 = (RuleCall)cTypeAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypeNlpTaskTypeEnumRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cParametersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cParametersEStringParserRuleCall_1_0 = (RuleCall)cParametersAssignment_1.eContents().get(0);
 		
 		//NlpTask:
-		//	type=NlpTaskType;
+		//	type=NlpTaskType
+		//	parameters+=EString?;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//type=NlpTaskType parameters+=EString?
+		public Group getGroup() { return cGroup; }
+		
 		//type=NlpTaskType
-		public Assignment getTypeAssignment() { return cTypeAssignment; }
+		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
 		
 		//NlpTaskType
-		public RuleCall getTypeNlpTaskTypeEnumRuleCall_0() { return cTypeNlpTaskTypeEnumRuleCall_0; }
+		public RuleCall getTypeNlpTaskTypeEnumRuleCall_0_0() { return cTypeNlpTaskTypeEnumRuleCall_0_0; }
+		
+		//parameters+=EString?
+		public Assignment getParametersAssignment_1() { return cParametersAssignment_1; }
+		
+		//EString
+		public RuleCall getParametersEStringParserRuleCall_1_0() { return cParametersEStringParserRuleCall_1_0; }
 	}
 	public class CustomDataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.CustomDataType");
@@ -1506,12 +1611,12 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//CustomDataType:
 		//	{CustomDataType} ('importedNamespace' importedNamespace=EString)?
-		//	'customdatatype' name=EString '{' ('elements' '{' elements+=DataTypeItem ("," elements+=DataTypeItem)* '}')?
+		//	'customdatatype' name=EString '{' ('elements' '{' elements+=DataTypeItem (',' elements+=DataTypeItem)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//{CustomDataType} ('importedNamespace' importedNamespace=EString)? 'customdatatype' name=EString '{' ('elements' '{'
-		//elements+=DataTypeItem ("," elements+=DataTypeItem)* '}')? '}'
+		//elements+=DataTypeItem (',' elements+=DataTypeItem)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{CustomDataType}
@@ -1541,7 +1646,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//('elements' '{' elements+=DataTypeItem ("," elements+=DataTypeItem)* '}')?
+		//('elements' '{' elements+=DataTypeItem (',' elements+=DataTypeItem)* '}')?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'elements'
@@ -1556,10 +1661,10 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//DataTypeItem
 		public RuleCall getElementsDataTypeItemParserRuleCall_5_2_0() { return cElementsDataTypeItemParserRuleCall_5_2_0; }
 		
-		//("," elements+=DataTypeItem)*
+		//(',' elements+=DataTypeItem)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
 		
-		//","
+		//','
 		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
 		
 		//elements+=DataTypeItem
@@ -3317,8 +3422,33 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class AddAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddAttribute");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cAddCustomDataTypeAttribute_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAddPrimitiveDataTypeAttribute_ImplParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		////AddAttribute returns AddAttribute:
+		////	{AddAttribute}
+		////	('importedNamespace' importedNamespace=EString)?
+		////	'add' 'attribute'
+		////	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
+		////	;
+		//AddAttribute:
+		//	AddCustomDataTypeAttribute_Impl | AddPrimitiveDataTypeAttribute_Impl;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//AddCustomDataTypeAttribute_Impl | AddPrimitiveDataTypeAttribute_Impl
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//AddCustomDataTypeAttribute_Impl
+		public RuleCall getAddCustomDataTypeAttribute_ImplParserRuleCall_0() { return cAddCustomDataTypeAttribute_ImplParserRuleCall_0; }
+		
+		//AddPrimitiveDataTypeAttribute_Impl
+		public RuleCall getAddPrimitiveDataTypeAttribute_ImplParserRuleCall_1() { return cAddPrimitiveDataTypeAttribute_ImplParserRuleCall_1; }
+	}
+	public class AddPrimitiveDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddPrimitiveDataTypeAttribute_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cAddAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cAddPrimitiveDataTypeAttributeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cImportedNamespaceKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -3335,18 +3465,18 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cOwnerEntityEntityCrossReference_8_0 = (CrossReference)cOwnerEntityAssignment_8.eContents().get(0);
 		private final RuleCall cOwnerEntityEntityEStringParserRuleCall_8_0_1 = (RuleCall)cOwnerEntityEntityCrossReference_8_0.eContents().get(1);
 		
-		//AddAttribute:
-		//	{AddAttribute} ('importedNamespace' importedNamespace=EString)?
+		//AddPrimitiveDataTypeAttribute_Impl AddPrimitiveDataTypeAttribute:
+		//	{AddPrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
 		//	'add' 'attribute'
 		//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{AddAttribute} ('importedNamespace' importedNamespace=EString)? 'add' 'attribute' name=EString ':'
+		//{AddPrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)? 'add' 'attribute' name=EString ':'
 		//type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
 		public Group getGroup() { return cGroup; }
 		
-		//{AddAttribute}
-		public Action getAddAttributeAction_0() { return cAddAttributeAction_0; }
+		//{AddPrimitiveDataTypeAttribute}
+		public Action getAddPrimitiveDataTypeAttributeAction_0() { return cAddPrimitiveDataTypeAttributeAction_0; }
 		
 		//('importedNamespace' importedNamespace=EString)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -3380,6 +3510,88 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//PrimitiveDataType
 		public RuleCall getTypePrimitiveDataTypeEnumRuleCall_6_0() { return cTypePrimitiveDataTypeEnumRuleCall_6_0; }
+		
+		//'to'
+		public Keyword getToKeyword_7() { return cToKeyword_7; }
+		
+		//ownerEntity=[Entity|EString]
+		public Assignment getOwnerEntityAssignment_8() { return cOwnerEntityAssignment_8; }
+		
+		//[Entity|EString]
+		public CrossReference getOwnerEntityEntityCrossReference_8_0() { return cOwnerEntityEntityCrossReference_8_0; }
+		
+		//EString
+		public RuleCall getOwnerEntityEntityEStringParserRuleCall_8_0_1() { return cOwnerEntityEntityEStringParserRuleCall_8_0_1; }
+	}
+	public class AddCustomDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddCustomDataTypeAttribute_Impl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cAddCustomDataTypeAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cImportedNamespaceKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cImportedNamespaceEStringParserRuleCall_1_1_0 = (RuleCall)cImportedNamespaceAssignment_1_1.eContents().get(0);
+		private final Keyword cAddKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cAttributeKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNameEStringParserRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
+		private final Keyword cColonKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cTypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cTypeCustomDataTypeCrossReference_6_0 = (CrossReference)cTypeAssignment_6.eContents().get(0);
+		private final RuleCall cTypeCustomDataTypeIDTerminalRuleCall_6_0_1 = (RuleCall)cTypeCustomDataTypeCrossReference_6_0.eContents().get(1);
+		private final Keyword cToKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cOwnerEntityAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cOwnerEntityEntityCrossReference_8_0 = (CrossReference)cOwnerEntityAssignment_8.eContents().get(0);
+		private final RuleCall cOwnerEntityEntityEStringParserRuleCall_8_0_1 = (RuleCall)cOwnerEntityEntityCrossReference_8_0.eContents().get(1);
+		
+		//AddCustomDataTypeAttribute_Impl AddCustomDataTypeAttribute:
+		//	{AddCustomDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
+		//	'add' 'attribute'
+		//	name=EString ':' type=[CustomDataType] 'to' ownerEntity=[Entity|EString];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{AddCustomDataTypeAttribute} ('importedNamespace' importedNamespace=EString)? 'add' 'attribute' name=EString ':'
+		//type=[CustomDataType] 'to' ownerEntity=[Entity|EString]
+		public Group getGroup() { return cGroup; }
+		
+		//{AddCustomDataTypeAttribute}
+		public Action getAddCustomDataTypeAttributeAction_0() { return cAddCustomDataTypeAttributeAction_0; }
+		
+		//('importedNamespace' importedNamespace=EString)?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'importedNamespace'
+		public Keyword getImportedNamespaceKeyword_1_0() { return cImportedNamespaceKeyword_1_0; }
+		
+		//importedNamespace=EString
+		public Assignment getImportedNamespaceAssignment_1_1() { return cImportedNamespaceAssignment_1_1; }
+		
+		//EString
+		public RuleCall getImportedNamespaceEStringParserRuleCall_1_1_0() { return cImportedNamespaceEStringParserRuleCall_1_1_0; }
+		
+		//'add'
+		public Keyword getAddKeyword_2() { return cAddKeyword_2; }
+		
+		//'attribute'
+		public Keyword getAttributeKeyword_3() { return cAttributeKeyword_3; }
+		
+		//name=EString
+		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_4_0() { return cNameEStringParserRuleCall_4_0; }
+		
+		//':'
+		public Keyword getColonKeyword_5() { return cColonKeyword_5; }
+		
+		//type=[CustomDataType]
+		public Assignment getTypeAssignment_6() { return cTypeAssignment_6; }
+		
+		//[CustomDataType]
+		public CrossReference getTypeCustomDataTypeCrossReference_6_0() { return cTypeCustomDataTypeCrossReference_6_0; }
+		
+		//ID
+		public RuleCall getTypeCustomDataTypeIDTerminalRuleCall_6_0_1() { return cTypeCustomDataTypeIDTerminalRuleCall_6_0_1; }
 		
 		//'to'
 		public Keyword getToKeyword_7() { return cToKeyword_7; }
@@ -3808,10 +4020,66 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
-	public class Attribute_ImplElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Attribute_Impl");
+	public class CustomDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.CustomDataTypeAttribute_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Action cCustomDataTypeAttributeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cImportedNamespaceKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cImportedNamespaceEStringParserRuleCall_1_1_0 = (RuleCall)cImportedNamespaceAssignment_1_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cColonKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final CrossReference cTypeCustomDataTypeCrossReference_4_0 = (CrossReference)cTypeAssignment_4.eContents().get(0);
+		private final RuleCall cTypeCustomDataTypeIDTerminalRuleCall_4_0_1 = (RuleCall)cTypeCustomDataTypeCrossReference_4_0.eContents().get(1);
+		
+		//CustomDataTypeAttribute_Impl Attribute:
+		//	{CustomDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
+		//	name=EString ':' type=[CustomDataType];
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{CustomDataTypeAttribute} ('importedNamespace' importedNamespace=EString)? name=EString ':' type=[CustomDataType]
+		public Group getGroup() { return cGroup; }
+		
+		//{CustomDataTypeAttribute}
+		public Action getCustomDataTypeAttributeAction_0() { return cCustomDataTypeAttributeAction_0; }
+		
+		//('importedNamespace' importedNamespace=EString)?
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'importedNamespace'
+		public Keyword getImportedNamespaceKeyword_1_0() { return cImportedNamespaceKeyword_1_0; }
+		
+		//importedNamespace=EString
+		public Assignment getImportedNamespaceAssignment_1_1() { return cImportedNamespaceAssignment_1_1; }
+		
+		//EString
+		public RuleCall getImportedNamespaceEStringParserRuleCall_1_1_0() { return cImportedNamespaceEStringParserRuleCall_1_1_0; }
+		
+		//name=EString
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		
+		//EString
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
+		
+		//':'
+		public Keyword getColonKeyword_3() { return cColonKeyword_3; }
+		
+		//type=[CustomDataType]
+		public Assignment getTypeAssignment_4() { return cTypeAssignment_4; }
+		
+		//[CustomDataType]
+		public CrossReference getTypeCustomDataTypeCrossReference_4_0() { return cTypeCustomDataTypeCrossReference_4_0; }
+		
+		//ID
+		public RuleCall getTypeCustomDataTypeIDTerminalRuleCall_4_0_1() { return cTypeCustomDataTypeIDTerminalRuleCall_4_0_1; }
+	}
+	public class PrimitiveDataTypeAttribute_ImplElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.PrimitiveDataTypeAttribute_Impl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cPrimitiveDataTypeAttributeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cImportedNamespaceKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
@@ -3822,16 +4090,16 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypeAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cTypePrimitiveDataTypeEnumRuleCall_4_0 = (RuleCall)cTypeAssignment_4.eContents().get(0);
 		
-		//Attribute_Impl Attribute:
-		//	{Attribute} ('importedNamespace' importedNamespace=EString)?
+		//PrimitiveDataTypeAttribute_Impl Attribute:
+		//	{PrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
 		//	name=EString ':' type=PrimitiveDataType;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Attribute} ('importedNamespace' importedNamespace=EString)? name=EString ':' type=PrimitiveDataType
+		//{PrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)? name=EString ':' type=PrimitiveDataType
 		public Group getGroup() { return cGroup; }
 		
-		//{Attribute}
-		public Action getAttributeAction_0() { return cAttributeAction_0; }
+		//{PrimitiveDataTypeAttribute}
+		public Action getPrimitiveDataTypeAttributeAction_0() { return cPrimitiveDataTypeAttributeAction_0; }
 		
 		//('importedNamespace' importedNamespace=EString)?
 		public Group getGroup_1() { return cGroup_1; }
@@ -4068,13 +4336,11 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//	bool |
 		//	float |
 		//	blob |
-		//	//freetext = "freetext"|
 		//	date |
 		//	datetime;
 		public EnumRule getRule() { return rule; }
 		
-		//int | bigint | string | text | point | polygon | bool | float | blob | //freetext = "freetext"|
-		//date | datetime
+		//int | bigint | string | text | point | polygon | bool | float | blob | date | datetime
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//int
@@ -4131,7 +4397,6 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//"blob"
 		public Keyword getBlobBlobKeyword_8_0() { return cBlobBlobKeyword_8_0; }
 		
-		////freetext = "freetext"|
 		//date
 		public EnumLiteralDeclaration getDateEnumLiteralDeclaration_9() { return cDateEnumLiteralDeclaration_9; }
 		
@@ -4329,6 +4594,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final DropIndexTableElements pDropIndexTable;
 	private final AddIndexTableElements pAddIndexTable;
 	private final ChangeAttributeTypeElements pChangeAttributeType;
+	private final ChangePrimitiveDataTypeAttribute_ImplElements pChangePrimitiveDataTypeAttribute_Impl;
+	private final ChangeCustomDataTypeAttribute_ImplElements pChangeCustomDataTypeAttribute_Impl;
 	private final MigrateEntityElements pMigrateEntity;
 	private final SplitEntityVerticalElements pSplitEntityVertical;
 	private final SplitEntityHorizontalElements pSplitEntityHorizontal;
@@ -4375,11 +4642,14 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	private final GraphEdge_ImplElements pGraphEdge_Impl;
 	private final GraphEdgeLabelElements pGraphEdgeLabel;
 	private final AddAttributeElements pAddAttribute;
+	private final AddPrimitiveDataTypeAttribute_ImplElements pAddPrimitiveDataTypeAttribute_Impl;
+	private final AddCustomDataTypeAttribute_ImplElements pAddCustomDataTypeAttribute_Impl;
 	private final AddGraphEdgeElements pAddGraphEdge;
 	private final GraphAttribute_ImplElements pGraphAttribute_Impl;
 	private final AddGraphAttributeElements pAddGraphAttribute;
 	private final AddEntityElements pAddEntity;
-	private final Attribute_ImplElements pAttribute_Impl;
+	private final CustomDataTypeAttribute_ImplElements pCustomDataTypeAttribute_Impl;
+	private final PrimitiveDataTypeAttribute_ImplElements pPrimitiveDataTypeAttribute_Impl;
 	private final AddRelationElements pAddRelation;
 	
 	private final Grammar grammar;
@@ -4401,6 +4671,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDropIndexTable = new DropIndexTableElements();
 		this.pAddIndexTable = new AddIndexTableElements();
 		this.pChangeAttributeType = new ChangeAttributeTypeElements();
+		this.pChangePrimitiveDataTypeAttribute_Impl = new ChangePrimitiveDataTypeAttribute_ImplElements();
+		this.pChangeCustomDataTypeAttribute_Impl = new ChangeCustomDataTypeAttribute_ImplElements();
 		this.pMigrateEntity = new MigrateEntityElements();
 		this.pSplitEntityVertical = new SplitEntityVerticalElements();
 		this.pSplitEntityHorizontal = new SplitEntityHorizontalElements();
@@ -4447,11 +4719,14 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		this.pGraphEdge_Impl = new GraphEdge_ImplElements();
 		this.pGraphEdgeLabel = new GraphEdgeLabelElements();
 		this.pAddAttribute = new AddAttributeElements();
+		this.pAddPrimitiveDataTypeAttribute_Impl = new AddPrimitiveDataTypeAttribute_ImplElements();
+		this.pAddCustomDataTypeAttribute_Impl = new AddCustomDataTypeAttribute_ImplElements();
 		this.pAddGraphEdge = new AddGraphEdgeElements();
 		this.pGraphAttribute_Impl = new GraphAttribute_ImplElements();
 		this.pAddGraphAttribute = new AddGraphAttributeElements();
 		this.pAddEntity = new AddEntityElements();
-		this.pAttribute_Impl = new Attribute_ImplElements();
+		this.pCustomDataTypeAttribute_Impl = new CustomDataTypeAttribute_ImplElements();
+		this.pPrimitiveDataTypeAttribute_Impl = new PrimitiveDataTypeAttribute_ImplElements();
 		this.pAddRelation = new AddRelationElements();
 	}
 	
@@ -4591,14 +4866,38 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAddIndexTableAccess().getRule();
 	}
 	
-	//ChangeAttributeType:
-	//	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
+	////ChangeAttributeType returns ChangeAttributeType:
+	////	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
+	// ChangeAttributeType:
+	//	ChangeCustomDataTypeAttribute_Impl | ChangePrimitiveDataTypeAttribute_Impl;
 	public ChangeAttributeTypeElements getChangeAttributeTypeAccess() {
 		return pChangeAttributeType;
 	}
 	
 	public ParserRule getChangeAttributeTypeRule() {
 		return getChangeAttributeTypeAccess().getRule();
+	}
+	
+	//ChangePrimitiveDataTypeAttribute_Impl ChangePrimitiveDataTypeAttribute:
+	//	{ChangePrimitiveDataTypeAttribute} 'change' 'attribute' attributeToChange=[Attribute|EString] 'type'
+	//	newType=PrimitiveDataType;
+	public ChangePrimitiveDataTypeAttribute_ImplElements getChangePrimitiveDataTypeAttribute_ImplAccess() {
+		return pChangePrimitiveDataTypeAttribute_Impl;
+	}
+	
+	public ParserRule getChangePrimitiveDataTypeAttribute_ImplRule() {
+		return getChangePrimitiveDataTypeAttribute_ImplAccess().getRule();
+	}
+	
+	//ChangeCustomDataTypeAttribute_Impl ChangeCustomDataTypeAttribute:
+	//	{ChangeCustomDataTypeAttribute}
+	//	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[CustomDataType|EString];
+	public ChangeCustomDataTypeAttribute_ImplElements getChangeCustomDataTypeAttribute_ImplAccess() {
+		return pChangeCustomDataTypeAttribute_Impl;
+	}
+	
+	public ParserRule getChangeCustomDataTypeAttribute_ImplRule() {
+		return getChangeCustomDataTypeAttribute_ImplAccess().getRule();
 	}
 	
 	//MigrateEntity:
@@ -4726,7 +5025,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Attribute:
-	//	Attribute_Impl;
+	//	CustomDataTypeAttribute_Impl | PrimitiveDataTypeAttribute_Impl;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}
@@ -4810,7 +5109,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//FreeText:
 	//	{FreeText}
-	//	'freetext' name=EString '[' (tasks+=NlpTask ("," tasks+=NlpTask)* ']')?;
+	//	'freetext' name=EString '[' 'NLP' '[' workflowName=EString ']' ',' tasks=NlpTask ']';
 	public FreeTextElements getFreeTextAccess() {
 		return pFreeText;
 	}
@@ -4820,7 +5119,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NlpTask:
-	//	type=NlpTaskType;
+	//	type=NlpTaskType
+	//	parameters+=EString?;
 	public NlpTaskElements getNlpTaskAccess() {
 		return pNlpTask;
 	}
@@ -4831,7 +5131,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//CustomDataType:
 	//	{CustomDataType} ('importedNamespace' importedNamespace=EString)?
-	//	'customdatatype' name=EString '{' ('elements' '{' elements+=DataTypeItem ("," elements+=DataTypeItem)* '}')?
+	//	'customdatatype' name=EString '{' ('elements' '{' elements+=DataTypeItem (',' elements+=DataTypeItem)* '}')?
 	//	'}';
 	public CustomDataTypeElements getCustomDataTypeAccess() {
 		return pCustomDataType;
@@ -4910,7 +5210,6 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	bool |
 	//	float |
 	//	blob |
-	//	//freetext = "freetext"|
 	//	date |
 	//	datetime;
 	public PrimitiveDataTypeElements getPrimitiveDataTypeAccess() {
@@ -5136,16 +5435,44 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getGraphEdgeLabelAccess().getRule();
 	}
 	
+	////AddAttribute returns AddAttribute:
+	////	{AddAttribute}
+	////	('importedNamespace' importedNamespace=EString)?
+	////	'add' 'attribute'
+	////	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
+	////	;
 	//AddAttribute:
-	//	{AddAttribute} ('importedNamespace' importedNamespace=EString)?
-	//	'add' 'attribute'
-	//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString];
+	//	AddCustomDataTypeAttribute_Impl | AddPrimitiveDataTypeAttribute_Impl;
 	public AddAttributeElements getAddAttributeAccess() {
 		return pAddAttribute;
 	}
 	
 	public ParserRule getAddAttributeRule() {
 		return getAddAttributeAccess().getRule();
+	}
+	
+	//AddPrimitiveDataTypeAttribute_Impl AddPrimitiveDataTypeAttribute:
+	//	{AddPrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
+	//	'add' 'attribute'
+	//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString];
+	public AddPrimitiveDataTypeAttribute_ImplElements getAddPrimitiveDataTypeAttribute_ImplAccess() {
+		return pAddPrimitiveDataTypeAttribute_Impl;
+	}
+	
+	public ParserRule getAddPrimitiveDataTypeAttribute_ImplRule() {
+		return getAddPrimitiveDataTypeAttribute_ImplAccess().getRule();
+	}
+	
+	//AddCustomDataTypeAttribute_Impl AddCustomDataTypeAttribute:
+	//	{AddCustomDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
+	//	'add' 'attribute'
+	//	name=EString ':' type=[CustomDataType] 'to' ownerEntity=[Entity|EString];
+	public AddCustomDataTypeAttribute_ImplElements getAddCustomDataTypeAttribute_ImplAccess() {
+		return pAddCustomDataTypeAttribute_Impl;
+	}
+	
+	public ParserRule getAddCustomDataTypeAttribute_ImplRule() {
+		return getAddCustomDataTypeAttribute_ImplAccess().getRule();
 	}
 	
 	//AddGraphEdge:
@@ -5202,15 +5529,26 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getAddEntityAccess().getRule();
 	}
 	
-	//Attribute_Impl Attribute:
-	//	{Attribute} ('importedNamespace' importedNamespace=EString)?
-	//	name=EString ':' type=PrimitiveDataType;
-	public Attribute_ImplElements getAttribute_ImplAccess() {
-		return pAttribute_Impl;
+	//CustomDataTypeAttribute_Impl Attribute:
+	//	{CustomDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
+	//	name=EString ':' type=[CustomDataType];
+	public CustomDataTypeAttribute_ImplElements getCustomDataTypeAttribute_ImplAccess() {
+		return pCustomDataTypeAttribute_Impl;
 	}
 	
-	public ParserRule getAttribute_ImplRule() {
-		return getAttribute_ImplAccess().getRule();
+	public ParserRule getCustomDataTypeAttribute_ImplRule() {
+		return getCustomDataTypeAttribute_ImplAccess().getRule();
+	}
+	
+	//PrimitiveDataTypeAttribute_Impl Attribute:
+	//	{PrimitiveDataTypeAttribute} ('importedNamespace' importedNamespace=EString)?
+	//	name=EString ':' type=PrimitiveDataType;
+	public PrimitiveDataTypeAttribute_ImplElements getPrimitiveDataTypeAttribute_ImplAccess() {
+		return pPrimitiveDataTypeAttribute_Impl;
+	}
+	
+	public ParserRule getPrimitiveDataTypeAttribute_ImplRule() {
+		return getPrimitiveDataTypeAttribute_ImplAccess().getRule();
 	}
 	
 	//AddRelation:

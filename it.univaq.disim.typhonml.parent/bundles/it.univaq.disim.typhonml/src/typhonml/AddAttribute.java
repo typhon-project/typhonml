@@ -16,7 +16,7 @@ package typhonml;
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getAddAttribute()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface AddAttribute extends Attribute, ChangeOperator {

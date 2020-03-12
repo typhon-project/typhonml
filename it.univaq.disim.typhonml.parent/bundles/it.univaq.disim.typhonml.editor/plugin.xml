@@ -34,4 +34,31 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated typhonmlreq -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="typhonmlreq.presentation.TyphonmlreqModelWizardID"
+            name="%_UI_TyphonmlreqModelWizard_label"
+            class="typhonmlreq.presentation.TyphonmlreqModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TyphonmlreqModelFile.gif">
+         <description>%_UI_TyphonmlreqModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated typhonmlreq -->
+      <editor
+            id="typhonmlreq.presentation.TyphonmlreqEditorID"
+            name="%_UI_TyphonmlreqEditor_label"
+            icon="icons/full/obj16/TyphonmlreqModelFile.gif"
+            extensions="typhonmlreq"
+            class="typhonmlreq.presentation.TyphonmlreqEditor"
+            contributorClass="typhonmlreq.presentation.TyphonmlreqActionBarContributor">
+      </editor>
+   </extension>
 </plugin>

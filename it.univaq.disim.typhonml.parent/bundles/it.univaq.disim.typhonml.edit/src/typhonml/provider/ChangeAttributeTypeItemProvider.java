@@ -11,10 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import typhonml.ChangeAttributeType;
-import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -46,7 +42,6 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addAttributeToChangePropertyDescriptor(object);
-			addNewTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -74,28 +69,6 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 	}
 
 	/**
-	 * This adds a property descriptor for the New Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNewTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChangeAttributeType_newType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChangeAttributeType_newType_feature", "_UI_ChangeAttributeType_type"),
-				 TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE,
-				 true,
-				 false,
-				 true,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns ChangeAttributeType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,11 +87,7 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 	 */
 	@Override
 	public String getText(Object object) {
-		PrimitiveDataType labelValue = ((ChangeAttributeType)object).getNewType();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ChangeAttributeType_type") :
-			getString("_UI_ChangeAttributeType_type") + " " + label;
+		return getString("_UI_ChangeAttributeType_type");
 	}
 
 

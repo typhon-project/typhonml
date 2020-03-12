@@ -13,11 +13,10 @@ package typhonml;
  * </p>
  * <ul>
  *   <li>{@link typhonml.ChangeAttributeType#getAttributeToChange <em>Attribute To Change</em>}</li>
- *   <li>{@link typhonml.ChangeAttributeType#getNewType <em>New Type</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getChangeAttributeType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface ChangeAttributeType extends ChangeOperator {
@@ -46,34 +45,5 @@ public interface ChangeAttributeType extends ChangeOperator {
 	 * @generated
 	 */
 	void setAttributeToChange(Attribute value);
-
-	/**
-	 * Returns the value of the '<em><b>New Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link typhonml.PrimitiveDataType}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>New Type</em>' attribute.
-	 * @see typhonml.PrimitiveDataType
-	 * @see #setNewType(PrimitiveDataType)
-	 * @see typhonml.TyphonmlPackage#getChangeAttributeType_NewType()
-	 * @model required="true"
-	 * @generated
-	 */
-	PrimitiveDataType getNewType();
-
-	/**
-	 * Sets the value of the '{@link typhonml.ChangeAttributeType#getNewType <em>New Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>New Type</em>' attribute.
-	 * @see typhonml.PrimitiveDataType
-	 * @see #getNewType()
-	 * @generated
-	 */
-	void setNewType(PrimitiveDataType value);
 
 } // ChangeAttributeType

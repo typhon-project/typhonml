@@ -148,24 +148,6 @@ public interface TyphonmlFactory extends EFactory {
 	ChangeRelationCardinality createChangeRelationCardinality();
 
 	/**
-	 * Returns a new object of class '<em>Add Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Attribute</em>'.
-	 * @generated
-	 */
-	AddAttribute createAddAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Change Attribute Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Attribute Type</em>'.
-	 * @generated
-	 */
-	ChangeAttributeType createChangeAttributeType();
-
-	/**
 	 * Returns a new object of class '<em>Remove Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,15 +335,6 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	Entity createEntity();
-
-	/**
-	 * Returns a new object of class '<em>Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Attribute</em>'.
-	 * @generated
-	 */
-	Attribute createAttribute();
 
 	/**
 	 * Returns a new object of class '<em>Relation</em>'.
@@ -560,6 +533,60 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	NFunctionalTag createNFunctionalTag();
+
+	/**
+	 * Returns a new object of class '<em>Primitive Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Primitive Data Type Attribute</em>'.
+	 * @generated
+	 */
+	PrimitiveDataTypeAttribute createPrimitiveDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Custom Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Data Type Attribute</em>'.
+	 * @generated
+	 */
+	CustomDataTypeAttribute createCustomDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Add Custom Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Custom Data Type Attribute</em>'.
+	 * @generated
+	 */
+	AddCustomDataTypeAttribute createAddCustomDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Add Primitive Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Primitive Data Type Attribute</em>'.
+	 * @generated
+	 */
+	AddPrimitiveDataTypeAttribute createAddPrimitiveDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Change Primitive Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Primitive Data Type Attribute</em>'.
+	 * @generated
+	 */
+	ChangePrimitiveDataTypeAttribute createChangePrimitiveDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Change Custom Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Custom Data Type Attribute</em>'.
+	 * @generated
+	 */
+	ChangeCustomDataTypeAttribute createChangeCustomDataTypeAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

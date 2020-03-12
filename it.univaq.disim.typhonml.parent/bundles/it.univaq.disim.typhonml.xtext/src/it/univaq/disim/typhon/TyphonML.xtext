@@ -79,8 +79,23 @@ AddIndexTable returns AddIndex:
 ;
 
 
+//ChangeAttributeType returns ChangeAttributeType:
+//	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
+
 ChangeAttributeType returns ChangeAttributeType:
-	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
+	ChangeCustomDataTypeAttribute_Impl |
+	ChangePrimitiveDataTypeAttribute_Impl;
+
+ChangePrimitiveDataTypeAttribute_Impl returns ChangePrimitiveDataTypeAttribute:
+	{ChangePrimitiveDataTypeAttribute}
+	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType	
+;
+
+ChangeCustomDataTypeAttribute_Impl returns ChangeCustomDataTypeAttribute:
+	{ChangeCustomDataTypeAttribute}
+	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[CustomDataType|EString]
+;
+
 
 MigrateEntity returns MigrateEntity:
 	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
@@ -134,7 +149,8 @@ ChangeRelationCardinality returns ChangeRelationCardinality:
 
 
 Attribute returns Attribute:
-	Attribute_Impl;
+	CustomDataTypeAttribute_Impl |
+	PrimitiveDataTypeAttribute_Impl;
 
 Relation returns Relation:
 	Relation_Impl;
@@ -170,18 +186,19 @@ DataTypeImplementationPackage returns DataTypeImplementationPackage:
 
 FreeText returns FreeText:
 	{FreeText}
-	'freetext' name=EString '[' (tasks+=NlpTask ( "," tasks+=NlpTask)* ']' )?
+	'freetext' name=EString '[' 'NLP' '[' workflowName=EString']' ',' tasks=NlpTask ']'
 	;
 
 NlpTask:
 	type=NlpTaskType
+	(parameters+=EString)?
 	;
 
 CustomDataType returns CustomDataType:
 	{CustomDataType}
 	('importedNamespace' importedNamespace=EString)?
 	'customdatatype' name=EString '{'
-		('elements' '{' elements+=DataTypeItem ( "," elements+=DataTypeItem)* '}' )?
+		('elements' '{' elements+=DataTypeItem ( ',' elements+=DataTypeItem)* '}' )?
 	'}';
 
 Entity_Impl returns Entity:
@@ -223,7 +240,6 @@ enum PrimitiveDataType returns PrimitiveDataType:
 				bool = "bool"|
 				float = "float"|
 				blob = "blob"|
-				//freetext = "freetext"|
 				date = "date" |
 				datetime = "datetime";
 				
@@ -353,12 +369,31 @@ GraphEdgeLabel returns GraphEdgeLabel:
 	name=EString ':' type=[DataType|EString]
 	;
 	
+//AddAttribute returns AddAttribute:
+//	{AddAttribute}
+//	('importedNamespace' importedNamespace=EString)?
+//	'add' 'attribute'
+//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
+//	;
 AddAttribute returns AddAttribute:
-	{AddAttribute}
+	AddCustomDataTypeAttribute_Impl |
+	AddPrimitiveDataTypeAttribute_Impl;
+
+AddPrimitiveDataTypeAttribute_Impl returns AddPrimitiveDataTypeAttribute:
+	{AddPrimitiveDataTypeAttribute}
 	('importedNamespace' importedNamespace=EString)?
 	'add' 'attribute'
-	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
-	;
+	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]	
+;
+
+AddCustomDataTypeAttribute_Impl returns AddCustomDataTypeAttribute:
+	{AddCustomDataTypeAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	'add' 'attribute'
+	name=EString ':' type=[CustomDataType] 'to' ownerEntity=[Entity|EString]
+;
+
+
 
 AddGraphEdge returns AddGraphEdge:
 	{AddGraphEdge}
@@ -397,8 +432,15 @@ AddEntity returns AddEntity:
 			']')?
 	'}';
 
-Attribute_Impl returns Attribute:
-	{Attribute}
+CustomDataTypeAttribute_Impl returns Attribute:
+	{CustomDataTypeAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' type=[CustomDataType]
+	;
+	
+	
+PrimitiveDataTypeAttribute_Impl returns Attribute:
+	{PrimitiveDataTypeAttribute}
 	('importedNamespace' importedNamespace=EString)?
 	name=EString ':' type=PrimitiveDataType
 	;
