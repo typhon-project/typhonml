@@ -34,7 +34,6 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDataTypeAccess().getAlternatives(), "rule__DataType__Alternatives");
 			builder.put(grammarAccess.getEBooleanObjectAccess().getAlternatives(), "rule__EBooleanObject__Alternatives");
 			builder.put(grammarAccess.getEStringAccess().getAlternatives(), "rule__EString__Alternatives");
-			builder.put(grammarAccess.getEntityAccess().getAlternatives(), "rule__Entity__Alternatives");
 			builder.put(grammarAccess.getAttributeAccess().getAlternatives(), "rule__Attribute__Alternatives");
 			builder.put(grammarAccess.getEntityAttributeAccess().getAlternatives(), "rule__EntityAttribute__Alternatives");
 			builder.put(grammarAccess.getDatabaseAccess().getAlternatives(), "rule__Database__Alternatives");

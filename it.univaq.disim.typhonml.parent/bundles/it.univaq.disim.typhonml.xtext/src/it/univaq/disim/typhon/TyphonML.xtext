@@ -151,7 +151,12 @@ CustomDataTypeImplementationPackage returns CustomDataTypeImplementationPackage:
  *************************************************************************************/
  
 Entity returns Entity:
-	Entity_Impl | AddEntity;
+	/*
+	 * As a metamodel it would be correct, but I need to not add a new entity outside the changeoperators [] tag. 
+	 * If I leave it that way I get the "add" for adding a new entity out.
+	 */
+//	Entity_Impl | AddEntity; 
+	Entity_Impl;
 	
 	
 Entity_Impl returns Entity:

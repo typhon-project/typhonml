@@ -590,9 +590,9 @@ ruleEntity
 	}
 	:
 	(
-		{ before(grammarAccess.getEntityAccess().getAlternatives()); }
-		(rule__Entity__Alternatives)
-		{ after(grammarAccess.getEntityAccess().getAlternatives()); }
+		{ before(grammarAccess.getEntityAccess().getEntity_ImplParserRuleCall()); }
+		ruleEntity_Impl
+		{ after(grammarAccess.getEntityAccess().getEntity_ImplParserRuleCall()); }
 	)
 ;
 finally {
@@ -2329,27 +2329,6 @@ rule__EString__Alternatives
 		{ before(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
 		RULE_ID
 		{ after(grammarAccess.getEStringAccess().getIDTerminalRuleCall_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Entity__Alternatives
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getEntityAccess().getEntity_ImplParserRuleCall_0()); }
-		ruleEntity_Impl
-		{ after(grammarAccess.getEntityAccess().getEntity_ImplParserRuleCall_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getEntityAccess().getAddEntityParserRuleCall_1()); }
-		ruleAddEntity
-		{ after(grammarAccess.getEntityAccess().getAddEntityParserRuleCall_1()); }
 	)
 ;
 finally {

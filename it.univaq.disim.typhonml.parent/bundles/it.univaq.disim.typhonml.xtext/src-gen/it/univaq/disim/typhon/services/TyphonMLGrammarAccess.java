@@ -726,24 +726,20 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Entity");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cEntity_ImplParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAddEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEntity_ImplParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		///**************************************************************************************
 		// ************** ENTITY ****************************************************************
 		// *************************************************************************************/ Entity:
-		//	Entity_Impl | AddEntity;
+		//	Entity_Impl;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Entity_Impl | AddEntity
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
+		///*
+		//	 * As a metamodel it would be correct, but I need to not add a new entity outside the changeoperators [] tag. 
+		//	 * If I leave it that way I get the "add" for adding a new entity out.
+		//	 */ //	Entity_Impl | AddEntity; 
 		//Entity_Impl
-		public RuleCall getEntity_ImplParserRuleCall_0() { return cEntity_ImplParserRuleCall_0; }
-		
-		//AddEntity
-		public RuleCall getAddEntityParserRuleCall_1() { return cAddEntityParserRuleCall_1; }
+		public RuleCall getEntity_ImplParserRuleCall() { return cEntity_ImplParserRuleCall; }
 	}
 	public class Entity_ImplElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.Entity_Impl");
@@ -5842,7 +5838,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	///**************************************************************************************
 	// ************** ENTITY ****************************************************************
 	// *************************************************************************************/ Entity:
-	//	Entity_Impl | AddEntity;
+	//	Entity_Impl;
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}

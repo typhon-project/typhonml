@@ -387,7 +387,6 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Entity returns AddEntity
 	 *     ChangeOperator returns AddEntity
 	 *     AddEntity returns AddEntity
 	 *

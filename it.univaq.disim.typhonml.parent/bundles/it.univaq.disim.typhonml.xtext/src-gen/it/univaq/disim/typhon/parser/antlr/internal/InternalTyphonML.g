@@ -1224,25 +1224,14 @@ ruleEntity returns [EObject current=null]
 @after {
 	leaveRule();
 }:
-	(
-		{
-			newCompositeNode(grammarAccess.getEntityAccess().getEntity_ImplParserRuleCall_0());
-		}
-		this_Entity_Impl_0=ruleEntity_Impl
-		{
-			$current = $this_Entity_Impl_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getEntityAccess().getAddEntityParserRuleCall_1());
-		}
-		this_AddEntity_1=ruleAddEntity
-		{
-			$current = $this_AddEntity_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
+	{
+		newCompositeNode(grammarAccess.getEntityAccess().getEntity_ImplParserRuleCall());
+	}
+	this_Entity_Impl_0=ruleEntity_Impl
+	{
+		$current = $this_Entity_Impl_0.current;
+		afterParserOrEnumRuleCall();
+	}
 ;
 
 // Entry rule entryRuleEntity_Impl
