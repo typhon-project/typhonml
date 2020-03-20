@@ -15,9 +15,12 @@ class TyphonMLFormatter extends AbstractFormatter2 {
 
 	def dispatch void format(Model model, extension IFormattableDocument document) {
 		// TODO: format HiddenRegions around keywords, attributes, cross references, etc. 
-		for (dataType : model.dataTypes) {
+		for (dataType : model.customDataTypes) {
 			dataType.format
 		}
+//		for (dataType : model.dataTypes) {
+//			dataType.format
+//		}
 	}
 	
 	// TODO: implement for 
