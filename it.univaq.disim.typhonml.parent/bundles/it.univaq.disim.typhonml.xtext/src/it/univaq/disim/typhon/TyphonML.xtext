@@ -7,215 +7,218 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model returns Model:
 	{Model}
-		(dataTypes+=DataType)*
+		(entities+=Entity)*
+		(customDataTypes+=CustomDataType)*
 		(databases+=Database)*
 		('changeOperators' '['(changeOperators+=ChangeOperator)("," changeOperators+=ChangeOperator)*']')?
 		;  
 
+
+
+
+
+/**************************************************************************************
+ ************** DATA TYPE *************************************************************
+ *************************************************************************************/
+
 DataType returns DataType:
-	CustomDataType | Entity_Impl;
-
-ChangeOperator returns ChangeOperator:
-	AddEntity | 
-	RemoveEntity | 
-	RenameEntity |
-	MigrateEntity |
-	SplitEntityVertical |
-	SplitEntityHorizontal |
-	MergeEntity |
-	AddAttribute |
-	AddRelation | 
-	RenameAttribute | 
-	RenameRelation | 
-	RemoveAttribute | 
-	RemoveRelation | 
-	ChangeRelationContainement| 
-	ChangeRelationCardinality |
-	ChangeAttributeType |
-	AddIndexTable |
-	DropIndexTable |
-	RenameTable |
-	AddAttributesToIndex |
-	RemoveAttributesToIndex |
-	RenameCollection 
-//	AddCollectionIndex |
-//	DropCollectionIndex
-;
-
-//DropCollectionIndex returns DropCollectionIndex:;
-
-/* 
-AddCollectionIndex:
-	
-;
-*/
-
-RenameCollection returns RenameCollection:
-	'rename' 'collection' collectionToRename=[Collection|EString] 'as' newName=EString
-;
-
-AddAttributesToIndex returns AddAttributesToIndex:
-	'extends' 'tableindex' table=[Table|EString] '{'
-		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])?
-	'}';
-	
-RemoveAttributesToIndex returns RemoveAttributesToIndex:
-	'reduce' 'tableindex' table=[Table|EString] '{'
-		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])? 
-	'}';
-
-RenameTable returns RenameTable:
-	'rename' 'table' tableToRename=[Table|EString] 'as' newName=EString
+	IntType | 
+	BigintType | 
+	StringType | 
+	TextType | 
+	PointType | 
+	PolygonType | 
+	BoolType | 
+	FloatType | 
+	BlobType | 
+	FreetextType | 
+	DateType | 
+	DatetimeType | 
+	CustomDataType
 	;
 
-DropIndexTable returns DropIndex:
-	'drop' 'tableindex' table=[Table|EString]
-	;
-
-AddIndexTable returns AddIndex:
-	'create' 'tableindex' table=[Table|EString] '{'
-		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])?
-	'}'	
-;
-
-
-//ChangeAttributeType returns ChangeAttributeType:
-//	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType;
-
-ChangeAttributeType returns ChangeAttributeType:
-	ChangeCustomDataTypeAttribute_Impl |
-	ChangePrimitiveDataTypeAttribute_Impl;
-
-ChangePrimitiveDataTypeAttribute_Impl returns ChangePrimitiveDataTypeAttribute:
-	{ChangePrimitiveDataTypeAttribute}
-	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=PrimitiveDataType	('('maxSize=INT')')?
-;
-
-ChangeCustomDataTypeAttribute_Impl returns ChangeCustomDataTypeAttribute:
-	{ChangeCustomDataTypeAttribute}
-	'change' 'attribute' attributeToChange=[Attribute|EString] 'type' newType=[CustomDataType|EString]
-;
-
-
-MigrateEntity returns MigrateEntity:
-	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
-;
-
-SplitEntityVertical returns SplitEntityVertical:
-	'split' 'entity' 'vertical' entity1=[Entity|EString] 'to' entity2name=EString
-	'attributes:' '['
-		(attributeList+=[Attribute|EString] (',' attributeList+=[Attribute|EString])*)*	
-	']'
-;
-
-SplitEntityHorizontal returns SplitEntityHorizontal:
-	'split' 'entity' 'horizontal' entity1=[Entity|EString] 'to' entity2name=EString 'where'attribute=[Attribute|EString] 'value' expression=STRING
-;
-
-MergeEntity returns MergeEntity:
-	'merge' 'entities' firstEntityToMerge=[Entity|EString] secondEntityToMerge=[Entity|EString] 'as' newEntityName=EString
-;
-
-RenameAttribute returns RenameAttribute :
-	'rename' 'attribute' attributeToRename=[Attribute|EString] 'as' newName=EString  
-;
-
-RenameEntity returns RenameEntity :
-	'rename' 'entity' entityToRename=[Entity|EString] 'as' newEntityName=EString  
-;
-RenameRelation returns RenameRelation:
-	'rename' 'relation' relationToRename=[Relation|EString] 'as' newRelationName=EString
-;
-
-RemoveAttribute returns RemoveAttribute :
-	'remove' 'attribute' attributeToRemove=[Attribute|EString]  
-;
-
-RemoveEntity returns RemoveEntity :
-	'remove' 'entity' entityToRemove=[Entity|EString]  
-;
-
-RemoveRelation returns RemoveRelation:
-	'remove' 'relation' relationToRemove=[Relation|EString]
-;
-
-ChangeRelationContainement returns ChangeRelationContainement :
-	'change' 'containment' relation=[Relation|EString] 'as' newContainment=EBooleanObject 
-;
-
-ChangeRelationCardinality returns ChangeRelationCardinality:
-	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality
-;
-
-
-Attribute returns Attribute:
-	CustomDataTypeAttribute_Impl |
-	PrimitiveDataTypeAttribute_Impl;
-
-Relation returns Relation:
-	Relation_Impl;
-
-
-
-//Entity returns Entity:
-//	Entity_Impl | AddEntity;
-
-Database returns Database:
-	RelationalDB | DocumentDB | KeyValueDB | GraphDB | ColumnDB;
-
-GraphAttribute returns GraphAttribute:
-	GraphAttribute_Impl | AddGraphAttribute;
-
-GraphEdge returns GraphEdge:
-	GraphEdge_Impl | AddGraphEdge;
+	
+EBooleanObject returns ecore::EBooleanObject:
+	'true' | 'false';
 
 EString returns ecore::EString:
 	STRING | ID;
 
+EInt returns ecore::EInt:
+	INT;
+	
+	
 
-
-DataTypeItem returns DataTypeItem:
-	('importedNamespace' importedNamespace=EString)?
-	name=EString ':' type=[DataType|EString] '[' implementation=DataTypeImplementationPackage ']'
+IntType returns IntType:
+	{IntType}
+	'int'
 	;
 
-DataTypeImplementationPackage returns DataTypeImplementationPackage:
-	{DataTypeImplementationPackage}
-	location=EString
+BigintType returns BigintType:
+	{BigintType}
+	'bigint'
 	;
 
-FreeText returns FreeText:
-	{FreeText}
-	'freetext' name=EString '[' 'NLP' '[' workflowName=EString']' ',' tasks=NlpTask ']'
+StringType returns StringType:
+	{StringType}
+	'string' ('(' maxSize=EInt ')')?
 	;
+
+TextType returns TextType:
+	{TextType}
+	'text'
+	;
+
+PointType returns PointType:
+	{PointType}
+	'point'
+	;
+
+PolygonType returns PolygonType:
+	{PolygonType}
+	'polygon'
+	;
+
+BoolType returns BoolType:
+	{BoolType}
+	'bool'
+	;
+
+FloatType returns FloatType:
+	{FloatType}
+	'float'
+	;
+
+BlobType returns BlobType:
+	{BlobType}
+	'blob'
+	;
+
+FreetextType returns FreetextType:
+	'freetext' '['workflowName=EString ',' tasks=NlpTask ']'
+	;
+
+DateType returns DateType:
+	{DateType}
+	'date'
+	;
+
+DatetimeType returns DatetimeType:
+	{DatetimeType}
+	'datetime'
+	;
+
+
 
 NlpTask:
 	type=NlpTaskType
 	(parameters+=EString)?
 	;
 
+
+
+
+
 CustomDataType returns CustomDataType:
 	{CustomDataType}
 	('importedNamespace' importedNamespace=EString)?
 	'customdatatype' name=EString '{'
-		('elements' '{' elements+=DataTypeItem ( ',' elements+=DataTypeItem)* '}' )?
+		('elements' '{' elements+=CustomDataTypeItem ( ',' elements+=CustomDataTypeItem)* '}' )?
 	'}';
+	
+CustomDataTypeItem returns CustomDataTypeItem:
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' (type=[DataType|EString]) '[' implementation=CustomDataTypeImplementationPackage']'
+	;
 
+CustomDataTypeImplementationPackage returns CustomDataTypeImplementationPackage:
+	{CustomDataTypeImplementationPackage}
+	location=EString
+	;
+	
+
+
+
+	
+	
+	
+	
+	
+	
+
+/**************************************************************************************
+ ************** ENTITY ****************************************************************
+ *************************************************************************************/
+ 
+Entity returns Entity:
+	Entity_Impl | AddEntity;
+	
+	
 Entity_Impl returns Entity:
 	('@functionalTags' '('(functionalTags+=FunctionalTag_Impl (',' functionalTags+=FunctionalTag_Impl)*)?')')?
 	('@nFunctionalTags' '('(nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)?')')?
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
-		(attributes+=Attribute (attributes+=Attribute)*)?
-		(fretextAttributes+=FreeText (fretextAttributes+=FreeText)*)?
+		(attributes+=EntityAttribute (attributes+=EntityAttribute)*)?
 		(relations+=Relation (relations+=Relation)*)?
 	'}';
+
+
 FunctionalTag_Impl returns FunctionalTag:
 	name=EString
 ;	
 NFunctionalTag_Impl returns NFunctionalTag:
 	name=EString
 ;
+	
+
+
+
+Attribute returns Attribute:
+	Attribute_Impl | AddCustomDataTypeAttribute;
+
+EntityAttribute returns EntityAttribute:
+	Attribute_Impl | CustomAttribute | AddCustomDataTypeAttribute;
+	
+	
+Attribute_Impl returns Attribute:
+	{Attribute}
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' (type=DataType)
+	;
+
+CustomAttribute returns CustomAttribute:
+	{CustomAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' (type=[CustomDataType|EString])
+	;
+
+//AddAttribute returns AddAttribute:
+//	{AddAttribute}
+//	('importedNamespace' importedNamespace=EString)?
+//	'add' 'attribute'
+//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
+//	;
+
+/* 
+AddAttribute returns AddAttribute:
+	AddCustomDataTypeAttribute_Impl |
+	AddPrimitiveDataTypeAttribute_Impl;
+
+AddPrimitiveDataTypeAttribute_Impl returns AddPrimitiveDataTypeAttribute:
+	{AddPrimitiveDataTypeAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	'add' 'attribute'
+	name=EString ':' type=PrimitiveDataType ('('maxSize=INT')')? 'to' ownerEntity=[Entity|EString]	
+;
+*/
+
+
+
+Relation returns Relation:
+	Relation_Impl;
+
+
 Relation_Impl returns Relation:
 	('importedNamespace' importedNamespace=EString)?
 	name=EString
@@ -227,46 +230,28 @@ Relation_Impl returns Relation:
 	;
 
 
-enum Cardinality returns Cardinality:
-				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
-				
-enum PrimitiveDataType returns PrimitiveDataType:
-				int = 'int' | 
-				bigint = 'bigint' | 
-				string = 'string' | 
-				text = 'text'|
-				point = "point" |
-				polygon = "polygon"|
-				bool = "bool"|
-				float = "float"|
-				blob = "blob"|
-				date = "date" |
-				datetime = "datetime";
-				
-				
-enum NlpTaskType returns NlpTaskType:
-		ParagraphSegmentation = 'ParagraphSegmentation' |
-		SentenceSegmentation = 'SentenceSegmentation' |
-		Tokenisation = 'Tokenisation' |
-		PhraseExtractor = 'PhraseExtractor' |
-		NGramExtractor = 'NGramExtractor' |
-		POSTagging = 'POSTagging' |
-		Lemmatisation = 'Lemmatisation' |
-		Stemming = 'Stemming' |
-		DependencyParsing = 'DependencyParsing' |
-		Chunking = 'Chunking' |
-		SentimentAnalysis = 'SentimentAnalysis' |
-		TextClassification = 'TextClassification' |
-		TopicModelling = 'TopicModelling' |
-		TermExtraction = 'TermExtraction' |
-		NamedEntityRecognition = 'NamedEntityRecognition' |
-		RelationExtraction = 'RelationExtraction' |
-		EventExtraction = 'EventExtraction' |
-		CoreferenceResolution = 'CoreferenceResolution'	
-;
 
-EBooleanObject returns ecore::EBooleanObject:
-	'true' | 'false';
+
+
+	
+	
+	
+	
+	
+	
+/**************************************************************************************
+ ************** DATABASE **************************************************************
+ *************************************************************************************/
+
+Database returns Database:
+	RelationalDB | DocumentDB | KeyValueDB | GraphDB | ColumnDB;
+
+GraphAttribute returns GraphAttribute:
+	GraphAttribute_Impl | AddGraphAttribute;
+
+GraphEdge returns GraphEdge:
+	GraphEdge_Impl | AddGraphEdge;
+
 
 Table returns Table:
 	('importedNamespace' importedNamespace=EString)?
@@ -369,41 +354,6 @@ GraphEdgeLabel returns GraphEdgeLabel:
 	name=EString ':' type=[DataType|EString]
 	;
 	
-//AddAttribute returns AddAttribute:
-//	{AddAttribute}
-//	('importedNamespace' importedNamespace=EString)?
-//	'add' 'attribute'
-//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
-//	;
-AddAttribute returns AddAttribute:
-	AddCustomDataTypeAttribute_Impl |
-	AddPrimitiveDataTypeAttribute_Impl;
-
-AddPrimitiveDataTypeAttribute_Impl returns AddPrimitiveDataTypeAttribute:
-	{AddPrimitiveDataTypeAttribute}
-	('importedNamespace' importedNamespace=EString)?
-	'add' 'attribute'
-	name=EString ':' type=PrimitiveDataType ('('maxSize=INT')')? 'to' ownerEntity=[Entity|EString]	
-;
-
-AddCustomDataTypeAttribute_Impl returns AddCustomDataTypeAttribute:
-	{AddCustomDataTypeAttribute}
-	('importedNamespace' importedNamespace=EString)?
-	'add' 'attribute'
-	name=EString ':' type=[CustomDataType] 'to' ownerEntity=[Entity|EString]
-;
-
-
-
-AddGraphEdge returns AddGraphEdge:
-	{AddGraphEdge}
-	('importedNamespace' importedNamespace=EString)?
-	'AddGraphEdge'
-	name=EString '{'
-		('from' from=[GraphNode|EString])?
-		('to' to=[GraphNode|EString])?
-		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
-	'}';
 
 GraphAttribute_Impl returns GraphAttribute:
 	{GraphAttribute}
@@ -411,13 +361,83 @@ GraphAttribute_Impl returns GraphAttribute:
 	name=EString '=' value=[Attribute|EString]?
 	;
 
-AddGraphAttribute returns AddGraphAttribute:
-	{AddGraphAttribute}
-	('importedNamespace' importedNamespace=EString)?
-	'AddGraphAttribute'
-	name=EString '{'
-		('value' value=[Attribute|EString])?
+
+
+
+	
+	
+/**************************************************************************************
+ ************** CHANGE OPERATORS*******************************************************
+ *************************************************************************************/
+
+ChangeOperator returns ChangeOperator:
+	AddEntity | 
+	RenameEntity | 
+	RemoveEntity | 
+	RemoveAttribute | 
+	RenameAttribute | 
+	ChangeRelationContainement | 
+	AddRelation | 
+	RemoveRelation | 
+	RenameRelation | 
+	EnableRelationContainment | 
+	DisableRelationContainment | 
+	EnableBidirectionalRelation | 
+	DisableBidirectionalRelation | 
+	ChangeRelationCardinality | 
+	SplitEntity | 
+	SplitEntityVertical | 
+	SplitEntityHorizontal | 
+	MigrateEntity | 
+	MergeEntity | 
+	RenameTable | 
+	AddIndex | 
+	DropIndex | 
+	AddAttributesToIndex | 
+	RemoveAttributesToIndex | 
+	RenameCollection | 
+	AddCollectionIndex | 
+	DropCollectionIndex | 
+	AddGraphAttribute | 
+	RemoveGraphAttribute | 
+	AddGraphEdge | 
+	RemoveGraphEdge | 
+	RenabeGraphEdgeLabel | 
+	AddCustomDataTypeAttribute | 
+	ChangePrimitiveDataTypeAttribute | 
+	ChangeCustomDataTypeAttribute
+	;
+
+
+AddCustomDataTypeAttribute returns AddCustomDataTypeAttribute:
+	'AddCustomDataTypeAttribute'
+	name=EString
+	'{'
+		('importedNamespace' importedNamespace=EString)?
+		'ownerEntity' ownerEntity=[Entity|EString]
+		'type' type=CustomDataType
 	'}';
+
+ChangePrimitiveDataTypeAttribute returns ChangePrimitiveDataTypeAttribute:
+	'ChangePrimitiveDataTypeAttribute'
+	'{'
+		('maxSize' maxSize=EInt)?
+		'attributeToChange' attributeToChange=[Attribute|EString]
+	'}';
+
+ChangeCustomDataTypeAttribute returns ChangeCustomDataTypeAttribute:
+	'ChangeCustomDataTypeAttribute'
+	'{'
+		'attributeToChange' attributeToChange=[Attribute|EString]
+		'newType' newType=[CustomDataType|EString]
+	'}';
+
+
+
+
+
+
+
 
 AddEntity returns AddEntity:
 	('importedNamespace' importedNamespace=EString)?
@@ -425,25 +445,55 @@ AddEntity returns AddEntity:
 	name=EString
 	'{'
 		('attributes' '[' 
-			(attributes+=AddAttribute ( ',' attributes+=AddAttribute)*)*
+			(attributes+=Attribute ( ',' attributes+=Attribute)*)*
 			']')?
 		('relations' '[' 
 			(relations+=AddRelation (',' relations+=AddRelation)*)*
 			']')?
 	'}';
+	
+RenameEntity returns RenameEntity :
+	'rename' 'entity' entityToRename=[Entity|EString] 'as' newEntityName=EString  
+;
 
-CustomDataTypeAttribute_Impl returns Attribute:
-	{CustomDataTypeAttribute}
-	('importedNamespace' importedNamespace=EString)?
-	name=EString ':' type=[CustomDataType]
-	;
+RemoveEntity returns RemoveEntity :
+	'remove' 'entity' entityToRemove=[Entity|EString]  
+;
+
+SplitEntity returns SplitEntity:
+	'SplitEntity'
+	'{'
+		'entityToBeSplit' entityToBeSplit=[Entity|EString]
+		'firstNewEntity' firstNewEntity=Entity
+		'secondNewEntity' secondNewEntity=Entity
+	'}';
 	
-	
-PrimitiveDataTypeAttribute_Impl returns Attribute:
-	{PrimitiveDataTypeAttribute}
-	('importedNamespace' importedNamespace=EString)?
-	name=EString ':' type=PrimitiveDataType ('('maxSize=INT')')?
-	;
+MigrateEntity returns MigrateEntity:
+	'migrate' entity=[Entity|EString] 'to' newDatabase=[Database|EString]
+;
+
+SplitEntityVertical returns SplitEntityVertical:
+	'split' 'entity' 'vertical' entity1=[Entity|EString] 'to' entity2name=EString
+	'attributes:' '['
+		(attributeList+=[Attribute|EString] (',' attributeList+=[Attribute|EString])*)*	
+	']'
+;
+
+SplitEntityHorizontal returns SplitEntityHorizontal:
+	'split' 'entity' 'horizontal' entity1=[Entity|EString] 'to' entity2name=EString 'where'attribute=[Attribute|EString] 'value' expression=STRING
+;
+
+MergeEntity returns MergeEntity:
+	'merge' 'entities' firstEntityToMerge=[Entity|EString] secondEntityToMerge=[Entity|EString] 'as' newEntityName=EString
+;
+
+RenameAttribute returns RenameAttribute :
+	'rename' 'attribute' attributeToRename=[Attribute|EString] 'as' newName=EString  
+;
+
+RemoveAttribute returns RemoveAttribute :
+	'remove' 'attribute' attributeToRemove=[Attribute|EString]  
+;
 
 AddRelation returns AddRelation:
 	('importedNamespace' importedNamespace=EString)?
@@ -455,3 +505,183 @@ AddRelation returns AddRelation:
 	('.' opposite=[Relation|EString])?
 	('[' cardinality=Cardinality ']')?		
 	;
+	
+RenameRelation returns RenameRelation:
+	'rename' 'relation' relationToRename=[Relation|EString] 'as' newRelationName=EString
+;
+
+
+RemoveRelation returns RemoveRelation:
+	'remove' 'relation' relationToRemove=[Relation|EString]
+;
+
+ChangeRelationContainement returns ChangeRelationContainement :
+	'change' 'containment' relation=[Relation|EString] 'as' newContainment=EBooleanObject 
+;
+
+ChangeRelationCardinality returns ChangeRelationCardinality:
+	'change' 'cardinality' relation=[Relation|EString] 'as' newCardinality=Cardinality
+;
+
+EnableRelationContainment returns EnableRelationContainment:
+	'EnableRelationContainment'
+	'{'
+		'relation' relation=[Relation|EString]
+	'}';
+
+DisableRelationContainment returns DisableRelationContainment:
+	'DisableRelationContainment'
+	'{'
+		'relation' relation=[Relation|EString]
+	'}';
+
+EnableBidirectionalRelation returns EnableBidirectionalRelation:
+	'EnableBidirectionalRelation'
+	'{'
+		'relation' relation=[Relation|EString]
+	'}';
+
+DisableBidirectionalRelation returns DisableBidirectionalRelation:
+	'DisableBidirectionalRelation'
+	'{'
+		'relation' relation=[Relation|EString]
+	'}';
+
+
+
+
+
+
+AddAttributesToIndex returns AddAttributesToIndex:
+	'extends' 'tableindex' table=[Table|EString] '{'
+		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])?
+	'}';
+	
+RemoveAttributesToIndex returns RemoveAttributesToIndex:
+	'reduce' 'tableindex' table=[Table|EString] '{'
+		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])? 
+	'}';
+
+RenameTable returns RenameTable:
+	'rename' 'table' tableToRename=[Table|EString] 'as' newName=EString
+	;
+
+DropIndexTable returns DropIndex:
+	'drop' 'tableindex' table=[Table|EString]
+	;
+
+AddIndexTable returns AddIndex:
+	'create' 'tableindex' table=[Table|EString] '{'
+		attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])?
+	'}'	
+;
+
+AddIndex returns AddIndex:
+	'AddIndex'
+	'{'
+		'table' table=[Table|EString]
+		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	'}';
+
+DropIndex returns DropIndex:
+	'DropIndex'
+	'{'
+		'table' table=[Table|EString]
+	'}';
+
+
+
+
+
+AddGraphAttribute returns AddGraphAttribute:
+	{AddGraphAttribute}
+	('importedNamespace' importedNamespace=EString)?
+	'AddGraphAttribute'
+	name=EString '{'
+		('value' value=[Attribute|EString])?
+	'}';
+
+AddGraphEdge returns AddGraphEdge:
+	{AddGraphEdge}
+	('importedNamespace' importedNamespace=EString)?
+	'AddGraphEdge'
+	name=EString '{'
+		('from' from=[GraphNode|EString])?
+		('to' to=[GraphNode|EString])?
+		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+	'}';
+	
+RemoveGraphAttribute returns RemoveGraphAttribute:
+	'RemoveGraphAttribute'
+	'{'
+		'node' node=[GraphNode|EString]
+	'}';
+
+RemoveGraphEdge returns RemoveGraphEdge:
+	'RemoveGraphEdge'
+	'{'
+		'graphEdgeToRemove' graphEdgeToRemove=[GraphEdge|EString]
+	'}';
+
+RenabeGraphEdgeLabel returns RenabeGraphEdgeLabel:
+	'RenabeGraphEdgeLabel'
+	'{'
+		('newName' newName=EString)?
+		'edge' edge=[GraphEdge|EString]
+	'}';
+
+
+
+
+AddCollectionIndex returns AddCollectionIndex:
+	'AddCollectionIndex'
+	'{'
+		'collection' collection=[Collection|EString]
+		('attributes' '(' attributes+=[Attribute|EString] ( "," attributes+=[Attribute|EString])* ')' )?
+	'}';
+
+DropCollectionIndex returns DropCollectionIndex:
+	'DropCollectionIndex'
+	'{'
+		'collection' collection=[Collection|EString]
+	'}';
+
+RenameCollection returns RenameCollection:
+	'rename' 'collection' collectionToRename=[Collection|EString] 'as' newName=EString
+;
+
+
+
+
+
+
+/**************************************************************************************
+ ************** ENUMERATIONS **********************************************************
+ *************************************************************************************/
+
+enum Cardinality returns Cardinality:
+				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
+				
+				
+				
+enum NlpTaskType returns NlpTaskType:
+		ParagraphSegmentation = 'ParagraphSegmentation' |
+		SentenceSegmentation = 'SentenceSegmentation' |
+		Tokenisation = 'Tokenisation' |
+		PhraseExtractor = 'PhraseExtractor' |
+		NGramExtractor = 'NGramExtractor' |
+		POSTagging = 'POSTagging' |
+		Lemmatisation = 'Lemmatisation' |
+		Stemming = 'Stemming' |
+		DependencyParsing = 'DependencyParsing' |
+		Chunking = 'Chunking' |
+		SentimentAnalysis = 'SentimentAnalysis' |
+		TextClassification = 'TextClassification' |
+		TopicModelling = 'TopicModelling' |
+		TermExtraction = 'TermExtraction' |
+		NamedEntityRecognition = 'NamedEntityRecognition' |
+		RelationExtraction = 'RelationExtraction' |
+		EventExtraction = 'EventExtraction' |
+		CoreferenceResolution = 'CoreferenceResolution'	
+;
+
