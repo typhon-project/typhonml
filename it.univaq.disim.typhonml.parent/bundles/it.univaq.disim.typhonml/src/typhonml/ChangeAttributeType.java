@@ -23,10 +23,6 @@ public interface ChangeAttributeType extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Attribute To Change</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attribute To Change</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attribute To Change</em>' reference.
 	 * @see #setAttributeToChange(Attribute)

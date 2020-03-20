@@ -26,10 +26,6 @@ public interface KeyValueElement extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Key</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Key</em>' attribute.
 	 * @see #setKey(String)
@@ -53,10 +49,6 @@ public interface KeyValueElement extends NamedElement {
 	 * Returns the value of the '<em><b>Values</b></em>' reference list.
 	 * The list contents are of type {@link typhonml.Attribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Values</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Values</em>' reference list.
 	 * @see typhonml.TyphonmlPackage#getKeyValueElement_Values()
@@ -68,10 +60,6 @@ public interface KeyValueElement extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity</em>' reference.
 	 * @see #setEntity(Entity)

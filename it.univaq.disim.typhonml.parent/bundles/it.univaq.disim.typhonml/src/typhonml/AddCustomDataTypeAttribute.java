@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface AddCustomDataTypeAttribute extends AddAttribute, CustomDataTypeAttribute {
+public interface AddCustomDataTypeAttribute extends AddAttribute {
 } // AddCustomDataTypeAttribute

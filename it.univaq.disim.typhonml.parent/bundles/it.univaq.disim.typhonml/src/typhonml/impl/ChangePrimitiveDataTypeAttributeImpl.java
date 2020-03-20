@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import typhonml.ChangePrimitiveDataTypeAttribute;
-import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -21,7 +20,6 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.ChangePrimitiveDataTypeAttributeImpl#getMaxSize <em>Max Size</em>}</li>
- *   <li>{@link typhonml.impl.ChangePrimitiveDataTypeAttributeImpl#getNewType <em>New Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,26 +44,6 @@ public class ChangePrimitiveDataTypeAttributeImpl extends ChangeAttributeTypeImp
 	 * @ordered
 	 */
 	protected int maxSize = MAX_SIZE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getNewType() <em>New Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNewType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final PrimitiveDataType NEW_TYPE_EDEFAULT = PrimitiveDataType.BIGINT;
-
-	/**
-	 * The cached value of the '{@link #getNewType() <em>New Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNewType()
-	 * @generated
-	 * @ordered
-	 */
-	protected PrimitiveDataType newType = NEW_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,35 +93,10 @@ public class ChangePrimitiveDataTypeAttributeImpl extends ChangeAttributeTypeImp
 	 * @generated
 	 */
 	@Override
-	public PrimitiveDataType getNewType() {
-		return newType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setNewType(PrimitiveDataType newNewType) {
-		PrimitiveDataType oldNewType = newType;
-		newType = newNewType == null ? NEW_TYPE_EDEFAULT : newNewType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE, oldNewType, newType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
 				return getMaxSize();
-			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE:
-				return getNewType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,9 +111,6 @@ public class ChangePrimitiveDataTypeAttributeImpl extends ChangeAttributeTypeImp
 		switch (featureID) {
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
 				setMaxSize((Integer)newValue);
-				return;
-			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE:
-				setNewType((PrimitiveDataType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -177,9 +127,6 @@ public class ChangePrimitiveDataTypeAttributeImpl extends ChangeAttributeTypeImp
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
 				setMaxSize(MAX_SIZE_EDEFAULT);
 				return;
-			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE:
-				setNewType(NEW_TYPE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -194,8 +141,6 @@ public class ChangePrimitiveDataTypeAttributeImpl extends ChangeAttributeTypeImp
 		switch (featureID) {
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
 				return maxSize != MAX_SIZE_EDEFAULT;
-			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE:
-				return newType != NEW_TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -212,8 +157,6 @@ public class ChangePrimitiveDataTypeAttributeImpl extends ChangeAttributeTypeImp
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (maxSize: ");
 		result.append(maxSize);
-		result.append(", newType: ");
-		result.append(newType);
 		result.append(')');
 		return result.toString();
 	}

@@ -46,7 +46,6 @@ public class ChangePrimitiveDataTypeAttributeItemProvider extends ChangeAttribut
 			super.getPropertyDescriptors(object);
 
 			addMaxSizePropertyDescriptor(object);
-			addNewTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,28 +68,6 @@ public class ChangePrimitiveDataTypeAttributeItemProvider extends ChangeAttribut
 				 false,
 				 false,
 				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the New Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNewTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChangePrimitiveDataTypeAttribute_newType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChangePrimitiveDataTypeAttribute_newType_feature", "_UI_ChangePrimitiveDataTypeAttribute_type"),
-				 TyphonmlPackage.Literals.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -132,7 +109,6 @@ public class ChangePrimitiveDataTypeAttributeItemProvider extends ChangeAttribut
 
 		switch (notification.getFeatureID(ChangePrimitiveDataTypeAttribute.class)) {
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE:
-			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

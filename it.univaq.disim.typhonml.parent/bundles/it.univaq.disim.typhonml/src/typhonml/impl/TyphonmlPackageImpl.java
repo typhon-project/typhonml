@@ -19,9 +19,11 @@ import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
 import typhonml.AddIndex;
-import typhonml.AddPrimitiveDataTypeAttribute;
 import typhonml.AddRelation;
 import typhonml.Attribute;
+import typhonml.BigintType;
+import typhonml.BlobType;
+import typhonml.BoolType;
 import typhonml.Cardinality;
 import typhonml.ChangeAttributeType;
 import typhonml.ChangeCustomDataTypeAttribute;
@@ -32,12 +34,14 @@ import typhonml.ChangeRelationContainement;
 import typhonml.Collection;
 import typhonml.Column;
 import typhonml.ColumnDB;
+import typhonml.CustomAttribute;
 import typhonml.CustomDataType;
-import typhonml.CustomDataTypeAttribute;
+import typhonml.CustomDataTypeImplementationPackage;
+import typhonml.CustomDataTypeItem;
 import typhonml.DataType;
-import typhonml.DataTypeImplementationPackage;
-import typhonml.DataTypeItem;
 import typhonml.Database;
+import typhonml.DateType;
+import typhonml.DatetimeType;
 import typhonml.DisableBidirectionalRelation;
 import typhonml.DisableRelationContainment;
 import typhonml.DocumentDB;
@@ -46,7 +50,9 @@ import typhonml.DropIndex;
 import typhonml.EnableBidirectionalRelation;
 import typhonml.EnableRelationContainment;
 import typhonml.Entity;
-import typhonml.FreeText;
+import typhonml.EntityAttribute;
+import typhonml.FloatType;
+import typhonml.FreetextType;
 import typhonml.FunctionalTag;
 import typhonml.GraphAttribute;
 import typhonml.GraphDB;
@@ -55,6 +61,7 @@ import typhonml.GraphEdgeLabel;
 import typhonml.GraphNode;
 import typhonml.IdSpec;
 import typhonml.IndexSpec;
+import typhonml.IntType;
 import typhonml.KeyValueDB;
 import typhonml.KeyValueElement;
 import typhonml.MergeEntity;
@@ -64,8 +71,9 @@ import typhonml.NFunctionalTag;
 import typhonml.NamedElement;
 import typhonml.NlpTask;
 import typhonml.NlpTaskType;
+import typhonml.PointType;
+import typhonml.PolygonType;
 import typhonml.PrimitiveDataType;
-import typhonml.PrimitiveDataTypeAttribute;
 import typhonml.Relation;
 import typhonml.RelationalDB;
 import typhonml.RemoveAttribute;
@@ -83,7 +91,9 @@ import typhonml.RenameTable;
 import typhonml.SplitEntity;
 import typhonml.SplitEntityHorizontal;
 import typhonml.SplitEntityVertical;
+import typhonml.StringType;
 import typhonml.Table;
+import typhonml.TextType;
 import typhonml.TyphonmlFactory;
 import typhonml.TyphonmlPackage;
 
@@ -113,230 +123,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass changeOperatorEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass splitEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass migrateEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mergeEntityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addRelationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeRelationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass renameRelationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass enableRelationContainmentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass disableRelationContainmentEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass enableBidirectionalRelationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass disableBidirectionalRelationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass changeRelationCardinalityEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addAttributeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass changeAttributeTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeAttributeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass renameAttributeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass renameTableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addIndexEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dropIndexEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addAttributesToIndexEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeAttributesToIndexEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass renameCollectionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addCollectionIndexEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dropCollectionIndexEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addGraphAttributeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeGraphAttributeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addGraphEdgeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass removeGraphEdgeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass renabeGraphEdgeLabelEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass databaseEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass dataTypeEClass = null;
 
 	/**
@@ -344,21 +130,77 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass customDataTypeEClass = null;
+	private EClass primitiveDataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataTypeItemEClass = null;
+	private EClass intTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass freeTextEClass = null;
+	private EClass bigintTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stringTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass textTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pointTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass polygonTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass boolTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass floatTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass blobTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass freetextTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -372,7 +214,49 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass dataTypeImplementationPackageEClass = null;
+	private EClass dateTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass datetimeTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customDataTypeItemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass customDataTypeImplementationPackageEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass functionalTagEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass nFunctionalTagEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -386,6 +270,13 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass entityAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass attributeEClass = null;
 
 	/**
@@ -393,7 +284,21 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass customAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass relationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass databaseEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -505,6 +410,20 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass changeOperatorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addEntityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass renameEntityEClass = null;
 
 	/**
@@ -512,7 +431,105 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass removeEntityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass changeAttributeTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass removeAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass renameAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass changeRelationContainementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addRelationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass removeRelationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass renameRelationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enableRelationContainmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass disableRelationContainmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass enableBidirectionalRelationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass disableBidirectionalRelationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass changeRelationCardinalityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass splitEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -533,28 +550,105 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass functionalTagEClass = null;
+	private EClass migrateEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass nFunctionalTagEClass = null;
+	private EClass mergeEntityEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass primitiveDataTypeAttributeEClass = null;
+	private EClass renameTableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass customDataTypeAttributeEClass = null;
+	private EClass addIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dropIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addAttributesToIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass removeAttributesToIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass renameCollectionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addCollectionIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass dropCollectionIndexEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addGraphAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass removeGraphAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addGraphEdgeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass removeGraphEdgeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass renabeGraphEdgeLabelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -562,13 +656,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass addCustomDataTypeAttributeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass addPrimitiveDataTypeAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -589,13 +676,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum cardinalityEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum nlpTaskTypeEEnum = null;
 
 	/**
@@ -603,7 +683,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum primitiveDataTypeEEnum = null;
+	private EEnum cardinalityEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -682,7 +762,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Databases() {
+	public EReference getModel_Entities() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -692,7 +772,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_DataTypes() {
+	public EReference getModel_Databases() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -702,8 +782,18 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_ChangeOperators() {
+	public EReference getModel_CustomDataTypes() {
 		return (EReference)modelEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getModel_ChangeOperators() {
+		return (EReference)modelEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -742,746 +832,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getChangeOperator() {
-		return changeOperatorEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddEntity() {
-		return addEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRemoveEntity() {
-		return removeEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveEntity_EntityToRemove() {
-		return (EReference)removeEntityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSplitEntity() {
-		return splitEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSplitEntity_EntityToBeSplit() {
-		return (EReference)splitEntityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSplitEntity_FirstNewEntity() {
-		return (EReference)splitEntityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSplitEntity_SecondNewEntity() {
-		return (EReference)splitEntityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMigrateEntity() {
-		return migrateEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMigrateEntity_Entity() {
-		return (EReference)migrateEntityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMigrateEntity_NewDatabase() {
-		return (EReference)migrateEntityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getMergeEntity() {
-		return mergeEntityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMergeEntity_FirstEntityToMerge() {
-		return (EReference)mergeEntityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getMergeEntity_SecondEntityToMerge() {
-		return (EReference)mergeEntityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getMergeEntity_NewEntityName() {
-		return (EAttribute)mergeEntityEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddRelation() {
-		return addRelationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddRelation_OwnerEntity() {
-		return (EReference)addRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRemoveRelation() {
-		return removeRelationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveRelation_RelationToRemove() {
-		return (EReference)removeRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRenameRelation() {
-		return renameRelationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRenameRelation_RelationToRename() {
-		return (EReference)renameRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRenameRelation_NewRelationName() {
-		return (EAttribute)renameRelationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getEnableRelationContainment() {
-		return enableRelationContainmentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEnableRelationContainment_Relation() {
-		return (EReference)enableRelationContainmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDisableRelationContainment() {
-		return disableRelationContainmentEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDisableRelationContainment_Relation() {
-		return (EReference)disableRelationContainmentEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getEnableBidirectionalRelation() {
-		return enableBidirectionalRelationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getEnableBidirectionalRelation_Relation() {
-		return (EReference)enableBidirectionalRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDisableBidirectionalRelation() {
-		return disableBidirectionalRelationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDisableBidirectionalRelation_Relation() {
-		return (EReference)disableBidirectionalRelationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getChangeRelationCardinality() {
-		return changeRelationCardinalityEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getChangeRelationCardinality_Relation() {
-		return (EReference)changeRelationCardinalityEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getChangeRelationCardinality_NewCardinality() {
-		return (EAttribute)changeRelationCardinalityEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddAttribute() {
-		return addAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddAttribute_OwnerEntity() {
-		return (EReference)addAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getChangeAttributeType() {
-		return changeAttributeTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getChangeAttributeType_AttributeToChange() {
-		return (EReference)changeAttributeTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRemoveAttribute() {
-		return removeAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveAttribute_AttributeToRemove() {
-		return (EReference)removeAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRenameAttribute() {
-		return renameAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRenameAttribute_AttributeToRename() {
-		return (EReference)renameAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRenameAttribute_NewName() {
-		return (EAttribute)renameAttributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRenameTable() {
-		return renameTableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRenameTable_TableToRename() {
-		return (EReference)renameTableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRenameTable_NewName() {
-		return (EAttribute)renameTableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddIndex() {
-		return addIndexEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddIndex_Table() {
-		return (EReference)addIndexEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddIndex_Attributes() {
-		return (EReference)addIndexEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDropIndex() {
-		return dropIndexEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDropIndex_Table() {
-		return (EReference)dropIndexEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddAttributesToIndex() {
-		return addAttributesToIndexEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddAttributesToIndex_Table() {
-		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddAttributesToIndex_Attributes() {
-		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRemoveAttributesToIndex() {
-		return removeAttributesToIndexEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveAttributesToIndex_Table() {
-		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveAttributesToIndex_Attributes() {
-		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRenameCollection() {
-		return renameCollectionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRenameCollection_CollectionToRename() {
-		return (EReference)renameCollectionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRenameCollection_NewName() {
-		return (EAttribute)renameCollectionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddCollectionIndex() {
-		return addCollectionIndexEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddCollectionIndex_Collection() {
-		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAddCollectionIndex_Attributes() {
-		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDropCollectionIndex() {
-		return dropCollectionIndexEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getDropCollectionIndex_Collection() {
-		return (EReference)dropCollectionIndexEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddGraphAttribute() {
-		return addGraphAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRemoveGraphAttribute() {
-		return removeGraphAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveGraphAttribute_Node() {
-		return (EReference)removeGraphAttributeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddGraphEdge() {
-		return addGraphEdgeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRemoveGraphEdge() {
-		return removeGraphEdgeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRemoveGraphEdge_GraphEdgeToRemove() {
-		return (EReference)removeGraphEdgeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getRenabeGraphEdgeLabel() {
-		return renabeGraphEdgeLabelEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRenabeGraphEdgeLabel_Edge() {
-		return (EReference)renabeGraphEdgeLabelEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getRenabeGraphEdgeLabel_NewName() {
-		return (EAttribute)renabeGraphEdgeLabelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getDatabase() {
-		return databaseEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getDataType() {
 		return dataTypeEClass;
 	}
@@ -1492,8 +842,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getPrimitiveDataType() {
-		return primitiveDataTypeEEnum;
+	public EClass getPrimitiveDataType() {
+		return primitiveDataTypeEClass;
 	}
 
 	/**
@@ -1502,8 +852,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getCustomDataType() {
-		return customDataTypeEClass;
+	public EClass getIntType() {
+		return intTypeEClass;
 	}
 
 	/**
@@ -1512,8 +862,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCustomDataType_Elements() {
-		return (EReference)customDataTypeEClass.getEStructuralFeatures().get(0);
+	public EClass getBigintType() {
+		return bigintTypeEClass;
 	}
 
 	/**
@@ -1522,8 +872,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getDataTypeItem() {
-		return dataTypeItemEClass;
+	public EClass getStringType() {
+		return stringTypeEClass;
 	}
 
 	/**
@@ -1532,8 +882,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getDataTypeItem_Type() {
-		return (EReference)dataTypeItemEClass.getEStructuralFeatures().get(0);
+	public EAttribute getStringType_MaxSize() {
+		return (EAttribute)stringTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1542,8 +892,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getDataTypeItem_Implementation() {
-		return (EReference)dataTypeItemEClass.getEStructuralFeatures().get(1);
+	public EClass getTextType() {
+		return textTypeEClass;
 	}
 
 	/**
@@ -1552,8 +902,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getFreeText() {
-		return freeTextEClass;
+	public EClass getPointType() {
+		return pointTypeEClass;
 	}
 
 	/**
@@ -1562,8 +912,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getFreeText_Tasks() {
-		return (EReference)freeTextEClass.getEStructuralFeatures().get(0);
+	public EClass getPolygonType() {
+		return polygonTypeEClass;
 	}
 
 	/**
@@ -1572,8 +922,58 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFreeText_WorkflowName() {
-		return (EAttribute)freeTextEClass.getEStructuralFeatures().get(1);
+	public EClass getBoolType() {
+		return boolTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFloatType() {
+		return floatTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getBlobType() {
+		return blobTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFreetextType() {
+		return freetextTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getFreetextType_Tasks() {
+		return (EReference)freetextTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getFreetextType_WorkflowName() {
+		return (EAttribute)freetextTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1612,8 +1012,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getDataTypeImplementationPackage() {
-		return dataTypeImplementationPackageEClass;
+	public EClass getDateType() {
+		return dateTypeEClass;
 	}
 
 	/**
@@ -1622,8 +1022,98 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getDataTypeImplementationPackage_Location() {
-		return (EAttribute)dataTypeImplementationPackageEClass.getEStructuralFeatures().get(0);
+	public EClass getDatetimeType() {
+		return datetimeTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCustomDataType() {
+		return customDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCustomDataType_Elements() {
+		return (EReference)customDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCustomDataTypeItem() {
+		return customDataTypeItemEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCustomDataTypeItem_Type() {
+		return (EReference)customDataTypeItemEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCustomDataTypeItem_Implementation() {
+		return (EReference)customDataTypeItemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCustomDataTypeImplementationPackage() {
+		return customDataTypeImplementationPackageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getCustomDataTypeImplementationPackage_Location() {
+		return (EAttribute)customDataTypeImplementationPackageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getFunctionalTag() {
+		return functionalTagEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getNFunctionalTag() {
+		return nFunctionalTagEClass;
 	}
 
 	/**
@@ -1652,7 +1142,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_FretextAttributes() {
+	public EReference getEntity_Relations() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -1662,7 +1152,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_Relations() {
+	public EReference getEntity_FunctionalTags() {
 		return (EReference)entityEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -1672,18 +1162,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getEntity_FunctionalTags() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getEntity_NfunctionalTags() {
-		return (EReference)entityEClass.getEStructuralFeatures().get(4);
+		return (EReference)entityEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1742,8 +1222,48 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getEntityAttribute() {
+		return entityAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getAttribute() {
 		return attributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAttribute_Type() {
+		return (EReference)attributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getCustomAttribute() {
+		return customAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCustomAttribute_Type() {
+		return (EReference)customAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1794,6 +1314,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	@Override
 	public EAttribute getRelation_IsContainment() {
 		return (EAttribute)relationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDatabase() {
+		return databaseEClass;
 	}
 
 	/**
@@ -2232,6 +1762,26 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getChangeOperator() {
+		return changeOperatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddEntity() {
+		return addEntityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getRenameEntity() {
 		return renameEntityEClass;
 	}
@@ -2262,6 +1812,116 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getRemoveEntity() {
+		return removeEntityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveEntity_EntityToRemove() {
+		return (EReference)removeEntityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddAttribute() {
+		return addAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddAttribute_OwnerEntity() {
+		return (EReference)addAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getChangeAttributeType() {
+		return changeAttributeTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getChangeAttributeType_AttributeToChange() {
+		return (EReference)changeAttributeTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRemoveAttribute() {
+		return removeAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveAttribute_AttributeToRemove() {
+		return (EReference)removeAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRenameAttribute() {
+		return renameAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRenameAttribute_AttributeToRename() {
+		return (EReference)renameAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRenameAttribute_NewName() {
+		return (EAttribute)renameAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getChangeRelationContainement() {
 		return changeRelationContainementEClass;
 	}
@@ -2284,6 +1944,226 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	@Override
 	public EAttribute getChangeRelationContainement_NewContainment() {
 		return (EAttribute)changeRelationContainementEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddRelation() {
+		return addRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddRelation_OwnerEntity() {
+		return (EReference)addRelationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRemoveRelation() {
+		return removeRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveRelation_RelationToRemove() {
+		return (EReference)removeRelationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRenameRelation() {
+		return renameRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRenameRelation_RelationToRename() {
+		return (EReference)renameRelationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRenameRelation_NewRelationName() {
+		return (EAttribute)renameRelationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEnableRelationContainment() {
+		return enableRelationContainmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEnableRelationContainment_Relation() {
+		return (EReference)enableRelationContainmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDisableRelationContainment() {
+		return disableRelationContainmentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDisableRelationContainment_Relation() {
+		return (EReference)disableRelationContainmentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEnableBidirectionalRelation() {
+		return enableBidirectionalRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEnableBidirectionalRelation_Relation() {
+		return (EReference)enableBidirectionalRelationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDisableBidirectionalRelation() {
+		return disableBidirectionalRelationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDisableBidirectionalRelation_Relation() {
+		return (EReference)disableBidirectionalRelationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getChangeRelationCardinality() {
+		return changeRelationCardinalityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getChangeRelationCardinality_Relation() {
+		return (EReference)changeRelationCardinalityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getChangeRelationCardinality_NewCardinality() {
+		return (EAttribute)changeRelationCardinalityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSplitEntity() {
+		return splitEntityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntity_EntityToBeSplit() {
+		return (EReference)splitEntityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntity_FirstNewEntity() {
+		return (EReference)splitEntityEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSplitEntity_SecondNewEntity() {
+		return (EReference)splitEntityEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -2392,8 +2272,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getFunctionalTag() {
-		return functionalTagEClass;
+	public EClass getMigrateEntity() {
+		return migrateEntityEClass;
 	}
 
 	/**
@@ -2402,8 +2282,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getNFunctionalTag() {
-		return nFunctionalTagEClass;
+	public EReference getMigrateEntity_Entity() {
+		return (EReference)migrateEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2412,8 +2292,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getPrimitiveDataTypeAttribute() {
-		return primitiveDataTypeAttributeEClass;
+	public EReference getMigrateEntity_NewDatabase() {
+		return (EReference)migrateEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2422,8 +2302,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPrimitiveDataTypeAttribute_Type() {
-		return (EAttribute)primitiveDataTypeAttributeEClass.getEStructuralFeatures().get(0);
+	public EClass getMergeEntity() {
+		return mergeEntityEClass;
 	}
 
 	/**
@@ -2432,8 +2312,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPrimitiveDataTypeAttribute_MaxSize() {
-		return (EAttribute)primitiveDataTypeAttributeEClass.getEStructuralFeatures().get(1);
+	public EReference getMergeEntity_FirstEntityToMerge() {
+		return (EReference)mergeEntityEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -2442,8 +2322,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getCustomDataTypeAttribute() {
-		return customDataTypeAttributeEClass;
+	public EReference getMergeEntity_SecondEntityToMerge() {
+		return (EReference)mergeEntityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2452,8 +2332,318 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCustomDataTypeAttribute_Type() {
-		return (EReference)customDataTypeAttributeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getMergeEntity_NewEntityName() {
+		return (EAttribute)mergeEntityEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRenameTable() {
+		return renameTableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRenameTable_TableToRename() {
+		return (EReference)renameTableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRenameTable_NewName() {
+		return (EAttribute)renameTableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddIndex() {
+		return addIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddIndex_Table() {
+		return (EReference)addIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddIndex_Attributes() {
+		return (EReference)addIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDropIndex() {
+		return dropIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDropIndex_Table() {
+		return (EReference)dropIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddAttributesToIndex() {
+		return addAttributesToIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddAttributesToIndex_Table() {
+		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddAttributesToIndex_Attributes() {
+		return (EReference)addAttributesToIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRemoveAttributesToIndex() {
+		return removeAttributesToIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveAttributesToIndex_Table() {
+		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveAttributesToIndex_Attributes() {
+		return (EReference)removeAttributesToIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRenameCollection() {
+		return renameCollectionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRenameCollection_CollectionToRename() {
+		return (EReference)renameCollectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRenameCollection_NewName() {
+		return (EAttribute)renameCollectionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddCollectionIndex() {
+		return addCollectionIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddCollectionIndex_Collection() {
+		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddCollectionIndex_Attributes() {
+		return (EReference)addCollectionIndexEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getDropCollectionIndex() {
+		return dropCollectionIndexEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getDropCollectionIndex_Collection() {
+		return (EReference)dropCollectionIndexEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddGraphAttribute() {
+		return addGraphAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRemoveGraphAttribute() {
+		return removeGraphAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveGraphAttribute_Node() {
+		return (EReference)removeGraphAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddGraphEdge() {
+		return addGraphEdgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRemoveGraphEdge() {
+		return removeGraphEdgeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRemoveGraphEdge_GraphEdgeToRemove() {
+		return (EReference)removeGraphEdgeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRenabeGraphEdgeLabel() {
+		return renabeGraphEdgeLabelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getRenabeGraphEdgeLabel_Edge() {
+		return (EReference)renabeGraphEdgeLabelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getRenabeGraphEdgeLabel_NewName() {
+		return (EAttribute)renabeGraphEdgeLabelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2464,16 +2654,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	@Override
 	public EClass getAddCustomDataTypeAttribute() {
 		return addCustomDataTypeAttributeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getAddPrimitiveDataTypeAttribute() {
-		return addPrimitiveDataTypeAttributeEClass;
 	}
 
 	/**
@@ -2502,16 +2682,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getChangePrimitiveDataTypeAttribute_NewType() {
-		return (EAttribute)changePrimitiveDataTypeAttributeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getChangeCustomDataTypeAttribute() {
 		return changeCustomDataTypeAttributeEClass;
 	}
@@ -2532,8 +2702,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getCardinality() {
-		return cardinalityEEnum;
+	public EEnum getNlpTaskType() {
+		return nlpTaskTypeEEnum;
 	}
 
 	/**
@@ -2542,8 +2712,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getNlpTaskType() {
-		return nlpTaskTypeEEnum;
+	public EEnum getCardinality() {
+		return cardinalityEEnum;
 	}
 
 	/**
@@ -2576,143 +2746,66 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		// Create classes and their features
 		modelEClass = createEClass(MODEL);
+		createEReference(modelEClass, MODEL__ENTITIES);
 		createEReference(modelEClass, MODEL__DATABASES);
-		createEReference(modelEClass, MODEL__DATA_TYPES);
+		createEReference(modelEClass, MODEL__CUSTOM_DATA_TYPES);
 		createEReference(modelEClass, MODEL__CHANGE_OPERATORS);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__IMPORTED_NAMESPACE);
 
-		changeOperatorEClass = createEClass(CHANGE_OPERATOR);
-
-		addEntityEClass = createEClass(ADD_ENTITY);
-
-		removeEntityEClass = createEClass(REMOVE_ENTITY);
-		createEReference(removeEntityEClass, REMOVE_ENTITY__ENTITY_TO_REMOVE);
-
-		splitEntityEClass = createEClass(SPLIT_ENTITY);
-		createEReference(splitEntityEClass, SPLIT_ENTITY__ENTITY_TO_BE_SPLIT);
-		createEReference(splitEntityEClass, SPLIT_ENTITY__FIRST_NEW_ENTITY);
-		createEReference(splitEntityEClass, SPLIT_ENTITY__SECOND_NEW_ENTITY);
-
-		migrateEntityEClass = createEClass(MIGRATE_ENTITY);
-		createEReference(migrateEntityEClass, MIGRATE_ENTITY__ENTITY);
-		createEReference(migrateEntityEClass, MIGRATE_ENTITY__NEW_DATABASE);
-
-		mergeEntityEClass = createEClass(MERGE_ENTITY);
-		createEReference(mergeEntityEClass, MERGE_ENTITY__FIRST_ENTITY_TO_MERGE);
-		createEReference(mergeEntityEClass, MERGE_ENTITY__SECOND_ENTITY_TO_MERGE);
-		createEAttribute(mergeEntityEClass, MERGE_ENTITY__NEW_ENTITY_NAME);
-
-		addRelationEClass = createEClass(ADD_RELATION);
-		createEReference(addRelationEClass, ADD_RELATION__OWNER_ENTITY);
-
-		removeRelationEClass = createEClass(REMOVE_RELATION);
-		createEReference(removeRelationEClass, REMOVE_RELATION__RELATION_TO_REMOVE);
-
-		renameRelationEClass = createEClass(RENAME_RELATION);
-		createEReference(renameRelationEClass, RENAME_RELATION__RELATION_TO_RENAME);
-		createEAttribute(renameRelationEClass, RENAME_RELATION__NEW_RELATION_NAME);
-
-		enableRelationContainmentEClass = createEClass(ENABLE_RELATION_CONTAINMENT);
-		createEReference(enableRelationContainmentEClass, ENABLE_RELATION_CONTAINMENT__RELATION);
-
-		disableRelationContainmentEClass = createEClass(DISABLE_RELATION_CONTAINMENT);
-		createEReference(disableRelationContainmentEClass, DISABLE_RELATION_CONTAINMENT__RELATION);
-
-		enableBidirectionalRelationEClass = createEClass(ENABLE_BIDIRECTIONAL_RELATION);
-		createEReference(enableBidirectionalRelationEClass, ENABLE_BIDIRECTIONAL_RELATION__RELATION);
-
-		disableBidirectionalRelationEClass = createEClass(DISABLE_BIDIRECTIONAL_RELATION);
-		createEReference(disableBidirectionalRelationEClass, DISABLE_BIDIRECTIONAL_RELATION__RELATION);
-
-		changeRelationCardinalityEClass = createEClass(CHANGE_RELATION_CARDINALITY);
-		createEReference(changeRelationCardinalityEClass, CHANGE_RELATION_CARDINALITY__RELATION);
-		createEAttribute(changeRelationCardinalityEClass, CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY);
-
-		addAttributeEClass = createEClass(ADD_ATTRIBUTE);
-		createEReference(addAttributeEClass, ADD_ATTRIBUTE__OWNER_ENTITY);
-
-		changeAttributeTypeEClass = createEClass(CHANGE_ATTRIBUTE_TYPE);
-		createEReference(changeAttributeTypeEClass, CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE);
-
-		removeAttributeEClass = createEClass(REMOVE_ATTRIBUTE);
-		createEReference(removeAttributeEClass, REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE);
-
-		renameAttributeEClass = createEClass(RENAME_ATTRIBUTE);
-		createEReference(renameAttributeEClass, RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME);
-		createEAttribute(renameAttributeEClass, RENAME_ATTRIBUTE__NEW_NAME);
-
-		renameTableEClass = createEClass(RENAME_TABLE);
-		createEReference(renameTableEClass, RENAME_TABLE__TABLE_TO_RENAME);
-		createEAttribute(renameTableEClass, RENAME_TABLE__NEW_NAME);
-
-		addIndexEClass = createEClass(ADD_INDEX);
-		createEReference(addIndexEClass, ADD_INDEX__TABLE);
-		createEReference(addIndexEClass, ADD_INDEX__ATTRIBUTES);
-
-		dropIndexEClass = createEClass(DROP_INDEX);
-		createEReference(dropIndexEClass, DROP_INDEX__TABLE);
-
-		addAttributesToIndexEClass = createEClass(ADD_ATTRIBUTES_TO_INDEX);
-		createEReference(addAttributesToIndexEClass, ADD_ATTRIBUTES_TO_INDEX__TABLE);
-		createEReference(addAttributesToIndexEClass, ADD_ATTRIBUTES_TO_INDEX__ATTRIBUTES);
-
-		removeAttributesToIndexEClass = createEClass(REMOVE_ATTRIBUTES_TO_INDEX);
-		createEReference(removeAttributesToIndexEClass, REMOVE_ATTRIBUTES_TO_INDEX__TABLE);
-		createEReference(removeAttributesToIndexEClass, REMOVE_ATTRIBUTES_TO_INDEX__ATTRIBUTES);
-
-		renameCollectionEClass = createEClass(RENAME_COLLECTION);
-		createEReference(renameCollectionEClass, RENAME_COLLECTION__COLLECTION_TO_RENAME);
-		createEAttribute(renameCollectionEClass, RENAME_COLLECTION__NEW_NAME);
-
-		addCollectionIndexEClass = createEClass(ADD_COLLECTION_INDEX);
-		createEReference(addCollectionIndexEClass, ADD_COLLECTION_INDEX__COLLECTION);
-		createEReference(addCollectionIndexEClass, ADD_COLLECTION_INDEX__ATTRIBUTES);
-
-		dropCollectionIndexEClass = createEClass(DROP_COLLECTION_INDEX);
-		createEReference(dropCollectionIndexEClass, DROP_COLLECTION_INDEX__COLLECTION);
-
-		addGraphAttributeEClass = createEClass(ADD_GRAPH_ATTRIBUTE);
-
-		removeGraphAttributeEClass = createEClass(REMOVE_GRAPH_ATTRIBUTE);
-		createEReference(removeGraphAttributeEClass, REMOVE_GRAPH_ATTRIBUTE__NODE);
-
-		addGraphEdgeEClass = createEClass(ADD_GRAPH_EDGE);
-
-		removeGraphEdgeEClass = createEClass(REMOVE_GRAPH_EDGE);
-		createEReference(removeGraphEdgeEClass, REMOVE_GRAPH_EDGE__GRAPH_EDGE_TO_REMOVE);
-
-		renabeGraphEdgeLabelEClass = createEClass(RENABE_GRAPH_EDGE_LABEL);
-		createEReference(renabeGraphEdgeLabelEClass, RENABE_GRAPH_EDGE_LABEL__EDGE);
-		createEAttribute(renabeGraphEdgeLabelEClass, RENABE_GRAPH_EDGE_LABEL__NEW_NAME);
-
-		databaseEClass = createEClass(DATABASE);
-
 		dataTypeEClass = createEClass(DATA_TYPE);
 
-		customDataTypeEClass = createEClass(CUSTOM_DATA_TYPE);
-		createEReference(customDataTypeEClass, CUSTOM_DATA_TYPE__ELEMENTS);
+		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
 
-		dataTypeItemEClass = createEClass(DATA_TYPE_ITEM);
-		createEReference(dataTypeItemEClass, DATA_TYPE_ITEM__TYPE);
-		createEReference(dataTypeItemEClass, DATA_TYPE_ITEM__IMPLEMENTATION);
+		intTypeEClass = createEClass(INT_TYPE);
 
-		freeTextEClass = createEClass(FREE_TEXT);
-		createEReference(freeTextEClass, FREE_TEXT__TASKS);
-		createEAttribute(freeTextEClass, FREE_TEXT__WORKFLOW_NAME);
+		bigintTypeEClass = createEClass(BIGINT_TYPE);
+
+		stringTypeEClass = createEClass(STRING_TYPE);
+		createEAttribute(stringTypeEClass, STRING_TYPE__MAX_SIZE);
+
+		textTypeEClass = createEClass(TEXT_TYPE);
+
+		pointTypeEClass = createEClass(POINT_TYPE);
+
+		polygonTypeEClass = createEClass(POLYGON_TYPE);
+
+		boolTypeEClass = createEClass(BOOL_TYPE);
+
+		floatTypeEClass = createEClass(FLOAT_TYPE);
+
+		blobTypeEClass = createEClass(BLOB_TYPE);
+
+		freetextTypeEClass = createEClass(FREETEXT_TYPE);
+		createEReference(freetextTypeEClass, FREETEXT_TYPE__TASKS);
+		createEAttribute(freetextTypeEClass, FREETEXT_TYPE__WORKFLOW_NAME);
 
 		nlpTaskEClass = createEClass(NLP_TASK);
 		createEAttribute(nlpTaskEClass, NLP_TASK__TYPE);
 		createEAttribute(nlpTaskEClass, NLP_TASK__PARAMETERS);
 
-		dataTypeImplementationPackageEClass = createEClass(DATA_TYPE_IMPLEMENTATION_PACKAGE);
-		createEAttribute(dataTypeImplementationPackageEClass, DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION);
+		dateTypeEClass = createEClass(DATE_TYPE);
+
+		datetimeTypeEClass = createEClass(DATETIME_TYPE);
+
+		customDataTypeEClass = createEClass(CUSTOM_DATA_TYPE);
+		createEReference(customDataTypeEClass, CUSTOM_DATA_TYPE__ELEMENTS);
+
+		customDataTypeItemEClass = createEClass(CUSTOM_DATA_TYPE_ITEM);
+		createEReference(customDataTypeItemEClass, CUSTOM_DATA_TYPE_ITEM__TYPE);
+		createEReference(customDataTypeItemEClass, CUSTOM_DATA_TYPE_ITEM__IMPLEMENTATION);
+
+		customDataTypeImplementationPackageEClass = createEClass(CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE);
+		createEAttribute(customDataTypeImplementationPackageEClass, CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION);
+
+		functionalTagEClass = createEClass(FUNCTIONAL_TAG);
+
+		nFunctionalTagEClass = createEClass(NFUNCTIONAL_TAG);
 
 		entityEClass = createEClass(ENTITY);
 		createEReference(entityEClass, ENTITY__ATTRIBUTES);
-		createEReference(entityEClass, ENTITY__FRETEXT_ATTRIBUTES);
 		createEReference(entityEClass, ENTITY__RELATIONS);
 		createEReference(entityEClass, ENTITY__FUNCTIONAL_TAGS);
 		createEReference(entityEClass, ENTITY__NFUNCTIONAL_TAGS);
@@ -2722,13 +2815,21 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEOperation(entityEClass, ENTITY___GET_GRAPH_NODES);
 		createEOperation(entityEClass, ENTITY___GET_COLUMNS);
 
+		entityAttributeEClass = createEClass(ENTITY_ATTRIBUTE);
+
 		attributeEClass = createEClass(ATTRIBUTE);
+		createEReference(attributeEClass, ATTRIBUTE__TYPE);
+
+		customAttributeEClass = createEClass(CUSTOM_ATTRIBUTE);
+		createEReference(customAttributeEClass, CUSTOM_ATTRIBUTE__TYPE);
 
 		relationEClass = createEClass(RELATION);
 		createEReference(relationEClass, RELATION__TYPE);
 		createEAttribute(relationEClass, RELATION__CARDINALITY);
 		createEReference(relationEClass, RELATION__OPPOSITE);
 		createEAttribute(relationEClass, RELATION__IS_CONTAINMENT);
+
+		databaseEClass = createEClass(DATABASE);
 
 		relationalDBEClass = createEClass(RELATIONAL_DB);
 		createEReference(relationalDBEClass, RELATIONAL_DB__TABLES);
@@ -2788,13 +2889,64 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(columnEClass, COLUMN__ATTRIBUTES);
 		createEReference(columnEClass, COLUMN__ENTITY);
 
+		changeOperatorEClass = createEClass(CHANGE_OPERATOR);
+
+		addEntityEClass = createEClass(ADD_ENTITY);
+
 		renameEntityEClass = createEClass(RENAME_ENTITY);
 		createEReference(renameEntityEClass, RENAME_ENTITY__ENTITY_TO_RENAME);
 		createEAttribute(renameEntityEClass, RENAME_ENTITY__NEW_ENTITY_NAME);
 
+		removeEntityEClass = createEClass(REMOVE_ENTITY);
+		createEReference(removeEntityEClass, REMOVE_ENTITY__ENTITY_TO_REMOVE);
+
+		addAttributeEClass = createEClass(ADD_ATTRIBUTE);
+		createEReference(addAttributeEClass, ADD_ATTRIBUTE__OWNER_ENTITY);
+
+		changeAttributeTypeEClass = createEClass(CHANGE_ATTRIBUTE_TYPE);
+		createEReference(changeAttributeTypeEClass, CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE);
+
+		removeAttributeEClass = createEClass(REMOVE_ATTRIBUTE);
+		createEReference(removeAttributeEClass, REMOVE_ATTRIBUTE__ATTRIBUTE_TO_REMOVE);
+
+		renameAttributeEClass = createEClass(RENAME_ATTRIBUTE);
+		createEReference(renameAttributeEClass, RENAME_ATTRIBUTE__ATTRIBUTE_TO_RENAME);
+		createEAttribute(renameAttributeEClass, RENAME_ATTRIBUTE__NEW_NAME);
+
 		changeRelationContainementEClass = createEClass(CHANGE_RELATION_CONTAINEMENT);
 		createEReference(changeRelationContainementEClass, CHANGE_RELATION_CONTAINEMENT__RELATION);
 		createEAttribute(changeRelationContainementEClass, CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT);
+
+		addRelationEClass = createEClass(ADD_RELATION);
+		createEReference(addRelationEClass, ADD_RELATION__OWNER_ENTITY);
+
+		removeRelationEClass = createEClass(REMOVE_RELATION);
+		createEReference(removeRelationEClass, REMOVE_RELATION__RELATION_TO_REMOVE);
+
+		renameRelationEClass = createEClass(RENAME_RELATION);
+		createEReference(renameRelationEClass, RENAME_RELATION__RELATION_TO_RENAME);
+		createEAttribute(renameRelationEClass, RENAME_RELATION__NEW_RELATION_NAME);
+
+		enableRelationContainmentEClass = createEClass(ENABLE_RELATION_CONTAINMENT);
+		createEReference(enableRelationContainmentEClass, ENABLE_RELATION_CONTAINMENT__RELATION);
+
+		disableRelationContainmentEClass = createEClass(DISABLE_RELATION_CONTAINMENT);
+		createEReference(disableRelationContainmentEClass, DISABLE_RELATION_CONTAINMENT__RELATION);
+
+		enableBidirectionalRelationEClass = createEClass(ENABLE_BIDIRECTIONAL_RELATION);
+		createEReference(enableBidirectionalRelationEClass, ENABLE_BIDIRECTIONAL_RELATION__RELATION);
+
+		disableBidirectionalRelationEClass = createEClass(DISABLE_BIDIRECTIONAL_RELATION);
+		createEReference(disableBidirectionalRelationEClass, DISABLE_BIDIRECTIONAL_RELATION__RELATION);
+
+		changeRelationCardinalityEClass = createEClass(CHANGE_RELATION_CARDINALITY);
+		createEReference(changeRelationCardinalityEClass, CHANGE_RELATION_CARDINALITY__RELATION);
+		createEAttribute(changeRelationCardinalityEClass, CHANGE_RELATION_CARDINALITY__NEW_CARDINALITY);
+
+		splitEntityEClass = createEClass(SPLIT_ENTITY);
+		createEReference(splitEntityEClass, SPLIT_ENTITY__ENTITY_TO_BE_SPLIT);
+		createEReference(splitEntityEClass, SPLIT_ENTITY__FIRST_NEW_ENTITY);
+		createEReference(splitEntityEClass, SPLIT_ENTITY__SECOND_NEW_ENTITY);
 
 		splitEntityVerticalEClass = createEClass(SPLIT_ENTITY_VERTICAL);
 		createEReference(splitEntityVerticalEClass, SPLIT_ENTITY_VERTICAL__ENTITY1);
@@ -2808,32 +2960,70 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(splitEntityHorizontalEClass, SPLIT_ENTITY_HORIZONTAL__ATTRIBUTE);
 		createEAttribute(splitEntityHorizontalEClass, SPLIT_ENTITY_HORIZONTAL__EXPRESSION);
 
-		functionalTagEClass = createEClass(FUNCTIONAL_TAG);
+		migrateEntityEClass = createEClass(MIGRATE_ENTITY);
+		createEReference(migrateEntityEClass, MIGRATE_ENTITY__ENTITY);
+		createEReference(migrateEntityEClass, MIGRATE_ENTITY__NEW_DATABASE);
 
-		nFunctionalTagEClass = createEClass(NFUNCTIONAL_TAG);
+		mergeEntityEClass = createEClass(MERGE_ENTITY);
+		createEReference(mergeEntityEClass, MERGE_ENTITY__FIRST_ENTITY_TO_MERGE);
+		createEReference(mergeEntityEClass, MERGE_ENTITY__SECOND_ENTITY_TO_MERGE);
+		createEAttribute(mergeEntityEClass, MERGE_ENTITY__NEW_ENTITY_NAME);
 
-		primitiveDataTypeAttributeEClass = createEClass(PRIMITIVE_DATA_TYPE_ATTRIBUTE);
-		createEAttribute(primitiveDataTypeAttributeEClass, PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE);
-		createEAttribute(primitiveDataTypeAttributeEClass, PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE);
+		renameTableEClass = createEClass(RENAME_TABLE);
+		createEReference(renameTableEClass, RENAME_TABLE__TABLE_TO_RENAME);
+		createEAttribute(renameTableEClass, RENAME_TABLE__NEW_NAME);
 
-		customDataTypeAttributeEClass = createEClass(CUSTOM_DATA_TYPE_ATTRIBUTE);
-		createEReference(customDataTypeAttributeEClass, CUSTOM_DATA_TYPE_ATTRIBUTE__TYPE);
+		addIndexEClass = createEClass(ADD_INDEX);
+		createEReference(addIndexEClass, ADD_INDEX__TABLE);
+		createEReference(addIndexEClass, ADD_INDEX__ATTRIBUTES);
+
+		dropIndexEClass = createEClass(DROP_INDEX);
+		createEReference(dropIndexEClass, DROP_INDEX__TABLE);
+
+		addAttributesToIndexEClass = createEClass(ADD_ATTRIBUTES_TO_INDEX);
+		createEReference(addAttributesToIndexEClass, ADD_ATTRIBUTES_TO_INDEX__TABLE);
+		createEReference(addAttributesToIndexEClass, ADD_ATTRIBUTES_TO_INDEX__ATTRIBUTES);
+
+		removeAttributesToIndexEClass = createEClass(REMOVE_ATTRIBUTES_TO_INDEX);
+		createEReference(removeAttributesToIndexEClass, REMOVE_ATTRIBUTES_TO_INDEX__TABLE);
+		createEReference(removeAttributesToIndexEClass, REMOVE_ATTRIBUTES_TO_INDEX__ATTRIBUTES);
+
+		renameCollectionEClass = createEClass(RENAME_COLLECTION);
+		createEReference(renameCollectionEClass, RENAME_COLLECTION__COLLECTION_TO_RENAME);
+		createEAttribute(renameCollectionEClass, RENAME_COLLECTION__NEW_NAME);
+
+		addCollectionIndexEClass = createEClass(ADD_COLLECTION_INDEX);
+		createEReference(addCollectionIndexEClass, ADD_COLLECTION_INDEX__COLLECTION);
+		createEReference(addCollectionIndexEClass, ADD_COLLECTION_INDEX__ATTRIBUTES);
+
+		dropCollectionIndexEClass = createEClass(DROP_COLLECTION_INDEX);
+		createEReference(dropCollectionIndexEClass, DROP_COLLECTION_INDEX__COLLECTION);
+
+		addGraphAttributeEClass = createEClass(ADD_GRAPH_ATTRIBUTE);
+
+		removeGraphAttributeEClass = createEClass(REMOVE_GRAPH_ATTRIBUTE);
+		createEReference(removeGraphAttributeEClass, REMOVE_GRAPH_ATTRIBUTE__NODE);
+
+		addGraphEdgeEClass = createEClass(ADD_GRAPH_EDGE);
+
+		removeGraphEdgeEClass = createEClass(REMOVE_GRAPH_EDGE);
+		createEReference(removeGraphEdgeEClass, REMOVE_GRAPH_EDGE__GRAPH_EDGE_TO_REMOVE);
+
+		renabeGraphEdgeLabelEClass = createEClass(RENABE_GRAPH_EDGE_LABEL);
+		createEReference(renabeGraphEdgeLabelEClass, RENABE_GRAPH_EDGE_LABEL__EDGE);
+		createEAttribute(renabeGraphEdgeLabelEClass, RENABE_GRAPH_EDGE_LABEL__NEW_NAME);
 
 		addCustomDataTypeAttributeEClass = createEClass(ADD_CUSTOM_DATA_TYPE_ATTRIBUTE);
 
-		addPrimitiveDataTypeAttributeEClass = createEClass(ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE);
-
 		changePrimitiveDataTypeAttributeEClass = createEClass(CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE);
 		createEAttribute(changePrimitiveDataTypeAttributeEClass, CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE);
-		createEAttribute(changePrimitiveDataTypeAttributeEClass, CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE);
 
 		changeCustomDataTypeAttributeEClass = createEClass(CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE);
 		createEReference(changeCustomDataTypeAttributeEClass, CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE__NEW_TYPE);
 
 		// Create enums
-		cardinalityEEnum = createEEnum(CARDINALITY);
 		nlpTaskTypeEEnum = createEEnum(NLP_TASK_TYPE);
-		primitiveDataTypeEEnum = createEEnum(PRIMITIVE_DATA_TYPE);
+		cardinalityEEnum = createEEnum(CARDINALITY);
 	}
 
 	/**
@@ -2864,12 +3054,54 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
+		intTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		bigintTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		stringTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		textTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		pointTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		polygonTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		boolTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		floatTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		blobTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		freetextTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		dateTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		datetimeTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
+		customDataTypeEClass.getESuperTypes().add(this.getDataType());
+		customDataTypeEClass.getESuperTypes().add(this.getNamedElement());
+		customDataTypeItemEClass.getESuperTypes().add(this.getNamedElement());
+		functionalTagEClass.getESuperTypes().add(this.getNamedElement());
+		nFunctionalTagEClass.getESuperTypes().add(this.getNamedElement());
+		entityEClass.getESuperTypes().add(this.getNamedElement());
+		entityAttributeEClass.getESuperTypes().add(this.getNamedElement());
+		attributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		customAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		relationEClass.getESuperTypes().add(this.getNamedElement());
+		databaseEClass.getESuperTypes().add(this.getNamedElement());
+		relationalDBEClass.getESuperTypes().add(this.getDatabase());
+		tableEClass.getESuperTypes().add(this.getNamedElement());
+		indexSpecEClass.getESuperTypes().add(this.getNamedElement());
+		documentDBEClass.getESuperTypes().add(this.getDatabase());
+		collectionEClass.getESuperTypes().add(this.getNamedElement());
+		keyValueDBEClass.getESuperTypes().add(this.getDatabase());
+		keyValueElementEClass.getESuperTypes().add(this.getNamedElement());
+		graphDBEClass.getESuperTypes().add(this.getDatabase());
+		graphNodeEClass.getESuperTypes().add(this.getNamedElement());
+		graphAttributeEClass.getESuperTypes().add(this.getNamedElement());
+		graphEdgeEClass.getESuperTypes().add(this.getNamedElement());
+		graphEdgeLabelEClass.getESuperTypes().add(this.getNamedElement());
+		columnDBEClass.getESuperTypes().add(this.getDatabase());
+		columnEClass.getESuperTypes().add(this.getNamedElement());
 		addEntityEClass.getESuperTypes().add(this.getEntity());
 		addEntityEClass.getESuperTypes().add(this.getChangeOperator());
+		renameEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		removeEntityEClass.getESuperTypes().add(this.getChangeOperator());
-		splitEntityEClass.getESuperTypes().add(this.getChangeOperator());
-		migrateEntityEClass.getESuperTypes().add(this.getChangeOperator());
-		mergeEntityEClass.getESuperTypes().add(this.getChangeOperator());
+		addAttributeEClass.getESuperTypes().add(this.getAttribute());
+		addAttributeEClass.getESuperTypes().add(this.getChangeOperator());
+		changeAttributeTypeEClass.getESuperTypes().add(this.getChangeOperator());
+		removeAttributeEClass.getESuperTypes().add(this.getChangeOperator());
+		renameAttributeEClass.getESuperTypes().add(this.getChangeOperator());
+		changeRelationContainementEClass.getESuperTypes().add(this.getChangeOperator());
 		addRelationEClass.getESuperTypes().add(this.getRelation());
 		addRelationEClass.getESuperTypes().add(this.getChangeOperator());
 		removeRelationEClass.getESuperTypes().add(this.getChangeOperator());
@@ -2879,11 +3111,11 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		enableBidirectionalRelationEClass.getESuperTypes().add(this.getChangeOperator());
 		disableBidirectionalRelationEClass.getESuperTypes().add(this.getChangeOperator());
 		changeRelationCardinalityEClass.getESuperTypes().add(this.getChangeOperator());
-		addAttributeEClass.getESuperTypes().add(this.getAttribute());
-		addAttributeEClass.getESuperTypes().add(this.getChangeOperator());
-		changeAttributeTypeEClass.getESuperTypes().add(this.getChangeOperator());
-		removeAttributeEClass.getESuperTypes().add(this.getChangeOperator());
-		renameAttributeEClass.getESuperTypes().add(this.getChangeOperator());
+		splitEntityEClass.getESuperTypes().add(this.getChangeOperator());
+		splitEntityVerticalEClass.getESuperTypes().add(this.getChangeOperator());
+		splitEntityHorizontalEClass.getESuperTypes().add(this.getChangeOperator());
+		migrateEntityEClass.getESuperTypes().add(this.getChangeOperator());
+		mergeEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		renameTableEClass.getESuperTypes().add(this.getChangeOperator());
 		addIndexEClass.getESuperTypes().add(this.getChangeOperator());
 		dropIndexEClass.getESuperTypes().add(this.getChangeOperator());
@@ -2899,182 +3131,72 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addGraphEdgeEClass.getESuperTypes().add(this.getGraphEdge());
 		removeGraphEdgeEClass.getESuperTypes().add(this.getChangeOperator());
 		renabeGraphEdgeLabelEClass.getESuperTypes().add(this.getChangeOperator());
-		databaseEClass.getESuperTypes().add(this.getNamedElement());
-		dataTypeEClass.getESuperTypes().add(this.getNamedElement());
-		customDataTypeEClass.getESuperTypes().add(this.getDataType());
-		dataTypeItemEClass.getESuperTypes().add(this.getNamedElement());
-		freeTextEClass.getESuperTypes().add(this.getNamedElement());
-		entityEClass.getESuperTypes().add(this.getDataType());
-		attributeEClass.getESuperTypes().add(this.getNamedElement());
-		relationEClass.getESuperTypes().add(this.getNamedElement());
-		relationalDBEClass.getESuperTypes().add(this.getDatabase());
-		tableEClass.getESuperTypes().add(this.getNamedElement());
-		indexSpecEClass.getESuperTypes().add(this.getNamedElement());
-		documentDBEClass.getESuperTypes().add(this.getDatabase());
-		collectionEClass.getESuperTypes().add(this.getNamedElement());
-		keyValueDBEClass.getESuperTypes().add(this.getDatabase());
-		keyValueElementEClass.getESuperTypes().add(this.getNamedElement());
-		graphDBEClass.getESuperTypes().add(this.getDatabase());
-		graphNodeEClass.getESuperTypes().add(this.getNamedElement());
-		graphAttributeEClass.getESuperTypes().add(this.getNamedElement());
-		graphEdgeEClass.getESuperTypes().add(this.getNamedElement());
-		graphEdgeLabelEClass.getESuperTypes().add(this.getNamedElement());
-		columnDBEClass.getESuperTypes().add(this.getDatabase());
-		columnEClass.getESuperTypes().add(this.getNamedElement());
-		renameEntityEClass.getESuperTypes().add(this.getChangeOperator());
-		changeRelationContainementEClass.getESuperTypes().add(this.getChangeOperator());
-		splitEntityVerticalEClass.getESuperTypes().add(this.getChangeOperator());
-		splitEntityHorizontalEClass.getESuperTypes().add(this.getChangeOperator());
-		functionalTagEClass.getESuperTypes().add(this.getNamedElement());
-		nFunctionalTagEClass.getESuperTypes().add(this.getNamedElement());
-		primitiveDataTypeAttributeEClass.getESuperTypes().add(this.getAttribute());
-		customDataTypeAttributeEClass.getESuperTypes().add(this.getAttribute());
 		addCustomDataTypeAttributeEClass.getESuperTypes().add(this.getAddAttribute());
-		addCustomDataTypeAttributeEClass.getESuperTypes().add(this.getCustomDataTypeAttribute());
-		addPrimitiveDataTypeAttributeEClass.getESuperTypes().add(this.getAddAttribute());
-		addPrimitiveDataTypeAttributeEClass.getESuperTypes().add(this.getPrimitiveDataTypeAttribute());
 		changePrimitiveDataTypeAttributeEClass.getESuperTypes().add(this.getChangeAttributeType());
 		changeCustomDataTypeAttributeEClass.getESuperTypes().add(this.getChangeAttributeType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getModel_Entities(), this.getEntity(), null, "entities", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Databases(), this.getDatabase(), null, "databases", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModel_DataTypes(), this.getDataType(), null, "dataTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_CustomDataTypes(), this.getCustomDataType(), null, "customDataTypes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_ChangeOperators(), this.getChangeOperator(), null, "changeOperators", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 1, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNamedElement_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(changeOperatorEClass, ChangeOperator.class, "ChangeOperator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(addEntityEClass, AddEntity.class, "AddEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(removeEntityEClass, RemoveEntity.class, "RemoveEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveEntity_EntityToRemove(), this.getEntity(), null, "entityToRemove", null, 1, 1, RemoveEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(splitEntityEClass, SplitEntity.class, "SplitEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSplitEntity_EntityToBeSplit(), this.getEntity(), null, "entityToBeSplit", null, 1, 1, SplitEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSplitEntity_FirstNewEntity(), this.getEntity(), null, "firstNewEntity", null, 1, 1, SplitEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSplitEntity_SecondNewEntity(), this.getEntity(), null, "secondNewEntity", null, 1, 1, SplitEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(migrateEntityEClass, MigrateEntity.class, "MigrateEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMigrateEntity_Entity(), this.getEntity(), null, "entity", null, 1, 1, MigrateEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMigrateEntity_NewDatabase(), this.getDatabase(), null, "newDatabase", null, 1, 1, MigrateEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(mergeEntityEClass, MergeEntity.class, "MergeEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getMergeEntity_FirstEntityToMerge(), this.getEntity(), null, "firstEntityToMerge", null, 1, 1, MergeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMergeEntity_SecondEntityToMerge(), this.getEntity(), null, "secondEntityToMerge", null, 1, 1, MergeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMergeEntity_NewEntityName(), ecorePackage.getEString(), "newEntityName", null, 0, 1, MergeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addRelationEClass, AddRelation.class, "AddRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddRelation_OwnerEntity(), this.getEntity(), null, "ownerEntity", null, 1, 1, AddRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(removeRelationEClass, RemoveRelation.class, "RemoveRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveRelation_RelationToRemove(), this.getRelation(), null, "relationToRemove", null, 1, 1, RemoveRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(renameRelationEClass, RenameRelation.class, "RenameRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRenameRelation_RelationToRename(), this.getRelation(), null, "relationToRename", null, 1, 1, RenameRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRenameRelation_NewRelationName(), ecorePackage.getEString(), "newRelationName", null, 0, 1, RenameRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(enableRelationContainmentEClass, EnableRelationContainment.class, "EnableRelationContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnableRelationContainment_Relation(), this.getRelation(), null, "relation", null, 1, 1, EnableRelationContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(disableRelationContainmentEClass, DisableRelationContainment.class, "DisableRelationContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDisableRelationContainment_Relation(), this.getRelation(), null, "relation", null, 1, 1, DisableRelationContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(enableBidirectionalRelationEClass, EnableBidirectionalRelation.class, "EnableBidirectionalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEnableBidirectionalRelation_Relation(), this.getRelation(), null, "relation", null, 1, 1, EnableBidirectionalRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(disableBidirectionalRelationEClass, DisableBidirectionalRelation.class, "DisableBidirectionalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDisableBidirectionalRelation_Relation(), this.getRelation(), null, "relation", null, 1, 1, DisableBidirectionalRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(changeRelationCardinalityEClass, ChangeRelationCardinality.class, "ChangeRelationCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChangeRelationCardinality_Relation(), this.getRelation(), null, "relation", null, 1, 1, ChangeRelationCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChangeRelationCardinality_NewCardinality(), this.getCardinality(), "newCardinality", null, 1, 1, ChangeRelationCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addAttributeEClass, AddAttribute.class, "AddAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddAttribute_OwnerEntity(), this.getEntity(), null, "ownerEntity", null, 1, 1, AddAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(changeAttributeTypeEClass, ChangeAttributeType.class, "ChangeAttributeType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getChangeAttributeType_AttributeToChange(), this.getAttribute(), null, "attributeToChange", null, 1, 1, ChangeAttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(removeAttributeEClass, RemoveAttribute.class, "RemoveAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveAttribute_AttributeToRemove(), this.getAttribute(), null, "attributeToRemove", null, 1, 1, RemoveAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(renameAttributeEClass, RenameAttribute.class, "RenameAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRenameAttribute_AttributeToRename(), this.getAttribute(), null, "attributeToRename", null, 1, 1, RenameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRenameAttribute_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(renameTableEClass, RenameTable.class, "RenameTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRenameTable_TableToRename(), this.getTable(), null, "tableToRename", null, 1, 1, RenameTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRenameTable_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addIndexEClass, AddIndex.class, "AddIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddIndex_Table(), this.getTable(), null, "table", null, 1, 1, AddIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAddIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dropIndexEClass, DropIndex.class, "DropIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDropIndex_Table(), this.getTable(), null, "table", null, 1, 1, DropIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addAttributesToIndexEClass, AddAttributesToIndex.class, "AddAttributesToIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddAttributesToIndex_Table(), this.getTable(), null, "table", null, 1, 1, AddAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAddAttributesToIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(removeAttributesToIndexEClass, RemoveAttributesToIndex.class, "RemoveAttributesToIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveAttributesToIndex_Table(), this.getTable(), null, "table", null, 1, 1, RemoveAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRemoveAttributesToIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, RemoveAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(renameCollectionEClass, RenameCollection.class, "RenameCollection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRenameCollection_CollectionToRename(), this.getCollection(), null, "collectionToRename", null, 1, 1, RenameCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRenameCollection_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addCollectionIndexEClass, AddCollectionIndex.class, "AddCollectionIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAddCollectionIndex_Collection(), this.getCollection(), null, "collection", null, 1, 1, AddCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAddCollectionIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dropCollectionIndexEClass, DropCollectionIndex.class, "DropCollectionIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDropCollectionIndex_Collection(), this.getCollection(), null, "collection", null, 1, 1, DropCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addGraphAttributeEClass, AddGraphAttribute.class, "AddGraphAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(removeGraphAttributeEClass, RemoveGraphAttribute.class, "RemoveGraphAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveGraphAttribute_Node(), this.getGraphNode(), null, "node", null, 1, 1, RemoveGraphAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(addGraphEdgeEClass, AddGraphEdge.class, "AddGraphEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(removeGraphEdgeEClass, RemoveGraphEdge.class, "RemoveGraphEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRemoveGraphEdge_GraphEdgeToRemove(), this.getGraphEdge(), null, "graphEdgeToRemove", null, 1, 1, RemoveGraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(renabeGraphEdgeLabelEClass, RenabeGraphEdgeLabel.class, "RenabeGraphEdgeLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRenabeGraphEdgeLabel_Edge(), this.getGraphEdge(), null, "edge", null, 1, 1, RenabeGraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getRenabeGraphEdgeLabel_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenabeGraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(databaseEClass, Database.class, "Database", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(customDataTypeEClass, CustomDataType.class, "CustomDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomDataType_Elements(), this.getDataTypeItem(), null, "elements", null, 0, -1, CustomDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(dataTypeItemEClass, DataTypeItem.class, "DataTypeItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDataTypeItem_Type(), this.getDataType(), null, "type", null, 0, 1, DataTypeItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDataTypeItem_Implementation(), this.getDataTypeImplementationPackage(), null, "implementation", null, 1, 1, DataTypeItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(intTypeEClass, IntType.class, "IntType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(freeTextEClass, FreeText.class, "FreeText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFreeText_Tasks(), this.getNlpTask(), null, "tasks", null, 1, 1, FreeText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreeText_WorkflowName(), ecorePackage.getEString(), "workflowName", null, 0, 1, FreeText.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(bigintTypeEClass, BigintType.class, "BigintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stringTypeEClass, StringType.class, "StringType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringType_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(textTypeEClass, TextType.class, "TextType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(pointTypeEClass, PointType.class, "PointType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(polygonTypeEClass, PolygonType.class, "PolygonType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(boolTypeEClass, BoolType.class, "BoolType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(floatTypeEClass, FloatType.class, "FloatType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(blobTypeEClass, BlobType.class, "BlobType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(freetextTypeEClass, FreetextType.class, "FreetextType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getFreetextType_Tasks(), this.getNlpTask(), null, "tasks", null, 1, 1, FreetextType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFreetextType_WorkflowName(), ecorePackage.getEString(), "workflowName", null, 0, 1, FreetextType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nlpTaskEClass, NlpTask.class, "NlpTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNlpTask_Type(), this.getNlpTaskType(), "type", null, 0, 1, NlpTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNlpTask_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, NlpTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(dataTypeImplementationPackageEClass, DataTypeImplementationPackage.class, "DataTypeImplementationPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataTypeImplementationPackage_Location(), ecorePackage.getEString(), "location", null, 0, 1, DataTypeImplementationPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dateTypeEClass, DateType.class, "DateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(datetimeTypeEClass, DatetimeType.class, "DatetimeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(customDataTypeEClass, CustomDataType.class, "CustomDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCustomDataType_Elements(), this.getCustomDataTypeItem(), null, "elements", null, 0, -1, CustomDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(customDataTypeItemEClass, CustomDataTypeItem.class, "CustomDataTypeItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCustomDataTypeItem_Type(), this.getDataType(), null, "type", null, 0, 1, CustomDataTypeItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomDataTypeItem_Implementation(), this.getCustomDataTypeImplementationPackage(), null, "implementation", null, 1, 1, CustomDataTypeItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(customDataTypeImplementationPackageEClass, CustomDataTypeImplementationPackage.class, "CustomDataTypeImplementationPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCustomDataTypeImplementationPackage_Location(), ecorePackage.getEString(), "location", null, 0, 1, CustomDataTypeImplementationPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(functionalTagEClass, FunctionalTag.class, "FunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(nFunctionalTagEClass, NFunctionalTag.class, "NFunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntity_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEntity_FretextAttributes(), this.getFreeText(), null, "fretextAttributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Attributes(), this.getEntityAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_FunctionalTags(), this.getFunctionalTag(), null, "functionalTags", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_NfunctionalTags(), this.getNFunctionalTag(), null, "nfunctionalTags", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3089,13 +3211,21 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEOperation(getEntity__GetColumns(), this.getColumn(), "getColumns", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(attributeEClass, Attribute.class, "Attribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(customAttributeEClass, CustomAttribute.class, "CustomAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCustomAttribute_Type(), this.getCustomDataType(), null, "type", null, 0, 1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelation_Type(), this.getEntity(), null, "type", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelation_Cardinality(), this.getCardinality(), "cardinality", null, 1, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelation_Opposite(), this.getRelation(), null, "opposite", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelation_IsContainment(), ecorePackage.getEBooleanObject(), "isContainment", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(databaseEClass, Database.class, "Database", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(relationalDBEClass, RelationalDB.class, "RelationalDB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelationalDB_Tables(), this.getTable(), null, "tables", null, 0, -1, RelationalDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3155,13 +3285,64 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getColumn_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getColumn_Entity(), this.getEntity(), null, "entity", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(changeOperatorEClass, ChangeOperator.class, "ChangeOperator", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(addEntityEClass, AddEntity.class, "AddEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
 		initEClass(renameEntityEClass, RenameEntity.class, "RenameEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRenameEntity_EntityToRename(), this.getEntity(), null, "entityToRename", null, 0, 1, RenameEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRenameEntity_NewEntityName(), ecorePackage.getEString(), "newEntityName", null, 0, 1, RenameEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(removeEntityEClass, RemoveEntity.class, "RemoveEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveEntity_EntityToRemove(), this.getEntity(), null, "entityToRemove", null, 1, 1, RemoveEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addAttributeEClass, AddAttribute.class, "AddAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddAttribute_OwnerEntity(), this.getEntity(), null, "ownerEntity", null, 1, 1, AddAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(changeAttributeTypeEClass, ChangeAttributeType.class, "ChangeAttributeType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChangeAttributeType_AttributeToChange(), this.getAttribute(), null, "attributeToChange", null, 1, 1, ChangeAttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(removeAttributeEClass, RemoveAttribute.class, "RemoveAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveAttribute_AttributeToRemove(), this.getAttribute(), null, "attributeToRemove", null, 1, 1, RemoveAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(renameAttributeEClass, RenameAttribute.class, "RenameAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRenameAttribute_AttributeToRename(), this.getAttribute(), null, "attributeToRename", null, 1, 1, RenameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRenameAttribute_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(changeRelationContainementEClass, ChangeRelationContainement.class, "ChangeRelationContainement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeRelationContainement_Relation(), this.getRelation(), null, "relation", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getChangeRelationContainement_NewContainment(), ecorePackage.getEBooleanObject(), "newContainment", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addRelationEClass, AddRelation.class, "AddRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddRelation_OwnerEntity(), this.getEntity(), null, "ownerEntity", null, 1, 1, AddRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(removeRelationEClass, RemoveRelation.class, "RemoveRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveRelation_RelationToRemove(), this.getRelation(), null, "relationToRemove", null, 1, 1, RemoveRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(renameRelationEClass, RenameRelation.class, "RenameRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRenameRelation_RelationToRename(), this.getRelation(), null, "relationToRename", null, 1, 1, RenameRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRenameRelation_NewRelationName(), ecorePackage.getEString(), "newRelationName", null, 0, 1, RenameRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enableRelationContainmentEClass, EnableRelationContainment.class, "EnableRelationContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnableRelationContainment_Relation(), this.getRelation(), null, "relation", null, 1, 1, EnableRelationContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(disableRelationContainmentEClass, DisableRelationContainment.class, "DisableRelationContainment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDisableRelationContainment_Relation(), this.getRelation(), null, "relation", null, 1, 1, DisableRelationContainment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(enableBidirectionalRelationEClass, EnableBidirectionalRelation.class, "EnableBidirectionalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnableBidirectionalRelation_Relation(), this.getRelation(), null, "relation", null, 1, 1, EnableBidirectionalRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(disableBidirectionalRelationEClass, DisableBidirectionalRelation.class, "DisableBidirectionalRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDisableBidirectionalRelation_Relation(), this.getRelation(), null, "relation", null, 1, 1, DisableBidirectionalRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(changeRelationCardinalityEClass, ChangeRelationCardinality.class, "ChangeRelationCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getChangeRelationCardinality_Relation(), this.getRelation(), null, "relation", null, 1, 1, ChangeRelationCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangeRelationCardinality_NewCardinality(), this.getCardinality(), "newCardinality", null, 1, 1, ChangeRelationCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(splitEntityEClass, SplitEntity.class, "SplitEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSplitEntity_EntityToBeSplit(), this.getEntity(), null, "entityToBeSplit", null, 1, 1, SplitEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSplitEntity_FirstNewEntity(), this.getEntity(), null, "firstNewEntity", null, 1, 1, SplitEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSplitEntity_SecondNewEntity(), this.getEntity(), null, "secondNewEntity", null, 1, 1, SplitEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(splitEntityVerticalEClass, SplitEntityVertical.class, "SplitEntityVertical", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSplitEntityVertical_Entity1(), this.getEntity(), null, "entity1", null, 1, 1, SplitEntityVertical.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3175,35 +3356,68 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getSplitEntityHorizontal_Attribute(), this.getAttribute(), null, "attribute", null, 1, 1, SplitEntityHorizontal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSplitEntityHorizontal_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, SplitEntityHorizontal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(functionalTagEClass, FunctionalTag.class, "FunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(migrateEntityEClass, MigrateEntity.class, "MigrateEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMigrateEntity_Entity(), this.getEntity(), null, "entity", null, 1, 1, MigrateEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMigrateEntity_NewDatabase(), this.getDatabase(), null, "newDatabase", null, 1, 1, MigrateEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nFunctionalTagEClass, NFunctionalTag.class, "NFunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(mergeEntityEClass, MergeEntity.class, "MergeEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMergeEntity_FirstEntityToMerge(), this.getEntity(), null, "firstEntityToMerge", null, 1, 1, MergeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMergeEntity_SecondEntityToMerge(), this.getEntity(), null, "secondEntityToMerge", null, 1, 1, MergeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMergeEntity_NewEntityName(), ecorePackage.getEString(), "newEntityName", null, 0, 1, MergeEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(primitiveDataTypeAttributeEClass, PrimitiveDataTypeAttribute.class, "PrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPrimitiveDataTypeAttribute_Type(), this.getPrimitiveDataType(), "type", null, 1, 1, PrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, PrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(renameTableEClass, RenameTable.class, "RenameTable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRenameTable_TableToRename(), this.getTable(), null, "tableToRename", null, 1, 1, RenameTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRenameTable_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameTable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(customDataTypeAttributeEClass, CustomDataTypeAttribute.class, "CustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomDataTypeAttribute_Type(), this.getCustomDataType(), null, "type", null, 1, 1, CustomDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(addIndexEClass, AddIndex.class, "AddIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddIndex_Table(), this.getTable(), null, "table", null, 1, 1, AddIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAddIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dropIndexEClass, DropIndex.class, "DropIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDropIndex_Table(), this.getTable(), null, "table", null, 1, 1, DropIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addAttributesToIndexEClass, AddAttributesToIndex.class, "AddAttributesToIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddAttributesToIndex_Table(), this.getTable(), null, "table", null, 1, 1, AddAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAddAttributesToIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(removeAttributesToIndexEClass, RemoveAttributesToIndex.class, "RemoveAttributesToIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveAttributesToIndex_Table(), this.getTable(), null, "table", null, 1, 1, RemoveAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRemoveAttributesToIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, RemoveAttributesToIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(renameCollectionEClass, RenameCollection.class, "RenameCollection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRenameCollection_CollectionToRename(), this.getCollection(), null, "collectionToRename", null, 1, 1, RenameCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRenameCollection_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenameCollection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addCollectionIndexEClass, AddCollectionIndex.class, "AddCollectionIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddCollectionIndex_Collection(), this.getCollection(), null, "collection", null, 1, 1, AddCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAddCollectionIndex_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, AddCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(dropCollectionIndexEClass, DropCollectionIndex.class, "DropCollectionIndex", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDropCollectionIndex_Collection(), this.getCollection(), null, "collection", null, 1, 1, DropCollectionIndex.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addGraphAttributeEClass, AddGraphAttribute.class, "AddGraphAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(removeGraphAttributeEClass, RemoveGraphAttribute.class, "RemoveGraphAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveGraphAttribute_Node(), this.getGraphNode(), null, "node", null, 1, 1, RemoveGraphAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addGraphEdgeEClass, AddGraphEdge.class, "AddGraphEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(removeGraphEdgeEClass, RemoveGraphEdge.class, "RemoveGraphEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRemoveGraphEdge_GraphEdgeToRemove(), this.getGraphEdge(), null, "graphEdgeToRemove", null, 1, 1, RemoveGraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(renabeGraphEdgeLabelEClass, RenabeGraphEdgeLabel.class, "RenabeGraphEdgeLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRenabeGraphEdgeLabel_Edge(), this.getGraphEdge(), null, "edge", null, 1, 1, RenabeGraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRenabeGraphEdgeLabel_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenabeGraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addCustomDataTypeAttributeEClass, AddCustomDataTypeAttribute.class, "AddCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(addPrimitiveDataTypeAttributeEClass, AddPrimitiveDataTypeAttribute.class, "AddPrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(changePrimitiveDataTypeAttributeEClass, ChangePrimitiveDataTypeAttribute.class, "ChangePrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChangePrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChangePrimitiveDataTypeAttribute_NewType(), this.getPrimitiveDataType(), "newType", null, 1, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(changeCustomDataTypeAttributeEClass, ChangeCustomDataTypeAttribute.class, "ChangeCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeCustomDataTypeAttribute_NewType(), this.getCustomDataType(), null, "newType", null, 1, 1, ChangeCustomDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(cardinalityEEnum, Cardinality.class, "Cardinality");
-		addEEnumLiteral(cardinalityEEnum, Cardinality.ZERO_ONE);
-		addEEnumLiteral(cardinalityEEnum, Cardinality.ONE);
-		addEEnumLiteral(cardinalityEEnum, Cardinality.ZERO_MANY);
-		addEEnumLiteral(cardinalityEEnum, Cardinality.ONE_MANY);
-
 		initEEnum(nlpTaskTypeEEnum, NlpTaskType.class, "NlpTaskType");
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.PARAGRAPH_SEGMENTATION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.SENTENCE_SEGMENTATION);
@@ -3224,18 +3438,11 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.EVENT_EXTRACTION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.COREFERENCE_RESOLUTION);
 
-		initEEnum(primitiveDataTypeEEnum, PrimitiveDataType.class, "PrimitiveDataType");
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.BIGINT);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.STRING);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.TEXT);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.POINT);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.POLYGON);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.BOOL);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.FLOAT);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.INT);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.BLOB);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.DATE);
-		addEEnumLiteral(primitiveDataTypeEEnum, PrimitiveDataType.DATETIME);
+		initEEnum(cardinalityEEnum, Cardinality.class, "Cardinality");
+		addEEnumLiteral(cardinalityEEnum, Cardinality.ZERO_ONE);
+		addEEnumLiteral(cardinalityEEnum, Cardinality.ONE);
+		addEEnumLiteral(cardinalityEEnum, Cardinality.ZERO_MANY);
+		addEEnumLiteral(cardinalityEEnum, Cardinality.ONE_MANY);
 
 		// Create resource
 		createResource(eNS_URI);

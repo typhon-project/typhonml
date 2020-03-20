@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link typhonml.Entity#getAttributes <em>Attributes</em>}</li>
- *   <li>{@link typhonml.Entity#getFretextAttributes <em>Fretext Attributes</em>}</li>
  *   <li>{@link typhonml.Entity#getRelations <em>Relations</em>}</li>
  *   <li>{@link typhonml.Entity#getFunctionalTags <em>Functional Tags</em>}</li>
  *   <li>{@link typhonml.Entity#getNfunctionalTags <em>Nfunctional Tags</em>}</li>
@@ -24,47 +23,23 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Entity extends DataType {
+public interface Entity extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link typhonml.Attribute}.
+	 * The list contents are of type {@link typhonml.EntityAttribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getEntity_Attributes()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Attribute> getAttributes();
-
-	/**
-	 * Returns the value of the '<em><b>Fretext Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link typhonml.FreeText}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Fretext Attributes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fretext Attributes</em>' containment reference list.
-	 * @see typhonml.TyphonmlPackage#getEntity_FretextAttributes()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<FreeText> getFretextAttributes();
+	EList<EntityAttribute> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Relations</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.Relation}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relations</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Relations</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getEntity_Relations()

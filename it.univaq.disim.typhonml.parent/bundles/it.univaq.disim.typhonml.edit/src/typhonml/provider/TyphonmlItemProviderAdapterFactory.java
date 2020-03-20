@@ -762,49 +762,49 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DataTypeItem} instances.
+	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeItem} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataTypeItemItemProvider dataTypeItemItemProvider;
+	protected CustomDataTypeItemItemProvider customDataTypeItemItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link typhonml.DataTypeItem}.
+	 * This creates an adapter for a {@link typhonml.CustomDataTypeItem}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDataTypeItemAdapter() {
-		if (dataTypeItemItemProvider == null) {
-			dataTypeItemItemProvider = new DataTypeItemItemProvider(this);
+	public Adapter createCustomDataTypeItemAdapter() {
+		if (customDataTypeItemItemProvider == null) {
+			customDataTypeItemItemProvider = new CustomDataTypeItemItemProvider(this);
 		}
 
-		return dataTypeItemItemProvider;
+		return customDataTypeItemItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.FreeText} instances.
+	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeImplementationPackage} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FreeTextItemProvider freeTextItemProvider;
+	protected CustomDataTypeImplementationPackageItemProvider customDataTypeImplementationPackageItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link typhonml.FreeText}.
+	 * This creates an adapter for a {@link typhonml.CustomDataTypeImplementationPackage}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFreeTextAdapter() {
-		if (freeTextItemProvider == null) {
-			freeTextItemProvider = new FreeTextItemProvider(this);
+	public Adapter createCustomDataTypeImplementationPackageAdapter() {
+		if (customDataTypeImplementationPackageItemProvider == null) {
+			customDataTypeImplementationPackageItemProvider = new CustomDataTypeImplementationPackageItemProvider(this);
 		}
 
-		return freeTextItemProvider;
+		return customDataTypeImplementationPackageItemProvider;
 	}
 
 	/**
@@ -831,26 +831,279 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DataTypeImplementationPackage} instances.
+	 * This keeps track of the one adapter used for all {@link typhonml.DateType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DataTypeImplementationPackageItemProvider dataTypeImplementationPackageItemProvider;
+	protected DateTypeItemProvider dateTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link typhonml.DataTypeImplementationPackage}.
+	 * This creates an adapter for a {@link typhonml.DateType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createDataTypeImplementationPackageAdapter() {
-		if (dataTypeImplementationPackageItemProvider == null) {
-			dataTypeImplementationPackageItemProvider = new DataTypeImplementationPackageItemProvider(this);
+	public Adapter createDateTypeAdapter() {
+		if (dateTypeItemProvider == null) {
+			dateTypeItemProvider = new DateTypeItemProvider(this);
 		}
 
-		return dataTypeImplementationPackageItemProvider;
+		return dateTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DatetimeType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DatetimeTypeItemProvider datetimeTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DatetimeType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDatetimeTypeAdapter() {
+		if (datetimeTypeItemProvider == null) {
+			datetimeTypeItemProvider = new DatetimeTypeItemProvider(this);
+		}
+
+		return datetimeTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.IntType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntTypeItemProvider intTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.IntType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntTypeAdapter() {
+		if (intTypeItemProvider == null) {
+			intTypeItemProvider = new IntTypeItemProvider(this);
+		}
+
+		return intTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.BigintType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BigintTypeItemProvider bigintTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.BigintType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBigintTypeAdapter() {
+		if (bigintTypeItemProvider == null) {
+			bigintTypeItemProvider = new BigintTypeItemProvider(this);
+		}
+
+		return bigintTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.StringType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StringTypeItemProvider stringTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.StringType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createStringTypeAdapter() {
+		if (stringTypeItemProvider == null) {
+			stringTypeItemProvider = new StringTypeItemProvider(this);
+		}
+
+		return stringTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.TextType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextTypeItemProvider textTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.TextType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextTypeAdapter() {
+		if (textTypeItemProvider == null) {
+			textTypeItemProvider = new TextTypeItemProvider(this);
+		}
+
+		return textTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.PointType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PointTypeItemProvider pointTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.PointType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPointTypeAdapter() {
+		if (pointTypeItemProvider == null) {
+			pointTypeItemProvider = new PointTypeItemProvider(this);
+		}
+
+		return pointTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.PolygonType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PolygonTypeItemProvider polygonTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.PolygonType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPolygonTypeAdapter() {
+		if (polygonTypeItemProvider == null) {
+			polygonTypeItemProvider = new PolygonTypeItemProvider(this);
+		}
+
+		return polygonTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.BoolType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BoolTypeItemProvider boolTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.BoolType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBoolTypeAdapter() {
+		if (boolTypeItemProvider == null) {
+			boolTypeItemProvider = new BoolTypeItemProvider(this);
+		}
+
+		return boolTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.FloatType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FloatTypeItemProvider floatTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.FloatType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFloatTypeAdapter() {
+		if (floatTypeItemProvider == null) {
+			floatTypeItemProvider = new FloatTypeItemProvider(this);
+		}
+
+		return floatTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.BlobType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BlobTypeItemProvider blobTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.BlobType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBlobTypeAdapter() {
+		if (blobTypeItemProvider == null) {
+			blobTypeItemProvider = new BlobTypeItemProvider(this);
+		}
+
+		return blobTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.FreetextType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FreetextTypeItemProvider freetextTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.FreetextType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFreetextTypeAdapter() {
+		if (freetextTypeItemProvider == null) {
+			freetextTypeItemProvider = new FreetextTypeItemProvider(this);
+		}
+
+		return freetextTypeItemProvider;
 	}
 
 	/**
@@ -874,6 +1127,52 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		}
 
 		return entityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.Attribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeItemProvider attributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeAdapter() {
+		if (attributeItemProvider == null) {
+			attributeItemProvider = new AttributeItemProvider(this);
+		}
+
+		return attributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.CustomAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomAttributeItemProvider customAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.CustomAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomAttributeAdapter() {
+		if (customAttributeItemProvider == null) {
+			customAttributeItemProvider = new CustomAttributeItemProvider(this);
+		}
+
+		return customAttributeItemProvider;
 	}
 
 	/**
@@ -1383,52 +1682,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.PrimitiveDataTypeAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PrimitiveDataTypeAttributeItemProvider primitiveDataTypeAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.PrimitiveDataTypeAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPrimitiveDataTypeAttributeAdapter() {
-		if (primitiveDataTypeAttributeItemProvider == null) {
-			primitiveDataTypeAttributeItemProvider = new PrimitiveDataTypeAttributeItemProvider(this);
-		}
-
-		return primitiveDataTypeAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CustomDataTypeAttributeItemProvider customDataTypeAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.CustomDataTypeAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCustomDataTypeAttributeAdapter() {
-		if (customDataTypeAttributeItemProvider == null) {
-			customDataTypeAttributeItemProvider = new CustomDataTypeAttributeItemProvider(this);
-		}
-
-		return customDataTypeAttributeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.AddCustomDataTypeAttribute} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1449,29 +1702,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		}
 
 		return addCustomDataTypeAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddPrimitiveDataTypeAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddPrimitiveDataTypeAttributeItemProvider addPrimitiveDataTypeAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddPrimitiveDataTypeAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddPrimitiveDataTypeAttributeAdapter() {
-		if (addPrimitiveDataTypeAttributeItemProvider == null) {
-			addPrimitiveDataTypeAttributeItemProvider = new AddPrimitiveDataTypeAttributeItemProvider(this);
-		}
-
-		return addPrimitiveDataTypeAttributeItemProvider;
 	}
 
 	/**
@@ -1626,40 +1856,27 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	@Override
 	public void dispose() {
 		if (modelItemProvider != null) modelItemProvider.dispose();
-		if (addEntityItemProvider != null) addEntityItemProvider.dispose();
-		if (removeEntityItemProvider != null) removeEntityItemProvider.dispose();
-		if (splitEntityItemProvider != null) splitEntityItemProvider.dispose();
-		if (migrateEntityItemProvider != null) migrateEntityItemProvider.dispose();
-		if (mergeEntityItemProvider != null) mergeEntityItemProvider.dispose();
-		if (addRelationItemProvider != null) addRelationItemProvider.dispose();
-		if (removeRelationItemProvider != null) removeRelationItemProvider.dispose();
-		if (renameRelationItemProvider != null) renameRelationItemProvider.dispose();
-		if (enableRelationContainmentItemProvider != null) enableRelationContainmentItemProvider.dispose();
-		if (disableRelationContainmentItemProvider != null) disableRelationContainmentItemProvider.dispose();
-		if (enableBidirectionalRelationItemProvider != null) enableBidirectionalRelationItemProvider.dispose();
-		if (disableBidirectionalRelationItemProvider != null) disableBidirectionalRelationItemProvider.dispose();
-		if (changeRelationCardinalityItemProvider != null) changeRelationCardinalityItemProvider.dispose();
-		if (removeAttributeItemProvider != null) removeAttributeItemProvider.dispose();
-		if (renameAttributeItemProvider != null) renameAttributeItemProvider.dispose();
-		if (renameTableItemProvider != null) renameTableItemProvider.dispose();
-		if (addIndexItemProvider != null) addIndexItemProvider.dispose();
-		if (dropIndexItemProvider != null) dropIndexItemProvider.dispose();
-		if (addAttributesToIndexItemProvider != null) addAttributesToIndexItemProvider.dispose();
-		if (removeAttributesToIndexItemProvider != null) removeAttributesToIndexItemProvider.dispose();
-		if (renameCollectionItemProvider != null) renameCollectionItemProvider.dispose();
-		if (addCollectionIndexItemProvider != null) addCollectionIndexItemProvider.dispose();
-		if (dropCollectionIndexItemProvider != null) dropCollectionIndexItemProvider.dispose();
-		if (addGraphAttributeItemProvider != null) addGraphAttributeItemProvider.dispose();
-		if (removeGraphAttributeItemProvider != null) removeGraphAttributeItemProvider.dispose();
-		if (addGraphEdgeItemProvider != null) addGraphEdgeItemProvider.dispose();
-		if (removeGraphEdgeItemProvider != null) removeGraphEdgeItemProvider.dispose();
-		if (renabeGraphEdgeLabelItemProvider != null) renabeGraphEdgeLabelItemProvider.dispose();
-		if (customDataTypeItemProvider != null) customDataTypeItemProvider.dispose();
-		if (dataTypeItemItemProvider != null) dataTypeItemItemProvider.dispose();
-		if (freeTextItemProvider != null) freeTextItemProvider.dispose();
+		if (intTypeItemProvider != null) intTypeItemProvider.dispose();
+		if (bigintTypeItemProvider != null) bigintTypeItemProvider.dispose();
+		if (stringTypeItemProvider != null) stringTypeItemProvider.dispose();
+		if (textTypeItemProvider != null) textTypeItemProvider.dispose();
+		if (pointTypeItemProvider != null) pointTypeItemProvider.dispose();
+		if (polygonTypeItemProvider != null) polygonTypeItemProvider.dispose();
+		if (boolTypeItemProvider != null) boolTypeItemProvider.dispose();
+		if (floatTypeItemProvider != null) floatTypeItemProvider.dispose();
+		if (blobTypeItemProvider != null) blobTypeItemProvider.dispose();
+		if (freetextTypeItemProvider != null) freetextTypeItemProvider.dispose();
 		if (nlpTaskItemProvider != null) nlpTaskItemProvider.dispose();
-		if (dataTypeImplementationPackageItemProvider != null) dataTypeImplementationPackageItemProvider.dispose();
+		if (dateTypeItemProvider != null) dateTypeItemProvider.dispose();
+		if (datetimeTypeItemProvider != null) datetimeTypeItemProvider.dispose();
+		if (customDataTypeItemProvider != null) customDataTypeItemProvider.dispose();
+		if (customDataTypeItemItemProvider != null) customDataTypeItemItemProvider.dispose();
+		if (customDataTypeImplementationPackageItemProvider != null) customDataTypeImplementationPackageItemProvider.dispose();
+		if (functionalTagItemProvider != null) functionalTagItemProvider.dispose();
+		if (nFunctionalTagItemProvider != null) nFunctionalTagItemProvider.dispose();
 		if (entityItemProvider != null) entityItemProvider.dispose();
+		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (customAttributeItemProvider != null) customAttributeItemProvider.dispose();
 		if (relationItemProvider != null) relationItemProvider.dispose();
 		if (relationalDBItemProvider != null) relationalDBItemProvider.dispose();
 		if (tableItemProvider != null) tableItemProvider.dispose();
@@ -1676,16 +1893,39 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (graphEdgeLabelItemProvider != null) graphEdgeLabelItemProvider.dispose();
 		if (columnDBItemProvider != null) columnDBItemProvider.dispose();
 		if (columnItemProvider != null) columnItemProvider.dispose();
+		if (addEntityItemProvider != null) addEntityItemProvider.dispose();
 		if (renameEntityItemProvider != null) renameEntityItemProvider.dispose();
+		if (removeEntityItemProvider != null) removeEntityItemProvider.dispose();
+		if (removeAttributeItemProvider != null) removeAttributeItemProvider.dispose();
+		if (renameAttributeItemProvider != null) renameAttributeItemProvider.dispose();
 		if (changeRelationContainementItemProvider != null) changeRelationContainementItemProvider.dispose();
+		if (addRelationItemProvider != null) addRelationItemProvider.dispose();
+		if (removeRelationItemProvider != null) removeRelationItemProvider.dispose();
+		if (renameRelationItemProvider != null) renameRelationItemProvider.dispose();
+		if (enableRelationContainmentItemProvider != null) enableRelationContainmentItemProvider.dispose();
+		if (disableRelationContainmentItemProvider != null) disableRelationContainmentItemProvider.dispose();
+		if (enableBidirectionalRelationItemProvider != null) enableBidirectionalRelationItemProvider.dispose();
+		if (disableBidirectionalRelationItemProvider != null) disableBidirectionalRelationItemProvider.dispose();
+		if (changeRelationCardinalityItemProvider != null) changeRelationCardinalityItemProvider.dispose();
+		if (splitEntityItemProvider != null) splitEntityItemProvider.dispose();
 		if (splitEntityVerticalItemProvider != null) splitEntityVerticalItemProvider.dispose();
 		if (splitEntityHorizontalItemProvider != null) splitEntityHorizontalItemProvider.dispose();
-		if (functionalTagItemProvider != null) functionalTagItemProvider.dispose();
-		if (nFunctionalTagItemProvider != null) nFunctionalTagItemProvider.dispose();
-		if (primitiveDataTypeAttributeItemProvider != null) primitiveDataTypeAttributeItemProvider.dispose();
-		if (customDataTypeAttributeItemProvider != null) customDataTypeAttributeItemProvider.dispose();
+		if (migrateEntityItemProvider != null) migrateEntityItemProvider.dispose();
+		if (mergeEntityItemProvider != null) mergeEntityItemProvider.dispose();
+		if (renameTableItemProvider != null) renameTableItemProvider.dispose();
+		if (addIndexItemProvider != null) addIndexItemProvider.dispose();
+		if (dropIndexItemProvider != null) dropIndexItemProvider.dispose();
+		if (addAttributesToIndexItemProvider != null) addAttributesToIndexItemProvider.dispose();
+		if (removeAttributesToIndexItemProvider != null) removeAttributesToIndexItemProvider.dispose();
+		if (renameCollectionItemProvider != null) renameCollectionItemProvider.dispose();
+		if (addCollectionIndexItemProvider != null) addCollectionIndexItemProvider.dispose();
+		if (dropCollectionIndexItemProvider != null) dropCollectionIndexItemProvider.dispose();
+		if (addGraphAttributeItemProvider != null) addGraphAttributeItemProvider.dispose();
+		if (removeGraphAttributeItemProvider != null) removeGraphAttributeItemProvider.dispose();
+		if (addGraphEdgeItemProvider != null) addGraphEdgeItemProvider.dispose();
+		if (removeGraphEdgeItemProvider != null) removeGraphEdgeItemProvider.dispose();
+		if (renabeGraphEdgeLabelItemProvider != null) renabeGraphEdgeLabelItemProvider.dispose();
 		if (addCustomDataTypeAttributeItemProvider != null) addCustomDataTypeAttributeItemProvider.dispose();
-		if (addPrimitiveDataTypeAttributeItemProvider != null) addPrimitiveDataTypeAttributeItemProvider.dispose();
 		if (changePrimitiveDataTypeAttributeItemProvider != null) changePrimitiveDataTypeAttributeItemProvider.dispose();
 		if (changeCustomDataTypeAttributeItemProvider != null) changeCustomDataTypeAttributeItemProvider.dispose();
 	}

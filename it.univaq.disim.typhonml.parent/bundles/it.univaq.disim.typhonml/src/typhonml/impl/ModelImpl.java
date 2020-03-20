@@ -17,8 +17,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import typhonml.ChangeOperator;
-import typhonml.DataType;
+import typhonml.CustomDataType;
 import typhonml.Database;
+import typhonml.Entity;
 import typhonml.Model;
 import typhonml.TyphonmlPackage;
 
@@ -30,14 +31,25 @@ import typhonml.TyphonmlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link typhonml.impl.ModelImpl#getEntities <em>Entities</em>}</li>
  *   <li>{@link typhonml.impl.ModelImpl#getDatabases <em>Databases</em>}</li>
- *   <li>{@link typhonml.impl.ModelImpl#getDataTypes <em>Data Types</em>}</li>
+ *   <li>{@link typhonml.impl.ModelImpl#getCustomDataTypes <em>Custom Data Types</em>}</li>
  *   <li>{@link typhonml.impl.ModelImpl#getChangeOperators <em>Change Operators</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
+	/**
+	 * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntities()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Entity> entities;
+
 	/**
 	 * The cached value of the '{@link #getDatabases() <em>Databases</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -49,14 +61,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	protected EList<Database> databases;
 
 	/**
-	 * The cached value of the '{@link #getDataTypes() <em>Data Types</em>}' containment reference list.
+	 * The cached value of the '{@link #getCustomDataTypes() <em>Custom Data Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDataTypes()
+	 * @see #getCustomDataTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DataType> dataTypes;
+	protected EList<CustomDataType> customDataTypes;
 
 	/**
 	 * The cached value of the '{@link #getChangeOperators() <em>Change Operators</em>}' containment reference list.
@@ -93,6 +105,19 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @generated
 	 */
 	@Override
+	public EList<Entity> getEntities() {
+		if (entities == null) {
+			entities = new EObjectContainmentEList<Entity>(Entity.class, this, TyphonmlPackage.MODEL__ENTITIES);
+		}
+		return entities;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EList<Database> getDatabases() {
 		if (databases == null) {
 			databases = new EObjectContainmentEList<Database>(Database.class, this, TyphonmlPackage.MODEL__DATABASES);
@@ -106,11 +131,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @generated
 	 */
 	@Override
-	public EList<DataType> getDataTypes() {
-		if (dataTypes == null) {
-			dataTypes = new EObjectContainmentEList<DataType>(DataType.class, this, TyphonmlPackage.MODEL__DATA_TYPES);
+	public EList<CustomDataType> getCustomDataTypes() {
+		if (customDataTypes == null) {
+			customDataTypes = new EObjectContainmentEList<CustomDataType>(CustomDataType.class, this, TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES);
 		}
-		return dataTypes;
+		return customDataTypes;
 	}
 
 	/**
@@ -134,10 +159,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case TyphonmlPackage.MODEL__ENTITIES:
+				return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.MODEL__DATABASES:
 				return ((InternalEList<?>)getDatabases()).basicRemove(otherEnd, msgs);
-			case TyphonmlPackage.MODEL__DATA_TYPES:
-				return ((InternalEList<?>)getDataTypes()).basicRemove(otherEnd, msgs);
+			case TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES:
+				return ((InternalEList<?>)getCustomDataTypes()).basicRemove(otherEnd, msgs);
 			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				return ((InternalEList<?>)getChangeOperators()).basicRemove(otherEnd, msgs);
 		}
@@ -152,10 +179,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case TyphonmlPackage.MODEL__ENTITIES:
+				return getEntities();
 			case TyphonmlPackage.MODEL__DATABASES:
 				return getDatabases();
-			case TyphonmlPackage.MODEL__DATA_TYPES:
-				return getDataTypes();
+			case TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES:
+				return getCustomDataTypes();
 			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				return getChangeOperators();
 		}
@@ -171,13 +200,17 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case TyphonmlPackage.MODEL__ENTITIES:
+				getEntities().clear();
+				getEntities().addAll((Collection<? extends Entity>)newValue);
+				return;
 			case TyphonmlPackage.MODEL__DATABASES:
 				getDatabases().clear();
 				getDatabases().addAll((Collection<? extends Database>)newValue);
 				return;
-			case TyphonmlPackage.MODEL__DATA_TYPES:
-				getDataTypes().clear();
-				getDataTypes().addAll((Collection<? extends DataType>)newValue);
+			case TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES:
+				getCustomDataTypes().clear();
+				getCustomDataTypes().addAll((Collection<? extends CustomDataType>)newValue);
 				return;
 			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				getChangeOperators().clear();
@@ -195,11 +228,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case TyphonmlPackage.MODEL__ENTITIES:
+				getEntities().clear();
+				return;
 			case TyphonmlPackage.MODEL__DATABASES:
 				getDatabases().clear();
 				return;
-			case TyphonmlPackage.MODEL__DATA_TYPES:
-				getDataTypes().clear();
+			case TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES:
+				getCustomDataTypes().clear();
 				return;
 			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				getChangeOperators().clear();
@@ -216,10 +252,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case TyphonmlPackage.MODEL__ENTITIES:
+				return entities != null && !entities.isEmpty();
 			case TyphonmlPackage.MODEL__DATABASES:
 				return databases != null && !databases.isEmpty();
-			case TyphonmlPackage.MODEL__DATA_TYPES:
-				return dataTypes != null && !dataTypes.isEmpty();
+			case TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES:
+				return customDataTypes != null && !customDataTypes.isEmpty();
 			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				return changeOperators != null && !changeOperators.isEmpty();
 		}

@@ -4,6 +4,7 @@ package typhonml.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import typhonml.DataType;
 import typhonml.TyphonmlPackage;
 
@@ -14,7 +15,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public abstract class DataTypeImpl extends NamedElementImpl implements DataType {
+public abstract class DataTypeImpl extends MinimalEObjectImpl.Container implements DataType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

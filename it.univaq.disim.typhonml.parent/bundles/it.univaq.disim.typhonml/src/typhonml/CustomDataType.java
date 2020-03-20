@@ -20,21 +20,17 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface CustomDataType extends DataType {
+public interface CustomDataType extends DataType, NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link typhonml.DataTypeItem}.
+	 * The list contents are of type {@link typhonml.CustomDataTypeItem}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getCustomDataType_Elements()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<DataTypeItem> getElements();
+	EList<CustomDataTypeItem> getElements();
 
 } // CustomDataType

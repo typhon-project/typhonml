@@ -58,40 +58,27 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case TyphonmlPackage.MODEL: return createModel();
-			case TyphonmlPackage.ADD_ENTITY: return createAddEntity();
-			case TyphonmlPackage.REMOVE_ENTITY: return createRemoveEntity();
-			case TyphonmlPackage.SPLIT_ENTITY: return createSplitEntity();
-			case TyphonmlPackage.MIGRATE_ENTITY: return createMigrateEntity();
-			case TyphonmlPackage.MERGE_ENTITY: return createMergeEntity();
-			case TyphonmlPackage.ADD_RELATION: return createAddRelation();
-			case TyphonmlPackage.REMOVE_RELATION: return createRemoveRelation();
-			case TyphonmlPackage.RENAME_RELATION: return createRenameRelation();
-			case TyphonmlPackage.ENABLE_RELATION_CONTAINMENT: return createEnableRelationContainment();
-			case TyphonmlPackage.DISABLE_RELATION_CONTAINMENT: return createDisableRelationContainment();
-			case TyphonmlPackage.ENABLE_BIDIRECTIONAL_RELATION: return createEnableBidirectionalRelation();
-			case TyphonmlPackage.DISABLE_BIDIRECTIONAL_RELATION: return createDisableBidirectionalRelation();
-			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY: return createChangeRelationCardinality();
-			case TyphonmlPackage.REMOVE_ATTRIBUTE: return createRemoveAttribute();
-			case TyphonmlPackage.RENAME_ATTRIBUTE: return createRenameAttribute();
-			case TyphonmlPackage.RENAME_TABLE: return createRenameTable();
-			case TyphonmlPackage.ADD_INDEX: return createAddIndex();
-			case TyphonmlPackage.DROP_INDEX: return createDropIndex();
-			case TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX: return createAddAttributesToIndex();
-			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_INDEX: return createRemoveAttributesToIndex();
-			case TyphonmlPackage.RENAME_COLLECTION: return createRenameCollection();
-			case TyphonmlPackage.ADD_COLLECTION_INDEX: return createAddCollectionIndex();
-			case TyphonmlPackage.DROP_COLLECTION_INDEX: return createDropCollectionIndex();
-			case TyphonmlPackage.ADD_GRAPH_ATTRIBUTE: return createAddGraphAttribute();
-			case TyphonmlPackage.REMOVE_GRAPH_ATTRIBUTE: return createRemoveGraphAttribute();
-			case TyphonmlPackage.ADD_GRAPH_EDGE: return createAddGraphEdge();
-			case TyphonmlPackage.REMOVE_GRAPH_EDGE: return createRemoveGraphEdge();
-			case TyphonmlPackage.RENABE_GRAPH_EDGE_LABEL: return createRenabeGraphEdgeLabel();
-			case TyphonmlPackage.CUSTOM_DATA_TYPE: return createCustomDataType();
-			case TyphonmlPackage.DATA_TYPE_ITEM: return createDataTypeItem();
-			case TyphonmlPackage.FREE_TEXT: return createFreeText();
+			case TyphonmlPackage.INT_TYPE: return createIntType();
+			case TyphonmlPackage.BIGINT_TYPE: return createBigintType();
+			case TyphonmlPackage.STRING_TYPE: return createStringType();
+			case TyphonmlPackage.TEXT_TYPE: return createTextType();
+			case TyphonmlPackage.POINT_TYPE: return createPointType();
+			case TyphonmlPackage.POLYGON_TYPE: return createPolygonType();
+			case TyphonmlPackage.BOOL_TYPE: return createBoolType();
+			case TyphonmlPackage.FLOAT_TYPE: return createFloatType();
+			case TyphonmlPackage.BLOB_TYPE: return createBlobType();
+			case TyphonmlPackage.FREETEXT_TYPE: return createFreetextType();
 			case TyphonmlPackage.NLP_TASK: return createNlpTask();
-			case TyphonmlPackage.DATA_TYPE_IMPLEMENTATION_PACKAGE: return createDataTypeImplementationPackage();
+			case TyphonmlPackage.DATE_TYPE: return createDateType();
+			case TyphonmlPackage.DATETIME_TYPE: return createDatetimeType();
+			case TyphonmlPackage.CUSTOM_DATA_TYPE: return createCustomDataType();
+			case TyphonmlPackage.CUSTOM_DATA_TYPE_ITEM: return createCustomDataTypeItem();
+			case TyphonmlPackage.CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE: return createCustomDataTypeImplementationPackage();
+			case TyphonmlPackage.FUNCTIONAL_TAG: return createFunctionalTag();
+			case TyphonmlPackage.NFUNCTIONAL_TAG: return createNFunctionalTag();
 			case TyphonmlPackage.ENTITY: return createEntity();
+			case TyphonmlPackage.ATTRIBUTE: return createAttribute();
+			case TyphonmlPackage.CUSTOM_ATTRIBUTE: return createCustomAttribute();
 			case TyphonmlPackage.RELATION: return createRelation();
 			case TyphonmlPackage.RELATIONAL_DB: return createRelationalDB();
 			case TyphonmlPackage.TABLE: return createTable();
@@ -108,16 +95,39 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.GRAPH_EDGE_LABEL: return createGraphEdgeLabel();
 			case TyphonmlPackage.COLUMN_DB: return createColumnDB();
 			case TyphonmlPackage.COLUMN: return createColumn();
+			case TyphonmlPackage.ADD_ENTITY: return createAddEntity();
 			case TyphonmlPackage.RENAME_ENTITY: return createRenameEntity();
+			case TyphonmlPackage.REMOVE_ENTITY: return createRemoveEntity();
+			case TyphonmlPackage.REMOVE_ATTRIBUTE: return createRemoveAttribute();
+			case TyphonmlPackage.RENAME_ATTRIBUTE: return createRenameAttribute();
 			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT: return createChangeRelationContainement();
+			case TyphonmlPackage.ADD_RELATION: return createAddRelation();
+			case TyphonmlPackage.REMOVE_RELATION: return createRemoveRelation();
+			case TyphonmlPackage.RENAME_RELATION: return createRenameRelation();
+			case TyphonmlPackage.ENABLE_RELATION_CONTAINMENT: return createEnableRelationContainment();
+			case TyphonmlPackage.DISABLE_RELATION_CONTAINMENT: return createDisableRelationContainment();
+			case TyphonmlPackage.ENABLE_BIDIRECTIONAL_RELATION: return createEnableBidirectionalRelation();
+			case TyphonmlPackage.DISABLE_BIDIRECTIONAL_RELATION: return createDisableBidirectionalRelation();
+			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY: return createChangeRelationCardinality();
+			case TyphonmlPackage.SPLIT_ENTITY: return createSplitEntity();
 			case TyphonmlPackage.SPLIT_ENTITY_VERTICAL: return createSplitEntityVertical();
 			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL: return createSplitEntityHorizontal();
-			case TyphonmlPackage.FUNCTIONAL_TAG: return createFunctionalTag();
-			case TyphonmlPackage.NFUNCTIONAL_TAG: return createNFunctionalTag();
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createPrimitiveDataTypeAttribute();
-			case TyphonmlPackage.CUSTOM_DATA_TYPE_ATTRIBUTE: return createCustomDataTypeAttribute();
+			case TyphonmlPackage.MIGRATE_ENTITY: return createMigrateEntity();
+			case TyphonmlPackage.MERGE_ENTITY: return createMergeEntity();
+			case TyphonmlPackage.RENAME_TABLE: return createRenameTable();
+			case TyphonmlPackage.ADD_INDEX: return createAddIndex();
+			case TyphonmlPackage.DROP_INDEX: return createDropIndex();
+			case TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX: return createAddAttributesToIndex();
+			case TyphonmlPackage.REMOVE_ATTRIBUTES_TO_INDEX: return createRemoveAttributesToIndex();
+			case TyphonmlPackage.RENAME_COLLECTION: return createRenameCollection();
+			case TyphonmlPackage.ADD_COLLECTION_INDEX: return createAddCollectionIndex();
+			case TyphonmlPackage.DROP_COLLECTION_INDEX: return createDropCollectionIndex();
+			case TyphonmlPackage.ADD_GRAPH_ATTRIBUTE: return createAddGraphAttribute();
+			case TyphonmlPackage.REMOVE_GRAPH_ATTRIBUTE: return createRemoveGraphAttribute();
+			case TyphonmlPackage.ADD_GRAPH_EDGE: return createAddGraphEdge();
+			case TyphonmlPackage.REMOVE_GRAPH_EDGE: return createRemoveGraphEdge();
+			case TyphonmlPackage.RENABE_GRAPH_EDGE_LABEL: return createRenabeGraphEdgeLabel();
 			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE: return createAddCustomDataTypeAttribute();
-			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createAddPrimitiveDataTypeAttribute();
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createChangePrimitiveDataTypeAttribute();
 			case TyphonmlPackage.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE: return createChangeCustomDataTypeAttribute();
 			default:
@@ -133,12 +143,10 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case TyphonmlPackage.CARDINALITY:
-				return createCardinalityFromString(eDataType, initialValue);
 			case TyphonmlPackage.NLP_TASK_TYPE:
 				return createNlpTaskTypeFromString(eDataType, initialValue);
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE:
-				return createPrimitiveDataTypeFromString(eDataType, initialValue);
+			case TyphonmlPackage.CARDINALITY:
+				return createCardinalityFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -152,12 +160,10 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case TyphonmlPackage.CARDINALITY:
-				return convertCardinalityToString(eDataType, instanceValue);
 			case TyphonmlPackage.NLP_TASK_TYPE:
 				return convertNlpTaskTypeToString(eDataType, instanceValue);
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE:
-				return convertPrimitiveDataTypeToString(eDataType, instanceValue);
+			case TyphonmlPackage.CARDINALITY:
+				return convertCardinalityToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -180,9 +186,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public AddEntity createAddEntity() {
-		AddEntityImpl addEntity = new AddEntityImpl();
-		return addEntity;
+	public IntType createIntType() {
+		IntTypeImpl intType = new IntTypeImpl();
+		return intType;
 	}
 
 	/**
@@ -191,9 +197,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public RemoveEntity createRemoveEntity() {
-		RemoveEntityImpl removeEntity = new RemoveEntityImpl();
-		return removeEntity;
+	public BigintType createBigintType() {
+		BigintTypeImpl bigintType = new BigintTypeImpl();
+		return bigintType;
 	}
 
 	/**
@@ -202,9 +208,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public SplitEntity createSplitEntity() {
-		SplitEntityImpl splitEntity = new SplitEntityImpl();
-		return splitEntity;
+	public StringType createStringType() {
+		StringTypeImpl stringType = new StringTypeImpl();
+		return stringType;
 	}
 
 	/**
@@ -213,9 +219,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public MigrateEntity createMigrateEntity() {
-		MigrateEntityImpl migrateEntity = new MigrateEntityImpl();
-		return migrateEntity;
+	public TextType createTextType() {
+		TextTypeImpl textType = new TextTypeImpl();
+		return textType;
 	}
 
 	/**
@@ -224,9 +230,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public MergeEntity createMergeEntity() {
-		MergeEntityImpl mergeEntity = new MergeEntityImpl();
-		return mergeEntity;
+	public PointType createPointType() {
+		PointTypeImpl pointType = new PointTypeImpl();
+		return pointType;
 	}
 
 	/**
@@ -235,9 +241,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public AddRelation createAddRelation() {
-		AddRelationImpl addRelation = new AddRelationImpl();
-		return addRelation;
+	public PolygonType createPolygonType() {
+		PolygonTypeImpl polygonType = new PolygonTypeImpl();
+		return polygonType;
 	}
 
 	/**
@@ -246,9 +252,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public RemoveRelation createRemoveRelation() {
-		RemoveRelationImpl removeRelation = new RemoveRelationImpl();
-		return removeRelation;
+	public BoolType createBoolType() {
+		BoolTypeImpl boolType = new BoolTypeImpl();
+		return boolType;
 	}
 
 	/**
@@ -257,9 +263,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public RenameRelation createRenameRelation() {
-		RenameRelationImpl renameRelation = new RenameRelationImpl();
-		return renameRelation;
+	public FloatType createFloatType() {
+		FloatTypeImpl floatType = new FloatTypeImpl();
+		return floatType;
 	}
 
 	/**
@@ -268,9 +274,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public EnableRelationContainment createEnableRelationContainment() {
-		EnableRelationContainmentImpl enableRelationContainment = new EnableRelationContainmentImpl();
-		return enableRelationContainment;
+	public BlobType createBlobType() {
+		BlobTypeImpl blobType = new BlobTypeImpl();
+		return blobType;
 	}
 
 	/**
@@ -279,240 +285,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public DisableRelationContainment createDisableRelationContainment() {
-		DisableRelationContainmentImpl disableRelationContainment = new DisableRelationContainmentImpl();
-		return disableRelationContainment;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EnableBidirectionalRelation createEnableBidirectionalRelation() {
-		EnableBidirectionalRelationImpl enableBidirectionalRelation = new EnableBidirectionalRelationImpl();
-		return enableBidirectionalRelation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DisableBidirectionalRelation createDisableBidirectionalRelation() {
-		DisableBidirectionalRelationImpl disableBidirectionalRelation = new DisableBidirectionalRelationImpl();
-		return disableBidirectionalRelation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ChangeRelationCardinality createChangeRelationCardinality() {
-		ChangeRelationCardinalityImpl changeRelationCardinality = new ChangeRelationCardinalityImpl();
-		return changeRelationCardinality;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RemoveAttribute createRemoveAttribute() {
-		RemoveAttributeImpl removeAttribute = new RemoveAttributeImpl();
-		return removeAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RenameAttribute createRenameAttribute() {
-		RenameAttributeImpl renameAttribute = new RenameAttributeImpl();
-		return renameAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RenameTable createRenameTable() {
-		RenameTableImpl renameTable = new RenameTableImpl();
-		return renameTable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddIndex createAddIndex() {
-		AddIndexImpl addIndex = new AddIndexImpl();
-		return addIndex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DropIndex createDropIndex() {
-		DropIndexImpl dropIndex = new DropIndexImpl();
-		return dropIndex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddAttributesToIndex createAddAttributesToIndex() {
-		AddAttributesToIndexImpl addAttributesToIndex = new AddAttributesToIndexImpl();
-		return addAttributesToIndex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RemoveAttributesToIndex createRemoveAttributesToIndex() {
-		RemoveAttributesToIndexImpl removeAttributesToIndex = new RemoveAttributesToIndexImpl();
-		return removeAttributesToIndex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RenameCollection createRenameCollection() {
-		RenameCollectionImpl renameCollection = new RenameCollectionImpl();
-		return renameCollection;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddCollectionIndex createAddCollectionIndex() {
-		AddCollectionIndexImpl addCollectionIndex = new AddCollectionIndexImpl();
-		return addCollectionIndex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DropCollectionIndex createDropCollectionIndex() {
-		DropCollectionIndexImpl dropCollectionIndex = new DropCollectionIndexImpl();
-		return dropCollectionIndex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddGraphAttribute createAddGraphAttribute() {
-		AddGraphAttributeImpl addGraphAttribute = new AddGraphAttributeImpl();
-		return addGraphAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RemoveGraphAttribute createRemoveGraphAttribute() {
-		RemoveGraphAttributeImpl removeGraphAttribute = new RemoveGraphAttributeImpl();
-		return removeGraphAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddGraphEdge createAddGraphEdge() {
-		AddGraphEdgeImpl addGraphEdge = new AddGraphEdgeImpl();
-		return addGraphEdge;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RemoveGraphEdge createRemoveGraphEdge() {
-		RemoveGraphEdgeImpl removeGraphEdge = new RemoveGraphEdgeImpl();
-		return removeGraphEdge;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public RenabeGraphEdgeLabel createRenabeGraphEdgeLabel() {
-		RenabeGraphEdgeLabelImpl renabeGraphEdgeLabel = new RenabeGraphEdgeLabelImpl();
-		return renabeGraphEdgeLabel;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public CustomDataType createCustomDataType() {
-		CustomDataTypeImpl customDataType = new CustomDataTypeImpl();
-		return customDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DataTypeItem createDataTypeItem() {
-		DataTypeItemImpl dataTypeItem = new DataTypeItemImpl();
-		return dataTypeItem;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public FreeText createFreeText() {
-		FreeTextImpl freeText = new FreeTextImpl();
-		return freeText;
+	public FreetextType createFreetextType() {
+		FreetextTypeImpl freetextType = new FreetextTypeImpl();
+		return freetextType;
 	}
 
 	/**
@@ -532,9 +307,75 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public DataTypeImplementationPackage createDataTypeImplementationPackage() {
-		DataTypeImplementationPackageImpl dataTypeImplementationPackage = new DataTypeImplementationPackageImpl();
-		return dataTypeImplementationPackage;
+	public DateType createDateType() {
+		DateTypeImpl dateType = new DateTypeImpl();
+		return dateType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DatetimeType createDatetimeType() {
+		DatetimeTypeImpl datetimeType = new DatetimeTypeImpl();
+		return datetimeType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CustomDataType createCustomDataType() {
+		CustomDataTypeImpl customDataType = new CustomDataTypeImpl();
+		return customDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CustomDataTypeItem createCustomDataTypeItem() {
+		CustomDataTypeItemImpl customDataTypeItem = new CustomDataTypeItemImpl();
+		return customDataTypeItem;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CustomDataTypeImplementationPackage createCustomDataTypeImplementationPackage() {
+		CustomDataTypeImplementationPackageImpl customDataTypeImplementationPackage = new CustomDataTypeImplementationPackageImpl();
+		return customDataTypeImplementationPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FunctionalTag createFunctionalTag() {
+		FunctionalTagImpl functionalTag = new FunctionalTagImpl();
+		return functionalTag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NFunctionalTag createNFunctionalTag() {
+		NFunctionalTagImpl nFunctionalTag = new NFunctionalTagImpl();
+		return nFunctionalTag;
 	}
 
 	/**
@@ -546,6 +387,28 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public Entity createEntity() {
 		EntityImpl entity = new EntityImpl();
 		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Attribute createAttribute() {
+		AttributeImpl attribute = new AttributeImpl();
+		return attribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public CustomAttribute createCustomAttribute() {
+		CustomAttributeImpl customAttribute = new CustomAttributeImpl();
+		return customAttribute;
 	}
 
 	/**
@@ -730,6 +593,17 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
+	public AddEntity createAddEntity() {
+		AddEntityImpl addEntity = new AddEntityImpl();
+		return addEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public RenameEntity createRenameEntity() {
 		RenameEntityImpl renameEntity = new RenameEntityImpl();
 		return renameEntity;
@@ -741,9 +615,141 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
+	public RemoveEntity createRemoveEntity() {
+		RemoveEntityImpl removeEntity = new RemoveEntityImpl();
+		return removeEntity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RemoveAttribute createRemoveAttribute() {
+		RemoveAttributeImpl removeAttribute = new RemoveAttributeImpl();
+		return removeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RenameAttribute createRenameAttribute() {
+		RenameAttributeImpl renameAttribute = new RenameAttributeImpl();
+		return renameAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ChangeRelationContainement createChangeRelationContainement() {
 		ChangeRelationContainementImpl changeRelationContainement = new ChangeRelationContainementImpl();
 		return changeRelationContainement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddRelation createAddRelation() {
+		AddRelationImpl addRelation = new AddRelationImpl();
+		return addRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RemoveRelation createRemoveRelation() {
+		RemoveRelationImpl removeRelation = new RemoveRelationImpl();
+		return removeRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RenameRelation createRenameRelation() {
+		RenameRelationImpl renameRelation = new RenameRelationImpl();
+		return renameRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnableRelationContainment createEnableRelationContainment() {
+		EnableRelationContainmentImpl enableRelationContainment = new EnableRelationContainmentImpl();
+		return enableRelationContainment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DisableRelationContainment createDisableRelationContainment() {
+		DisableRelationContainmentImpl disableRelationContainment = new DisableRelationContainmentImpl();
+		return disableRelationContainment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EnableBidirectionalRelation createEnableBidirectionalRelation() {
+		EnableBidirectionalRelationImpl enableBidirectionalRelation = new EnableBidirectionalRelationImpl();
+		return enableBidirectionalRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DisableBidirectionalRelation createDisableBidirectionalRelation() {
+		DisableBidirectionalRelationImpl disableBidirectionalRelation = new DisableBidirectionalRelationImpl();
+		return disableBidirectionalRelation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ChangeRelationCardinality createChangeRelationCardinality() {
+		ChangeRelationCardinalityImpl changeRelationCardinality = new ChangeRelationCardinalityImpl();
+		return changeRelationCardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SplitEntity createSplitEntity() {
+		SplitEntityImpl splitEntity = new SplitEntityImpl();
+		return splitEntity;
 	}
 
 	/**
@@ -774,9 +780,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public FunctionalTag createFunctionalTag() {
-		FunctionalTagImpl functionalTag = new FunctionalTagImpl();
-		return functionalTag;
+	public MigrateEntity createMigrateEntity() {
+		MigrateEntityImpl migrateEntity = new MigrateEntityImpl();
+		return migrateEntity;
 	}
 
 	/**
@@ -785,9 +791,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public NFunctionalTag createNFunctionalTag() {
-		NFunctionalTagImpl nFunctionalTag = new NFunctionalTagImpl();
-		return nFunctionalTag;
+	public MergeEntity createMergeEntity() {
+		MergeEntityImpl mergeEntity = new MergeEntityImpl();
+		return mergeEntity;
 	}
 
 	/**
@@ -796,9 +802,9 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public PrimitiveDataTypeAttribute createPrimitiveDataTypeAttribute() {
-		PrimitiveDataTypeAttributeImpl primitiveDataTypeAttribute = new PrimitiveDataTypeAttributeImpl();
-		return primitiveDataTypeAttribute;
+	public RenameTable createRenameTable() {
+		RenameTableImpl renameTable = new RenameTableImpl();
+		return renameTable;
 	}
 
 	/**
@@ -807,9 +813,130 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public CustomDataTypeAttribute createCustomDataTypeAttribute() {
-		CustomDataTypeAttributeImpl customDataTypeAttribute = new CustomDataTypeAttributeImpl();
-		return customDataTypeAttribute;
+	public AddIndex createAddIndex() {
+		AddIndexImpl addIndex = new AddIndexImpl();
+		return addIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DropIndex createDropIndex() {
+		DropIndexImpl dropIndex = new DropIndexImpl();
+		return dropIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddAttributesToIndex createAddAttributesToIndex() {
+		AddAttributesToIndexImpl addAttributesToIndex = new AddAttributesToIndexImpl();
+		return addAttributesToIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RemoveAttributesToIndex createRemoveAttributesToIndex() {
+		RemoveAttributesToIndexImpl removeAttributesToIndex = new RemoveAttributesToIndexImpl();
+		return removeAttributesToIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RenameCollection createRenameCollection() {
+		RenameCollectionImpl renameCollection = new RenameCollectionImpl();
+		return renameCollection;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddCollectionIndex createAddCollectionIndex() {
+		AddCollectionIndexImpl addCollectionIndex = new AddCollectionIndexImpl();
+		return addCollectionIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public DropCollectionIndex createDropCollectionIndex() {
+		DropCollectionIndexImpl dropCollectionIndex = new DropCollectionIndexImpl();
+		return dropCollectionIndex;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddGraphAttribute createAddGraphAttribute() {
+		AddGraphAttributeImpl addGraphAttribute = new AddGraphAttributeImpl();
+		return addGraphAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RemoveGraphAttribute createRemoveGraphAttribute() {
+		RemoveGraphAttributeImpl removeGraphAttribute = new RemoveGraphAttributeImpl();
+		return removeGraphAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddGraphEdge createAddGraphEdge() {
+		AddGraphEdgeImpl addGraphEdge = new AddGraphEdgeImpl();
+		return addGraphEdge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RemoveGraphEdge createRemoveGraphEdge() {
+		RemoveGraphEdgeImpl removeGraphEdge = new RemoveGraphEdgeImpl();
+		return removeGraphEdge;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RenabeGraphEdgeLabel createRenabeGraphEdgeLabel() {
+		RenabeGraphEdgeLabelImpl renabeGraphEdgeLabel = new RenabeGraphEdgeLabelImpl();
+		return renabeGraphEdgeLabel;
 	}
 
 	/**
@@ -821,17 +948,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public AddCustomDataTypeAttribute createAddCustomDataTypeAttribute() {
 		AddCustomDataTypeAttributeImpl addCustomDataTypeAttribute = new AddCustomDataTypeAttributeImpl();
 		return addCustomDataTypeAttribute;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AddPrimitiveDataTypeAttribute createAddPrimitiveDataTypeAttribute() {
-		AddPrimitiveDataTypeAttributeImpl addPrimitiveDataTypeAttribute = new AddPrimitiveDataTypeAttributeImpl();
-		return addPrimitiveDataTypeAttribute;
 	}
 
 	/**
@@ -861,26 +977,6 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Cardinality createCardinalityFromString(EDataType eDataType, String initialValue) {
-		Cardinality result = Cardinality.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertCardinalityToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public NlpTaskType createNlpTaskTypeFromString(EDataType eDataType, String initialValue) {
 		NlpTaskType result = NlpTaskType.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -901,8 +997,8 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PrimitiveDataType createPrimitiveDataTypeFromString(EDataType eDataType, String initialValue) {
-		PrimitiveDataType result = PrimitiveDataType.get(initialValue);
+	public Cardinality createCardinalityFromString(EDataType eDataType, String initialValue) {
+		Cardinality result = Cardinality.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -912,7 +1008,7 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPrimitiveDataTypeToString(EDataType eDataType, Object instanceValue) {
+	public String convertCardinalityToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

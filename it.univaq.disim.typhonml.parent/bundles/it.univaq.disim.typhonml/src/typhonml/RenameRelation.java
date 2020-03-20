@@ -24,10 +24,6 @@ public interface RenameRelation extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Relation To Rename</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relation To Rename</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Relation To Rename</em>' reference.
 	 * @see #setRelationToRename(Relation)
@@ -50,10 +46,6 @@ public interface RenameRelation extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>New Relation Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Relation Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Relation Name</em>' attribute.
 	 * @see #setNewRelationName(String)

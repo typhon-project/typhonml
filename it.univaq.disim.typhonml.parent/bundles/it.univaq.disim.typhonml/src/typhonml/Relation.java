@@ -26,10 +26,6 @@ public interface Relation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(Entity)
@@ -53,10 +49,6 @@ public interface Relation extends NamedElement {
 	 * Returns the value of the '<em><b>Cardinality</b></em>' attribute.
 	 * The literals are from the enumeration {@link typhonml.Cardinality}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Cardinality</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cardinality</em>' attribute.
 	 * @see typhonml.Cardinality
@@ -81,10 +73,6 @@ public interface Relation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Opposite</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Opposite</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Opposite</em>' reference.
 	 * @see #setOpposite(Relation)
@@ -107,10 +95,6 @@ public interface Relation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Is Containment</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Is Containment</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Containment</em>' attribute.
 	 * @see #setIsContainment(Boolean)

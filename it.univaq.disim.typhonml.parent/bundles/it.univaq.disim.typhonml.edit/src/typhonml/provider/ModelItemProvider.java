@@ -77,8 +77,9 @@ public class ModelItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
+			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__ENTITIES);
 			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__DATABASES);
-			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__DATA_TYPES);
+			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__CUSTOM_DATA_TYPES);
 			childrenFeatures.add(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS);
 		}
 		return childrenFeatures;
@@ -132,8 +133,9 @@ public class ModelItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Model.class)) {
+			case TyphonmlPackage.MODEL__ENTITIES:
 			case TyphonmlPackage.MODEL__DATABASES:
-			case TyphonmlPackage.MODEL__DATA_TYPES:
+			case TyphonmlPackage.MODEL__CUSTOM_DATA_TYPES:
 			case TyphonmlPackage.MODEL__CHANGE_OPERATORS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -151,6 +153,16 @@ public class ModelItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__ENTITIES,
+				 TyphonmlFactory.eINSTANCE.createEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__ENTITIES,
+				 TyphonmlFactory.eINSTANCE.createAddEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -179,17 +191,7 @@ public class ModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
-				 TyphonmlFactory.eINSTANCE.createEntity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
-				 TyphonmlFactory.eINSTANCE.createAddEntity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__DATA_TYPES,
+				(TyphonmlPackage.Literals.MODEL__CUSTOM_DATA_TYPES,
 				 TyphonmlFactory.eINSTANCE.createCustomDataType()));
 
 		newChildDescriptors.add
@@ -200,22 +202,27 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createRenameEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createRemoveEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createSplitEntity()));
+				 TyphonmlFactory.eINSTANCE.createRemoveAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createMigrateEntity()));
+				 TyphonmlFactory.eINSTANCE.createRenameAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createMergeEntity()));
+				 TyphonmlFactory.eINSTANCE.createChangeRelationContainement()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -260,12 +267,27 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createRemoveAttribute()));
+				 TyphonmlFactory.eINSTANCE.createSplitEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createRenameAttribute()));
+				 TyphonmlFactory.eINSTANCE.createSplitEntityVertical()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createSplitEntityHorizontal()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createMigrateEntity()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createMergeEntity()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -335,32 +357,7 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createRenameEntity()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createChangeRelationContainement()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createSplitEntityVertical()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createSplitEntityHorizontal()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createAddCustomDataTypeAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createAddPrimitiveDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -385,7 +382,7 @@ public class ModelItemProvider
 		Object childObject = child;
 
 		boolean qualify =
-			childFeature == TyphonmlPackage.Literals.MODEL__DATA_TYPES ||
+			childFeature == TyphonmlPackage.Literals.MODEL__ENTITIES ||
 			childFeature == TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS;
 
 		if (qualify) {

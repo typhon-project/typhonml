@@ -25,10 +25,6 @@ public interface DocumentDB extends Database {
 	 * Returns the value of the '<em><b>Collections</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.Collection}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Collections</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Collections</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getDocumentDB_Collections()
