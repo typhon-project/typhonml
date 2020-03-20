@@ -4,8 +4,9 @@
 package typhonml;
 
 class Model {
+  val Entity[*] entities;	
   val Database[*] databases;
-  val DataType[*] dataTypes;
+  val CustomDataType[*] customDataTypes;
   val ChangeOperator[*] changeOperators;
 }
 
@@ -16,36 +17,122 @@ abstract class NamedElement {
 
 
 
-abstract class Database extends NamedElement {
-}
 
-abstract class DataType extends NamedElement {
-}
-
-class CustomDataType extends DataType {
-  val DataTypeItem[*] elements;
-}
-
-class DataTypeItem extends NamedElement {
-  ref DataType type;
-  val DataTypeImplementationPackage[1] implementation;
+abstract class DataType {
 }
 
 
-class DataTypeImplementationPackage {
-  attr String location;
+/*
+ **********************************************
+ ********start PRIMITIVE TYPES*****************
+ **********************************************
+*/
+abstract class PrimitiveDataType extends DataType{
 }
+
+class IntType extends PrimitiveDataType{
+}
+
+class BigintType extends PrimitiveDataType{
+}
+
+class StringType extends PrimitiveDataType{
+	attr int maxSize;
+}
+
+class TextType extends PrimitiveDataType{
+}
+
+class PointType extends PrimitiveDataType{
+}
+
+class PolygonType extends PrimitiveDataType{
+}
+
+class BoolType extends PrimitiveDataType{
+}
+
+class FloatType extends PrimitiveDataType{
+}
+
+class BlobType extends PrimitiveDataType{
+}
+
+class FreetextType extends PrimitiveDataType{
+	val NlpTask[1] tasks;
+  	attr String workflowName;
+}
+
+class NlpTask {
+  attr NlpTaskType type;
+  attr String[*] parameters;
+}
+
+class DateType extends PrimitiveDataType{
+}
+
+class DatetimeType extends PrimitiveDataType{
+}
+/*
+ **********************************************
+ ********end PRIMITIVE TYPES*****************
+ **********************************************
+*/
+
+
+
+
 
 /*
 class PrimitiveDataTypeAttribute extends Attribute {
   attr PrimitiveDataType[1] type;
   attr int maxSize;
 }
-*/
 
 class CustomDataTypeAttribute extends Attribute {
   ref CustomDataType[1] type;
 }
+*/
+
+
+
+
+/*
+ **********************************************
+ ********Start CUSTOM TYPES********************
+ **********************************************
+*/
+class CustomDataType extends DataType, NamedElement{
+  val CustomDataTypeItem[*] elements;
+}
+
+class CustomDataTypeItem extends NamedElement {
+  ref DataType type;
+  val CustomDataTypeImplementationPackage[1] implementation;
+}
+
+class CustomDataTypeImplementationPackage {
+  attr String location;
+}
+/*
+ **********************************************
+ ********End CUSTOM TYPES********************
+ **********************************************
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 class FunctionalTag extends NamedElement {
@@ -55,7 +142,7 @@ class NFunctionalTag extends NamedElement {
 }
 
 
-class Entity extends DataType {
+class Entity extends NamedElement{
 
   @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Collection.allInstances()->select(e|e.entity = self)")
   @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
@@ -76,21 +163,37 @@ class Entity extends DataType {
   @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Column.allInstances()->select(e|e.entity = self)")
   @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
   !ordered op Column[*] getColumns();
-  val Attribute[*] attributes;
-  val FreeText[*] fretextAttributes;
+  val EntityAttribute[*] attributes;
+  //val FreetextType[*] fretextAttributes;
   val Relation[*] relations;
   val FunctionalTag[*] functionalTags;
   val NFunctionalTag[*] nfunctionalTags;
 }
 
-abstract class Attribute extends NamedElement {
+
+
+abstract class EntityAttribute extends NamedElement {
+  
 }
+
+class Attribute extends EntityAttribute{
+	val DataType[1] type;	
+}
+
+class CustomAttribute extends EntityAttribute{
+	ref CustomDataType[1] type;	
+}
+
+
 
 class Relation extends NamedElement {
   ref Entity type;
   attr Cardinality[1] cardinality;
   ref Relation opposite;
   attr Boolean isContainment;
+}
+
+abstract class Database extends NamedElement {
 }
 
 class RelationalDB extends Database {
@@ -165,18 +268,6 @@ class Column extends NamedElement {
   ref Attribute[*] attributes;
   ref Entity entity;
 }
-
-
-class FreeText extends NamedElement {
-  val NlpTask[1] tasks;
-  attr String workflowName;
-}
-
-class NlpTask {
-  attr NlpTaskType type;
-  attr String[*] parameters;
-}
-
 
 
 
@@ -350,7 +441,7 @@ class RenabeGraphEdgeLabel extends ChangeOperator {
   attr String newName;
 }
 
-class AddCustomDataTypeAttribute extends AddAttribute, CustomDataTypeAttribute {
+class AddCustomDataTypeAttribute extends AddAttribute {
 }
 
 /*
@@ -360,7 +451,7 @@ class AddPrimitiveDataTypeAttribute extends AddAttribute, PrimitiveDataTypeAttri
 
 class ChangePrimitiveDataTypeAttribute extends ChangeAttributeType {
   attr int maxSize;
-  attr PrimitiveDataType[1] newType;
+  //attr PrimitiveDataType[1] newType;
 }
 
 class ChangeCustomDataTypeAttribute extends ChangeAttributeType {
@@ -395,16 +486,3 @@ enum Cardinality {
   one_many = 3;
 }
 
-enum PrimitiveDataType {
-  bigint = 0;
-  string = 1;
-  text = 2;
-  point = 3;
-  polygon = 4;
-  bool = 5;
-  float = 6;
-  int = 7;
-  blob = 8;
-  date = 9;
-  datetime = 10;
-}

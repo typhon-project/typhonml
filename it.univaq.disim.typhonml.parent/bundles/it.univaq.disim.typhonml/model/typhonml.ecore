@@ -10,10 +10,12 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entities" upperBound="-1"
+        eType="#//Entity" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="databases" upperBound="-1"
         eType="#//Database" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dataTypes" upperBound="-1"
-        eType="#//DataType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="customDataTypes" upperBound="-1"
+        eType="#//CustomDataType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="changeOperators" upperBound="-1"
         eType="#//ChangeOperator" containment="true"/>
   </eClassifiers>
@@ -21,26 +23,46 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="CustomDataType" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//DataTypeItem" containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveDataType" abstract="true" eSuperTypes="#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BigintType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//PrimitiveDataType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeItem" eSuperTypes="#//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="TextType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PointType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PolygonType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BoolType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BlobType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FreetextType" eSuperTypes="#//PrimitiveDataType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" eType="#//NlpTask"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workflowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NlpTask">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NlpTaskType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DatetimeType" eSuperTypes="#//PrimitiveDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDataType" eSuperTypes="#//DataType #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//CustomDataTypeItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDataTypeItem" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
-        eType="#//DataTypeImplementationPackage" containment="true"/>
+        eType="#//CustomDataTypeImplementationPackage" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataTypeImplementationPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="CustomDataTypeImplementationPackage">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CustomDataTypeAttribute" eSuperTypes="#//Attribute">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CustomDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalTag" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NFunctionalTag" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//DataType">
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//NamedElement">
     <eOperations name="getCollections" ordered="false" upperBound="-1" eType="#//Collection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="body" value="typhonml::Collection.allInstances()->select(e|e.entity = self)"/>
@@ -82,9 +104,7 @@
       </eAnnotations>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Attribute" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="fretextAttributes" upperBound="-1"
-        eType="#//FreeText" containment="true"/>
+        eType="#//EntityAttribute" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
         eType="#//Relation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="functionalTags" upperBound="-1"
@@ -92,7 +112,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="nfunctionalTags" upperBound="-1"
         eType="#//NFunctionalTag" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Attribute" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityAttribute" abstract="true" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Attribute" eSuperTypes="#//EntityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CustomAttribute" eSuperTypes="#//EntityAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CustomDataType"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Entity"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinality" lowerBound="1"
@@ -100,6 +127,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="opposite" eType="#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isContainment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Database" abstract="true" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="RelationalDB" eSuperTypes="#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tables" upperBound="-1"
         eType="#//Table" containment="true"/>
@@ -174,16 +202,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
         eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FreeText" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" eType="#//NlpTask"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workflowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NlpTask">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NlpTaskType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeOperator" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="AddEntity" eSuperTypes="#//Entity #//ChangeOperator"/>
@@ -345,11 +363,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="edge" lowerBound="1" eType="#//GraphEdge"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute #//CustomDataTypeAttribute"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChangePrimitiveDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newType" lowerBound="1"
-        eType="#//PrimitiveDataType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeCustomDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="newType" lowerBound="1"
@@ -380,18 +396,5 @@
     <eLiterals name="one" value="1"/>
     <eLiterals name="zero_many" value="2"/>
     <eLiterals name="one_many" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveDataType">
-    <eLiterals name="bigint"/>
-    <eLiterals name="string" value="1"/>
-    <eLiterals name="text" value="2"/>
-    <eLiterals name="point" value="3"/>
-    <eLiterals name="polygon" value="4"/>
-    <eLiterals name="bool" value="5"/>
-    <eLiterals name="float" value="6"/>
-    <eLiterals name="int" value="7"/>
-    <eLiterals name="blob" value="8"/>
-    <eLiterals name="date" value="9"/>
-    <eLiterals name="datetime" value="10"/>
   </eClassifiers>
 </ecore:EPackage>
