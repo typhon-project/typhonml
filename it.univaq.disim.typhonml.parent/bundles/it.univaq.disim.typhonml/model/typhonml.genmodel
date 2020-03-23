@@ -24,7 +24,6 @@
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/TermExtraction"/>
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/NamedEntityRecognition"/>
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/RelationExtraction"/>
-      <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/EventExtraction"/>
       <genEnumLiterals ecoreEnumLiteral="typhonml.ecore#//NlpTaskType/CoreferenceResolution"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="typhonml.ecore#//Cardinality">
@@ -58,11 +57,10 @@
     <genClasses ecoreClass="typhonml.ecore#//BlobType"/>
     <genClasses ecoreClass="typhonml.ecore#//FreetextType">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//FreetextType/tasks"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//FreetextType/workflowName"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//NlpTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NlpTask/workflowName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NlpTask/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//NlpTask/parameters"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//DateType"/>
     <genClasses ecoreClass="typhonml.ecore#//DatetimeType"/>

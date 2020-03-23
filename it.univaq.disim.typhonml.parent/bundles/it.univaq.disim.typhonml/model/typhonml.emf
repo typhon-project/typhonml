@@ -59,14 +59,15 @@ class BlobType extends PrimitiveDataType{
 }
 
 class FreetextType extends PrimitiveDataType{
-	val NlpTask[1] tasks;
-  	attr String workflowName;
+	val NlpTask[*] tasks;
 }
 
 class NlpTask {
-  attr NlpTaskType type;
-  attr String[*] parameters;
+	attr String[1] workflowName;
+  	attr NlpTaskType[1] type;
+  //attr String[*] parameters;
 }
+
 
 class DateType extends PrimitiveDataType{
 }
@@ -463,8 +464,7 @@ enum NlpTaskType {
   TermExtraction = 13;
   NamedEntityRecognition = 14;
   RelationExtraction = 15;
-  EventExtraction = 16;
-  CoreferenceResolution = 17;
+  CoreferenceResolution = 16;
 }
 
 enum Cardinality {

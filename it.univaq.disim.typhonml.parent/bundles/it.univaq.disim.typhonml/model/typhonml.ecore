@@ -37,14 +37,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="FloatType" eSuperTypes="#//PrimitiveDataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="BlobType" eSuperTypes="#//PrimitiveDataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="FreetextType" eSuperTypes="#//PrimitiveDataType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" lowerBound="1" eType="#//NlpTask"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workflowName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//NlpTask" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NlpTask">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//NlpTaskType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameters" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="workflowName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//NlpTaskType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DateType" eSuperTypes="#//PrimitiveDataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="DatetimeType" eSuperTypes="#//PrimitiveDataType"/>
@@ -388,8 +387,7 @@
     <eLiterals name="TermExtraction" value="13"/>
     <eLiterals name="NamedEntityRecognition" value="14"/>
     <eLiterals name="RelationExtraction" value="15"/>
-    <eLiterals name="EventExtraction" value="16"/>
-    <eLiterals name="CoreferenceResolution" value="17"/>
+    <eLiterals name="CoreferenceResolution" value="16"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Cardinality">
     <eLiterals name="zero_one"/>
