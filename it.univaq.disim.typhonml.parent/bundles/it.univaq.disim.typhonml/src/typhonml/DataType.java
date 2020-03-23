@@ -2,6 +2,8 @@
  */
 package typhonml;
 
+import org.eclipse.emf.ecore.EObject;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +15,5 @@ package typhonml;
  * @model abstract="true"
  * @generated
  */
-public interface DataType extends NamedElement {
+public interface DataType extends EObject {
 } // DataType

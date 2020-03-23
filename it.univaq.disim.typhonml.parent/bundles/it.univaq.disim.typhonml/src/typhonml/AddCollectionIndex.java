@@ -25,10 +25,6 @@ public interface AddCollectionIndex extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Collection</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Collection</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Collection</em>' reference.
 	 * @see #setCollection(Collection)
@@ -52,10 +48,6 @@ public interface AddCollectionIndex extends ChangeOperator {
 	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
 	 * The list contents are of type {@link typhonml.Attribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' reference list.
 	 * @see typhonml.TyphonmlPackage#getAddCollectionIndex_Attributes()

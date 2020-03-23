@@ -11,7 +11,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import typhonml.CustomDataType;
@@ -46,8 +48,54 @@ public class CustomDataTypeItemProvider extends DataTypeItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
+			addImportedNamespacePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 TyphonmlPackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Imported Namespace feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImportedNamespacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_importedNamespace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_importedNamespace_feature", "_UI_NamedElement_type"),
+				 TyphonmlPackage.Literals.NAMED_ELEMENT__IMPORTED_NAMESPACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -118,6 +166,10 @@ public class CustomDataTypeItemProvider extends DataTypeItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(CustomDataType.class)) {
+			case TyphonmlPackage.CUSTOM_DATA_TYPE__NAME:
+			case TyphonmlPackage.CUSTOM_DATA_TYPE__IMPORTED_NAMESPACE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case TyphonmlPackage.CUSTOM_DATA_TYPE__ELEMENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -139,7 +191,7 @@ public class CustomDataTypeItemProvider extends DataTypeItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.CUSTOM_DATA_TYPE__ELEMENTS,
-				 TyphonmlFactory.eINSTANCE.createDataTypeItem()));
+				 TyphonmlFactory.eINSTANCE.createCustomDataTypeItem()));
 	}
 
 }

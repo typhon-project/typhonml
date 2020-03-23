@@ -26,10 +26,6 @@ public interface GraphEdge extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>From</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>From</em>' reference.
 	 * @see #setFrom(GraphNode)
@@ -52,10 +48,6 @@ public interface GraphEdge extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>To</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>To</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>To</em>' reference.
 	 * @see #setTo(GraphNode)
@@ -79,10 +71,6 @@ public interface GraphEdge extends NamedElement {
 	 * Returns the value of the '<em><b>Labels</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.GraphEdgeLabel}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Labels</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Labels</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getGraphEdge_Labels()

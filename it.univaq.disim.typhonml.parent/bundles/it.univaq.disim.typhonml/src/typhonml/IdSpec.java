@@ -28,10 +28,6 @@ public interface IdSpec extends EObject {
 	 * Returns the value of the '<em><b>Attributes</b></em>' reference list.
 	 * The list contents are of type {@link typhonml.Attribute}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Attributes</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' reference list.
 	 * @see typhonml.TyphonmlPackage#getIdSpec_Attributes()
@@ -44,10 +40,6 @@ public interface IdSpec extends EObject {
 	 * Returns the value of the '<em><b>Table</b></em>' container reference.
 	 * It is bidirectional and its opposite is '{@link typhonml.Table#getIdSpec <em>Id Spec</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Table</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Table</em>' container reference.
 	 * @see #setTable(Table)

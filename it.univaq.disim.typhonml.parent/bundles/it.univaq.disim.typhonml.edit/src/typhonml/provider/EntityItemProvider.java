@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -23,7 +24,7 @@ import typhonml.TyphonmlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class EntityItemProvider extends DataTypeItemProvider {
+public class EntityItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -62,7 +63,6 @@ public class EntityItemProvider extends DataTypeItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES);
-			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__FRETEXT_ATTRIBUTES);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__RELATIONS);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__FUNCTIONAL_TAGS);
 			childrenFeatures.add(TyphonmlPackage.Literals.ENTITY__NFUNCTIONAL_TAGS);
@@ -122,7 +122,6 @@ public class EntityItemProvider extends DataTypeItemProvider {
 
 		switch (notification.getFeatureID(Entity.class)) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
-			case TyphonmlPackage.ENTITY__FRETEXT_ATTRIBUTES:
 			case TyphonmlPackage.ENTITY__RELATIONS:
 			case TyphonmlPackage.ENTITY__FUNCTIONAL_TAGS:
 			case TyphonmlPackage.ENTITY__NFUNCTIONAL_TAGS:
@@ -151,12 +150,12 @@ public class EntityItemProvider extends DataTypeItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
-				 TyphonmlFactory.eINSTANCE.createAddAttribute()));
+				 TyphonmlFactory.eINSTANCE.createCustomAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TyphonmlPackage.Literals.ENTITY__FRETEXT_ATTRIBUTES,
-				 TyphonmlFactory.eINSTANCE.createFreeText()));
+				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createAddCustomDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter

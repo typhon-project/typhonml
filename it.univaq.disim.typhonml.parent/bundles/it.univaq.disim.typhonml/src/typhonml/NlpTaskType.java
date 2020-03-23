@@ -179,16 +179,6 @@ public enum NlpTaskType implements Enumerator {
 	RELATION_EXTRACTION(15, "RelationExtraction", "RelationExtraction"),
 
 	/**
-	 * The '<em><b>Event Extraction</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EVENT_EXTRACTION_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EVENT_EXTRACTION(16, "EventExtraction", "EventExtraction"),
-
-	/**
 	 * The '<em><b>Coreference Resolution</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,15 +186,11 @@ public enum NlpTaskType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COREFERENCE_RESOLUTION(17, "CoreferenceResolution", "CoreferenceResolution");
+	COREFERENCE_RESOLUTION(16, "CoreferenceResolution", "CoreferenceResolution");
 
 	/**
 	 * The '<em><b>Paragraph Segmentation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Paragraph Segmentation</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PARAGRAPH_SEGMENTATION
 	 * @model name="ParagraphSegmentation"
@@ -216,10 +202,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Sentence Segmentation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Sentence Segmentation</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SENTENCE_SEGMENTATION
 	 * @model name="SentenceSegmentation"
@@ -231,10 +213,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Tokenisation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Tokenisation</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TOKENISATION
 	 * @model name="Tokenisation"
@@ -246,10 +224,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Phrase Extractor</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Phrase Extractor</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PHRASE_EXTRACTOR
 	 * @model name="PhraseExtractor"
@@ -261,10 +235,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>NGram Extractor</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>NGram Extractor</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NGRAM_EXTRACTOR
 	 * @model name="NGramExtractor"
@@ -276,10 +246,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>POS Tagging</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>POS Tagging</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #POS_TAGGING
 	 * @model name="POSTagging"
@@ -291,10 +257,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Lemmatisation</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Lemmatisation</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #LEMMATISATION
 	 * @model name="Lemmatisation"
@@ -306,10 +268,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Stemming</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Stemming</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #STEMMING
 	 * @model name="Stemming"
@@ -321,10 +279,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Dependency Parsing</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Dependency Parsing</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DEPENDENCY_PARSING
 	 * @model name="DependencyParsing"
@@ -336,10 +290,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Chunking</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Chunking</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #CHUNKING
 	 * @model name="Chunking"
@@ -351,10 +301,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Sentiment Analysis</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Sentiment Analysis</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #SENTIMENT_ANALYSIS
 	 * @model name="SentimentAnalysis"
@@ -366,10 +312,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Text Classification</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Text Classification</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TEXT_CLASSIFICATION
 	 * @model name="TextClassification"
@@ -381,10 +323,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Topic Modelling</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Topic Modelling</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TOPIC_MODELLING
 	 * @model name="TopicModelling"
@@ -396,10 +334,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Term Extraction</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Term Extraction</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #TERM_EXTRACTION
 	 * @model name="TermExtraction"
@@ -411,10 +345,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Named Entity Recognition</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Named Entity Recognition</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #NAMED_ENTITY_RECOGNITION
 	 * @model name="NamedEntityRecognition"
@@ -426,10 +356,6 @@ public enum NlpTaskType implements Enumerator {
 	/**
 	 * The '<em><b>Relation Extraction</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Relation Extraction</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #RELATION_EXTRACTION
 	 * @model name="RelationExtraction"
@@ -439,34 +365,15 @@ public enum NlpTaskType implements Enumerator {
 	public static final int RELATION_EXTRACTION_VALUE = 15;
 
 	/**
-	 * The '<em><b>Event Extraction</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Event Extraction</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @see #EVENT_EXTRACTION
-	 * @model name="EventExtraction"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EVENT_EXTRACTION_VALUE = 16;
-
-	/**
 	 * The '<em><b>Coreference Resolution</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Coreference Resolution</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #COREFERENCE_RESOLUTION
 	 * @model name="CoreferenceResolution"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COREFERENCE_RESOLUTION_VALUE = 17;
+	public static final int COREFERENCE_RESOLUTION_VALUE = 16;
 
 	/**
 	 * An array of all the '<em><b>Nlp Task Type</b></em>' enumerators.
@@ -492,7 +399,6 @@ public enum NlpTaskType implements Enumerator {
 			TERM_EXTRACTION,
 			NAMED_ENTITY_RECOGNITION,
 			RELATION_EXTRACTION,
-			EVENT_EXTRACTION,
 			COREFERENCE_RESOLUTION,
 		};
 
@@ -566,7 +472,6 @@ public enum NlpTaskType implements Enumerator {
 			case TERM_EXTRACTION_VALUE: return TERM_EXTRACTION;
 			case NAMED_ENTITY_RECOGNITION_VALUE: return NAMED_ENTITY_RECOGNITION;
 			case RELATION_EXTRACTION_VALUE: return RELATION_EXTRACTION;
-			case EVENT_EXTRACTION_VALUE: return EVENT_EXTRACTION;
 			case COREFERENCE_RESOLUTION_VALUE: return COREFERENCE_RESOLUTION;
 		}
 		return null;

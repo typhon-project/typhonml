@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
-import typhonml.PrimitiveDataType;
-
 /**
  * This is the item provider adapter for a {@link typhonml.PrimitiveDataType} object.
  * <!-- begin-user-doc -->
@@ -46,17 +44,6 @@ public class PrimitiveDataTypeItemProvider extends DataTypeItemProvider {
 	}
 
 	/**
-	 * This returns PrimitiveDataType.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/PrimitiveDataType"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,10 +51,7 @@ public class PrimitiveDataTypeItemProvider extends DataTypeItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PrimitiveDataType)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PrimitiveDataType_type") :
-			getString("_UI_PrimitiveDataType_type") + " " + label;
+		return getString("_UI_PrimitiveDataType_type");
 	}
 
 
@@ -81,7 +65,6 @@ public class PrimitiveDataTypeItemProvider extends DataTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

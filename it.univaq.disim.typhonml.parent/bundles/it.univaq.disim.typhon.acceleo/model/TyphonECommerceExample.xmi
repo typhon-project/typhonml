@@ -1,150 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<typhonml:Model
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius"
-    xsi:schemaLocation="http://org.typhon.dsls.typhonml.sirius /it.univaq.disim.typhonml/model/typhonml.ecore">
-  <databases
-      xsi:type="typhonml:RelationalDB"
-      name="userdb">
-    <tables
-        name="userTable"
-        entity="//@dataTypes.0"
-        db="//@databases.0"/>
+<?xml version="1.0" encoding="ASCII"?>
+<typhonml:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:typhonml="http://org.typhon.dsls.typhonml.sirius">
+  <entities name="Review">
+    <attributes xsi:type="typhonml:Attribute" name="id">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="content">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <relations name="product" type="//@entities.1" cardinality="one"/>
+    <functionalTags name="fulltextsearch"/>
+    <nfunctionalTags name="readscalability"/>
+    <nfunctionalTags name="readavailability"/>
+  </entities>
+  <entities name="Product">
+    <attributes xsi:type="typhonml:Attribute" name="id">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="name">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="description">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <relations name="orders" type="//@entities.2" cardinality="zero_many"/>
+    <relations name="review" type="//@entities.0" cardinality="zero_many" opposite="//@entities.0/@relations.0" isContainment="true"/>
+  </entities>
+  <entities name="OrderProduct">
+    <attributes xsi:type="typhonml:Attribute" name="id">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="product_date">
+      <type xsi:type="typhonml:DatetimeType"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="totalAmount">
+      <type xsi:type="typhonml:BigintType"/>
+    </attributes>
+    <relations name="products" type="//@entities.1" cardinality="zero_many" opposite="//@entities.2/@relations.0"/>
+    <relations name="users" type="//@entities.3" cardinality="one" opposite="//@entities.3/@relations.2"/>
+    <relations name="paidWith" type="//@entities.5" cardinality="one"/>
+    <functionalTags name="acid"/>
+    <nfunctionalTags name="consistency"/>
+  </entities>
+  <entities name="User">
+    <attributes xsi:type="typhonml:Attribute" name="id">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="name">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <relations name="comments" type="//@entities.4" cardinality="zero_many" isContainment="true"/>
+    <relations name="paymentsDetails" type="//@entities.5" cardinality="zero_many" isContainment="true"/>
+    <relations name="orders" type="//@entities.2" cardinality="zero_many"/>
+    <functionalTags name="acid"/>
+    <functionalTags name="sorting"/>
+    <nfunctionalTags name="consistency"/>
+  </entities>
+  <entities name="Comment">
+    <attributes xsi:type="typhonml:Attribute" name="id">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="content">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <relations name="responses" type="//@entities.4" cardinality="zero_many" isContainment="true"/>
+    <functionalTags name="fulltextsearch"/>
+    <nfunctionalTags name="readscalability"/>
+    <nfunctionalTags name="readavailability"/>
+  </entities>
+  <entities name="CreditCard">
+    <attributes xsi:type="typhonml:Attribute" name="id">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="number">
+      <type xsi:type="typhonml:StringType" maxSize="32"/>
+    </attributes>
+    <attributes xsi:type="typhonml:Attribute" name="expiryDate">
+      <type xsi:type="typhonml:DatetimeType"/>
+    </attributes>
+    <nfunctionalTags name="consistency"/>
+  </entities>
+  <databases xsi:type="typhonml:RelationalDB" name="RelationalDatabase">
+    <tables name="OrderDB" entity="//@entities.2">
+      <indexSpec name="orderIndex" attributes="//@entities.2/@attributes.0"/>
+      <idSpec attributes="//@entities.2/@attributes.0"/>
+    </tables>
+    <tables name="UserDB" entity="//@entities.3">
+      <indexSpec name="userIndex" attributes="//@entities.3/@attributes.1"/>
+      <idSpec attributes="//@entities.3/@attributes.1"/>
+    </tables>
+    <tables name="ProductDB" entity="//@entities.1">
+      <indexSpec name="productIndex" attributes="//@entities.1/@attributes.1"/>
+      <idSpec attributes="//@entities.1/@attributes.1"/>
+    </tables>
+    <tables name="CreditCardDB" entity="//@entities.5">
+      <indexSpec name="creditCardIndex" attributes="//@entities.5/@attributes.1"/>
+      <idSpec attributes="//@entities.5/@attributes.1"/>
+    </tables>
   </databases>
-  <databases
-      xsi:type="typhonml:DocumentDB"
-      name="orderdb">
-    <collections
-        entity="//@dataTypes.1"
-        name="ordersCollection"/>
+  <databases xsi:type="typhonml:DocumentDB" name="DocumentDatabase">
+    <collections name="CommentsDB" entity="//@entities.4"/>
+    <collections name="ReviewDB" entity="//@entities.0"/>
   </databases>
-  <databases
-      xsi:type="typhonml:RelationalDB"
-      name="commentdb">
-    <tables
-        name="commentTable"
-        entity="//@dataTypes.3"
-        db="//@databases.2"/>
-  </databases>
-  <databases
-      xsi:type="typhonml:RelationalDB"
-      name="productdb">
-    <tables
-        name="productTable"
-        entity="//@dataTypes.4"
-        db="//@databases.3"/>
-  </databases>
-  <databases
-      xsi:type="typhonml:DocumentDB"
-      name="reviewdb">
-    <collections
-        entity="//@dataTypes.2"
-        name="reviewCollection"/>
-  </databases>
-  <dataTypes
-      xsi:type="typhonml:Entity"
-      name="User">
-    <attributes
-        name="name"
-        type="//@dataTypes.5"/>
-    <attributes
-        name="surname"
-        type="//@dataTypes.5"/>
-    <attributes
-        name="userId"
-        type="//@dataTypes.7"/>
-    <attributes
-        name="JURI"
-        type="//@dataTypes.5"/>
-    <attributes
-        xsi:type="typhonml:AddAttribute"
-        name="JURI2"
-        type="//@dataTypes.5"/>
-    <relations
-        name="orders"
-        type="//@dataTypes.1"/>
-    <relations
-        name="comments"
-        type="//@dataTypes.3"/>
-    <relations
-        name="reviews"
-        type="//@dataTypes.2"/>
-  </dataTypes>
-  <dataTypes
-      xsi:type="typhonml:Entity"
-      name="Order">
-    <attributes
-        name="date"
-        type="//@dataTypes.6"/>
-    <attributes
-        name="totalAmount"
-        type="//@dataTypes.7"/>
-    <attributes
-        name="orderId"
-        type="//@dataTypes.7"/>
-    <relations
-        name="orderProducts"
-        type="//@dataTypes.4"
-        opposite="//@dataTypes.4/@relations.0"/>
-  </dataTypes>
-  <dataTypes
-      xsi:type="typhonml:Entity"
-      name="Review">
-    <attributes
-        name="rating"
-        type="//@dataTypes.7"/>
-    <attributes
-        name="title"
-        type="//@dataTypes.5"/>
-    <attributes
-        name="reviewId"
-        type="//@dataTypes.7"/>
-    <relations
-        name="comment"
-        type="//@dataTypes.3"/>
-    <relations
-        name="product"
-        type="//@dataTypes.4"/>
-  </dataTypes>
-  <dataTypes
-      xsi:type="typhonml:Entity"
-      name="Comment">
-    <attributes
-        name="content"
-        type="//@dataTypes.5"/>
-    <attributes
-        name="commentId"
-        type="//@dataTypes.7"/>
-    <relations
-        name="responses"
-        type="//@dataTypes.3"/>
-  </dataTypes>
-  <dataTypes
-      xsi:type="typhonml:Entity"
-      name="Product">
-    <attributes
-        name="description"
-        type="//@dataTypes.5"/>
-    <attributes
-        name="productId"
-        type="//@dataTypes.7"/>
-    <relations
-        name="productOrders"
-        type="//@dataTypes.1"
-        opposite="//@dataTypes.1/@relations.0"/>
-    <relations
-        name="reviews"
-        type="//@dataTypes.2"/>
-  </dataTypes>
-  <dataTypes
-      xsi:type="typhonml:PrimitiveDataType"
-      name="String"/>
-  <dataTypes
-      xsi:type="typhonml:PrimitiveDataType"
-      name="Date"/>
-  <dataTypes
-      xsi:type="typhonml:PrimitiveDataType"
-      name="int"/>
 </typhonml:Model>

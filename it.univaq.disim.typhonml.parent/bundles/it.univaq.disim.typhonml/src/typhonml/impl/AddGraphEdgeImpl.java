@@ -3,15 +3,20 @@
 package typhonml.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import typhonml.AddGraphEdge;
 import typhonml.GraphEdge;
 import typhonml.GraphEdgeLabel;
@@ -46,6 +51,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,6 +61,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -64,6 +71,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -73,6 +81,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -82,6 +91,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected GraphNode from;
+
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -91,6 +101,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected GraphNode to;
+
 	/**
 	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

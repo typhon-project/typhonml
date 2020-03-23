@@ -25,10 +25,6 @@ public interface SplitEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Entity To Be Split</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity To Be Split</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity To Be Split</em>' reference.
 	 * @see #setEntityToBeSplit(Entity)
@@ -51,10 +47,6 @@ public interface SplitEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>First New Entity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>First New Entity</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>First New Entity</em>' containment reference.
 	 * @see #setFirstNewEntity(Entity)
@@ -77,10 +69,6 @@ public interface SplitEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Second New Entity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Second New Entity</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Second New Entity</em>' containment reference.
 	 * @see #setSecondNewEntity(Entity)

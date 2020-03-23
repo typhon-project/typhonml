@@ -1,0 +1,34 @@
+@namespace(uri="http://org.typhon.dsls.typhonml.req", prefix="typhonmlreq")
+package typhonmlreq;
+
+abstract class NamedElement {
+  attr String[1] name;
+  attr String importedNamespace;
+}
+
+class ModelReq {
+  val DBType[*] dbTypes;
+}
+
+class DBType extends NamedElement {
+  val FRequirement[*] frequirements;
+  val NFRequirement[*] nfrequirements;
+  attr databaseType[1] dbType;
+}
+
+class FRequirement extends NamedElement {
+  attr String description;
+}
+
+class NFRequirement extends NamedElement {
+  attr String description;
+}
+
+enum databaseType {
+  RelationalDB = 0;
+  DocumentDB = 1;
+  KeyValueDB = 2;
+  GraphDB = 3;
+  ColumnDB = 4;
+}
+

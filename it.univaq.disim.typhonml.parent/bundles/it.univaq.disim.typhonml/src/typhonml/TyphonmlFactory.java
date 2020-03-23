@@ -31,310 +31,94 @@ public interface TyphonmlFactory extends EFactory {
 	Model createModel();
 
 	/**
-	 * Returns a new object of class '<em>Add Entity</em>'.
+	 * Returns a new object of class '<em>Int Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Entity</em>'.
+	 * @return a new object of class '<em>Int Type</em>'.
 	 * @generated
 	 */
-	AddEntity createAddEntity();
+	IntType createIntType();
 
 	/**
-	 * Returns a new object of class '<em>Remove Entity</em>'.
+	 * Returns a new object of class '<em>Bigint Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Entity</em>'.
+	 * @return a new object of class '<em>Bigint Type</em>'.
 	 * @generated
 	 */
-	RemoveEntity createRemoveEntity();
+	BigintType createBigintType();
 
 	/**
-	 * Returns a new object of class '<em>Split Entity</em>'.
+	 * Returns a new object of class '<em>String Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Split Entity</em>'.
+	 * @return a new object of class '<em>String Type</em>'.
 	 * @generated
 	 */
-	SplitEntity createSplitEntity();
+	StringType createStringType();
 
 	/**
-	 * Returns a new object of class '<em>Migrate Entity</em>'.
+	 * Returns a new object of class '<em>Text Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Migrate Entity</em>'.
+	 * @return a new object of class '<em>Text Type</em>'.
 	 * @generated
 	 */
-	MigrateEntity createMigrateEntity();
+	TextType createTextType();
 
 	/**
-	 * Returns a new object of class '<em>Merge Entity</em>'.
+	 * Returns a new object of class '<em>Point Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Merge Entity</em>'.
+	 * @return a new object of class '<em>Point Type</em>'.
 	 * @generated
 	 */
-	MergeEntity createMergeEntity();
+	PointType createPointType();
 
 	/**
-	 * Returns a new object of class '<em>Add Relation</em>'.
+	 * Returns a new object of class '<em>Polygon Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Relation</em>'.
+	 * @return a new object of class '<em>Polygon Type</em>'.
 	 * @generated
 	 */
-	AddRelation createAddRelation();
+	PolygonType createPolygonType();
 
 	/**
-	 * Returns a new object of class '<em>Remove Relation</em>'.
+	 * Returns a new object of class '<em>Bool Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Relation</em>'.
+	 * @return a new object of class '<em>Bool Type</em>'.
 	 * @generated
 	 */
-	RemoveRelation createRemoveRelation();
+	BoolType createBoolType();
 
 	/**
-	 * Returns a new object of class '<em>Rename Relation</em>'.
+	 * Returns a new object of class '<em>Float Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rename Relation</em>'.
+	 * @return a new object of class '<em>Float Type</em>'.
 	 * @generated
 	 */
-	RenameRelation createRenameRelation();
+	FloatType createFloatType();
 
 	/**
-	 * Returns a new object of class '<em>Enable Relation Containment</em>'.
+	 * Returns a new object of class '<em>Blob Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enable Relation Containment</em>'.
+	 * @return a new object of class '<em>Blob Type</em>'.
 	 * @generated
 	 */
-	EnableRelationContainment createEnableRelationContainment();
+	BlobType createBlobType();
 
 	/**
-	 * Returns a new object of class '<em>Disable Relation Containment</em>'.
+	 * Returns a new object of class '<em>Freetext Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Disable Relation Containment</em>'.
+	 * @return a new object of class '<em>Freetext Type</em>'.
 	 * @generated
 	 */
-	DisableRelationContainment createDisableRelationContainment();
-
-	/**
-	 * Returns a new object of class '<em>Enable Bidirectional Relation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Enable Bidirectional Relation</em>'.
-	 * @generated
-	 */
-	EnableBidirectionalRelation createEnableBidirectionalRelation();
-
-	/**
-	 * Returns a new object of class '<em>Disable Bidirectional Relation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Disable Bidirectional Relation</em>'.
-	 * @generated
-	 */
-	DisableBidirectionalRelation createDisableBidirectionalRelation();
-
-	/**
-	 * Returns a new object of class '<em>Change Relation Cardinality</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Relation Cardinality</em>'.
-	 * @generated
-	 */
-	ChangeRelationCardinality createChangeRelationCardinality();
-
-	/**
-	 * Returns a new object of class '<em>Add Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Attribute</em>'.
-	 * @generated
-	 */
-	AddAttribute createAddAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Change Attribute Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Change Attribute Type</em>'.
-	 * @generated
-	 */
-	ChangeAttributeType createChangeAttributeType();
-
-	/**
-	 * Returns a new object of class '<em>Remove Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Attribute</em>'.
-	 * @generated
-	 */
-	RemoveAttribute createRemoveAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Rename Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rename Attribute</em>'.
-	 * @generated
-	 */
-	RenameAttribute createRenameAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Rename Table</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rename Table</em>'.
-	 * @generated
-	 */
-	RenameTable createRenameTable();
-
-	/**
-	 * Returns a new object of class '<em>Add Index</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Index</em>'.
-	 * @generated
-	 */
-	AddIndex createAddIndex();
-
-	/**
-	 * Returns a new object of class '<em>Drop Index</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Drop Index</em>'.
-	 * @generated
-	 */
-	DropIndex createDropIndex();
-
-	/**
-	 * Returns a new object of class '<em>Add Attributes To Index</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Attributes To Index</em>'.
-	 * @generated
-	 */
-	AddAttributesToIndex createAddAttributesToIndex();
-
-	/**
-	 * Returns a new object of class '<em>Remove Attributes To Index</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Attributes To Index</em>'.
-	 * @generated
-	 */
-	RemoveAttributesToIndex createRemoveAttributesToIndex();
-
-	/**
-	 * Returns a new object of class '<em>Rename Collection</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Rename Collection</em>'.
-	 * @generated
-	 */
-	RenameCollection createRenameCollection();
-
-	/**
-	 * Returns a new object of class '<em>Add Collection Index</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Collection Index</em>'.
-	 * @generated
-	 */
-	AddCollectionIndex createAddCollectionIndex();
-
-	/**
-	 * Returns a new object of class '<em>Drop Collection Index</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Drop Collection Index</em>'.
-	 * @generated
-	 */
-	DropCollectionIndex createDropCollectionIndex();
-
-	/**
-	 * Returns a new object of class '<em>Add Graph Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Graph Attribute</em>'.
-	 * @generated
-	 */
-	AddGraphAttribute createAddGraphAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Remove Graph Attribute</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Graph Attribute</em>'.
-	 * @generated
-	 */
-	RemoveGraphAttribute createRemoveGraphAttribute();
-
-	/**
-	 * Returns a new object of class '<em>Add Graph Edge</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Add Graph Edge</em>'.
-	 * @generated
-	 */
-	AddGraphEdge createAddGraphEdge();
-
-	/**
-	 * Returns a new object of class '<em>Remove Graph Edge</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Remove Graph Edge</em>'.
-	 * @generated
-	 */
-	RemoveGraphEdge createRemoveGraphEdge();
-
-	/**
-	 * Returns a new object of class '<em>Renabe Graph Edge Label</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Renabe Graph Edge Label</em>'.
-	 * @generated
-	 */
-	RenabeGraphEdgeLabel createRenabeGraphEdgeLabel();
-
-	/**
-	 * Returns a new object of class '<em>Primitive Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Primitive Data Type</em>'.
-	 * @generated
-	 */
-	PrimitiveDataType createPrimitiveDataType();
-
-	/**
-	 * Returns a new object of class '<em>Custom Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Custom Data Type</em>'.
-	 * @generated
-	 */
-	CustomDataType createCustomDataType();
-
-	/**
-	 * Returns a new object of class '<em>Data Type Item</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Type Item</em>'.
-	 * @generated
-	 */
-	DataTypeItem createDataTypeItem();
-
-	/**
-	 * Returns a new object of class '<em>Free Text</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Free Text</em>'.
-	 * @generated
-	 */
-	FreeText createFreeText();
+	FreetextType createFreetextType();
 
 	/**
 	 * Returns a new object of class '<em>Nlp Task</em>'.
@@ -346,13 +130,67 @@ public interface TyphonmlFactory extends EFactory {
 	NlpTask createNlpTask();
 
 	/**
-	 * Returns a new object of class '<em>Data Type Implementation Package</em>'.
+	 * Returns a new object of class '<em>Date Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Type Implementation Package</em>'.
+	 * @return a new object of class '<em>Date Type</em>'.
 	 * @generated
 	 */
-	DataTypeImplementationPackage createDataTypeImplementationPackage();
+	DateType createDateType();
+
+	/**
+	 * Returns a new object of class '<em>Datetime Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Datetime Type</em>'.
+	 * @generated
+	 */
+	DatetimeType createDatetimeType();
+
+	/**
+	 * Returns a new object of class '<em>Custom Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Data Type</em>'.
+	 * @generated
+	 */
+	CustomDataType createCustomDataType();
+
+	/**
+	 * Returns a new object of class '<em>Custom Data Type Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Data Type Item</em>'.
+	 * @generated
+	 */
+	CustomDataTypeItem createCustomDataTypeItem();
+
+	/**
+	 * Returns a new object of class '<em>Custom Data Type Implementation Package</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Data Type Implementation Package</em>'.
+	 * @generated
+	 */
+	CustomDataTypeImplementationPackage createCustomDataTypeImplementationPackage();
+
+	/**
+	 * Returns a new object of class '<em>Functional Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Functional Tag</em>'.
+	 * @generated
+	 */
+	FunctionalTag createFunctionalTag();
+
+	/**
+	 * Returns a new object of class '<em>NFunctional Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>NFunctional Tag</em>'.
+	 * @generated
+	 */
+	NFunctionalTag createNFunctionalTag();
 
 	/**
 	 * Returns a new object of class '<em>Entity</em>'.
@@ -371,6 +209,15 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	Attribute createAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Custom Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Custom Attribute</em>'.
+	 * @generated
+	 */
+	CustomAttribute createCustomAttribute();
 
 	/**
 	 * Returns a new object of class '<em>Relation</em>'.
@@ -517,6 +364,15 @@ public interface TyphonmlFactory extends EFactory {
 	Column createColumn();
 
 	/**
+	 * Returns a new object of class '<em>Add Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Entity</em>'.
+	 * @generated
+	 */
+	AddEntity createAddEntity();
+
+	/**
 	 * Returns a new object of class '<em>Rename Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -526,6 +382,33 @@ public interface TyphonmlFactory extends EFactory {
 	RenameEntity createRenameEntity();
 
 	/**
+	 * Returns a new object of class '<em>Remove Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Entity</em>'.
+	 * @generated
+	 */
+	RemoveEntity createRemoveEntity();
+
+	/**
+	 * Returns a new object of class '<em>Remove Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Attribute</em>'.
+	 * @generated
+	 */
+	RemoveAttribute createRemoveAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Rename Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rename Attribute</em>'.
+	 * @generated
+	 */
+	RenameAttribute createRenameAttribute();
+
+	/**
 	 * Returns a new object of class '<em>Change Relation Containement</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,6 +416,87 @@ public interface TyphonmlFactory extends EFactory {
 	 * @generated
 	 */
 	ChangeRelationContainement createChangeRelationContainement();
+
+	/**
+	 * Returns a new object of class '<em>Add Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Relation</em>'.
+	 * @generated
+	 */
+	AddRelation createAddRelation();
+
+	/**
+	 * Returns a new object of class '<em>Remove Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Relation</em>'.
+	 * @generated
+	 */
+	RemoveRelation createRemoveRelation();
+
+	/**
+	 * Returns a new object of class '<em>Rename Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rename Relation</em>'.
+	 * @generated
+	 */
+	RenameRelation createRenameRelation();
+
+	/**
+	 * Returns a new object of class '<em>Enable Relation Containment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enable Relation Containment</em>'.
+	 * @generated
+	 */
+	EnableRelationContainment createEnableRelationContainment();
+
+	/**
+	 * Returns a new object of class '<em>Disable Relation Containment</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Disable Relation Containment</em>'.
+	 * @generated
+	 */
+	DisableRelationContainment createDisableRelationContainment();
+
+	/**
+	 * Returns a new object of class '<em>Enable Bidirectional Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Enable Bidirectional Relation</em>'.
+	 * @generated
+	 */
+	EnableBidirectionalRelation createEnableBidirectionalRelation();
+
+	/**
+	 * Returns a new object of class '<em>Disable Bidirectional Relation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Disable Bidirectional Relation</em>'.
+	 * @generated
+	 */
+	DisableBidirectionalRelation createDisableBidirectionalRelation();
+
+	/**
+	 * Returns a new object of class '<em>Change Relation Cardinality</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Relation Cardinality</em>'.
+	 * @generated
+	 */
+	ChangeRelationCardinality createChangeRelationCardinality();
+
+	/**
+	 * Returns a new object of class '<em>Split Entity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Split Entity</em>'.
+	 * @generated
+	 */
+	SplitEntity createSplitEntity();
 
 	/**
 	 * Returns a new object of class '<em>Split Entity Vertical</em>'.
@@ -553,22 +517,166 @@ public interface TyphonmlFactory extends EFactory {
 	SplitEntityHorizontal createSplitEntityHorizontal();
 
 	/**
-	 * Returns a new object of class '<em>Functional Tag</em>'.
+	 * Returns a new object of class '<em>Migrate Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Functional Tag</em>'.
+	 * @return a new object of class '<em>Migrate Entity</em>'.
 	 * @generated
 	 */
-	FunctionalTag createFunctionalTag();
+	MigrateEntity createMigrateEntity();
 
 	/**
-	 * Returns a new object of class '<em>NFunctional Tag</em>'.
+	 * Returns a new object of class '<em>Merge Entity</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>NFunctional Tag</em>'.
+	 * @return a new object of class '<em>Merge Entity</em>'.
 	 * @generated
 	 */
-	NFunctionalTag createNFunctionalTag();
+	MergeEntity createMergeEntity();
+
+	/**
+	 * Returns a new object of class '<em>Rename Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rename Table</em>'.
+	 * @generated
+	 */
+	RenameTable createRenameTable();
+
+	/**
+	 * Returns a new object of class '<em>Add Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Index</em>'.
+	 * @generated
+	 */
+	AddIndex createAddIndex();
+
+	/**
+	 * Returns a new object of class '<em>Drop Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Drop Index</em>'.
+	 * @generated
+	 */
+	DropIndex createDropIndex();
+
+	/**
+	 * Returns a new object of class '<em>Add Attributes To Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Attributes To Index</em>'.
+	 * @generated
+	 */
+	AddAttributesToIndex createAddAttributesToIndex();
+
+	/**
+	 * Returns a new object of class '<em>Remove Attributes To Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Attributes To Index</em>'.
+	 * @generated
+	 */
+	RemoveAttributesToIndex createRemoveAttributesToIndex();
+
+	/**
+	 * Returns a new object of class '<em>Rename Collection</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Rename Collection</em>'.
+	 * @generated
+	 */
+	RenameCollection createRenameCollection();
+
+	/**
+	 * Returns a new object of class '<em>Add Collection Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Collection Index</em>'.
+	 * @generated
+	 */
+	AddCollectionIndex createAddCollectionIndex();
+
+	/**
+	 * Returns a new object of class '<em>Drop Collection Index</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Drop Collection Index</em>'.
+	 * @generated
+	 */
+	DropCollectionIndex createDropCollectionIndex();
+
+	/**
+	 * Returns a new object of class '<em>Add Graph Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Graph Attribute</em>'.
+	 * @generated
+	 */
+	AddGraphAttribute createAddGraphAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Remove Graph Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Graph Attribute</em>'.
+	 * @generated
+	 */
+	RemoveGraphAttribute createRemoveGraphAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Add Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Graph Edge</em>'.
+	 * @generated
+	 */
+	AddGraphEdge createAddGraphEdge();
+
+	/**
+	 * Returns a new object of class '<em>Remove Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Remove Graph Edge</em>'.
+	 * @generated
+	 */
+	RemoveGraphEdge createRemoveGraphEdge();
+
+	/**
+	 * Returns a new object of class '<em>Renabe Graph Edge Label</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Renabe Graph Edge Label</em>'.
+	 * @generated
+	 */
+	RenabeGraphEdgeLabel createRenabeGraphEdgeLabel();
+
+	/**
+	 * Returns a new object of class '<em>Add Custom Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Custom Data Type Attribute</em>'.
+	 * @generated
+	 */
+	AddCustomDataTypeAttribute createAddCustomDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Change Primitive Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Primitive Data Type Attribute</em>'.
+	 * @generated
+	 */
+	ChangePrimitiveDataTypeAttribute createChangePrimitiveDataTypeAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Change Custom Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Change Custom Data Type Attribute</em>'.
+	 * @generated
+	 */
+	ChangeCustomDataTypeAttribute createChangeCustomDataTypeAttribute();
 
 	/**
 	 * Returns the package supported by this factory.

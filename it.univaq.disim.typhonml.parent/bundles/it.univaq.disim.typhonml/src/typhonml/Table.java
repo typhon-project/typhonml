@@ -27,10 +27,6 @@ public interface Table extends NamedElement {
 	 * Returns the value of the '<em><b>Index Spec</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link typhonml.IndexSpec#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Index Spec</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Index Spec</em>' containment reference.
 	 * @see #setIndexSpec(IndexSpec)
@@ -55,10 +51,6 @@ public interface Table extends NamedElement {
 	 * Returns the value of the '<em><b>Id Spec</b></em>' containment reference.
 	 * It is bidirectional and its opposite is '{@link typhonml.IdSpec#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Id Spec</em>' containment reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id Spec</em>' containment reference.
 	 * @see #setIdSpec(IdSpec)
@@ -82,10 +74,6 @@ public interface Table extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Db</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Db</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Db</em>' reference.
 	 * @see #setDb(Database)
@@ -108,10 +96,6 @@ public interface Table extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity</em>' reference.
 	 * @see #setEntity(Entity)

@@ -102,7 +102,6 @@ public class EnableBidirectionalRelationItemProvider extends ChangeOperatorItemP
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**

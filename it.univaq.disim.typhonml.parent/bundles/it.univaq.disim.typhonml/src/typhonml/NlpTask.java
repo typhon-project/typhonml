@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link typhonml.NlpTask#getWorkflowName <em>Workflow Name</em>}</li>
  *   <li>{@link typhonml.NlpTask#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -22,19 +23,37 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface NlpTask extends EObject {
 	/**
+	 * Returns the value of the '<em><b>Workflow Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Workflow Name</em>' attribute.
+	 * @see #setWorkflowName(String)
+	 * @see typhonml.TyphonmlPackage#getNlpTask_WorkflowName()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getWorkflowName();
+
+	/**
+	 * Sets the value of the '{@link typhonml.NlpTask#getWorkflowName <em>Workflow Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Workflow Name</em>' attribute.
+	 * @see #getWorkflowName()
+	 * @generated
+	 */
+	void setWorkflowName(String value);
+
+	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link typhonml.NlpTaskType}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see typhonml.NlpTaskType
 	 * @see #setType(NlpTaskType)
 	 * @see typhonml.TyphonmlPackage#getNlpTask_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	NlpTaskType getType();

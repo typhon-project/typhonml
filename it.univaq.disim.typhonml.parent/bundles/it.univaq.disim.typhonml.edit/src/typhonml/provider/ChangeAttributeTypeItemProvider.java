@@ -43,7 +43,6 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 			super.getPropertyDescriptors(object);
 
 			addAttributeToChangePropertyDescriptor(object);
-			addNewTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,28 +61,6 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 				 getString("_UI_ChangeAttributeType_attributeToChange_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ChangeAttributeType_attributeToChange_feature", "_UI_ChangeAttributeType_type"),
 				 TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the New Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNewTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ChangeAttributeType_newType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ChangeAttributeType_newType_feature", "_UI_ChangeAttributeType_type"),
-				 TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE,
 				 true,
 				 false,
 				 true,
@@ -125,7 +102,6 @@ public class ChangeAttributeTypeItemProvider extends ChangeOperatorItemProvider 
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-		super.notifyChanged(notification);
 	}
 
 	/**
