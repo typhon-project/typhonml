@@ -51,7 +51,7 @@ public class TyphonMLSimpleUsage {
 		Resource modelResource2 = usageExample.loadTml(COMPLETE_TML_PATH);
 		
 		Model model = (Model) modelResource2.getContents().get(0);
-		model.getDataTypes().forEach(z->System.out.println(z.getName()));
+		model.getCustomDataTypes().forEach(z->System.out.println(z.getName()));
 		usageExample.generateTMLXFromTML(COMPLETE_MODEL_PATH);
 		usageExample.saveTML(model);
 	}
@@ -66,8 +66,8 @@ public class TyphonMLSimpleUsage {
 	private Entity getEntityByName(Model typhonModel, String entityName) {
 		Entity foundEntity = null;
 		
-		EList<DataType> entities = typhonModel.getDataTypes();
-		for (DataType dataType : entities) {
+		EList<Entity> entities = typhonModel.getEntities();
+		for (Entity dataType : entities) {
 			if(dataType instanceof Entity && dataType.getName().equalsIgnoreCase(entityName)) {
 				foundEntity = (Entity) dataType;
 			}
@@ -84,10 +84,10 @@ public class TyphonMLSimpleUsage {
 	 * @return
 	 */
 	private Entity changeOperatorAddAttributeIntoEntity(Model typhonModel, Entity entity, String attributeName) {
-		AddAttribute addAttribute = TyphonmlFactory.eINSTANCE.createAddAttribute();
+		Attribute addAttribute = TyphonmlFactory.eINSTANCE.createAttribute();
 		addAttribute.setName(attributeName);
-		addAttribute.setType(entity);
 		entity.getAttributes().add(addAttribute);
+		//We need to add a Type to addAttribute
 		saveModel(typhonModel);
 		System.out.println("\tTyphonML model instance update with change operator in "+COMPLETE_MODEL_PATH);
 		return entity;
@@ -125,7 +125,7 @@ public class TyphonMLSimpleUsage {
 			entityUser.getAttributes().add(userAttributeName);
 			Attribute userAttributeSurname = createAttribute("surname", entityUser);
 			entityUser.getAttributes().add(userAttributeSurname);
-		root.getDataTypes().add(entityUser);
+		root.getEntities().add(entityUser);
 			
 		//ENTITY ORDER	
 		Entity entityOrder = TyphonmlFactory.eINSTANCE.createEntity();
@@ -134,7 +134,7 @@ public class TyphonMLSimpleUsage {
 			entityOrder.getAttributes().add(orderAttributeName);
 			Attribute orderAttributeTotalAmount = createAttribute("totalAmount", entityOrder);
 			entityOrder.getAttributes().add(orderAttributeTotalAmount);
-		root.getDataTypes().add(entityOrder);
+		root.getEntities().add(entityOrder);
 		
 		//ENTITY REVIEW
 		Entity entityReview = TyphonmlFactory.eINSTANCE.createEntity();
@@ -143,14 +143,14 @@ public class TyphonMLSimpleUsage {
 			entityReview.getAttributes().add(reviewAttributeRaiting);
 			Attribute reviewAttributeTitle = createAttribute("title", entityReview);
 			entityReview.getAttributes().add(reviewAttributeTitle);
-		root.getDataTypes().add(entityReview);
+		root.getEntities().add(entityReview);
 		
 		//ENTITY COMMENT
 		Entity entityComment = TyphonmlFactory.eINSTANCE.createEntity();
 		entityComment.setName("Comment");
 			Attribute commentAttributeContent = createAttribute("content", entityComment);
 			entityComment.getAttributes().add(commentAttributeContent);
-		root.getDataTypes().add(entityComment);
+		root.getEntities().add(entityComment);
 		
 		//ENTITY CREDITCARD
 		Entity entityCreditCard = TyphonmlFactory.eINSTANCE.createEntity();
@@ -159,7 +159,7 @@ public class TyphonMLSimpleUsage {
 			entityCreditCard.getAttributes().add(creditCardAttributeNumber);
 			Attribute creditCardAttributeExpiryDate = createAttribute("expiryDate", entityCreditCard);
 			entityCreditCard.getAttributes().add(creditCardAttributeExpiryDate);
-		root.getDataTypes().add(entityCreditCard);
+		root.getEntities().add(entityCreditCard);
 		
 		
 		//DOCUMENT DB
@@ -196,7 +196,8 @@ public class TyphonMLSimpleUsage {
 	private Attribute createAttribute(String name, Entity entity) {
 		Attribute attribute = TyphonmlFactory.eINSTANCE.createAttribute();
 		attribute.setName(name);
-		attribute.setType(entity);
+		//We need to add a DataType to attribute instead Entity
+//		attribute.setType(entity);
 		return attribute;
 	}
 	
