@@ -1,0 +1,101 @@
+@functionalTags(fulltextsearch)
+@nFunctionalTags(readscalability, readavailability)
+entity Review{
+	id : string[32] 
+	content : string[32] 
+	product -> Product[1]
+}
+
+
+entity Product{
+	id : string[32]
+	name : string[32]
+	description : string[32]
+	
+	orders -> OrderProduct[0..*]
+	review:->Review."Review.product"[0..*]
+}
+
+@functionalTags(acid)
+@nFunctionalTags(consistency)
+entity OrderProduct{
+	id : string[32]
+	product_date : datetime
+	totalAmount : bigint
+	
+	products -> Product.products[0..*]
+	users -> User."User.orders"[1]
+	paidWith -> CreditCard[1]
+}
+
+@functionalTags(acid, sorting)
+@nFunctionalTags(consistency)
+entity User{
+	id : string[32]
+	name : string[32]
+	
+	comments :-> Comment[0..*]
+	paymentsDetails :-> CreditCard[0..*]
+	orders -> OrderProduct[0..*]
+}
+
+@functionalTags(fulltextsearch)
+@nFunctionalTags(readscalability, readavailability)
+entity Comment{
+	id : string[32]
+	content : string[32]
+	
+	responses :-> Comment[0..*]
+}
+
+@nFunctionalTags(consistency)
+entity CreditCard{
+	id : string[32]
+	number : string[32]
+	expiryDate : datetime
+} 
+
+
+
+
+
+
+relationaldb RelationalDatabase{
+	tables{
+		table {
+			OrderDB : OrderProduct
+			index orderIndex {
+				attributes ("OrderProduct.id")
+			}
+			idSpec ("OrderProduct.id")
+		}
+		table {
+			UserDB : User
+			index  userIndex{
+				attributes ('User.name')
+				}
+			idSpec ('User.name')
+		}
+		table {
+			ProductDB : Product
+			index productIndex{
+				attributes ('Product.name')
+			}
+			idSpec ('Product.name')
+		}
+		table {
+			CreditCardDB : CreditCard
+			index creditCardIndex{
+				attributes ("CreditCard.number")
+			}
+			idSpec ("CreditCard.number")
+		}
+	}
+}
+
+documentdb DocumentDatabase{
+	collections{
+			CommentsDB : Comment
+			ReviewDB : Review
+	}
+}
