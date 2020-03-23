@@ -95,788 +95,6 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddEntity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddEntityItemProvider addEntityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddEntity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddEntityAdapter() {
-		if (addEntityItemProvider == null) {
-			addEntityItemProvider = new AddEntityItemProvider(this);
-		}
-
-		return addEntityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveEntity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveEntityItemProvider removeEntityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveEntity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveEntityAdapter() {
-		if (removeEntityItemProvider == null) {
-			removeEntityItemProvider = new RemoveEntityItemProvider(this);
-		}
-
-		return removeEntityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.SplitEntity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SplitEntityItemProvider splitEntityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.SplitEntity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createSplitEntityAdapter() {
-		if (splitEntityItemProvider == null) {
-			splitEntityItemProvider = new SplitEntityItemProvider(this);
-		}
-
-		return splitEntityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.MigrateEntity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MigrateEntityItemProvider migrateEntityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.MigrateEntity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMigrateEntityAdapter() {
-		if (migrateEntityItemProvider == null) {
-			migrateEntityItemProvider = new MigrateEntityItemProvider(this);
-		}
-
-		return migrateEntityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.MergeEntity} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected MergeEntityItemProvider mergeEntityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.MergeEntity}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createMergeEntityAdapter() {
-		if (mergeEntityItemProvider == null) {
-			mergeEntityItemProvider = new MergeEntityItemProvider(this);
-		}
-
-		return mergeEntityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddRelationItemProvider addRelationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddRelationAdapter() {
-		if (addRelationItemProvider == null) {
-			addRelationItemProvider = new AddRelationItemProvider(this);
-		}
-
-		return addRelationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveRelationItemProvider removeRelationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveRelationAdapter() {
-		if (removeRelationItemProvider == null) {
-			removeRelationItemProvider = new RemoveRelationItemProvider(this);
-		}
-
-		return removeRelationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RenameRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RenameRelationItemProvider renameRelationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RenameRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRenameRelationAdapter() {
-		if (renameRelationItemProvider == null) {
-			renameRelationItemProvider = new RenameRelationItemProvider(this);
-		}
-
-		return renameRelationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.EnableRelationContainment} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EnableRelationContainmentItemProvider enableRelationContainmentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.EnableRelationContainment}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEnableRelationContainmentAdapter() {
-		if (enableRelationContainmentItemProvider == null) {
-			enableRelationContainmentItemProvider = new EnableRelationContainmentItemProvider(this);
-		}
-
-		return enableRelationContainmentItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DisableRelationContainment} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DisableRelationContainmentItemProvider disableRelationContainmentItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.DisableRelationContainment}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDisableRelationContainmentAdapter() {
-		if (disableRelationContainmentItemProvider == null) {
-			disableRelationContainmentItemProvider = new DisableRelationContainmentItemProvider(this);
-		}
-
-		return disableRelationContainmentItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.EnableBidirectionalRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected EnableBidirectionalRelationItemProvider enableBidirectionalRelationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.EnableBidirectionalRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createEnableBidirectionalRelationAdapter() {
-		if (enableBidirectionalRelationItemProvider == null) {
-			enableBidirectionalRelationItemProvider = new EnableBidirectionalRelationItemProvider(this);
-		}
-
-		return enableBidirectionalRelationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DisableBidirectionalRelation} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DisableBidirectionalRelationItemProvider disableBidirectionalRelationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.DisableBidirectionalRelation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDisableBidirectionalRelationAdapter() {
-		if (disableBidirectionalRelationItemProvider == null) {
-			disableBidirectionalRelationItemProvider = new DisableBidirectionalRelationItemProvider(this);
-		}
-
-		return disableBidirectionalRelationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.ChangeRelationCardinality} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ChangeRelationCardinalityItemProvider changeRelationCardinalityItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.ChangeRelationCardinality}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createChangeRelationCardinalityAdapter() {
-		if (changeRelationCardinalityItemProvider == null) {
-			changeRelationCardinalityItemProvider = new ChangeRelationCardinalityItemProvider(this);
-		}
-
-		return changeRelationCardinalityItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveAttributeItemProvider removeAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveAttributeAdapter() {
-		if (removeAttributeItemProvider == null) {
-			removeAttributeItemProvider = new RemoveAttributeItemProvider(this);
-		}
-
-		return removeAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RenameAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RenameAttributeItemProvider renameAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RenameAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRenameAttributeAdapter() {
-		if (renameAttributeItemProvider == null) {
-			renameAttributeItemProvider = new RenameAttributeItemProvider(this);
-		}
-
-		return renameAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RenameTable} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RenameTableItemProvider renameTableItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RenameTable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRenameTableAdapter() {
-		if (renameTableItemProvider == null) {
-			renameTableItemProvider = new RenameTableItemProvider(this);
-		}
-
-		return renameTableItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddIndex} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddIndexItemProvider addIndexItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddIndex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddIndexAdapter() {
-		if (addIndexItemProvider == null) {
-			addIndexItemProvider = new AddIndexItemProvider(this);
-		}
-
-		return addIndexItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DropIndex} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DropIndexItemProvider dropIndexItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.DropIndex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDropIndexAdapter() {
-		if (dropIndexItemProvider == null) {
-			dropIndexItemProvider = new DropIndexItemProvider(this);
-		}
-
-		return dropIndexItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddAttributesToIndex} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddAttributesToIndexItemProvider addAttributesToIndexItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddAttributesToIndex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddAttributesToIndexAdapter() {
-		if (addAttributesToIndexItemProvider == null) {
-			addAttributesToIndexItemProvider = new AddAttributesToIndexItemProvider(this);
-		}
-
-		return addAttributesToIndexItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveAttributesToIndex} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveAttributesToIndexItemProvider removeAttributesToIndexItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveAttributesToIndex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveAttributesToIndexAdapter() {
-		if (removeAttributesToIndexItemProvider == null) {
-			removeAttributesToIndexItemProvider = new RemoveAttributesToIndexItemProvider(this);
-		}
-
-		return removeAttributesToIndexItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RenameCollection} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RenameCollectionItemProvider renameCollectionItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RenameCollection}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRenameCollectionAdapter() {
-		if (renameCollectionItemProvider == null) {
-			renameCollectionItemProvider = new RenameCollectionItemProvider(this);
-		}
-
-		return renameCollectionItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddCollectionIndex} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddCollectionIndexItemProvider addCollectionIndexItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddCollectionIndex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddCollectionIndexAdapter() {
-		if (addCollectionIndexItemProvider == null) {
-			addCollectionIndexItemProvider = new AddCollectionIndexItemProvider(this);
-		}
-
-		return addCollectionIndexItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DropCollectionIndex} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DropCollectionIndexItemProvider dropCollectionIndexItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.DropCollectionIndex}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDropCollectionIndexAdapter() {
-		if (dropCollectionIndexItemProvider == null) {
-			dropCollectionIndexItemProvider = new DropCollectionIndexItemProvider(this);
-		}
-
-		return dropCollectionIndexItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddGraphAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddGraphAttributeItemProvider addGraphAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddGraphAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddGraphAttributeAdapter() {
-		if (addGraphAttributeItemProvider == null) {
-			addGraphAttributeItemProvider = new AddGraphAttributeItemProvider(this);
-		}
-
-		return addGraphAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveGraphAttribute} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveGraphAttributeItemProvider removeGraphAttributeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveGraphAttribute}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveGraphAttributeAdapter() {
-		if (removeGraphAttributeItemProvider == null) {
-			removeGraphAttributeItemProvider = new RemoveGraphAttributeItemProvider(this);
-		}
-
-		return removeGraphAttributeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.AddGraphEdge} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AddGraphEdgeItemProvider addGraphEdgeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.AddGraphEdge}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAddGraphEdgeAdapter() {
-		if (addGraphEdgeItemProvider == null) {
-			addGraphEdgeItemProvider = new AddGraphEdgeItemProvider(this);
-		}
-
-		return addGraphEdgeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RemoveGraphEdge} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RemoveGraphEdgeItemProvider removeGraphEdgeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RemoveGraphEdge}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRemoveGraphEdgeAdapter() {
-		if (removeGraphEdgeItemProvider == null) {
-			removeGraphEdgeItemProvider = new RemoveGraphEdgeItemProvider(this);
-		}
-
-		return removeGraphEdgeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.RenabeGraphEdgeLabel} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RenabeGraphEdgeLabelItemProvider renabeGraphEdgeLabelItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.RenabeGraphEdgeLabel}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRenabeGraphEdgeLabelAdapter() {
-		if (renabeGraphEdgeLabelItemProvider == null) {
-			renabeGraphEdgeLabelItemProvider = new RenabeGraphEdgeLabelItemProvider(this);
-		}
-
-		return renabeGraphEdgeLabelItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CustomDataTypeItemProvider customDataTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.CustomDataType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCustomDataTypeAdapter() {
-		if (customDataTypeItemProvider == null) {
-			customDataTypeItemProvider = new CustomDataTypeItemProvider(this);
-		}
-
-		return customDataTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeItem} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CustomDataTypeItemItemProvider customDataTypeItemItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.CustomDataTypeItem}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCustomDataTypeItemAdapter() {
-		if (customDataTypeItemItemProvider == null) {
-			customDataTypeItemItemProvider = new CustomDataTypeItemItemProvider(this);
-		}
-
-		return customDataTypeItemItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeImplementationPackage} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CustomDataTypeImplementationPackageItemProvider customDataTypeImplementationPackageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.CustomDataTypeImplementationPackage}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCustomDataTypeImplementationPackageAdapter() {
-		if (customDataTypeImplementationPackageItemProvider == null) {
-			customDataTypeImplementationPackageItemProvider = new CustomDataTypeImplementationPackageItemProvider(this);
-		}
-
-		return customDataTypeImplementationPackageItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.NlpTask} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NlpTaskItemProvider nlpTaskItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.NlpTask}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createNlpTaskAdapter() {
-		if (nlpTaskItemProvider == null) {
-			nlpTaskItemProvider = new NlpTaskItemProvider(this);
-		}
-
-		return nlpTaskItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DateType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DateTypeItemProvider dateTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.DateType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDateTypeAdapter() {
-		if (dateTypeItemProvider == null) {
-			dateTypeItemProvider = new DateTypeItemProvider(this);
-		}
-
-		return dateTypeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.DatetimeType} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DatetimeTypeItemProvider datetimeTypeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link typhonml.DatetimeType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDatetimeTypeAdapter() {
-		if (datetimeTypeItemProvider == null) {
-			datetimeTypeItemProvider = new DatetimeTypeItemProvider(this);
-		}
-
-		return datetimeTypeItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.IntType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1104,6 +322,190 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		}
 
 		return freetextTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.NlpTask} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NlpTaskItemProvider nlpTaskItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.NlpTask}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNlpTaskAdapter() {
+		if (nlpTaskItemProvider == null) {
+			nlpTaskItemProvider = new NlpTaskItemProvider(this);
+		}
+
+		return nlpTaskItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DateType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DateTypeItemProvider dateTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DateType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDateTypeAdapter() {
+		if (dateTypeItemProvider == null) {
+			dateTypeItemProvider = new DateTypeItemProvider(this);
+		}
+
+		return dateTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DatetimeType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DatetimeTypeItemProvider datetimeTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DatetimeType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDatetimeTypeAdapter() {
+		if (datetimeTypeItemProvider == null) {
+			datetimeTypeItemProvider = new DatetimeTypeItemProvider(this);
+		}
+
+		return datetimeTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomDataTypeItemProvider customDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.CustomDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomDataTypeAdapter() {
+		if (customDataTypeItemProvider == null) {
+			customDataTypeItemProvider = new CustomDataTypeItemProvider(this);
+		}
+
+		return customDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeItem} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomDataTypeItemItemProvider customDataTypeItemItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.CustomDataTypeItem}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomDataTypeItemAdapter() {
+		if (customDataTypeItemItemProvider == null) {
+			customDataTypeItemItemProvider = new CustomDataTypeItemItemProvider(this);
+		}
+
+		return customDataTypeItemItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeImplementationPackage} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CustomDataTypeImplementationPackageItemProvider customDataTypeImplementationPackageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.CustomDataTypeImplementationPackage}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCustomDataTypeImplementationPackageAdapter() {
+		if (customDataTypeImplementationPackageItemProvider == null) {
+			customDataTypeImplementationPackageItemProvider = new CustomDataTypeImplementationPackageItemProvider(this);
+		}
+
+		return customDataTypeImplementationPackageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.FunctionalTag} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FunctionalTagItemProvider functionalTagItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.FunctionalTag}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFunctionalTagAdapter() {
+		if (functionalTagItemProvider == null) {
+			functionalTagItemProvider = new FunctionalTagItemProvider(this);
+		}
+
+		return functionalTagItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.NFunctionalTag} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NFunctionalTagItemProvider nFunctionalTagItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.NFunctionalTag}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNFunctionalTagAdapter() {
+		if (nFunctionalTagItemProvider == null) {
+			nFunctionalTagItemProvider = new NFunctionalTagItemProvider(this);
+		}
+
+		return nFunctionalTagItemProvider;
 	}
 
 	/**
@@ -1544,6 +946,29 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddEntity} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddEntityItemProvider addEntityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddEntity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddEntityAdapter() {
+		if (addEntityItemProvider == null) {
+			addEntityItemProvider = new AddEntityItemProvider(this);
+		}
+
+		return addEntityItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.RenameEntity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1567,6 +992,75 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveEntity} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveEntityItemProvider removeEntityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveEntity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveEntityAdapter() {
+		if (removeEntityItemProvider == null) {
+			removeEntityItemProvider = new RemoveEntityItemProvider(this);
+		}
+
+		return removeEntityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveAttributeItemProvider removeAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveAttributeAdapter() {
+		if (removeAttributeItemProvider == null) {
+			removeAttributeItemProvider = new RemoveAttributeItemProvider(this);
+		}
+
+		return removeAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenameAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenameAttributeItemProvider renameAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenameAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenameAttributeAdapter() {
+		if (renameAttributeItemProvider == null) {
+			renameAttributeItemProvider = new RenameAttributeItemProvider(this);
+		}
+
+		return renameAttributeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link typhonml.ChangeRelationContainement} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1587,6 +1081,213 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		}
 
 		return changeRelationContainementItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddRelationItemProvider addRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddRelationAdapter() {
+		if (addRelationItemProvider == null) {
+			addRelationItemProvider = new AddRelationItemProvider(this);
+		}
+
+		return addRelationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveRelationItemProvider removeRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveRelationAdapter() {
+		if (removeRelationItemProvider == null) {
+			removeRelationItemProvider = new RemoveRelationItemProvider(this);
+		}
+
+		return removeRelationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenameRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenameRelationItemProvider renameRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenameRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenameRelationAdapter() {
+		if (renameRelationItemProvider == null) {
+			renameRelationItemProvider = new RenameRelationItemProvider(this);
+		}
+
+		return renameRelationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.EnableRelationContainment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnableRelationContainmentItemProvider enableRelationContainmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.EnableRelationContainment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnableRelationContainmentAdapter() {
+		if (enableRelationContainmentItemProvider == null) {
+			enableRelationContainmentItemProvider = new EnableRelationContainmentItemProvider(this);
+		}
+
+		return enableRelationContainmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DisableRelationContainment} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DisableRelationContainmentItemProvider disableRelationContainmentItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DisableRelationContainment}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDisableRelationContainmentAdapter() {
+		if (disableRelationContainmentItemProvider == null) {
+			disableRelationContainmentItemProvider = new DisableRelationContainmentItemProvider(this);
+		}
+
+		return disableRelationContainmentItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.EnableBidirectionalRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EnableBidirectionalRelationItemProvider enableBidirectionalRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.EnableBidirectionalRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEnableBidirectionalRelationAdapter() {
+		if (enableBidirectionalRelationItemProvider == null) {
+			enableBidirectionalRelationItemProvider = new EnableBidirectionalRelationItemProvider(this);
+		}
+
+		return enableBidirectionalRelationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DisableBidirectionalRelation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DisableBidirectionalRelationItemProvider disableBidirectionalRelationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DisableBidirectionalRelation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDisableBidirectionalRelationAdapter() {
+		if (disableBidirectionalRelationItemProvider == null) {
+			disableBidirectionalRelationItemProvider = new DisableBidirectionalRelationItemProvider(this);
+		}
+
+		return disableBidirectionalRelationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.ChangeRelationCardinality} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ChangeRelationCardinalityItemProvider changeRelationCardinalityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.ChangeRelationCardinality}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createChangeRelationCardinalityAdapter() {
+		if (changeRelationCardinalityItemProvider == null) {
+			changeRelationCardinalityItemProvider = new ChangeRelationCardinalityItemProvider(this);
+		}
+
+		return changeRelationCardinalityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.SplitEntity} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SplitEntityItemProvider splitEntityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.SplitEntity}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSplitEntityAdapter() {
+		if (splitEntityItemProvider == null) {
+			splitEntityItemProvider = new SplitEntityItemProvider(this);
+		}
+
+		return splitEntityItemProvider;
 	}
 
 	/**
@@ -1636,49 +1337,348 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.FunctionalTag} instances.
+	 * This keeps track of the one adapter used for all {@link typhonml.MigrateEntity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FunctionalTagItemProvider functionalTagItemProvider;
+	protected MigrateEntityItemProvider migrateEntityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link typhonml.FunctionalTag}.
+	 * This creates an adapter for a {@link typhonml.MigrateEntity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFunctionalTagAdapter() {
-		if (functionalTagItemProvider == null) {
-			functionalTagItemProvider = new FunctionalTagItemProvider(this);
+	public Adapter createMigrateEntityAdapter() {
+		if (migrateEntityItemProvider == null) {
+			migrateEntityItemProvider = new MigrateEntityItemProvider(this);
 		}
 
-		return functionalTagItemProvider;
+		return migrateEntityItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.NFunctionalTag} instances.
+	 * This keeps track of the one adapter used for all {@link typhonml.MergeEntity} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NFunctionalTagItemProvider nFunctionalTagItemProvider;
+	protected MergeEntityItemProvider mergeEntityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link typhonml.NFunctionalTag}.
+	 * This creates an adapter for a {@link typhonml.MergeEntity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createNFunctionalTagAdapter() {
-		if (nFunctionalTagItemProvider == null) {
-			nFunctionalTagItemProvider = new NFunctionalTagItemProvider(this);
+	public Adapter createMergeEntityAdapter() {
+		if (mergeEntityItemProvider == null) {
+			mergeEntityItemProvider = new MergeEntityItemProvider(this);
 		}
 
-		return nFunctionalTagItemProvider;
+		return mergeEntityItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenameTable} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenameTableItemProvider renameTableItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenameTable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenameTableAdapter() {
+		if (renameTableItemProvider == null) {
+			renameTableItemProvider = new RenameTableItemProvider(this);
+		}
+
+		return renameTableItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddIndexItemProvider addIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddIndexAdapter() {
+		if (addIndexItemProvider == null) {
+			addIndexItemProvider = new AddIndexItemProvider(this);
+		}
+
+		return addIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DropIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DropIndexItemProvider dropIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DropIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDropIndexAdapter() {
+		if (dropIndexItemProvider == null) {
+			dropIndexItemProvider = new DropIndexItemProvider(this);
+		}
+
+		return dropIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddAttributesToIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddAttributesToIndexItemProvider addAttributesToIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddAttributesToIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddAttributesToIndexAdapter() {
+		if (addAttributesToIndexItemProvider == null) {
+			addAttributesToIndexItemProvider = new AddAttributesToIndexItemProvider(this);
+		}
+
+		return addAttributesToIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveAttributesToIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveAttributesToIndexItemProvider removeAttributesToIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveAttributesToIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveAttributesToIndexAdapter() {
+		if (removeAttributesToIndexItemProvider == null) {
+			removeAttributesToIndexItemProvider = new RemoveAttributesToIndexItemProvider(this);
+		}
+
+		return removeAttributesToIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenameCollection} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenameCollectionItemProvider renameCollectionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenameCollection}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenameCollectionAdapter() {
+		if (renameCollectionItemProvider == null) {
+			renameCollectionItemProvider = new RenameCollectionItemProvider(this);
+		}
+
+		return renameCollectionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddCollectionIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddCollectionIndexItemProvider addCollectionIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddCollectionIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddCollectionIndexAdapter() {
+		if (addCollectionIndexItemProvider == null) {
+			addCollectionIndexItemProvider = new AddCollectionIndexItemProvider(this);
+		}
+
+		return addCollectionIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.DropCollectionIndex} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DropCollectionIndexItemProvider dropCollectionIndexItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.DropCollectionIndex}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDropCollectionIndexAdapter() {
+		if (dropCollectionIndexItemProvider == null) {
+			dropCollectionIndexItemProvider = new DropCollectionIndexItemProvider(this);
+		}
+
+		return dropCollectionIndexItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddGraphAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddGraphAttributeItemProvider addGraphAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddGraphAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddGraphAttributeAdapter() {
+		if (addGraphAttributeItemProvider == null) {
+			addGraphAttributeItemProvider = new AddGraphAttributeItemProvider(this);
+		}
+
+		return addGraphAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveGraphAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveGraphAttributeItemProvider removeGraphAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveGraphAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveGraphAttributeAdapter() {
+		if (removeGraphAttributeItemProvider == null) {
+			removeGraphAttributeItemProvider = new RemoveGraphAttributeItemProvider(this);
+		}
+
+		return removeGraphAttributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddGraphEdge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddGraphEdgeItemProvider addGraphEdgeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddGraphEdge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddGraphEdgeAdapter() {
+		if (addGraphEdgeItemProvider == null) {
+			addGraphEdgeItemProvider = new AddGraphEdgeItemProvider(this);
+		}
+
+		return addGraphEdgeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RemoveGraphEdge} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RemoveGraphEdgeItemProvider removeGraphEdgeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RemoveGraphEdge}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRemoveGraphEdgeAdapter() {
+		if (removeGraphEdgeItemProvider == null) {
+			removeGraphEdgeItemProvider = new RemoveGraphEdgeItemProvider(this);
+		}
+
+		return removeGraphEdgeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.RenabeGraphEdgeLabel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected RenabeGraphEdgeLabelItemProvider renabeGraphEdgeLabelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.RenabeGraphEdgeLabel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createRenabeGraphEdgeLabelAdapter() {
+		if (renabeGraphEdgeLabelItemProvider == null) {
+			renabeGraphEdgeLabelItemProvider = new RenabeGraphEdgeLabelItemProvider(this);
+		}
+
+		return renabeGraphEdgeLabelItemProvider;
 	}
 
 	/**

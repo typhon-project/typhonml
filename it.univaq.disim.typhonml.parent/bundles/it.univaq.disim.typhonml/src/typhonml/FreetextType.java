@@ -2,6 +2,8 @@
  */
 package typhonml;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +15,6 @@ package typhonml;
  * </p>
  * <ul>
  *   <li>{@link typhonml.FreetextType#getTasks <em>Tasks</em>}</li>
- *   <li>{@link typhonml.FreetextType#getWorkflowName <em>Workflow Name</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getFreetextType()
@@ -22,47 +23,15 @@ package typhonml;
  */
 public interface FreetextType extends PrimitiveDataType {
 	/**
-	 * Returns the value of the '<em><b>Tasks</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Tasks</b></em>' containment reference list.
+	 * The list contents are of type {@link typhonml.NlpTask}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tasks</em>' containment reference.
-	 * @see #setTasks(NlpTask)
+	 * @return the value of the '<em>Tasks</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getFreetextType_Tasks()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	NlpTask getTasks();
-
-	/**
-	 * Sets the value of the '{@link typhonml.FreetextType#getTasks <em>Tasks</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tasks</em>' containment reference.
-	 * @see #getTasks()
-	 * @generated
-	 */
-	void setTasks(NlpTask value);
-
-	/**
-	 * Returns the value of the '<em><b>Workflow Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Workflow Name</em>' attribute.
-	 * @see #setWorkflowName(String)
-	 * @see typhonml.TyphonmlPackage#getFreetextType_WorkflowName()
-	 * @model
-	 * @generated
-	 */
-	String getWorkflowName();
-
-	/**
-	 * Sets the value of the '{@link typhonml.FreetextType#getWorkflowName <em>Workflow Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Workflow Name</em>' attribute.
-	 * @see #getWorkflowName()
-	 * @generated
-	 */
-	void setWorkflowName(String value);
+	EList<NlpTask> getTasks();
 
 } // FreetextType

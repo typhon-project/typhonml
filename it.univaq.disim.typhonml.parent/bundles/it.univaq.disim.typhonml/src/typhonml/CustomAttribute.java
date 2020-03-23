@@ -27,7 +27,7 @@ public interface CustomAttribute extends EntityAttribute {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(CustomDataType)
 	 * @see typhonml.TyphonmlPackage#getCustomAttribute_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	CustomDataType getType();

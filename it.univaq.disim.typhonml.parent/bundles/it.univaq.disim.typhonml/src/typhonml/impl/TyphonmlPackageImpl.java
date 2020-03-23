@@ -972,16 +972,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFreetextType_WorkflowName() {
-		return (EAttribute)freetextTypeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getNlpTask() {
 		return nlpTaskEClass;
 	}
@@ -992,7 +982,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNlpTask_Type() {
+	public EAttribute getNlpTask_WorkflowName() {
 		return (EAttribute)nlpTaskEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -1002,7 +992,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNlpTask_Parameters() {
+	public EAttribute getNlpTask_Type() {
 		return (EAttribute)nlpTaskEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -2780,11 +2770,10 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		freetextTypeEClass = createEClass(FREETEXT_TYPE);
 		createEReference(freetextTypeEClass, FREETEXT_TYPE__TASKS);
-		createEAttribute(freetextTypeEClass, FREETEXT_TYPE__WORKFLOW_NAME);
 
 		nlpTaskEClass = createEClass(NLP_TASK);
+		createEAttribute(nlpTaskEClass, NLP_TASK__WORKFLOW_NAME);
 		createEAttribute(nlpTaskEClass, NLP_TASK__TYPE);
-		createEAttribute(nlpTaskEClass, NLP_TASK__PARAMETERS);
 
 		dateTypeEClass = createEClass(DATE_TYPE);
 
@@ -3170,12 +3159,11 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(blobTypeEClass, BlobType.class, "BlobType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(freetextTypeEClass, FreetextType.class, "FreetextType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFreetextType_Tasks(), this.getNlpTask(), null, "tasks", null, 1, 1, FreetextType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFreetextType_WorkflowName(), ecorePackage.getEString(), "workflowName", null, 0, 1, FreetextType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFreetextType_Tasks(), this.getNlpTask(), null, "tasks", null, 0, -1, FreetextType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nlpTaskEClass, NlpTask.class, "NlpTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNlpTask_Type(), this.getNlpTaskType(), "type", null, 0, 1, NlpTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNlpTask_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, NlpTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNlpTask_WorkflowName(), ecorePackage.getEString(), "workflowName", null, 1, 1, NlpTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNlpTask_Type(), this.getNlpTaskType(), "type", null, 1, 1, NlpTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(dateTypeEClass, DateType.class, "DateType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3214,10 +3202,10 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 0, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(customAttributeEClass, CustomAttribute.class, "CustomAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomAttribute_Type(), this.getCustomDataType(), null, "type", null, 0, 1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomAttribute_Type(), this.getCustomDataType(), null, "type", null, 1, 1, CustomAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(relationEClass, Relation.class, "Relation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getRelation_Type(), this.getEntity(), null, "type", null, 0, 1, Relation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3435,7 +3423,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.TERM_EXTRACTION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.NAMED_ENTITY_RECOGNITION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.RELATION_EXTRACTION);
-		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.EVENT_EXTRACTION);
 		addEEnumLiteral(nlpTaskTypeEEnum, NlpTaskType.COREFERENCE_RESOLUTION);
 
 		initEEnum(cardinalityEEnum, Cardinality.class, "Cardinality");

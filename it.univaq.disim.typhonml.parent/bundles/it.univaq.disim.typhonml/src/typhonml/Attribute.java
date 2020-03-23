@@ -28,7 +28,7 @@ public interface Attribute extends EntityAttribute {
 	 * @return the value of the '<em>Type</em>' containment reference.
 	 * @see #setType(DataType)
 	 * @see typhonml.TyphonmlPackage#getAttribute_Type()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	DataType getType();

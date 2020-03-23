@@ -2,8 +2,6 @@
  */
 package typhonml;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link typhonml.NlpTask#getWorkflowName <em>Workflow Name</em>}</li>
  *   <li>{@link typhonml.NlpTask#getType <em>Type</em>}</li>
- *   <li>{@link typhonml.NlpTask#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getNlpTask()
@@ -24,6 +22,28 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface NlpTask extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Workflow Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Workflow Name</em>' attribute.
+	 * @see #setWorkflowName(String)
+	 * @see typhonml.TyphonmlPackage#getNlpTask_WorkflowName()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getWorkflowName();
+
+	/**
+	 * Sets the value of the '{@link typhonml.NlpTask#getWorkflowName <em>Workflow Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Workflow Name</em>' attribute.
+	 * @see #getWorkflowName()
+	 * @generated
+	 */
+	void setWorkflowName(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
 	 * The literals are from the enumeration {@link typhonml.NlpTaskType}.
@@ -33,7 +53,7 @@ public interface NlpTask extends EObject {
 	 * @see typhonml.NlpTaskType
 	 * @see #setType(NlpTaskType)
 	 * @see typhonml.TyphonmlPackage#getNlpTask_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	NlpTaskType getType();
@@ -48,17 +68,5 @@ public interface NlpTask extends EObject {
 	 * @generated
 	 */
 	void setType(NlpTaskType value);
-
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' attribute list.
-	 * @see typhonml.TyphonmlPackage#getNlpTask_Parameters()
-	 * @model
-	 * @generated
-	 */
-	EList<String> getParameters();
 
 } // NlpTask

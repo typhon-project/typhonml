@@ -179,16 +179,6 @@ public enum NlpTaskType implements Enumerator {
 	RELATION_EXTRACTION(15, "RelationExtraction", "RelationExtraction"),
 
 	/**
-	 * The '<em><b>Event Extraction</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EVENT_EXTRACTION_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	EVENT_EXTRACTION(16, "EventExtraction", "EventExtraction"),
-
-	/**
 	 * The '<em><b>Coreference Resolution</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -196,7 +186,7 @@ public enum NlpTaskType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	COREFERENCE_RESOLUTION(17, "CoreferenceResolution", "CoreferenceResolution");
+	COREFERENCE_RESOLUTION(16, "CoreferenceResolution", "CoreferenceResolution");
 
 	/**
 	 * The '<em><b>Paragraph Segmentation</b></em>' literal value.
@@ -375,17 +365,6 @@ public enum NlpTaskType implements Enumerator {
 	public static final int RELATION_EXTRACTION_VALUE = 15;
 
 	/**
-	 * The '<em><b>Event Extraction</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #EVENT_EXTRACTION
-	 * @model name="EventExtraction"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int EVENT_EXTRACTION_VALUE = 16;
-
-	/**
 	 * The '<em><b>Coreference Resolution</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -394,7 +373,7 @@ public enum NlpTaskType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int COREFERENCE_RESOLUTION_VALUE = 17;
+	public static final int COREFERENCE_RESOLUTION_VALUE = 16;
 
 	/**
 	 * An array of all the '<em><b>Nlp Task Type</b></em>' enumerators.
@@ -420,7 +399,6 @@ public enum NlpTaskType implements Enumerator {
 			TERM_EXTRACTION,
 			NAMED_ENTITY_RECOGNITION,
 			RELATION_EXTRACTION,
-			EVENT_EXTRACTION,
 			COREFERENCE_RESOLUTION,
 		};
 
@@ -494,7 +472,6 @@ public enum NlpTaskType implements Enumerator {
 			case TERM_EXTRACTION_VALUE: return TERM_EXTRACTION;
 			case NAMED_ENTITY_RECOGNITION_VALUE: return NAMED_ENTITY_RECOGNITION;
 			case RELATION_EXTRACTION_VALUE: return RELATION_EXTRACTION;
-			case EVENT_EXTRACTION_VALUE: return EVENT_EXTRACTION;
 			case COREFERENCE_RESOLUTION_VALUE: return COREFERENCE_RESOLUTION;
 		}
 		return null;

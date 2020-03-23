@@ -23,7 +23,6 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import typhonml.NlpTask;
-import typhonml.NlpTaskType;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -61,10 +60,32 @@ public class NlpTaskItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addWorkflowNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
-			addParametersPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Workflow Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWorkflowNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NlpTask_workflowName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NlpTask_workflowName_feature", "_UI_NlpTask_type"),
+				 TyphonmlPackage.Literals.NLP_TASK__WORKFLOW_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -81,28 +102,6 @@ public class NlpTaskItemProvider
 				 getString("_UI_NlpTask_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_NlpTask_type_feature", "_UI_NlpTask_type"),
 				 TyphonmlPackage.Literals.NLP_TASK__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Parameters feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addParametersPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_NlpTask_parameters_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_NlpTask_parameters_feature", "_UI_NlpTask_type"),
-				 TyphonmlPackage.Literals.NLP_TASK__PARAMETERS,
 				 true,
 				 false,
 				 false,
@@ -130,8 +129,7 @@ public class NlpTaskItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		NlpTaskType labelValue = ((NlpTask)object).getType();
-		String label = labelValue == null ? null : labelValue.toString();
+		String label = ((NlpTask)object).getWorkflowName();
 		return label == null || label.length() == 0 ?
 			getString("_UI_NlpTask_type") :
 			getString("_UI_NlpTask_type") + " " + label;
@@ -150,8 +148,8 @@ public class NlpTaskItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NlpTask.class)) {
+			case TyphonmlPackage.NLP_TASK__WORKFLOW_NAME:
 			case TyphonmlPackage.NLP_TASK__TYPE:
-			case TyphonmlPackage.NLP_TASK__PARAMETERS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

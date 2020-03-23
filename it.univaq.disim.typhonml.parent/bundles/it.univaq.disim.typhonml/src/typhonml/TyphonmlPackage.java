@@ -498,7 +498,7 @@ public interface TyphonmlPackage extends EPackage {
 	int FREETEXT_TYPE = 13;
 
 	/**
-	 * The feature id for the '<em><b>Tasks</b></em>' containment reference.
+	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -507,22 +507,13 @@ public interface TyphonmlPackage extends EPackage {
 	int FREETEXT_TYPE__TASKS = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Workflow Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FREETEXT_TYPE__WORKFLOW_NAME = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Freetext Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FREETEXT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 2;
+	int FREETEXT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Freetext Type</em>' class.
@@ -544,22 +535,22 @@ public interface TyphonmlPackage extends EPackage {
 	int NLP_TASK = 14;
 
 	/**
+	 * The feature id for the '<em><b>Workflow Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NLP_TASK__WORKFLOW_NAME = 0;
+
+	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NLP_TASK__TYPE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NLP_TASK__PARAMETERS = 1;
+	int NLP_TASK__TYPE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Nlp Task</em>' class.
@@ -4331,26 +4322,15 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getFreetextType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link typhonml.FreetextType#getTasks <em>Tasks</em>}'.
+	 * Returns the meta object for the containment reference list '{@link typhonml.FreetextType#getTasks <em>Tasks</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Tasks</em>'.
+	 * @return the meta object for the containment reference list '<em>Tasks</em>'.
 	 * @see typhonml.FreetextType#getTasks()
 	 * @see #getFreetextType()
 	 * @generated
 	 */
 	EReference getFreetextType_Tasks();
-
-	/**
-	 * Returns the meta object for the attribute '{@link typhonml.FreetextType#getWorkflowName <em>Workflow Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Workflow Name</em>'.
-	 * @see typhonml.FreetextType#getWorkflowName()
-	 * @see #getFreetextType()
-	 * @generated
-	 */
-	EAttribute getFreetextType_WorkflowName();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.NlpTask <em>Nlp Task</em>}'.
@@ -4363,6 +4343,17 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getNlpTask();
 
 	/**
+	 * Returns the meta object for the attribute '{@link typhonml.NlpTask#getWorkflowName <em>Workflow Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Workflow Name</em>'.
+	 * @see typhonml.NlpTask#getWorkflowName()
+	 * @see #getNlpTask()
+	 * @generated
+	 */
+	EAttribute getNlpTask_WorkflowName();
+
+	/**
 	 * Returns the meta object for the attribute '{@link typhonml.NlpTask#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4372,17 +4363,6 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getNlpTask_Type();
-
-	/**
-	 * Returns the meta object for the attribute list '{@link typhonml.NlpTask#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Parameters</em>'.
-	 * @see typhonml.NlpTask#getParameters()
-	 * @see #getNlpTask()
-	 * @generated
-	 */
-	EAttribute getNlpTask_Parameters();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.DateType <em>Date Type</em>}'.
@@ -6412,20 +6392,12 @@ public interface TyphonmlPackage extends EPackage {
 		EClass FREETEXT_TYPE = eINSTANCE.getFreetextType();
 
 		/**
-		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Tasks</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference FREETEXT_TYPE__TASKS = eINSTANCE.getFreetextType_Tasks();
-
-		/**
-		 * The meta object literal for the '<em><b>Workflow Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FREETEXT_TYPE__WORKFLOW_NAME = eINSTANCE.getFreetextType_WorkflowName();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
@@ -6438,20 +6410,20 @@ public interface TyphonmlPackage extends EPackage {
 		EClass NLP_TASK = eINSTANCE.getNlpTask();
 
 		/**
+		 * The meta object literal for the '<em><b>Workflow Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NLP_TASK__WORKFLOW_NAME = eINSTANCE.getNlpTask_WorkflowName();
+
+		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute NLP_TASK__TYPE = eINSTANCE.getNlpTask_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NLP_TASK__PARAMETERS = eINSTANCE.getNlpTask_Parameters();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.DateTypeImpl <em>Date Type</em>}' class.
