@@ -61,7 +61,7 @@ BigintType returns BigintType:
 
 StringType returns StringType:
 	{StringType}
-	'string' ('(' maxSize=EInt ')')?
+	'string' ('[' maxSize=EInt ']')?
 	;
 
 TextType returns TextType:
@@ -95,8 +95,12 @@ BlobType returns BlobType:
 	;
 
 FreetextType returns FreetextType:
-	'freetext' '['workflowName=EString ',' tasks=NlpTask ']'
+	{FreetextType}
+	'freetext' ('[' tasks+=NlpTask ( "," tasks+=NlpTask)* ']' )?
 	;
+	
+//	'freetext' '['workflowName=EString ',' tasks=NlpTask ']'
+//	;
 
 DateType returns DateType:
 	{DateType}
@@ -111,9 +115,12 @@ DatetimeType returns DatetimeType:
 
 
 NlpTask:
-	type=NlpTaskType
-	(parameters+=EString)?
+	{NlpTask}
+	(type=NlpTaskType) '[' (workflowName=EString) ']'
 	;
+//	type=NlpTaskType
+//	(parameters+=EString)?
+//	;
 
 
 
@@ -686,7 +693,6 @@ enum NlpTaskType returns NlpTaskType:
 		TermExtraction = 'TermExtraction' |
 		NamedEntityRecognition = 'NamedEntityRecognition' |
 		RelationExtraction = 'RelationExtraction' |
-		EventExtraction = 'EventExtraction' |
 		CoreferenceResolution = 'CoreferenceResolution'	
 ;
 

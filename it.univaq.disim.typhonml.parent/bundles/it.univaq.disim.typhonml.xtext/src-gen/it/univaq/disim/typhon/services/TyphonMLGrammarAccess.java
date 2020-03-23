@@ -272,17 +272,17 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cStringTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cStringKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cMaxSizeAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cMaxSizeEIntParserRuleCall_2_1_0 = (RuleCall)cMaxSizeAssignment_2_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
+		private final Keyword cRightSquareBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
 		
 		//StringType:
 		//	{StringType}
-		//	'string' ('(' maxSize=EInt ')')?;
+		//	'string' ('[' maxSize=EInt ']')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{StringType} 'string' ('(' maxSize=EInt ')')?
+		//{StringType} 'string' ('[' maxSize=EInt ']')?
 		public Group getGroup() { return cGroup; }
 		
 		//{StringType}
@@ -291,11 +291,11 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'string'
 		public Keyword getStringKeyword_1() { return cStringKeyword_1; }
 		
-		//('(' maxSize=EInt ')')?
+		//('[' maxSize=EInt ']')?
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		//'['
+		public Keyword getLeftSquareBracketKeyword_2_0() { return cLeftSquareBracketKeyword_2_0; }
 		
 		//maxSize=EInt
 		public Assignment getMaxSizeAssignment_2_1() { return cMaxSizeAssignment_2_1; }
@@ -303,8 +303,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//EInt
 		public RuleCall getMaxSizeEIntParserRuleCall_2_1_0() { return cMaxSizeEIntParserRuleCall_2_1_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_2_2() { return cRightParenthesisKeyword_2_2; }
+		//']'
+		public Keyword getRightSquareBracketKeyword_2_2() { return cRightSquareBracketKeyword_2_2; }
 	}
 	public class TextTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.TextType");
@@ -429,45 +429,58 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	public class FreetextTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.FreetextType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFreetextKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cWorkflowNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cWorkflowNameEStringParserRuleCall_2_0 = (RuleCall)cWorkflowNameAssignment_2.eContents().get(0);
-		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTasksAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTasksNlpTaskParserRuleCall_4_0 = (RuleCall)cTasksAssignment_4.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Action cFreetextTypeAction_0 = (Action)cGroup.eContents().get(0);
+		private final Keyword cFreetextKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cLeftSquareBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cTasksAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cTasksNlpTaskParserRuleCall_2_1_0 = (RuleCall)cTasksAssignment_2_1.eContents().get(0);
+		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
+		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
+		private final Assignment cTasksAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
+		private final RuleCall cTasksNlpTaskParserRuleCall_2_2_1_0 = (RuleCall)cTasksAssignment_2_2_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//FreetextType:
-		//	'freetext' '[' workflowName=EString ',' tasks=NlpTask ']';
+		//	{FreetextType}
+		//	'freetext' ('[' tasks+=NlpTask ("," tasks+=NlpTask)* ']')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'freetext' '[' workflowName=EString ',' tasks=NlpTask ']'
+		//{FreetextType} 'freetext' ('[' tasks+=NlpTask ("," tasks+=NlpTask)* ']')?
 		public Group getGroup() { return cGroup; }
 		
+		//{FreetextType}
+		public Action getFreetextTypeAction_0() { return cFreetextTypeAction_0; }
+		
 		//'freetext'
-		public Keyword getFreetextKeyword_0() { return cFreetextKeyword_0; }
+		public Keyword getFreetextKeyword_1() { return cFreetextKeyword_1; }
+		
+		//('[' tasks+=NlpTask ("," tasks+=NlpTask)* ']')?
+		public Group getGroup_2() { return cGroup_2; }
 		
 		//'['
-		public Keyword getLeftSquareBracketKeyword_1() { return cLeftSquareBracketKeyword_1; }
+		public Keyword getLeftSquareBracketKeyword_2_0() { return cLeftSquareBracketKeyword_2_0; }
 		
-		//workflowName=EString
-		public Assignment getWorkflowNameAssignment_2() { return cWorkflowNameAssignment_2; }
-		
-		//EString
-		public RuleCall getWorkflowNameEStringParserRuleCall_2_0() { return cWorkflowNameEStringParserRuleCall_2_0; }
-		
-		//','
-		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
-		
-		//tasks=NlpTask
-		public Assignment getTasksAssignment_4() { return cTasksAssignment_4; }
+		//tasks+=NlpTask
+		public Assignment getTasksAssignment_2_1() { return cTasksAssignment_2_1; }
 		
 		//NlpTask
-		public RuleCall getTasksNlpTaskParserRuleCall_4_0() { return cTasksNlpTaskParserRuleCall_4_0; }
+		public RuleCall getTasksNlpTaskParserRuleCall_2_1_0() { return cTasksNlpTaskParserRuleCall_2_1_0; }
+		
+		//("," tasks+=NlpTask)*
+		public Group getGroup_2_2() { return cGroup_2_2; }
+		
+		//","
+		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
+		
+		//tasks+=NlpTask
+		public Assignment getTasksAssignment_2_2_1() { return cTasksAssignment_2_2_1; }
+		
+		//NlpTask
+		public RuleCall getTasksNlpTaskParserRuleCall_2_2_1_0() { return cTasksNlpTaskParserRuleCall_2_2_1_0; }
 		
 		//']'
-		public Keyword getRightSquareBracketKeyword_5() { return cRightSquareBracketKeyword_5; }
+		public Keyword getRightSquareBracketKeyword_2_3() { return cRightSquareBracketKeyword_2_3; }
 	}
 	public class DateTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.DateType");
@@ -475,6 +488,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cDateTypeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cDateKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		
+		////	'freetext' '['workflowName=EString ',' tasks=NlpTask ']'
+		////	;
 		//DateType:
 		//	{DateType}
 		//	'date';
@@ -512,30 +527,41 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	public class NlpTaskElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.NlpTask");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeNlpTaskTypeEnumRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cParametersAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cParametersEStringParserRuleCall_1_0 = (RuleCall)cParametersAssignment_1.eContents().get(0);
+		private final Action cNlpTaskAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeNlpTaskTypeEnumRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cWorkflowNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cWorkflowNameEStringParserRuleCall_3_0 = (RuleCall)cWorkflowNameAssignment_3.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//NlpTask:
-		//	type=NlpTaskType
-		//	parameters+=EString?;
+		//	{NlpTask} type=NlpTaskType '[' workflowName=EString ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=NlpTaskType parameters+=EString?
+		//{NlpTask} type=NlpTaskType '[' workflowName=EString ']'
 		public Group getGroup() { return cGroup; }
 		
+		//{NlpTask}
+		public Action getNlpTaskAction_0() { return cNlpTaskAction_0; }
+		
 		//type=NlpTaskType
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 		
 		//NlpTaskType
-		public RuleCall getTypeNlpTaskTypeEnumRuleCall_0_0() { return cTypeNlpTaskTypeEnumRuleCall_0_0; }
+		public RuleCall getTypeNlpTaskTypeEnumRuleCall_1_0() { return cTypeNlpTaskTypeEnumRuleCall_1_0; }
 		
-		//parameters+=EString?
-		public Assignment getParametersAssignment_1() { return cParametersAssignment_1; }
+		//'['
+		public Keyword getLeftSquareBracketKeyword_2() { return cLeftSquareBracketKeyword_2; }
+		
+		//workflowName=EString
+		public Assignment getWorkflowNameAssignment_3() { return cWorkflowNameAssignment_3; }
 		
 		//EString
-		public RuleCall getParametersEStringParserRuleCall_1_0() { return cParametersEStringParserRuleCall_1_0; }
+		public RuleCall getWorkflowNameEStringParserRuleCall_3_0() { return cWorkflowNameEStringParserRuleCall_3_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_4() { return cRightSquareBracketKeyword_4; }
 	}
 	public class CustomDataTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.CustomDataType");
@@ -561,6 +587,9 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
+		////	type=NlpTaskType
+		////	(parameters+=EString)?
+		////	;
 		//CustomDataType:
 		//	{CustomDataType} ('importedNamespace' importedNamespace=EString)?
 		//	'customdatatype' name=EString '{' ('elements' '{' elements+=CustomDataTypeItem (',' elements+=CustomDataTypeItem)*
@@ -5246,10 +5275,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNamedEntityRecognitionNamedEntityRecognitionKeyword_14_0 = (Keyword)cNamedEntityRecognitionEnumLiteralDeclaration_14.eContents().get(0);
 		private final EnumLiteralDeclaration cRelationExtractionEnumLiteralDeclaration_15 = (EnumLiteralDeclaration)cAlternatives.eContents().get(15);
 		private final Keyword cRelationExtractionRelationExtractionKeyword_15_0 = (Keyword)cRelationExtractionEnumLiteralDeclaration_15.eContents().get(0);
-		private final EnumLiteralDeclaration cEventExtractionEnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
-		private final Keyword cEventExtractionEventExtractionKeyword_16_0 = (Keyword)cEventExtractionEnumLiteralDeclaration_16.eContents().get(0);
-		private final EnumLiteralDeclaration cCoreferenceResolutionEnumLiteralDeclaration_17 = (EnumLiteralDeclaration)cAlternatives.eContents().get(17);
-		private final Keyword cCoreferenceResolutionCoreferenceResolutionKeyword_17_0 = (Keyword)cCoreferenceResolutionEnumLiteralDeclaration_17.eContents().get(0);
+		private final EnumLiteralDeclaration cCoreferenceResolutionEnumLiteralDeclaration_16 = (EnumLiteralDeclaration)cAlternatives.eContents().get(16);
+		private final Keyword cCoreferenceResolutionCoreferenceResolutionKeyword_16_0 = (Keyword)cCoreferenceResolutionEnumLiteralDeclaration_16.eContents().get(0);
 		
 		//enum NlpTaskType:
 		//	ParagraphSegmentation |
@@ -5268,13 +5295,12 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//	TermExtraction |
 		//	NamedEntityRecognition |
 		//	RelationExtraction |
-		//	EventExtraction |
 		//	CoreferenceResolution;
 		public EnumRule getRule() { return rule; }
 		
 		//ParagraphSegmentation | SentenceSegmentation | Tokenisation | PhraseExtractor | NGramExtractor | POSTagging |
 		//Lemmatisation | Stemming | DependencyParsing | Chunking | SentimentAnalysis | TextClassification | TopicModelling |
-		//TermExtraction | NamedEntityRecognition | RelationExtraction | EventExtraction | CoreferenceResolution
+		//TermExtraction | NamedEntityRecognition | RelationExtraction | CoreferenceResolution
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ParagraphSegmentation
@@ -5373,17 +5399,11 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'RelationExtraction'
 		public Keyword getRelationExtractionRelationExtractionKeyword_15_0() { return cRelationExtractionRelationExtractionKeyword_15_0; }
 		
-		//EventExtraction
-		public EnumLiteralDeclaration getEventExtractionEnumLiteralDeclaration_16() { return cEventExtractionEnumLiteralDeclaration_16; }
-		
-		//'EventExtraction'
-		public Keyword getEventExtractionEventExtractionKeyword_16_0() { return cEventExtractionEventExtractionKeyword_16_0; }
-		
 		//CoreferenceResolution
-		public EnumLiteralDeclaration getCoreferenceResolutionEnumLiteralDeclaration_17() { return cCoreferenceResolutionEnumLiteralDeclaration_17; }
+		public EnumLiteralDeclaration getCoreferenceResolutionEnumLiteralDeclaration_16() { return cCoreferenceResolutionEnumLiteralDeclaration_16; }
 		
 		//'CoreferenceResolution'
-		public Keyword getCoreferenceResolutionCoreferenceResolutionKeyword_17_0() { return cCoreferenceResolutionCoreferenceResolutionKeyword_17_0; }
+		public Keyword getCoreferenceResolutionCoreferenceResolutionKeyword_16_0() { return cCoreferenceResolutionCoreferenceResolutionKeyword_16_0; }
 	}
 	
 	private final ModelElements pModel;
@@ -5683,7 +5703,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//StringType:
 	//	{StringType}
-	//	'string' ('(' maxSize=EInt ')')?;
+	//	'string' ('[' maxSize=EInt ']')?;
 	public StringTypeElements getStringTypeAccess() {
 		return pStringType;
 	}
@@ -5759,7 +5779,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//FreetextType:
-	//	'freetext' '[' workflowName=EString ',' tasks=NlpTask ']';
+	//	{FreetextType}
+	//	'freetext' ('[' tasks+=NlpTask ("," tasks+=NlpTask)* ']')?;
 	public FreetextTypeElements getFreetextTypeAccess() {
 		return pFreetextType;
 	}
@@ -5768,6 +5789,8 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getFreetextTypeAccess().getRule();
 	}
 	
+	////	'freetext' '['workflowName=EString ',' tasks=NlpTask ']'
+	////	;
 	//DateType:
 	//	{DateType}
 	//	'date';
@@ -5791,8 +5814,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NlpTask:
-	//	type=NlpTaskType
-	//	parameters+=EString?;
+	//	{NlpTask} type=NlpTaskType '[' workflowName=EString ']';
 	public NlpTaskElements getNlpTaskAccess() {
 		return pNlpTask;
 	}
@@ -5801,6 +5823,9 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		return getNlpTaskAccess().getRule();
 	}
 	
+	////	type=NlpTaskType
+	////	(parameters+=EString)?
+	////	;
 	//CustomDataType:
 	//	{CustomDataType} ('importedNamespace' importedNamespace=EString)?
 	//	'customdatatype' name=EString '{' ('elements' '{' elements+=CustomDataTypeItem (',' elements+=CustomDataTypeItem)*
@@ -6680,7 +6705,6 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	//	TermExtraction |
 	//	NamedEntityRecognition |
 	//	RelationExtraction |
-	//	EventExtraction |
 	//	CoreferenceResolution;
 	public NlpTaskTypeElements getNlpTaskTypeAccess() {
 		return eNlpTaskType;

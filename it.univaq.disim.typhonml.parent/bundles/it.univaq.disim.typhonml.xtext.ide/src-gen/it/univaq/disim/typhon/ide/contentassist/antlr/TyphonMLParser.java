@@ -56,6 +56,8 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFloatTypeAccess().getGroup(), "rule__FloatType__Group__0");
 			builder.put(grammarAccess.getBlobTypeAccess().getGroup(), "rule__BlobType__Group__0");
 			builder.put(grammarAccess.getFreetextTypeAccess().getGroup(), "rule__FreetextType__Group__0");
+			builder.put(grammarAccess.getFreetextTypeAccess().getGroup_2(), "rule__FreetextType__Group_2__0");
+			builder.put(grammarAccess.getFreetextTypeAccess().getGroup_2_2(), "rule__FreetextType__Group_2_2__0");
 			builder.put(grammarAccess.getDateTypeAccess().getGroup(), "rule__DateType__Group__0");
 			builder.put(grammarAccess.getDatetimeTypeAccess().getGroup(), "rule__DatetimeType__Group__0");
 			builder.put(grammarAccess.getNlpTaskAccess().getGroup(), "rule__NlpTask__Group__0");
@@ -212,10 +214,10 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getChangeOperatorsAssignment_4_2(), "rule__Model__ChangeOperatorsAssignment_4_2");
 			builder.put(grammarAccess.getModelAccess().getChangeOperatorsAssignment_4_3_1(), "rule__Model__ChangeOperatorsAssignment_4_3_1");
 			builder.put(grammarAccess.getStringTypeAccess().getMaxSizeAssignment_2_1(), "rule__StringType__MaxSizeAssignment_2_1");
-			builder.put(grammarAccess.getFreetextTypeAccess().getWorkflowNameAssignment_2(), "rule__FreetextType__WorkflowNameAssignment_2");
-			builder.put(grammarAccess.getFreetextTypeAccess().getTasksAssignment_4(), "rule__FreetextType__TasksAssignment_4");
-			builder.put(grammarAccess.getNlpTaskAccess().getTypeAssignment_0(), "rule__NlpTask__TypeAssignment_0");
-			builder.put(grammarAccess.getNlpTaskAccess().getParametersAssignment_1(), "rule__NlpTask__ParametersAssignment_1");
+			builder.put(grammarAccess.getFreetextTypeAccess().getTasksAssignment_2_1(), "rule__FreetextType__TasksAssignment_2_1");
+			builder.put(grammarAccess.getFreetextTypeAccess().getTasksAssignment_2_2_1(), "rule__FreetextType__TasksAssignment_2_2_1");
+			builder.put(grammarAccess.getNlpTaskAccess().getTypeAssignment_1(), "rule__NlpTask__TypeAssignment_1");
+			builder.put(grammarAccess.getNlpTaskAccess().getWorkflowNameAssignment_3(), "rule__NlpTask__WorkflowNameAssignment_3");
 			builder.put(grammarAccess.getCustomDataTypeAccess().getImportedNamespaceAssignment_1_1(), "rule__CustomDataType__ImportedNamespaceAssignment_1_1");
 			builder.put(grammarAccess.getCustomDataTypeAccess().getNameAssignment_3(), "rule__CustomDataType__NameAssignment_3");
 			builder.put(grammarAccess.getCustomDataTypeAccess().getElementsAssignment_5_2(), "rule__CustomDataType__ElementsAssignment_5_2");

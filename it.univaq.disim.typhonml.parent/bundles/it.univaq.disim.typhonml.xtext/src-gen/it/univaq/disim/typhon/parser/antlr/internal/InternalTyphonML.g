@@ -513,9 +513,9 @@ ruleStringType returns [EObject current=null]
 			newLeafNode(otherlv_1, grammarAccess.getStringTypeAccess().getStringKeyword_1());
 		}
 		(
-			otherlv_2='('
+			otherlv_2='['
 			{
-				newLeafNode(otherlv_2, grammarAccess.getStringTypeAccess().getLeftParenthesisKeyword_2_0());
+				newLeafNode(otherlv_2, grammarAccess.getStringTypeAccess().getLeftSquareBracketKeyword_2_0());
 			}
 			(
 				(
@@ -536,9 +536,9 @@ ruleStringType returns [EObject current=null]
 					}
 				)
 			)
-			otherlv_4=')'
+			otherlv_4=']'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getStringTypeAccess().getRightParenthesisKeyword_2_2());
+				newLeafNode(otherlv_4, grammarAccess.getStringTypeAccess().getRightSquareBracketKeyword_2_2());
 			}
 		)?
 	)
@@ -740,60 +740,71 @@ ruleFreetextType returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='freetext'
+		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getFreetextTypeAccess().getFreetextTypeAction_0(),
+					$current);
+			}
+		)
+		otherlv_1='freetext'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getFreetextTypeAccess().getFreetextKeyword_0());
-		}
-		otherlv_1='['
-		{
-			newLeafNode(otherlv_1, grammarAccess.getFreetextTypeAccess().getLeftSquareBracketKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getFreetextTypeAccess().getFreetextKeyword_1());
 		}
 		(
+			otherlv_2='['
+			{
+				newLeafNode(otherlv_2, grammarAccess.getFreetextTypeAccess().getLeftSquareBracketKeyword_2_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getFreetextTypeAccess().getWorkflowNameEStringParserRuleCall_2_0());
-				}
-				lv_workflowName_2_0=ruleEString
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFreetextTypeRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getFreetextTypeAccess().getTasksNlpTaskParserRuleCall_2_1_0());
 					}
-					set(
-						$current,
-						"workflowName",
-						lv_workflowName_2_0,
-						"it.univaq.disim.typhon.TyphonML.EString");
-					afterParserOrEnumRuleCall();
-				}
+					lv_tasks_3_0=ruleNlpTask
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getFreetextTypeRule());
+						}
+						add(
+							$current,
+							"tasks",
+							lv_tasks_3_0,
+							"it.univaq.disim.typhon.TyphonML.NlpTask");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
-		)
-		otherlv_3=','
-		{
-			newLeafNode(otherlv_3, grammarAccess.getFreetextTypeAccess().getCommaKeyword_3());
-		}
-		(
 			(
+				otherlv_4=','
 				{
-					newCompositeNode(grammarAccess.getFreetextTypeAccess().getTasksNlpTaskParserRuleCall_4_0());
+					newLeafNode(otherlv_4, grammarAccess.getFreetextTypeAccess().getCommaKeyword_2_2_0());
 				}
-				lv_tasks_4_0=ruleNlpTask
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFreetextTypeRule());
-					}
-					set(
-						$current,
-						"tasks",
-						lv_tasks_4_0,
-						"it.univaq.disim.typhon.TyphonML.NlpTask");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_5=']'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getFreetextTypeAccess().getRightSquareBracketKeyword_5());
-		}
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getFreetextTypeAccess().getTasksNlpTaskParserRuleCall_2_2_1_0());
+						}
+						lv_tasks_5_0=ruleNlpTask
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getFreetextTypeRule());
+							}
+							add(
+								$current,
+								"tasks",
+								lv_tasks_5_0,
+								"it.univaq.disim.typhon.TyphonML.NlpTask");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+			)*
+			otherlv_6=']'
+			{
+				newLeafNode(otherlv_6, grammarAccess.getFreetextTypeAccess().getRightSquareBracketKeyword_2_3());
+			}
+		)?
 	)
 ;
 
@@ -874,11 +885,18 @@ ruleNlpTask returns [EObject current=null]
 }:
 	(
 		(
+			{
+				$current = forceCreateModelElement(
+					grammarAccess.getNlpTaskAccess().getNlpTaskAction_0(),
+					$current);
+			}
+		)
+		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNlpTaskAccess().getTypeNlpTaskTypeEnumRuleCall_0_0());
+					newCompositeNode(grammarAccess.getNlpTaskAccess().getTypeNlpTaskTypeEnumRuleCall_1_0());
 				}
-				lv_type_0_0=ruleNlpTaskType
+				lv_type_1_0=ruleNlpTaskType
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNlpTaskRule());
@@ -886,31 +904,39 @@ ruleNlpTask returns [EObject current=null]
 					set(
 						$current,
 						"type",
-						lv_type_0_0,
+						lv_type_1_0,
 						"it.univaq.disim.typhon.TyphonML.NlpTaskType");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_2='['
+		{
+			newLeafNode(otherlv_2, grammarAccess.getNlpTaskAccess().getLeftSquareBracketKeyword_2());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getNlpTaskAccess().getParametersEStringParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getNlpTaskAccess().getWorkflowNameEStringParserRuleCall_3_0());
 				}
-				lv_parameters_1_0=ruleEString
+				lv_workflowName_3_0=ruleEString
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getNlpTaskRule());
 					}
-					add(
+					set(
 						$current,
-						"parameters",
-						lv_parameters_1_0,
+						"workflowName",
+						lv_workflowName_3_0,
 						"it.univaq.disim.typhon.TyphonML.EString");
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)
+		otherlv_4=']'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getNlpTaskAccess().getRightSquareBracketKeyword_4());
+		}
 	)
 ;
 
@@ -7572,18 +7598,10 @@ ruleNlpTaskType returns [Enumerator current=null]
 		)
 		    |
 		(
-			enumLiteral_16='EventExtraction'
+			enumLiteral_16='CoreferenceResolution'
 			{
-				$current = grammarAccess.getNlpTaskTypeAccess().getEventExtractionEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_16, grammarAccess.getNlpTaskTypeAccess().getEventExtractionEnumLiteralDeclaration_16());
-			}
-		)
-		    |
-		(
-			enumLiteral_17='CoreferenceResolution'
-			{
-				$current = grammarAccess.getNlpTaskTypeAccess().getCoreferenceResolutionEnumLiteralDeclaration_17().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_17, grammarAccess.getNlpTaskTypeAccess().getCoreferenceResolutionEnumLiteralDeclaration_17());
+				$current = grammarAccess.getNlpTaskTypeAccess().getCoreferenceResolutionEnumLiteralDeclaration_16().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_16, grammarAccess.getNlpTaskTypeAccess().getCoreferenceResolutionEnumLiteralDeclaration_16());
 			}
 		)
 	)

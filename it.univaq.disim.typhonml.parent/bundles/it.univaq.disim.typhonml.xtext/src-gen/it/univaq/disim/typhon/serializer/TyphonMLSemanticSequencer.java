@@ -907,19 +907,10 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     FreetextType returns FreetextType
 	 *
 	 * Constraint:
-	 *     (workflowName=EString tasks=NlpTask)
+	 *     (tasks+=NlpTask tasks+=NlpTask*)?
 	 */
 	protected void sequence_FreetextType(ISerializationContext context, FreetextType semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.FREETEXT_TYPE__WORKFLOW_NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.FREETEXT_TYPE__WORKFLOW_NAME));
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.FREETEXT_TYPE__TASKS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.FREETEXT_TYPE__TASKS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFreetextTypeAccess().getWorkflowNameEStringParserRuleCall_2_0(), semanticObject.getWorkflowName());
-		feeder.accept(grammarAccess.getFreetextTypeAccess().getTasksNlpTaskParserRuleCall_4_0(), semanticObject.getTasks());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1153,10 +1144,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     NlpTask returns NlpTask
 	 *
 	 * Constraint:
-	 *     (type=NlpTaskType parameters+=EString?)
+	 *     (type=NlpTaskType workflowName=EString)
 	 */
 	protected void sequence_NlpTask(ISerializationContext context, NlpTask semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.NLP_TASK__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.NLP_TASK__TYPE));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.NLP_TASK__WORKFLOW_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.NLP_TASK__WORKFLOW_NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNlpTaskAccess().getTypeNlpTaskTypeEnumRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getNlpTaskAccess().getWorkflowNameEStringParserRuleCall_3_0(), semanticObject.getWorkflowName());
+		feeder.finish();
 	}
 	
 	
