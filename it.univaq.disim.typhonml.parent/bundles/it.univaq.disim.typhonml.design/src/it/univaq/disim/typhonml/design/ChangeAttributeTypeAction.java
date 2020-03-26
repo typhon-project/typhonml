@@ -19,8 +19,10 @@ public class ChangeAttributeTypeAction implements IExternalJavaAction {
 		for (EObject eObject : selections) {
 			if(eObject instanceof Attribute) {
 				Attribute feat = (Attribute) eObject;
-				ChangeAttributeType rr = TyphonmlFactory.eINSTANCE.createChangeAttributeType();
-				rr.setNewType(PrimitiveDataType.get(parameters.get("value").toString()));
+//				ChangeAttributeType rr = TyphonmlFactory.eINSTANCE.createChangeAttributeType();
+//				rr.setNewType(PrimitiveDataType.get(parameters.get("value").toString()));
+				ChangeAttributeType rr = TyphonmlFactory.eINSTANCE.createChangePrimitiveDataTypeAttribute();
+//				rr.setNewType(PrimitiveDataType.get(parameters.get("value").toString()));
 				rr.setAttributeToChange(feat);
 				((Model)feat.eContainer().eContainer()).getChangeOperators().add(rr);
 			}
