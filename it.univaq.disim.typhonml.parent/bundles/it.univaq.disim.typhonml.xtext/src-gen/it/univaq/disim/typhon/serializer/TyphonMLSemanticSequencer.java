@@ -15,27 +15,41 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import typhonml.AddAttribute;
 import typhonml.AddAttributesToIndex;
+import typhonml.AddCollectionIndex;
+import typhonml.AddCustomDataTypeAttribute;
 import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
 import typhonml.AddIndex;
 import typhonml.AddRelation;
 import typhonml.Attribute;
-import typhonml.ChangeAttributeType;
+import typhonml.BigintType;
+import typhonml.BlobType;
+import typhonml.BoolType;
+import typhonml.ChangeCustomDataTypeAttribute;
+import typhonml.ChangePrimitiveDataTypeAttribute;
 import typhonml.ChangeRelationCardinality;
 import typhonml.ChangeRelationContainement;
 import typhonml.Collection;
 import typhonml.Column;
 import typhonml.ColumnDB;
+import typhonml.CustomAttribute;
 import typhonml.CustomDataType;
-import typhonml.DataTypeImplementationPackage;
-import typhonml.DataTypeItem;
+import typhonml.CustomDataTypeImplementationPackage;
+import typhonml.CustomDataTypeItem;
+import typhonml.DateType;
+import typhonml.DatetimeType;
+import typhonml.DisableBidirectionalRelation;
+import typhonml.DisableRelationContainment;
 import typhonml.DocumentDB;
+import typhonml.DropCollectionIndex;
 import typhonml.DropIndex;
+import typhonml.EnableBidirectionalRelation;
+import typhonml.EnableRelationContainment;
 import typhonml.Entity;
-import typhonml.FreeText;
+import typhonml.FloatType;
+import typhonml.FreetextType;
 import typhonml.FunctionalTag;
 import typhonml.GraphAttribute;
 import typhonml.GraphDB;
@@ -44,6 +58,7 @@ import typhonml.GraphEdgeLabel;
 import typhonml.GraphNode;
 import typhonml.IdSpec;
 import typhonml.IndexSpec;
+import typhonml.IntType;
 import typhonml.KeyValueDB;
 import typhonml.KeyValueElement;
 import typhonml.MergeEntity;
@@ -51,21 +66,28 @@ import typhonml.MigrateEntity;
 import typhonml.Model;
 import typhonml.NFunctionalTag;
 import typhonml.NlpTask;
-import typhonml.PrimitiveDataType;
+import typhonml.PointType;
+import typhonml.PolygonType;
 import typhonml.Relation;
 import typhonml.RelationalDB;
 import typhonml.RemoveAttribute;
 import typhonml.RemoveAttributesToIndex;
 import typhonml.RemoveEntity;
+import typhonml.RemoveGraphAttribute;
+import typhonml.RemoveGraphEdge;
 import typhonml.RemoveRelation;
+import typhonml.RenabeGraphEdgeLabel;
 import typhonml.RenameAttribute;
 import typhonml.RenameCollection;
 import typhonml.RenameEntity;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
+import typhonml.SplitEntity;
 import typhonml.SplitEntityHorizontal;
 import typhonml.SplitEntityVertical;
+import typhonml.StringType;
 import typhonml.Table;
+import typhonml.TextType;
 import typhonml.TyphonmlPackage;
 
 @SuppressWarnings("all")
@@ -82,11 +104,14 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == TyphonmlPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case TyphonmlPackage.ADD_ATTRIBUTE:
-				sequence_AddAttribute(context, (AddAttribute) semanticObject); 
-				return; 
 			case TyphonmlPackage.ADD_ATTRIBUTES_TO_INDEX:
 				sequence_AddAttributesToIndex(context, (AddAttributesToIndex) semanticObject); 
+				return; 
+			case TyphonmlPackage.ADD_COLLECTION_INDEX:
+				sequence_AddCollectionIndex(context, (AddCollectionIndex) semanticObject); 
+				return; 
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE:
+				sequence_AddCustomDataTypeAttribute(context, (AddCustomDataTypeAttribute) semanticObject); 
 				return; 
 			case TyphonmlPackage.ADD_ENTITY:
 				sequence_AddEntity(context, (AddEntity) semanticObject); 
@@ -98,16 +123,36 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				sequence_AddGraphEdge(context, (AddGraphEdge) semanticObject); 
 				return; 
 			case TyphonmlPackage.ADD_INDEX:
-				sequence_AddIndexTable(context, (AddIndex) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getAddIndexTableRule()) {
+					sequence_AddIndexTable(context, (AddIndex) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getChangeOperatorRule()
+						|| rule == grammarAccess.getAddIndexRule()) {
+					sequence_AddIndex(context, (AddIndex) semanticObject); 
+					return; 
+				}
+				else break;
 			case TyphonmlPackage.ADD_RELATION:
 				sequence_AddRelation(context, (AddRelation) semanticObject); 
 				return; 
 			case TyphonmlPackage.ATTRIBUTE:
 				sequence_Attribute_Impl(context, (Attribute) semanticObject); 
 				return; 
-			case TyphonmlPackage.CHANGE_ATTRIBUTE_TYPE:
-				sequence_ChangeAttributeType(context, (ChangeAttributeType) semanticObject); 
+			case TyphonmlPackage.BIGINT_TYPE:
+				sequence_BigintType(context, (BigintType) semanticObject); 
+				return; 
+			case TyphonmlPackage.BLOB_TYPE:
+				sequence_BlobType(context, (BlobType) semanticObject); 
+				return; 
+			case TyphonmlPackage.BOOL_TYPE:
+				sequence_BoolType(context, (BoolType) semanticObject); 
+				return; 
+			case TyphonmlPackage.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE:
+				sequence_ChangeCustomDataTypeAttribute(context, (ChangeCustomDataTypeAttribute) semanticObject); 
+				return; 
+			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE:
+				sequence_ChangePrimitiveDataTypeAttribute(context, (ChangePrimitiveDataTypeAttribute) semanticObject); 
 				return; 
 			case TyphonmlPackage.CHANGE_RELATION_CARDINALITY:
 				sequence_ChangeRelationCardinality(context, (ChangeRelationCardinality) semanticObject); 
@@ -124,26 +169,61 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.COLUMN_DB:
 				sequence_ColumnDB(context, (ColumnDB) semanticObject); 
 				return; 
+			case TyphonmlPackage.CUSTOM_ATTRIBUTE:
+				sequence_CustomAttribute(context, (CustomAttribute) semanticObject); 
+				return; 
 			case TyphonmlPackage.CUSTOM_DATA_TYPE:
 				sequence_CustomDataType(context, (CustomDataType) semanticObject); 
 				return; 
-			case TyphonmlPackage.DATA_TYPE_IMPLEMENTATION_PACKAGE:
-				sequence_DataTypeImplementationPackage(context, (DataTypeImplementationPackage) semanticObject); 
+			case TyphonmlPackage.CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE:
+				sequence_CustomDataTypeImplementationPackage(context, (CustomDataTypeImplementationPackage) semanticObject); 
 				return; 
-			case TyphonmlPackage.DATA_TYPE_ITEM:
-				sequence_DataTypeItem(context, (DataTypeItem) semanticObject); 
+			case TyphonmlPackage.CUSTOM_DATA_TYPE_ITEM:
+				sequence_CustomDataTypeItem(context, (CustomDataTypeItem) semanticObject); 
+				return; 
+			case TyphonmlPackage.DATE_TYPE:
+				sequence_DateType(context, (DateType) semanticObject); 
+				return; 
+			case TyphonmlPackage.DATETIME_TYPE:
+				sequence_DatetimeType(context, (DatetimeType) semanticObject); 
+				return; 
+			case TyphonmlPackage.DISABLE_BIDIRECTIONAL_RELATION:
+				sequence_DisableBidirectionalRelation(context, (DisableBidirectionalRelation) semanticObject); 
+				return; 
+			case TyphonmlPackage.DISABLE_RELATION_CONTAINMENT:
+				sequence_DisableRelationContainment(context, (DisableRelationContainment) semanticObject); 
 				return; 
 			case TyphonmlPackage.DOCUMENT_DB:
 				sequence_DocumentDB(context, (DocumentDB) semanticObject); 
 				return; 
+			case TyphonmlPackage.DROP_COLLECTION_INDEX:
+				sequence_DropCollectionIndex(context, (DropCollectionIndex) semanticObject); 
+				return; 
 			case TyphonmlPackage.DROP_INDEX:
-				sequence_DropIndexTable(context, (DropIndex) semanticObject); 
+				if (rule == grammarAccess.getDropIndexTableRule()) {
+					sequence_DropIndexTable(context, (DropIndex) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getChangeOperatorRule()
+						|| rule == grammarAccess.getDropIndexRule()) {
+					sequence_DropIndex(context, (DropIndex) semanticObject); 
+					return; 
+				}
+				else break;
+			case TyphonmlPackage.ENABLE_BIDIRECTIONAL_RELATION:
+				sequence_EnableBidirectionalRelation(context, (EnableBidirectionalRelation) semanticObject); 
+				return; 
+			case TyphonmlPackage.ENABLE_RELATION_CONTAINMENT:
+				sequence_EnableRelationContainment(context, (EnableRelationContainment) semanticObject); 
 				return; 
 			case TyphonmlPackage.ENTITY:
 				sequence_Entity_Impl(context, (Entity) semanticObject); 
 				return; 
-			case TyphonmlPackage.FREE_TEXT:
-				sequence_FreeText(context, (FreeText) semanticObject); 
+			case TyphonmlPackage.FLOAT_TYPE:
+				sequence_FloatType(context, (FloatType) semanticObject); 
+				return; 
+			case TyphonmlPackage.FREETEXT_TYPE:
+				sequence_FreetextType(context, (FreetextType) semanticObject); 
 				return; 
 			case TyphonmlPackage.FUNCTIONAL_TAG:
 				sequence_FunctionalTag_Impl(context, (FunctionalTag) semanticObject); 
@@ -169,6 +249,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.INDEX_SPEC:
 				sequence_IndexSpec(context, (IndexSpec) semanticObject); 
 				return; 
+			case TyphonmlPackage.INT_TYPE:
+				sequence_IntType(context, (IntType) semanticObject); 
+				return; 
 			case TyphonmlPackage.KEY_VALUE_DB:
 				sequence_KeyValueDB(context, (KeyValueDB) semanticObject); 
 				return; 
@@ -190,8 +273,11 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.NLP_TASK:
 				sequence_NlpTask(context, (NlpTask) semanticObject); 
 				return; 
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE:
-				sequence_PrimitiveDataType_Impl(context, (PrimitiveDataType) semanticObject); 
+			case TyphonmlPackage.POINT_TYPE:
+				sequence_PointType(context, (PointType) semanticObject); 
+				return; 
+			case TyphonmlPackage.POLYGON_TYPE:
+				sequence_PolygonType(context, (PolygonType) semanticObject); 
 				return; 
 			case TyphonmlPackage.RELATION:
 				sequence_Relation_Impl(context, (Relation) semanticObject); 
@@ -208,8 +294,17 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.REMOVE_ENTITY:
 				sequence_RemoveEntity(context, (RemoveEntity) semanticObject); 
 				return; 
+			case TyphonmlPackage.REMOVE_GRAPH_ATTRIBUTE:
+				sequence_RemoveGraphAttribute(context, (RemoveGraphAttribute) semanticObject); 
+				return; 
+			case TyphonmlPackage.REMOVE_GRAPH_EDGE:
+				sequence_RemoveGraphEdge(context, (RemoveGraphEdge) semanticObject); 
+				return; 
 			case TyphonmlPackage.REMOVE_RELATION:
 				sequence_RemoveRelation(context, (RemoveRelation) semanticObject); 
+				return; 
+			case TyphonmlPackage.RENABE_GRAPH_EDGE_LABEL:
+				sequence_RenabeGraphEdgeLabel(context, (RenabeGraphEdgeLabel) semanticObject); 
 				return; 
 			case TyphonmlPackage.RENAME_ATTRIBUTE:
 				sequence_RenameAttribute(context, (RenameAttribute) semanticObject); 
@@ -226,32 +321,28 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.RENAME_TABLE:
 				sequence_RenameTable(context, (RenameTable) semanticObject); 
 				return; 
+			case TyphonmlPackage.SPLIT_ENTITY:
+				sequence_SplitEntity(context, (SplitEntity) semanticObject); 
+				return; 
 			case TyphonmlPackage.SPLIT_ENTITY_HORIZONTAL:
 				sequence_SplitEntityHorizontal(context, (SplitEntityHorizontal) semanticObject); 
 				return; 
 			case TyphonmlPackage.SPLIT_ENTITY_VERTICAL:
 				sequence_SplitEntityVertical(context, (SplitEntityVertical) semanticObject); 
 				return; 
+			case TyphonmlPackage.STRING_TYPE:
+				sequence_StringType(context, (StringType) semanticObject); 
+				return; 
 			case TyphonmlPackage.TABLE:
 				sequence_Table(context, (Table) semanticObject); 
+				return; 
+			case TyphonmlPackage.TEXT_TYPE:
+				sequence_TextType(context, (TextType) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     ChangeOperator returns AddAttribute
-	 *     AddAttribute returns AddAttribute
-	 *
-	 * Constraint:
-	 *     (importedNamespace=EString? name=EString type=[DataType|EString] ownerEntity=[Entity|EString])
-	 */
-	protected void sequence_AddAttribute(ISerializationContext context, AddAttribute semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -268,11 +359,39 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns AddCollectionIndex
+	 *     AddCollectionIndex returns AddCollectionIndex
+	 *
+	 * Constraint:
+	 *     (collection=[Collection|EString] (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)?)
+	 */
+	protected void sequence_AddCollectionIndex(ISerializationContext context, AddCollectionIndex semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Attribute returns AddCustomDataTypeAttribute
+	 *     EntityAttribute returns AddCustomDataTypeAttribute
+	 *     ChangeOperator returns AddCustomDataTypeAttribute
+	 *     AddCustomDataTypeAttribute returns AddCustomDataTypeAttribute
+	 *
+	 * Constraint:
+	 *     (name=EString importedNamespace=EString? ownerEntity=[Entity|EString] type=CustomDataType)
+	 */
+	protected void sequence_AddCustomDataTypeAttribute(ISerializationContext context, AddCustomDataTypeAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ChangeOperator returns AddEntity
 	 *     AddEntity returns AddEntity
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString (attributes+=AddAttribute attributes+=AddAttribute*)* (relations+=AddRelation relations+=AddRelation*)*)
+	 *     (importedNamespace=EString? name=EString (attributes+=Attribute attributes+=Attribute*)* (relations+=AddRelation relations+=AddRelation*)*)
 	 */
 	protected void sequence_AddEntity(ISerializationContext context, AddEntity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -282,6 +401,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Contexts:
 	 *     GraphAttribute returns AddGraphAttribute
+	 *     ChangeOperator returns AddGraphAttribute
 	 *     AddGraphAttribute returns AddGraphAttribute
 	 *
 	 * Constraint:
@@ -295,6 +415,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Contexts:
 	 *     GraphEdge returns AddGraphEdge
+	 *     ChangeOperator returns AddGraphEdge
 	 *     AddGraphEdge returns AddGraphEdge
 	 *
 	 * Constraint:
@@ -307,13 +428,25 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     ChangeOperator returns AddIndex
 	 *     AddIndexTable returns AddIndex
 	 *
 	 * Constraint:
 	 *     (table=[Table|EString] attributes+=[Attribute|EString] attributes+=[Attribute|EString]?)
 	 */
 	protected void sequence_AddIndexTable(ISerializationContext context, AddIndex semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns AddIndex
+	 *     AddIndex returns AddIndex
+	 *
+	 * Constraint:
+	 *     (table=[Table|EString] (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)?)
+	 */
+	protected void sequence_AddIndex(ISerializationContext context, AddIndex semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -342,10 +475,11 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * Contexts:
 	 *     Attribute returns Attribute
+	 *     EntityAttribute returns Attribute
 	 *     Attribute_Impl returns Attribute
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString type=[DataType|EString])
+	 *     (importedNamespace=EString? name=EString type=DataType)
 	 */
 	protected void sequence_Attribute_Impl(ISerializationContext context, Attribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -354,23 +488,75 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     ChangeOperator returns ChangeAttributeType
-	 *     ChangeAttributeType returns ChangeAttributeType
+	 *     DataType returns BigintType
+	 *     BigintType returns BigintType
 	 *
 	 * Constraint:
-	 *     (attributeToChange=[Attribute|EString] newType=[DataType|EString])
+	 *     {BigintType}
 	 */
-	protected void sequence_ChangeAttributeType(ISerializationContext context, ChangeAttributeType semanticObject) {
+	protected void sequence_BigintType(ISerializationContext context, BigintType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns BlobType
+	 *     BlobType returns BlobType
+	 *
+	 * Constraint:
+	 *     {BlobType}
+	 */
+	protected void sequence_BlobType(ISerializationContext context, BlobType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns BoolType
+	 *     BoolType returns BoolType
+	 *
+	 * Constraint:
+	 *     {BoolType}
+	 */
+	protected void sequence_BoolType(ISerializationContext context, BoolType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns ChangeCustomDataTypeAttribute
+	 *     ChangeCustomDataTypeAttribute returns ChangeCustomDataTypeAttribute
+	 *
+	 * Constraint:
+	 *     (attributeToChange=[Attribute|EString] newType=[CustomDataType|EString])
+	 */
+	protected void sequence_ChangeCustomDataTypeAttribute(ISerializationContext context, ChangeCustomDataTypeAttribute semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE));
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE__NEW_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE__NEW_TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getChangeAttributeTypeAccess().getAttributeToChangeAttributeEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE, false));
-		feeder.accept(grammarAccess.getChangeAttributeTypeAccess().getNewTypeDataTypeEStringParserRuleCall_4_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__NEW_TYPE, false));
+		feeder.accept(grammarAccess.getChangeCustomDataTypeAttributeAccess().getAttributeToChangeAttributeEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_ATTRIBUTE_TYPE__ATTRIBUTE_TO_CHANGE, false));
+		feeder.accept(grammarAccess.getChangeCustomDataTypeAttributeAccess().getNewTypeCustomDataTypeEStringParserRuleCall_5_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE__NEW_TYPE, false));
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns ChangePrimitiveDataTypeAttribute
+	 *     ChangePrimitiveDataTypeAttribute returns ChangePrimitiveDataTypeAttribute
+	 *
+	 * Constraint:
+	 *     (maxSize=EInt? attributeToChange=[Attribute|EString])
+	 */
+	protected void sequence_ChangePrimitiveDataTypeAttribute(ISerializationContext context, ChangePrimitiveDataTypeAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -457,11 +643,54 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     EntityAttribute returns CustomAttribute
+	 *     CustomAttribute returns CustomAttribute
+	 *
+	 * Constraint:
+	 *     (importedNamespace=EString? name=EString type=[CustomDataType|EString])
+	 */
+	protected void sequence_CustomAttribute(ISerializationContext context, CustomAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CustomDataTypeImplementationPackage returns CustomDataTypeImplementationPackage
+	 *
+	 * Constraint:
+	 *     location=EString
+	 */
+	protected void sequence_CustomDataTypeImplementationPackage(ISerializationContext context, CustomDataTypeImplementationPackage semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCustomDataTypeImplementationPackageAccess().getLocationEStringParserRuleCall_1_0(), semanticObject.getLocation());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     CustomDataTypeItem returns CustomDataTypeItem
+	 *
+	 * Constraint:
+	 *     (importedNamespace=EString? name=EString type=[DataType|EString] implementation=CustomDataTypeImplementationPackage)
+	 */
+	protected void sequence_CustomDataTypeItem(ISerializationContext context, CustomDataTypeItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     DataType returns CustomDataType
 	 *     CustomDataType returns CustomDataType
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString (elements+=DataTypeItem elements+=DataTypeItem*)?)
+	 *     (importedNamespace=EString? name=EString (elements+=CustomDataTypeItem elements+=CustomDataTypeItem*)?)
 	 */
 	protected void sequence_CustomDataType(ISerializationContext context, CustomDataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -470,31 +699,65 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     DataTypeImplementationPackage returns DataTypeImplementationPackage
+	 *     DataType returns DateType
+	 *     DateType returns DateType
 	 *
 	 * Constraint:
-	 *     location=EString
+	 *     {DateType}
 	 */
-	protected void sequence_DataTypeImplementationPackage(ISerializationContext context, DataTypeImplementationPackage semanticObject) {
+	protected void sequence_DateType(ISerializationContext context, DateType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns DatetimeType
+	 *     DatetimeType returns DatetimeType
+	 *
+	 * Constraint:
+	 *     {DatetimeType}
+	 */
+	protected void sequence_DatetimeType(ISerializationContext context, DatetimeType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns DisableBidirectionalRelation
+	 *     DisableBidirectionalRelation returns DisableBidirectionalRelation
+	 *
+	 * Constraint:
+	 *     relation=[Relation|EString]
+	 */
+	protected void sequence_DisableBidirectionalRelation(ISerializationContext context, DisableBidirectionalRelation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DISABLE_BIDIRECTIONAL_RELATION__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DISABLE_BIDIRECTIONAL_RELATION__RELATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDataTypeImplementationPackageAccess().getLocationEStringParserRuleCall_1_0(), semanticObject.getLocation());
+		feeder.accept(grammarAccess.getDisableBidirectionalRelationAccess().getRelationRelationEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.DISABLE_BIDIRECTIONAL_RELATION__RELATION, false));
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     DataTypeItem returns DataTypeItem
+	 *     ChangeOperator returns DisableRelationContainment
+	 *     DisableRelationContainment returns DisableRelationContainment
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString type=[DataType|EString] implementation=DataTypeImplementationPackage)
+	 *     relation=[Relation|EString]
 	 */
-	protected void sequence_DataTypeItem(ISerializationContext context, DataTypeItem semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+	protected void sequence_DisableRelationContainment(ISerializationContext context, DisableRelationContainment semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DISABLE_RELATION_CONTAINMENT__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DISABLE_RELATION_CONTAINMENT__RELATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDisableRelationContainmentAccess().getRelationRelationEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.DISABLE_RELATION_CONTAINMENT__RELATION, false));
+		feeder.finish();
 	}
 	
 	
@@ -513,7 +776,25 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     ChangeOperator returns DropIndex
+	 *     ChangeOperator returns DropCollectionIndex
+	 *     DropCollectionIndex returns DropCollectionIndex
+	 *
+	 * Constraint:
+	 *     collection=[Collection|EString]
+	 */
+	protected void sequence_DropCollectionIndex(ISerializationContext context, DropCollectionIndex semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DROP_COLLECTION_INDEX__COLLECTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DROP_COLLECTION_INDEX__COLLECTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDropCollectionIndexAccess().getCollectionCollectionEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.DROP_COLLECTION_INDEX__COLLECTION, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     DropIndexTable returns DropIndex
 	 *
 	 * Constraint:
@@ -532,7 +813,64 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     DataType returns Entity
+	 *     ChangeOperator returns DropIndex
+	 *     DropIndex returns DropIndex
+	 *
+	 * Constraint:
+	 *     table=[Table|EString]
+	 */
+	protected void sequence_DropIndex(ISerializationContext context, DropIndex semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.DROP_INDEX__TABLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.DROP_INDEX__TABLE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getDropIndexAccess().getTableTableEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.DROP_INDEX__TABLE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns EnableBidirectionalRelation
+	 *     EnableBidirectionalRelation returns EnableBidirectionalRelation
+	 *
+	 * Constraint:
+	 *     relation=[Relation|EString]
+	 */
+	protected void sequence_EnableBidirectionalRelation(ISerializationContext context, EnableBidirectionalRelation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.ENABLE_BIDIRECTIONAL_RELATION__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.ENABLE_BIDIRECTIONAL_RELATION__RELATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnableBidirectionalRelationAccess().getRelationRelationEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.ENABLE_BIDIRECTIONAL_RELATION__RELATION, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns EnableRelationContainment
+	 *     EnableRelationContainment returns EnableRelationContainment
+	 *
+	 * Constraint:
+	 *     relation=[Relation|EString]
+	 */
+	protected void sequence_EnableRelationContainment(ISerializationContext context, EnableRelationContainment semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.ENABLE_RELATION_CONTAINMENT__RELATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.ENABLE_RELATION_CONTAINMENT__RELATION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEnableRelationContainmentAccess().getRelationRelationEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.ENABLE_RELATION_CONTAINMENT__RELATION, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Entity returns Entity
 	 *     Entity_Impl returns Entity
 	 *
 	 * Constraint:
@@ -541,8 +879,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         (nfunctionalTags+=NFunctionalTag_Impl nfunctionalTags+=NFunctionalTag_Impl*)? 
 	 *         importedNamespace=EString? 
 	 *         name=EString 
-	 *         (attributes+=Attribute attributes+=Attribute*)? 
-	 *         (fretextAttributes+=FreeText fretextAttributes+=FreeText*)? 
+	 *         (attributes+=EntityAttribute attributes+=EntityAttribute*)? 
 	 *         (relations+=Relation relations+=Relation*)?
 	 *     )
 	 */
@@ -553,12 +890,26 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     FreeText returns FreeText
+	 *     DataType returns FloatType
+	 *     FloatType returns FloatType
 	 *
 	 * Constraint:
-	 *     (name=EString (tasks+=NlpTask tasks+=NlpTask*)?)
+	 *     {FloatType}
 	 */
-	protected void sequence_FreeText(ISerializationContext context, FreeText semanticObject) {
+	protected void sequence_FloatType(ISerializationContext context, FloatType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns FreetextType
+	 *     FreetextType returns FreetextType
+	 *
+	 * Constraint:
+	 *     (tasks+=NlpTask tasks+=NlpTask*)?
+	 */
+	protected void sequence_FreetextType(ISerializationContext context, FreetextType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -675,6 +1026,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     DataType returns IntType
+	 *     IntType returns IntType
+	 *
+	 * Constraint:
+	 *     {IntType}
+	 */
+	protected void sequence_IntType(ISerializationContext context, IntType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Database returns KeyValueDB
 	 *     KeyValueDB returns KeyValueDB
 	 *
@@ -750,7 +1114,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (dataTypes+=DataType* databases+=Database* (changeOperators+=ChangeOperator changeOperators+=ChangeOperator*)?)
+	 *     (entities+=Entity* customDataTypes+=CustomDataType* databases+=Database* (changeOperators+=ChangeOperator changeOperators+=ChangeOperator*)?)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -780,28 +1144,44 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     NlpTask returns NlpTask
 	 *
 	 * Constraint:
-	 *     type=NlpTaskType
+	 *     (type=NlpTaskType workflowName=EString)
 	 */
 	protected void sequence_NlpTask(ISerializationContext context, NlpTask semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.NLP_TASK__TYPE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.NLP_TASK__TYPE));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.NLP_TASK__WORKFLOW_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.NLP_TASK__WORKFLOW_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNlpTaskAccess().getTypeNlpTaskTypeEnumRuleCall_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getNlpTaskAccess().getTypeNlpTaskTypeEnumRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getNlpTaskAccess().getWorkflowNameEStringParserRuleCall_3_0(), semanticObject.getWorkflowName());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     DataType returns PrimitiveDataType
-	 *     PrimitiveDataType_Impl returns PrimitiveDataType
+	 *     DataType returns PointType
+	 *     PointType returns PointType
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString)
+	 *     {PointType}
 	 */
-	protected void sequence_PrimitiveDataType_Impl(ISerializationContext context, PrimitiveDataType semanticObject) {
+	protected void sequence_PointType(ISerializationContext context, PointType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns PolygonType
+	 *     PolygonType returns PolygonType
+	 *
+	 * Constraint:
+	 *     {PolygonType}
+	 */
+	protected void sequence_PolygonType(ISerializationContext context, PolygonType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -892,6 +1272,44 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns RemoveGraphAttribute
+	 *     RemoveGraphAttribute returns RemoveGraphAttribute
+	 *
+	 * Constraint:
+	 *     node=[GraphNode|EString]
+	 */
+	protected void sequence_RemoveGraphAttribute(ISerializationContext context, RemoveGraphAttribute semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.REMOVE_GRAPH_ATTRIBUTE__NODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_GRAPH_ATTRIBUTE__NODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRemoveGraphAttributeAccess().getNodeGraphNodeEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_GRAPH_ATTRIBUTE__NODE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RemoveGraphEdge
+	 *     RemoveGraphEdge returns RemoveGraphEdge
+	 *
+	 * Constraint:
+	 *     graphEdgeToRemove=[GraphEdge|EString]
+	 */
+	protected void sequence_RemoveGraphEdge(ISerializationContext context, RemoveGraphEdge semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.REMOVE_GRAPH_EDGE__GRAPH_EDGE_TO_REMOVE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.REMOVE_GRAPH_EDGE__GRAPH_EDGE_TO_REMOVE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRemoveGraphEdgeAccess().getGraphEdgeToRemoveGraphEdgeEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_GRAPH_EDGE__GRAPH_EDGE_TO_REMOVE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ChangeOperator returns RemoveRelation
 	 *     RemoveRelation returns RemoveRelation
 	 *
@@ -906,6 +1324,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRemoveRelationAccess().getRelationToRemoveRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.REMOVE_RELATION__RELATION_TO_REMOVE, false));
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns RenabeGraphEdgeLabel
+	 *     RenabeGraphEdgeLabel returns RenabeGraphEdgeLabel
+	 *
+	 * Constraint:
+	 *     (newName=EString? edge=[GraphEdge|EString])
+	 */
+	protected void sequence_RenabeGraphEdgeLabel(ISerializationContext context, RenabeGraphEdgeLabel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -1062,6 +1493,44 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
+	 *     ChangeOperator returns SplitEntity
+	 *     SplitEntity returns SplitEntity
+	 *
+	 * Constraint:
+	 *     (entityToBeSplit=[Entity|EString] firstNewEntity=Entity secondNewEntity=Entity)
+	 */
+	protected void sequence_SplitEntity(ISerializationContext context, SplitEntity semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__ENTITY_TO_BE_SPLIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__ENTITY_TO_BE_SPLIT));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__FIRST_NEW_ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__FIRST_NEW_ENTITY));
+			if (transientValues.isValueTransient(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__SECOND_NEW_ENTITY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TyphonmlPackage.Literals.SPLIT_ENTITY__SECOND_NEW_ENTITY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSplitEntityAccess().getEntityToBeSplitEntityEStringParserRuleCall_3_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.SPLIT_ENTITY__ENTITY_TO_BE_SPLIT, false));
+		feeder.accept(grammarAccess.getSplitEntityAccess().getFirstNewEntityEntityParserRuleCall_5_0(), semanticObject.getFirstNewEntity());
+		feeder.accept(grammarAccess.getSplitEntityAccess().getSecondNewEntityEntityParserRuleCall_7_0(), semanticObject.getSecondNewEntity());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns StringType
+	 *     StringType returns StringType
+	 *
+	 * Constraint:
+	 *     maxSize=EInt?
+	 */
+	protected void sequence_StringType(ISerializationContext context, StringType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Table returns Table
 	 *
 	 * Constraint:
@@ -1075,6 +1544,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     )
 	 */
 	protected void sequence_Table(ISerializationContext context, Table semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     DataType returns TextType
+	 *     TextType returns TextType
+	 *
+	 * Constraint:
+	 *     {TextType}
+	 */
+	protected void sequence_TextType(ISerializationContext context, TextType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

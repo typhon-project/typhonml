@@ -8,10 +8,8 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 
 import typhonml.Attribute;
 import typhonml.ChangeAttributeType;
-import typhonml.ChangeRelationContainement;
-import typhonml.DataType;
 import typhonml.Model;
-import typhonml.Relation;
+import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlFactory;
 
 public class ChangeAttributeTypeAction implements IExternalJavaAction {
@@ -21,8 +19,10 @@ public class ChangeAttributeTypeAction implements IExternalJavaAction {
 		for (EObject eObject : selections) {
 			if(eObject instanceof Attribute) {
 				Attribute feat = (Attribute) eObject;
-				ChangeAttributeType rr = TyphonmlFactory.eINSTANCE.createChangeAttributeType();
-				rr.setNewType((DataType) parameters.get("value"));
+//				ChangeAttributeType rr = TyphonmlFactory.eINSTANCE.createChangeAttributeType();
+//				rr.setNewType(PrimitiveDataType.get(parameters.get("value").toString()));
+				ChangeAttributeType rr = TyphonmlFactory.eINSTANCE.createChangePrimitiveDataTypeAttribute();
+//				rr.setNewType(PrimitiveDataType.get(parameters.get("value").toString()));
 				rr.setAttributeToChange(feat);
 				((Model)feat.eContainer().eContainer()).getChangeOperators().add(rr);
 			}

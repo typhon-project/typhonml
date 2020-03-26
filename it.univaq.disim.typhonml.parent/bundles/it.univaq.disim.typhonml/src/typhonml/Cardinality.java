@@ -61,10 +61,6 @@ public enum Cardinality implements Enumerator {
 	/**
 	 * The '<em><b>Zero one</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Zero one</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ZERO_ONE
 	 * @model name="zero_one"
@@ -76,10 +72,6 @@ public enum Cardinality implements Enumerator {
 	/**
 	 * The '<em><b>One</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>One</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ONE
 	 * @model name="one"
@@ -91,10 +83,6 @@ public enum Cardinality implements Enumerator {
 	/**
 	 * The '<em><b>Zero many</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>Zero many</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ZERO_MANY
 	 * @model name="zero_many"
@@ -106,10 +94,6 @@ public enum Cardinality implements Enumerator {
 	/**
 	 * The '<em><b>One many</b></em>' literal value.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of '<em><b>One many</b></em>' literal object isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #ONE_MANY
 	 * @model name="one_many"

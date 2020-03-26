@@ -76,7 +76,7 @@ public class TyphonMLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('relations' '[' ']')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     attributes+=AddAttribute ']' (ambiguity) '}' (rule end)
+	 *     attributes+=Attribute ']' (ambiguity) '}' (rule end)
 	 *     name=EString '{' ('attributes' '[' ']')? (ambiguity) '}' (rule end)
 	 */
 	protected void emit_AddEntity___RelationsKeyword_6_0_LeftSquareBracketKeyword_6_1_RightSquareBracketKeyword_6_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

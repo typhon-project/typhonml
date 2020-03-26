@@ -1,9 +1,11 @@
 package it.univaq.disim.typhonml.model_analysis.wordnet;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import net.sf.extjwnl.JWNLException;
+import net.sf.extjwnl.data.DictionaryElement;
 import net.sf.extjwnl.data.IndexWord;
 import net.sf.extjwnl.data.POS;
 import net.sf.extjwnl.dictionary.Dictionary;
@@ -29,20 +31,29 @@ public class WordNet {
 	}
 
 	public static void main(String[] args) throws JWNLException {
-		String lemmaToTest = "house";
+		String lemmaToTest = "OrderProduct";
 		boolean exists = new WordNet().checkifWordExists(lemmaToTest);
 		System.out.println(exists);
 	}
+	
+	private String[] splitCamelCaseString(String wordToSplit){
+		return wordToSplit.split("(?<!(^|[A-Z]))(?=[A-Z])|(?<!^)(?=[A-Z][a-z])");
+	}
 
 	public boolean checkifWordExists(String r) {
+		String[] splittedString = splitCamelCaseString(r);
 		boolean flag = false;
-		try {
-			IndexWord word = wordNetDictionary.getIndexWord(NOUN, r);
-			if (word != null) {
-				flag = true;
+		for(String stringToCheck : splittedString) {
+			try {
+				IndexWord word = wordNetDictionary.getIndexWord(NOUN, stringToCheck);
+				if (word != null) {
+					flag = true;
+				}else {
+					flag = false;
+				}
+			} catch (JWNLException ex) {
+				return false;
 			}
-		} catch (JWNLException ex) {
-			return false;
 		}
 		return flag;
 	}

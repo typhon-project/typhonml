@@ -24,10 +24,6 @@ public interface RenabeGraphEdgeLabel extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Edge</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Edge</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Edge</em>' reference.
 	 * @see #setEdge(GraphEdge)
@@ -50,10 +46,6 @@ public interface RenabeGraphEdgeLabel extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>New Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Name</em>' attribute.
 	 * @see #setNewName(String)

@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: TyphonML
+Bundle-Name: %pluginName
 Bundle-SymbolicName: it.univaq.disim.typhonml;singleton:=true
 Automatic-Module-Name: it.univaq.disim.typhonml
 Bundle-Version: 1.0.0.qualifier

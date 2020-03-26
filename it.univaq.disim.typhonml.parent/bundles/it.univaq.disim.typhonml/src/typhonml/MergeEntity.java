@@ -25,10 +25,6 @@ public interface MergeEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>First Entity To Merge</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>First Entity To Merge</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>First Entity To Merge</em>' reference.
 	 * @see #setFirstEntityToMerge(Entity)
@@ -51,10 +47,6 @@ public interface MergeEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Second Entity To Merge</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Second Entity To Merge</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Second Entity To Merge</em>' reference.
 	 * @see #setSecondEntityToMerge(Entity)
@@ -77,10 +69,6 @@ public interface MergeEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>New Entity Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Entity Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Entity Name</em>' attribute.
 	 * @see #setNewEntityName(String)

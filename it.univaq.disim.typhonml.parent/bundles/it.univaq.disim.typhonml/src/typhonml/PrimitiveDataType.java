@@ -10,7 +10,7 @@ package typhonml;
  *
  *
  * @see typhonml.TyphonmlPackage#getPrimitiveDataType()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface PrimitiveDataType extends DataType {

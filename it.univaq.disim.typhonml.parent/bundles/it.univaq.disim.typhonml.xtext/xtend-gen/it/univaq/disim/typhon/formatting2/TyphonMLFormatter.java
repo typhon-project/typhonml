@@ -12,7 +12,7 @@ import org.eclipse.xtext.formatting2.AbstractFormatter2;
 import org.eclipse.xtext.formatting2.IFormattableDocument;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.xbase.lib.Extension;
-import typhonml.DataType;
+import typhonml.CustomDataType;
 import typhonml.Model;
 
 @SuppressWarnings("all")
@@ -22,9 +22,9 @@ public class TyphonMLFormatter extends AbstractFormatter2 {
   private TyphonMLGrammarAccess _typhonMLGrammarAccess;
   
   protected void _format(final Model model, @Extension final IFormattableDocument document) {
-    EList<DataType> _dataTypes = model.getDataTypes();
-    for (final DataType dataType : _dataTypes) {
-      document.<DataType>format(dataType);
+    EList<CustomDataType> _customDataTypes = model.getCustomDataTypes();
+    for (final CustomDataType dataType : _customDataTypes) {
+      document.<CustomDataType>format(dataType);
     }
   }
   

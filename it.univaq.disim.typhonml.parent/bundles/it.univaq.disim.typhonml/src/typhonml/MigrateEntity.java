@@ -24,10 +24,6 @@ public interface MigrateEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity</em>' reference.
 	 * @see #setEntity(Entity)
@@ -50,10 +46,6 @@ public interface MigrateEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>New Database</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Database</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Database</em>' reference.
 	 * @see #setNewDatabase(Database)

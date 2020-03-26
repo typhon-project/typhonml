@@ -24,10 +24,6 @@ public interface ChangeRelationCardinality extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Relation</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Relation</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Relation</em>' reference.
 	 * @see #setRelation(Relation)
@@ -51,10 +47,6 @@ public interface ChangeRelationCardinality extends ChangeOperator {
 	 * Returns the value of the '<em><b>New Cardinality</b></em>' attribute.
 	 * The literals are from the enumeration {@link typhonml.Cardinality}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Cardinality</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Cardinality</em>' attribute.
 	 * @see typhonml.Cardinality

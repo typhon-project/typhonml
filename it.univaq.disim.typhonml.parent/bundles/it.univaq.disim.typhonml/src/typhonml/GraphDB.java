@@ -26,10 +26,6 @@ public interface GraphDB extends Database {
 	 * Returns the value of the '<em><b>Nodes</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.GraphNode}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Nodes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Nodes</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getGraphDB_Nodes()
@@ -42,10 +38,6 @@ public interface GraphDB extends Database {
 	 * Returns the value of the '<em><b>Edges</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.GraphEdge}.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Edges</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Edges</em>' containment reference list.
 	 * @see typhonml.TyphonmlPackage#getGraphDB_Edges()

@@ -4,7 +4,7 @@ import "smellsTyphonMLCheck.eol";
 pre{
 	"Smells TyphonML Checks...".println();
 	
-	var maxNumberOfAttributesForGodTable = 2;
+	var maxNumberOfAttributesForGodTable = 4;
 	var attributeOverloaded: String;
 	var attributeWithWhiteSpace: String;
 	var meaningName: String;

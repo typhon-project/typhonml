@@ -24,10 +24,6 @@ public interface RenameEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>Entity To Rename</b></em>' reference.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Entity To Rename</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Entity To Rename</em>' reference.
 	 * @see #setEntityToRename(Entity)
@@ -50,10 +46,6 @@ public interface RenameEntity extends ChangeOperator {
 	/**
 	 * Returns the value of the '<em><b>New Entity Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>New Entity Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Entity Name</em>' attribute.
 	 * @see #setNewEntityName(String)
