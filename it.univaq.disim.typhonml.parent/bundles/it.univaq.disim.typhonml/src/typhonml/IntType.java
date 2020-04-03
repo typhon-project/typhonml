@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface IntType extends PrimitiveDataType {
+public interface IntType extends DataType {
 } // IntType

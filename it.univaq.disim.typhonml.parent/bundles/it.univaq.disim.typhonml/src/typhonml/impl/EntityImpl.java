@@ -15,10 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import typhonml.Collection;
 import typhonml.Column;
 import typhonml.Entity;
-import typhonml.EntityAttribute;
+import typhonml.EntityAttributeKind;
 import typhonml.FunctionalTag;
 import typhonml.GraphNode;
 import typhonml.KeyValueElement;
@@ -52,7 +53,7 @@ public class EntityImpl extends NamedElementImpl implements Entity {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EntityAttribute> attributes;
+	protected EList<EntityAttributeKind> attributes;
 
 	/**
 	 * The cached value of the '{@link #getRelations() <em>Relations</em>}' containment reference list.
@@ -109,9 +110,9 @@ public class EntityImpl extends NamedElementImpl implements Entity {
 	 * @generated
 	 */
 	@Override
-	public EList<EntityAttribute> getAttributes() {
+	public EList<EntityAttributeKind> getAttributes() {
 		if (attributes == null) {
-			attributes = new EObjectContainmentEList<EntityAttribute>(EntityAttribute.class, this, TyphonmlPackage.ENTITY__ATTRIBUTES);
+			attributes = new EObjectContainmentEList<EntityAttributeKind>(EntityAttributeKind.class, this, TyphonmlPackage.ENTITY__ATTRIBUTES);
 		}
 		return attributes;
 	}
@@ -336,7 +337,7 @@ public class EntityImpl extends NamedElementImpl implements Entity {
 		switch (featureID) {
 			case TyphonmlPackage.ENTITY__ATTRIBUTES:
 				getAttributes().clear();
-				getAttributes().addAll((java.util.Collection<? extends EntityAttribute>)newValue);
+				getAttributes().addAll((java.util.Collection<? extends EntityAttributeKind>)newValue);
 				return;
 			case TyphonmlPackage.ENTITY__RELATIONS:
 				getRelations().clear();

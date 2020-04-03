@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface BoolType extends PrimitiveDataType {
+public interface BoolType extends DataType {
 } // BoolType

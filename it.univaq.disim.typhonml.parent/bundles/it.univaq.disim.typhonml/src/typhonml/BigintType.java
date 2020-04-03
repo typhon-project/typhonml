@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface BigintType extends PrimitiveDataType {
+public interface BigintType extends DataType {
 } // BigintType

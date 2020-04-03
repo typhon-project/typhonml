@@ -26,7 +26,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class CustomAttributeImpl extends EntityAttributeImpl implements CustomAttribute {
+public class CustomAttributeImpl extends EntityAttributeKindImpl implements CustomAttribute {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc -->

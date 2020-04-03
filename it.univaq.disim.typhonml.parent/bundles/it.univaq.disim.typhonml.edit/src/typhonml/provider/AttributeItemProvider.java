@@ -24,7 +24,7 @@ import typhonml.TyphonmlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AttributeItemProvider extends EntityAttributeItemProvider {
+public class AttributeItemProvider extends EntityAttributeKindItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -195,11 +195,6 @@ public class AttributeItemProvider extends EntityAttributeItemProvider {
 			(createChildParameter
 				(TyphonmlPackage.Literals.ATTRIBUTE__TYPE,
 				 TyphonmlFactory.eINSTANCE.createDatetimeType()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.ATTRIBUTE__TYPE,
-				 TyphonmlFactory.eINSTANCE.createCustomDataType()));
 	}
 
 }

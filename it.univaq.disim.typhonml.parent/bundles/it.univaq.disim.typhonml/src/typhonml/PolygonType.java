@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface PolygonType extends PrimitiveDataType {
+public interface PolygonType extends DataType {
 } // PolygonType

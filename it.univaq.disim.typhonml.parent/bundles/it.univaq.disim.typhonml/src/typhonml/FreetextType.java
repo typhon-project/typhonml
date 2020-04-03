@@ -4,7 +4,6 @@ package typhonml;
 
 import org.eclipse.emf.common.util.EList;
 
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Freetext Type</b></em>'.
@@ -21,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface FreetextType extends PrimitiveDataType {
+public interface FreetextType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Tasks</b></em>' containment reference list.
 	 * The list contents are of type {@link typhonml.NlpTask}.

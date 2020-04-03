@@ -84,17 +84,9 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.PRIMITIVE_DATA_TYPE: {
-				PrimitiveDataType primitiveDataType = (PrimitiveDataType)theEObject;
-				T result = casePrimitiveDataType(primitiveDataType);
-				if (result == null) result = caseDataType(primitiveDataType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TyphonmlPackage.INT_TYPE: {
 				IntType intType = (IntType)theEObject;
 				T result = caseIntType(intType);
-				if (result == null) result = casePrimitiveDataType(intType);
 				if (result == null) result = caseDataType(intType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -102,7 +94,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.BIGINT_TYPE: {
 				BigintType bigintType = (BigintType)theEObject;
 				T result = caseBigintType(bigintType);
-				if (result == null) result = casePrimitiveDataType(bigintType);
 				if (result == null) result = caseDataType(bigintType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -110,7 +101,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.STRING_TYPE: {
 				StringType stringType = (StringType)theEObject;
 				T result = caseStringType(stringType);
-				if (result == null) result = casePrimitiveDataType(stringType);
 				if (result == null) result = caseDataType(stringType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -118,7 +108,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.TEXT_TYPE: {
 				TextType textType = (TextType)theEObject;
 				T result = caseTextType(textType);
-				if (result == null) result = casePrimitiveDataType(textType);
 				if (result == null) result = caseDataType(textType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -126,7 +115,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.POINT_TYPE: {
 				PointType pointType = (PointType)theEObject;
 				T result = casePointType(pointType);
-				if (result == null) result = casePrimitiveDataType(pointType);
 				if (result == null) result = caseDataType(pointType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -134,7 +122,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.POLYGON_TYPE: {
 				PolygonType polygonType = (PolygonType)theEObject;
 				T result = casePolygonType(polygonType);
-				if (result == null) result = casePrimitiveDataType(polygonType);
 				if (result == null) result = caseDataType(polygonType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -142,7 +129,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.BOOL_TYPE: {
 				BoolType boolType = (BoolType)theEObject;
 				T result = caseBoolType(boolType);
-				if (result == null) result = casePrimitiveDataType(boolType);
 				if (result == null) result = caseDataType(boolType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -150,7 +136,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.FLOAT_TYPE: {
 				FloatType floatType = (FloatType)theEObject;
 				T result = caseFloatType(floatType);
-				if (result == null) result = casePrimitiveDataType(floatType);
 				if (result == null) result = caseDataType(floatType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -158,7 +143,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.BLOB_TYPE: {
 				BlobType blobType = (BlobType)theEObject;
 				T result = caseBlobType(blobType);
-				if (result == null) result = casePrimitiveDataType(blobType);
 				if (result == null) result = caseDataType(blobType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -166,7 +150,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.FREETEXT_TYPE: {
 				FreetextType freetextType = (FreetextType)theEObject;
 				T result = caseFreetextType(freetextType);
-				if (result == null) result = casePrimitiveDataType(freetextType);
 				if (result == null) result = caseDataType(freetextType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -180,7 +163,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.DATE_TYPE: {
 				DateType dateType = (DateType)theEObject;
 				T result = caseDateType(dateType);
-				if (result == null) result = casePrimitiveDataType(dateType);
 				if (result == null) result = caseDataType(dateType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -188,7 +170,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.DATETIME_TYPE: {
 				DatetimeType datetimeType = (DatetimeType)theEObject;
 				T result = caseDatetimeType(datetimeType);
-				if (result == null) result = casePrimitiveDataType(datetimeType);
 				if (result == null) result = caseDataType(datetimeType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -196,15 +177,30 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.CUSTOM_DATA_TYPE: {
 				CustomDataType customDataType = (CustomDataType)theEObject;
 				T result = caseCustomDataType(customDataType);
-				if (result == null) result = caseDataType(customDataType);
 				if (result == null) result = caseNamedElement(customDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.CUSTOM_DATA_TYPE_ITEM: {
-				CustomDataTypeItem customDataTypeItem = (CustomDataTypeItem)theEObject;
-				T result = caseCustomDataTypeItem(customDataTypeItem);
-				if (result == null) result = caseNamedElement(customDataTypeItem);
+			case TyphonmlPackage.SUPER_DATA_TYPE: {
+				SuperDataType superDataType = (SuperDataType)theEObject;
+				T result = caseSuperDataType(superDataType);
+				if (result == null) result = caseNamedElement(superDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.COMPLEX_DATA_TYPE: {
+				ComplexDataType complexDataType = (ComplexDataType)theEObject;
+				T result = caseComplexDataType(complexDataType);
+				if (result == null) result = caseSuperDataType(complexDataType);
+				if (result == null) result = caseNamedElement(complexDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.SIMPLE_DATA_TYPE: {
+				SimpleDataType simpleDataType = (SimpleDataType)theEObject;
+				T result = caseSimpleDataType(simpleDataType);
+				if (result == null) result = caseSuperDataType(simpleDataType);
+				if (result == null) result = caseNamedElement(simpleDataType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -235,17 +231,17 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.ENTITY_ATTRIBUTE: {
-				EntityAttribute entityAttribute = (EntityAttribute)theEObject;
-				T result = caseEntityAttribute(entityAttribute);
-				if (result == null) result = caseNamedElement(entityAttribute);
+			case TyphonmlPackage.ENTITY_ATTRIBUTE_KIND: {
+				EntityAttributeKind entityAttributeKind = (EntityAttributeKind)theEObject;
+				T result = caseEntityAttributeKind(entityAttributeKind);
+				if (result == null) result = caseNamedElement(entityAttributeKind);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case TyphonmlPackage.ATTRIBUTE: {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
-				if (result == null) result = caseEntityAttribute(attribute);
+				if (result == null) result = caseEntityAttributeKind(attribute);
 				if (result == null) result = caseNamedElement(attribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -253,7 +249,7 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.CUSTOM_ATTRIBUTE: {
 				CustomAttribute customAttribute = (CustomAttribute)theEObject;
 				T result = caseCustomAttribute(customAttribute);
-				if (result == null) result = caseEntityAttribute(customAttribute);
+				if (result == null) result = caseEntityAttributeKind(customAttribute);
 				if (result == null) result = caseNamedElement(customAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -415,7 +411,7 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				T result = caseAddAttribute(addAttribute);
 				if (result == null) result = caseAttribute(addAttribute);
 				if (result == null) result = caseChangeOperator(addAttribute);
-				if (result == null) result = caseEntityAttribute(addAttribute);
+				if (result == null) result = caseEntityAttributeKind(addAttribute);
 				if (result == null) result = caseNamedElement(addAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -642,7 +638,7 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = caseAddAttribute(addCustomDataTypeAttribute);
 				if (result == null) result = caseAttribute(addCustomDataTypeAttribute);
 				if (result == null) result = caseChangeOperator(addCustomDataTypeAttribute);
-				if (result == null) result = caseEntityAttribute(addCustomDataTypeAttribute);
+				if (result == null) result = caseEntityAttributeKind(addCustomDataTypeAttribute);
 				if (result == null) result = caseNamedElement(addCustomDataTypeAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -709,21 +705,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDataType(DataType object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Primitive Data Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePrimitiveDataType(PrimitiveDataType object) {
 		return null;
 	}
 
@@ -938,17 +919,47 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Custom Data Type Item</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Super Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Custom Data Type Item</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Super Data Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCustomDataTypeItem(CustomDataTypeItem object) {
+	public T caseSuperDataType(SuperDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Complex Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Complex Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComplexDataType(ComplexDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Simple Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Simple Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSimpleDataType(SimpleDataType object) {
 		return null;
 	}
 
@@ -1013,17 +1024,17 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Entity Attribute</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Entity Attribute Kind</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Entity Attribute</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Entity Attribute Kind</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEntityAttribute(EntityAttribute object) {
+	public T caseEntityAttributeKind(EntityAttributeKind object) {
 		return null;
 	}
 

@@ -7,8 +7,8 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model returns Model:
 	{Model}
-		(entities+=Entity)*
 		(customDataTypes+=CustomDataType)*
+		(entities+=Entity)*
 		(databases+=Database)*
 		('changeOperators' '['(changeOperators+=ChangeOperator)("," changeOperators+=ChangeOperator)*']')?
 		;  
@@ -20,7 +20,7 @@ Model returns Model:
 /**************************************************************************************
  ************** DATA TYPE *************************************************************
  *************************************************************************************/
-
+ 
 DataType returns DataType:
 	IntType | 
 	BigintType | 
@@ -33,9 +33,9 @@ DataType returns DataType:
 	BlobType | 
 	FreetextType | 
 	DateType | 
-	DatetimeType | 
-	CustomDataType
+	DatetimeType
 	;
+
 
 	
 EBooleanObject returns ecore::EBooleanObject:
@@ -123,20 +123,40 @@ NlpTask:
 //	;
 
 
-
+SuperDataType returns SuperDataType:
+	ComplexDataType | SimpleDataType;
+	
 
 
 CustomDataType returns CustomDataType:
 	{CustomDataType}
-	('importedNamespace' importedNamespace=EString)?
 	'customdatatype' name=EString '{'
-		('elements' '{' elements+=CustomDataTypeItem ( ',' elements+=CustomDataTypeItem)* '}' )?
+	('[' implementation=CustomDataTypeImplementationPackage']')?
+	//('importedNamespace' importedNamespace=EString)?
+		(elements+=SuperDataType ( "," elements+=SuperDataType)*)?
 	'}';
-	
+
+
+ComplexDataType returns ComplexDataType:
+	('importedNamespace' importedNamespace=EString)?
+	name=EString ':' type=[CustomDataType|EString] 
+	;
+
+SimpleDataType returns SimpleDataType:
+	{SimpleDataType}
+	name=EString ':' type=DataType
+	;
+
+
+
+
+
+/* 	
 CustomDataTypeItem returns CustomDataTypeItem:
 	('importedNamespace' importedNamespace=EString)?
 	name=EString ':' (type=[DataType|EString]) '[' implementation=CustomDataTypeImplementationPackage']'
 	;
+*/
 
 CustomDataTypeImplementationPackage returns CustomDataTypeImplementationPackage:
 	{CustomDataTypeImplementationPackage}
@@ -171,7 +191,7 @@ Entity_Impl returns Entity:
 	('@nFunctionalTags' '('(nfunctionalTags+=NFunctionalTag_Impl (',' nfunctionalTags+=NFunctionalTag_Impl)*)?')')?
 	('importedNamespace' importedNamespace=EString)?
 	'entity' name=EString '{'
-		(attributes+=EntityAttribute (attributes+=EntityAttribute)*)?
+		(attributes+=EntityAttributeKind (attributes+=EntityAttributeKind)*)?
 		(relations+=Relation (relations+=Relation)*)?
 	'}';
 
@@ -189,7 +209,7 @@ NFunctionalTag_Impl returns NFunctionalTag:
 Attribute returns Attribute:
 	Attribute_Impl | AddCustomDataTypeAttribute;
 
-EntityAttribute returns EntityAttribute:
+EntityAttributeKind returns EntityAttributeKind:
 	Attribute_Impl | CustomAttribute | AddCustomDataTypeAttribute;
 	
 	
@@ -204,6 +224,7 @@ CustomAttribute returns CustomAttribute:
 	('importedNamespace' importedNamespace=EString)?
 	name=EString ':' (type=[CustomDataType|EString])
 	;
+	
 
 //AddAttribute returns AddAttribute:
 //	{AddAttribute}
@@ -427,7 +448,7 @@ AddCustomDataTypeAttribute returns AddCustomDataTypeAttribute:
 	'{'
 		('importedNamespace' importedNamespace=EString)?
 		'ownerEntity' ownerEntity=[Entity|EString]
-		'type' type=CustomDataType
+		'type' type=DataType
 	'}';
 
 ChangePrimitiveDataTypeAttribute returns ChangePrimitiveDataTypeAttribute:

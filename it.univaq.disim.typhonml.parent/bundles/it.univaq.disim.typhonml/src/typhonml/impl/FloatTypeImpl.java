@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class FloatTypeImpl extends PrimitiveDataTypeImpl implements FloatType {
+public class FloatTypeImpl extends DataTypeImpl implements FloatType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

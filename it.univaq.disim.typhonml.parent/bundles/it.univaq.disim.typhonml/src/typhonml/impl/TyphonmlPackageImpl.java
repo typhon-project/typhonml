@@ -34,10 +34,10 @@ import typhonml.ChangeRelationContainement;
 import typhonml.Collection;
 import typhonml.Column;
 import typhonml.ColumnDB;
+import typhonml.ComplexDataType;
 import typhonml.CustomAttribute;
 import typhonml.CustomDataType;
 import typhonml.CustomDataTypeImplementationPackage;
-import typhonml.CustomDataTypeItem;
 import typhonml.DataType;
 import typhonml.Database;
 import typhonml.DateType;
@@ -50,7 +50,7 @@ import typhonml.DropIndex;
 import typhonml.EnableBidirectionalRelation;
 import typhonml.EnableRelationContainment;
 import typhonml.Entity;
-import typhonml.EntityAttribute;
+import typhonml.EntityAttributeKind;
 import typhonml.FloatType;
 import typhonml.FreetextType;
 import typhonml.FunctionalTag;
@@ -73,7 +73,6 @@ import typhonml.NlpTask;
 import typhonml.NlpTaskType;
 import typhonml.PointType;
 import typhonml.PolygonType;
-import typhonml.PrimitiveDataType;
 import typhonml.Relation;
 import typhonml.RelationalDB;
 import typhonml.RemoveAttribute;
@@ -88,10 +87,12 @@ import typhonml.RenameCollection;
 import typhonml.RenameEntity;
 import typhonml.RenameRelation;
 import typhonml.RenameTable;
+import typhonml.SimpleDataType;
 import typhonml.SplitEntity;
 import typhonml.SplitEntityHorizontal;
 import typhonml.SplitEntityVertical;
 import typhonml.StringType;
+import typhonml.SuperDataType;
 import typhonml.Table;
 import typhonml.TextType;
 import typhonml.TyphonmlFactory;
@@ -124,13 +125,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass dataTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass primitiveDataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -235,7 +229,21 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass customDataTypeItemEClass = null;
+	private EClass superDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass complexDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass simpleDataTypeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -270,7 +278,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass entityAttributeEClass = null;
+	private EClass entityAttributeKindEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -842,16 +850,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getPrimitiveDataType() {
-		return primitiveDataTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getIntType() {
 		return intTypeEClass;
 	}
@@ -1042,8 +1040,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getCustomDataTypeItem() {
-		return customDataTypeItemEClass;
+	public EReference getCustomDataType_Implementation() {
+		return (EReference)customDataTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1052,8 +1050,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCustomDataTypeItem_Type() {
-		return (EReference)customDataTypeItemEClass.getEStructuralFeatures().get(0);
+	public EClass getSuperDataType() {
+		return superDataTypeEClass;
 	}
 
 	/**
@@ -1062,8 +1060,38 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getCustomDataTypeItem_Implementation() {
-		return (EReference)customDataTypeItemEClass.getEStructuralFeatures().get(1);
+	public EClass getComplexDataType() {
+		return complexDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComplexDataType_Type() {
+		return (EReference)complexDataTypeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSimpleDataType() {
+		return simpleDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSimpleDataType_Type() {
+		return (EReference)simpleDataTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1212,8 +1240,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getEntityAttribute() {
-		return entityAttributeEClass;
+	public EClass getEntityAttributeKind() {
+		return entityAttributeKindEClass;
 	}
 
 	/**
@@ -2747,8 +2775,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		dataTypeEClass = createEClass(DATA_TYPE);
 
-		primitiveDataTypeEClass = createEClass(PRIMITIVE_DATA_TYPE);
-
 		intTypeEClass = createEClass(INT_TYPE);
 
 		bigintTypeEClass = createEClass(BIGINT_TYPE);
@@ -2781,10 +2807,15 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		customDataTypeEClass = createEClass(CUSTOM_DATA_TYPE);
 		createEReference(customDataTypeEClass, CUSTOM_DATA_TYPE__ELEMENTS);
+		createEReference(customDataTypeEClass, CUSTOM_DATA_TYPE__IMPLEMENTATION);
 
-		customDataTypeItemEClass = createEClass(CUSTOM_DATA_TYPE_ITEM);
-		createEReference(customDataTypeItemEClass, CUSTOM_DATA_TYPE_ITEM__TYPE);
-		createEReference(customDataTypeItemEClass, CUSTOM_DATA_TYPE_ITEM__IMPLEMENTATION);
+		superDataTypeEClass = createEClass(SUPER_DATA_TYPE);
+
+		complexDataTypeEClass = createEClass(COMPLEX_DATA_TYPE);
+		createEReference(complexDataTypeEClass, COMPLEX_DATA_TYPE__TYPE);
+
+		simpleDataTypeEClass = createEClass(SIMPLE_DATA_TYPE);
+		createEReference(simpleDataTypeEClass, SIMPLE_DATA_TYPE__TYPE);
 
 		customDataTypeImplementationPackageEClass = createEClass(CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE);
 		createEAttribute(customDataTypeImplementationPackageEClass, CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE__LOCATION);
@@ -2804,7 +2835,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEOperation(entityEClass, ENTITY___GET_GRAPH_NODES);
 		createEOperation(entityEClass, ENTITY___GET_COLUMNS);
 
-		entityAttributeEClass = createEClass(ENTITY_ATTRIBUTE);
+		entityAttributeKindEClass = createEClass(ENTITY_ATTRIBUTE_KIND);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEReference(attributeEClass, ATTRIBUTE__TYPE);
@@ -3043,28 +3074,28 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		primitiveDataTypeEClass.getESuperTypes().add(this.getDataType());
-		intTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		bigintTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		stringTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		textTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		pointTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		polygonTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		boolTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		floatTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		blobTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		freetextTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		dateTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		datetimeTypeEClass.getESuperTypes().add(this.getPrimitiveDataType());
-		customDataTypeEClass.getESuperTypes().add(this.getDataType());
+		intTypeEClass.getESuperTypes().add(this.getDataType());
+		bigintTypeEClass.getESuperTypes().add(this.getDataType());
+		stringTypeEClass.getESuperTypes().add(this.getDataType());
+		textTypeEClass.getESuperTypes().add(this.getDataType());
+		pointTypeEClass.getESuperTypes().add(this.getDataType());
+		polygonTypeEClass.getESuperTypes().add(this.getDataType());
+		boolTypeEClass.getESuperTypes().add(this.getDataType());
+		floatTypeEClass.getESuperTypes().add(this.getDataType());
+		blobTypeEClass.getESuperTypes().add(this.getDataType());
+		freetextTypeEClass.getESuperTypes().add(this.getDataType());
+		dateTypeEClass.getESuperTypes().add(this.getDataType());
+		datetimeTypeEClass.getESuperTypes().add(this.getDataType());
 		customDataTypeEClass.getESuperTypes().add(this.getNamedElement());
-		customDataTypeItemEClass.getESuperTypes().add(this.getNamedElement());
+		superDataTypeEClass.getESuperTypes().add(this.getNamedElement());
+		complexDataTypeEClass.getESuperTypes().add(this.getSuperDataType());
+		simpleDataTypeEClass.getESuperTypes().add(this.getSuperDataType());
 		functionalTagEClass.getESuperTypes().add(this.getNamedElement());
 		nFunctionalTagEClass.getESuperTypes().add(this.getNamedElement());
 		entityEClass.getESuperTypes().add(this.getNamedElement());
-		entityAttributeEClass.getESuperTypes().add(this.getNamedElement());
-		attributeEClass.getESuperTypes().add(this.getEntityAttribute());
-		customAttributeEClass.getESuperTypes().add(this.getEntityAttribute());
+		entityAttributeKindEClass.getESuperTypes().add(this.getNamedElement());
+		attributeEClass.getESuperTypes().add(this.getEntityAttributeKind());
+		customAttributeEClass.getESuperTypes().add(this.getEntityAttributeKind());
 		relationEClass.getESuperTypes().add(this.getNamedElement());
 		databaseEClass.getESuperTypes().add(this.getNamedElement());
 		relationalDBEClass.getESuperTypes().add(this.getDatabase());
@@ -3137,8 +3168,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(dataTypeEClass, DataType.class, "DataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(primitiveDataTypeEClass, PrimitiveDataType.class, "PrimitiveDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(intTypeEClass, IntType.class, "IntType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bigintTypeEClass, BigintType.class, "BigintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3170,11 +3199,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(datetimeTypeEClass, DatetimeType.class, "DatetimeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(customDataTypeEClass, CustomDataType.class, "CustomDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomDataType_Elements(), this.getCustomDataTypeItem(), null, "elements", null, 0, -1, CustomDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomDataType_Elements(), this.getSuperDataType(), null, "elements", null, 0, -1, CustomDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCustomDataType_Implementation(), this.getCustomDataTypeImplementationPackage(), null, "implementation", null, 0, 1, CustomDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(customDataTypeItemEClass, CustomDataTypeItem.class, "CustomDataTypeItem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCustomDataTypeItem_Type(), this.getDataType(), null, "type", null, 0, 1, CustomDataTypeItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCustomDataTypeItem_Implementation(), this.getCustomDataTypeImplementationPackage(), null, "implementation", null, 1, 1, CustomDataTypeItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(superDataTypeEClass, SuperDataType.class, "SuperDataType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(complexDataTypeEClass, ComplexDataType.class, "ComplexDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getComplexDataType_Type(), this.getCustomDataType(), null, "type", null, 1, 1, ComplexDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(simpleDataTypeEClass, SimpleDataType.class, "SimpleDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSimpleDataType_Type(), this.getDataType(), null, "type", null, 1, 1, SimpleDataType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(customDataTypeImplementationPackageEClass, CustomDataTypeImplementationPackage.class, "CustomDataTypeImplementationPackage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomDataTypeImplementationPackage_Location(), ecorePackage.getEString(), "location", null, 0, 1, CustomDataTypeImplementationPackage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3184,7 +3218,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(nFunctionalTagEClass, NFunctionalTag.class, "NFunctionalTag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getEntity_Attributes(), this.getEntityAttribute(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEntity_Attributes(), this.getEntityAttributeKind(), null, "attributes", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_Relations(), this.getRelation(), null, "relations", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_FunctionalTags(), this.getFunctionalTag(), null, "functionalTags", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEntity_NfunctionalTags(), this.getNFunctionalTag(), null, "nfunctionalTags", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3199,7 +3233,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEOperation(getEntity__GetColumns(), this.getColumn(), "getColumns", 0, -1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(entityAttributeEClass, EntityAttribute.class, "EntityAttribute", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(entityAttributeKindEClass, EntityAttributeKind.class, "EntityAttributeKind", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAttribute_Type(), this.getDataType(), null, "type", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class BlobTypeImpl extends PrimitiveDataTypeImpl implements BlobType {
+public class BlobTypeImpl extends DataTypeImpl implements BlobType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

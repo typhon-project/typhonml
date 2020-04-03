@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class BigintTypeImpl extends PrimitiveDataTypeImpl implements BigintType {
+public class BigintTypeImpl extends DataTypeImpl implements BigintType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

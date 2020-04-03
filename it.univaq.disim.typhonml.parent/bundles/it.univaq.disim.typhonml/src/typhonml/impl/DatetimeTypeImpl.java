@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class DatetimeTypeImpl extends PrimitiveDataTypeImpl implements DatetimeType {
+public class DatetimeTypeImpl extends DataTypeImpl implements DatetimeType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -9,8 +9,7 @@ Bundle-Activator: typhonml.presentation.TyphonmlEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: typhonml.presentation,
- typhonmlreq.presentation
+Export-Package: typhonml.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  it.univaq.disim.typhonml.edit;visibility:=reexport,

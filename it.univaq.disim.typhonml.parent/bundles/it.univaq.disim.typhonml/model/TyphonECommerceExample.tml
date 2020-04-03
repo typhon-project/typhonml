@@ -1,8 +1,24 @@
+customdatatype custom1 {
+	attr1 : string[64],
+	attr2 : freetext[SentimentAnalysis[eng_pol_sa]],
+	attr3 : float,
+	attr4 : text
+}
+
+customdatatype custom2 {
+	attr5 : int,
+	attr2 : point,
+	attr3 : polygon,
+	attr4 : custom1
+}
+
+
 @functionalTags(fulltextsearch)
 @nFunctionalTags(readscalability, readavailability)
 entity Review{
 	id : string[32] 
 	content : string[32] 
+	customDataTypeExample : custom2
 	product -> Product[1]
 }
 

@@ -19,8 +19,7 @@ package typhonml;
  * @model
  * @generated
  */
-public interface Attribute extends EntityAttribute {
-
+public interface Attribute extends EntityAttributeKind {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -42,4 +41,5 @@ public interface Attribute extends EntityAttribute {
 	 * @generated
 	 */
 	void setType(DataType value);
+
 } // Attribute

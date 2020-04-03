@@ -19,7 +19,7 @@ package typhonml;
  * @model
  * @generated
  */
-public interface CustomAttribute extends EntityAttribute {
+public interface CustomAttribute extends EntityAttributeKind {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->

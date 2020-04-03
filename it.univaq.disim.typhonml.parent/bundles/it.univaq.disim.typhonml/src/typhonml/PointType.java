@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface PointType extends PrimitiveDataType {
+public interface PointType extends DataType {
 } // PointType

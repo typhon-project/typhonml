@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class PolygonTypeImpl extends PrimitiveDataTypeImpl implements PolygonType {
+public class PolygonTypeImpl extends DataTypeImpl implements PolygonType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
