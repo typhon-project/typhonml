@@ -417,26 +417,49 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link typhonml.CustomDataTypeItem} instances.
+	 * This keeps track of the one adapter used for all {@link typhonml.ComplexDataType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CustomDataTypeItemItemProvider customDataTypeItemItemProvider;
+	protected ComplexDataTypeItemProvider complexDataTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link typhonml.CustomDataTypeItem}.
+	 * This creates an adapter for a {@link typhonml.ComplexDataType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createCustomDataTypeItemAdapter() {
-		if (customDataTypeItemItemProvider == null) {
-			customDataTypeItemItemProvider = new CustomDataTypeItemItemProvider(this);
+	public Adapter createComplexDataTypeAdapter() {
+		if (complexDataTypeItemProvider == null) {
+			complexDataTypeItemProvider = new ComplexDataTypeItemProvider(this);
 		}
 
-		return customDataTypeItemItemProvider;
+		return complexDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.SimpleDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SimpleDataTypeItemProvider simpleDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.SimpleDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSimpleDataTypeAdapter() {
+		if (simpleDataTypeItemProvider == null) {
+			simpleDataTypeItemProvider = new SimpleDataTypeItemProvider(this);
+		}
+
+		return simpleDataTypeItemProvider;
 	}
 
 	/**
@@ -1870,7 +1893,8 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (dateTypeItemProvider != null) dateTypeItemProvider.dispose();
 		if (datetimeTypeItemProvider != null) datetimeTypeItemProvider.dispose();
 		if (customDataTypeItemProvider != null) customDataTypeItemProvider.dispose();
-		if (customDataTypeItemItemProvider != null) customDataTypeItemItemProvider.dispose();
+		if (complexDataTypeItemProvider != null) complexDataTypeItemProvider.dispose();
+		if (simpleDataTypeItemProvider != null) simpleDataTypeItemProvider.dispose();
 		if (customDataTypeImplementationPackageItemProvider != null) customDataTypeImplementationPackageItemProvider.dispose();
 		if (functionalTagItemProvider != null) functionalTagItemProvider.dispose();
 		if (nFunctionalTagItemProvider != null) nFunctionalTagItemProvider.dispose();

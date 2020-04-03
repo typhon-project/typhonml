@@ -26,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
 public interface Entity extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
-	 * The list contents are of type {@link typhonml.EntityAttribute}.
+	 * The list contents are of type {@link typhonml.EntityAttributeKind}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Attributes</em>' containment reference list.
@@ -34,7 +34,7 @@ public interface Entity extends NamedElement {
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EntityAttribute> getAttributes();
+	EList<EntityAttributeKind> getAttributes();
 
 	/**
 	 * Returns the value of the '<em><b>Relations</b></em>' containment reference list.

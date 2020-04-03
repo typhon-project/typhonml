@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class BoolTypeImpl extends PrimitiveDataTypeImpl implements BoolType {
+public class BoolTypeImpl extends DataTypeImpl implements BoolType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

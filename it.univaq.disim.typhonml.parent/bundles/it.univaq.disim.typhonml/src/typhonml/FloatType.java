@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface FloatType extends PrimitiveDataType {
+public interface FloatType extends DataType {
 } // FloatType

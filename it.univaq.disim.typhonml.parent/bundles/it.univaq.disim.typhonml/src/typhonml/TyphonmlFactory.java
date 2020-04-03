@@ -157,13 +157,22 @@ public interface TyphonmlFactory extends EFactory {
 	CustomDataType createCustomDataType();
 
 	/**
-	 * Returns a new object of class '<em>Custom Data Type Item</em>'.
+	 * Returns a new object of class '<em>Complex Data Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Custom Data Type Item</em>'.
+	 * @return a new object of class '<em>Complex Data Type</em>'.
 	 * @generated
 	 */
-	CustomDataTypeItem createCustomDataTypeItem();
+	ComplexDataType createComplexDataType();
+
+	/**
+	 * Returns a new object of class '<em>Simple Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Simple Data Type</em>'.
+	 * @generated
+	 */
+	SimpleDataType createSimpleDataType();
 
 	/**
 	 * Returns a new object of class '<em>Custom Data Type Implementation Package</em>'.

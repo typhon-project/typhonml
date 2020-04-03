@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface DatetimeType extends PrimitiveDataType {
+public interface DatetimeType extends DataType {
 } // DatetimeType

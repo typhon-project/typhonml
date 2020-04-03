@@ -4,10 +4,12 @@ package typhonml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import typhonml.Attribute;
 import typhonml.DataType;
 import typhonml.TyphonmlPackage;
@@ -25,7 +27,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class AttributeImpl extends EntityAttributeImpl implements Attribute {
+public class AttributeImpl extends EntityAttributeKindImpl implements Attribute {
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
 	 * <!-- begin-user-doc -->

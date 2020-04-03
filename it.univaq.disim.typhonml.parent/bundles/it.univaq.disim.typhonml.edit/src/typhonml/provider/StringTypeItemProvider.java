@@ -23,7 +23,7 @@ import typhonml.TyphonmlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class StringTypeItemProvider extends PrimitiveDataTypeItemProvider {
+public class StringTypeItemProvider extends DataTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

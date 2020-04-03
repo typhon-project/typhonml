@@ -199,34 +199,6 @@ public interface TyphonmlPackage extends EPackage {
 	int DATA_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.PrimitiveDataTypeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getPrimitiveDataType()
-	 * @generated
-	 */
-	int PRIMITIVE_DATA_TYPE = 3;
-
-	/**
-	 * The number of structural features of the '<em>Primitive Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Primitive Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRIMITIVE_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link typhonml.impl.IntTypeImpl <em>Int Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -234,7 +206,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getIntType()
 	 * @generated
 	 */
-	int INT_TYPE = 4;
+	int INT_TYPE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Int Type</em>' class.
@@ -243,7 +215,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int INT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Int Type</em>' class.
@@ -252,7 +224,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INT_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int INT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.BigintTypeImpl <em>Bigint Type</em>}' class.
@@ -262,7 +234,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getBigintType()
 	 * @generated
 	 */
-	int BIGINT_TYPE = 5;
+	int BIGINT_TYPE = 4;
 
 	/**
 	 * The number of structural features of the '<em>Bigint Type</em>' class.
@@ -271,7 +243,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIGINT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int BIGINT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Bigint Type</em>' class.
@@ -280,7 +252,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BIGINT_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int BIGINT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.StringTypeImpl <em>String Type</em>}' class.
@@ -290,7 +262,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getStringType()
 	 * @generated
 	 */
-	int STRING_TYPE = 6;
+	int STRING_TYPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Max Size</b></em>' attribute.
@@ -299,7 +271,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE__MAX_SIZE = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int STRING_TYPE__MAX_SIZE = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>String Type</em>' class.
@@ -308,7 +280,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 1;
+	int STRING_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>String Type</em>' class.
@@ -317,7 +289,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int STRING_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.TextTypeImpl <em>Text Type</em>}' class.
@@ -327,7 +299,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getTextType()
 	 * @generated
 	 */
-	int TEXT_TYPE = 7;
+	int TEXT_TYPE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Text Type</em>' class.
@@ -336,7 +308,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int TEXT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Text Type</em>' class.
@@ -345,7 +317,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int TEXT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.PointTypeImpl <em>Point Type</em>}' class.
@@ -355,7 +327,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getPointType()
 	 * @generated
 	 */
-	int POINT_TYPE = 8;
+	int POINT_TYPE = 7;
 
 	/**
 	 * The number of structural features of the '<em>Point Type</em>' class.
@@ -364,7 +336,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int POINT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Point Type</em>' class.
@@ -373,7 +345,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POINT_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int POINT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.PolygonTypeImpl <em>Polygon Type</em>}' class.
@@ -383,7 +355,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getPolygonType()
 	 * @generated
 	 */
-	int POLYGON_TYPE = 9;
+	int POLYGON_TYPE = 8;
 
 	/**
 	 * The number of structural features of the '<em>Polygon Type</em>' class.
@@ -392,7 +364,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POLYGON_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int POLYGON_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Polygon Type</em>' class.
@@ -401,7 +373,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int POLYGON_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int POLYGON_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.BoolTypeImpl <em>Bool Type</em>}' class.
@@ -411,7 +383,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getBoolType()
 	 * @generated
 	 */
-	int BOOL_TYPE = 10;
+	int BOOL_TYPE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Bool Type</em>' class.
@@ -420,7 +392,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOL_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int BOOL_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Bool Type</em>' class.
@@ -429,7 +401,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOL_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int BOOL_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.FloatTypeImpl <em>Float Type</em>}' class.
@@ -439,7 +411,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getFloatType()
 	 * @generated
 	 */
-	int FLOAT_TYPE = 11;
+	int FLOAT_TYPE = 10;
 
 	/**
 	 * The number of structural features of the '<em>Float Type</em>' class.
@@ -448,7 +420,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOAT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int FLOAT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Float Type</em>' class.
@@ -457,7 +429,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOAT_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int FLOAT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.BlobTypeImpl <em>Blob Type</em>}' class.
@@ -467,7 +439,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getBlobType()
 	 * @generated
 	 */
-	int BLOB_TYPE = 12;
+	int BLOB_TYPE = 11;
 
 	/**
 	 * The number of structural features of the '<em>Blob Type</em>' class.
@@ -476,7 +448,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOB_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int BLOB_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Blob Type</em>' class.
@@ -485,7 +457,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOB_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int BLOB_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.FreetextTypeImpl <em>Freetext Type</em>}' class.
@@ -495,7 +467,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getFreetextType()
 	 * @generated
 	 */
-	int FREETEXT_TYPE = 13;
+	int FREETEXT_TYPE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Tasks</b></em>' containment reference list.
@@ -504,7 +476,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FREETEXT_TYPE__TASKS = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int FREETEXT_TYPE__TASKS = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Freetext Type</em>' class.
@@ -513,7 +485,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FREETEXT_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 1;
+	int FREETEXT_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Freetext Type</em>' class.
@@ -522,7 +494,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FREETEXT_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int FREETEXT_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.NlpTaskImpl <em>Nlp Task</em>}' class.
@@ -532,7 +504,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTask()
 	 * @generated
 	 */
-	int NLP_TASK = 14;
+	int NLP_TASK = 13;
 
 	/**
 	 * The feature id for the '<em><b>Workflow Name</b></em>' attribute.
@@ -578,7 +550,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDateType()
 	 * @generated
 	 */
-	int DATE_TYPE = 15;
+	int DATE_TYPE = 14;
 
 	/**
 	 * The number of structural features of the '<em>Date Type</em>' class.
@@ -587,7 +559,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int DATE_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Date Type</em>' class.
@@ -596,7 +568,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATE_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int DATE_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.DatetimeTypeImpl <em>Datetime Type</em>}' class.
@@ -606,7 +578,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDatetimeType()
 	 * @generated
 	 */
-	int DATETIME_TYPE = 16;
+	int DATETIME_TYPE = 15;
 
 	/**
 	 * The number of structural features of the '<em>Datetime Type</em>' class.
@@ -615,7 +587,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATETIME_TYPE_FEATURE_COUNT = PRIMITIVE_DATA_TYPE_FEATURE_COUNT + 0;
+	int DATETIME_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Datetime Type</em>' class.
@@ -624,7 +596,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATETIME_TYPE_OPERATION_COUNT = PRIMITIVE_DATA_TYPE_OPERATION_COUNT + 0;
+	int DATETIME_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeImpl <em>Custom Data Type</em>}' class.
@@ -634,7 +606,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataType()
 	 * @generated
 	 */
-	int CUSTOM_DATA_TYPE = 17;
+	int CUSTOM_DATA_TYPE = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -643,7 +615,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_DATA_TYPE__NAME = DATA_TYPE_FEATURE_COUNT + 0;
+	int CUSTOM_DATA_TYPE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -652,7 +624,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_DATA_TYPE__IMPORTED_NAMESPACE = DATA_TYPE_FEATURE_COUNT + 1;
+	int CUSTOM_DATA_TYPE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
@@ -661,62 +633,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_DATA_TYPE__ELEMENTS = DATA_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Custom Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_DATA_TYPE_FEATURE_COUNT = DATA_TYPE_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Custom Data Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_DATA_TYPE_OPERATION_COUNT = DATA_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeItemImpl <em>Custom Data Type Item</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.CustomDataTypeItemImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataTypeItem()
-	 * @generated
-	 */
-	int CUSTOM_DATA_TYPE_ITEM = 18;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_DATA_TYPE_ITEM__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_DATA_TYPE_ITEM__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOM_DATA_TYPE_ITEM__TYPE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int CUSTOM_DATA_TYPE__ELEMENTS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
@@ -725,25 +642,181 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_DATA_TYPE_ITEM__IMPLEMENTATION = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int CUSTOM_DATA_TYPE__IMPLEMENTATION = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Custom Data Type Item</em>' class.
+	 * The number of structural features of the '<em>Custom Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_DATA_TYPE_ITEM_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int CUSTOM_DATA_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Custom Data Type Item</em>' class.
+	 * The number of operations of the '<em>Custom Data Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_DATA_TYPE_ITEM_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int CUSTOM_DATA_TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.SuperDataTypeImpl <em>Super Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.SuperDataTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getSuperDataType()
+	 * @generated
+	 */
+	int SUPER_DATA_TYPE = 17;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_DATA_TYPE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_DATA_TYPE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+
+	/**
+	 * The number of structural features of the '<em>Super Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_DATA_TYPE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Super Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUPER_DATA_TYPE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.ComplexDataTypeImpl <em>Complex Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.ComplexDataTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getComplexDataType()
+	 * @generated
+	 */
+	int COMPLEX_DATA_TYPE = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_DATA_TYPE__NAME = SUPER_DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_DATA_TYPE__IMPORTED_NAMESPACE = SUPER_DATA_TYPE__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_DATA_TYPE__TYPE = SUPER_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Complex Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_DATA_TYPE_FEATURE_COUNT = SUPER_DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Complex Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPLEX_DATA_TYPE_OPERATION_COUNT = SUPER_DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.SimpleDataTypeImpl <em>Simple Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.SimpleDataTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getSimpleDataType()
+	 * @generated
+	 */
+	int SIMPLE_DATA_TYPE = 19;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_DATA_TYPE__NAME = SUPER_DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_DATA_TYPE__IMPORTED_NAMESPACE = SUPER_DATA_TYPE__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_DATA_TYPE__TYPE = SUPER_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Simple Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_DATA_TYPE_FEATURE_COUNT = SUPER_DATA_TYPE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Simple Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SIMPLE_DATA_TYPE_OPERATION_COUNT = SUPER_DATA_TYPE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.CustomDataTypeImplementationPackageImpl <em>Custom Data Type Implementation Package</em>}' class.
@@ -753,7 +826,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataTypeImplementationPackage()
 	 * @generated
 	 */
-	int CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE = 19;
+	int CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -790,7 +863,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getFunctionalTag()
 	 * @generated
 	 */
-	int FUNCTIONAL_TAG = 20;
+	int FUNCTIONAL_TAG = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -836,7 +909,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNFunctionalTag()
 	 * @generated
 	 */
-	int NFUNCTIONAL_TAG = 21;
+	int NFUNCTIONAL_TAG = 22;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -882,7 +955,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getEntity()
 	 * @generated
 	 */
-	int ENTITY = 22;
+	int ENTITY = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1002,14 +1075,14 @@ public interface TyphonmlPackage extends EPackage {
 	int ENTITY_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 5;
 
 	/**
-	 * The meta object id for the '{@link typhonml.impl.EntityAttributeImpl <em>Entity Attribute</em>}' class.
+	 * The meta object id for the '{@link typhonml.impl.EntityAttributeKindImpl <em>Entity Attribute Kind</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see typhonml.impl.EntityAttributeImpl
-	 * @see typhonml.impl.TyphonmlPackageImpl#getEntityAttribute()
+	 * @see typhonml.impl.EntityAttributeKindImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getEntityAttributeKind()
 	 * @generated
 	 */
-	int ENTITY_ATTRIBUTE = 23;
+	int ENTITY_ATTRIBUTE_KIND = 24;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1018,7 +1091,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__NAME = NAMED_ELEMENT__NAME;
+	int ENTITY_ATTRIBUTE_KIND__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -1027,25 +1100,25 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
+	int ENTITY_ATTRIBUTE_KIND__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
 
 	/**
-	 * The number of structural features of the '<em>Entity Attribute</em>' class.
+	 * The number of structural features of the '<em>Entity Attribute Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ENTITY_ATTRIBUTE_KIND_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Entity Attribute</em>' class.
+	 * The number of operations of the '<em>Entity Attribute Kind</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENTITY_ATTRIBUTE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ENTITY_ATTRIBUTE_KIND_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -1055,7 +1128,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 24;
+	int ATTRIBUTE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1064,7 +1137,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
+	int ATTRIBUTE__NAME = ENTITY_ATTRIBUTE_KIND__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -1073,7 +1146,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__IMPORTED_NAMESPACE = ENTITY_ATTRIBUTE__IMPORTED_NAMESPACE;
+	int ATTRIBUTE__IMPORTED_NAMESPACE = ENTITY_ATTRIBUTE_KIND__IMPORTED_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -1082,7 +1155,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE__TYPE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 0;
+	int ATTRIBUTE__TYPE = ENTITY_ATTRIBUTE_KIND_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Attribute</em>' class.
@@ -1091,7 +1164,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_FEATURE_COUNT = ENTITY_ATTRIBUTE_FEATURE_COUNT + 1;
+	int ATTRIBUTE_FEATURE_COUNT = ENTITY_ATTRIBUTE_KIND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class.
@@ -1100,7 +1173,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ATTRIBUTE_OPERATION_COUNT = ENTITY_ATTRIBUTE_OPERATION_COUNT + 0;
+	int ATTRIBUTE_OPERATION_COUNT = ENTITY_ATTRIBUTE_KIND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.CustomAttributeImpl <em>Custom Attribute</em>}' class.
@@ -1110,7 +1183,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCustomAttribute()
 	 * @generated
 	 */
-	int CUSTOM_ATTRIBUTE = 25;
+	int CUSTOM_ATTRIBUTE = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1119,7 +1192,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE__NAME;
+	int CUSTOM_ATTRIBUTE__NAME = ENTITY_ATTRIBUTE_KIND__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -1128,7 +1201,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ATTRIBUTE__IMPORTED_NAMESPACE = ENTITY_ATTRIBUTE__IMPORTED_NAMESPACE;
+	int CUSTOM_ATTRIBUTE__IMPORTED_NAMESPACE = ENTITY_ATTRIBUTE_KIND__IMPORTED_NAMESPACE;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1137,7 +1210,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ATTRIBUTE__TYPE = ENTITY_ATTRIBUTE_FEATURE_COUNT + 0;
+	int CUSTOM_ATTRIBUTE__TYPE = ENTITY_ATTRIBUTE_KIND_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Custom Attribute</em>' class.
@@ -1146,7 +1219,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ATTRIBUTE_FEATURE_COUNT = ENTITY_ATTRIBUTE_FEATURE_COUNT + 1;
+	int CUSTOM_ATTRIBUTE_FEATURE_COUNT = ENTITY_ATTRIBUTE_KIND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Custom Attribute</em>' class.
@@ -1155,7 +1228,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOM_ATTRIBUTE_OPERATION_COUNT = ENTITY_ATTRIBUTE_OPERATION_COUNT + 0;
+	int CUSTOM_ATTRIBUTE_OPERATION_COUNT = ENTITY_ATTRIBUTE_KIND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.RelationImpl <em>Relation</em>}' class.
@@ -1165,7 +1238,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRelation()
 	 * @generated
 	 */
-	int RELATION = 26;
+	int RELATION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1247,7 +1320,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDatabase()
 	 * @generated
 	 */
-	int DATABASE = 27;
+	int DATABASE = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1293,7 +1366,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRelationalDB()
 	 * @generated
 	 */
-	int RELATIONAL_DB = 28;
+	int RELATIONAL_DB = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1348,7 +1421,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getTable()
 	 * @generated
 	 */
-	int TABLE = 29;
+	int TABLE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1430,7 +1503,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getIndexSpec()
 	 * @generated
 	 */
-	int INDEX_SPEC = 30;
+	int INDEX_SPEC = 31;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1503,7 +1576,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getIdSpec()
 	 * @generated
 	 */
-	int ID_SPEC = 31;
+	int ID_SPEC = 32;
 
 	/**
 	 * The feature id for the '<em><b>Attributes</b></em>' reference list.
@@ -1549,7 +1622,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDocumentDB()
 	 * @generated
 	 */
-	int DOCUMENT_DB = 32;
+	int DOCUMENT_DB = 33;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1604,7 +1677,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCollection()
 	 * @generated
 	 */
-	int COLLECTION = 33;
+	int COLLECTION = 34;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1659,7 +1732,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueDB()
 	 * @generated
 	 */
-	int KEY_VALUE_DB = 34;
+	int KEY_VALUE_DB = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1714,7 +1787,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getKeyValueElement()
 	 * @generated
 	 */
-	int KEY_VALUE_ELEMENT = 35;
+	int KEY_VALUE_ELEMENT = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1787,7 +1860,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphDB()
 	 * @generated
 	 */
-	int GRAPH_DB = 36;
+	int GRAPH_DB = 37;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1851,7 +1924,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphNode()
 	 * @generated
 	 */
-	int GRAPH_NODE = 37;
+	int GRAPH_NODE = 38;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1915,7 +1988,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphAttribute()
 	 * @generated
 	 */
-	int GRAPH_ATTRIBUTE = 38;
+	int GRAPH_ATTRIBUTE = 39;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1970,7 +2043,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphEdge()
 	 * @generated
 	 */
-	int GRAPH_EDGE = 39;
+	int GRAPH_EDGE = 40;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2043,7 +2116,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getGraphEdgeLabel()
 	 * @generated
 	 */
-	int GRAPH_EDGE_LABEL = 40;
+	int GRAPH_EDGE_LABEL = 41;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2098,7 +2171,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getColumnDB()
 	 * @generated
 	 */
-	int COLUMN_DB = 41;
+	int COLUMN_DB = 42;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2153,7 +2226,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getColumn()
 	 * @generated
 	 */
-	int COLUMN = 42;
+	int COLUMN = 43;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2217,7 +2290,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeOperator()
 	 * @generated
 	 */
-	int CHANGE_OPERATOR = 43;
+	int CHANGE_OPERATOR = 44;
 
 	/**
 	 * The number of structural features of the '<em>Change Operator</em>' class.
@@ -2245,7 +2318,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddEntity()
 	 * @generated
 	 */
-	int ADD_ENTITY = 44;
+	int ADD_ENTITY = 45;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2372,7 +2445,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameEntity()
 	 * @generated
 	 */
-	int RENAME_ENTITY = 45;
+	int RENAME_ENTITY = 46;
 
 	/**
 	 * The feature id for the '<em><b>Entity To Rename</b></em>' reference.
@@ -2418,7 +2491,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveEntity()
 	 * @generated
 	 */
-	int REMOVE_ENTITY = 46;
+	int REMOVE_ENTITY = 47;
 
 	/**
 	 * The feature id for the '<em><b>Entity To Remove</b></em>' reference.
@@ -2455,7 +2528,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttribute()
 	 * @generated
 	 */
-	int ADD_ATTRIBUTE = 47;
+	int ADD_ATTRIBUTE = 48;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2519,7 +2592,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeAttributeType()
 	 * @generated
 	 */
-	int CHANGE_ATTRIBUTE_TYPE = 48;
+	int CHANGE_ATTRIBUTE_TYPE = 49;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Change</b></em>' reference.
@@ -2556,7 +2629,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttribute()
 	 * @generated
 	 */
-	int REMOVE_ATTRIBUTE = 49;
+	int REMOVE_ATTRIBUTE = 50;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Remove</b></em>' reference.
@@ -2593,7 +2666,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameAttribute()
 	 * @generated
 	 */
-	int RENAME_ATTRIBUTE = 50;
+	int RENAME_ATTRIBUTE = 51;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Rename</b></em>' reference.
@@ -2639,7 +2712,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationContainement()
 	 * @generated
 	 */
-	int CHANGE_RELATION_CONTAINEMENT = 51;
+	int CHANGE_RELATION_CONTAINEMENT = 52;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -2685,7 +2758,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddRelation()
 	 * @generated
 	 */
-	int ADD_RELATION = 52;
+	int ADD_RELATION = 53;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2776,7 +2849,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveRelation()
 	 * @generated
 	 */
-	int REMOVE_RELATION = 53;
+	int REMOVE_RELATION = 54;
 
 	/**
 	 * The feature id for the '<em><b>Relation To Remove</b></em>' reference.
@@ -2813,7 +2886,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameRelation()
 	 * @generated
 	 */
-	int RENAME_RELATION = 54;
+	int RENAME_RELATION = 55;
 
 	/**
 	 * The feature id for the '<em><b>Relation To Rename</b></em>' reference.
@@ -2859,7 +2932,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getEnableRelationContainment()
 	 * @generated
 	 */
-	int ENABLE_RELATION_CONTAINMENT = 55;
+	int ENABLE_RELATION_CONTAINMENT = 56;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -2896,7 +2969,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDisableRelationContainment()
 	 * @generated
 	 */
-	int DISABLE_RELATION_CONTAINMENT = 56;
+	int DISABLE_RELATION_CONTAINMENT = 57;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -2933,7 +3006,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getEnableBidirectionalRelation()
 	 * @generated
 	 */
-	int ENABLE_BIDIRECTIONAL_RELATION = 57;
+	int ENABLE_BIDIRECTIONAL_RELATION = 58;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -2970,7 +3043,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDisableBidirectionalRelation()
 	 * @generated
 	 */
-	int DISABLE_BIDIRECTIONAL_RELATION = 58;
+	int DISABLE_BIDIRECTIONAL_RELATION = 59;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -3007,7 +3080,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeRelationCardinality()
 	 * @generated
 	 */
-	int CHANGE_RELATION_CARDINALITY = 59;
+	int CHANGE_RELATION_CARDINALITY = 60;
 
 	/**
 	 * The feature id for the '<em><b>Relation</b></em>' reference.
@@ -3053,7 +3126,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntity()
 	 * @generated
 	 */
-	int SPLIT_ENTITY = 60;
+	int SPLIT_ENTITY = 61;
 
 	/**
 	 * The feature id for the '<em><b>Entity To Be Split</b></em>' reference.
@@ -3108,7 +3181,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityVertical()
 	 * @generated
 	 */
-	int SPLIT_ENTITY_VERTICAL = 61;
+	int SPLIT_ENTITY_VERTICAL = 62;
 
 	/**
 	 * The feature id for the '<em><b>Entity1</b></em>' reference.
@@ -3172,7 +3245,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getSplitEntityHorizontal()
 	 * @generated
 	 */
-	int SPLIT_ENTITY_HORIZONTAL = 62;
+	int SPLIT_ENTITY_HORIZONTAL = 63;
 
 	/**
 	 * The feature id for the '<em><b>Entity1</b></em>' reference.
@@ -3236,7 +3309,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getMigrateEntity()
 	 * @generated
 	 */
-	int MIGRATE_ENTITY = 63;
+	int MIGRATE_ENTITY = 64;
 
 	/**
 	 * The feature id for the '<em><b>Entity</b></em>' reference.
@@ -3282,7 +3355,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getMergeEntity()
 	 * @generated
 	 */
-	int MERGE_ENTITY = 64;
+	int MERGE_ENTITY = 65;
 
 	/**
 	 * The feature id for the '<em><b>First Entity To Merge</b></em>' reference.
@@ -3337,7 +3410,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameTable()
 	 * @generated
 	 */
-	int RENAME_TABLE = 65;
+	int RENAME_TABLE = 66;
 
 	/**
 	 * The feature id for the '<em><b>Table To Rename</b></em>' reference.
@@ -3383,7 +3456,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddIndex()
 	 * @generated
 	 */
-	int ADD_INDEX = 66;
+	int ADD_INDEX = 67;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -3429,7 +3502,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDropIndex()
 	 * @generated
 	 */
-	int DROP_INDEX = 67;
+	int DROP_INDEX = 68;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -3466,7 +3539,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddAttributesToIndex()
 	 * @generated
 	 */
-	int ADD_ATTRIBUTES_TO_INDEX = 68;
+	int ADD_ATTRIBUTES_TO_INDEX = 69;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -3512,7 +3585,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveAttributesToIndex()
 	 * @generated
 	 */
-	int REMOVE_ATTRIBUTES_TO_INDEX = 69;
+	int REMOVE_ATTRIBUTES_TO_INDEX = 70;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' reference.
@@ -3558,7 +3631,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenameCollection()
 	 * @generated
 	 */
-	int RENAME_COLLECTION = 70;
+	int RENAME_COLLECTION = 71;
 
 	/**
 	 * The feature id for the '<em><b>Collection To Rename</b></em>' reference.
@@ -3604,7 +3677,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddCollectionIndex()
 	 * @generated
 	 */
-	int ADD_COLLECTION_INDEX = 71;
+	int ADD_COLLECTION_INDEX = 72;
 
 	/**
 	 * The feature id for the '<em><b>Collection</b></em>' reference.
@@ -3650,7 +3723,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getDropCollectionIndex()
 	 * @generated
 	 */
-	int DROP_COLLECTION_INDEX = 72;
+	int DROP_COLLECTION_INDEX = 73;
 
 	/**
 	 * The feature id for the '<em><b>Collection</b></em>' reference.
@@ -3687,7 +3760,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddGraphAttribute()
 	 * @generated
 	 */
-	int ADD_GRAPH_ATTRIBUTE = 73;
+	int ADD_GRAPH_ATTRIBUTE = 74;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3742,7 +3815,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveGraphAttribute()
 	 * @generated
 	 */
-	int REMOVE_GRAPH_ATTRIBUTE = 74;
+	int REMOVE_GRAPH_ATTRIBUTE = 75;
 
 	/**
 	 * The feature id for the '<em><b>Node</b></em>' reference.
@@ -3779,7 +3852,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddGraphEdge()
 	 * @generated
 	 */
-	int ADD_GRAPH_EDGE = 75;
+	int ADD_GRAPH_EDGE = 76;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3852,7 +3925,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRemoveGraphEdge()
 	 * @generated
 	 */
-	int REMOVE_GRAPH_EDGE = 76;
+	int REMOVE_GRAPH_EDGE = 77;
 
 	/**
 	 * The feature id for the '<em><b>Graph Edge To Remove</b></em>' reference.
@@ -3889,7 +3962,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getRenabeGraphEdgeLabel()
 	 * @generated
 	 */
-	int RENABE_GRAPH_EDGE_LABEL = 77;
+	int RENABE_GRAPH_EDGE_LABEL = 78;
 
 	/**
 	 * The feature id for the '<em><b>Edge</b></em>' reference.
@@ -3935,7 +4008,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddCustomDataTypeAttribute()
 	 * @generated
 	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE = 78;
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE = 79;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -3999,7 +4072,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangePrimitiveDataTypeAttribute()
 	 * @generated
 	 */
-	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE = 79;
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE = 80;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Change</b></em>' reference.
@@ -4045,7 +4118,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeCustomDataTypeAttribute()
 	 * @generated
 	 */
-	int CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE = 80;
+	int CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE = 81;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Change</b></em>' reference.
@@ -4091,7 +4164,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTaskType()
 	 * @generated
 	 */
-	int NLP_TASK_TYPE = 81;
+	int NLP_TASK_TYPE = 82;
 
 	/**
 	 * The meta object id for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.
@@ -4101,7 +4174,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 82;
+	int CARDINALITY = 83;
 
 
 	/**
@@ -4199,16 +4272,6 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDataType();
-
-	/**
-	 * Returns the meta object for class '{@link typhonml.PrimitiveDataType <em>Primitive Data Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Primitive Data Type</em>'.
-	 * @see typhonml.PrimitiveDataType
-	 * @generated
-	 */
-	EClass getPrimitiveDataType();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.IntType <em>Int Type</em>}'.
@@ -4406,36 +4469,67 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getCustomDataType_Elements();
 
 	/**
-	 * Returns the meta object for class '{@link typhonml.CustomDataTypeItem <em>Custom Data Type Item</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Custom Data Type Item</em>'.
-	 * @see typhonml.CustomDataTypeItem
-	 * @generated
-	 */
-	EClass getCustomDataTypeItem();
-
-	/**
-	 * Returns the meta object for the reference '{@link typhonml.CustomDataTypeItem#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Type</em>'.
-	 * @see typhonml.CustomDataTypeItem#getType()
-	 * @see #getCustomDataTypeItem()
-	 * @generated
-	 */
-	EReference getCustomDataTypeItem_Type();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link typhonml.CustomDataTypeItem#getImplementation <em>Implementation</em>}'.
+	 * Returns the meta object for the containment reference '{@link typhonml.CustomDataType#getImplementation <em>Implementation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Implementation</em>'.
-	 * @see typhonml.CustomDataTypeItem#getImplementation()
-	 * @see #getCustomDataTypeItem()
+	 * @see typhonml.CustomDataType#getImplementation()
+	 * @see #getCustomDataType()
 	 * @generated
 	 */
-	EReference getCustomDataTypeItem_Implementation();
+	EReference getCustomDataType_Implementation();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.SuperDataType <em>Super Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Super Data Type</em>'.
+	 * @see typhonml.SuperDataType
+	 * @generated
+	 */
+	EClass getSuperDataType();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.ComplexDataType <em>Complex Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Complex Data Type</em>'.
+	 * @see typhonml.ComplexDataType
+	 * @generated
+	 */
+	EClass getComplexDataType();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.ComplexDataType#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see typhonml.ComplexDataType#getType()
+	 * @see #getComplexDataType()
+	 * @generated
+	 */
+	EReference getComplexDataType_Type();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.SimpleDataType <em>Simple Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Simple Data Type</em>'.
+	 * @see typhonml.SimpleDataType
+	 * @generated
+	 */
+	EClass getSimpleDataType();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link typhonml.SimpleDataType#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see typhonml.SimpleDataType#getType()
+	 * @see #getSimpleDataType()
+	 * @generated
+	 */
+	EReference getSimpleDataType_Type();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.CustomDataTypeImplementationPackage <em>Custom Data Type Implementation Package</em>}'.
@@ -4583,14 +4677,14 @@ public interface TyphonmlPackage extends EPackage {
 	EOperation getEntity__GetColumns();
 
 	/**
-	 * Returns the meta object for class '{@link typhonml.EntityAttribute <em>Entity Attribute</em>}'.
+	 * Returns the meta object for class '{@link typhonml.EntityAttributeKind <em>Entity Attribute Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Entity Attribute</em>'.
-	 * @see typhonml.EntityAttribute
+	 * @return the meta object for class '<em>Entity Attribute Kind</em>'.
+	 * @see typhonml.EntityAttributeKind
 	 * @generated
 	 */
-	EClass getEntityAttribute();
+	EClass getEntityAttributeKind();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.Attribute <em>Attribute</em>}'.
@@ -6274,16 +6368,6 @@ public interface TyphonmlPackage extends EPackage {
 		EClass DATA_TYPE = eINSTANCE.getDataType();
 
 		/**
-		 * The meta object literal for the '{@link typhonml.impl.PrimitiveDataTypeImpl <em>Primitive Data Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.PrimitiveDataTypeImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getPrimitiveDataType()
-		 * @generated
-		 */
-		EClass PRIMITIVE_DATA_TYPE = eINSTANCE.getPrimitiveDataType();
-
-		/**
 		 * The meta object literal for the '{@link typhonml.impl.IntTypeImpl <em>Int Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6464,14 +6548,32 @@ public interface TyphonmlPackage extends EPackage {
 		EReference CUSTOM_DATA_TYPE__ELEMENTS = eINSTANCE.getCustomDataType_Elements();
 
 		/**
-		 * The meta object literal for the '{@link typhonml.impl.CustomDataTypeItemImpl <em>Custom Data Type Item</em>}' class.
+		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.CustomDataTypeItemImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getCustomDataTypeItem()
 		 * @generated
 		 */
-		EClass CUSTOM_DATA_TYPE_ITEM = eINSTANCE.getCustomDataTypeItem();
+		EReference CUSTOM_DATA_TYPE__IMPLEMENTATION = eINSTANCE.getCustomDataType_Implementation();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.SuperDataTypeImpl <em>Super Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.SuperDataTypeImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getSuperDataType()
+		 * @generated
+		 */
+		EClass SUPER_DATA_TYPE = eINSTANCE.getSuperDataType();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.ComplexDataTypeImpl <em>Complex Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.ComplexDataTypeImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getComplexDataType()
+		 * @generated
+		 */
+		EClass COMPLEX_DATA_TYPE = eINSTANCE.getComplexDataType();
 
 		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -6479,15 +6581,25 @@ public interface TyphonmlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CUSTOM_DATA_TYPE_ITEM__TYPE = eINSTANCE.getCustomDataTypeItem_Type();
+		EReference COMPLEX_DATA_TYPE__TYPE = eINSTANCE.getComplexDataType_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link typhonml.impl.SimpleDataTypeImpl <em>Simple Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.SimpleDataTypeImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getSimpleDataType()
+		 * @generated
+		 */
+		EClass SIMPLE_DATA_TYPE = eINSTANCE.getSimpleDataType();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CUSTOM_DATA_TYPE_ITEM__IMPLEMENTATION = eINSTANCE.getCustomDataTypeItem_Implementation();
+		EReference SIMPLE_DATA_TYPE__TYPE = eINSTANCE.getSimpleDataType_Type();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.CustomDataTypeImplementationPackageImpl <em>Custom Data Type Implementation Package</em>}' class.
@@ -6610,14 +6722,14 @@ public interface TyphonmlPackage extends EPackage {
 		EOperation ENTITY___GET_COLUMNS = eINSTANCE.getEntity__GetColumns();
 
 		/**
-		 * The meta object literal for the '{@link typhonml.impl.EntityAttributeImpl <em>Entity Attribute</em>}' class.
+		 * The meta object literal for the '{@link typhonml.impl.EntityAttributeKindImpl <em>Entity Attribute Kind</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see typhonml.impl.EntityAttributeImpl
-		 * @see typhonml.impl.TyphonmlPackageImpl#getEntityAttribute()
+		 * @see typhonml.impl.EntityAttributeKindImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getEntityAttributeKind()
 		 * @generated
 		 */
-		EClass ENTITY_ATTRIBUTE = eINSTANCE.getEntityAttribute();
+		EClass ENTITY_ATTRIBUTE_KIND = eINSTANCE.getEntityAttributeKind();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.AttributeImpl <em>Attribute</em>}' class.

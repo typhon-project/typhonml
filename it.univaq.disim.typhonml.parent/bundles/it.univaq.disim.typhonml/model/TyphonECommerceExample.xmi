@@ -7,6 +7,7 @@
     <attributes xsi:type="typhonml:Attribute" name="content">
       <type xsi:type="typhonml:StringType" maxSize="32"/>
     </attributes>
+    <attributes xsi:type="typhonml:CustomAttribute" name="customDataTypeExample" type="//@customDataTypes.1"/>
     <relations name="product" type="//@entities.1" cardinality="one"/>
     <functionalTags name="fulltextsearch"/>
     <nfunctionalTags name="readscalability"/>
@@ -101,4 +102,32 @@
     <collections name="CommentsDB" entity="//@entities.4"/>
     <collections name="ReviewDB" entity="//@entities.0"/>
   </databases>
+  <customDataTypes name="custom1">
+    <elements xsi:type="typhonml:SimpleDataType" name="attr1">
+      <type xsi:type="typhonml:StringType" maxSize="64"/>
+    </elements>
+    <elements xsi:type="typhonml:SimpleDataType" name="attr2">
+      <type xsi:type="typhonml:FreetextType">
+        <tasks workflowName="eng_pol_sa" type="SentimentAnalysis"/>
+      </type>
+    </elements>
+    <elements xsi:type="typhonml:SimpleDataType" name="attr3">
+      <type xsi:type="typhonml:FloatType"/>
+    </elements>
+    <elements xsi:type="typhonml:SimpleDataType" name="attr4">
+      <type xsi:type="typhonml:TextType"/>
+    </elements>
+  </customDataTypes>
+  <customDataTypes name="custom2">
+    <elements xsi:type="typhonml:SimpleDataType" name="attr5">
+      <type xsi:type="typhonml:IntType"/>
+    </elements>
+    <elements xsi:type="typhonml:SimpleDataType" name="attr2">
+      <type xsi:type="typhonml:PointType"/>
+    </elements>
+    <elements xsi:type="typhonml:SimpleDataType" name="attr3">
+      <type xsi:type="typhonml:PolygonType"/>
+    </elements>
+    <elements xsi:type="typhonml:ComplexDataType" name="attr4" type="//@customDataTypes.0"/>
+  </customDataTypes>
 </typhonml:Model>

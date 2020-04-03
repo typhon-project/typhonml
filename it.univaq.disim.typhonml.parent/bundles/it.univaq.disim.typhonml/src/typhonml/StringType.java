@@ -19,7 +19,7 @@ package typhonml;
  * @model
  * @generated
  */
-public interface StringType extends PrimitiveDataType {
+public interface StringType extends DataType {
 	/**
 	 * Returns the value of the '<em><b>Max Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->

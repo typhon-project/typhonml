@@ -9,7 +9,6 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import typhonml.Attribute;
 import typhonml.ChangeAttributeType;
 import typhonml.Model;
-import typhonml.PrimitiveDataType;
 import typhonml.TyphonmlFactory;
 
 public class ChangeAttributeTypeAction implements IExternalJavaAction {

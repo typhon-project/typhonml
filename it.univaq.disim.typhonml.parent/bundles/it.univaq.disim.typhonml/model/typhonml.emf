@@ -4,125 +4,82 @@
 package typhonml;
 
 class Model {
-  val Entity[*] entities;	
-  val Database[*] databases;
-  val CustomDataType[*] customDataTypes;
-  val ChangeOperator[*] changeOperators;
+	val Entity[*] entities;
+	val Database[*] databases;
+	val CustomDataType[*] customDataTypes;
+	val ChangeOperator[*] changeOperators;
 }
 
 abstract class NamedElement {
-  attr String[1] name;
-  attr String importedNamespace;
+	attr String[1] name;
+	attr String importedNamespace;
 }
-
-
-
 
 abstract class DataType {
 }
 
-
-/*
- **********************************************
- ********start PRIMITIVE TYPES*****************
- **********************************************
-*/
-abstract class PrimitiveDataType extends DataType{
+class IntType extends DataType {
 }
 
-class IntType extends PrimitiveDataType{
+class BigintType extends DataType {
 }
 
-class BigintType extends PrimitiveDataType{
-}
-
-class StringType extends PrimitiveDataType{
+class StringType extends DataType {
 	attr int maxSize;
 }
 
-class TextType extends PrimitiveDataType{
+class TextType extends DataType {
 }
 
-class PointType extends PrimitiveDataType{
+class PointType extends DataType {
 }
 
-class PolygonType extends PrimitiveDataType{
+class PolygonType extends DataType {
 }
 
-class BoolType extends PrimitiveDataType{
+class BoolType extends DataType {
 }
 
-class FloatType extends PrimitiveDataType{
+class FloatType extends DataType {
 }
 
-class BlobType extends PrimitiveDataType{
+class BlobType extends DataType {
 }
 
-class FreetextType extends PrimitiveDataType{
+class FreetextType extends DataType {
 	val NlpTask[*] tasks;
 }
 
 class NlpTask {
 	attr String[1] workflowName;
-  	attr NlpTaskType[1] type;
-  //attr String[*] parameters;
+	attr NlpTaskType[1] type;
 }
 
-
-class DateType extends PrimitiveDataType{
+class DateType extends DataType {
 }
 
-class DatetimeType extends PrimitiveDataType{
-}
-/*
- **********************************************
- ********end PRIMITIVE TYPES*****************
- **********************************************
-*/
-
-
-
-
-
-
-
-/*
- **********************************************
- ********Start CUSTOM TYPES********************
- **********************************************
-*/
-class CustomDataType extends DataType, NamedElement{
-  val CustomDataTypeItem[*] elements;
+class DatetimeType extends DataType {
 }
 
-class CustomDataTypeItem extends NamedElement {
-  ref DataType type;
-  val CustomDataTypeImplementationPackage[1] implementation;
+class CustomDataType extends NamedElement {
+	val SuperDataType[*] elements;
+	val CustomDataTypeImplementationPackage implementation;
+}
+
+abstract class SuperDataType extends NamedElement {
+}
+
+class ComplexDataType extends SuperDataType {
+	ref CustomDataType[1] type;
+}
+
+class SimpleDataType extends SuperDataType {
+	val DataType[1] type;
 }
 
 class CustomDataTypeImplementationPackage {
-  attr String location;
+	attr String location;
 }
-/*
- **********************************************
- ********End CUSTOM TYPES********************
- **********************************************
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class FunctionalTag extends NamedElement {
 }
@@ -130,145 +87,126 @@ class FunctionalTag extends NamedElement {
 class NFunctionalTag extends NamedElement {
 }
 
+class Entity extends NamedElement {
 
-class Entity extends NamedElement{
+	@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Collection.allInstances()->select(e|e.entity = self)")
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered op Collection[*] getCollections();
 
-  @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Collection.allInstances()->select(e|e.entity = self)")
-  @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
-  !ordered op Collection[*] getCollections();
+	@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Table.allInstances()->select(e|e.entity = self)")
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered op Table[*] getTables();
 
-  @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Table.allInstances()->select(e|e.entity = self)")
-  @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
-  !ordered op Table[*] getTables();
+	@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::KeyValueElement.allInstances()->select(e|e.entity = self)")
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered op KeyValueElement[*] getKeyValueElements();
 
-  @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::KeyValueElement.allInstances()->select(e|e.entity = self)")
-  @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
-  !ordered op KeyValueElement[*] getKeyValueElements();
+	@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::GraphNode.allInstances()->select(e|e.entity = self)")
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered op GraphNode[*] getGraphNodes();
 
-  @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::GraphNode.allInstances()->select(e|e.entity = self)")
-  @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
-  !ordered op GraphNode[*] getGraphNodes();
-
-  @"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Column.allInstances()->select(e|e.entity = self)")
-  @"http://www.eclipse.org/OCL/Collection"(nullFree="false")
-  !ordered op Column[*] getColumns();
-  val EntityAttribute[*] attributes;
-  //val FreetextType[*] fretextAttributes;
-  val Relation[*] relations;
-  val FunctionalTag[*] functionalTags;
-  val NFunctionalTag[*] nfunctionalTags;
+	@"http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"(body="typhonml::Column.allInstances()->select(e|e.entity = self)")
+	@"http://www.eclipse.org/OCL/Collection"(nullFree="false")
+	!ordered op Column[*] getColumns();
+	val EntityAttributeKind[*] attributes;
+	val Relation[*] relations;
+	val FunctionalTag[*] functionalTags;
+	val NFunctionalTag[*] nfunctionalTags;
 }
 
-
-
-abstract class EntityAttribute extends NamedElement {
-  
+abstract class EntityAttributeKind extends NamedElement {
 }
 
-class Attribute extends EntityAttribute{
-	val DataType[1] type;	
+class Attribute extends EntityAttributeKind {
+	val DataType[1] type;
 }
 
-class CustomAttribute extends EntityAttribute{
-	ref CustomDataType[1] type;	
+class CustomAttribute extends EntityAttributeKind {
+	ref CustomDataType[1] type;
 }
-
-
 
 class Relation extends NamedElement {
-  ref Entity type;
-  attr Cardinality[1] cardinality;
-  ref Relation opposite;
-  attr Boolean isContainment;
+	ref Entity type;
+	attr Cardinality[1] cardinality;
+	ref Relation opposite;
+	attr Boolean isContainment;
 }
 
 abstract class Database extends NamedElement {
 }
 
 class RelationalDB extends Database {
-  val Table[*] tables;
+	val Table[*] tables;
 }
 
 class Table extends NamedElement {
-  val IndexSpec#table indexSpec;
-  val IdSpec#table idSpec;
-  ref Database db;
-  ref Entity entity;
+	val IndexSpec#table indexSpec;
+	val IdSpec#table idSpec;
+	ref Database db;
+	ref Entity entity;
 }
 
 class IndexSpec extends NamedElement {
-  ref Attribute[*] attributes;
-  ref Relation[*] references;
-  ref Table[1]#indexSpec table;
+	ref Attribute[*] attributes;
+	ref Relation[*] references;
+	ref Table[1]#indexSpec table;
 }
 
 class IdSpec {
-  ref Attribute[*] attributes;
-  ref Table[1]#idSpec table;
+	ref Attribute[*] attributes;
+	ref Table[1]#idSpec table;
 }
 
 class DocumentDB extends Database {
-  val Collection[*] collections;
+	val Collection[*] collections;
 }
 
 class Collection extends NamedElement {
-  ref Entity entity;
+	ref Entity entity;
 }
 
 class KeyValueDB extends Database {
-  val KeyValueElement[*] elements;
+	val KeyValueElement[*] elements;
 }
 
 class KeyValueElement extends NamedElement {
-  attr String key;
-  ref Attribute[*] values;
-  ref Entity entity;
+	attr String key;
+	ref Attribute[*] values;
+	ref Entity entity;
 }
 
 class GraphDB extends Database {
-  val GraphNode[*] nodes;
-  val GraphEdge[*] edges;
+	val GraphNode[*] nodes;
+	val GraphEdge[*] edges;
 }
 
 class GraphNode extends NamedElement {
-  val GraphAttribute[*] attributes;
-  ref Entity entity;
+	val GraphAttribute[*] attributes;
+	ref Entity entity;
 }
 
 class GraphAttribute extends NamedElement {
-  ref Attribute value;
+	ref Attribute value;
 }
 
 class GraphEdge extends NamedElement {
-  ref GraphNode from;
-  ref GraphNode to;
-  val GraphEdgeLabel[*] labels;
+	ref GraphNode from;
+	ref GraphNode to;
+	val GraphEdgeLabel[*] labels;
 }
 
 class GraphEdgeLabel extends NamedElement {
-  ref DataType type;
+	ref DataType type;
 }
 
 class ColumnDB extends Database {
-  val Column[*] columns;
+	val Column[*] columns;
 }
 
 class Column extends NamedElement {
-  ref Attribute[*] attributes;
-  ref Entity entity;
+	ref Attribute[*] attributes;
+	ref Entity entity;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 abstract class ChangeOperator {
 }
@@ -277,200 +215,193 @@ class AddEntity extends Entity, ChangeOperator {
 }
 
 class RenameEntity extends ChangeOperator {
-  ref Entity entityToRename;
-  attr String newEntityName;
+	ref Entity entityToRename;
+	attr String newEntityName;
 }
 
-
 class RemoveEntity extends ChangeOperator {
-  ref Entity[1] entityToRemove;
+	ref Entity[1] entityToRemove;
 }
 
 abstract class AddAttribute extends Attribute, ChangeOperator {
-  ref Entity[1] ownerEntity;
+	ref Entity[1] ownerEntity;
 }
 
 abstract class ChangeAttributeType extends ChangeOperator {
-  ref Attribute[1] attributeToChange;
+	ref Attribute[1] attributeToChange;
 }
 
 class RemoveAttribute extends ChangeOperator {
-  ref Attribute[1] attributeToRemove;
+	ref Attribute[1] attributeToRemove;
 }
 
 class RenameAttribute extends ChangeOperator {
-  ref Attribute[1] attributeToRename;
-  attr String newName;
+	ref Attribute[1] attributeToRename;
+	attr String newName;
 }
 
 class ChangeRelationContainement extends ChangeOperator {
-  ref Relation[1] relation;
-  attr Boolean[1] newContainment;
+	ref Relation[1] relation;
+	attr Boolean[1] newContainment;
 }
 
 class AddRelation extends Relation, ChangeOperator {
-  ref Entity[1] ownerEntity;
+	ref Entity[1] ownerEntity;
 }
 
 class RemoveRelation extends ChangeOperator {
-  ref Relation[1] relationToRemove;
+	ref Relation[1] relationToRemove;
 }
 
 class RenameRelation extends ChangeOperator {
-  ref Relation[1] relationToRename;
-  attr String newRelationName;
+	ref Relation[1] relationToRename;
+	attr String newRelationName;
 }
 
 class EnableRelationContainment extends ChangeOperator {
-  ref Relation[1] relation;
+	ref Relation[1] relation;
 }
 
 class DisableRelationContainment extends ChangeOperator {
-  ref Relation[1] relation;
+	ref Relation[1] relation;
 }
 
 class EnableBidirectionalRelation extends ChangeOperator {
-  ref Relation[1] relation;
+	ref Relation[1] relation;
 }
 
 class DisableBidirectionalRelation extends ChangeOperator {
-  ref Relation[1] relation;
+	ref Relation[1] relation;
 }
 
 class ChangeRelationCardinality extends ChangeOperator {
-  ref Relation[1] relation;
-  attr Cardinality[1] newCardinality;
+	ref Relation[1] relation;
+	attr Cardinality[1] newCardinality;
 }
 
 class SplitEntity extends ChangeOperator {
-  ref Entity[1] entityToBeSplit;
-  val Entity[1] firstNewEntity;
-  val Entity[1] secondNewEntity;
+	ref Entity[1] entityToBeSplit;
+	val Entity[1] firstNewEntity;
+	val Entity[1] secondNewEntity;
 }
 
 class SplitEntityVertical extends ChangeOperator {
-  ref Entity[1] entity1;
-  attr String[1] entity2name;
-  ref Attribute[*] attributeList;
-  ref Relation[*] relationList;
+	ref Entity[1] entity1;
+	attr String[1] entity2name;
+	ref Attribute[*] attributeList;
+	ref Relation[*] relationList;
 }
 
 class SplitEntityHorizontal extends ChangeOperator {
-  ref Entity[1] entity1;
-  attr String[1] entity2name;
-  ref Attribute[1] attribute;
-  attr String expression;
+	ref Entity[1] entity1;
+	attr String[1] entity2name;
+	ref Attribute[1] attribute;
+	attr String expression;
 }
 
 class MigrateEntity extends ChangeOperator {
-  ref Entity[1] entity;
-  ref Database[1] newDatabase;
+	ref Entity[1] entity;
+	ref Database[1] newDatabase;
 }
 
 class MergeEntity extends ChangeOperator {
-  ref Entity[1] firstEntityToMerge;
-  ref Entity[1] secondEntityToMerge;
-  attr String newEntityName;
+	ref Entity[1] firstEntityToMerge;
+	ref Entity[1] secondEntityToMerge;
+	attr String newEntityName;
 }
 
 class RenameTable extends ChangeOperator {
-  ref Table[1] tableToRename;
-  attr String newName;
+	ref Table[1] tableToRename;
+	attr String newName;
 }
 
 class AddIndex extends ChangeOperator {
-  ref Table[1] table;
-  ref Attribute[*] attributes;
+	ref Table[1] table;
+	ref Attribute[*] attributes;
 }
 
 class DropIndex extends ChangeOperator {
-  ref Table[1] table;
+	ref Table[1] table;
 }
 
 class AddAttributesToIndex extends ChangeOperator {
-  ref Table[1] table;
-  ref Attribute[*] attributes;
+	ref Table[1] table;
+	ref Attribute[*] attributes;
 }
 
 class RemoveAttributesToIndex extends ChangeOperator {
-  ref Table[1] table;
-  ref Attribute[*] attributes;
+	ref Table[1] table;
+	ref Attribute[*] attributes;
 }
 
 class RenameCollection extends ChangeOperator {
-  ref Collection[1] collectionToRename;
-  attr String newName;
+	ref Collection[1] collectionToRename;
+	attr String newName;
 }
 
 class AddCollectionIndex extends ChangeOperator {
-  ref Collection[1] collection;
-  ref Attribute[*] attributes;
+	ref Collection[1] collection;
+	ref Attribute[*] attributes;
 }
 
 class DropCollectionIndex extends ChangeOperator {
-  ref Collection[1] collection;
+	ref Collection[1] collection;
 }
 
 class AddGraphAttribute extends GraphAttribute, ChangeOperator {
 }
 
 class RemoveGraphAttribute extends ChangeOperator {
-  ref GraphNode[1] node;
+	ref GraphNode[1] node;
 }
 
 class AddGraphEdge extends ChangeOperator, GraphEdge {
 }
 
 class RemoveGraphEdge extends ChangeOperator {
-  ref GraphEdge[1] graphEdgeToRemove;
+	ref GraphEdge[1] graphEdgeToRemove;
 }
 
 class RenabeGraphEdgeLabel extends ChangeOperator {
-  ref GraphEdge[1] edge;
-  attr String newName;
+	ref GraphEdge[1] edge;
+	attr String newName;
 }
 
 class AddCustomDataTypeAttribute extends AddAttribute {
 }
 
-/*
-class AddPrimitiveDataTypeAttribute extends AddAttribute, PrimitiveDataTypeAttribute {
-}
-*/
-
 class ChangePrimitiveDataTypeAttribute extends ChangeAttributeType {
-  attr int maxSize;
-  //attr PrimitiveDataType[1] newType;
+	attr int maxSize;
 }
 
 class ChangeCustomDataTypeAttribute extends ChangeAttributeType {
-  ref CustomDataType[1] newType;
+	ref CustomDataType[1] newType;
 }
 
 enum NlpTaskType {
-  ParagraphSegmentation = 0;
-  SentenceSegmentation = 1;
-  Tokenisation = 2;
-  PhraseExtractor = 3;
-  NGramExtractor = 4;
-  POSTagging = 5;
-  Lemmatisation = 6;
-  Stemming = 7;
-  DependencyParsing = 8;
-  Chunking = 9;
-  SentimentAnalysis = 10;
-  TextClassification = 11;
-  TopicModelling = 12;
-  TermExtraction = 13;
-  NamedEntityRecognition = 14;
-  RelationExtraction = 15;
-  CoreferenceResolution = 16;
+	ParagraphSegmentation = 0;
+	SentenceSegmentation = 1;
+	Tokenisation = 2;
+	PhraseExtractor = 3;
+	NGramExtractor = 4;
+	POSTagging = 5;
+	Lemmatisation = 6;
+	Stemming = 7;
+	DependencyParsing = 8;
+	Chunking = 9;
+	SentimentAnalysis = 10;
+	TextClassification = 11;
+	TopicModelling = 12;
+	TermExtraction = 13;
+	NamedEntityRecognition = 14;
+	RelationExtraction = 15;
+	CoreferenceResolution = 16;
 }
 
 enum Cardinality {
-  zero_one = 0;
-  one = 1;
-  zero_many = 2;
-  one_many = 3;
+	zero_one = 0;
+	one = 1;
+	zero_many = 2;
+	one_many = 3;
 }
 

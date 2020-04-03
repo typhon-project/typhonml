@@ -72,7 +72,8 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.DATE_TYPE: return createDateType();
 			case TyphonmlPackage.DATETIME_TYPE: return createDatetimeType();
 			case TyphonmlPackage.CUSTOM_DATA_TYPE: return createCustomDataType();
-			case TyphonmlPackage.CUSTOM_DATA_TYPE_ITEM: return createCustomDataTypeItem();
+			case TyphonmlPackage.COMPLEX_DATA_TYPE: return createComplexDataType();
+			case TyphonmlPackage.SIMPLE_DATA_TYPE: return createSimpleDataType();
 			case TyphonmlPackage.CUSTOM_DATA_TYPE_IMPLEMENTATION_PACKAGE: return createCustomDataTypeImplementationPackage();
 			case TyphonmlPackage.FUNCTIONAL_TAG: return createFunctionalTag();
 			case TyphonmlPackage.NFUNCTIONAL_TAG: return createNFunctionalTag();
@@ -340,9 +341,20 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	 * @generated
 	 */
 	@Override
-	public CustomDataTypeItem createCustomDataTypeItem() {
-		CustomDataTypeItemImpl customDataTypeItem = new CustomDataTypeItemImpl();
-		return customDataTypeItem;
+	public ComplexDataType createComplexDataType() {
+		ComplexDataTypeImpl complexDataType = new ComplexDataTypeImpl();
+		return complexDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SimpleDataType createSimpleDataType() {
+		SimpleDataTypeImpl simpleDataType = new SimpleDataTypeImpl();
+		return simpleDataType;
 	}
 
 	/**

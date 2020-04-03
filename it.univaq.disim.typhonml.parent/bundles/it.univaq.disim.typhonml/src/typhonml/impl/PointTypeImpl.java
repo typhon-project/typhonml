@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class PointTypeImpl extends PrimitiveDataTypeImpl implements PointType {
+public class PointTypeImpl extends DataTypeImpl implements PointType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

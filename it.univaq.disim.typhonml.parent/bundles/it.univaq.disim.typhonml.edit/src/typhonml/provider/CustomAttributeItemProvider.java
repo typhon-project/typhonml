@@ -21,7 +21,7 @@ import typhonml.TyphonmlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class CustomAttributeItemProvider extends EntityAttributeItemProvider {
+public class CustomAttributeItemProvider extends EntityAttributeKindItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

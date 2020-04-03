@@ -3,13 +3,17 @@
 package typhonml.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import typhonml.FreetextType;
 import typhonml.NlpTask;
 import typhonml.TyphonmlPackage;
@@ -27,7 +31,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class FreetextTypeImpl extends PrimitiveDataTypeImpl implements FreetextType {
+public class FreetextTypeImpl extends DataTypeImpl implements FreetextType {
 	/**
 	 * The cached value of the '{@link #getTasks() <em>Tasks</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

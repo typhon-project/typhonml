@@ -24,7 +24,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class StringTypeImpl extends PrimitiveDataTypeImpl implements StringType {
+public class StringTypeImpl extends DataTypeImpl implements StringType {
 	/**
 	 * The default value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute.
 	 * <!-- begin-user-doc -->

@@ -14,7 +14,7 @@ import typhonml.TyphonmlPackage;
  *
  * @generated
  */
-public class TextTypeImpl extends PrimitiveDataTypeImpl implements TextType {
+public class TextTypeImpl extends DataTypeImpl implements TextType {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

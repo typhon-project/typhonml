@@ -13,5 +13,5 @@ package typhonml;
  * @model
  * @generated
  */
-public interface BlobType extends PrimitiveDataType {
+public interface BlobType extends DataType {
 } // BlobType
