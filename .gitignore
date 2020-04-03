@@ -12,7 +12,7 @@ target/
 .mtj.tmp/
 
 # Package Files #
-*.jar
+#*.jar
 *.war
 *.nar
 *.ear
@@ -37,5 +37,4 @@ tasks/
 generated/   
 src-gen/   
 xtend-gen/   
-bin/   
 test-bin/
