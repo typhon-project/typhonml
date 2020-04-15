@@ -693,7 +693,7 @@ RenameCollection returns RenameCollection:
  *************************************************************************************/
 
 enum Cardinality returns Cardinality:
-				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '*';
+				zero_one = '0..1' | one = '1' | zero_many = '0..*' | one_many = '1..*';
 				
 				
 				
