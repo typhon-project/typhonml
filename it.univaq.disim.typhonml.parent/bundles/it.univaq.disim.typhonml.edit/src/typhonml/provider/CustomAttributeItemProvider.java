@@ -106,6 +106,7 @@ public class CustomAttributeItemProvider extends EntityAttributeKindItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

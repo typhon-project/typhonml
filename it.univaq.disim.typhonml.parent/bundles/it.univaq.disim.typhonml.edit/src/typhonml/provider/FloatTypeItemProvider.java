@@ -76,6 +76,7 @@ public class FloatTypeItemProvider extends DataTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

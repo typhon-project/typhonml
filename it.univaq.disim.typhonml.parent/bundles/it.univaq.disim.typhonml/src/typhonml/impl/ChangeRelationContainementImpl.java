@@ -22,7 +22,7 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.ChangeRelationContainementImpl#getRelation <em>Relation</em>}</li>
- *   <li>{@link typhonml.impl.ChangeRelationContainementImpl#getNewContainment <em>New Containment</em>}</li>
+ *   <li>{@link typhonml.impl.ChangeRelationContainementImpl#isNewContainment <em>New Containment</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,24 +39,24 @@ public class ChangeRelationContainementImpl extends ChangeOperatorImpl implement
 	protected Relation relation;
 
 	/**
-	 * The default value of the '{@link #getNewContainment() <em>New Containment</em>}' attribute.
+	 * The default value of the '{@link #isNewContainment() <em>New Containment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewContainment()
+	 * @see #isNewContainment()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Boolean NEW_CONTAINMENT_EDEFAULT = null;
+	protected static final boolean NEW_CONTAINMENT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #getNewContainment() <em>New Containment</em>}' attribute.
+	 * The cached value of the '{@link #isNewContainment() <em>New Containment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getNewContainment()
+	 * @see #isNewContainment()
 	 * @generated
 	 * @ordered
 	 */
-	protected Boolean newContainment = NEW_CONTAINMENT_EDEFAULT;
+	protected boolean newContainment = NEW_CONTAINMENT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -123,7 +123,7 @@ public class ChangeRelationContainementImpl extends ChangeOperatorImpl implement
 	 * @generated
 	 */
 	@Override
-	public Boolean getNewContainment() {
+	public boolean isNewContainment() {
 		return newContainment;
 	}
 
@@ -133,8 +133,8 @@ public class ChangeRelationContainementImpl extends ChangeOperatorImpl implement
 	 * @generated
 	 */
 	@Override
-	public void setNewContainment(Boolean newNewContainment) {
-		Boolean oldNewContainment = newContainment;
+	public void setNewContainment(boolean newNewContainment) {
+		boolean oldNewContainment = newContainment;
 		newContainment = newNewContainment;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT, oldNewContainment, newContainment));
@@ -152,7 +152,7 @@ public class ChangeRelationContainementImpl extends ChangeOperatorImpl implement
 				if (resolve) return getRelation();
 				return basicGetRelation();
 			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
-				return getNewContainment();
+				return isNewContainment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,7 +204,7 @@ public class ChangeRelationContainementImpl extends ChangeOperatorImpl implement
 			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__RELATION:
 				return relation != null;
 			case TyphonmlPackage.CHANGE_RELATION_CONTAINEMENT__NEW_CONTAINMENT:
-				return NEW_CONTAINMENT_EDEFAULT == null ? newContainment != null : !NEW_CONTAINMENT_EDEFAULT.equals(newContainment);
+				return newContainment != NEW_CONTAINMENT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

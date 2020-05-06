@@ -102,6 +102,7 @@ public class DisableBidirectionalRelationItemProvider extends ChangeOperatorItem
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

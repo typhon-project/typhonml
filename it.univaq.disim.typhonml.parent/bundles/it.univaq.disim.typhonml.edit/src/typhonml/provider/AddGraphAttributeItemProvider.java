@@ -81,6 +81,7 @@ public class AddGraphAttributeItemProvider extends GraphAttributeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

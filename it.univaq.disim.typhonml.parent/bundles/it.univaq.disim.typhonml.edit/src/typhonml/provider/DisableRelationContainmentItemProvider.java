@@ -102,6 +102,7 @@ public class DisableRelationContainmentItemProvider extends ChangeOperatorItemPr
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

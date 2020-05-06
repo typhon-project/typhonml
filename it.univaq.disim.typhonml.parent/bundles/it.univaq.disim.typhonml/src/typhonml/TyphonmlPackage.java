@@ -5440,11 +5440,11 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getChangeRelationContainement_Relation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link typhonml.ChangeRelationContainement#getNewContainment <em>New Containment</em>}'.
+	 * Returns the meta object for the attribute '{@link typhonml.ChangeRelationContainement#isNewContainment <em>New Containment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>New Containment</em>'.
-	 * @see typhonml.ChangeRelationContainement#getNewContainment()
+	 * @see typhonml.ChangeRelationContainement#isNewContainment()
 	 * @see #getChangeRelationContainement()
 	 * @generated
 	 */
