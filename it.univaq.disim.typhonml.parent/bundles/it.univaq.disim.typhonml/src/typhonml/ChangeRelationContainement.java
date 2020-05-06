@@ -13,7 +13,7 @@ package typhonml;
  * </p>
  * <ul>
  *   <li>{@link typhonml.ChangeRelationContainement#getRelation <em>Relation</em>}</li>
- *   <li>{@link typhonml.ChangeRelationContainement#getNewContainment <em>New Containment</em>}</li>
+ *   <li>{@link typhonml.ChangeRelationContainement#isNewContainment <em>New Containment</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getChangeRelationContainement()
@@ -48,21 +48,21 @@ public interface ChangeRelationContainement extends ChangeOperator {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>New Containment</em>' attribute.
-	 * @see #setNewContainment(Boolean)
+	 * @see #setNewContainment(boolean)
 	 * @see typhonml.TyphonmlPackage#getChangeRelationContainement_NewContainment()
 	 * @model required="true"
 	 * @generated
 	 */
-	Boolean getNewContainment();
+	boolean isNewContainment();
 
 	/**
-	 * Sets the value of the '{@link typhonml.ChangeRelationContainement#getNewContainment <em>New Containment</em>}' attribute.
+	 * Sets the value of the '{@link typhonml.ChangeRelationContainement#isNewContainment <em>New Containment</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>New Containment</em>' attribute.
-	 * @see #getNewContainment()
+	 * @see #isNewContainment()
 	 * @generated
 	 */
-	void setNewContainment(Boolean value);
+	void setNewContainment(boolean value);
 
 } // ChangeRelationContainement

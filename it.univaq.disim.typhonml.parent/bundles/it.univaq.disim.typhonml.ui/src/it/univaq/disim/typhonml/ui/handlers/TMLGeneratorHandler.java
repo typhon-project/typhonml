@@ -20,6 +20,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
 import it.univaq.disim.typhon.acceleo.services.Services;
+import it.univaq.disim.typhonml.data_access_layer.epsilon.EGXXMIStandalone;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
@@ -36,7 +37,13 @@ public class TMLGeneratorHandler extends AbstractHandler {
         if (object instanceof IFile) {
         	IFile f = (IFile) object;
    			File folder = new File(f.getLocation().toOSString().replace("." + f.getFileExtension(), "") + File.separator + "gen-src");
-   			Services.generateFromTML(f.getFullPath().toString(), folder.getAbsolutePath());
+   			//Services.generateFromTML(f.getFullPath().toString(), folder.getAbsolutePath());
+   			try {
+				new EGXXMIStandalone().execute();
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
         	for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
         	    try {
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());

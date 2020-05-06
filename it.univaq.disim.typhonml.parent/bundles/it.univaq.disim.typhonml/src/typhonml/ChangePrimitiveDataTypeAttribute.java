@@ -27,7 +27,7 @@ public interface ChangePrimitiveDataTypeAttribute extends ChangeAttributeType {
 	 * @return the value of the '<em>Max Size</em>' attribute.
 	 * @see #setMaxSize(int)
 	 * @see typhonml.TyphonmlPackage#getChangePrimitiveDataTypeAttribute_MaxSize()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	int getMaxSize();

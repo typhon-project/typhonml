@@ -102,6 +102,7 @@ public class ChangeCustomDataTypeAttributeItemProvider extends ChangeAttributeTy
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

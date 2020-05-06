@@ -27,7 +27,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="IntType" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="BigintType" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringType" eSuperTypes="#//DataType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TextType" eSuperTypes="#//DataType"/>
   <eClassifiers xsi:type="ecore:EClass" name="PointType" eSuperTypes="#//DataType"/>
@@ -66,6 +67,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="FunctionalTag" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="NFunctionalTag" eSuperTypes="#//NamedElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//NamedElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="EmptyEntity"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="EmptyEntity" value="attributes->size() + relations->size() > 0"/>
+    </eAnnotations>
     <eOperations name="getCollections" ordered="false" upperBound="-1" eType="#//Collection">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
         <details key="body" value="typhonml::Collection.allInstances()->select(e|e.entity = self)"/>
@@ -239,7 +246,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="relation" lowerBound="1"
         eType="#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newContainment" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AddRelation" eSuperTypes="#//Relation #//ChangeOperator">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
@@ -369,7 +376,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChangePrimitiveDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeCustomDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="newType" lowerBound="1"

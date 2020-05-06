@@ -90,7 +90,7 @@ public class ChangeRelationContainementItemProvider extends ChangeOperatorItemPr
 				 true,
 				 false,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -114,11 +114,8 @@ public class ChangeRelationContainementItemProvider extends ChangeOperatorItemPr
 	 */
 	@Override
 	public String getText(Object object) {
-		Boolean labelValue = ((ChangeRelationContainement)object).getNewContainment();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ChangeRelationContainement_type") :
-			getString("_UI_ChangeRelationContainement_type") + " " + label;
+		ChangeRelationContainement changeRelationContainement = (ChangeRelationContainement)object;
+		return getString("_UI_ChangeRelationContainement_type") + " " + changeRelationContainement.isNewContainment();
 	}
 
 

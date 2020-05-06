@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import typhonml.AddAttribute;
@@ -97,6 +98,7 @@ import typhonml.Table;
 import typhonml.TextType;
 import typhonml.TyphonmlFactory;
 import typhonml.TyphonmlPackage;
+import typhonml.util.TyphonmlValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -745,6 +747,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		// Initialize created meta-data
 		theTyphonmlPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theTyphonmlPackage,
+			 new EValidator.Descriptor() {
+				 @Override
+				 public EValidator getEValidator() {
+					 return TyphonmlValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theTyphonmlPackage.freeze();
@@ -3173,7 +3185,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(bigintTypeEClass, BigintType.class, "BigintType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(stringTypeEClass, StringType.class, "StringType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringType_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringType_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 1, 1, StringType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(textTypeEClass, TextType.class, "TextType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -3333,7 +3345,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(changeRelationContainementEClass, ChangeRelationContainement.class, "ChangeRelationContainement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeRelationContainement_Relation(), this.getRelation(), null, "relation", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getChangeRelationContainement_NewContainment(), ecorePackage.getEBooleanObject(), "newContainment", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangeRelationContainement_NewContainment(), ecorePackage.getEBoolean(), "newContainment", null, 1, 1, ChangeRelationContainement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(addRelationEClass, AddRelation.class, "AddRelation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAddRelation_OwnerEntity(), this.getEntity(), null, "ownerEntity", null, 1, 1, AddRelation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3434,7 +3446,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(addCustomDataTypeAttributeEClass, AddCustomDataTypeAttribute.class, "AddCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(changePrimitiveDataTypeAttributeEClass, ChangePrimitiveDataTypeAttribute.class, "ChangePrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChangePrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 0, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getChangePrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 1, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(changeCustomDataTypeAttributeEClass, ChangeCustomDataTypeAttribute.class, "ChangeCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeCustomDataTypeAttribute_NewType(), this.getCustomDataType(), null, "newType", null, 1, 1, ChangeCustomDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3511,6 +3523,12 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 			   "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });
+		addAnnotation
+		  (entityEClass,
+		   source,
+		   new String[] {
+			   "constraints", "EmptyEntity"
+		   });
 	}
 
 	/**
@@ -3521,6 +3539,12 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 */
 	protected void createPivotAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
+		addAnnotation
+		  (entityEClass,
+		   source,
+		   new String[] {
+			   "EmptyEntity", "attributes->size() + relations->size() > 0"
+		   });
 		addAnnotation
 		  (getEntity__GetCollections(),
 		   source,

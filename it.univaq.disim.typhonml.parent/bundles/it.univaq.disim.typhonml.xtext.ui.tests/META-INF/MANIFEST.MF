@@ -17,4 +17,4 @@ Require-Bundle: it.univaq.disim.typhonml.xtext.ui,
  org.eclipse.ui.workbench;resolution:=optional,
  org.eclipse.xtext.ui.testing
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: it.univaq.disim.typhon.ui.tests;x-internal=true
+Export-Package: it.univaq.disim.typhon.ui.tests
