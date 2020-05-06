@@ -19,7 +19,7 @@ public class EGXXMIStandalone extends EpsilonStandalone{
 	private String RULES_PATH = "resources/generator/";
 	
 	private String TYPHONML_METAMODEL_NAME = "TyphonML";
-	private String TYPHONML_METAMODEL_PATH = "resources/model/typhonml.ecore";
+	//private String TYPHONML_METAMODEL_PATH = "resources/model/typhonml.ecore";
 	private String TYPHONML_MODEL_PATH = "resources/model/TyphonECommerceExample.xmi";
 	
 	public static void main(String[] args) throws Exception {
@@ -41,8 +41,8 @@ public class EGXXMIStandalone extends EpsilonStandalone{
 	@Override
 	public List<IModel> getModels() throws Exception {
 		List<IModel> models = new ArrayList<IModel>();
-		models.add(createEmfModel(TYPHONML_METAMODEL_NAME, TYPHONML_MODEL_PATH, TYPHONML_METAMODEL_PATH, true, false));
-//		models.add(createEmfModelByURI(TYPHONML_METAMODEL_NAME, TYPHONML_MODEL_PATH, TyphonmlPackage.eINSTANCE.getNsURI(), true, false));
+//		models.add(createEmfModel(TYPHONML_METAMODEL_NAME, TYPHONML_MODEL_PATH, TYPHONML_METAMODEL_PATH, true, false));
+		models.add(createEmfModelByURI(TYPHONML_METAMODEL_NAME, TYPHONML_MODEL_PATH, TyphonmlPackage.eINSTANCE.getNsURI(), true, false));
 		return models;
 	}
 
