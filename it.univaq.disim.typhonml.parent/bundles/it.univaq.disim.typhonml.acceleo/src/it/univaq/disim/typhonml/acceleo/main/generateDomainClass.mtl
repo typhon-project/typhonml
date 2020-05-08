@@ -1,0 +1,103 @@
+[comment encoding = UTF-8 /]
+[module generateDomainClass('http://org.typhon.dsls.typhonml.sirius')]
+
+
+[template public generateDomainClass(anEntity : Entity)]
+[comment @main /]
+[file ('/src/main/java/org/typhon/dl/domain/' + anEntity.name + '.java', false, 'UTF-8')]
+package org.typhon.dl.domain;
+
+[anEntity.getImports()/]
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class [anEntity.name/]{
+ 	[for (entityAttributeKind : EntityAttributeKind | anEntity.attributes)]
+[entityAttributeKind.getAttributeString()/]
+ 	[/for]
+ 	[for (relation : Relation | anEntity.relations)]
+		[if (relation.cardinality = typhonml::Cardinality::zero_one 
+			 or relation.cardinality = typhonml::Cardinality::one)]
+	private [relation.type.name/] [relation.name/];
+		[/if]
+		[if (relation.cardinality = typhonml::Cardinality::zero_many
+			 or relation.cardinality = typhonml::Cardinality::one_many)]
+	private List<[relation.type.name/]> [relation.name/];
+		[/if] 
+ 	[/for]
+}
+[/file]
+[/template]
+
+[template private getAttributeString(anAttribute : EntityAttributeKind)]
+	[if (anAttribute.oclIsKindOf(typhonml::Attribute))]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::IntType))]
+	private int [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::BigintType))]
+	private long [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::DatetimeType))]
+	private Date [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::BoolType))]
+	private boolean [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::FloatType))]
+	private float [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::BlobType))]
+	private byte ['['/][']'/] [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::StringType))]
+	//String type
+	private String [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::TextType))]
+	//TextType
+	private String [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::FreetextType))]
+	//Freetext type
+	private String ['['/][']'/] [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::PointType))]
+	private Point [anAttribute.name/];
+		[/if]
+		[if (anAttribute.oclAsType(typhonml::Attribute).type.oclIsTypeOf(typhonml::PolygonType))]
+	private Polygon [anAttribute.name/];
+		[/if]
+	[/if]
+	[if (anAttribute.oclIsKindOf(typhonml::CustomAttribute))]
+		// [anAttribute/] is a CUSTOM ATTRIBUTE
+	[/if]
+[/template]
+
+[template private getImports(anEntity : Entity)]
+[if (not anEntity.attributes->select(x | x.oclIsKindOf(typhonml::Attribute))
+		->collect(x | x.oclAsType(typhonml::Attribute).type)
+		->select(x | x.oclIsTypeOf(typhonml::DatetimeType))->isEmpty())]
+import java.util.Date;
+[/if]
+[if (not anEntity.attributes->select(x | x.oclIsKindOf(typhonml::Attribute))
+		->collect(x | x.oclAsType(typhonml::Attribute).type)
+		->select(x | x.oclIsTypeOf(typhonml::PointType))->isEmpty())]
+import org.typhon.dl.datatype.Point;
+[/if]
+[if (not anEntity.attributes->select(x | x.oclIsKindOf(typhonml::Attribute))
+		->collect(x | x.oclAsType(typhonml::Attribute).type)
+		->select(x | x.oclIsTypeOf(typhonml::PolygonType))->isEmpty())]
+import org.typhon.dl.datatype.Polygon;
+[/if]
+
+[if (not anEntity.relations->select(x | x.cardinality = typhonml::Cardinality::zero_many
+			 or x.cardinality = typhonml::Cardinality::one_many)->isEmpty())]
+import java.util.List;
+[/if]
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+[/template]
