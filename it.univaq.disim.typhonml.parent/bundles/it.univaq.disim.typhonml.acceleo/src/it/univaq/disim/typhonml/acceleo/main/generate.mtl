@@ -1,0 +1,37 @@
+[comment encoding = UTF-8 /]
+[module generate('http://org.typhon.dsls.typhonml.sirius')]
+[comment]
+[import it::univaq::disim::typhonml::acceleo::main::generateFixedFiles/]
+[import it::univaq::disim::typhonml::acceleo::main::generateDomainClass /]
+[import it::univaq::disim::typhonml::acceleo::main::generateControllerClass /]
+[import it::univaq::disim::typhonml::acceleo::main::generateDataTypeSupportingClass /]
+[/comment]
+
+[import it::univaq::disim::typhonml::acceleo::main::generateHeader /]
+[template public generateElement(aModel : Model)]
+[comment @main/]
+[file ('api-docs.json', false, 'UTF-8')]
+{
+	[generateHeader(aModel)/]
+	[generateTags(aModel)/]
+	[generatePaths(aModel)/]
+	[generateDefinitions(aModel)/]
+
+}
+[/file]
+[comment]
+[generatePomElement(aModel)/]
+[generateSwaggerConfig(aModel)/])
+[generateApplicationFile(aModel)/]
+[generatePointClass()/]
+[generatePolygonClass()/]
+[generateApplicationPropertiesFile(aModel)/]
+[for (entity : Entity | aModel.entities)]
+	[generateDomainClass(entity)/]
+	[generateControllerClass(entity)/]
+[/for]
+[/comment]
+
+
+
+[/template]

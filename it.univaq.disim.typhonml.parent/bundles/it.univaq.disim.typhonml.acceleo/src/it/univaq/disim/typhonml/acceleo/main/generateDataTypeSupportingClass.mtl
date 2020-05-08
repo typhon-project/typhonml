@@ -1,0 +1,41 @@
+[comment encoding = UTF-8 /]
+[module generateDataTypeSupportingClass('http://org.typhon.dsls.typhonml.sirius')]
+
+
+[template public generatePointClass()]
+[comment @main /]
+[file ('/src/main/java/org/typhon/dl/datatype/Point.java', 
+		false, 'UTF-8')]
+package org.typhon.dl.datatype;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class Point {
+	private String xCoord;
+	private String yCoord;
+}
+[/file]
+[/template]
+
+[template public generatePolygonClass()]
+[file ('/src/main/java/org/typhon/dl/datatype/Polygon.java', 
+		false, 'UTF-8')]
+package org.typhon.dl.datatype;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+public class Polygon {
+	
+}
+[/file]
+[/template]
