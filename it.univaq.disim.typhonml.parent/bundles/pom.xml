@@ -27,7 +27,6 @@
 		<module>it.univaq.disim.typhonml.acceleo</module>
 		
 		<module>it.univaq.disim.typhonml.mapping_generation</module>
-		<module>it.univaq.disim.typhonml.data_access_layer</module>
 		<module>it.univaq.disim.typhonml.repository	</module>
 		<module>it.univaq.disim.typhonml.ui</module>
 		<module>it.univaq.disim.typhonml.maven_dep</module>

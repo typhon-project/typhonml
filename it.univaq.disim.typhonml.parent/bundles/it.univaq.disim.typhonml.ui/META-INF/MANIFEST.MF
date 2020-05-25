@@ -10,6 +10,6 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime;bundle-version="3.13.0",
  org.eclipse.emf.ecore;bundle-version="2.13.0",
  org.eclipse.core.resources,
- it.univaq.disim.typhonml.data_access_layer;bundle-version="1.0.0"
+ it.univaq.disim.typhonml.acceleo;bundle-version="1.0.0"
 Import-Package: org.eclipse.core.resources,
  typhonml
