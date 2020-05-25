@@ -1,0 +1,1532 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "Api Documentation",
+		"version": "1.0",
+		"title": "Api Documentation",
+		"termsOfService": "urn:tos",
+		"contact": { },
+		"license": {
+			"name": "Apache 2.0",
+			"url": "http://www.apache.org/licenses/LICENSE-2.0"
+		}
+	},
+	"basePath": "/",
+	"tags":[ 
+		{
+			"name": "Review-rest-controller",
+			"description": "Review Rest Controller"
+		},	{
+			"name": "Product-rest-controller",
+			"description": "Product Rest Controller"
+		},	{
+			"name": "Category-rest-controller",
+			"description": "Category Rest Controller"
+		},	{
+			"name": "Item-rest-controller",
+			"description": "Item Rest Controller"
+		},	{
+			"name": "Tag-rest-controller",
+			"description": "Tag Rest Controller"
+		},	{
+			"name": "User-rest-controller",
+			"description": "User Rest Controller"
+		},	{
+			"name": "Biography-rest-controller",
+			"description": "Biography Rest Controller"
+		}
+	],
+	"paths":{
+		"/Review": {
+			"post": {
+				"tags": [
+					"Review-rest-controller"
+				],
+				"summary": "storeReview",
+				"operationId": "storeReviewUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "review",
+						"description": "review",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Review"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/Review/{id}": {
+			"get": {
+				"tags": [
+					"Review-rest-controller"
+				],
+				"summary": "getReview",
+				"operationId": "getReviewUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Review"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Review-rest-controller"
+				],
+				"summary": "deleteReview",
+				"operationId": "deleteReviewUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"Review-rest-controller"
+				],
+				"summary": "updateReview",
+				"operationId": "updateReviewUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "review",
+						"description": "review",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ReviewPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	,
+		"/Product": {
+			"post": {
+				"tags": [
+					"Product-rest-controller"
+				],
+				"summary": "storeProduct",
+				"operationId": "storeProductUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "product",
+						"description": "product",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Product"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/Product/{id}": {
+			"get": {
+				"tags": [
+					"Product-rest-controller"
+				],
+				"summary": "getProduct",
+				"operationId": "getProductUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Product"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Product-rest-controller"
+				],
+				"summary": "deleteProduct",
+				"operationId": "deleteProductUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"Product-rest-controller"
+				],
+				"summary": "updateProduct",
+				"operationId": "updateProductUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "product",
+						"description": "product",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ProductPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	,
+		"/Category": {
+			"post": {
+				"tags": [
+					"Category-rest-controller"
+				],
+				"summary": "storeCategory",
+				"operationId": "storeCategoryUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "category",
+						"description": "category",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Category"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/Category/{id}": {
+			"get": {
+				"tags": [
+					"Category-rest-controller"
+				],
+				"summary": "getCategory",
+				"operationId": "getCategoryUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Category"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Category-rest-controller"
+				],
+				"summary": "deleteCategory",
+				"operationId": "deleteCategoryUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"Category-rest-controller"
+				],
+				"summary": "updateCategory",
+				"operationId": "updateCategoryUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "category",
+						"description": "category",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/CategoryPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	,
+		"/Item": {
+			"post": {
+				"tags": [
+					"Item-rest-controller"
+				],
+				"summary": "storeItem",
+				"operationId": "storeItemUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "item",
+						"description": "item",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Item"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/Item/{id}": {
+			"get": {
+				"tags": [
+					"Item-rest-controller"
+				],
+				"summary": "getItem",
+				"operationId": "getItemUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Item"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Item-rest-controller"
+				],
+				"summary": "deleteItem",
+				"operationId": "deleteItemUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"Item-rest-controller"
+				],
+				"summary": "updateItem",
+				"operationId": "updateItemUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "item",
+						"description": "item",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ItemPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	,
+		"/Tag": {
+			"post": {
+				"tags": [
+					"Tag-rest-controller"
+				],
+				"summary": "storeTag",
+				"operationId": "storeTagUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "tag",
+						"description": "tag",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Tag"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/Tag/{id}": {
+			"get": {
+				"tags": [
+					"Tag-rest-controller"
+				],
+				"summary": "getTag",
+				"operationId": "getTagUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Tag"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Tag-rest-controller"
+				],
+				"summary": "deleteTag",
+				"operationId": "deleteTagUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"Tag-rest-controller"
+				],
+				"summary": "updateTag",
+				"operationId": "updateTagUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "tag",
+						"description": "tag",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/TagPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	,
+		"/User": {
+			"post": {
+				"tags": [
+					"User-rest-controller"
+				],
+				"summary": "storeUser",
+				"operationId": "storeUserUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "user",
+						"description": "user",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/User/{id}": {
+			"get": {
+				"tags": [
+					"User-rest-controller"
+				],
+				"summary": "getUser",
+				"operationId": "getUserUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/User"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"User-rest-controller"
+				],
+				"summary": "deleteUser",
+				"operationId": "deleteUserUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"User-rest-controller"
+				],
+				"summary": "updateUser",
+				"operationId": "updateUserUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "user",
+						"description": "user",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	,
+		"/Biography": {
+			"post": {
+				"tags": [
+					"Biography-rest-controller"
+				],
+				"summary": "storeBiography",
+				"operationId": "storeBiographyUsingPOST",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "biography",
+						"description": "biography",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Biography"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"201": {
+						"description": "Created"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/Biography/{id}": {
+			"get": {
+				"tags": [
+					"Biography-rest-controller"
+				],
+				"summary": "getBiography",
+				"operationId": "getBiographyUsingGET",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/Biography"
+						}
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"Biography-rest-controller"
+				],
+				"summary": "deleteBiography",
+				"operationId": "deleteBiographyUsingDELETE",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"Biography-rest-controller"
+				],
+				"summary": "updateBiography",
+				"operationId": "updateBiographyUsingPATCH",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "biography",
+						"description": "biography",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/BiographyPatch"
+						}
+					},
+					{
+						"name": "id",
+						"in": "path",
+						"description": "id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"type": "boolean"
+						}
+					},
+					"204": {
+						"description": "No Content"
+					},
+					"401": {
+						"description": "Unauthorized"
+					},
+					"403": {
+						"description": "Forbidden"
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"definitions" : {
+		
+		"Review": {
+			"type" : "object",
+			"properties": {
+				"content" : {
+					"type" : "string"
+				},
+				"product" : {
+					"type" : "string"
+				}
+		,
+				"user" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Review"
+		},
+		"Product": {
+			"type" : "object",
+			"properties": {
+				"name" : {
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"price" : {
+					"type" : "string"
+				},
+				"productionDate" : {
+					"type" : "string"
+				},
+				"reviews" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				}
+		,
+				"tags" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				}
+		,
+				"inventory" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				}
+		,
+				"category" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Product"
+		},
+		"Category": {
+			"type" : "object",
+			"properties": {
+				"id" : {
+					"type" : "string"
+				},
+				"name" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Category"
+		},
+		"Item": {
+			"type" : "object",
+			"properties": {
+				"shelf" : {
+					"type" : "string"
+				},
+				"product" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Item"
+		},
+		"Tag": {
+			"type" : "object",
+			"properties": {
+				"name" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Tag"
+		},
+		"User": {
+			"type" : "object",
+			"properties": {
+				"name" : {
+					"type" : "string"
+				},
+				"address" : {
+					"type" : "string"
+				},
+				"biography" : {
+					"type" : "string"
+				}
+		,
+				"reviews" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				}
+		
+			},
+			"title" : "User"
+		},
+		"Biography": {
+			"type" : "object",
+			"properties": {
+				"content" : {
+					"type" : "string"
+				},
+				"user" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Biography"
+		}
+		,
+		
+		"ReviewPatch": {
+			"type" : "object",
+			"properties": {
+				"content" : {
+					"type" : "string"
+				},
+				"product" : {
+					"type" : "string"
+				}
+		,
+				"user" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Review"
+		},
+		"ProductPatch": {
+			"type" : "object",
+			"properties": {
+				"name" : {
+					"type" : "string"
+				},
+				"description" : {
+					"type" : "string"
+				},
+				"price" : {
+					"type" : "string"
+				},
+				"productionDate" : {
+					"type" : "string"
+				},
+				"reviews" : {
+					"$ref" : "#/definitions/PatchMultipleRelation"
+				}
+		,
+				"tags" : {
+					"$ref" : "#/definitions/PatchMultipleRelation"
+				}
+		,
+				"inventory" : {
+					"$ref" : "#/definitions/PatchMultipleRelation"
+				}
+		,
+				"category" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Product"
+		},
+		"CategoryPatch": {
+			"type" : "object",
+			"properties": {
+				"id" : {
+					"type" : "string"
+				},
+				"name" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Category"
+		},
+		"ItemPatch": {
+			"type" : "object",
+			"properties": {
+				"shelf" : {
+					"type" : "string"
+				},
+				"product" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Item"
+		},
+		"TagPatch": {
+			"type" : "object",
+			"properties": {
+				"name" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Tag"
+		},
+		"UserPatch": {
+			"type" : "object",
+			"properties": {
+				"name" : {
+					"type" : "string"
+				},
+				"address" : {
+					"type" : "string"
+				},
+				"biography" : {
+					"type" : "string"
+				}
+		,
+				"reviews" : {
+					"$ref" : "#/definitions/PatchMultipleRelation"
+				}
+		
+			},
+			"title" : "User"
+		},
+		"BiographyPatch": {
+			"type" : "object",
+			"properties": {
+				"content" : {
+					"type" : "string"
+				},
+				"user" : {
+					"type" : "string"
+				}
+		
+			},
+			"title" : "Biography"
+		},
+		"PatchMultipleRelation" : {
+			"type" : "object",
+			"properties": {
+				"add" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				},
+				"remove" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				},
+				"set" : {
+					"type" : "array",
+					"items" : {
+						"type": "string"
+					}
+				}
+			}
+		}	
+	}
+
+}

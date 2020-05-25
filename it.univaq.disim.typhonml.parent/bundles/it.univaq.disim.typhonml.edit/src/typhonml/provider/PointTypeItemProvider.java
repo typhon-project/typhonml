@@ -76,6 +76,7 @@ public class PointTypeItemProvider extends DataTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**

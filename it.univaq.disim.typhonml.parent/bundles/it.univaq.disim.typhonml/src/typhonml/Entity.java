@@ -20,7 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getEntity()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='EmptyEntity'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot EmptyEntity='attributes-&gt;size() + relations-&gt;size() &gt; 0'"
  * @generated
  */
 public interface Entity extends NamedElement {

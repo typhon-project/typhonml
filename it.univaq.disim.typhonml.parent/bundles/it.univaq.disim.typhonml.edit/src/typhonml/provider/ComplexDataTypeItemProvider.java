@@ -106,6 +106,7 @@ public class ComplexDataTypeItemProvider extends SuperDataTypeItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+		super.notifyChanged(notification);
 	}
 
 	/**
