@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="generateCustomDataTypeSupportingClass" name="it.univaq.disim.typhonml.acceleo">
+    <property name="ECLIPSE_HOME" value="../../../../../../../eclipse/modeling-2019-09/Eclipse.app/Contents/Eclipse"/>
+    <property name="ECLIPSE_WORKSPACE" value="../../../../../../../development/workspaces/typhonml-covid"/>
+
+    <!-- The classpath with only the dependencies used by the project -->
+    <path id="it.univaq.disim.typhonml.acceleo.libraryclasspath">
+        <pathelement location="${ECLIPSE_WORKSPACE}/it.univaq.disim.typhonml.acceleo/bin"/>
+    </path>
+
+    <path id="it.univaq.disim.typhonml.acceleo.classpath">
+        <path refid="it.univaq.disim.typhonml.acceleo.libraryclasspath"/>
+    </path>
+
+    <!-- The classpath with only the jars available in the plugin folder of Eclipse -->
+    <path id="it.univaq.disim.typhonml.acceleo.libraryclasspath.alljars">
+        <pathelement location="../it.univaq.disim.typhonml.acceleo/bin"/>
+        <fileset dir="${ECLIPSE_HOME}/plugins/" includes="*.jar"/>
+    </path>
+
+    <path id="it.univaq.disim.typhonml.acceleo.classpath.alljars">
+        <path refid="it.univaq.disim.typhonml.acceleo.libraryclasspath.alljars"/>
+    </path>
+
+    <!-- The default task with the jars used by this project -->
+    <target name="generateCustomDataTypeSupportingClass">
+        <java classname="it.univaq.disim.typhonml.acceleo.main.GenerateCustomDataTypeSupportingClass" classpathref="it.univaq.disim.typhonml.acceleo.classpath">
+            <arg value="${model}"/>
+            <arg value="${target}"/>
+        </java>
+    </target>
+
+    <!--
+        In case of problem you can also try with all the jar available in your Eclipse
+        Keep in mind that having two versions of the same jar can create problems
+    -->
+    <target name="generateCustomDataTypeSupportingClass.alljars">
+        <java classname="it.univaq.disim.typhonml.acceleo.main.GenerateCustomDataTypeSupportingClass" classpathref="it.univaq.disim.typhonml.acceleo.classpath">
+            <arg value="${model}"/>
+            <arg value="${target}"/>
+        </java>
+    </target>
+</project>

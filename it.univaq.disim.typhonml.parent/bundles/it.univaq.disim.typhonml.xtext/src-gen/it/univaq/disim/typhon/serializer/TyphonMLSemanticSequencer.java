@@ -603,7 +603,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getRelationRelationEStringParserRuleCall_2_0_1(), semanticObject.eGet(TyphonmlPackage.Literals.CHANGE_RELATION_CONTAINEMENT__RELATION, false));
-		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getNewContainmentEBooleanObjectParserRuleCall_4_0(), semanticObject.getNewContainment());
+		feeder.accept(grammarAccess.getChangeRelationContainementAccess().getNewContainmentEBooleanObjectParserRuleCall_4_0(), semanticObject.isNewContainment());
 		feeder.finish();
 	}
 	
