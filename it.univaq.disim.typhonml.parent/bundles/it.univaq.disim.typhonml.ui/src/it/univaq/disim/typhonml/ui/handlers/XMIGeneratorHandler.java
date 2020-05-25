@@ -2,8 +2,6 @@ package it.univaq.disim.typhonml.ui.handlers;
 
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -19,7 +17,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.handlers.HandlerUtil;
 
-import it.univaq.disim.typhon.acceleo.services.Services;
+import it.univaq.disim.typhonml.acceleo.runner.Runner;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
@@ -36,9 +34,11 @@ public class XMIGeneratorHandler extends AbstractHandler {
         if (object instanceof IFile) {
         	IFile f = (IFile) object;
    			File folder = new File(f.getLocation().toOSString().replace("." + f.getFileExtension(), "") + File.separator + "gen-src");
-   			Services.generateFromXMI(f.getFullPath().toString(), folder.getAbsolutePath());
+   			//Services.generateFromXMI(f.getFullPath().toString(), folder.getAbsolutePath());
         	for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
         	    try {
+        	    	Runner r = new Runner();
+       				r.run(f.getFullPath().toString(), folder.toString());
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 				} catch (CoreException e) {
 					// TODO Auto-generated catch block

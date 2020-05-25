@@ -22,7 +22,8 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Eclipse-LazyStart: true
-Export-Package: it.univaq.disim.typhonml.acceleo.main
+Export-Package: it.univaq.disim.typhonml.acceleo.main,
+ it.univaq.disim.typhonml.acceleo.runner
 Import-Package: com.google.inject,
  org.eclipse.xtext.resource
 
