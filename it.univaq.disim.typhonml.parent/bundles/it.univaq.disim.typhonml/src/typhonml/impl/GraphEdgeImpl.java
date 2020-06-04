@@ -14,14 +14,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import typhonml.Entity;
 import typhonml.GraphEdge;
 import typhonml.GraphEdgeLabel;
-import typhonml.Relation;
+import typhonml.GraphNode;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -35,12 +33,11 @@ import typhonml.TyphonmlPackage;
  *   <li>{@link typhonml.impl.GraphEdgeImpl#getFrom <em>From</em>}</li>
  *   <li>{@link typhonml.impl.GraphEdgeImpl#getTo <em>To</em>}</li>
  *   <li>{@link typhonml.impl.GraphEdgeImpl#getLabels <em>Labels</em>}</li>
- *   <li>{@link typhonml.impl.GraphEdgeImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements GraphEdge {
+public class GraphEdgeImpl extends NamedElementImpl implements GraphEdge {
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -49,7 +46,7 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @generated
 	 * @ordered
 	 */
-	protected Relation from;
+	protected GraphNode from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -59,7 +56,7 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @generated
 	 * @ordered
 	 */
-	protected Relation to;
+	protected GraphNode to;
 
 	/**
 	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference list.
@@ -70,16 +67,6 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @ordered
 	 */
 	protected EList<GraphEdgeLabel> labels;
-
-	/**
-	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEntity()
-	 * @generated
-	 * @ordered
-	 */
-	protected Entity entity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,10 +93,10 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @generated
 	 */
 	@Override
-	public Relation getFrom() {
+	public GraphNode getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (Relation)eResolveProxy(oldFrom);
+			from = (GraphNode)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.GRAPH_EDGE__FROM, oldFrom, from));
@@ -123,7 +110,7 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Relation basicGetFrom() {
+	public GraphNode basicGetFrom() {
 		return from;
 	}
 
@@ -133,8 +120,8 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @generated
 	 */
 	@Override
-	public void setFrom(Relation newFrom) {
-		Relation oldFrom = from;
+	public void setFrom(GraphNode newFrom) {
+		GraphNode oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.GRAPH_EDGE__FROM, oldFrom, from));
@@ -146,10 +133,10 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @generated
 	 */
 	@Override
-	public Relation getTo() {
+	public GraphNode getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (Relation)eResolveProxy(oldTo);
+			to = (GraphNode)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.GRAPH_EDGE__TO, oldTo, to));
@@ -163,7 +150,7 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Relation basicGetTo() {
+	public GraphNode basicGetTo() {
 		return to;
 	}
 
@@ -173,8 +160,8 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	 * @generated
 	 */
 	@Override
-	public void setTo(Relation newTo) {
-		Relation oldTo = to;
+	public void setTo(GraphNode newTo) {
+		GraphNode oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.GRAPH_EDGE__TO, oldTo, to));
@@ -191,46 +178,6 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 			labels = new EObjectContainmentEList<GraphEdgeLabel>(GraphEdgeLabel.class, this, TyphonmlPackage.GRAPH_EDGE__LABELS);
 		}
 		return labels;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Entity getEntity() {
-		if (entity != null && entity.eIsProxy()) {
-			InternalEObject oldEntity = (InternalEObject)entity;
-			entity = (Entity)eResolveProxy(oldEntity);
-			if (entity != oldEntity) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.GRAPH_EDGE__ENTITY, oldEntity, entity));
-			}
-		}
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Entity basicGetEntity() {
-		return entity;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEntity(Entity newEntity) {
-		Entity oldEntity = entity;
-		entity = newEntity;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.GRAPH_EDGE__ENTITY, oldEntity, entity));
 	}
 
 	/**
@@ -263,9 +210,6 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 				return basicGetTo();
 			case TyphonmlPackage.GRAPH_EDGE__LABELS:
 				return getLabels();
-			case TyphonmlPackage.GRAPH_EDGE__ENTITY:
-				if (resolve) return getEntity();
-				return basicGetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -280,17 +224,14 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case TyphonmlPackage.GRAPH_EDGE__FROM:
-				setFrom((Relation)newValue);
+				setFrom((GraphNode)newValue);
 				return;
 			case TyphonmlPackage.GRAPH_EDGE__TO:
-				setTo((Relation)newValue);
+				setTo((GraphNode)newValue);
 				return;
 			case TyphonmlPackage.GRAPH_EDGE__LABELS:
 				getLabels().clear();
 				getLabels().addAll((Collection<? extends GraphEdgeLabel>)newValue);
-				return;
-			case TyphonmlPackage.GRAPH_EDGE__ENTITY:
-				setEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -305,16 +246,13 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case TyphonmlPackage.GRAPH_EDGE__FROM:
-				setFrom((Relation)null);
+				setFrom((GraphNode)null);
 				return;
 			case TyphonmlPackage.GRAPH_EDGE__TO:
-				setTo((Relation)null);
+				setTo((GraphNode)null);
 				return;
 			case TyphonmlPackage.GRAPH_EDGE__LABELS:
 				getLabels().clear();
-				return;
-			case TyphonmlPackage.GRAPH_EDGE__ENTITY:
-				setEntity((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -334,8 +272,6 @@ public class GraphEdgeImpl extends MinimalEObjectImpl.Container implements Graph
 				return to != null;
 			case TyphonmlPackage.GRAPH_EDGE__LABELS:
 				return labels != null && !labels.isEmpty();
-			case TyphonmlPackage.GRAPH_EDGE__ENTITY:
-				return entity != null;
 		}
 		return super.eIsSet(featureID);
 	}

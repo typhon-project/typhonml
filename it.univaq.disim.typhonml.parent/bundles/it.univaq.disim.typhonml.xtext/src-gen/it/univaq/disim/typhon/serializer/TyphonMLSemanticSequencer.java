@@ -423,7 +423,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AddGraphEdge returns AddGraphEdge
 	 *
 	 * Constraint:
-	 *     (from=[Relation|EString]? to=[Relation|EString]?)
+	 *     (importedNamespace=EString? name=EString from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
 	 */
 	protected void sequence_AddGraphEdge(ISerializationContext context, AddGraphEdge semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -955,7 +955,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphDB returns GraphDB
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString (edges+=GraphEdge edges+=GraphEdge*)?)
+	 *     (importedNamespace=EString? name=EString (nodes+=GraphNode nodes+=GraphNode*)? (edges+=GraphEdge edges+=GraphEdge*)?)
 	 */
 	protected void sequence_GraphDB(ISerializationContext context, GraphDB semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -980,7 +980,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     GraphEdge_Impl returns GraphEdge
 	 *
 	 * Constraint:
-	 *     (entity=[Entity|EString] from=[Relation|EString]? to=[Relation|EString]?)
+	 *     (importedNamespace=EString? name=EString from=[GraphNode|EString]? to=[GraphNode|EString]? (labels+=GraphEdgeLabel labels+=GraphEdgeLabel*)?)
 	 */
 	protected void sequence_GraphEdge_Impl(ISerializationContext context, GraphEdge semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
