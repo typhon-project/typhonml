@@ -351,6 +351,7 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.GRAPH_EDGE: {
 				GraphEdge graphEdge = (GraphEdge)theEObject;
 				T result = caseGraphEdge(graphEdge);
+				if (result == null) result = caseNamedElement(graphEdge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -613,6 +614,7 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				T result = caseAddGraphEdge(addGraphEdge);
 				if (result == null) result = caseChangeOperator(addGraphEdge);
 				if (result == null) result = caseGraphEdge(addGraphEdge);
+				if (result == null) result = caseNamedElement(addGraphEdge);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

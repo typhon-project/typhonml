@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import typhonml.AddGraphEdge;
@@ -47,11 +48,56 @@ public class AddGraphEdgeItemProvider extends ChangeOperatorItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNamePropertyDescriptor(object);
+			addImportedNamespacePropertyDescriptor(object);
 			addFromPropertyDescriptor(object);
 			addToPropertyDescriptor(object);
-			addEntityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Name feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNamePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_name_feature", "_UI_NamedElement_type"),
+				 TyphonmlPackage.Literals.NAMED_ELEMENT__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Imported Namespace feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImportedNamespacePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NamedElement_importedNamespace_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NamedElement_importedNamespace_feature", "_UI_NamedElement_type"),
+				 TyphonmlPackage.Literals.NAMED_ELEMENT__IMPORTED_NAMESPACE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -90,28 +136,6 @@ public class AddGraphEdgeItemProvider extends ChangeOperatorItemProvider {
 				 getString("_UI_GraphEdge_to_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_GraphEdge_to_feature", "_UI_GraphEdge_type"),
 				 TyphonmlPackage.Literals.GRAPH_EDGE__TO,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Entity feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEntityPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_GraphEdge_entity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_GraphEdge_entity_feature", "_UI_GraphEdge_type"),
-				 TyphonmlPackage.Literals.GRAPH_EDGE__ENTITY,
 				 true,
 				 false,
 				 true,
@@ -169,7 +193,10 @@ public class AddGraphEdgeItemProvider extends ChangeOperatorItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_AddGraphEdge_type");
+		String label = ((AddGraphEdge)object).getName();
+		return label == null || label.length() == 0 ?
+			getString("_UI_AddGraphEdge_type") :
+			getString("_UI_AddGraphEdge_type") + " " + label;
 	}
 
 
@@ -185,6 +212,10 @@ public class AddGraphEdgeItemProvider extends ChangeOperatorItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(AddGraphEdge.class)) {
+			case TyphonmlPackage.ADD_GRAPH_EDGE__NAME:
+			case TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
