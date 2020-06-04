@@ -2343,36 +2343,25 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cNodesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Keyword cEdgesKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
-		private final Assignment cNodesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
-		private final RuleCall cNodesGraphNodeParserRuleCall_5_2_0 = (RuleCall)cNodesAssignment_5_2.eContents().get(0);
+		private final Assignment cEdgesAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
+		private final RuleCall cEdgesGraphEdgeParserRuleCall_5_2_0 = (RuleCall)cEdgesAssignment_5_2.eContents().get(0);
 		private final Group cGroup_5_3 = (Group)cGroup_5.eContents().get(3);
 		private final Keyword cCommaKeyword_5_3_0 = (Keyword)cGroup_5_3.eContents().get(0);
-		private final Assignment cNodesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
-		private final RuleCall cNodesGraphNodeParserRuleCall_5_3_1_0 = (RuleCall)cNodesAssignment_5_3_1.eContents().get(0);
+		private final Assignment cEdgesAssignment_5_3_1 = (Assignment)cGroup_5_3.eContents().get(1);
+		private final RuleCall cEdgesGraphEdgeParserRuleCall_5_3_1_0 = (RuleCall)cEdgesAssignment_5_3_1.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_5_4 = (Keyword)cGroup_5.eContents().get(4);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cEdgesKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cEdgesAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cEdgesGraphEdgeParserRuleCall_6_2_0 = (RuleCall)cEdgesAssignment_6_2.eContents().get(0);
-		private final Group cGroup_6_3 = (Group)cGroup_6.eContents().get(3);
-		private final Keyword cCommaKeyword_6_3_0 = (Keyword)cGroup_6_3.eContents().get(0);
-		private final Assignment cEdgesAssignment_6_3_1 = (Assignment)cGroup_6_3.eContents().get(1);
-		private final RuleCall cEdgesGraphEdgeParserRuleCall_6_3_1_0 = (RuleCall)cEdgesAssignment_6_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6_4 = (Keyword)cGroup_6.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//GraphDB:
 		//	{GraphDB} ('importedNamespace' importedNamespace=EString)?
-		//	'graphdb' name=EString '{' ('nodes' '{' nodes+=GraphNode ("," nodes+=GraphNode)* '}')? ('edges' '{' edges+=GraphEdge
-		//	("," edges+=GraphEdge)* '}')?
+		//	'graphdb' name=EString '{' ('edges' '{' edges+=GraphEdge ("," edges+=GraphEdge)* '}')?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GraphDB} ('importedNamespace' importedNamespace=EString)? 'graphdb' name=EString '{' ('nodes' '{' nodes+=GraphNode (","
-		//nodes+=GraphNode)* '}')? ('edges' '{' edges+=GraphEdge ("," edges+=GraphEdge)* '}')? '}'
+		//{GraphDB} ('importedNamespace' importedNamespace=EString)? 'graphdb' name=EString '{' ('edges' '{' edges+=GraphEdge (","
+		//edges+=GraphEdge)* '}')? '}'
 		public Group getGroup() { return cGroup; }
 		
 		//{GraphDB}
@@ -2402,68 +2391,38 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//('nodes' '{' nodes+=GraphNode ("," nodes+=GraphNode)* '}')?
+		//('edges' '{' edges+=GraphEdge ("," edges+=GraphEdge)* '}')?
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//'nodes'
-		public Keyword getNodesKeyword_5_0() { return cNodesKeyword_5_0; }
+		//'edges'
+		public Keyword getEdgesKeyword_5_0() { return cEdgesKeyword_5_0; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 		
-		//nodes+=GraphNode
-		public Assignment getNodesAssignment_5_2() { return cNodesAssignment_5_2; }
+		//edges+=GraphEdge
+		public Assignment getEdgesAssignment_5_2() { return cEdgesAssignment_5_2; }
 		
-		//GraphNode
-		public RuleCall getNodesGraphNodeParserRuleCall_5_2_0() { return cNodesGraphNodeParserRuleCall_5_2_0; }
+		//GraphEdge
+		public RuleCall getEdgesGraphEdgeParserRuleCall_5_2_0() { return cEdgesGraphEdgeParserRuleCall_5_2_0; }
 		
-		//("," nodes+=GraphNode)*
+		//("," edges+=GraphEdge)*
 		public Group getGroup_5_3() { return cGroup_5_3; }
 		
 		//","
 		public Keyword getCommaKeyword_5_3_0() { return cCommaKeyword_5_3_0; }
 		
-		//nodes+=GraphNode
-		public Assignment getNodesAssignment_5_3_1() { return cNodesAssignment_5_3_1; }
+		//edges+=GraphEdge
+		public Assignment getEdgesAssignment_5_3_1() { return cEdgesAssignment_5_3_1; }
 		
-		//GraphNode
-		public RuleCall getNodesGraphNodeParserRuleCall_5_3_1_0() { return cNodesGraphNodeParserRuleCall_5_3_1_0; }
+		//GraphEdge
+		public RuleCall getEdgesGraphEdgeParserRuleCall_5_3_1_0() { return cEdgesGraphEdgeParserRuleCall_5_3_1_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5_4() { return cRightCurlyBracketKeyword_5_4; }
 		
-		//('edges' '{' edges+=GraphEdge ("," edges+=GraphEdge)* '}')?
-		public Group getGroup_6() { return cGroup_6; }
-		
-		//'edges'
-		public Keyword getEdgesKeyword_6_0() { return cEdgesKeyword_6_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_6_1() { return cLeftCurlyBracketKeyword_6_1; }
-		
-		//edges+=GraphEdge
-		public Assignment getEdgesAssignment_6_2() { return cEdgesAssignment_6_2; }
-		
-		//GraphEdge
-		public RuleCall getEdgesGraphEdgeParserRuleCall_6_2_0() { return cEdgesGraphEdgeParserRuleCall_6_2_0; }
-		
-		//("," edges+=GraphEdge)*
-		public Group getGroup_6_3() { return cGroup_6_3; }
-		
-		//","
-		public Keyword getCommaKeyword_6_3_0() { return cCommaKeyword_6_3_0; }
-		
-		//edges+=GraphEdge
-		public Assignment getEdgesAssignment_6_3_1() { return cEdgesAssignment_6_3_1; }
-		
-		//GraphEdge
-		public RuleCall getEdgesGraphEdgeParserRuleCall_6_3_1_0() { return cEdgesGraphEdgeParserRuleCall_6_3_1_0; }
-		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6_4() { return cRightCurlyBracketKeyword_6_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class ColumnDBElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.ColumnDB");
@@ -2563,136 +2522,92 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.GraphEdge_Impl");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cGraphEdgeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cImportedNamespaceKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cImportedNamespaceEStringParserRuleCall_1_1_0 = (RuleCall)cImportedNamespaceAssignment_1_1.eContents().get(0);
-		private final Keyword cEdgeKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Keyword cEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cConcordanceKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cEntityEntityCrossReference_3_0 = (CrossReference)cEntityAssignment_3.eContents().get(0);
+		private final RuleCall cEntityEntityEStringParserRuleCall_3_0_1 = (RuleCall)cEntityEntityCrossReference_3_0.eContents().get(1);
 		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cFromKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cFromAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cFromGraphNodeCrossReference_5_1_0 = (CrossReference)cFromAssignment_5_1.eContents().get(0);
-		private final RuleCall cFromGraphNodeEStringParserRuleCall_5_1_0_1 = (RuleCall)cFromGraphNodeCrossReference_5_1_0.eContents().get(1);
+		private final CrossReference cFromRelationCrossReference_5_1_0 = (CrossReference)cFromAssignment_5_1.eContents().get(0);
+		private final RuleCall cFromRelationEStringParserRuleCall_5_1_0_1 = (RuleCall)cFromRelationCrossReference_5_1_0.eContents().get(1);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cToKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Assignment cToAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cToGraphNodeCrossReference_6_1_0 = (CrossReference)cToAssignment_6_1.eContents().get(0);
-		private final RuleCall cToGraphNodeEStringParserRuleCall_6_1_0_1 = (RuleCall)cToGraphNodeCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLabelsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cLabelsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cLabelsGraphEdgeLabelParserRuleCall_7_2_0 = (RuleCall)cLabelsAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cLabelsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cLabelsGraphEdgeLabelParserRuleCall_7_3_1_0 = (RuleCall)cLabelsAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final CrossReference cToRelationCrossReference_6_1_0 = (CrossReference)cToAssignment_6_1.eContents().get(0);
+		private final RuleCall cToRelationEStringParserRuleCall_6_1_0_1 = (RuleCall)cToRelationCrossReference_6_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//GraphEdge_Impl GraphEdge:
-		//	{GraphEdge} ('importedNamespace' importedNamespace=EString)?
-		//	'edge' name=EString '{' ('from' from=[GraphNode|EString])? ('to' to=[GraphNode|EString])? ('labels' '{'
-		//	labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')?
+		//	{GraphEdge}
+		//	//('importedNamespace' importedNamespace=EString)?
+		//	'edge' 'concordance' entity=[Entity|EString] '{' ('from' from=[Relation|EString])? ('to' to=[Relation|EString])?
+		//	//('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{GraphEdge} ('importedNamespace' importedNamespace=EString)? 'edge' name=EString '{' ('from' from=[GraphNode|EString])?
-		//('to' to=[GraphNode|EString])? ('labels' '{' labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')? '}'
+		//{GraphEdge} //('importedNamespace' importedNamespace=EString)?
+		//'edge' 'concordance' entity=[Entity|EString] '{' ('from' from=[Relation|EString])? ('to' to=[Relation|EString])? //('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{GraphEdge}
 		public Action getGraphEdgeAction_0() { return cGraphEdgeAction_0; }
 		
-		//('importedNamespace' importedNamespace=EString)?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'importedNamespace'
-		public Keyword getImportedNamespaceKeyword_1_0() { return cImportedNamespaceKeyword_1_0; }
-		
-		//importedNamespace=EString
-		public Assignment getImportedNamespaceAssignment_1_1() { return cImportedNamespaceAssignment_1_1; }
-		
-		//EString
-		public RuleCall getImportedNamespaceEStringParserRuleCall_1_1_0() { return cImportedNamespaceEStringParserRuleCall_1_1_0; }
-		
+		////('importedNamespace' importedNamespace=EString)?
 		//'edge'
-		public Keyword getEdgeKeyword_2() { return cEdgeKeyword_2; }
+		public Keyword getEdgeKeyword_1() { return cEdgeKeyword_1; }
 		
-		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		//'concordance'
+		public Keyword getConcordanceKeyword_2() { return cConcordanceKeyword_2; }
+		
+		//entity=[Entity|EString]
+		public Assignment getEntityAssignment_3() { return cEntityAssignment_3; }
+		
+		//[Entity|EString]
+		public CrossReference getEntityEntityCrossReference_3_0() { return cEntityEntityCrossReference_3_0; }
 		
 		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
+		public RuleCall getEntityEntityEStringParserRuleCall_3_0_1() { return cEntityEntityEStringParserRuleCall_3_0_1; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 		
-		//('from' from=[GraphNode|EString])?
+		//('from' from=[Relation|EString])?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'from'
 		public Keyword getFromKeyword_5_0() { return cFromKeyword_5_0; }
 		
-		//from=[GraphNode|EString]
+		//from=[Relation|EString]
 		public Assignment getFromAssignment_5_1() { return cFromAssignment_5_1; }
 		
-		//[GraphNode|EString]
-		public CrossReference getFromGraphNodeCrossReference_5_1_0() { return cFromGraphNodeCrossReference_5_1_0; }
+		//[Relation|EString]
+		public CrossReference getFromRelationCrossReference_5_1_0() { return cFromRelationCrossReference_5_1_0; }
 		
 		//EString
-		public RuleCall getFromGraphNodeEStringParserRuleCall_5_1_0_1() { return cFromGraphNodeEStringParserRuleCall_5_1_0_1; }
+		public RuleCall getFromRelationEStringParserRuleCall_5_1_0_1() { return cFromRelationEStringParserRuleCall_5_1_0_1; }
 		
-		//('to' to=[GraphNode|EString])?
+		//('to' to=[Relation|EString])?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//'to'
 		public Keyword getToKeyword_6_0() { return cToKeyword_6_0; }
 		
-		//to=[GraphNode|EString]
+		//to=[Relation|EString]
 		public Assignment getToAssignment_6_1() { return cToAssignment_6_1; }
 		
-		//[GraphNode|EString]
-		public CrossReference getToGraphNodeCrossReference_6_1_0() { return cToGraphNodeCrossReference_6_1_0; }
+		//[Relation|EString]
+		public CrossReference getToRelationCrossReference_6_1_0() { return cToRelationCrossReference_6_1_0; }
 		
 		//EString
-		public RuleCall getToGraphNodeEStringParserRuleCall_6_1_0_1() { return cToGraphNodeEStringParserRuleCall_6_1_0_1; }
+		public RuleCall getToRelationEStringParserRuleCall_6_1_0_1() { return cToRelationEStringParserRuleCall_6_1_0_1; }
 		
-		//('labels' '{' labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'labels'
-		public Keyword getLabelsKeyword_7_0() { return cLabelsKeyword_7_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
-		
-		//labels+=GraphEdgeLabel
-		public Assignment getLabelsAssignment_7_2() { return cLabelsAssignment_7_2; }
-		
-		//GraphEdgeLabel
-		public RuleCall getLabelsGraphEdgeLabelParserRuleCall_7_2_0() { return cLabelsGraphEdgeLabelParserRuleCall_7_2_0; }
-		
-		//("," labels+=GraphEdgeLabel)*
-		public Group getGroup_7_3() { return cGroup_7_3; }
-		
-		//","
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
-		
-		//labels+=GraphEdgeLabel
-		public Assignment getLabelsAssignment_7_3_1() { return cLabelsAssignment_7_3_1; }
-		
-		//GraphEdgeLabel
-		public RuleCall getLabelsGraphEdgeLabelParserRuleCall_7_3_1_0() { return cLabelsGraphEdgeLabelParserRuleCall_7_3_1_0; }
-		
+		////('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class GraphEdgeLabelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.GraphEdgeLabel");
@@ -4774,138 +4689,77 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.AddGraphEdge");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cAddGraphEdgeAction_0 = (Action)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cImportedNamespaceKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cImportedNamespaceAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cImportedNamespaceEStringParserRuleCall_1_1_0 = (RuleCall)cImportedNamespaceAssignment_1_1.eContents().get(0);
-		private final Keyword cAddGraphEdgeKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cFromKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cFromAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final CrossReference cFromGraphNodeCrossReference_5_1_0 = (CrossReference)cFromAssignment_5_1.eContents().get(0);
-		private final RuleCall cFromGraphNodeEStringParserRuleCall_5_1_0_1 = (RuleCall)cFromGraphNodeCrossReference_5_1_0.eContents().get(1);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cToKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cToAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cToGraphNodeCrossReference_6_1_0 = (CrossReference)cToAssignment_6_1.eContents().get(0);
-		private final RuleCall cToGraphNodeEStringParserRuleCall_6_1_0_1 = (RuleCall)cToGraphNodeCrossReference_6_1_0.eContents().get(1);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cLabelsKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cLabelsAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cLabelsGraphEdgeLabelParserRuleCall_7_2_0 = (RuleCall)cLabelsAssignment_7_2.eContents().get(0);
-		private final Group cGroup_7_3 = (Group)cGroup_7.eContents().get(3);
-		private final Keyword cCommaKeyword_7_3_0 = (Keyword)cGroup_7_3.eContents().get(0);
-		private final Assignment cLabelsAssignment_7_3_1 = (Assignment)cGroup_7_3.eContents().get(1);
-		private final RuleCall cLabelsGraphEdgeLabelParserRuleCall_7_3_1_0 = (RuleCall)cLabelsAssignment_7_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7_4 = (Keyword)cGroup_7.eContents().get(4);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cAddGraphEdgeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cFromKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cFromAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cFromRelationCrossReference_3_1_0 = (CrossReference)cFromAssignment_3_1.eContents().get(0);
+		private final RuleCall cFromRelationEStringParserRuleCall_3_1_0_1 = (RuleCall)cFromRelationCrossReference_3_1_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cToKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cToAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cToRelationCrossReference_4_1_0 = (CrossReference)cToAssignment_4_1.eContents().get(0);
+		private final RuleCall cToRelationEStringParserRuleCall_4_1_0_1 = (RuleCall)cToRelationCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//AddGraphEdge:
-		//	{AddGraphEdge} ('importedNamespace' importedNamespace=EString)?
+		//	{AddGraphEdge}
+		//	//('importedNamespace' importedNamespace=EString)?
 		//	'AddGraphEdge'
-		//	name=EString '{' ('from' from=[GraphNode|EString])? ('to' to=[GraphNode|EString])? ('labels' '{'
-		//	labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')?
+		//	'{' ('from' from=[Relation|EString])? ('to' to=[Relation|EString])?
+		//	//('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{AddGraphEdge} ('importedNamespace' importedNamespace=EString)? 'AddGraphEdge' name=EString '{' ('from'
-		//from=[GraphNode|EString])? ('to' to=[GraphNode|EString])? ('labels' '{' labels+=GraphEdgeLabel (","
-		//labels+=GraphEdgeLabel)* '}')? '}'
+		//{AddGraphEdge} //('importedNamespace' importedNamespace=EString)?
+		//'AddGraphEdge' '{' ('from' from=[Relation|EString])? ('to' to=[Relation|EString])? //('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+		//'}'
 		public Group getGroup() { return cGroup; }
 		
 		//{AddGraphEdge}
 		public Action getAddGraphEdgeAction_0() { return cAddGraphEdgeAction_0; }
 		
-		//('importedNamespace' importedNamespace=EString)?
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'importedNamespace'
-		public Keyword getImportedNamespaceKeyword_1_0() { return cImportedNamespaceKeyword_1_0; }
-		
-		//importedNamespace=EString
-		public Assignment getImportedNamespaceAssignment_1_1() { return cImportedNamespaceAssignment_1_1; }
-		
-		//EString
-		public RuleCall getImportedNamespaceEStringParserRuleCall_1_1_0() { return cImportedNamespaceEStringParserRuleCall_1_1_0; }
-		
+		////('importedNamespace' importedNamespace=EString)?
 		//'AddGraphEdge'
-		public Keyword getAddGraphEdgeKeyword_2() { return cAddGraphEdgeKeyword_2; }
-		
-		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
-		
-		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
+		public Keyword getAddGraphEdgeKeyword_1() { return cAddGraphEdgeKeyword_1; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//('from' from=[GraphNode|EString])?
-		public Group getGroup_5() { return cGroup_5; }
+		//('from' from=[Relation|EString])?
+		public Group getGroup_3() { return cGroup_3; }
 		
 		//'from'
-		public Keyword getFromKeyword_5_0() { return cFromKeyword_5_0; }
+		public Keyword getFromKeyword_3_0() { return cFromKeyword_3_0; }
 		
-		//from=[GraphNode|EString]
-		public Assignment getFromAssignment_5_1() { return cFromAssignment_5_1; }
+		//from=[Relation|EString]
+		public Assignment getFromAssignment_3_1() { return cFromAssignment_3_1; }
 		
-		//[GraphNode|EString]
-		public CrossReference getFromGraphNodeCrossReference_5_1_0() { return cFromGraphNodeCrossReference_5_1_0; }
+		//[Relation|EString]
+		public CrossReference getFromRelationCrossReference_3_1_0() { return cFromRelationCrossReference_3_1_0; }
 		
 		//EString
-		public RuleCall getFromGraphNodeEStringParserRuleCall_5_1_0_1() { return cFromGraphNodeEStringParserRuleCall_5_1_0_1; }
+		public RuleCall getFromRelationEStringParserRuleCall_3_1_0_1() { return cFromRelationEStringParserRuleCall_3_1_0_1; }
 		
-		//('to' to=[GraphNode|EString])?
-		public Group getGroup_6() { return cGroup_6; }
+		//('to' to=[Relation|EString])?
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'to'
-		public Keyword getToKeyword_6_0() { return cToKeyword_6_0; }
+		public Keyword getToKeyword_4_0() { return cToKeyword_4_0; }
 		
-		//to=[GraphNode|EString]
-		public Assignment getToAssignment_6_1() { return cToAssignment_6_1; }
+		//to=[Relation|EString]
+		public Assignment getToAssignment_4_1() { return cToAssignment_4_1; }
 		
-		//[GraphNode|EString]
-		public CrossReference getToGraphNodeCrossReference_6_1_0() { return cToGraphNodeCrossReference_6_1_0; }
+		//[Relation|EString]
+		public CrossReference getToRelationCrossReference_4_1_0() { return cToRelationCrossReference_4_1_0; }
 		
 		//EString
-		public RuleCall getToGraphNodeEStringParserRuleCall_6_1_0_1() { return cToGraphNodeEStringParserRuleCall_6_1_0_1; }
+		public RuleCall getToRelationEStringParserRuleCall_4_1_0_1() { return cToRelationEStringParserRuleCall_4_1_0_1; }
 		
-		//('labels' '{' labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')?
-		public Group getGroup_7() { return cGroup_7; }
-		
-		//'labels'
-		public Keyword getLabelsKeyword_7_0() { return cLabelsKeyword_7_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7_1() { return cLeftCurlyBracketKeyword_7_1; }
-		
-		//labels+=GraphEdgeLabel
-		public Assignment getLabelsAssignment_7_2() { return cLabelsAssignment_7_2; }
-		
-		//GraphEdgeLabel
-		public RuleCall getLabelsGraphEdgeLabelParserRuleCall_7_2_0() { return cLabelsGraphEdgeLabelParserRuleCall_7_2_0; }
-		
-		//("," labels+=GraphEdgeLabel)*
-		public Group getGroup_7_3() { return cGroup_7_3; }
-		
-		//","
-		public Keyword getCommaKeyword_7_3_0() { return cCommaKeyword_7_3_0; }
-		
-		//labels+=GraphEdgeLabel
-		public Assignment getLabelsAssignment_7_3_1() { return cLabelsAssignment_7_3_1; }
-		
-		//GraphEdgeLabel
-		public RuleCall getLabelsGraphEdgeLabelParserRuleCall_7_3_1_0() { return cLabelsGraphEdgeLabelParserRuleCall_7_3_1_0; }
-		
+		////('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_7_4() { return cRightCurlyBracketKeyword_7_4; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class RemoveGraphAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.RemoveGraphAttribute");
@@ -6212,8 +6066,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//GraphDB:
 	//	{GraphDB} ('importedNamespace' importedNamespace=EString)?
-	//	'graphdb' name=EString '{' ('nodes' '{' nodes+=GraphNode ("," nodes+=GraphNode)* '}')? ('edges' '{' edges+=GraphEdge
-	//	("," edges+=GraphEdge)* '}')?
+	//	'graphdb' name=EString '{' ('edges' '{' edges+=GraphEdge ("," edges+=GraphEdge)* '}')?
 	//	'}';
 	public GraphDBElements getGraphDBAccess() {
 		return pGraphDB;
@@ -6236,9 +6089,10 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//GraphEdge_Impl GraphEdge:
-	//	{GraphEdge} ('importedNamespace' importedNamespace=EString)?
-	//	'edge' name=EString '{' ('from' from=[GraphNode|EString])? ('to' to=[GraphNode|EString])? ('labels' '{'
-	//	labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')?
+	//	{GraphEdge}
+	//	//('importedNamespace' importedNamespace=EString)?
+	//	'edge' 'concordance' entity=[Entity|EString] '{' ('from' from=[Relation|EString])? ('to' to=[Relation|EString])?
+	//	//('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 	//	'}';
 	public GraphEdge_ImplElements getGraphEdge_ImplAccess() {
 		return pGraphEdge_Impl;
@@ -6648,10 +6502,11 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AddGraphEdge:
-	//	{AddGraphEdge} ('importedNamespace' importedNamespace=EString)?
+	//	{AddGraphEdge}
+	//	//('importedNamespace' importedNamespace=EString)?
 	//	'AddGraphEdge'
-	//	name=EString '{' ('from' from=[GraphNode|EString])? ('to' to=[GraphNode|EString])? ('labels' '{'
-	//	labels+=GraphEdgeLabel ("," labels+=GraphEdgeLabel)* '}')?
+	//	'{' ('from' from=[Relation|EString])? ('to' to=[Relation|EString])?
+	//	//('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 	//	'}';
 	public AddGraphEdgeElements getAddGraphEdgeAccess() {
 		return pAddGraphEdge;

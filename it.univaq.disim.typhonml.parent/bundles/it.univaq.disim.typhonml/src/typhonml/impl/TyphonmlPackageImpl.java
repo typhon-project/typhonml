@@ -1722,6 +1722,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getGraphEdge_Entity() {
+		return (EReference)graphEdgeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getGraphEdgeLabel() {
 		return graphEdgeLabelEClass;
 	}
@@ -2910,6 +2920,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(graphEdgeEClass, GRAPH_EDGE__FROM);
 		createEReference(graphEdgeEClass, GRAPH_EDGE__TO);
 		createEReference(graphEdgeEClass, GRAPH_EDGE__LABELS);
+		createEReference(graphEdgeEClass, GRAPH_EDGE__ENTITY);
 
 		graphEdgeLabelEClass = createEClass(GRAPH_EDGE_LABEL);
 		createEReference(graphEdgeLabelEClass, GRAPH_EDGE_LABEL__TYPE);
@@ -3120,7 +3131,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		graphDBEClass.getESuperTypes().add(this.getDatabase());
 		graphNodeEClass.getESuperTypes().add(this.getNamedElement());
 		graphAttributeEClass.getESuperTypes().add(this.getNamedElement());
-		graphEdgeEClass.getESuperTypes().add(this.getNamedElement());
 		graphEdgeLabelEClass.getESuperTypes().add(this.getNamedElement());
 		columnDBEClass.getESuperTypes().add(this.getDatabase());
 		columnEClass.getESuperTypes().add(this.getNamedElement());
@@ -3305,9 +3315,10 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getGraphAttribute_Value(), this.getAttribute(), null, "value", null, 0, 1, GraphAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(graphEdgeEClass, GraphEdge.class, "GraphEdge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGraphEdge_From(), this.getGraphNode(), null, "from", null, 0, 1, GraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getGraphEdge_To(), this.getGraphNode(), null, "to", null, 0, 1, GraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGraphEdge_From(), this.getRelation(), null, "from", null, 0, 1, GraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGraphEdge_To(), this.getRelation(), null, "to", null, 0, 1, GraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getGraphEdge_Labels(), this.getGraphEdgeLabel(), null, "labels", null, 0, -1, GraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getGraphEdge_Entity(), this.getEntity(), null, "entity", null, 1, 1, GraphEdge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(graphEdgeLabelEClass, GraphEdgeLabel.class, "GraphEdgeLabel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getGraphEdgeLabel_Type(), this.getDataType(), null, "type", null, 0, 1, GraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3529,6 +3540,12 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		   new String[] {
 			   "constraints", "EmptyEntity"
 		   });
+		addAnnotation
+		  (graphEdgeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality"
+		   });
 	}
 
 	/**
@@ -3574,6 +3591,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		   source,
 		   new String[] {
 			   "body", "typhonml::Column.allInstances()->select(e|e.entity = self)"
+		   });
+		addAnnotation
+		  (graphEdgeEClass,
+		   source,
+		   new String[] {
+			   "EntitiesWithoutTwoReferences", "entity.relations->size()  > 1",
+			   "WrongFrom", "from.oclContainer() = entity",
+			   "WrongTo", "to.oclContainer() = entity",
+			   "WrongFromCardinality", "from.cardinality = Cardinality::one",
+			   "WrongToCardinality", "to.cardinality = Cardinality::one"
 		   });
 	}
 

@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import typhonml.AddGraphEdge;
+import typhonml.Entity;
 import typhonml.GraphEdge;
 import typhonml.GraphEdgeLabel;
-import typhonml.GraphNode;
-import typhonml.NamedElement;
+import typhonml.Relation;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -32,56 +32,15 @@ import typhonml.TyphonmlPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link typhonml.impl.AddGraphEdgeImpl#getName <em>Name</em>}</li>
- *   <li>{@link typhonml.impl.AddGraphEdgeImpl#getImportedNamespace <em>Imported Namespace</em>}</li>
  *   <li>{@link typhonml.impl.AddGraphEdgeImpl#getFrom <em>From</em>}</li>
  *   <li>{@link typhonml.impl.AddGraphEdgeImpl#getTo <em>To</em>}</li>
  *   <li>{@link typhonml.impl.AddGraphEdgeImpl#getLabels <em>Labels</em>}</li>
+ *   <li>{@link typhonml.impl.AddGraphEdgeImpl#getEntity <em>Entity</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImportedNamespace()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String IMPORTED_NAMESPACE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getImportedNamespace() <em>Imported Namespace</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImportedNamespace()
-	 * @generated
-	 * @ordered
-	 */
-	protected String importedNamespace = IMPORTED_NAMESPACE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getFrom() <em>From</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -90,7 +49,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 * @ordered
 	 */
-	protected GraphNode from;
+	protected Relation from;
 
 	/**
 	 * The cached value of the '{@link #getTo() <em>To</em>}' reference.
@@ -100,7 +59,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 * @ordered
 	 */
-	protected GraphNode to;
+	protected Relation to;
 
 	/**
 	 * The cached value of the '{@link #getLabels() <em>Labels</em>}' containment reference list.
@@ -111,6 +70,16 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @ordered
 	 */
 	protected EList<GraphEdgeLabel> labels;
+
+	/**
+	 * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEntity()
+	 * @generated
+	 * @ordered
+	 */
+	protected Entity entity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,56 +106,10 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ADD_GRAPH_EDGE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getImportedNamespace() {
-		return importedNamespace;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setImportedNamespace(String newImportedNamespace) {
-		String oldImportedNamespace = importedNamespace;
-		importedNamespace = newImportedNamespace;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE, oldImportedNamespace, importedNamespace));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public GraphNode getFrom() {
+	public Relation getFrom() {
 		if (from != null && from.eIsProxy()) {
 			InternalEObject oldFrom = (InternalEObject)from;
-			from = (GraphNode)eResolveProxy(oldFrom);
+			from = (Relation)eResolveProxy(oldFrom);
 			if (from != oldFrom) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.ADD_GRAPH_EDGE__FROM, oldFrom, from));
@@ -200,7 +123,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GraphNode basicGetFrom() {
+	public Relation basicGetFrom() {
 		return from;
 	}
 
@@ -210,8 +133,8 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 */
 	@Override
-	public void setFrom(GraphNode newFrom) {
-		GraphNode oldFrom = from;
+	public void setFrom(Relation newFrom) {
+		Relation oldFrom = from;
 		from = newFrom;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ADD_GRAPH_EDGE__FROM, oldFrom, from));
@@ -223,10 +146,10 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 */
 	@Override
-	public GraphNode getTo() {
+	public Relation getTo() {
 		if (to != null && to.eIsProxy()) {
 			InternalEObject oldTo = (InternalEObject)to;
-			to = (GraphNode)eResolveProxy(oldTo);
+			to = (Relation)eResolveProxy(oldTo);
 			if (to != oldTo) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.ADD_GRAPH_EDGE__TO, oldTo, to));
@@ -240,7 +163,7 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GraphNode basicGetTo() {
+	public Relation basicGetTo() {
 		return to;
 	}
 
@@ -250,8 +173,8 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 */
 	@Override
-	public void setTo(GraphNode newTo) {
-		GraphNode oldTo = to;
+	public void setTo(Relation newTo) {
+		Relation oldTo = to;
 		to = newTo;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ADD_GRAPH_EDGE__TO, oldTo, to));
@@ -276,6 +199,46 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 * @generated
 	 */
 	@Override
+	public Entity getEntity() {
+		if (entity != null && entity.eIsProxy()) {
+			InternalEObject oldEntity = (InternalEObject)entity;
+			entity = (Entity)eResolveProxy(oldEntity);
+			if (entity != oldEntity) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY, oldEntity, entity));
+			}
+		}
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Entity basicGetEntity() {
+		return entity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEntity(Entity newEntity) {
+		Entity oldEntity = entity;
+		entity = newEntity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY, oldEntity, entity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS:
@@ -292,10 +255,6 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TyphonmlPackage.ADD_GRAPH_EDGE__NAME:
-				return getName();
-			case TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE:
-				return getImportedNamespace();
 			case TyphonmlPackage.ADD_GRAPH_EDGE__FROM:
 				if (resolve) return getFrom();
 				return basicGetFrom();
@@ -304,6 +263,9 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 				return basicGetTo();
 			case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS:
 				return getLabels();
+			case TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY:
+				if (resolve) return getEntity();
+				return basicGetEntity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -317,21 +279,18 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TyphonmlPackage.ADD_GRAPH_EDGE__NAME:
-				setName((String)newValue);
-				return;
-			case TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE:
-				setImportedNamespace((String)newValue);
-				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__FROM:
-				setFrom((GraphNode)newValue);
+				setFrom((Relation)newValue);
 				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__TO:
-				setTo((GraphNode)newValue);
+				setTo((Relation)newValue);
 				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS:
 				getLabels().clear();
 				getLabels().addAll((Collection<? extends GraphEdgeLabel>)newValue);
+				return;
+			case TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY:
+				setEntity((Entity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -345,20 +304,17 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.ADD_GRAPH_EDGE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE:
-				setImportedNamespace(IMPORTED_NAMESPACE_EDEFAULT);
-				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__FROM:
-				setFrom((GraphNode)null);
+				setFrom((Relation)null);
 				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__TO:
-				setTo((GraphNode)null);
+				setTo((Relation)null);
 				return;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS:
 				getLabels().clear();
+				return;
+			case TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY:
+				setEntity((Entity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -372,16 +328,14 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TyphonmlPackage.ADD_GRAPH_EDGE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE:
-				return IMPORTED_NAMESPACE_EDEFAULT == null ? importedNamespace != null : !IMPORTED_NAMESPACE_EDEFAULT.equals(importedNamespace);
 			case TyphonmlPackage.ADD_GRAPH_EDGE__FROM:
 				return from != null;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__TO:
 				return to != null;
 			case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS:
 				return labels != null && !labels.isEmpty();
+			case TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY:
+				return entity != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -393,18 +347,12 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 */
 	@Override
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
-			switch (derivedFeatureID) {
-				case TyphonmlPackage.ADD_GRAPH_EDGE__NAME: return TyphonmlPackage.NAMED_ELEMENT__NAME;
-				case TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE: return TyphonmlPackage.NAMED_ELEMENT__IMPORTED_NAMESPACE;
-				default: return -1;
-			}
-		}
 		if (baseClass == GraphEdge.class) {
 			switch (derivedFeatureID) {
 				case TyphonmlPackage.ADD_GRAPH_EDGE__FROM: return TyphonmlPackage.GRAPH_EDGE__FROM;
 				case TyphonmlPackage.ADD_GRAPH_EDGE__TO: return TyphonmlPackage.GRAPH_EDGE__TO;
 				case TyphonmlPackage.ADD_GRAPH_EDGE__LABELS: return TyphonmlPackage.GRAPH_EDGE__LABELS;
+				case TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY: return TyphonmlPackage.GRAPH_EDGE__ENTITY;
 				default: return -1;
 			}
 		}
@@ -418,40 +366,16 @@ public class AddGraphEdgeImpl extends ChangeOperatorImpl implements AddGraphEdge
 	 */
 	@Override
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
-		if (baseClass == NamedElement.class) {
-			switch (baseFeatureID) {
-				case TyphonmlPackage.NAMED_ELEMENT__NAME: return TyphonmlPackage.ADD_GRAPH_EDGE__NAME;
-				case TyphonmlPackage.NAMED_ELEMENT__IMPORTED_NAMESPACE: return TyphonmlPackage.ADD_GRAPH_EDGE__IMPORTED_NAMESPACE;
-				default: return -1;
-			}
-		}
 		if (baseClass == GraphEdge.class) {
 			switch (baseFeatureID) {
 				case TyphonmlPackage.GRAPH_EDGE__FROM: return TyphonmlPackage.ADD_GRAPH_EDGE__FROM;
 				case TyphonmlPackage.GRAPH_EDGE__TO: return TyphonmlPackage.ADD_GRAPH_EDGE__TO;
 				case TyphonmlPackage.GRAPH_EDGE__LABELS: return TyphonmlPackage.ADD_GRAPH_EDGE__LABELS;
+				case TyphonmlPackage.GRAPH_EDGE__ENTITY: return TyphonmlPackage.ADD_GRAPH_EDGE__ENTITY;
 				default: return -1;
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", importedNamespace: ");
-		result.append(importedNamespace);
-		result.append(')');
-		return result.toString();
 	}
 
 } //AddGraphEdgeImpl
