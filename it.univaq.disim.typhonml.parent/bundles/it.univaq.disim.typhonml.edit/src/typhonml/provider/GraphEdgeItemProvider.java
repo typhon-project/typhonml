@@ -9,10 +9,17 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import typhonml.GraphEdge;
@@ -25,7 +32,7 @@ import typhonml.TyphonmlPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class GraphEdgeItemProvider extends NamedElementItemProvider {
+public class GraphEdgeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider, IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -49,6 +56,7 @@ public class GraphEdgeItemProvider extends NamedElementItemProvider {
 
 			addFromPropertyDescriptor(object);
 			addToPropertyDescriptor(object);
+			addEntityPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,6 +97,28 @@ public class GraphEdgeItemProvider extends NamedElementItemProvider {
 				 getString("_UI_GraphEdge_to_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_GraphEdge_to_feature", "_UI_GraphEdge_type"),
 				 TyphonmlPackage.Literals.GRAPH_EDGE__TO,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Entity feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEntityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_GraphEdge_entity_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_GraphEdge_entity_feature", "_UI_GraphEdge_type"),
+				 TyphonmlPackage.Literals.GRAPH_EDGE__ENTITY,
 				 true,
 				 false,
 				 true,
@@ -146,10 +176,7 @@ public class GraphEdgeItemProvider extends NamedElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GraphEdge)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_GraphEdge_type") :
-			getString("_UI_GraphEdge_type") + " " + label;
+		return getString("_UI_GraphEdge_type");
 	}
 
 
@@ -187,6 +214,17 @@ public class GraphEdgeItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(TyphonmlPackage.Literals.GRAPH_EDGE__LABELS,
 				 TyphonmlFactory.eINSTANCE.createGraphEdgeLabel()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return TyphonmlEditPlugin.INSTANCE;
 	}
 
 }

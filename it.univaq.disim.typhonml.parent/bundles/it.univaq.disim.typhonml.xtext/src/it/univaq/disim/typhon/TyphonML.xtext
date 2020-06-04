@@ -361,7 +361,7 @@ GraphDB returns GraphDB:
 	{GraphDB}
 	('importedNamespace' importedNamespace=EString)?
 	'graphdb' name=EString '{'
-		('nodes' '{' nodes+=GraphNode ( "," nodes+=GraphNode)* '}' )?
+//		('nodes' '{' nodes+=GraphNode ( "," nodes+=GraphNode)* '}' )?
 		('edges' '{' edges+=GraphEdge ( "," edges+=GraphEdge)* '}' )?
 	'}';
 
@@ -374,11 +374,11 @@ ColumnDB returns ColumnDB:
 
 GraphEdge_Impl returns GraphEdge:
 	{GraphEdge}
-	('importedNamespace' importedNamespace=EString)?
-	'edge' name=EString '{'
-		('from' from=[GraphNode|EString])?
-		('to' to=[GraphNode|EString])?
-		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+	//('importedNamespace' importedNamespace=EString)?
+	'edge' 'concordance' entity=[Entity|EString]'{'
+		('from' from=[Relation|EString])?
+		('to' to=[Relation|EString])?
+		//('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 	'}';
 
 GraphEdgeLabel returns GraphEdgeLabel:
@@ -636,12 +636,12 @@ AddGraphAttribute returns AddGraphAttribute:
 
 AddGraphEdge returns AddGraphEdge:
 	{AddGraphEdge}
-	('importedNamespace' importedNamespace=EString)?
+	//('importedNamespace' importedNamespace=EString)?
 	'AddGraphEdge'
-	name=EString '{'
-		('from' from=[GraphNode|EString])?
-		('to' to=[GraphNode|EString])?
-		('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
+	 '{'
+		('from' from=[Relation|EString])?
+		('to' to=[Relation|EString])?
+		//('labels' '{' labels+=GraphEdgeLabel ( "," labels+=GraphEdgeLabel)* '}' )?
 	'}';
 	
 RemoveGraphAttribute returns RemoveGraphAttribute:

@@ -196,11 +196,23 @@
   <eClassifiers xsi:type="ecore:EClass" name="GraphAttribute" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Attribute"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GraphEdge" eSuperTypes="#//NamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//GraphNode"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//GraphNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GraphEdge">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="EntitiesWithoutTwoReferences" value="entity.relations->size()  > 1"/>
+      <details key="WrongFrom" value="from.oclContainer() = entity"/>
+      <details key="WrongTo" value="to.oclContainer() = entity"/>
+      <details key="WrongFromCardinality" value="from.cardinality = Cardinality::one"/>
+      <details key="WrongToCardinality" value="to.cardinality = Cardinality::one"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Relation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
         eType="#//GraphEdgeLabel" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+        eType="#//Entity"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphEdgeLabel" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//DataType"/>
