@@ -15,7 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link typhonml.IndexSpec#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link typhonml.IndexSpec#getReferences <em>References</em>}</li>
- *   <li>{@link typhonml.IndexSpec#getTable <em>Table</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getIndexSpec()
@@ -46,29 +45,5 @@ public interface IndexSpec extends NamedElement {
 	 * @generated
 	 */
 	EList<Relation> getReferences();
-
-	/**
-	 * Returns the value of the '<em><b>Table</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link typhonml.Table#getIndexSpec <em>Index Spec</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Table</em>' container reference.
-	 * @see #setTable(Table)
-	 * @see typhonml.TyphonmlPackage#getIndexSpec_Table()
-	 * @see typhonml.Table#getIndexSpec
-	 * @model opposite="indexSpec" required="true" transient="false"
-	 * @generated
-	 */
-	Table getTable();
-
-	/**
-	 * Sets the value of the '{@link typhonml.IndexSpec#getTable <em>Table</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Table</em>' container reference.
-	 * @see #getTable()
-	 * @generated
-	 */
-	void setTable(Table value);
 
 } // IndexSpec

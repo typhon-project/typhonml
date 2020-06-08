@@ -2474,6 +2474,25 @@ ruleCollection returns [EObject current=null]
 				}
 			)
 		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCollectionAccess().getIndexSpecIndexSpecParserRuleCall_4_0());
+				}
+				lv_indexSpec_5_0=ruleIndexSpec
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCollectionRule());
+					}
+					set(
+						$current,
+						"indexSpec",
+						lv_indexSpec_5_0,
+						"it.univaq.disim.typhon.TyphonML.IndexSpec");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
 ;
 

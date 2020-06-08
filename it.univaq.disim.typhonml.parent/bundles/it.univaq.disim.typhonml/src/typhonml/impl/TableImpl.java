@@ -128,9 +128,9 @@ public class TableImpl extends NamedElementImpl implements Table {
 		if (newIndexSpec != indexSpec) {
 			NotificationChain msgs = null;
 			if (indexSpec != null)
-				msgs = ((InternalEObject)indexSpec).eInverseRemove(this, TyphonmlPackage.INDEX_SPEC__TABLE, IndexSpec.class, msgs);
+				msgs = ((InternalEObject)indexSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.TABLE__INDEX_SPEC, null, msgs);
 			if (newIndexSpec != null)
-				msgs = ((InternalEObject)newIndexSpec).eInverseAdd(this, TyphonmlPackage.INDEX_SPEC__TABLE, IndexSpec.class, msgs);
+				msgs = ((InternalEObject)newIndexSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.TABLE__INDEX_SPEC, null, msgs);
 			msgs = basicSetIndexSpec(newIndexSpec, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -271,10 +271,6 @@ public class TableImpl extends NamedElementImpl implements Table {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TyphonmlPackage.TABLE__INDEX_SPEC:
-				if (indexSpec != null)
-					msgs = ((InternalEObject)indexSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.TABLE__INDEX_SPEC, null, msgs);
-				return basicSetIndexSpec((IndexSpec)otherEnd, msgs);
 			case TyphonmlPackage.TABLE__ID_SPEC:
 				if (idSpec != null)
 					msgs = ((InternalEObject)idSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.TABLE__ID_SPEC, null, msgs);

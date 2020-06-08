@@ -255,6 +255,7 @@ public class TyphonMLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getCollectionAccess().getImportedNamespaceAssignment_0_1(), "rule__Collection__ImportedNamespaceAssignment_0_1");
 			builder.put(grammarAccess.getCollectionAccess().getNameAssignment_1(), "rule__Collection__NameAssignment_1");
 			builder.put(grammarAccess.getCollectionAccess().getEntityAssignment_3(), "rule__Collection__EntityAssignment_3");
+			builder.put(grammarAccess.getCollectionAccess().getIndexSpecAssignment_4(), "rule__Collection__IndexSpecAssignment_4");
 			builder.put(grammarAccess.getKeyValueElementAccess().getImportedNamespaceAssignment_0_1(), "rule__KeyValueElement__ImportedNamespaceAssignment_0_1");
 			builder.put(grammarAccess.getKeyValueElementAccess().getNameAssignment_1(), "rule__KeyValueElement__NameAssignment_1");
 			builder.put(grammarAccess.getKeyValueElementAccess().getKeyAssignment_3(), "rule__KeyValueElement__KeyAssignment_3");

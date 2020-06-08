@@ -1542,22 +1542,13 @@ public interface TyphonmlPackage extends EPackage {
 	int INDEX_SPEC__REFERENCES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Table</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INDEX_SPEC__TABLE = NAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Index Spec</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INDEX_SPEC_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int INDEX_SPEC_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Index Spec</em>' class.
@@ -1707,13 +1698,22 @@ public interface TyphonmlPackage extends EPackage {
 	int COLLECTION__ENTITY = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Index Spec</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLLECTION__INDEX_SPEC = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Collection</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLLECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int COLLECTION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Collection</em>' class.
@@ -4882,17 +4882,6 @@ public interface TyphonmlPackage extends EPackage {
 	EReference getIndexSpec_References();
 
 	/**
-	 * Returns the meta object for the container reference '{@link typhonml.IndexSpec#getTable <em>Table</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Table</em>'.
-	 * @see typhonml.IndexSpec#getTable()
-	 * @see #getIndexSpec()
-	 * @generated
-	 */
-	EReference getIndexSpec_Table();
-
-	/**
 	 * Returns the meta object for class '{@link typhonml.IdSpec <em>Id Spec</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4965,6 +4954,17 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCollection_Entity();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link typhonml.Collection#getIndexSpec <em>Index Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Index Spec</em>'.
+	 * @see typhonml.Collection#getIndexSpec()
+	 * @see #getCollection()
+	 * @generated
+	 */
+	EReference getCollection_IndexSpec();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.KeyValueDB <em>Key Value DB</em>}'.
@@ -6899,14 +6899,6 @@ public interface TyphonmlPackage extends EPackage {
 		EReference INDEX_SPEC__REFERENCES = eINSTANCE.getIndexSpec_References();
 
 		/**
-		 * The meta object literal for the '<em><b>Table</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INDEX_SPEC__TABLE = eINSTANCE.getIndexSpec_Table();
-
-		/**
 		 * The meta object literal for the '{@link typhonml.impl.IdSpecImpl <em>Id Spec</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -6967,6 +6959,14 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COLLECTION__ENTITY = eINSTANCE.getCollection_Entity();
+
+		/**
+		 * The meta object literal for the '<em><b>Index Spec</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLLECTION__INDEX_SPEC = eINSTANCE.getCollection_IndexSpec();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.KeyValueDBImpl <em>Key Value DB</em>}' class.

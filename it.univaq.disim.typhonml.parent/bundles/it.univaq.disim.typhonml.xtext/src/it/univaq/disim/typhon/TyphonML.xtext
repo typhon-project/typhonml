@@ -299,6 +299,7 @@ Table returns Table:
 Collection returns Collection:
 	('importedNamespace' importedNamespace=EString)?
 	name=EString ':' entity=[Entity|EString]
+	(indexSpec=IndexSpec)?
 	;
 
 KeyValueElement returns KeyValueElement:
