@@ -25,14 +25,12 @@ package typhonml;
 public interface Table extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Index Spec</b></em>' containment reference.
-	 * It is bidirectional and its opposite is '{@link typhonml.IndexSpec#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Index Spec</em>' containment reference.
 	 * @see #setIndexSpec(IndexSpec)
 	 * @see typhonml.TyphonmlPackage#getTable_IndexSpec()
-	 * @see typhonml.IndexSpec#getTable
-	 * @model opposite="table" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	IndexSpec getIndexSpec();

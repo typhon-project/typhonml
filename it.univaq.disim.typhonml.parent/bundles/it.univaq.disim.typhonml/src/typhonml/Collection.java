@@ -13,6 +13,7 @@ package typhonml;
  * </p>
  * <ul>
  *   <li>{@link typhonml.Collection#getEntity <em>Entity</em>}</li>
+ *   <li>{@link typhonml.Collection#getIndexSpec <em>Index Spec</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getCollection()
@@ -41,5 +42,27 @@ public interface Collection extends NamedElement {
 	 * @generated
 	 */
 	void setEntity(Entity value);
+
+	/**
+	 * Returns the value of the '<em><b>Index Spec</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Index Spec</em>' containment reference.
+	 * @see #setIndexSpec(IndexSpec)
+	 * @see typhonml.TyphonmlPackage#getCollection_IndexSpec()
+	 * @model containment="true"
+	 * @generated
+	 */
+	IndexSpec getIndexSpec();
+
+	/**
+	 * Sets the value of the '{@link typhonml.Collection#getIndexSpec <em>Index Spec</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Index Spec</em>' containment reference.
+	 * @see #getIndexSpec()
+	 * @generated
+	 */
+	void setIndexSpec(IndexSpec value);
 
 } // Collection

@@ -1485,13 +1485,15 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cEntityAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final CrossReference cEntityEntityCrossReference_3_0 = (CrossReference)cEntityAssignment_3.eContents().get(0);
 		private final RuleCall cEntityEntityEStringParserRuleCall_3_0_1 = (RuleCall)cEntityEntityCrossReference_3_0.eContents().get(1);
+		private final Assignment cIndexSpecAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cIndexSpecIndexSpecParserRuleCall_4_0 = (RuleCall)cIndexSpecAssignment_4.eContents().get(0);
 		
 		//Collection:
 		//	('importedNamespace' importedNamespace=EString)?
-		//	name=EString ':' entity=[Entity|EString];
+		//	name=EString ':' entity=[Entity|EString] indexSpec=IndexSpec?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('importedNamespace' importedNamespace=EString)? name=EString ':' entity=[Entity|EString]
+		//('importedNamespace' importedNamespace=EString)? name=EString ':' entity=[Entity|EString] indexSpec=IndexSpec?
 		public Group getGroup() { return cGroup; }
 		
 		//('importedNamespace' importedNamespace=EString)?
@@ -1523,6 +1525,12 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//EString
 		public RuleCall getEntityEntityEStringParserRuleCall_3_0_1() { return cEntityEntityEStringParserRuleCall_3_0_1; }
+		
+		//indexSpec=IndexSpec?
+		public Assignment getIndexSpecAssignment_4() { return cIndexSpecAssignment_4; }
+		
+		//IndexSpec
+		public RuleCall getIndexSpecIndexSpecParserRuleCall_4_0() { return cIndexSpecIndexSpecParserRuleCall_4_0; }
 	}
 	public class KeyValueElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "it.univaq.disim.typhon.TyphonML.KeyValueElement");
@@ -5949,7 +5957,7 @@ public class TyphonMLGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Collection:
 	//	('importedNamespace' importedNamespace=EString)?
-	//	name=EString ':' entity=[Entity|EString];
+	//	name=EString ':' entity=[Entity|EString] indexSpec=IndexSpec?;
 	public CollectionElements getCollectionAccess() {
 		return pCollection;
 	}

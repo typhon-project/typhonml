@@ -7006,6 +7006,7 @@ rule__Collection__Group__3
 	}
 :
 	rule__Collection__Group__3__Impl
+	rule__Collection__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -7020,6 +7021,32 @@ rule__Collection__Group__3__Impl
 	{ before(grammarAccess.getCollectionAccess().getEntityAssignment_3()); }
 	(rule__Collection__EntityAssignment_3)
 	{ after(grammarAccess.getCollectionAccess().getEntityAssignment_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Collection__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Collection__Group__4__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Collection__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getCollectionAccess().getIndexSpecAssignment_4()); }
+	(rule__Collection__IndexSpecAssignment_4)?
+	{ after(grammarAccess.getCollectionAccess().getIndexSpecAssignment_4()); }
 )
 ;
 finally {
@@ -19485,6 +19512,21 @@ rule__Collection__EntityAssignment_3
 			{ after(grammarAccess.getCollectionAccess().getEntityEntityEStringParserRuleCall_3_0_1()); }
 		)
 		{ after(grammarAccess.getCollectionAccess().getEntityEntityCrossReference_3_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Collection__IndexSpecAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getCollectionAccess().getIndexSpecIndexSpecParserRuleCall_4_0()); }
+		ruleIndexSpec
+		{ after(grammarAccess.getCollectionAccess().getIndexSpecIndexSpecParserRuleCall_4_0()); }
 	)
 ;
 finally {
