@@ -115,7 +115,6 @@
     <genClasses ecoreClass="typhonml.ecore#//IndexSpec">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//IndexSpec/attributes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//IndexSpec/references"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference typhonml.ecore#//IndexSpec/table"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//IdSpec">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//IdSpec/attributes"/>
@@ -126,6 +125,7 @@
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//Collection">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//Collection/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//Collection/indexSpec"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//KeyValueDB">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//KeyValueDB/elements"/>

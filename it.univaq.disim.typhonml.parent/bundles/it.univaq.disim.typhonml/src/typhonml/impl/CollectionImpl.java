@@ -4,6 +4,7 @@ package typhonml.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -11,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import typhonml.Collection;
 import typhonml.Entity;
+import typhonml.IndexSpec;
 import typhonml.TyphonmlPackage;
 
 /**
@@ -22,6 +24,7 @@ import typhonml.TyphonmlPackage;
  * </p>
  * <ul>
  *   <li>{@link typhonml.impl.CollectionImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link typhonml.impl.CollectionImpl#getIndexSpec <em>Index Spec</em>}</li>
  * </ul>
  *
  * @generated
@@ -36,6 +39,16 @@ public class CollectionImpl extends NamedElementImpl implements Collection {
 	 * @ordered
 	 */
 	protected Entity entity;
+
+	/**
+	 * The cached value of the '{@link #getIndexSpec() <em>Index Spec</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIndexSpec()
+	 * @generated
+	 * @ordered
+	 */
+	protected IndexSpec indexSpec;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,11 +115,72 @@ public class CollectionImpl extends NamedElementImpl implements Collection {
 	 * @generated
 	 */
 	@Override
+	public IndexSpec getIndexSpec() {
+		return indexSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIndexSpec(IndexSpec newIndexSpec, NotificationChain msgs) {
+		IndexSpec oldIndexSpec = indexSpec;
+		indexSpec = newIndexSpec;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, TyphonmlPackage.COLLECTION__INDEX_SPEC, oldIndexSpec, newIndexSpec);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIndexSpec(IndexSpec newIndexSpec) {
+		if (newIndexSpec != indexSpec) {
+			NotificationChain msgs = null;
+			if (indexSpec != null)
+				msgs = ((InternalEObject)indexSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.COLLECTION__INDEX_SPEC, null, msgs);
+			if (newIndexSpec != null)
+				msgs = ((InternalEObject)newIndexSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - TyphonmlPackage.COLLECTION__INDEX_SPEC, null, msgs);
+			msgs = basicSetIndexSpec(newIndexSpec, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TyphonmlPackage.COLLECTION__INDEX_SPEC, newIndexSpec, newIndexSpec));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case TyphonmlPackage.COLLECTION__INDEX_SPEC:
+				return basicSetIndexSpec(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case TyphonmlPackage.COLLECTION__ENTITY:
 				if (resolve) return getEntity();
 				return basicGetEntity();
+			case TyphonmlPackage.COLLECTION__INDEX_SPEC:
+				return getIndexSpec();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -121,6 +195,9 @@ public class CollectionImpl extends NamedElementImpl implements Collection {
 		switch (featureID) {
 			case TyphonmlPackage.COLLECTION__ENTITY:
 				setEntity((Entity)newValue);
+				return;
+			case TyphonmlPackage.COLLECTION__INDEX_SPEC:
+				setIndexSpec((IndexSpec)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,6 +214,9 @@ public class CollectionImpl extends NamedElementImpl implements Collection {
 			case TyphonmlPackage.COLLECTION__ENTITY:
 				setEntity((Entity)null);
 				return;
+			case TyphonmlPackage.COLLECTION__INDEX_SPEC:
+				setIndexSpec((IndexSpec)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -151,6 +231,8 @@ public class CollectionImpl extends NamedElementImpl implements Collection {
 		switch (featureID) {
 			case TyphonmlPackage.COLLECTION__ENTITY:
 				return entity != null;
+			case TyphonmlPackage.COLLECTION__INDEX_SPEC:
+				return indexSpec != null;
 		}
 		return super.eIsSet(featureID);
 	}

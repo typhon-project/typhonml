@@ -1462,16 +1462,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getIndexSpec_Table() {
-		return (EReference)indexSpecEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getIdSpec() {
 		return idSpecEClass;
 	}
@@ -1534,6 +1524,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	@Override
 	public EReference getCollection_Entity() {
 		return (EReference)collectionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCollection_IndexSpec() {
+		return (EReference)collectionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -2885,7 +2885,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		indexSpecEClass = createEClass(INDEX_SPEC);
 		createEReference(indexSpecEClass, INDEX_SPEC__ATTRIBUTES);
 		createEReference(indexSpecEClass, INDEX_SPEC__REFERENCES);
-		createEReference(indexSpecEClass, INDEX_SPEC__TABLE);
 
 		idSpecEClass = createEClass(ID_SPEC);
 		createEReference(idSpecEClass, ID_SPEC__ATTRIBUTES);
@@ -2896,6 +2895,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		collectionEClass = createEClass(COLLECTION);
 		createEReference(collectionEClass, COLLECTION__ENTITY);
+		createEReference(collectionEClass, COLLECTION__INDEX_SPEC);
 
 		keyValueDBEClass = createEClass(KEY_VALUE_DB);
 		createEReference(keyValueDBEClass, KEY_VALUE_DB__ELEMENTS);
@@ -3275,7 +3275,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getRelationalDB_Tables(), this.getTable(), null, "tables", null, 0, -1, RelationalDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTable_IndexSpec(), this.getIndexSpec(), this.getIndexSpec_Table(), "indexSpec", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTable_IndexSpec(), this.getIndexSpec(), null, "indexSpec", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_IdSpec(), this.getIdSpec(), this.getIdSpec_Table(), "idSpec", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_Db(), this.getDatabase(), null, "db", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_Entity(), this.getEntity(), null, "entity", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3283,7 +3283,6 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEClass(indexSpecEClass, IndexSpec.class, "IndexSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIndexSpec_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, IndexSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIndexSpec_References(), this.getRelation(), null, "references", null, 0, -1, IndexSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIndexSpec_Table(), this.getTable(), this.getTable_IndexSpec(), "table", null, 1, 1, IndexSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(idSpecEClass, IdSpec.class, "IdSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIdSpec_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, IdSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3294,6 +3293,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 
 		initEClass(collectionEClass, Collection.class, "Collection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCollection_Entity(), this.getEntity(), null, "entity", null, 0, 1, Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCollection_IndexSpec(), this.getIndexSpec(), null, "indexSpec", null, 0, 1, Collection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(keyValueDBEClass, KeyValueDB.class, "KeyValueDB", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getKeyValueDB_Elements(), this.getKeyValueElement(), null, "elements", null, 0, -1, KeyValueDB.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

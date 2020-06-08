@@ -613,7 +613,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Collection returns Collection
 	 *
 	 * Constraint:
-	 *     (importedNamespace=EString? name=EString entity=[Entity|EString])
+	 *     (importedNamespace=EString? name=EString entity=[Entity|EString] indexSpec=IndexSpec?)
 	 */
 	protected void sequence_Collection(ISerializationContext context, Collection semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

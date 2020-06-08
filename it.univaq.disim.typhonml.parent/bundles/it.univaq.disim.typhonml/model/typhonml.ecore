@@ -145,7 +145,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="indexSpec" eType="#//IndexSpec"
-        containment="true" eOpposite="#//IndexSpec/table"/>
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="idSpec" eType="#//IdSpec"
         containment="true" eOpposite="#//IdSpec/table"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="db" eType="#//Database"/>
@@ -156,8 +156,6 @@
         eType="#//Attribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="references" upperBound="-1"
         eType="#//Relation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
-        eOpposite="#//Table/indexSpec"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IdSpec">
     <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
@@ -171,6 +169,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" eType="#//Entity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indexSpec" eType="#//IndexSpec"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="KeyValueDB" eSuperTypes="#//Database">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
