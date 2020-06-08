@@ -2046,31 +2046,13 @@ public interface TyphonmlPackage extends EPackage {
 	int GRAPH_EDGE = 40;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__NAME = NAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GRAPH_EDGE__IMPORTED_NAMESPACE = NAMED_ELEMENT__IMPORTED_NAMESPACE;
-
-	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_EDGE__FROM = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int GRAPH_EDGE__FROM = 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -2079,7 +2061,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_EDGE__TO = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int GRAPH_EDGE__TO = 1;
 
 	/**
 	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -2088,7 +2070,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_EDGE__LABELS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int GRAPH_EDGE__LABELS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GRAPH_EDGE__ENTITY = 3;
 
 	/**
 	 * The number of structural features of the '<em>Graph Edge</em>' class.
@@ -2097,7 +2088,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_EDGE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int GRAPH_EDGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Graph Edge</em>' class.
@@ -2106,7 +2097,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GRAPH_EDGE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int GRAPH_EDGE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.GraphEdgeLabelImpl <em>Graph Edge Label</em>}' class.
@@ -3855,31 +3846,13 @@ public interface TyphonmlPackage extends EPackage {
 	int ADD_GRAPH_EDGE = 76;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_GRAPH_EDGE__NAME = CHANGE_OPERATOR_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_GRAPH_EDGE__IMPORTED_NAMESPACE = CHANGE_OPERATOR_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>From</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__FROM = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+	int ADD_GRAPH_EDGE__FROM = CHANGE_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>To</b></em>' reference.
@@ -3888,7 +3861,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__TO = CHANGE_OPERATOR_FEATURE_COUNT + 3;
+	int ADD_GRAPH_EDGE__TO = CHANGE_OPERATOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Labels</b></em>' containment reference list.
@@ -3897,7 +3870,16 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE__LABELS = CHANGE_OPERATOR_FEATURE_COUNT + 4;
+	int ADD_GRAPH_EDGE__LABELS = CHANGE_OPERATOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_GRAPH_EDGE__ENTITY = CHANGE_OPERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Add Graph Edge</em>' class.
@@ -3906,7 +3888,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_GRAPH_EDGE_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 5;
+	int ADD_GRAPH_EDGE_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Add Graph Edge</em>' class.
@@ -5175,6 +5157,17 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getGraphEdge_Labels();
+
+	/**
+	 * Returns the meta object for the reference '{@link typhonml.GraphEdge#getEntity <em>Entity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Entity</em>'.
+	 * @see typhonml.GraphEdge#getEntity()
+	 * @see #getGraphEdge()
+	 * @generated
+	 */
+	EReference getGraphEdge_Entity();
 
 	/**
 	 * Returns the meta object for class '{@link typhonml.GraphEdgeLabel <em>Graph Edge Label</em>}'.
@@ -7130,6 +7123,14 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference GRAPH_EDGE__LABELS = eINSTANCE.getGraphEdge_Labels();
+
+		/**
+		 * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference GRAPH_EDGE__ENTITY = eINSTANCE.getGraphEdge_Entity();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.impl.GraphEdgeLabelImpl <em>Graph Edge Label</em>}' class.

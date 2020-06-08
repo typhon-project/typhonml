@@ -664,7 +664,166 @@ public class TyphonmlValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateGraphEdge(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(graphEdge, diagnostics, context);
+		if (!validate_NoCircularContainment(graphEdge, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_EntitiesWithoutTwoReferences(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongFrom(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongTo(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongFromCardinality(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongToCardinality(graphEdge, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the EntitiesWithoutTwoReferences constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GRAPH_EDGE__ENTITIES_WITHOUT_TWO_REFERENCES__EEXPRESSION = "entity.relations->size()  > 1";
+
+	/**
+	 * Validates the EntitiesWithoutTwoReferences constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGraphEdge_EntitiesWithoutTwoReferences(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(TyphonmlPackage.Literals.GRAPH_EDGE,
+				 graphEdge,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "EntitiesWithoutTwoReferences",
+				 GRAPH_EDGE__ENTITIES_WITHOUT_TWO_REFERENCES__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the WrongFrom constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GRAPH_EDGE__WRONG_FROM__EEXPRESSION = "from.oclContainer() = entity";
+
+	/**
+	 * Validates the WrongFrom constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGraphEdge_WrongFrom(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(TyphonmlPackage.Literals.GRAPH_EDGE,
+				 graphEdge,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "WrongFrom",
+				 GRAPH_EDGE__WRONG_FROM__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the WrongTo constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GRAPH_EDGE__WRONG_TO__EEXPRESSION = "to.oclContainer() = entity";
+
+	/**
+	 * Validates the WrongTo constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGraphEdge_WrongTo(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(TyphonmlPackage.Literals.GRAPH_EDGE,
+				 graphEdge,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "WrongTo",
+				 GRAPH_EDGE__WRONG_TO__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the WrongFromCardinality constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GRAPH_EDGE__WRONG_FROM_CARDINALITY__EEXPRESSION = "from.cardinality = Cardinality::one";
+
+	/**
+	 * Validates the WrongFromCardinality constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGraphEdge_WrongFromCardinality(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(TyphonmlPackage.Literals.GRAPH_EDGE,
+				 graphEdge,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "WrongFromCardinality",
+				 GRAPH_EDGE__WRONG_FROM_CARDINALITY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the WrongToCardinality constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String GRAPH_EDGE__WRONG_TO_CARDINALITY__EEXPRESSION = "to.cardinality = Cardinality::one";
+
+	/**
+	 * Validates the WrongToCardinality constraint of '<em>Graph Edge</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGraphEdge_WrongToCardinality(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(TyphonmlPackage.Literals.GRAPH_EDGE,
+				 graphEdge,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "WrongToCardinality",
+				 GRAPH_EDGE__WRONG_TO_CARDINALITY__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -998,7 +1157,21 @@ public class TyphonmlValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateAddGraphEdge(AddGraphEdge addGraphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(addGraphEdge, diagnostics, context);
+		if (!validate_NoCircularContainment(addGraphEdge, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_EntitiesWithoutTwoReferences(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongFrom(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongTo(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongFromCardinality(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_WrongToCardinality(addGraphEdge, diagnostics, context);
+		return result;
 	}
 
 	/**
