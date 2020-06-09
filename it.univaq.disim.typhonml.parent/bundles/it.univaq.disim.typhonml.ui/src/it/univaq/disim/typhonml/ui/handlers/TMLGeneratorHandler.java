@@ -1,6 +1,5 @@
 package it.univaq.disim.typhonml.ui.handlers;
 
-
 import java.io.File;
 
 import org.eclipse.core.commands.AbstractHandler;
@@ -21,6 +20,7 @@ import it.univaq.disim.typhonml.acceleo.runner.Runner;
 
 /**
  * Our sample handler extends AbstractHandler, an IHandler base class.
+ * 
  * @see org.eclipse.core.commands.IHandler
  * @see org.eclipse.core.commands.AbstractHandler
  */
@@ -30,35 +30,27 @@ public class TMLGeneratorHandler extends AbstractHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 
 		IStructuredSelection selection = (IStructuredSelection) HandlerUtil.getCurrentSelectionChecked(event);
-        Object object = selection.getFirstElement();
-        if (object instanceof IFile) {
-        	IFile f = (IFile) object;
-   			File folder = new File(f.getLocation().toOSString().replace("." + f.getFileExtension(), "") + File.separator + "gen-src");
-   			//Services.generateFromTML(f.getFullPath().toString(), folder.getAbsolutePath());
-   			try {
-   				Runner r = new Runner();
-   				r.run(f.getFullPath().toString(), folder.toString());
-//   				r.run
-//				new EGXXMIStandalone().execute();
-			} catch (Exception e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-        	for(IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
-        	    try {
+		Object object = selection.getFirstElement();
+		if (object instanceof IFile) {
+			IFile f = (IFile) object;
+			File folder = new File(
+					f.getLocation().toOSString().replace("." + f.getFileExtension(), "") + File.separator + "gen-src");
+			try {
+				Runner r = new Runner();
+				r.run(f.getFullPath().toString(), folder.toString());
+				for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects())
+
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-        	}
-        }
+			} catch (CoreException e) {
+				IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+				MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was not generated: " + e.getMessage());
+				return null;
+			}
+
+		}
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-		MessageDialog.openInformation(
-				window.getShell(),
-				"Ui",
-				"Microservice architecture was generated");
+		MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was generated");
 		return null;
-		
+
 	}
 }

@@ -81,13 +81,6 @@
          unpack="false"/>
 
    <plugin
-         id="it.univaq.disim.typhonml.data_access_layer"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="it.univaq.disim.typhonml.mapping_generation"
          download-size="0"
          install-size="0"
