@@ -3,7 +3,7 @@
 
 
 [template public generateControllerClass(anEntity : Entity)]
-[comment @main /]
+
 [file ('/src/main/java/org/typhon/dl/controller/' + anEntity.name + 'RestController.java', 
 		false, 'UTF-8')]
 package org.typhon.dl.controller;
