@@ -2,6 +2,7 @@ package it.univaq.disim.typhonml.ui.handlers;
 
 
 import java.io.File;
+import java.io.IOException;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -40,9 +41,13 @@ public class XMIGeneratorHandler extends AbstractHandler {
         	    	Runner r = new Runner();
        				r.run(f.getFullPath().toString(), folder.toString());
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-				} catch (CoreException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+				} catch (CoreException | IOException e) {
+					IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+					MessageDialog.openInformation(
+							window.getShell(),
+							"Ui",
+							"OpenAPI specification was not generated: " + e.getMessage());
+					return null;
 				}
         	}
         }
