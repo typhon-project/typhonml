@@ -19,7 +19,7 @@
 	        </command>
 	        <command
 	                  commandId="TMLGeneratorHandler"
-	                  label="Generate microservices architecture"
+	                  label="Generate OpenAPI specification"
 	                  style="push"
 	                  tooltip="Generate">
 	        </command>
@@ -49,7 +49,7 @@
 	        </command>
 	        <command
 	                  commandId="XMIGeneratorHandler"
-	                  label="Generate microservices architecture"
+	                  label="Generate OpenAPI specification"
 	                  style="push"
 	                  tooltip="Generate">
 	        </command>

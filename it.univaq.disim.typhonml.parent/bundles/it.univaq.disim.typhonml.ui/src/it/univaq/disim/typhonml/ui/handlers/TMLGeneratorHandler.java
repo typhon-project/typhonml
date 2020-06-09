@@ -39,17 +39,18 @@ public class TMLGeneratorHandler extends AbstractHandler {
 				Runner r = new Runner();
 				r.run(f.getFullPath().toString(), folder.toString());
 				for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects())
-
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 			} catch (CoreException e) {
 				IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 				MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was not generated: " + e.getMessage());
 				return null;
 			}
-
+			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
+			MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was generated: " + folder.toString());
+			return null;
 		}
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-		MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was generated");
+		MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was not generated");
 		return null;
 
 	}
