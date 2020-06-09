@@ -1,6 +1,7 @@
 package it.univaq.disim.typhonml.ui.handlers;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -40,7 +41,7 @@ public class TMLGeneratorHandler extends AbstractHandler {
 				r.run(f.getFullPath().toString(), folder.toString());
 				for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects())
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-			} catch (CoreException e) {
+			} catch (CoreException | IOException e) {
 				IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
 				MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was not generated: " + e.getMessage());
 				return null;

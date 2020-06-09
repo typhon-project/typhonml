@@ -25,22 +25,23 @@ public class Runner {
 
 	public static void main(String[] args) {
 		Runner r = new Runner();
-		r.run("user-review-product.xmi",
-				"output");
-	}
-
-	public void run(String modelPath, String outputFolderPath) {
-		System.out.println("Model 2 text generation:");
-
 		try {
-			File folder = new File(outputFolderPath);
-			System.out.print("\t" + "Generate all the files from the template...");
-			Generate generator = new Generate(loadModel(modelPath), folder, new ArrayList<String>());
-			generator.doGenerate(new BasicMonitor());
-			System.out.println("Generated!");
+			r.run("user-review-product.xmi", "output");
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public void run(String modelPath, String outputFolderPath) throws IOException {
+		System.out.println("Model 2 text generation:");
+
+		File folder = new File(outputFolderPath);
+		System.out.print("\t" + "Generate all the files from the template...");
+		Generate generator = new Generate(loadModel(modelPath), folder, new ArrayList<String>());
+		generator.doGenerate(new BasicMonitor());
+		System.out.println("Generated!");
+
 	}
 
 	public static Model loadModel(String modelPath) {
@@ -74,7 +75,7 @@ public class Runner {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static Model loadXtextModel(String pathToXTextModel) {
 		registerTyphonMM();
 		Injector injector = new TyphonMLStandaloneSetup().createInjectorAndDoEMFRegistration();
@@ -83,7 +84,7 @@ public class Runner {
 		URI uri = URI.createURI(pathToXTextModel);
 		Resource resource = resourceSet.getResource(uri, true);
 		Model model = (Model) resource.getContents().get(0);
-		
+
 		return model;
 	}
 
