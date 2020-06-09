@@ -242,7 +242,7 @@
 		"[attribute.name/]" : {
 			"type" : "string"
 		}[/for]
-[if (not entity.relations->isEmpty())],[/if]
+[if ((not entity.relations->isEmpty()) and (not entity.attributes->isEmpty()))],[/if]
 [for(relation : Relation | entity.relations) separator(',\n')]
 [if (relation.cardinality = typhonml::Cardinality::zero_one 
 		or relation.cardinality = typhonml::Cardinality::one)]
@@ -275,7 +275,7 @@
 		"[attribute.name/]" : {
 			"type" : "string"
 		}[/for]
-[if (not entity.relations->isEmpty())],[/if]
+[if ((not entity.relations->isEmpty()) and (not entity.attributes->isEmpty()))],[/if]
 [for(relation : Relation | entity.relations) separator(',\n')]
 [if (relation.cardinality = typhonml::Cardinality::zero_one 
 		or relation.cardinality = typhonml::Cardinality::one)]

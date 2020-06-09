@@ -43,15 +43,15 @@ public class TMLGeneratorHandler extends AbstractHandler {
 					project.refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
 			} catch (CoreException | IOException e) {
 				IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-				MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was not generated: " + e.getMessage());
+				MessageDialog.openInformation(window.getShell(), "Ui", "OpenAPI specification has not been generated: " + e.getMessage());
 				return null;
 			}
 			IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-			MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was generated: " + folder.toString());
+			MessageDialog.openInformation(window.getShell(), "Ui", "OpenAPI specification has been generated: " + folder.toString());
 			return null;
 		}
 		IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);
-		MessageDialog.openInformation(window.getShell(), "Ui", "Microservice architecture was not generated");
+		MessageDialog.openInformation(window.getShell(), "Ui", "OpenAPI specification has not been generated");
 		return null;
 
 	}

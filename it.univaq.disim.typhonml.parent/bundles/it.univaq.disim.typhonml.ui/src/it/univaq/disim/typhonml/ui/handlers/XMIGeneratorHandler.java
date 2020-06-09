@@ -46,7 +46,7 @@ public class XMIGeneratorHandler extends AbstractHandler {
 					MessageDialog.openInformation(
 							window.getShell(),
 							"Ui",
-							"OpenAPI specification was not generated: " + e.getMessage());
+							"OpenAPI specification has not been generated: " + e.getMessage());
 					return null;
 				}
         	}
@@ -55,7 +55,7 @@ public class XMIGeneratorHandler extends AbstractHandler {
 		MessageDialog.openInformation(
 				window.getShell(),
 				"Ui",
-				"Microservice architecture was generated");
+				"OpenAPI specification has been generated");
 		return null;
 		
 	}

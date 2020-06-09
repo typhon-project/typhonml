@@ -48,7 +48,7 @@ public class TMLInjectorHandler extends AbstractHandler {
 		MessageDialog.openInformation(
 				window.getShell(),
 				"Ui",
-				"Model was generated");
+				"TML file has been generated");
 		return null;
 		
 	}

@@ -48,7 +48,7 @@ public class ModelInjectorHandler extends AbstractHandler {
 		MessageDialog.openInformation(
 				window.getShell(),
 				"Ui",
-				"Model was generated");
+				"Model has been generated");
 		return null;
 		
 	}
