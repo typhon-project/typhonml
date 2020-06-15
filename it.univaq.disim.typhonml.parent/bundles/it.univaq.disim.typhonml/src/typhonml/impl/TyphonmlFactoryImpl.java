@@ -128,9 +128,11 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 			case TyphonmlPackage.ADD_GRAPH_EDGE: return createAddGraphEdge();
 			case TyphonmlPackage.REMOVE_GRAPH_EDGE: return createRemoveGraphEdge();
 			case TyphonmlPackage.RENABE_GRAPH_EDGE_LABEL: return createRenabeGraphEdgeLabel();
-			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE: return createAddCustomDataTypeAttribute();
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createChangePrimitiveDataTypeAttribute();
 			case TyphonmlPackage.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE: return createChangeCustomDataTypeAttribute();
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE: return createAddCustomDataType();
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE: return createAddPrimitiveDataTypeAttribute();
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE: return createAddCustomDataTypeAttribute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -982,6 +984,28 @@ public class TyphonmlFactoryImpl extends EFactoryImpl implements TyphonmlFactory
 	public ChangeCustomDataTypeAttribute createChangeCustomDataTypeAttribute() {
 		ChangeCustomDataTypeAttributeImpl changeCustomDataTypeAttribute = new ChangeCustomDataTypeAttributeImpl();
 		return changeCustomDataTypeAttribute;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddCustomDataType createAddCustomDataType() {
+		AddCustomDataTypeImpl addCustomDataType = new AddCustomDataTypeImpl();
+		return addCustomDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AddPrimitiveDataTypeAttribute createAddPrimitiveDataTypeAttribute() {
+		AddPrimitiveDataTypeAttributeImpl addPrimitiveDataTypeAttribute = new AddPrimitiveDataTypeAttributeImpl();
+		return addPrimitiveDataTypeAttribute;
 	}
 
 	/**

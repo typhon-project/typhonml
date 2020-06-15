@@ -1774,6 +1774,52 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddCustomDataType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddCustomDataTypeItemProvider addCustomDataTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddCustomDataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddCustomDataTypeAdapter() {
+		if (addCustomDataTypeItemProvider == null) {
+			addCustomDataTypeItemProvider = new AddCustomDataTypeItemProvider(this);
+		}
+
+		return addCustomDataTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link typhonml.AddPrimitiveDataTypeAttribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AddPrimitiveDataTypeAttributeItemProvider addPrimitiveDataTypeAttributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link typhonml.AddPrimitiveDataTypeAttribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAddPrimitiveDataTypeAttributeAdapter() {
+		if (addPrimitiveDataTypeAttributeItemProvider == null) {
+			addPrimitiveDataTypeAttributeItemProvider = new AddPrimitiveDataTypeAttributeItemProvider(this);
+		}
+
+		return addPrimitiveDataTypeAttributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1949,9 +1995,11 @@ public class TyphonmlItemProviderAdapterFactory extends TyphonmlAdapterFactory i
 		if (addGraphEdgeItemProvider != null) addGraphEdgeItemProvider.dispose();
 		if (removeGraphEdgeItemProvider != null) removeGraphEdgeItemProvider.dispose();
 		if (renabeGraphEdgeLabelItemProvider != null) renabeGraphEdgeLabelItemProvider.dispose();
-		if (addCustomDataTypeAttributeItemProvider != null) addCustomDataTypeAttributeItemProvider.dispose();
 		if (changePrimitiveDataTypeAttributeItemProvider != null) changePrimitiveDataTypeAttributeItemProvider.dispose();
 		if (changeCustomDataTypeAttributeItemProvider != null) changeCustomDataTypeAttributeItemProvider.dispose();
+		if (addCustomDataTypeItemProvider != null) addCustomDataTypeItemProvider.dispose();
+		if (addPrimitiveDataTypeAttributeItemProvider != null) addPrimitiveDataTypeAttributeItemProvider.dispose();
+		if (addCustomDataTypeAttributeItemProvider != null) addCustomDataTypeAttributeItemProvider.dispose();
 	}
 
 }

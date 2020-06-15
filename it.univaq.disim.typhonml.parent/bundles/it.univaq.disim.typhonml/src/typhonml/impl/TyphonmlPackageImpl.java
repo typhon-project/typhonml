@@ -15,11 +15,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import typhonml.AddAttribute;
 import typhonml.AddAttributesToIndex;
 import typhonml.AddCollectionIndex;
+import typhonml.AddCustomDataType;
 import typhonml.AddCustomDataTypeAttribute;
 import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
 import typhonml.AddIndex;
+import typhonml.AddPrimitiveDataTypeAttribute;
 import typhonml.AddRelation;
 import typhonml.Attribute;
 import typhonml.BigintType;
@@ -680,6 +682,20 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	private EClass changeCustomDataTypeAttributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addCustomDataTypeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass addPrimitiveDataTypeAttributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -2702,6 +2718,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getAddCustomDataTypeAttribute_Type() {
+		return (EReference)addCustomDataTypeAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getChangePrimitiveDataTypeAttribute() {
 		return changePrimitiveDataTypeAttributeEClass;
 	}
@@ -2722,6 +2748,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getChangePrimitiveDataTypeAttribute_NewType() {
+		return (EReference)changePrimitiveDataTypeAttributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getChangeCustomDataTypeAttribute() {
 		return changeCustomDataTypeAttributeEClass;
 	}
@@ -2734,6 +2770,36 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 	@Override
 	public EReference getChangeCustomDataTypeAttribute_NewType() {
 		return (EReference)changeCustomDataTypeAttributeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddCustomDataType() {
+		return addCustomDataTypeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getAddPrimitiveDataTypeAttribute() {
+		return addPrimitiveDataTypeAttributeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAddPrimitiveDataTypeAttribute_Type() {
+		return (EReference)addPrimitiveDataTypeAttributeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -3056,13 +3122,20 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		createEReference(renabeGraphEdgeLabelEClass, RENABE_GRAPH_EDGE_LABEL__EDGE);
 		createEAttribute(renabeGraphEdgeLabelEClass, RENABE_GRAPH_EDGE_LABEL__NEW_NAME);
 
-		addCustomDataTypeAttributeEClass = createEClass(ADD_CUSTOM_DATA_TYPE_ATTRIBUTE);
-
 		changePrimitiveDataTypeAttributeEClass = createEClass(CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE);
 		createEAttribute(changePrimitiveDataTypeAttributeEClass, CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE);
+		createEReference(changePrimitiveDataTypeAttributeEClass, CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE);
 
 		changeCustomDataTypeAttributeEClass = createEClass(CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE);
 		createEReference(changeCustomDataTypeAttributeEClass, CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE__NEW_TYPE);
+
+		addCustomDataTypeEClass = createEClass(ADD_CUSTOM_DATA_TYPE);
+
+		addPrimitiveDataTypeAttributeEClass = createEClass(ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE);
+		createEReference(addPrimitiveDataTypeAttributeEClass, ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE);
+
+		addCustomDataTypeAttributeEClass = createEClass(ADD_CUSTOM_DATA_TYPE_ATTRIBUTE);
+		createEReference(addCustomDataTypeAttributeEClass, ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__TYPE);
 
 		// Create enums
 		nlpTaskTypeEEnum = createEEnum(NLP_TASK_TYPE);
@@ -3138,8 +3211,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		renameEntityEClass.getESuperTypes().add(this.getChangeOperator());
 		removeEntityEClass.getESuperTypes().add(this.getChangeOperator());
-		addAttributeEClass.getESuperTypes().add(this.getAttribute());
 		addAttributeEClass.getESuperTypes().add(this.getChangeOperator());
+		addAttributeEClass.getESuperTypes().add(this.getEntityAttributeKind());
 		changeAttributeTypeEClass.getESuperTypes().add(this.getChangeOperator());
 		removeAttributeEClass.getESuperTypes().add(this.getChangeOperator());
 		renameAttributeEClass.getESuperTypes().add(this.getChangeOperator());
@@ -3173,9 +3246,12 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		addGraphEdgeEClass.getESuperTypes().add(this.getGraphEdge());
 		removeGraphEdgeEClass.getESuperTypes().add(this.getChangeOperator());
 		renabeGraphEdgeLabelEClass.getESuperTypes().add(this.getChangeOperator());
-		addCustomDataTypeAttributeEClass.getESuperTypes().add(this.getAddAttribute());
 		changePrimitiveDataTypeAttributeEClass.getESuperTypes().add(this.getChangeAttributeType());
 		changeCustomDataTypeAttributeEClass.getESuperTypes().add(this.getChangeAttributeType());
+		addCustomDataTypeEClass.getESuperTypes().add(this.getCustomDataType());
+		addCustomDataTypeEClass.getESuperTypes().add(this.getChangeOperator());
+		addPrimitiveDataTypeAttributeEClass.getESuperTypes().add(this.getAddAttribute());
+		addCustomDataTypeAttributeEClass.getESuperTypes().add(this.getAddAttribute());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -3454,13 +3530,20 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		initEReference(getRenabeGraphEdgeLabel_Edge(), this.getGraphEdge(), null, "edge", null, 1, 1, RenabeGraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRenabeGraphEdgeLabel_NewName(), ecorePackage.getEString(), "newName", null, 0, 1, RenabeGraphEdgeLabel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(addCustomDataTypeAttributeEClass, AddCustomDataTypeAttribute.class, "AddCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(changePrimitiveDataTypeAttributeEClass, ChangePrimitiveDataTypeAttribute.class, "ChangePrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getChangePrimitiveDataTypeAttribute_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 1, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getChangePrimitiveDataTypeAttribute_NewType(), this.getDataType(), null, "newType", null, 1, 1, ChangePrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(changeCustomDataTypeAttributeEClass, ChangeCustomDataTypeAttribute.class, "ChangeCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getChangeCustomDataTypeAttribute_NewType(), this.getCustomDataType(), null, "newType", null, 1, 1, ChangeCustomDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addCustomDataTypeEClass, AddCustomDataType.class, "AddCustomDataType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(addPrimitiveDataTypeAttributeEClass, AddPrimitiveDataTypeAttribute.class, "AddPrimitiveDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddPrimitiveDataTypeAttribute_Type(), this.getDataType(), null, "type", null, 1, 1, AddPrimitiveDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(addCustomDataTypeAttributeEClass, AddCustomDataTypeAttribute.class, "AddCustomDataTypeAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAddCustomDataTypeAttribute_Type(), this.getCustomDataType(), null, "type", null, 1, 1, AddCustomDataTypeAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(nlpTaskTypeEEnum, NlpTaskType.class, "NlpTaskType");

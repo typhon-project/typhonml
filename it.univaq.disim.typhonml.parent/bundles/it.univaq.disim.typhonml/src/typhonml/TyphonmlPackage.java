@@ -2528,7 +2528,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_ATTRIBUTE__NAME = ATTRIBUTE__NAME;
+	int ADD_ATTRIBUTE__NAME = CHANGE_OPERATOR_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -2537,16 +2537,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_ATTRIBUTE__IMPORTED_NAMESPACE = ATTRIBUTE__IMPORTED_NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_ATTRIBUTE__TYPE = ATTRIBUTE__TYPE;
+	int ADD_ATTRIBUTE__IMPORTED_NAMESPACE = CHANGE_OPERATOR_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Owner Entity</b></em>' reference.
@@ -2555,7 +2546,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_ATTRIBUTE__OWNER_ENTITY = ATTRIBUTE_FEATURE_COUNT + 0;
+	int ADD_ATTRIBUTE__OWNER_ENTITY = CHANGE_OPERATOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Add Attribute</em>' class.
@@ -2564,7 +2555,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_ATTRIBUTE_FEATURE_COUNT = ATTRIBUTE_FEATURE_COUNT + 1;
+	int ADD_ATTRIBUTE_FEATURE_COUNT = CHANGE_OPERATOR_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Add Attribute</em>' class.
@@ -2573,7 +2564,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ADD_ATTRIBUTE_OPERATION_COUNT = ATTRIBUTE_OPERATION_COUNT + 0;
+	int ADD_ATTRIBUTE_OPERATION_COUNT = CHANGE_OPERATOR_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.ChangeAttributeTypeImpl <em>Change Attribute Type</em>}' class.
@@ -3990,61 +3981,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getAddCustomDataTypeAttribute()
 	 * @generated
 	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE = 79;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__NAME = ADD_ATTRIBUTE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__IMPORTED_NAMESPACE = ADD_ATTRIBUTE__IMPORTED_NAMESPACE;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__TYPE = ADD_ATTRIBUTE__TYPE;
-
-	/**
-	 * The feature id for the '<em><b>Owner Entity</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__OWNER_ENTITY = ADD_ATTRIBUTE__OWNER_ENTITY;
-
-	/**
-	 * The number of structural features of the '<em>Add Custom Data Type Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ADD_ATTRIBUTE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Add Custom Data Type Attribute</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE_OPERATION_COUNT = ADD_ATTRIBUTE_OPERATION_COUNT + 0;
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE = 83;
 
 	/**
 	 * The meta object id for the '{@link typhonml.impl.ChangePrimitiveDataTypeAttributeImpl <em>Change Primitive Data Type Attribute</em>}' class.
@@ -4054,7 +3991,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangePrimitiveDataTypeAttribute()
 	 * @generated
 	 */
-	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE = 80;
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE = 79;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Change</b></em>' reference.
@@ -4075,13 +4012,22 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>New Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Change Primitive Data Type Attribute</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 1;
+	int CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = CHANGE_ATTRIBUTE_TYPE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Change Primitive Data Type Attribute</em>' class.
@@ -4100,7 +4046,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getChangeCustomDataTypeAttribute()
 	 * @generated
 	 */
-	int CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE = 81;
+	int CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE = 80;
 
 	/**
 	 * The feature id for the '<em><b>Attribute To Change</b></em>' reference.
@@ -4139,6 +4085,188 @@ public interface TyphonmlPackage extends EPackage {
 	int CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE_OPERATION_COUNT = CHANGE_ATTRIBUTE_TYPE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link typhonml.impl.AddCustomDataTypeImpl <em>Add Custom Data Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AddCustomDataTypeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAddCustomDataType()
+	 * @generated
+	 */
+	int ADD_CUSTOM_DATA_TYPE = 81;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE__NAME = CUSTOM_DATA_TYPE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE__IMPORTED_NAMESPACE = CUSTOM_DATA_TYPE__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE__ELEMENTS = CUSTOM_DATA_TYPE__ELEMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE__IMPLEMENTATION = CUSTOM_DATA_TYPE__IMPLEMENTATION;
+
+	/**
+	 * The number of structural features of the '<em>Add Custom Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_FEATURE_COUNT = CUSTOM_DATA_TYPE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Add Custom Data Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_OPERATION_COUNT = CUSTOM_DATA_TYPE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link typhonml.impl.AddPrimitiveDataTypeAttributeImpl <em>Add Primitive Data Type Attribute</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see typhonml.impl.AddPrimitiveDataTypeAttributeImpl
+	 * @see typhonml.impl.TyphonmlPackageImpl#getAddPrimitiveDataTypeAttribute()
+	 * @generated
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE = 82;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NAME = ADD_ATTRIBUTE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__IMPORTED_NAMESPACE = ADD_ATTRIBUTE__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owner Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__OWNER_ENTITY = ADD_ATTRIBUTE__OWNER_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE = ADD_ATTRIBUTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Add Primitive Data Type Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ADD_ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Add Primitive Data Type Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE_OPERATION_COUNT = ADD_ATTRIBUTE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__NAME = ADD_ATTRIBUTE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__IMPORTED_NAMESPACE = ADD_ATTRIBUTE__IMPORTED_NAMESPACE;
+
+	/**
+	 * The feature id for the '<em><b>Owner Entity</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__OWNER_ENTITY = ADD_ATTRIBUTE__OWNER_ENTITY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__TYPE = ADD_ATTRIBUTE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Add Custom Data Type Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE_FEATURE_COUNT = ADD_ATTRIBUTE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Add Custom Data Type Attribute</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ADD_CUSTOM_DATA_TYPE_ATTRIBUTE_OPERATION_COUNT = ADD_ATTRIBUTE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link typhonml.NlpTaskType <em>Nlp Task Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4146,7 +4274,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getNlpTaskType()
 	 * @generated
 	 */
-	int NLP_TASK_TYPE = 82;
+	int NLP_TASK_TYPE = 84;
 
 	/**
 	 * The meta object id for the '{@link typhonml.Cardinality <em>Cardinality</em>}' enum.
@@ -4156,7 +4284,7 @@ public interface TyphonmlPackage extends EPackage {
 	 * @see typhonml.impl.TyphonmlPackageImpl#getCardinality()
 	 * @generated
 	 */
-	int CARDINALITY = 83;
+	int CARDINALITY = 85;
 
 
 	/**
@@ -6198,6 +6326,17 @@ public interface TyphonmlPackage extends EPackage {
 	EClass getAddCustomDataTypeAttribute();
 
 	/**
+	 * Returns the meta object for the reference '{@link typhonml.AddCustomDataTypeAttribute#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see typhonml.AddCustomDataTypeAttribute#getType()
+	 * @see #getAddCustomDataTypeAttribute()
+	 * @generated
+	 */
+	EReference getAddCustomDataTypeAttribute_Type();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.ChangePrimitiveDataTypeAttribute <em>Change Primitive Data Type Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6219,6 +6358,17 @@ public interface TyphonmlPackage extends EPackage {
 	EAttribute getChangePrimitiveDataTypeAttribute_MaxSize();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link typhonml.ChangePrimitiveDataTypeAttribute#getNewType <em>New Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>New Type</em>'.
+	 * @see typhonml.ChangePrimitiveDataTypeAttribute#getNewType()
+	 * @see #getChangePrimitiveDataTypeAttribute()
+	 * @generated
+	 */
+	EReference getChangePrimitiveDataTypeAttribute_NewType();
+
+	/**
 	 * Returns the meta object for class '{@link typhonml.ChangeCustomDataTypeAttribute <em>Change Custom Data Type Attribute</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -6238,6 +6388,37 @@ public interface TyphonmlPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getChangeCustomDataTypeAttribute_NewType();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.AddCustomDataType <em>Add Custom Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Add Custom Data Type</em>'.
+	 * @see typhonml.AddCustomDataType
+	 * @generated
+	 */
+	EClass getAddCustomDataType();
+
+	/**
+	 * Returns the meta object for class '{@link typhonml.AddPrimitiveDataTypeAttribute <em>Add Primitive Data Type Attribute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Add Primitive Data Type Attribute</em>'.
+	 * @see typhonml.AddPrimitiveDataTypeAttribute
+	 * @generated
+	 */
+	EClass getAddPrimitiveDataTypeAttribute();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link typhonml.AddPrimitiveDataTypeAttribute#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Type</em>'.
+	 * @see typhonml.AddPrimitiveDataTypeAttribute#getType()
+	 * @see #getAddPrimitiveDataTypeAttribute()
+	 * @generated
+	 */
+	EReference getAddPrimitiveDataTypeAttribute_Type();
 
 	/**
 	 * Returns the meta object for enum '{@link typhonml.NlpTaskType <em>Nlp Task Type</em>}'.
@@ -7987,6 +8168,14 @@ public interface TyphonmlPackage extends EPackage {
 		EClass ADD_CUSTOM_DATA_TYPE_ATTRIBUTE = eINSTANCE.getAddCustomDataTypeAttribute();
 
 		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_CUSTOM_DATA_TYPE_ATTRIBUTE__TYPE = eINSTANCE.getAddCustomDataTypeAttribute_Type();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.ChangePrimitiveDataTypeAttributeImpl <em>Change Primitive Data Type Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8005,6 +8194,14 @@ public interface TyphonmlPackage extends EPackage {
 		EAttribute CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__MAX_SIZE = eINSTANCE.getChangePrimitiveDataTypeAttribute_MaxSize();
 
 		/**
+		 * The meta object literal for the '<em><b>New Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE__NEW_TYPE = eINSTANCE.getChangePrimitiveDataTypeAttribute_NewType();
+
+		/**
 		 * The meta object literal for the '{@link typhonml.impl.ChangeCustomDataTypeAttributeImpl <em>Change Custom Data Type Attribute</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -8021,6 +8218,34 @@ public interface TyphonmlPackage extends EPackage {
 		 * @generated
 		 */
 		EReference CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE__NEW_TYPE = eINSTANCE.getChangeCustomDataTypeAttribute_NewType();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.AddCustomDataTypeImpl <em>Add Custom Data Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.AddCustomDataTypeImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getAddCustomDataType()
+		 * @generated
+		 */
+		EClass ADD_CUSTOM_DATA_TYPE = eINSTANCE.getAddCustomDataType();
+
+		/**
+		 * The meta object literal for the '{@link typhonml.impl.AddPrimitiveDataTypeAttributeImpl <em>Add Primitive Data Type Attribute</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see typhonml.impl.AddPrimitiveDataTypeAttributeImpl
+		 * @see typhonml.impl.TyphonmlPackageImpl#getAddPrimitiveDataTypeAttribute()
+		 * @generated
+		 */
+		EClass ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE = eINSTANCE.getAddPrimitiveDataTypeAttribute();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE__TYPE = eINSTANCE.getAddPrimitiveDataTypeAttribute_Type();
 
 		/**
 		 * The meta object literal for the '{@link typhonml.NlpTaskType <em>Nlp Task Type</em>}' enum.

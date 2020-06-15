@@ -282,12 +282,19 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//RenabeGraphEdgeLabel/edge"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//RenabeGraphEdgeLabel/newName"/>
     </genClasses>
-    <genClasses ecoreClass="typhonml.ecore#//AddCustomDataTypeAttribute"/>
     <genClasses ecoreClass="typhonml.ecore#//ChangePrimitiveDataTypeAttribute">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute typhonml.ecore#//ChangePrimitiveDataTypeAttribute/maxSize"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangePrimitiveDataTypeAttribute/newType"/>
     </genClasses>
     <genClasses ecoreClass="typhonml.ecore#//ChangeCustomDataTypeAttribute">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//ChangeCustomDataTypeAttribute/newType"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddCustomDataType"/>
+    <genClasses ecoreClass="typhonml.ecore#//AddPrimitiveDataTypeAttribute">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddPrimitiveDataTypeAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="typhonml.ecore#//AddCustomDataTypeAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference typhonml.ecore#//AddCustomDataTypeAttribute/type"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

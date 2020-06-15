@@ -408,7 +408,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 			case TyphonmlPackage.ADD_ATTRIBUTE: {
 				AddAttribute addAttribute = (AddAttribute)theEObject;
 				T result = caseAddAttribute(addAttribute);
-				if (result == null) result = caseAttribute(addAttribute);
 				if (result == null) result = caseChangeOperator(addAttribute);
 				if (result == null) result = caseEntityAttributeKind(addAttribute);
 				if (result == null) result = caseNamedElement(addAttribute);
@@ -630,17 +629,6 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE: {
-				AddCustomDataTypeAttribute addCustomDataTypeAttribute = (AddCustomDataTypeAttribute)theEObject;
-				T result = caseAddCustomDataTypeAttribute(addCustomDataTypeAttribute);
-				if (result == null) result = caseAddAttribute(addCustomDataTypeAttribute);
-				if (result == null) result = caseAttribute(addCustomDataTypeAttribute);
-				if (result == null) result = caseChangeOperator(addCustomDataTypeAttribute);
-				if (result == null) result = caseEntityAttributeKind(addCustomDataTypeAttribute);
-				if (result == null) result = caseNamedElement(addCustomDataTypeAttribute);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE: {
 				ChangePrimitiveDataTypeAttribute changePrimitiveDataTypeAttribute = (ChangePrimitiveDataTypeAttribute)theEObject;
 				T result = caseChangePrimitiveDataTypeAttribute(changePrimitiveDataTypeAttribute);
@@ -654,6 +642,35 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 				T result = caseChangeCustomDataTypeAttribute(changeCustomDataTypeAttribute);
 				if (result == null) result = caseChangeAttributeType(changeCustomDataTypeAttribute);
 				if (result == null) result = caseChangeOperator(changeCustomDataTypeAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE: {
+				AddCustomDataType addCustomDataType = (AddCustomDataType)theEObject;
+				T result = caseAddCustomDataType(addCustomDataType);
+				if (result == null) result = caseCustomDataType(addCustomDataType);
+				if (result == null) result = caseChangeOperator(addCustomDataType);
+				if (result == null) result = caseNamedElement(addCustomDataType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE: {
+				AddPrimitiveDataTypeAttribute addPrimitiveDataTypeAttribute = (AddPrimitiveDataTypeAttribute)theEObject;
+				T result = caseAddPrimitiveDataTypeAttribute(addPrimitiveDataTypeAttribute);
+				if (result == null) result = caseAddAttribute(addPrimitiveDataTypeAttribute);
+				if (result == null) result = caseChangeOperator(addPrimitiveDataTypeAttribute);
+				if (result == null) result = caseEntityAttributeKind(addPrimitiveDataTypeAttribute);
+				if (result == null) result = caseNamedElement(addPrimitiveDataTypeAttribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE: {
+				AddCustomDataTypeAttribute addCustomDataTypeAttribute = (AddCustomDataTypeAttribute)theEObject;
+				T result = caseAddCustomDataTypeAttribute(addCustomDataTypeAttribute);
+				if (result == null) result = caseAddAttribute(addCustomDataTypeAttribute);
+				if (result == null) result = caseChangeOperator(addCustomDataTypeAttribute);
+				if (result == null) result = caseEntityAttributeKind(addCustomDataTypeAttribute);
+				if (result == null) result = caseNamedElement(addCustomDataTypeAttribute);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -1888,6 +1905,36 @@ public class TyphonmlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseChangeCustomDataTypeAttribute(ChangeCustomDataTypeAttribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Add Custom Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Add Custom Data Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAddCustomDataType(AddCustomDataType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Add Primitive Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Add Primitive Data Type Attribute</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAddPrimitiveDataTypeAttribute(AddPrimitiveDataTypeAttribute object) {
 		return null;
 	}
 

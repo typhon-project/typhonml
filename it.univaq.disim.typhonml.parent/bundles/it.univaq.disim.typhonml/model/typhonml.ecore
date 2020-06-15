@@ -236,7 +236,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="entityToRemove" lowerBound="1"
         eType="#//Entity"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" abstract="true" eSuperTypes="#//Attribute #//ChangeOperator">
+  <eClassifiers xsi:type="ecore:EClass" name="AddAttribute" abstract="true" eSuperTypes="#//ChangeOperator #//EntityAttributeKind">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownerEntity" lowerBound="1"
         eType="#//Entity"/>
   </eClassifiers>
@@ -386,10 +386,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="edge" lowerBound="1" eType="#//GraphEdge"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="newName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute"/>
   <eClassifiers xsi:type="ecore:EClass" name="ChangePrimitiveDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newType" lowerBound="1"
+        eType="#//DataType" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ChangeCustomDataTypeAttribute" eSuperTypes="#//ChangeAttributeType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="newType" lowerBound="1"
@@ -419,5 +420,13 @@
     <eLiterals name="one" value="1"/>
     <eLiterals name="zero_many" value="2"/>
     <eLiterals name="one_many" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataType" eSuperTypes="#//CustomDataType #//ChangeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AddPrimitiveDataTypeAttribute" eSuperTypes="#//AddAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//DataType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddCustomDataTypeAttribute" eSuperTypes="#//AddAttribute">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//CustomDataType"/>
   </eClassifiers>
 </ecore:EPackage>
