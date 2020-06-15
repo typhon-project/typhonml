@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
    <feature id="it.univaq.disim.typhonml.feature">
-      <category name="typhonml"/>
+      <category name="typhon"/>
    </feature>
-   <category-def name="typhonml" label="Typhon plugin"/>
+   <category-def name="typhon" label="Typhon"/>
 </site>

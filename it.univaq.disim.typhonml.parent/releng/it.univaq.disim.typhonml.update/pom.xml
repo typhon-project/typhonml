@@ -21,5 +21,4 @@
 		<!-- Do not skip the deployment here -->
 		<maven.deploy.skip>false</maven.deploy.skip>
 	</properties>
-
 </project>
