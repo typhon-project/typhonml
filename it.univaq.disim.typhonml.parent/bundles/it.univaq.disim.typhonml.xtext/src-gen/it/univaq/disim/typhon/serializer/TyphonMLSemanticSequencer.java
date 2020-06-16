@@ -17,11 +17,13 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import typhonml.AddAttributesToIndex;
 import typhonml.AddCollectionIndex;
+import typhonml.AddCustomDataType;
 import typhonml.AddCustomDataTypeAttribute;
 import typhonml.AddEntity;
 import typhonml.AddGraphAttribute;
 import typhonml.AddGraphEdge;
 import typhonml.AddIndex;
+import typhonml.AddPrimitiveDataTypeAttribute;
 import typhonml.AddRelation;
 import typhonml.Attribute;
 import typhonml.BigintType;
@@ -111,6 +113,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case TyphonmlPackage.ADD_COLLECTION_INDEX:
 				sequence_AddCollectionIndex(context, (AddCollectionIndex) semanticObject); 
 				return; 
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE:
+				sequence_AddCustomDataType(context, (AddCustomDataType) semanticObject); 
+				return; 
 			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE:
 				sequence_AddCustomDataTypeAttribute(context, (AddCustomDataTypeAttribute) semanticObject); 
 				return; 
@@ -134,6 +139,9 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					return; 
 				}
 				else break;
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE:
+				sequence_AddPrimitiveDataTypeAttribute(context, (AddPrimitiveDataTypeAttribute) semanticObject); 
+				return; 
 			case TyphonmlPackage.ADD_RELATION:
 				sequence_AddRelation(context, (AddRelation) semanticObject); 
 				return; 
@@ -376,15 +384,26 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	
 	/**
 	 * Contexts:
-	 *     Attribute returns AddCustomDataTypeAttribute
-	 *     EntityAttributeKind returns AddCustomDataTypeAttribute
 	 *     ChangeOperator returns AddCustomDataTypeAttribute
 	 *     AddCustomDataTypeAttribute returns AddCustomDataTypeAttribute
 	 *
 	 * Constraint:
-	 *     (name=EString importedNamespace=EString? ownerEntity=[Entity|EString] type=DataType)
+	 *     (name=EString importedNamespace=EString? ownerEntity=[Entity|EString] type=[CustomDataType|EString])
 	 */
 	protected void sequence_AddCustomDataTypeAttribute(ISerializationContext context, AddCustomDataTypeAttribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns AddCustomDataType
+	 *     AddCustomDataType returns AddCustomDataType
+	 *
+	 * Constraint:
+	 *     (name=EString implementation=CustomDataTypeImplementationPackage? (elements+=SuperDataType elements+=SuperDataType*)?)
+	 */
+	protected void sequence_AddCustomDataType(ISerializationContext context, AddCustomDataType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -451,6 +470,19 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     (table=[Table|EString] (attributes+=[Attribute|EString] attributes+=[Attribute|EString]*)?)
 	 */
 	protected void sequence_AddIndex(ISerializationContext context, AddIndex semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ChangeOperator returns AddPrimitiveDataTypeAttribute
+	 *     AddPrimitiveDataTypeAttribute returns AddPrimitiveDataTypeAttribute
+	 *
+	 * Constraint:
+	 *     (name=EString importedNamespace=EString? ownerEntity=[Entity|EString] type=DataType)
+	 */
+	protected void sequence_AddPrimitiveDataTypeAttribute(ISerializationContext context, AddPrimitiveDataTypeAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -557,7 +589,7 @@ public class TyphonMLSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ChangePrimitiveDataTypeAttribute returns ChangePrimitiveDataTypeAttribute
 	 *
 	 * Constraint:
-	 *     (maxSize=EInt? attributeToChange=[Attribute|EString])
+	 *     (maxSize=EInt? attributeToChange=[Attribute|EString] newType=DataType)
 	 */
 	protected void sequence_ChangePrimitiveDataTypeAttribute(ISerializationContext context, ChangePrimitiveDataTypeAttribute semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -196,6 +196,11 @@ public class ModelItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CUSTOM_DATA_TYPES,
+				 TyphonmlFactory.eINSTANCE.createAddCustomDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createAddEntity()));
 
@@ -357,17 +362,27 @@ public class ModelItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
-				 TyphonmlFactory.eINSTANCE.createAddCustomDataTypeAttribute()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createChangePrimitiveDataTypeAttribute()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
 				 TyphonmlFactory.eINSTANCE.createChangeCustomDataTypeAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddCustomDataType()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddPrimitiveDataTypeAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS,
+				 TyphonmlFactory.eINSTANCE.createAddCustomDataTypeAttribute()));
 	}
 
 	/**
@@ -383,7 +398,8 @@ public class ModelItemProvider
 
 		boolean qualify =
 			childFeature == TyphonmlPackage.Literals.MODEL__ENTITIES ||
-			childFeature == TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS;
+			childFeature == TyphonmlPackage.Literals.MODEL__CHANGE_OPERATORS ||
+			childFeature == TyphonmlPackage.Literals.MODEL__CUSTOM_DATA_TYPES;
 
 		if (qualify) {
 			return getString

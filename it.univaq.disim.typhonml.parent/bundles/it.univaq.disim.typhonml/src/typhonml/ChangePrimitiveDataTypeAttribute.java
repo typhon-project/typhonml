@@ -13,6 +13,7 @@ package typhonml;
  * </p>
  * <ul>
  *   <li>{@link typhonml.ChangePrimitiveDataTypeAttribute#getMaxSize <em>Max Size</em>}</li>
+ *   <li>{@link typhonml.ChangePrimitiveDataTypeAttribute#getNewType <em>New Type</em>}</li>
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getChangePrimitiveDataTypeAttribute()
@@ -41,5 +42,27 @@ public interface ChangePrimitiveDataTypeAttribute extends ChangeAttributeType {
 	 * @generated
 	 */
 	void setMaxSize(int value);
+
+	/**
+	 * Returns the value of the '<em><b>New Type</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>New Type</em>' containment reference.
+	 * @see #setNewType(DataType)
+	 * @see typhonml.TyphonmlPackage#getChangePrimitiveDataTypeAttribute_NewType()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	DataType getNewType();
+
+	/**
+	 * Sets the value of the '{@link typhonml.ChangePrimitiveDataTypeAttribute#getNewType <em>New Type</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>New Type</em>' containment reference.
+	 * @see #getNewType()
+	 * @generated
+	 */
+	void setNewType(DataType value);
 
 } // ChangePrimitiveDataTypeAttribute

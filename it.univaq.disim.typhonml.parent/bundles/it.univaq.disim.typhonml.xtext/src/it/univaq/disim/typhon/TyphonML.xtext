@@ -207,10 +207,10 @@ NFunctionalTag_Impl returns NFunctionalTag:
 
 
 Attribute returns Attribute:
-	Attribute_Impl | AddCustomDataTypeAttribute;
+	Attribute_Impl;
 
 EntityAttributeKind returns EntityAttributeKind:
-	Attribute_Impl | CustomAttribute | AddCustomDataTypeAttribute;
+	Attribute_Impl | CustomAttribute;
 	
 	
 Attribute_Impl returns Attribute:
@@ -225,13 +225,8 @@ CustomAttribute returns CustomAttribute:
 	name=EString ':' (type=[CustomDataType|EString])
 	;
 	
+//TODO HERE
 
-//AddAttribute returns AddAttribute:
-//	{AddAttribute}
-//	('importedNamespace' importedNamespace=EString)?
-//	'add' 'attribute'
-//	name=EString ':' type=PrimitiveDataType 'to' ownerEntity=[Entity|EString]
-//	;
 
 /* 
 AddAttribute returns AddAttribute:
@@ -439,12 +434,23 @@ ChangeOperator returns ChangeOperator:
 	RenabeGraphEdgeLabel | 
 	AddCustomDataTypeAttribute | 
 	ChangePrimitiveDataTypeAttribute | 
-	ChangeCustomDataTypeAttribute
+	ChangeCustomDataTypeAttribute |
+	AddCustomDataType |
+	AddPrimitiveDataTypeAttribute
 	;
 
 
 AddCustomDataTypeAttribute returns AddCustomDataTypeAttribute:
 	'AddCustomDataTypeAttribute'
+	name=EString
+	'{'
+		('importedNamespace' importedNamespace=EString)?
+		'ownerEntity' ownerEntity=[Entity|EString]
+		'type' type=[CustomDataType|EString]
+	'}';
+
+AddPrimitiveDataTypeAttribute returns AddPrimitiveDataTypeAttribute:
+	'AddPrimitiveDataTypeAttribute'
 	name=EString
 	'{'
 		('importedNamespace' importedNamespace=EString)?
@@ -457,6 +463,7 @@ ChangePrimitiveDataTypeAttribute returns ChangePrimitiveDataTypeAttribute:
 	'{'
 		('maxSize' maxSize=EInt)?
 		'attributeToChange' attributeToChange=[Attribute|EString]
+		'newType' newType=DataType
 	'}';
 
 ChangeCustomDataTypeAttribute returns ChangeCustomDataTypeAttribute:
@@ -664,6 +671,14 @@ RenabeGraphEdgeLabel returns RenabeGraphEdgeLabel:
 		'edge' edge=[GraphEdge|EString]
 	'}';
 
+AddCustomDataType returns AddCustomDataType:
+	{AddCustomDataType}
+	'AddCustomDataType' name=EString '{'
+	('[' implementation=CustomDataTypeImplementationPackage']')?
+	//('importedNamespace' importedNamespace=EString)?
+		(elements+=SuperDataType ( "," elements+=SuperDataType)*)?
+	'}'
+;
 
 
 

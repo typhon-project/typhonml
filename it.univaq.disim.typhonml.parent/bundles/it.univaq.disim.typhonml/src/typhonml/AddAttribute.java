@@ -19,7 +19,7 @@ package typhonml;
  * @model abstract="true"
  * @generated
  */
-public interface AddAttribute extends Attribute, ChangeOperator {
+public interface AddAttribute extends ChangeOperator, EntityAttributeKind {
 	/**
 	 * Returns the value of the '<em><b>Owner Entity</b></em>' reference.
 	 * <!-- begin-user-doc -->

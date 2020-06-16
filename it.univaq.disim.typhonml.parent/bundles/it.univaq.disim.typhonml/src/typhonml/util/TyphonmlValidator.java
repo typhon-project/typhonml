@@ -244,12 +244,16 @@ public class TyphonmlValidator extends EObjectValidator {
 				return validateRemoveGraphEdge((RemoveGraphEdge)value, diagnostics, context);
 			case TyphonmlPackage.RENABE_GRAPH_EDGE_LABEL:
 				return validateRenabeGraphEdgeLabel((RenabeGraphEdgeLabel)value, diagnostics, context);
-			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE:
-				return validateAddCustomDataTypeAttribute((AddCustomDataTypeAttribute)value, diagnostics, context);
 			case TyphonmlPackage.CHANGE_PRIMITIVE_DATA_TYPE_ATTRIBUTE:
 				return validateChangePrimitiveDataTypeAttribute((ChangePrimitiveDataTypeAttribute)value, diagnostics, context);
 			case TyphonmlPackage.CHANGE_CUSTOM_DATA_TYPE_ATTRIBUTE:
 				return validateChangeCustomDataTypeAttribute((ChangeCustomDataTypeAttribute)value, diagnostics, context);
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE:
+				return validateAddCustomDataType((AddCustomDataType)value, diagnostics, context);
+			case TyphonmlPackage.ADD_PRIMITIVE_DATA_TYPE_ATTRIBUTE:
+				return validateAddPrimitiveDataTypeAttribute((AddPrimitiveDataTypeAttribute)value, diagnostics, context);
+			case TyphonmlPackage.ADD_CUSTOM_DATA_TYPE_ATTRIBUTE:
+				return validateAddCustomDataTypeAttribute((AddCustomDataTypeAttribute)value, diagnostics, context);
 			case TyphonmlPackage.NLP_TASK_TYPE:
 				return validateNlpTaskType((NlpTaskType)value, diagnostics, context);
 			case TyphonmlPackage.CARDINALITY:
@@ -1217,6 +1221,24 @@ public class TyphonmlValidator extends EObjectValidator {
 	 */
 	public boolean validateChangeCustomDataTypeAttribute(ChangeCustomDataTypeAttribute changeCustomDataTypeAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(changeCustomDataTypeAttribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAddCustomDataType(AddCustomDataType addCustomDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(addCustomDataType, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAddPrimitiveDataTypeAttribute(AddPrimitiveDataTypeAttribute addPrimitiveDataTypeAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(addPrimitiveDataTypeAttribute, diagnostics, context);
 	}
 
 	/**

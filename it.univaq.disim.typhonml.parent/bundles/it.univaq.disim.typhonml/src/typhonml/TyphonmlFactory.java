@@ -688,6 +688,24 @@ public interface TyphonmlFactory extends EFactory {
 	ChangeCustomDataTypeAttribute createChangeCustomDataTypeAttribute();
 
 	/**
+	 * Returns a new object of class '<em>Add Custom Data Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Custom Data Type</em>'.
+	 * @generated
+	 */
+	AddCustomDataType createAddCustomDataType();
+
+	/**
+	 * Returns a new object of class '<em>Add Primitive Data Type Attribute</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Add Primitive Data Type Attribute</em>'.
+	 * @generated
+	 */
+	AddPrimitiveDataTypeAttribute createAddPrimitiveDataTypeAttribute();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

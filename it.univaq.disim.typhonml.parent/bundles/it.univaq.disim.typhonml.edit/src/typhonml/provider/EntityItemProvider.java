@@ -155,6 +155,11 @@ public class EntityItemProvider extends NamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
+				 TyphonmlFactory.eINSTANCE.createAddPrimitiveDataTypeAttribute()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TyphonmlPackage.Literals.ENTITY__ATTRIBUTES,
 				 TyphonmlFactory.eINSTANCE.createAddCustomDataTypeAttribute()));
 
 		newChildDescriptors.add
