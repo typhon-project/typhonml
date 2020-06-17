@@ -1,84 +1,142 @@
 <?xml version="1.0"?>
 <project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>it.univaq.disim.typhonml</groupId>
-    <artifactId>it.univaq.disim.typhonml.configuration</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.univaq.disim.typhonml</groupId>
+	<artifactId>it.univaq.disim.typhonml.configuration</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
-    <distributionManagement>
-        <repository>
-            <id>internal</id>
-            <url>http://archiva.clmsuk.com:8090/repository/internal/</url>
-        </repository>
-    </distributionManagement>
-    <properties>
-        <tycho.version>1.6.0</tycho.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <eclipse-repo.url>http://download.eclipse.org/releases/2019-09/</eclipse-repo.url>
-        <xtext.version>2.19.0</xtext.version>
-        <!-- Skip the deployment here, submodules can override this property -->
-        <!--maven.deploy.skip>true</maven.deploy.skip-->
-    </properties>
-    
-    <repositories>
-        <repository>
-            <id>eclipse-release</id>
-            <url>${eclipse-repo.url}</url>
-            <layout>p2</layout>
-        </repository>
-        <repository>
-            <id>eclipse-epsilon</id>
-            <url>http://download.eclipse.org/epsilon/updates/</url>
-            <layout>p2</layout>
-        </repository>
-        <repository>
-            <id>Xtext Update Site</id>
-            <layout>p2</layout>
-            <url>https://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtext.version}/</url>
-        </repository>
-    </repositories>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.eclipse.acceleo</groupId>
-                    <artifactId>org.eclipse.acceleo.maven</artifactId>
-                    <version>3.5.0-SNAPSHOT</version>
-                     <executions>
-                        <execution>
-                            <id>acceleo-compile</id>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>acceleo-compile</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-            <!--Enable the replacement of the SNAPSHOT version based on the last commit-->
-            
-                
-            <plugin>
-                <groupId>org.eclipse.tycho</groupId>
-                <artifactId>tycho-maven-plugin</artifactId>
-                <version>${tycho.version}</version>
-                <extensions>true</extensions>
-            </plugin>
-            <plugin>
-                <groupId>org.eclipse.tycho</groupId>
-                <artifactId>target-platform-configuration</artifactId>
-                <version>${tycho.version}</version>
-                <configuration>
-                    <resolver>p2</resolver>
-                    <pomDependencies>consider</pomDependencies>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+	<properties>
+		<tycho.version>1.6.0</tycho.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<eclipse-repo.url>http://download.eclipse.org/releases/2019-09/</eclipse-repo.url>
+		<xtext.version>2.19.0</xtext.version>
+		<!-- Skip the deployment here, submodules can override this property -->
+		<!--maven.deploy.skip>true</maven.deploy.skip -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<acceleo-version>3.7.8</acceleo-version>
+		<tycho-version>1.6.0</tycho-version>
+		<xtext-version>2.20.0</xtext-version>
+		<xtext-antlr-generator-version>2.1.1</xtext-antlr-generator-version>
+		<xtend-maven-plugin-version>2.21.0</xtend-maven-plugin-version>
+		<org.eclipse.acceleo.maven-version>3.6.4</org.eclipse.acceleo.maven-version>
+		<mwe-version>2.11.1</mwe-version>
+		<equinox-version>3.6.200-v20130402-1505</equinox-version>
+		<eclipse-version>2020-03</eclipse-version>
+		<maven-resources-plugin-version>3.1.0</maven-resources-plugin-version>
+		<maven-antrun-plugin-version>3.0.0</maven-antrun-plugin-version>
+		<build-helper-maven-plugin-version>3.1.0</build-helper-maven-plugin-version>
+		<maven-clean-plugin-version>3.1.0</maven-clean-plugin-version>
+		<exec-maven-plugin-version>1.6.0</exec-maven-plugin-version>
+		<lifecycle-mapping-version>1.0.0</lifecycle-mapping-version>
+	</properties>
+
+
+	<repositories>
+
+		<repository>
+			<id>eclipse-epsilon</id>
+			<url>http://download.eclipse.org/epsilon/updates/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>kepler</id>
+			<url>http://download.eclipse.org/releases/${eclipse-version}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>xtext</id>
+			<url>http://download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtext-version}/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>mwe</id>
+			<url>http://download.eclipse.org/modeling/emft/mwe/updates/releases/${mwe-version}/</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>emf</id>
+			<url>http://download.eclipse.org/modeling/emf/emf/builds/release</url>
+			<layout>p2</layout>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<compilerArgument>-parameters</compilerArgument>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<includeAllDependencies>true</includeAllDependencies>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<resolver>p2</resolver>
+					<configuration>
+						<resolver>p2</resolver>
+						<pomDependencies>consider</pomDependencies>
+					</configuration>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.xtend</groupId>
+				<artifactId>xtend-maven-plugin</artifactId>
+				<version>${xtext-version}</version>
+				<configuration>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<!-- need to prefix by basedir to generate to currently built module -->
+							<outputDirectory>${basedir}/xtend-gen</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>typhon-repo</id>
+			<url>http://archiva.clmsuk.com:8090/repository/internal/</url>
+		</repository>
+	</distributionManagement>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>acceleo</id>
+			<name>Acceleo Maven Repository</name>
+			<url>https://repo.eclipse.org/content/repositories/acceleo/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 </project>
 
 
