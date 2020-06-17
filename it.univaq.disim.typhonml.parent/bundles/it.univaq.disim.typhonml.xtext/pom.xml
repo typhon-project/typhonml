@@ -95,12 +95,12 @@
                     <mainClass>org.eclipse.emf.mwe2.launch.runtime.Mwe2Launcher</mainClass>
                     <cleanupDaemonThreads>false</cleanupDaemonThreads>
                     <arguments>
-                        <argument>file://${project.basedir}/src/it/univaq/disim/typhon/GenerateTyphonML.mwe2</argument>
+                        <argument>/${project.basedir}/src/it/univaq/disim/typhon/GenerateTyphonML.mwe2</argument>
                         <argument>
                             -p
                         </argument>
                         <argument>
-                            workspace=.
+                            rootPath=/${project.basedir}/..
                         </argument>
                     </arguments>
                 </configuration>
