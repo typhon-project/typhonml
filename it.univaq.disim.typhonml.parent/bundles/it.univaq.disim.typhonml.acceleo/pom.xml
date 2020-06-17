@@ -1,6 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>it.univaq.disim.typhonml</groupId>
 		<artifactId>it.univaq.disim.typhonml.bundles</artifactId>
@@ -14,57 +17,93 @@
 
 	<artifactId>it.univaq.disim.typhonml.acceleo</artifactId>
 	<packaging>eclipse-plugin</packaging>
-
-   <repositories>
-     <repository>
-       <id>Eclipse - Acceleo Snapshots</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
-     </repository>
-     <repository>
-       <id>Eclipse - Acceleo Release</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
-     </repository>
-   </repositories>
-
-   <pluginRepositories>
-     <pluginRepository>
-       <id>Eclipse - Acceleo Snapshots</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-snapshots</url>
-     </pluginRepository>
-     <pluginRepository>
-       <id>Eclipse - Acceleo Release</id>
-       <url>https://repo.eclipse.org/content/repositories/acceleo-releases</url>
-     </pluginRepository>
-   </pluginRepositories>
-
-   <build>
-     <plugins>
-       <plugin>
-         <groupId>org.eclipse.acceleo</groupId>
-         <artifactId>org.eclipse.acceleo.maven</artifactId>
-         <version>3.5.0-SNAPSHOT</version>
-         <executions>
-           <execution>
-             <phase>compile</phase>
-           		<goals>
-              		<goal>acceleo-compile</goal>
-            	</goals>
-           </execution>
-         </executions>
-         <configuration>
-           <useBinaryResources>false</useBinaryResources>
-           <usePlatformResourcePath>true</usePlatformResourcePath>
-           <acceleoProject>
-             <root>${project.basedir}</root>
-             <entries>
-               <entry>
-                 <input>src/main/java</input>
-                 <output>target/classes</output>
-               </entry>
-             </entries>
-           </acceleoProject>
-         </configuration>
-       </plugin>
-     </plugins>
-   </build>
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.acceleo</groupId>
+                <artifactId>org.eclipse.acceleo.maven</artifactId>
+                <version>${org.eclipse.acceleo.maven-version}</version>
+                <executions>
+                    <execution>
+                        <id>acceleo-compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>acceleo-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <useBinaryResources>false</useBinaryResources>
+                    <usePlatformResourcePath>true</usePlatformResourcePath>
+                    <acceleoProject>
+                        <root>${project.basedir}</root>
+                        <entries>
+                            <entry>
+                                <input>src</input>
+                                <output>target/classes</output>
+                            </entry>
+                        </entries>
+                    </acceleoProject>
+                    <packagesToRegister>
+                        <packageToRegister>typhonml.TyphonmlPackage</packageToRegister>
+                    </packagesToRegister>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+                <configuration>
+                    <resolver>p2</resolver>
+                    <pomDependencies>consider</pomDependencies>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-compiler-plugin</artifactId>
+                    <version>${tycho-version}</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.eclipse.tycho</groupId>
+                    <artifactId>tycho-source-plugin</artifactId>
+                    <version>${tycho-version}</version>
+                    <executions>
+                        <execution>
+                            <id>attach-source</id>
+                            <phase>process-classes</phase>
+                            <goals>
+                                <goal>plugin-source</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin-version}</version>
+                    <configuration>
+                        <encoding>ISO-8859-1</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${maven-antrun-plugin-version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+   
  </project>

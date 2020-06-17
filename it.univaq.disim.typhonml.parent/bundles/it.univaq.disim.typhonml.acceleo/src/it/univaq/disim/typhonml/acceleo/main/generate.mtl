@@ -7,6 +7,7 @@
 [import it::univaq::disim::typhonml::acceleo::main::generateDataTypeSupportingClass /]
 [/comment]
 
+
 [import it::univaq::disim::typhonml::acceleo::main::generateHeader /]
 [template public generateElement(aModel : Model)]
 [comment @main/]
