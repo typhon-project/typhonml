@@ -6,7 +6,7 @@ import org.eclipse.emf.mwe.utils.StandaloneSetup
 
 
 var workspace = "../../.."
-var rootPath = "${workspace}/bundles/"
+var rootPath = "${workspace}/bundles"
 Workflow {
 	bean = StandaloneSetup {
 	    platformUri = workspace
