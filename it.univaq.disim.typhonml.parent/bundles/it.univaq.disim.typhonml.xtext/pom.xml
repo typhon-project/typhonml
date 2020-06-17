@@ -100,7 +100,7 @@
                             -p
                         </argument>
                         <argument>
-                            rootPath=.
+                            workspace=.
                         </argument>
                     </arguments>
                 </configuration>

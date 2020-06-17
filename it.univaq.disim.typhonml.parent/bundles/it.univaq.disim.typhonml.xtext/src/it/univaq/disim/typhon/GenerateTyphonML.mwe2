@@ -4,8 +4,9 @@ import org.eclipse.xtext.xtext.generator.*
 import org.eclipse.xtext.xtext.generator.model.project.*
 import org.eclipse.emf.mwe.utils.StandaloneSetup
 
-var rootPath = ".."
 
+var workspace = "../../.."
+var rootPath = "${workspace}/bundles/"
 Workflow {
 	bean = StandaloneSetup {
 	    platformUri = rootPath
@@ -16,7 +17,7 @@ Workflow {
 		configuration = {
 			project = StandardProjectConfig {
 				baseName = "it.univaq.disim.typhonml.xtext"
-				rootPath = "../bundles"
+				rootPath = rootPath
 				runtimeTest = {
 					enabled = true
 				}
