@@ -9,7 +9,7 @@ var workspace = "../../.."
 var rootPath = "${workspace}/bundles"
 Workflow {
 	bean = StandaloneSetup {
-	    platformUri = workspace
+	    platformUri = rootPath
 	    registerGenModelFile = "platform:/resource/it.univaq.disim.typhonml/model/typhonml.genmodel"
 	}
 		
