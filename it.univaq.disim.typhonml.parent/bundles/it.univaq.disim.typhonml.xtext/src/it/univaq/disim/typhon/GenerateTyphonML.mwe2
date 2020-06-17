@@ -16,7 +16,7 @@ Workflow {
 		configuration = {
 			project = StandardProjectConfig {
 				baseName = "it.univaq.disim.typhonml.xtext"
-				rootPath = "./bundles"
+				rootPath = "../bundles"
 				runtimeTest = {
 					enabled = true
 				}
