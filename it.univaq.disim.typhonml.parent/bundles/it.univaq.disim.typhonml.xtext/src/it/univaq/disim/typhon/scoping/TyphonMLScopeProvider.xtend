@@ -3,6 +3,15 @@
  */
 package it.univaq.disim.typhon.scoping
 
+import org.eclipse.xtext.scoping.IScope
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EReference
+import typhonml.GraphEdge
+
+import typhonml.TyphonmlPackage
+import java.util.List
+import javax.management.relation.Relation
+import org.eclipse.xtext.scoping.Scopes
 
 /**
  * This class contains custom scoping description.
@@ -12,4 +21,25 @@ package it.univaq.disim.typhon.scoping
  */
 class TyphonMLScopeProvider extends AbstractTyphonMLScopeProvider {
 
+	override IScope getScope(EObject context, EReference reference) {
+		val literals = TyphonmlPackage.Literals.ENTITY__RELATIONS
+		
+		println(context)
+		println(literals)
+		println(reference)
+		println("----------------")
+		if (reference == TyphonmlPackage.Literals.GRAPH_EDGE__FROM) {
+			if (context instanceof GraphEdge) {
+				val result = context.entity.relations 
+				return Scopes.scopeFor(result)
+			}
+		}
+		if (reference == TyphonmlPackage.Literals.GRAPH_EDGE__TO) {
+			if (context instanceof GraphEdge) {
+				val result = context.entity.relations 
+				return Scopes.scopeFor(result)
+			}
+		}
+		return super.getScope(context, reference)
+	}
 }
