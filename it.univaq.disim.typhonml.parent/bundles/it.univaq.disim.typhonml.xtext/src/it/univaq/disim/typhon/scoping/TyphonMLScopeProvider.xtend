@@ -3,15 +3,21 @@
  */
 package it.univaq.disim.typhon.scoping
 
-import org.eclipse.xtext.scoping.IScope
+import com.google.common.base.Predicate
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.EReference
-import typhonml.GraphEdge
-
-import typhonml.TyphonmlPackage
-import java.util.List
-import javax.management.relation.Relation
+import org.eclipse.xtext.resource.IEObjectDescription
+import org.eclipse.xtext.scoping.IScope
 import org.eclipse.xtext.scoping.Scopes
+import org.eclipse.xtext.scoping.impl.FilteringScope
+import typhonml.Cardinality
+import typhonml.Collection
+import typhonml.GraphEdge
+import typhonml.IdSpec
+import typhonml.IndexSpec
+import typhonml.Relation
+import typhonml.Table
+import typhonml.TyphonmlPackage
 
 /**
  * This class contains custom scoping description.
@@ -22,24 +28,55 @@ import org.eclipse.xtext.scoping.Scopes
 class TyphonMLScopeProvider extends AbstractTyphonMLScopeProvider {
 
 	override IScope getScope(EObject context, EReference reference) {
-		val literals = TyphonmlPackage.Literals.ENTITY__RELATIONS
 		
-		println(context)
-		println(literals)
-		println(reference)
-		println("----------------")
-		if (reference == TyphonmlPackage.Literals.GRAPH_EDGE__FROM) {
+		if (reference == TyphonmlPackage.Literals.GRAPH_EDGE__FROM) 
 			if (context instanceof GraphEdge) {
 				val result = context.entity.relations 
-				return Scopes.scopeFor(result)
+				val scoper = Scopes.scopeFor(result)
+				return new FilteringScope(scoper,new Predicate<IEObjectDescription>() {
+					override apply(IEObjectDescription input) {
+						val sym = input.getEObjectOrProxy() as Relation
+						return (sym.cardinality == Cardinality.ONE)
+					}	 
+				})
+				
 			}
-		}
-		if (reference == TyphonmlPackage.Literals.GRAPH_EDGE__TO) {
+		if (reference == TyphonmlPackage.Literals.GRAPH_EDGE__TO)
 			if (context instanceof GraphEdge) {
-				val result = context.entity.relations 
-				return Scopes.scopeFor(result)
+				val scoper = Scopes.scopeFor(context.entity.relations)
+				return new FilteringScope(scoper,new Predicate<IEObjectDescription>() {
+					override apply(IEObjectDescription input) {
+						val sym = input.getEObjectOrProxy() as Relation
+						return (sym.cardinality == Cardinality.ONE)
+					}	 
+				})
+			}
+			
+		if (reference == TyphonmlPackage.Literals.INDEX_SPEC__ATTRIBUTES) {
+			if (context instanceof IndexSpec) {
+				val container = context.eContainer
+				if (container instanceof Table)
+					return Scopes.scopeFor(container.entity.attributes)
+				if (container instanceof Collection)
+					return Scopes.scopeFor(container.entity.attributes)
 			}
 		}
+		if (reference == TyphonmlPackage.Literals.INDEX_SPEC__REFERENCES) {
+			if (context instanceof IndexSpec) {
+				val container = context.eContainer
+				if (container instanceof Table)
+					return Scopes.scopeFor(container.entity.relations)
+				if (container instanceof Collection)
+					return Scopes.scopeFor(container.entity.relations)
+			}
+		}
+		if (reference == TyphonmlPackage.Literals.ID_SPEC__ATTRIBUTES) {
+			if (context instanceof IdSpec) {
+				return Scopes.scopeFor(context.table.entity.attributes)
+			}
+		}
+
 		return super.getScope(context, reference)
 	}
+	
 }
