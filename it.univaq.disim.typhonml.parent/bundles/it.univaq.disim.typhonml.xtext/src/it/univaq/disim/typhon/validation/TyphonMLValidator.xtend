@@ -3,6 +3,11 @@
  */
 package it.univaq.disim.typhon.validation
 
+import org.eclipse.xtext.validation.Check
+import typhonml.Entity
+import typhonml.TyphonmlPackage
+import typhonml.Relation
+import java.util.HashSet
 
 /**
  * This class contains custom validation rules. 
@@ -11,15 +16,44 @@ package it.univaq.disim.typhon.validation
  */
 class TyphonMLValidator extends AbstractTyphonMLValidator {
 	
-//	public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					TyphonMLPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+protected static val ISSUE_CODE_PREFIX = "org.example.entities.";
+
+	public static val HIERARCHY_CYCLE = ISSUE_CODE_PREFIX + "HierarchyCycle";
+
+	public static val INVALID_ENTITY_NAME = ISSUE_CODE_PREFIX + "InvalidEntityName";
+
+	public static val INVALID_ATTRIBUTE_NAME = ISSUE_CODE_PREFIX + "InvalidAttributeName";
+
+	@Check
+	def checkNoCycleInEntityHierarchy(Entity entity) {
+		if (entity.relations === null)
+			return // nothing to check
+		//val visitedEntities = newHashSet(entity)
+		else {
+			val visitedEntities = newHashSet()
+			if (checkRecursively(entity, visitedEntities))
+				return 
+			else 
+	 			error("cycle in containment of entity '" + entity.name + "'",
+						TyphonmlPackage.eINSTANCE.entity_Relations,
+						HIERARCHY_CYCLE,
+						entity.name)
+		}
+		
+	}
+	
+	def boolean checkRecursively(Entity entity, HashSet<Entity> entityHashSet){
+		if (entityHashSet.contains(entity)) {
+			return false
+		}
+		entityHashSet.add(entity)
+		var returnValue = true;
+		for (relation : entity.relations){
+			if(relation.isContainment !== null && relation.isContainment)
+				returnValue = returnValue && checkRecursively(relation.type, entityHashSet)
+		}
+		return returnValue
+		
+	}
 	
 }
