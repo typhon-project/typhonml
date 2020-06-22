@@ -3621,7 +3621,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (entityEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EmptyEntity"
+			   "constraints", "EmptyEntity EntytiNotMapped"
 		   });
 		addAnnotation
 		  (graphEdgeEClass,
@@ -3643,7 +3643,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (entityEClass,
 		   source,
 		   new String[] {
-			   "EmptyEntity", "attributes->size() + relations->size() > 0"
+			   "EmptyEntity", "attributes->size() + relations->size() > 0",
+			   "EntytiNotMapped", "\n\t\t\t(typhonml::Table.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::Collection.allInstances()->select(e | e.entity = self)->size() + \t\t\t\n\t\t\ttyphonml::GraphEdge.allInstances()->select(e | e.entity = self)->size() + \n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::Column.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size())>0"
 		   });
 		addAnnotation
 		  (getEntity__GetCollections(),
