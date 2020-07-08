@@ -8,12 +8,6 @@
 
 
 	<properties>
-		<tycho.version>1.6.0</tycho.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<eclipse-repo.url>http://download.eclipse.org/releases/2019-09/</eclipse-repo.url>
-		<xtext.version>2.19.0</xtext.version>
-		<!-- Skip the deployment here, submodules can override this property -->
-		<!--maven.deploy.skip>true</maven.deploy.skip -->
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,6 +26,14 @@
 		<maven-clean-plugin-version>3.1.0</maven-clean-plugin-version>
 		<exec-maven-plugin-version>1.6.0</exec-maven-plugin-version>
 		<lifecycle-mapping-version>1.0.0</lifecycle-mapping-version>
+
+		<!-- Skip the deployment here, submodules can override this property -->
+		<!--maven.deploy.skip>true</maven.deploy.skip -->
+		
+		
+		
+		<!--<xtext.version>2.19.0</xtext.version>
+		<eclipse-repo.url>http://download.eclipse.org/releases/2019-09/</eclipse-repo.url>-->
 	</properties>
 
 
