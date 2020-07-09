@@ -64,6 +64,16 @@
 			<url>http://download.eclipse.org/modeling/emf/emf/builds/release</url>
 			<layout>p2</layout>
 		</repository>
+		<repository>
+			<id>sirius</id>
+			<url>http://download.eclipse.org/sirius/updates/releases/6.2.2/2019-06</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>Orbit 2020-03</id>
+			<url>https://download.eclipse.org/tools/orbit/downloads/drops/R20200224183213/repository</url>
+			<layout>p2</layout>
+		</repository>
 	</repositories>
 
 	<build>
