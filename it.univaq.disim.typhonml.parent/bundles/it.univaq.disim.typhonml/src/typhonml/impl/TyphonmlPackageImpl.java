@@ -3621,13 +3621,13 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (entityEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EmptyEntity EntytiNotMapped"
+			   "constraints", "EmptyEntity"
 		   });
 		addAnnotation
 		  (graphEdgeEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality"
+			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge"
 		   });
 	}
 
@@ -3643,8 +3643,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (entityEClass,
 		   source,
 		   new String[] {
-			   "EmptyEntity", "attributes->size() + relations->size() > 0",
-			   "EntytiNotMapped", "\n\t\t\t(typhonml::Table.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::Collection.allInstances()->select(e | e.entity = self)->size() + \t\t\t\n\t\t\ttyphonml::GraphEdge.allInstances()->select(e | e.entity = self)->size() + \n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::Column.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size())>0"
+			   "EmptyEntity", "attributes->size() + relations->size() > 0"
 		   });
 		addAnnotation
 		  (getEntity__GetCollections(),
@@ -3684,7 +3683,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "WrongFrom", "from.oclContainer() = entity",
 			   "WrongTo", "to.oclContainer() = entity",
 			   "WrongFromCardinality", "from.cardinality = Cardinality::one",
-			   "WrongToCardinality", "to.cardinality = Cardinality::one"
+			   "WrongToCardinality", "to.cardinality = Cardinality::one",
+			   "BlobAttributesNotSupportedByGraphEdge", "\n\t\t\tentity.attributes->select(z | z.oclIsKindOf(Attribute))\n\t\t\t\t->select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))->size()=0"
 		   });
 	}
 

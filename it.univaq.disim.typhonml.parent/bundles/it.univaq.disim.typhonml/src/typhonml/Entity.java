@@ -20,8 +20,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getEntity()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='EmptyEntity EntytiNotMapped'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot EmptyEntity='attributes-&gt;size() + relations-&gt;size() &gt; 0' EntytiNotMapped='\n\t\t\t(typhonml::Table.allInstances()-&gt;select(e | e.entity = self)-&gt;size() +\n\t\t\ttyphonml::Collection.allInstances()-&gt;select(e | e.entity = self)-&gt;size() + \t\t\t\n\t\t\ttyphonml::GraphEdge.allInstances()-&gt;select(e | e.entity = self)-&gt;size() + \n\t\t\ttyphonml::KeyValueElement.allInstances()-&gt;select(e | e.entity = self)-&gt;size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()-&gt;select(e | e.entity = self)-&gt;size() +\n\t\t\ttyphonml::Column.allInstances()-&gt;select(e | e.entity = self)-&gt;size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()-&gt;select(e | e.entity = self)-&gt;size())&gt;0'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='EmptyEntity'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot EmptyEntity='attributes-&gt;size() + relations-&gt;size() &gt; 0'"
  * @generated
  */
 public interface Entity extends NamedElement {

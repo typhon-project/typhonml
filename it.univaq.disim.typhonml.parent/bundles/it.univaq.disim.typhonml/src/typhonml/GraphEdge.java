@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getGraphEdge()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot EntitiesWithoutTwoReferences='entity.relations-&gt;size()  &gt; 1' WrongFrom='from.oclContainer() = entity' WrongTo='to.oclContainer() = entity' WrongFromCardinality='from.cardinality = Cardinality::one' WrongToCardinality='to.cardinality = Cardinality::one'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot EntitiesWithoutTwoReferences='entity.relations-&gt;size()  &gt; 1' WrongFrom='from.oclContainer() = entity' WrongTo='to.oclContainer() = entity' WrongFromCardinality='from.cardinality = Cardinality::one' WrongToCardinality='to.cardinality = Cardinality::one' BlobAttributesNotSupportedByGraphEdge='\n\t\t\tentity.attributes-&gt;select(z | z.oclIsKindOf(Attribute))\n\t\t\t\t-&gt;select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))-&gt;size()=0'"
  * @generated
  */
 public interface GraphEdge extends EObject {
