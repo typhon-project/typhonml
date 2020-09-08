@@ -632,7 +632,47 @@ public class TyphonmlValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateKeyValueElement(KeyValueElement keyValueElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(keyValueElement, diagnostics, context);
+		if (!validate_NoCircularContainment(keyValueElement, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(keyValueElement, diagnostics, context);
+		if (result || diagnostics != null) result &= validateKeyValueElement_AttributesAreMappedToGraphEdge(keyValueElement, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the AttributesAreMappedToGraphEdge constraint of '<em>Key Value Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String KEY_VALUE_ELEMENT__ATTRIBUTES_ARE_MAPPED_TO_GRAPH_EDGE__EEXPRESSION = "\n" +
+		"\t\t\ttyphonml::GraphEdge.allInstances()->select(x | values->collect(Attribute::Entity)->includes(x.entity))->size()=0";
+
+	/**
+	 * Validates the AttributesAreMappedToGraphEdge constraint of '<em>Key Value Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateKeyValueElement_AttributesAreMappedToGraphEdge(KeyValueElement keyValueElement, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(TyphonmlPackage.Literals.KEY_VALUE_ELEMENT,
+				 keyValueElement,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "AttributesAreMappedToGraphEdge",
+				 KEY_VALUE_ELEMENT__ATTRIBUTES_ARE_MAPPED_TO_GRAPH_EDGE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -683,8 +723,8 @@ public class TyphonmlValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGraphEdge_WrongFromCardinality(graphEdge, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGraphEdge_WrongToCardinality(graphEdge, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGraphEdge_BlobAttributesNotSupportedByGraphEdge(graphEdge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateGraphEdge_FromEntityCanNotBeGraphBacked(graphEdge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateGraphEdge_ToEntityCanNotBeGraphBacked(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_FromTypeCanNotBeGraphBacked(graphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_ToTypeCanNotBeGraphBacked(graphEdge, diagnostics, context);
 		return result;
 	}
 
@@ -865,21 +905,21 @@ public class TyphonmlValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the FromEntityCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
+	 * The cached validation expression for the FromTypeCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String GRAPH_EDGE__FROM_ENTITY_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION = "\n" +
-		"\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 1";
+	protected static final String GRAPH_EDGE__FROM_TYPE_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION = "\n" +
+		"\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 0";
 
 	/**
-	 * Validates the FromEntityCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
+	 * Validates the FromTypeCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGraphEdge_FromEntityCanNotBeGraphBacked(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateGraphEdge_FromTypeCanNotBeGraphBacked(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(TyphonmlPackage.Literals.GRAPH_EDGE,
@@ -887,29 +927,29 @@ public class TyphonmlValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "FromEntityCanNotBeGraphBacked",
-				 GRAPH_EDGE__FROM_ENTITY_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION,
+				 "FromTypeCanNotBeGraphBacked",
+				 GRAPH_EDGE__FROM_TYPE_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
 	}
 
 	/**
-	 * The cached validation expression for the ToEntityCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
+	 * The cached validation expression for the ToTypeCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String GRAPH_EDGE__TO_ENTITY_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION = "\n" +
-		"\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 1";
+	protected static final String GRAPH_EDGE__TO_TYPE_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION = "\n" +
+		"\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 0";
 
 	/**
-	 * Validates the ToEntityCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
+	 * Validates the ToTypeCanNotBeGraphBacked constraint of '<em>Graph Edge</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateGraphEdge_ToEntityCanNotBeGraphBacked(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateGraphEdge_ToTypeCanNotBeGraphBacked(GraphEdge graphEdge, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(TyphonmlPackage.Literals.GRAPH_EDGE,
@@ -917,8 +957,8 @@ public class TyphonmlValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "ToEntityCanNotBeGraphBacked",
-				 GRAPH_EDGE__TO_ENTITY_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION,
+				 "ToTypeCanNotBeGraphBacked",
+				 GRAPH_EDGE__TO_TYPE_CAN_NOT_BE_GRAPH_BACKED__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -1270,8 +1310,8 @@ public class TyphonmlValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateGraphEdge_WrongFromCardinality(addGraphEdge, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGraphEdge_WrongToCardinality(addGraphEdge, diagnostics, context);
 		if (result || diagnostics != null) result &= validateGraphEdge_BlobAttributesNotSupportedByGraphEdge(addGraphEdge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateGraphEdge_FromEntityCanNotBeGraphBacked(addGraphEdge, diagnostics, context);
-		if (result || diagnostics != null) result &= validateGraphEdge_ToEntityCanNotBeGraphBacked(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_FromTypeCanNotBeGraphBacked(addGraphEdge, diagnostics, context);
+		if (result || diagnostics != null) result &= validateGraphEdge_ToTypeCanNotBeGraphBacked(addGraphEdge, diagnostics, context);
 		return result;
 	}
 

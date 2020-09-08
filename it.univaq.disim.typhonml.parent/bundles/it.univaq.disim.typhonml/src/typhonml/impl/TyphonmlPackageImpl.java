@@ -3624,10 +3624,16 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "constraints", "EmptyEntity"
 		   });
 		addAnnotation
+		  (keyValueElementEClass,
+		   source,
+		   new String[] {
+			   "constraints", "AttributesAreMappedToGraphEdge"
+		   });
+		addAnnotation
 		  (graphEdgeEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge FromEntityCanNotBeGraphBacked ToEntityCanNotBeGraphBacked"
+			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge FromTypeCanNotBeGraphBacked ToTypeCanNotBeGraphBacked"
 		   });
 	}
 
@@ -3676,6 +3682,12 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "body", "typhonml::Column.allInstances()->select(e|e.entity = self)"
 		   });
 		addAnnotation
+		  (keyValueElementEClass,
+		   source,
+		   new String[] {
+			   "AttributesAreMappedToGraphEdge", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | values->collect(Attribute::Entity)->includes(x.entity))->size()=0"
+		   });
+		addAnnotation
 		  (graphEdgeEClass,
 		   source,
 		   new String[] {
@@ -3685,8 +3697,8 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "WrongFromCardinality", "from.cardinality = Cardinality::one",
 			   "WrongToCardinality", "to.cardinality = Cardinality::one",
 			   "BlobAttributesNotSupportedByGraphEdge", "\n\t\t\tentity.attributes->select(z | z.oclIsKindOf(Attribute))\n\t\t\t\t->select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))->size()=0",
-			   "FromEntityCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 1",
-			   "ToEntityCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 1"
+			   "FromTypeCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 0",
+			   "ToTypeCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 0"
 		   });
 	}
 

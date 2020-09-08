@@ -19,7 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see typhonml.TyphonmlPackage#getKeyValueElement()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AttributesAreMappedToGraphEdge'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AttributesAreMappedToGraphEdge='\n\t\t\ttyphonml::GraphEdge.allInstances()-&gt;select(x | values-&gt;collect(Attribute::Entity)-&gt;includes(x.entity))-&gt;size()=0'"
  * @generated
  */
 public interface KeyValueElement extends NamedElement {
