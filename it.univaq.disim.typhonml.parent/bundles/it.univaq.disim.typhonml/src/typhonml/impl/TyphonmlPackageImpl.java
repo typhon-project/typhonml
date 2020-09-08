@@ -3627,7 +3627,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (graphEdgeEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge"
+			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge FromEntityCanNotBeGraphBacked ToEntityCanNotBeGraphBacked"
 		   });
 	}
 
@@ -3684,7 +3684,9 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "WrongTo", "to.oclContainer() = entity",
 			   "WrongFromCardinality", "from.cardinality = Cardinality::one",
 			   "WrongToCardinality", "to.cardinality = Cardinality::one",
-			   "BlobAttributesNotSupportedByGraphEdge", "\n\t\t\tentity.attributes->select(z | z.oclIsKindOf(Attribute))\n\t\t\t\t->select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))->size()=0"
+			   "BlobAttributesNotSupportedByGraphEdge", "\n\t\t\tentity.attributes->select(z | z.oclIsKindOf(Attribute))\n\t\t\t\t->select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))->size()=0",
+			   "FromEntityCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 1",
+			   "ToEntityCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 1"
 		   });
 	}
 

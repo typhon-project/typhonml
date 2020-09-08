@@ -198,7 +198,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GraphEdge">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge"/>
+      <details key="constraints" value="EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge FromEntityCanNotBeGraphBacked ToEntityCanNotBeGraphBacked"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="EntitiesWithoutTwoReferences" value="entity.relations->size()  > 1"/>
@@ -207,6 +207,8 @@
       <details key="WrongFromCardinality" value="from.cardinality = Cardinality::one"/>
       <details key="WrongToCardinality" value="to.cardinality = Cardinality::one"/>
       <details key="BlobAttributesNotSupportedByGraphEdge" value="&#xA;&#x9;&#x9;&#x9;entity.attributes->select(z | z.oclIsKindOf(Attribute))&#xA;&#x9;&#x9;&#x9;&#x9;->select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))->size()=0"/>
+      <details key="FromEntityCanNotBeGraphBacked" value="&#xA;&#x9;&#x9;&#x9;typhonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 1"/>
+      <details key="ToEntityCanNotBeGraphBacked" value="&#xA;&#x9;&#x9;&#x9;typhonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 1"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" eType="#//Relation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//Relation"/>
