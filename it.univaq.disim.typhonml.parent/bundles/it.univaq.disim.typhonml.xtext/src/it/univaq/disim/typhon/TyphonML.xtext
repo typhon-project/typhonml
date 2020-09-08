@@ -441,44 +441,22 @@ ChangeOperator returns ChangeOperator:
 
 
 AddCustomDataTypeAttribute returns AddCustomDataTypeAttribute:
-	'AddCustomDataTypeAttribute'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		'ownerEntity' ownerEntity=[Entity|EString]
-		'type' type=[CustomDataType|EString]
-	'}';
+	'add' 'attribute' name=EString ':' type=[CustomDataType|EString] 'to' ownerEntity=[Entity|EString]
+	('importedNamespace' importedNamespace=EString)?
+	;
 
 AddPrimitiveDataTypeAttribute returns AddPrimitiveDataTypeAttribute:
-	'AddPrimitiveDataTypeAttribute'
-	name=EString
-	'{'
-		('importedNamespace' importedNamespace=EString)?
-		'ownerEntity' ownerEntity=[Entity|EString]
-		'type' type=DataType
-	'}';
+	'add' 'attribute' name=EString ':' type=DataType 'to' ownerEntity=[Entity|EString]
+	('importedNamespace' importedNamespace=EString)?
+	;
 
 ChangePrimitiveDataTypeAttribute returns ChangePrimitiveDataTypeAttribute:
-	'ChangePrimitiveDataTypeAttribute'
-	'{'
-		('maxSize' maxSize=EInt)?
-		'attributeToChange' attributeToChange=[Attribute|EString]
-		'newType' newType=DataType
-	'}';
+	'change' 'attribute' attributeToChange=[Attribute|EString] ':' newType=DataType ('['maxSize=EInt']')?
+	;
 
 ChangeCustomDataTypeAttribute returns ChangeCustomDataTypeAttribute:
-	'ChangeCustomDataTypeAttribute'
-	'{'
-		'attributeToChange' attributeToChange=[Attribute|EString]
-		'newType' newType=[CustomDataType|EString]
-	'}';
-
-
-
-
-
-
-
+	'change' 'attribute' attributeToChange=[Attribute|EString] ':' newType=[CustomDataType|EString]
+	;
 
 AddEntity returns AddEntity:
 	('importedNamespace' importedNamespace=EString)?
