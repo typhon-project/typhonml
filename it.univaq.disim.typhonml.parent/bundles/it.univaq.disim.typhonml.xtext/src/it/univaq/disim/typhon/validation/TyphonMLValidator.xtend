@@ -25,7 +25,7 @@ protected static val ISSUE_CODE_PREFIX = "org.example.entities.";
 	public static val INVALID_ATTRIBUTE_NAME = ISSUE_CODE_PREFIX + "InvalidAttributeName";
 
 	@Check
-	def checkNoCycleInEntityHierarchy(Entity entity) {
+	def checkNoCycleInEntityContainment(Entity entity) {
 		if (entity.relations === null)
 			return // nothing to check
 		//val visitedEntities = newHashSet(entity)

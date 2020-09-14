@@ -6,7 +6,7 @@ import org.eclipse.emf.mwe.utils.StandaloneSetup
 
 
 var workspace = "../../.."
-var rootPath = "${workspace}/bundles"
+var rootPath = ".."
 Workflow {
 	bean = StandaloneSetup {
 	    platformUri = rootPath
@@ -51,7 +51,7 @@ Workflow {
 				generateStub = false
 			}
 			validator = {
-				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 			}
 		}
 	}

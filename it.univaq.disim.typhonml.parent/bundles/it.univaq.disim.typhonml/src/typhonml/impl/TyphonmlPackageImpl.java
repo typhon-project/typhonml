@@ -3621,13 +3621,19 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (entityEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EmptyEntity EntytiNotMapped"
+			   "constraints", "EmptyEntity"
+		   });
+		addAnnotation
+		  (keyValueElementEClass,
+		   source,
+		   new String[] {
+			   "constraints", "AttributesAreMappedToGraphEdge"
 		   });
 		addAnnotation
 		  (graphEdgeEClass,
 		   source,
 		   new String[] {
-			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality"
+			   "constraints", "EntitiesWithoutTwoReferences WrongFrom WrongTo WrongFromCardinality WrongToCardinality BlobAttributesNotSupportedByGraphEdge FromTypeCanNotBeGraphBacked ToTypeCanNotBeGraphBacked"
 		   });
 	}
 
@@ -3643,8 +3649,7 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 		  (entityEClass,
 		   source,
 		   new String[] {
-			   "EmptyEntity", "attributes->size() + relations->size() > 0",
-			   "EntytiNotMapped", "\n\t\t\t(typhonml::Table.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::Collection.allInstances()->select(e | e.entity = self)->size() + \t\t\t\n\t\t\ttyphonml::GraphEdge.allInstances()->select(e | e.entity = self)->size() + \n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::Column.allInstances()->select(e | e.entity = self)->size() +\n\t\t\ttyphonml::KeyValueElement.allInstances()->select(e | e.entity = self)->size())>0"
+			   "EmptyEntity", "attributes->size() + relations->size() > 0"
 		   });
 		addAnnotation
 		  (getEntity__GetCollections(),
@@ -3677,6 +3682,12 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "body", "typhonml::Column.allInstances()->select(e|e.entity = self)"
 		   });
 		addAnnotation
+		  (keyValueElementEClass,
+		   source,
+		   new String[] {
+			   "AttributesAreMappedToGraphEdge", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | values->collect(Attribute::Entity)->includes(x.entity))->size()=0"
+		   });
+		addAnnotation
 		  (graphEdgeEClass,
 		   source,
 		   new String[] {
@@ -3684,7 +3695,10 @@ public class TyphonmlPackageImpl extends EPackageImpl implements TyphonmlPackage
 			   "WrongFrom", "from.oclContainer() = entity",
 			   "WrongTo", "to.oclContainer() = entity",
 			   "WrongFromCardinality", "from.cardinality = Cardinality::one",
-			   "WrongToCardinality", "to.cardinality = Cardinality::one"
+			   "WrongToCardinality", "to.cardinality = Cardinality::one",
+			   "BlobAttributesNotSupportedByGraphEdge", "\n\t\t\tentity.attributes->select(z | z.oclIsKindOf(Attribute))\n\t\t\t\t->select(z | z.oclAsType(Attribute).type.oclIsTypeOf(BlobType))->size()=0",
+			   "FromTypeCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = from.type)->size() = 0",
+			   "ToTypeCanNotBeGraphBacked", "\n\t\t\ttyphonml::GraphEdge.allInstances()->select(x | x.entity = to.type)->size() = 0"
 		   });
 	}
 
