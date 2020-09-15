@@ -2,12 +2,6 @@
 
 [![Build Status](http://typhon.clmsuk.com:8080/buildStatus/icon?job=TyphonML)](http://typhon.clmsuk.com:8080/job/TyphonML)
 
-## TyphonML manuals can be found at the following wiki link:
-
-[Wiki](https://github.com/typhon-project/typhonml/wiki)
-
-or in the deliverable [Deliverable 2.4](https://github.com/typhon-project/internal-material/tree/master/WP2/D2.4)
-
 ## List of functions and features:
 
 - TyphonML enables the specification of data entities and relationships that will be stored in different and heterogeneous databases.
@@ -135,7 +129,7 @@ The attributes are defined by the name, colons and type that can be primitive or
 	- *TermExtraction*,
 	- *NamedEntityRecognition*,
 	- *RelationExtraction*, and
-	- 	ì*CoreferenceResolution*.
+	- *CoreferenceResolution*.
 
 Relation is a named element, which permits to specify relationships between different entities. In particular, the structural features of such modeling constructs are the following:
 
