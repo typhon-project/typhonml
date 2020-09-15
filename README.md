@@ -6,9 +6,7 @@
 
 [Wiki](https://github.com/typhon-project/typhonml/wiki)
 
-or to deliverables:
-
-[Deliverable 2.4](https://github.com/typhon-project/internal-material/tree/master/WP2/D2.4)
+or in the deliverable [Deliverable 2.4](https://github.com/typhon-project/internal-material/tree/master/WP2/D2.4)
 
 ## List of functions and features:
 
@@ -21,7 +19,7 @@ deployment and querying of the modelled data models are supported.
 - TyphonML supporting tools detect inconsistent data models (e.g. data entities in relational databases that refer to inexistent collections in document-based data models).
 - TyphonML supporting tools provide modellers with early feedback about the specified data models (i.e. deployment feasibility of the modelled data with respect to the actual resource availabilities).
 
-## How to install TyphonML Eclipse plugin
+## How to install TyphonML
 
 
 ### Eclipse Installer
@@ -31,7 +29,7 @@ To download the installer visit the official download site [here](https://www.ec
 
 If there is already an active Eclipse installation, Typhon plugins may be installed through their corresponding Eclipse Update Site.
 
-### How to install Typhon plugin
+### How to install Typhon plugins
 The next step is to install all the plugins required to start Typhon Development, through the Install New Software option:
 
 ![installation - step 1](documentation/images/install-01.png "title")
@@ -43,7 +41,7 @@ The TyphonML plugin can be installed by the following update/composite site [htt
 ## TyphonML Usage
 The following section describes the usage of the TyphonML. It is assumed that user has already downloaded and installed the various tools and plugins needed as described in the previous section.
 ### Design
-To start developing for Typhon, open the Eclipse IDE and Create a new project:
+To start developing with Typhon, open the Eclipse IDE and Create a new project:
 
 ![usage - step 01](documentation/images/usage-01.png)
 
@@ -67,7 +65,6 @@ To create this model, edit the contents of the .tml file you have just created a
 ![usage - step 03](documentation/images/usage-05.png)
 
 To transform this ML code into a model, right click on the .tml file, and select Typhon -> Inject to model. This will generate a visual representation of the model classes and their relationships, creating  an xmi file containing model data.
-
 
 ![usage - step 03](documentation/images/usage-06.png)
 
@@ -230,16 +227,12 @@ In the next figure, we report an excerpt of the OpenAPI specification generated 
 
 ![usage - step 03](documentation/images/generation-02.png)
 
-
+<!--
 ## Current development status
-
 - Definition of custom data types to be used in TyphonML data models.
 - Integration with DL
 - Integration with QL
-
-
-
 ## List of future functions and features we are going to implement.
-
 - Integration with DL. It is necessary to have from them the information regarding the databases that they are able to manage in order, therefore, to design the consistent TyphonML instance.
 - Integration with QL. Integration with them is required as we do the generation of microservices at the moment, but it is necessary for the QL to have control over the APIs generated.
+-->
