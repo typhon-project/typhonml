@@ -239,4 +239,4 @@ In the next figure, we report an excerpt of the OpenAPI specification generated 
 -->
 ## Build TyphonML locally
 
-Clone this repository and build the update site with `mvn clean package`, then instal with _Eclipse -> Help -> Install New Software... -> Add... -> Archive... -> .../typhondl/typhondl-update-site/target/typhondl-update-site-1.0.0-SNAPSHOT.zip_
+Clone this repository and build the update site with `mvn clean package`, then install with _Eclipse -> Help -> Install New Software... -> Add... -> Archive... -> .../typhondl/typhondl-update-site/target/typhondl-update-site-1.0.0-SNAPSHOT.zip_
