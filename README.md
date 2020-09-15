@@ -237,3 +237,6 @@ In the next figure, we report an excerpt of the OpenAPI specification generated 
 - Integration with DL. It is necessary to have from them the information regarding the databases that they are able to manage in order, therefore, to design the consistent TyphonML instance.
 - Integration with QL. Integration with them is required as we do the generation of microservices at the moment, but it is necessary for the QL to have control over the APIs generated.
 -->
+## Build TyphonML locally
+
+Clone this repository and build the update site with `mvn clean package`, then instal with _Eclipse -> Help -> Install New Software... -> Add... -> Archive... -> .../typhondl/typhondl-update-site/target/typhondl-update-site-1.0.0-SNAPSHOT.zip_
