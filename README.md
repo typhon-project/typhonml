@@ -21,7 +21,7 @@ deployment and querying of the modelled data models are supported.
 - TyphonML supporting tools detect inconsistent data models (e.g. data entities in relational databases that refer to inexistent collections in document-based data models).
 - TyphonML supporting tools provide modellers with early feedback about the specified data models (i.e. deployment feasibility of the modelled data with respect to the actual resource availabilities).
 
-## How to instal TyphonML Eclipse plugin
+## How to install TyphonML Eclipse plugin
 
 
 ### Eclipse Installer
