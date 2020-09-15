@@ -167,7 +167,8 @@ The next figure depicts an instance of Key-value DB that consists of a name (lin
 ![usage - step 03](documentation/images/language-07.png)
 
 
-###Change operator
+### Change operator
+
 This section presents the syntax of change operators to support the evolution workpackage. A change operator can be applied on entities, relations, attributes, databases and custom data types. We recap all the operators in the following. Moreover,the following image depicts all the change operators at work.
 ![usage - step 03](documentation/images/changeoperator-01.png)
 
