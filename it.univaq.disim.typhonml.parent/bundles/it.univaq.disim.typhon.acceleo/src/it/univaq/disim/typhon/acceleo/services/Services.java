@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.util.EcoreUtil.Copier;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.xtext.resource.XtextResource;
@@ -64,7 +66,12 @@ public class Services {
 				.getInstance(XtextResourceSet.class);
 		resourceSetXText.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		Resource resource = resourceSetXText.createResource(URI.createURI(path));
-        resource.getContents().add(root);
+		EcoreUtil.resolveAll(resource);
+		Copier copier = new  EcoreUtil.Copier(true, false);
+		
+		EObject copiedRoot = copier.copy(root);
+		copier.copyReferences();
+        resource.getContents().add(copiedRoot);
         
         try {
             resource.save(Collections.EMPTY_MAP);
