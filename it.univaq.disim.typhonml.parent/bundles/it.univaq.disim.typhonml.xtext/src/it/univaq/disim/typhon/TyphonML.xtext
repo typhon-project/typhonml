@@ -61,7 +61,7 @@ BigintType returns BigintType:
 
 StringType returns StringType:
 	{StringType}
-	'string' ('[' maxSize=EInt ']')?
+	'string' '[' maxSize=EInt ']'
 	;
 
 TextType returns TextType:
