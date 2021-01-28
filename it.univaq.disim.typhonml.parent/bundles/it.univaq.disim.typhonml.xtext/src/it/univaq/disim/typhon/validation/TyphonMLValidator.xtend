@@ -35,7 +35,9 @@ protected static val ISSUE_CODE_PREFIX = "org.example.entities.";
 				return 
 			else 
 	 			error("cycle in containment of entity '" + entity.name + "'",
+	 					entity,
 						TyphonmlPackage.eINSTANCE.entity_Relations,
+						1,
 						HIERARCHY_CYCLE,
 						entity.name)
 		}
@@ -48,10 +50,13 @@ protected static val ISSUE_CODE_PREFIX = "org.example.entities.";
 		}
 		entityHashSet.add(entity)
 		var returnValue = true;
+		val mySet = newHashSet()
 		for (relation : entity.relations){
 			if(relation.isContainment !== null && relation.isContainment)
-				returnValue = returnValue && checkRecursively(relation.type, entityHashSet)
+				mySet.add(relation.type)
 		}
+		for (entityRel : mySet)
+			returnValue = returnValue && checkRecursively(entityRel, entityHashSet)
 		return returnValue
 		
 	}
