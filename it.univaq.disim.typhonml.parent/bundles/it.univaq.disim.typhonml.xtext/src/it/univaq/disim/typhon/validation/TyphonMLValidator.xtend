@@ -30,16 +30,35 @@ protected static val ISSUE_CODE_PREFIX = "org.example.entities.";
 			return // nothing to check
 		//val visitedEntities = newHashSet(entity)
 		else {
-			val visitedEntities = newHashSet()
-			if (checkRecursively(entity, visitedEntities))
+			val result = checkCyclic(entity)
+			if (result == -1)
 				return 
 			else 
 	 			error("cycle in containment of entity '" + entity.name + "'",
+	 					entity,
 						TyphonmlPackage.eINSTANCE.entity_Relations,
+						result,
 						HIERARCHY_CYCLE,
 						entity.name)
 		}
 		
+	}
+	def int checkCyclic(Entity entity){
+		var i = 0
+		val mySet = newHashMap()
+		val visitedEntities = newHashSet()
+		visitedEntities.add(entity)
+		for (relation : entity.relations){
+			if(relation.isContainment !== null && relation.isContainment)
+				mySet.put(relation.type, i)
+			i++
+		}
+		for (entityRel : mySet.keySet){
+			if(!checkRecursively(entityRel, visitedEntities))
+				return mySet.get(entityRel)
+			
+		}
+		return -1
 	}
 	
 	def boolean checkRecursively(Entity entity, HashSet<Entity> entityHashSet){
@@ -48,10 +67,13 @@ protected static val ISSUE_CODE_PREFIX = "org.example.entities.";
 		}
 		entityHashSet.add(entity)
 		var returnValue = true;
+		val mySet = newHashSet()
 		for (relation : entity.relations){
 			if(relation.isContainment !== null && relation.isContainment)
-				returnValue = returnValue && checkRecursively(relation.type, entityHashSet)
+				mySet.add(relation.type)
 		}
+		for (entityRel : mySet)
+			returnValue = returnValue && checkRecursively(entityRel, entityHashSet)
 		return returnValue
 		
 	}
