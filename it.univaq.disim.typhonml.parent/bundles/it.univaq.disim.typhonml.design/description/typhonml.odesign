@@ -271,16 +271,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Entity" referenceName="dataTypes"/>
-              </firstModelOperations>
-            </initialOperation>
-          </ownedTools>
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Attribute" nodeMappings="//@ownedViewpoints[name='FreeEditing']/@ownedRepresentations[name='typhonML']/@defaultLayer/@containerMappings[name='Entity']/@subNodeMappings[name='Attribute']">
-            <variable name="container"/>
-            <viewVariable name="containerView"/>
-            <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Attribute" referenceName="attributes"/>
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="typhonml::Entity" referenceName="entities"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
