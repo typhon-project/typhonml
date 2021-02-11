@@ -1,0 +1,184 @@
+
+/*
+ 	God Table
+	This smell arises when a table contains excessive number of attributes. 
+	Rationale: Excessive number of attributes tend to violate the principles 
+		of normalization which in turn introduce a variety of problems. 
+		Additionally, it impacts maintainability of the database. 
+*/
+operation TyphonML!Entity checkGodTable(maxNumberOfAttributes : Integer) : Boolean{
+	if(self.attributes.size > maxNumberOfAttributes){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+
+/*
+ 	Overloaded attribute names 
+	This smell occurs when two or more attributes are defined with 
+		identical names but as distinct data types in different tables.
+	Rationale: Identical names with different data types create 
+		confusion and could lead to subtle bugs in queries.
+*/
+operation getOverloadedAttributeName() : Map{
+	var returnMap: Map;
+	return returnMap;
+}
+
+operation TyphonML!Entity checkOverloadedAttributeName() : String{
+	//delete self entity from the list of all entities
+	var filteredEntities = TyphonML!Entity.allInstances()->select(e|e <> self);
+	for(selfAttribute in self.attributes){
+		for(entity in filteredEntities){
+			for(attribute in entity.attributes){
+				if(selfAttribute.name == attribute.name){
+					//if(selfAttribute.type.name <> attribute.type.name){
+						return selfAttribute.name;
+					//}
+				}
+			}
+		}
+	}
+	return null;
+}
+
+
+
+
+
+/*
+ 	Meaningless name 
+	This smell occurs when a table or an attribute name is cryptic or meaningless 
+	Rationale: Meaningless or cryptic names hamper readability of the database’s schema. 
+*/
+operation TyphonML!Entity checkMeaninglessName(): String{
+	var wordNet = new Native("it.univaq.disim.typhonml.model_analysis.wordnet.WordNet");
+	if(not wordNet.checkifWordExists(self.name)){
+		return self.name;
+	}else{
+		for(attr in self.attributes){
+			if(not wordNet.checkifWordExists(attr.name)){
+				return attr.name;
+			}
+		}
+	}
+	return null;
+}
+
+
+operation TyphonML!Entity checkPluralName(): String{
+	var wordNet = new Native("it.univaq.disim.typhonml.model_analysis.wordnet.WordNet");
+	if(wordNet.checkIfWordPlural(self.name)){
+		return self.name;
+	}else{
+		for(attr in self.attributes){
+			if(wordNet.checkIfWordPlural(attr.name)){
+				return attr.name;
+			}
+		}
+	}
+	return null;
+}
+
+operation TyphonML!Entity checkUseSpacesforTableNames(): String{
+	if(" ".isSubstringOf(self.name)){
+		return self.name;
+	}else{
+		for(attr in self.attributes){
+			if(" ".isSubstringOf(attr.name)){
+				attr.name.println();
+				return attr.name;
+			}
+		}
+	}
+	return null;
+}
+
+operation TyphonML!Entity checkUseOfUnnecessaryPrefixOrSuffixForTableNames(): String{
+    var wordNet = new Native("it.univaq.disim.typhonml.model_analysis.wordnet.WordNet");
+    var filteredEntities = TyphonML!Entity.allInstances()->select(e|e <> self);
+    //For all the other entities different for sel check the name suffix
+    for(s in filteredEntities){
+	    if(wordNet.isSuffix(self.name, s.name) or wordNet.isPrefix(self.name, s.name)){
+			return self.name;
+		}
+    }
+	return null;
+}
+
+
+
+operation TyphonML!Table checkIDFieldsForTablesAreMissing() : Boolean{
+	if(self.idSpec <> null){
+		if(self.idSpec.attributes <> null){
+			return true;
+		}
+	}
+	return false;
+}
+
+operation TyphonML!Table checkUseOfVarcharDataTypesForIndexing() : Boolean{
+	if(self.indexSpec <> null){
+		if(self.indexSpec.attributes <> null){
+			for(attr in self.indexSpec.attributes){
+				if(attr.type.name.toLowerCase() == "string"){
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+
+/*-----------------------*/
+operation TyphonML!Entity checkIsContainmentER() : Boolean{
+	return self.getAllIsContainmentER().notEmpty();
+}
+
+operation TyphonML!Entity getAllIsContainmentER() : List<TyphonML!Entity>{
+	var er_containmentEntities : List<TyphonML!Entity>; 
+	for(rel in self.relations){
+		if(rel.isContainment <> null and rel.isContainment == true){
+			if(not TyphonML!Table.allInstances()->select(tab|tab.entity = rel.type).isEmpty()){
+				(self.name + " has "+rel.type.name+" (with reference "+rel.name+") " +
+				"as containment and mapped in ER").println();
+				er_containmentEntities.add(rel.type);
+			}
+		}
+	}
+	return er_containmentEntities;
+}
+
+operation TyphonML!Entity changeDBFromRelationalToDocument(){
+	for(ent in self.getAllIsContainmentER()){
+		for(db in self.eContainer().databases){
+			if(db.isTypeOf(TyphonML!RelationalDB)){
+				var tableToDelete = db.tables.selectOne(tb : Table | tb.entity == ent);
+				var nameOfTheDatabaseToTransfer := tableToDelete.name;
+				delete tableToDelete;
+				db.addCollectionToDocumentDB(nameOfTheDatabaseToTransfer, ent);
+			}
+		}
+	}
+}
+
+operation TyphonML!Database addCollectionToDocumentDB(inputName : String, ent : Entity){
+	for(db in self.eContainer().databases){
+		if(db.isTypeOf(TyphonML!DocumentDB)){
+			var newCollection := new TyphonML!`Collection`;
+			newCollection.name = inputName;
+			newCollection.entity = ent;
+			db.collections.add(newCollection);
+		}
+	}
+}
+
+
+operation TyphonML!Database checkCycles() : Boolean{
+	return false;
+}
+
+
+

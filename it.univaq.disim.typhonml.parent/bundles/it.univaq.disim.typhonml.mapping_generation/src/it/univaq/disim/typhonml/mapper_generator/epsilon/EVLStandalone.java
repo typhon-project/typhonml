@@ -16,7 +16,7 @@ import typhonmlreq.TyphonmlreqPackage;
 public class EVLStandalone extends EpsilonStandalone{
 	
 	public static void main(String[] args) throws Exception {
-		new EVLStandalone().execute();
+		new EVLStandalone().execute("", "");
 	}
 	
 	@Override
@@ -38,11 +38,12 @@ public class EVLStandalone extends EpsilonStandalone{
 //		final File rootFolder = Utility.getFileFromResource(RULES_FOLDER);
 //		List<File> allEVLFilesPath = new ArrayList<File>();
 //		Utility.search(".*\\.evl", rootFolder, allEVLFilesPath);
-		return "resources/epsilon/feasibilityChecks.evl";
+//		return "resources/epsilon/feasibilityChecks.evl";
+		return "/Users/francesco/Sviluppo/Workspaces/TYPHON/workspace_typhonml_last/typhonml/it.univaq.disim.typhonml.parent/bundles/it.univaq.disim.typhonml.mapping_generation/resources/epsilon/fullTyphonMLValidation.evl";
 	}
 
 	@Override
-	public void postProcess() {
+	public List<String> postProcess() {
 		
 		EvlModule module = (EvlModule) this.module;
 		
@@ -57,5 +58,7 @@ public class EVLStandalone extends EpsilonStandalone{
 		else {
 			System.out.println("All constraints have been satisfied");
 		}
+		
+		return null;
 	}
 }

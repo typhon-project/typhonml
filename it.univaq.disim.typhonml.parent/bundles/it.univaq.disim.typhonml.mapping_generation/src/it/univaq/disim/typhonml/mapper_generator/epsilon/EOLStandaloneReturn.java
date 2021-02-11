@@ -17,7 +17,7 @@ import typhonmlreq.TyphonmlreqPackage;
 public class EOLStandaloneReturn extends EpsilonStandalone{
 	
 	public static void main(String[] args) throws Exception {
-		new EOLStandaloneReturn().execute();
+		new EOLStandaloneReturn().execute("", "");
 	}
 	
 	@Override
@@ -49,8 +49,9 @@ public class EOLStandaloneReturn extends EpsilonStandalone{
 	}
 	
 	@Override
-	public void postProcess() {
+	public List<String> postProcess() {
 		System.err.println(result);
+		return null;
 	}
 
 }

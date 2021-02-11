@@ -12,3 +12,4 @@ Require-Bundle: org.eclipse.epsilon.common;bundle-version="1.5.1",
  org.eclipse.epsilon.egl.engine;bundle-version="1.5.1",
  org.eclipse.epsilon.evl.engine;bundle-version="1.5.1",
  it.univaq.disim.typhonml;bundle-version="1.0.0"
+Export-Package: it.univaq.disim.typhonml.mapper_generator.epsilon

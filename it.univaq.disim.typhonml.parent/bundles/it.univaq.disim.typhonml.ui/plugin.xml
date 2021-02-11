@@ -17,6 +17,12 @@
 	                  style="push"
 	                  tooltip="Inject">
 	        </command>
+	         <command
+	                  commandId="SmellDetectorHandler"
+	                  label="Validate TyphonML Model"
+	                  style="push"
+	                  tooltip="Inject">
+	        </command>
 	        <command
 	                  commandId="TMLGeneratorHandler"
 	                  label="Generate OpenAPI specification"
@@ -44,6 +50,12 @@
            <command
 	                  commandId="TMLInjectorHandler"
 	                  label="Inject to TML"
+	                  style="push"
+	                  tooltip="Inject">
+	        </command>
+	         <command
+	                  commandId="SmellDetectorHandler"
+	                  label="Validate TyphonML Model"
 	                  style="push"
 	                  tooltip="Inject">
 	        </command>
@@ -76,6 +88,10 @@
       <handler
             class="it.univaq.disim.typhonml.ui.handlers.ModelInjectorHandler"
             commandId="ModelInjectorHandler">
+      </handler>
+      <handler
+            class="it.univaq.disim.typhonml.ui.handlers.SmellDetectorHandler"
+            commandId="SmellDetectorHandler">
       </handler>
       <handler
             class="it.univaq.disim.typhonml.ui.handlers.TMLGeneratorHandler"
