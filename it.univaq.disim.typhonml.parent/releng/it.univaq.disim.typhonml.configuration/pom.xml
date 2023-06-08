@@ -41,7 +41,7 @@
 
 		<repository>
 			<id>eclipse-epsilon</id>
-			<url>http://download.eclipse.org/epsilon/updates/</url>
+			<url>http://download.eclipse.org/epsilon/updates/2.4/</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
