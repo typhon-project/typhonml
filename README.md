@@ -1,34 +1,35 @@
 # Typhonml
 
-[![Build Status](http://typhon.clmsuk.com:8080/buildStatus/icon?job=TyphonML)](http://typhon.clmsuk.com:8080/job/TyphonML)
 
 ## List of functions and features:
 
 - TyphonML enables the specification of data entities and relationships that will be stored in different and heterogeneous databases.
 - TyphonML enables the specification of data models by means of both textual and graphical syntaxes.
-- Facilities for generating OpenAPI specification from data models specified in TyphonML is provided.
+- Facilities for generating OpenAPI specification from data models specified in TyphonML is provided.*
 - Specification of data types that are needed for applying text-specific analysis is supported.
 - The specification of functional and non-functional requirements that will instruct the
 deployment and querying of the modelled data models are supported.
 - TyphonML supporting tools detect inconsistent data models (e.g. data entities in relational databases that refer to inexistent collections in document-based data models).
 - TyphonML supporting tools provide modellers with early feedback about the specified data models (i.e. deployment feasibility of the modelled data with respect to the actual resource availabilities).
 
+
 ## How to install TyphonML
 
+### Build TyphonML locally
 
-### Eclipse Installer
-The official Eclipse installer may be used to create a fresh Eclipse IDE installation. TyphonML plugin must be manually installed as described in this section. The benefit of this option is that plugin updates are automatically detected and easily applied, without the need to reinstall a new standalone distribution. 
-To download the installer visit the official download site [here](https://www.eclipse.org/downloads/).
-**It is recommended to use the installer of Eclipse IDE for DSL developers**, that already includes Xtext and EMF can be downloaded from [here](https://www.eclipse.org/downloads/packages/release/2019-06/r/eclipse-ide-java-and-dsl-developers).
+Clone this repository and build the update site with `mvn clean package`.
+It is worth nothing that the project project reaquires Java 1.8. Please, run maven comment with Java 1.8 version.
 
-If there is already an active Eclipse installation, Typhon plugins may be installed through their corresponding Eclipse Update Site.
+Once the system has been build, you find the update site ready to be imported by Eclipse in the following folder `it.univaq.disim.typhonml.parent/releng/it.univaq.disim.typhonml.update/target`.
+Finally, install the Eclipse plugin by _Eclipse -> Help -> Install New Software... -> Add... -> Archive... -> path of folder, i.e., it.univaq.disim.typhonml.parent/releng/it.univaq.disim.typhonml.update/target
+
 
 ### How to install Typhon plugins
 The next step is to install all the plugins required to start Typhon Development, through the Install New Software option:
 
 ![installation - step 1](documentation/images/install-01.png "title")
 
-The TyphonML plugin can be installed by the following update/composite site [https://typhon.swat.engineering/composite/](https://typhon.swat.engineering/composite/).
+The TyphonML plugin can be installed by the following update/composite site <CHANGE IT>.
 
 ![installation - step 2](documentation/images/install-02.png "title")
 
@@ -216,9 +217,10 @@ Previously, we described how to open a TyphonML models by the graphical editor. 
 ## Generation of the OpenAPI specification
 In this section, we describe how the OpenAPI  specification is generated from the   TyphonML model. In particular, it is a specification for describing, consuming, and visualizing RESTful web   services which allows both humans and machines to discover and understand the provided services. An OpenAPI definition can be used for many purposes, e.g., documentation, generation of clients in various programming languages, displaying APIs as a web UI, testing, and many other use cases. Once the TyphonML specification is completed, a synthesis tool is applied to generate the corresponding OpenAPI specification by a set of coordinated Acceleo-based model-to-code transformations .
 The contextual menu (see the next figure) allows the modeler to produce the OpenAPI specification of a given TyphonML model. Then, she can use it to directly generate clients in various programming languages that programmatically interact with the polystore resources. 
+
 ![usage - step 03](documentation/images/generation-01.png)
 
-In the next figure, we report an excerpt of the OpenAPI specification generated from a simple eCommerce TyphonML model.
+In the next figure, we report an excerpt of the OpenAPI specification generated from a simple eCommerce TyphonML model. _It is worth noting that the [first release](https://github.com/typhon-project/typhonml/releases/tag/v0.1) is even able to generate an indipendent mircroservice architecture for interacting with the deployed data stores_.
 
 ![usage - step 03](documentation/images/generation-02.png)
 
@@ -231,6 +233,4 @@ In the next figure, we report an excerpt of the OpenAPI specification generated 
 - Integration with DL. It is necessary to have from them the information regarding the databases that they are able to manage in order, therefore, to design the consistent TyphonML instance.
 - Integration with QL. Integration with them is required as we do the generation of microservices at the moment, but it is necessary for the QL to have control over the APIs generated.
 -->
-## Build TyphonML locally
 
-Clone this repository and build the update site with `mvn clean package`, then install with _Eclipse -> Help -> Install New Software... -> Add... -> Archive... -> .../typhondl/typhondl-update-site/target/typhondl-update-site-1.0.0-SNAPSHOT.zip_
