@@ -14,6 +14,7 @@ deployment and querying of the modelled data models are supported.
 
 
 ## How to install TyphonML
+To better support reproducibility, we now provide also a updatesite at http://rasta.gssi.it/tml/repository to permit the Eclipse installation as best practices suggest. 
 
 ### Build TyphonML locally
 
@@ -25,6 +26,8 @@ Finally, install the Eclipse plugin by _Eclipse -> Help -> Install New Software.
 
 
 ### How to install Typhon plugins
+[UPDATE SITE] http://rasta.gssi.it/tml/repository
+
 The next step is to install all the plugins required to start Typhon Development, through the Install New Software option:
 
 ![installation - step 1](documentation/images/install-01.png "title")
